@@ -174,3 +174,7 @@ website/site/
 .out
 .pdf
 .toc
+
+# Any config files with user settings
+.config
+config.py
