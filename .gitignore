@@ -164,6 +164,13 @@ fabric.properties
 # Editor-based Rest Client
 .idea/httpRequests
 
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
 # mkdocs website
 website/site/
 
