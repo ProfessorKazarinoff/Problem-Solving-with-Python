@@ -23,7 +23,7 @@ wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-MANIFEST
+.idea/httpRequestsMANIFEST
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -74,7 +74,7 @@ target/
 
 # pyenv
 .python-version
-
+.idea/httpRequests
 # celery beat schedule file
 celerybeat-schedule
 
@@ -163,3 +163,14 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+
+# mkdocs website
+website/site/
+
+#LaTeX output that isn't needed
+.synctex.gz
+.aux
+.log
+.out
+.pdf
+.toc
