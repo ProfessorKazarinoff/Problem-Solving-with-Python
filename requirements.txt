@@ -1,4 +1,6 @@
 matplotlib
 numpy
+pandas
 sympy
 pyserial
+jupyter
