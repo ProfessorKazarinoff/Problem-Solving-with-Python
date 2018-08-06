@@ -195,5 +195,5 @@ config.py
 *.pdf
 *.synctex.gz
 *.synctex.gz*
-/pdf/combined_files
-/pdf/images
+/pdf/combined_files/
+/pdf/images/
