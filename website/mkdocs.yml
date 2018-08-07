@@ -56,7 +56,6 @@ pages:
         - Introduction: 01-Orientation/01.00-Welcome.md
         - Why Python?: 01-Orientation/01.01-Why-Python.md
         - The Anaconda Distribution of Python: 01-Orientation/01.02-The-Anaconda-Distribution-of-Python.md
-        - What is Anaconda?: 01-Orientation/01.02-What-is-Anaconda.md
         - Installing Anaconda on Windows: 01-Orientation/01.03-Installing-Anaconda-on-Windows.md
         - Installing Anaconda on MacOS: 01-Orientation/01.04-Installing-Anaconda-on-MacOS.md
         - Installing Anaconda on Linux: 01-Orientation/01.05-Intalling-Anaconda-on-Linux.md
@@ -108,7 +107,7 @@ pages:
         - Installing Matplotlib: 06-Plotting-with-Matplotlib/06.02-Installing Matplotlib.md
         - Line Plots: 06-Plotting-with-Matplotlib/06.04-Line-Plots.md
         - Multi Line Plots: 06-Plotting-with-Matplotlib/06.05-Multi-Line-Plots.md
-        - Bar Plots: 06-Plotting-with-Matplotlib/06.06-Bar-Charts-and-Pie-Charts.md
+        - Bar Charts and Pie Charts: 06-Plotting-with-Matplotlib/06.06-Bar-Charts-and-Pie-Charts.md
         - Error Bars: 06-Plotting-with-Matplotlib/06.07-Error-Bars.md
         - Histograms: 06-Plotting-with-Matplotlib/06.08-Histograms.md
         - Box Plots and Violin Plots: 06-Plotting-with-Matplotlib/06.09-Box-Plots-and-Violin-Plots.md
@@ -182,5 +181,5 @@ pages:
         - Numpy Math Functions: 99-Appendix/99.04-Numpy-Math-Functions.md
         - Git and github.com: 99-Appendix/99.05-Git-and-github.md
         - LaTeX Math: 99-Appendix/99.06-LaTeX-Math.md
-        - Python for Undergraduate Engineers Book Construction: 99-Appendix/99.07-Python-for-Undergaduate-Engineers-Book-Construction.md
+        - Problem Solving with Python Book Construction: 99-Appendix/99.07-Problem-Solving-with-Python-Book-Construction.md
         - About the Author: 99-Appendix/99.10-About-the-Author.md
