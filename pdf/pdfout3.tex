@@ -352,33 +352,34 @@ without the gracious support of my wife and family. Students at Portland
 Community College continue to give me hope that the next generation of
 engineers will be a diverse group of team problem solvers.
 
-The Python Data Science Handbook and Machine Learning in Python as well
-as Reiman Equations in Python served as inspiration and examples of
-using Jupyter Notebooks to construct a book. The bookbook repository on
-github provided a starting point for the tooling to convert the book
-from Nupyter Notebooks to the web and into LaTeX for printing.
+\emph{The Python Data Science Handbook} and \emph{Machine Learning in
+Python} as well as \emph{Reiman Equations in Python} served as
+inspiration and examples of using Jupyter notebooks to construct a book.
+The \emph{bookbook} repository on github provided a starting point for
+the tooling used to convert this book from Jupyter notebooks into a
+website and into LaTeX for printing.
 
     \section{Supporting Materials}\label{supporting-materials}
 
     Supporting materials for this text can be found at the textbook website:
 
 \begin{quote}
-\url{https://github.io/ProblemSolvingwithPython}
+\url{https://problemsolvingwithpython.com}
 \end{quote}
 
 The textbook website contains all of the text in web format. Code
-examples and jupyter notebooks for the text can be found on the github
+examples and Jupyter notebooks for the text can be found in the github
 repository for the book:
 
 \begin{quote}
-\url{https:github.com/ProfessorKazarinoff/ProblemSolvingwithPython}
+\url{https:github.com/ProfessorKazarinoff/Problem-Solving-with-Python}
 \end{quote}
 
-Live notebooks, where the code examples found in the text can be run
-without installing any software, are available at:
+Live notebooks, where code examples found in the text can be run without
+installing any software, are available at:
 
 \begin{quote}
-https://gitform.ucberkley.edu/ProblemSolvingwithPython
+\url{https://mybinder.org/v2/gh/ProfessorKazarinoff/Problem-Solving-with-Python/master}
 \end{quote}
 
 If you are an instructor and using this book in a course with students-
@@ -402,7 +403,7 @@ conventions:
 
 Web address will be shown as:
 
-https://github.com/professorkazarinoff/ProblemSolvingwithPython
+https://github.com/professorkazarinoff/Problem-Solving-with-Python
 
     \subsection{Import terms and
 vocabulary}\label{import-terms-and-vocabulary}
@@ -424,7 +425,7 @@ the current directory.
 Module and Package names will be shown in \textbf{bold text}
 
 \textbf{Numpy} and \textbf{matplotlib} are two useful packages for
-engineers.
+problem solvers.
 
     \subsection{Inline code}\label{inline-code}
 
@@ -432,7 +433,7 @@ Inline code including variable names and extensions are shown in
 \lstinline!monospace font!
 
 To compare a variable use \lstinline!var == 'string'! and make sure to
-include \lstinline!==!, the doouble equals sign
+include \lstinline!==!, the doouble equals sign.
 
     \subsection{Separate code blocks}\label{separate-code-blocks}
 
@@ -447,10 +448,10 @@ import matplotlib.pyplot as plt
 
     \subsection{Anaconda Prompt Commands}\label{anaconda-prompt-commands}
 
-Commands typed into the terminal or \textbf{Anaconda Prompt} are shown
-in separate boxes which contain the prompt symbol \lstinline!>! before
-each line. Note the prompt \lstinline!>! should not be typed. It is
-included to indicate Anaconda Prompt, not a character for the user to
+Commands typed into the \textbf{Anaconda Prompt} are shown in separate
+boxes which contain the prompt symbol \lstinline!>! before each line.
+Note the prompt \lstinline!>! should not be typed. It is included to
+indicate \textbf{Anaconda Prompt}, not a character for the user to
 enter.
 
 \begin{lstlisting}
@@ -489,11 +490,11 @@ Problem Solving with Python
 
     \subsection{Jupyter Notebook cells}\label{jupyter-notebook-cells}
 
-Commands typed into \textbf{Jupyter Notebook} cells will appear with the
-label \lstinline!In [#]:!. Output from jupyter notebook cells are shown
-after the input cell. Only code in the input cells need to be typed.
-Output cell are be produced automatically by clicking the run button or
-typing \lstinline![shift]+[Enter]!
+Commands typed into Jupyter notebook cells will appear with the label
+\lstinline!In [#]:!. Output from Jupyter notebook cells are shown after
+the input cell. Only code in the input cells need to be typed. Output
+cell are be produced automatically by clicking the run button or typing
+\lstinline![shift]+[Enter]!
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{n}{A} \PY{o}{=} \PY{l+m+mi}{2}
@@ -508,10 +509,19 @@ typing \lstinline![shift]+[Enter]!
 
     \end{Verbatim}
 
+    \subsection{Keystrokes and Buttons}\label{keystrokes-and-buttons}
+
+Keystrokes directly entered by the keyboard or buttton that are
+indicated on programs or webpages will be shown inside square brackets
+and in \lstinline![monospaced font]!.
+
+In order to delete a line use the \lstinline![Backspace]! key. To exit
+the shell type \lstinline![shift]+[c]!
+
     \section{Errata}\label{errata}
 
     Errata including any typos, code errors and formatting inconsistencies
-can be submitted to
+can be submitted to:
 
 \begin{quote}
 errata@problemsolvingwithpython.com
@@ -525,7 +535,7 @@ Thank-you in advanced for helping improve this text for future readers.
     \section{Introduction}\label{introduction}
 
     Welcome to the world of problem solving with Python. This first
-Orientation chapter will help you get started by guiding you through the
+Orientation Chapter will help you get started by guiding you through the
 process of installing Python on your computer.
 
     \subsection{By the end of this chapter, you will be able
@@ -552,9 +562,9 @@ to:}\label{by-the-end-of-this-chapter-you-will-be-able-to}
 
     \section{Why Python?}\label{why-python}
 
-    You might be wondering ``Why should an engineer learn Python?'' There
-are other programming languages in the engineering world such as MATLAB,
-LabView, C++ and Java. What makes Python useful for engineers?
+    You might be wondering ``Why should I solve problems with Python?''
+There are other programming languages in the world such as MATLAB,
+LabView, C++ and Java. What makes Python useful for solving problems?
 
     \subsection{Python is a powerful programming
 language}\label{python-is-a-powerful-programming-language}
@@ -662,27 +672,16 @@ install.
 Python}\label{the-anaconda-distribution-of-python}
 
     I recommend problem solvers install the \emph{Anaconda Distribution of
-Python}
-
-    \section{What is Anaconda?}\label{what-is-anaconda}
-
-    You might be wondering ``OK, I know what Python is. It is computer
-programming language''
-
-``But what is Anaconda? How is it different than Python?''
-
-    \subsection{Anaconda is a Python
-Distribution}\label{anaconda-is-a-python-distribution}
-
-Anaconda is a Python Distribution. When you download Anaconda, you
-download a Python Interpreter plus a bunch of extra useful stuff.
+Python}. The following section details the differences between the
+Anaconda distribution of Python and the version of Python you can
+download from \href{https://python.org}{Python.org}
 
     \subsection{How is Anaconda different from
 Python?}\label{how-is-anaconda-different-from-python}
 
-When you download Python from Python.org you get the Python Interpreter,
-a little text editing program called IDLE and all of the Python Standard
-Library modules.
+When you download Python from Python.org, you get the Python
+Interpreter, a little text editing program called IDLE and all of the
+Python Standard Library modules.
 
 When you download Anaconda from Anaconda.com, you get a Python
 Interpreter, Anaconda Prompt (a command line program), Spyder (a code
@@ -756,19 +755,18 @@ with package management and virtual environments becomes more critical.
     \section{Installing Anaconda on
 Windows}\label{installing-anaconda-on-windows}
 
-    For undergraduate engineers, I recommend installing and using the
-Anaconda distribution of Python.
+    For problem solvers, I recommend installing and using the Anaconda
+Distribution of Python.
 
-    In this section, we will run through installing the Anaconda
-distribution of Python on Windows 10. I think the Anaconda distribution
-of Python is the the best option for undergraduate engineers who want to
-use Python. Anaconda is free (although the download is large which can
-take time) and can be installed on school or work computers where you
-don't have administrator access or the ability to install new programs.
-Anaconda comes bundled with over 100 packages pre-installed including
-\textbf{numpy}, \textbf{matplotlib} and \textbf{pandas}. These three
-packages are very useful for engineers and will be discussed in
-subsequent chapters.
+    This section details the installation of the Anaconda Distribution of
+Python on Windows 10. I think the Anaconda distribution of Python is the
+the best option for problemsolvers who want to use Python. Anaconda is
+free (although the download is large which can take time) and can be
+installed on school or work computers where you don't have administrator
+access or the ability to install new programs. Anaconda comes bundled
+with over 100 packages pre-installed including \textbf{numpy},
+\textbf{matplotlib} and \textbf{sympy}. These three packages are very
+useful for problem solvers and will be discussed in subsequent chapters.
 
 \subsubsection{Steps:}\label{steps}
 
@@ -813,17 +811,18 @@ Select Windows where the three opperating systems are listed.
 
     \subsubsection{3. Download}\label{download}
 
-Download the Python 3.6 distribution. Python 2.7 is legacy Python. For
-undergraduate engineers, select the Python 3.6 version.
+Download the most recent Python 3 release. At the time of writing, the
+most recent release was the Python 3.6 Version. Python 2.7 is legacy
+Python. For problem solvers, select the Python 3.6 version. If you are
+unsure if your computer is running a 64-bit or 32-bit version of
+Windows, select 64-bit as that is most common.
 
-\begin{figure}
-\centering
-\includegraphics{images/anaconda_python3_or_python2.png}
-\caption{anaconda select python 3.6}
-\end{figure}
+!Aanaconda select Python
+3.6{]}(images/anaconda\_python3\_or\_python2.png)
 
 You may be prompted to enter your email. You can still download Anaconda
-if you click \textbf{No Thanks} and don't enter your Work Email address.
+if you click \lstinline![No Thanks]! and don't enter your Work Email
+address.
 
 \begin{figure}
 \centering
@@ -831,8 +830,8 @@ if you click \textbf{No Thanks} and don't enter your Work Email address.
 \caption{anaconda}
 \end{figure}
 
-The download is quite large (over 500 MB) so it may take a while for the
-download to complete.
+The download is quite large (over 500 MB) so it may take a while to
+complete
 
 \begin{figure}
 \centering
@@ -897,15 +896,13 @@ screen and text that makes up the \textbf{Anaconda Prompt} doesn't look
 like much, but it is really helpful for an undergraduate engineer using
 Python.
 
-\begin{figure}
-\centering
-\includegraphics{images/anaconda_window.png}
-\caption{anaconda prompt}
-\end{figure}
-
 At the Anaconda prompt, type \lstinline!python!. This will start the
 Python interperater, also called the Python REPL (for Read Evaluate
 Print Loop).
+
+\begin{lstlisting}
+> python
+\end{lstlisting}
 
 \begin{figure}
 \centering
@@ -941,10 +938,6 @@ Prompt}.
 To close the \textbf{Anaconda Prompt}, you can either close the window
 with the mouse, or type \lstinline!exit!, no parenthesis necessary.
 
-    \subsubsection{Congratulations! You installed the Anaconda distribution
-on your Windows
-computer!}\label{congratulations-you-installed-the-anaconda-distribution-on-your-windows-computer}
-
 When you want to use the Python interperater again, just click the
 Windows Start button and select the \textbf{Anaconda Prompt} and type
 \lstinline!python!.
@@ -952,12 +945,13 @@ Windows Start button and select the \textbf{Anaconda Prompt} and type
     \section{Installing Anaconda on
 MacOS}\label{installing-anaconda-on-macos}
 
-    In this section, we will run through installing the Anaconda
-distribution of Python on MacOS. Most versions of MacOS come
-pre-installed with legacy Python (Version 2.7). You can confirm this
-legacy version of Python is installed by opening the MacOS
-\textbf{terminal}. To open the MacOS terminal use {[}command{]}+{[}Space
-Bar{]} and type \lstinline!terminal! in the Spotlight Search bar.
+    This section details the installation of the Anaconda Distribution of
+Python on MacOS. Most versions of MacOS come pre-installed with legacy
+Python (Version 2.7). You can confirm this legacy version of Python is
+installed by opening and running a command at the MacOS
+\textbf{terminal}. To open the MacOS terminal use
+\lstinline![command]+[Space Bar]! and type \lstinline!terminal! in the
+Spotlight Search bar.
 
 In the MacOS Terminal type (note: the dollar sign \lstinline!$! is used
 to indicate the terminal prompt. The dollar sign \lstinline!$! does not
@@ -970,15 +964,13 @@ $ python
 You will most likely see version 2.7 is installed. An issue for MacOS
 users is that the installed system version of Python has a set of
 permissions that will not always allow Python to run and may not allow
-Python to install external packages. Therefore, I recommend the
-\textbf{Anaconda} distribution of Python is installed in addition to the
-system version of Python on MacOS. You will be able to run Python code
-using the \textbf{Anaconda} distribution of Python, and you will be able
-to install external packages on the\textbf{Anaconda} distribution of
-Python.
+Python to install external packages. Therefore, I recommend the Anaconda
+Distribution of Python is installed along side the system version of
+Python that comes with MacOS. You will be able to run Python code using
+the Anaconda Distribution of Python, and you will be able to install
+external packages on the Anaconda Distribution of Python.
 
-To install the \textbf{Anaconda} distribution of Python follow the steps
-below:
+To install the Anaconda Distribution of Python follow the steps below:
 
 \subsubsection{Steps:}\label{steps}
 
@@ -988,13 +980,13 @@ below:
   Visit
   \href{https://www.anaconda.com/download/}{Anaconda.com/downloads}
 \item
-  Select MacOS and Download the .pkg installer
+  Select MacOS and Download the \textbf{\emph{.pkg}} installer
 \item
-  Open the .pkg installer
+  Open the \textbf{\emph{.pkg}} installer
 \item
   Follow the installation instructions
 \item
-  Source your .bash-rc file
+  Source your \textbf{\emph{.bash-rc}} file
 \item
   Open a terminal and type \lstinline!python! and run some code.
 \end{enumerate}
@@ -1013,24 +1005,25 @@ The Anaconda Downloads Page will look something like this:
 \caption{anaconda download page}
 \end{figure}
 
-    \subsubsection{2. Select MacOS and download the .pkg
-installer}\label{select-macos-and-download-the-.pkg-installer}
+    \subsubsection{\texorpdfstring{2. Select MacOS and download the
+\textbf{\emph{.pkg}}
+installer}{2. Select MacOS and download the .pkg installer}}\label{select-macos-and-download-the-.pkg-installer}
 
-In the opperating systems box, select {[}MacOS{]}. Then download the
-most recent Python 3 distribution (at the time of this writing the most
-recent version is Python 3.6) graphical installer by clicking the
-Download link. Python 2.7 is legacy Python. For undergraduate engineers,
-select the most recent Python 3 version.
+In the operating systems box, select \lstinline![MacOS]!. Then download
+the most recent Python 3 distribution (at the time of this writing the
+most recent version is Python 3.6) graphical installer by clicking the
+Download link. Python 2.7 is legacy Python. For problem solvers, select
+the most recent Python 3 version.
 
 \begin{figure}
 \centering
 \includegraphics{images/anaconda_download_mac.png}
-\caption{Anaconda select Python 3.6}
+\caption{Anaconda Select Python 3.6}
 \end{figure}
 
 You may be prompted to enter your email. You can still download Anaconda
-if you click \textbf{No Thanks} or {[}x{]} and don't enter your Work
-Email address.
+if you click \lstinline![No Thanks]! or \lstinline![x]! and don't enter
+your Work Email address.
 
 \begin{figure}
 \centering
@@ -1038,8 +1031,8 @@ Email address.
 \caption{Anaconda ask for email}
 \end{figure}
 
-    \subsubsection{3. Open the .pkg
-installer}\label{open-the-.pkg-installer}
+    \subsubsection{3. Open the **\_.pkg**
+installer}\label{open-the-_.pkg-installer}
 
 Using the MacOS finder, navigate to the downloads folder and double
 click the \textbf{\emph{.pkg}} installer file you just downloaded. It
@@ -1097,53 +1090,242 @@ command.
 Linux}\label{installing-anaconda-on-linux}
 
     This section details the installation of the Anaconda distribution of
-Python on Linux. In particular these instructions are for Ubuntu 16.04,
-but the instructions should work for other Debian-based Linux
-distributions as well.
+Python on Linux, specifically Ubuntu 16.04, but the instructions should
+work for other Debian-based Linux distributions as well.
+
+Ubuntu 16.04 comes pre-installed with Python (Version 3.3) and legacy
+Python (Version 2.7). You can confirm the legacy version of Python is
+installed by opening up a terminal.
+
+In the terminal type:
+
+\begin{lstlisting}
+$ python
+\end{lstlisting}
+
+You will most likely see version 2.7 is installed. If you enter:
+
+\begin{lstlisting}
+$ python3
+\end{lstlisting}
+
+You will most likely see version 3.3 is installed. You can use this
+version of Python, but each time a new package needs to be downloaded,
+the \lstinline!$ pip3 install! command must be used.
+
+Install the Anaconda distribution of Python to follow the examples in
+the book without the need to install additional third-party packages.
+
+    \subsubsection{Steps:}\label{steps}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Visit
+  \href{https://www.anaconda.com/download/}{Anaconda.com/downloads}
+\item
+  Select Linux
+\item
+  Copy the bash (.sh file) installer link
+\item
+  Use \lstinline!wget! to download the bash installer
+\item
+  Run the bash script to install \textbf{Anaconda3}
+\item
+  \lstinline!source! the \lstinline!.bash-rc! file to add Anaconda to
+  your \lstinline!PATH!
+\item
+  Start the Python REPL
+\end{enumerate}
+
+    \subsection{1. Visit the Anaconda downloads
+page}\label{visit-the-anaconda-downloads-page}
+
+Go to the following link:
+\href{https://www.anaconda.com/download/}{Anaconda.com/downloads}
+
+The Anaconda Downloads Page will look something like this:
+
+\begin{figure}
+\centering
+\includegraphics{images/anaconda_download_page.png}
+\caption{anaconda download page}
+\end{figure}
+
+    \subsection{2. Select Linux}\label{select-linux}
+
+On the downloads page, select the Linux opperating system
+
+\begin{figure}
+\centering
+\includegraphics{images/Anaconda_download_linux.png}
+\caption{anaconda\_install\_linux}
+\end{figure}
+
+    \subsection{3. Copy the bash (.sh file) installer
+link}\label{copy-the-bash-.sh-file-installer-link}
+
+In the \textbf{Python 3.6 Version* } box, right-click on the
+{[}64-Bit(x86) Installer{]} link. Select {[}copy link address{]}.
+
+\begin{figure}
+\centering
+\includegraphics{images/anaconda_install_linux_copy_link_address.png}
+\caption{Anaconda installation on Linux copy link address}
+\end{figure}
+
+    \subsection{\texorpdfstring{4. Use \texttt{wget} to download the bash
+installer}{4. Use wget to download the bash installer}}\label{use-wget-to-download-the-bash-installer}
+
+Now that the bash installer (.sh file) link is stored on the clipboard,
+use \lstinline!wget! to download the installer script. In a terminal,
+\lstinline!cd! into the home directory and make a new directory called
+\lstinline!tmp!. \lstinline!cd! into \lstinline!tmp! and use
+\lstinline!wget! to download the installer. Although the installer is a
+bash script, it is still quite large and the download will not be
+immediate.
+
+\begin{lstlisting}
+$ cd ~
+$ mkdir tmp
+$ cd tmp
+$ wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh 
+\end{lstlisting}
+
+    \subsection{\texorpdfstring{5. Run the bash script to install
+\textbf{Anaconda3}}{5. Run the bash script to install Anaconda3}}\label{run-the-bash-script-to-install-anaconda3}
+
+With the bash installer script downloaded, run the \textbf{\emph{.sh}}
+script to install \textbf{Anaconda3}. Ensure you are in the directory
+where the installer script downloaded:
+
+\begin{lstlisting}
+$ ls
+Anaconda3-5.2.0-Linux-x86_64.sh
+\end{lstlisting}
+
+Run the installer script with bash
+
+\begin{lstlisting}
+$ bash Anaconda3-5.2.0-Linux-x86_64.sh
+\end{lstlisting}
+
+Accept the Licence Agreement and allow Anaconda to be added to your
+\lstinline!PATH!. By adding Anaconda to your \lstinline!PATH! the
+Anaconda distribution of Python will be called when you type
+\lstinline!$ python!.
+
+    \subsubsection{\texorpdfstring{6. \texttt{source} the \texttt{.bash-rc}
+file to add Anaconda to your
+\texttt{PATH}}{6. source the .bash-rc file to add Anaconda to your PATH}}\label{source-the-.bash-rc-file-to-add-anaconda-to-your-path}
+
+Now that \textbf{Anaconda3} is installed and \textbf{Anaconda3} is added
+to our \lstinline!PATH!, \lstinline!source! the \lstinline!.bashrc! file
+to load the new \lstinline!PATH! environmnet variable into the current
+terminal session. Note the \lstinline!.bashrc! file is in the home
+directory. You can see it with \lstinline!$ ls -a!.
+
+\begin{lstlisting}
+$ cd ~
+$ source .bashrc
+\end{lstlisting}
+
+    \subsection{7. Start the Python REPL}\label{start-the-python-repl}
+
+To verify the installation is complete, open Python from the command
+line:
+
+\begin{lstlisting}
+$ python
+
+Python 3.6.5 |Anaconda, Inc.| (default, Mar 29 2018, 18:21:58)
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+\end{lstlisting}
+
+If you see Python 3.6 from Anaconda listed, your installation is
+complete. To exit the Python REPL, type:
+
+\begin{lstlisting}
+>>> exit()
+\end{lstlisting}
 
     \section{Installing Python from
 Python.org}\label{installing-python-from-python.org}
 
-    Below are the recommended ways to install a new version of Python on the
-three major operating systems: Windows, Mac OSx and Linux. This book is
-based on Python version 3.6. Some of the problems may not work properly
-on legacy Python (version 2.7). I recommend using the Anaconda
-distribution of Pytho on Windows and MacOSX. The installation of
-Anaconda is detailed in the next section.
+    Below are the recommended ways to install a new version of Python from
+Python.org on the three major operating systems: Windows, MacOS and
+Linux. This book is based on Python version 3.6. Some of the problems
+may not work properly on legacy Python (version 2.7). I recommend using
+the Anaconda Distribution of Python on Windows and MacOSX. The
+installation of Anaconda was detailed in previous sections.
 
-\subsection{Installing Python on
+    \subsection{Installing Python on
 Windows}\label{installing-python-on-windows}
 
-Go to {[}https://Python.org/downloads){[}https://Python.org/downloads{]}
-to download the latest release. Make sure to select the box {[}add
-Python to my path{]} during the installation.
+Go to \url{https://www.python.org/downloads/} and download the latest
+release. Make sure to select the box {[}add Python to my path{]}.
 
-{[}image of Python.org{]}
+\begin{figure}
+\centering
+\includegraphics{images/python_dot_org_windows_download.PNG}
+\caption{Python.org download for Windows}
+\end{figure}
 
-\subsection{Installing Python on Mac
+    \subsection{Installing Python on Mac
 OSX}\label{installing-python-on-mac-osx}
 
-Go to \url{https://anaconda.com} and download the latest release.
+Go to \url{https://www.python.org/downloads/mac-osx/} and download the
+latest release.
 
-{[}image of anaconda.com{]}
+\begin{figure}
+\centering
+\includegraphics{images/python_dot_org_macos_download.PNG}
+\caption{Python.org download for MacOS}
+\end{figure}
 
-\subsection{Installing Python on
+    \subsection{Installing Python on
 Linux}\label{installing-python-on-linux}
 
-Go to open a terminal and enter \lstinline!$ python! to see if a version
-of Python is already installed on the system. If the Python version is
-2.7 or below, download the newest release in the apt repositories with
-and download the latest release.
+Open a terminal and enter \lstinline!$ python! to see if a version of
+Python is already installed on the system. If the Python version is 2.7
+or below, download the newest release in the apt repositories.
 
 \begin{lstlisting}
-$ sudo apt-get Python
+$ sudo apt-get python3.6
 \end{lstlisting}
+
+After installation, you will need to append your PATH environment
+variable to ensure the newly installed Python3.6 version is the version
+of Python called when using the terminal.
 
     \section{Summary}\label{summary}
 
-    Section summary
+    In this chapter you learned how to install the \textbf{Anaconda}
+distribution of Python on your computer.
 
-    Vocabulary and Key Concepts
+    \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
+
+    Anaconda
+
+Download
+
+Install
+
+Python
+
+Operating System
+
+Windows
+
+MacOS
+
+Linux
+
+Terminal
+
+PATH
 
     \section{Review Questions}\label{review-questions}
 
@@ -3681,7 +3863,22 @@ class\tabularnewline
 
     \section{What is Matplotlib?}\label{what-is-matplotlib}
 
-    Matplot lib is a popular python package used to plot data.
+    Matplotlib is a popular Python package used to plot data. Matplotlib
+started as a project in the early 2000's partly to to use Python to
+visualize the electonic signals in the brain of epilepsy patients.
+Matplotlib's creator, John D. Hunter was a neurobilogist. He was looking
+for way to replicate MATLAB's plotting capability with Python. In
+addition to starting matplotlib, Dr.~Hunter was part of the founding
+group that created Numfocus. The Numfocus group oversees some major
+Python projects including \textbf{matplotlib}, \textbf{numpy},
+\textbf{pandas} and \textbf{jupyter}.
+
+    \subsection{Why use Matplotlib?}\label{why-use-matplotlib}
+
+    \textbf{Matplotlib} is useful for creating static 2D plots, the kind of
+plots included in scientific publications and presentations. Almost any
+plot created in Micrsoft Excel can be created with \textbf{matplotlib}.
+\textbf{Matplotlib} can also be used to make 3D plots and animations.
 
     \section{Installing Matplotlib}\label{installing-matplotlib}
 
@@ -3768,7 +3965,7 @@ notebook output cells.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_267_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_278_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4084,7 +4281,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_279_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_290_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4139,44 +4336,28 @@ single axis object. We'll call the figure object \lstinline!fig! and the
 axis object \lstinline!ax!. Note these two outputs of the
 \lstinline!plt.subplots()! function are separated by a comma.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-\end{Verbatim}
+We have a figure object and axis object, but both of these objects are
+without attributes. This produces a blank plot. We can add elements to
+the axis object to build a plot. Let's create three \textbf{numpy}
+arrays to add to our axis object.
 
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_285_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    We have a figure object and axis object, but the axis object is blank.
-This produces a blank plot. We can add elements to the axis object to
-build a plot. Let's create three \textbf{numpy} arrays to add to our
-axis object.
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
-        \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-        \PY{n}{z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)}
-\end{Verbatim}
-
-
-    The \textbf{numpy} arrays \lstinline!x!, \lstinline!y!, and
-\lstinline!z! can be added to our axis object \lstinline!ax!. We add a
+The \textbf{numpy} arrays \lstinline!x!, \lstinline!y!, and
+\lstinline!z! can be added to to axis object \lstinline!ax!. We add a
 plot attribute (a line) to our axis object \lstinline!ax! using the
 object oriented structure \lstinline!<object>.<attribute>!. In this
 case, \lstinline!ax! is the object and \lstinline!plot! is the
 attribute. The \lstinline!plt.show()! line shows the plot on the screen.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
+        
+        \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
+        \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        \PY{n}{z} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+        
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
         
         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}
         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{z}\PY{p}{)}
@@ -4186,7 +4367,7 @@ attribute. The \lstinline!plt.show()! line shows the plot on the screen.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_289_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_295_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4199,7 +4380,7 @@ These daughter objects in turn have methods such as
 \lstinline!ax.yaxis.set_label_text()!.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
         
         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}
         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{z}\PY{p}{)}
@@ -4216,42 +4397,42 @@ These daughter objects in turn have methods such as
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_291_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_297_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
-    \section{Bar Plots}\label{bar-plots}
+    \section{Bar Charts and Pie Charts}\label{bar-charts-and-pie-charts}
 
-    Bar plots in \textbf{matplotlib} can be created using
-\textbf{matplotlib's} \textbf{pyplot} library
+    Bar charts and pie charts can be created using \textbf{matplotlib's}
+\textbf{pyplot} library.
 
-    To contstruct a bar plot using \textbf{matplotlib}, first import
+    \subsection{Bar Charts}\label{bar-charts}
+
+    To construct a bar plot using \textbf{matplotlib}, first import
 \textbf{matplotlib's} \textbf{pyplot} library. The common alias to use
-for \lstinline!matplotlib.pyplot! is \lstinline!plt!. If using a jupyter
-notebook include the line \lstinline!%matplotlib inline!
+for \lstinline!matplotlib.pyplot! is \lstinline!plt!. If using a Jupiter
+notebook include the line \lstinline!%matplotlib inline!.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
 \end{Verbatim}
 
 
-    \subsection{Bar Charts}\label{bar-charts}
+    We need some data to plot to create a bar chart. In this case, the data
+is from a set of \textbf{coefficient of thermal expansion} lab
+measurements. The \textbf{coefficient of thermal expansion} (CTE) is a
+material property that describes how much a material will change in
+length as a result of a change in temperature. Different materials have
+different CTE's and we can use the lab data to determine which material
+will expand the most if all three are heated up to the same temperature
+(assuming all three start at the same temperature).
 
-    To create a bar chart, we need some data. In this case the data is from
-a set of \textbf{coefficient of thermal expansion} lab measurements. The
-\textbf{coefficient of thermal expansion} (CTE) is a material property
-that describes how much a material with change in length as a result of
-a change in temperature. Different materials have different CTE's and we
-can use the lab data to determine which material will expand the most if
-all three are heated up to the same temperature (assuming all three
-start at the same temperature).
-
-First we need to input the data as \textbf{numpy} arrays:
+First, we need to input the data as \textbf{numpy} arrays:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{} Data}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Data}
         \PY{n}{aluminum} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}
             \PY{l+m+mf}{6.4e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{3.01e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{2.36e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{3.0e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{7.0e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{4.5e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{3.8e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{4.2e\PYZhy{}5}\PY{p}{,} \PY{l+m+mf}{2.62e\PYZhy{}5}\PY{p}{,}
             \PY{l+m+mf}{3.6e\PYZhy{}5}
@@ -4267,121 +4448,126 @@ First we need to input the data as \textbf{numpy} arrays:
 \end{Verbatim}
 
 
-    Next we will calculate the average or \textbf{mean} using
-\textbf{numpy's} \lstinline!np.mean()! function.
+    Next, calculate the average or \textbf{mean} using \textbf{numpy's}
+\lstinline!np.mean()! function.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{c+c1}{\PYZsh{} Calculate the average}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{c+c1}{\PYZsh{} Calculate the average}
         \PY{n}{aluminum\PYZus{}mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{aluminum}\PY{p}{)}
         \PY{n}{copper\PYZus{}mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{copper}\PY{p}{)}
         \PY{n}{steel\PYZus{}mean} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{steel}\PY{p}{)}
 \end{Verbatim}
 
 
-    Then we will build a list of materials and CTE's
+    Then build a list of materials and CTE's:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{c+c1}{\PYZsh{} Create Arrays for the plot}
-         \PY{n}{materials} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Aluminum}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Copper}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Steel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-         \PY{n}{x\PYZus{}pos} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{materials}\PY{p}{)}\PY{p}{)}
-         \PY{n}{CTEs} \PY{o}{=} \PY{p}{[}\PY{n}{aluminum\PYZus{}mean}\PY{p}{,} \PY{n}{copper\PYZus{}mean}\PY{p}{,} \PY{n}{steel\PYZus{}mean}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{} Create Arrays for the plot}
+        \PY{n}{materials} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Aluminum}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Copper}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Steel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{x\PYZus{}pos} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{materials}\PY{p}{)}\PY{p}{)}
+        \PY{n}{CTEs} \PY{o}{=} \PY{p}{[}\PY{n}{aluminum\PYZus{}mean}\PY{p}{,} \PY{n}{copper\PYZus{}mean}\PY{p}{,} \PY{n}{steel\PYZus{}mean}\PY{p}{]}
 \end{Verbatim}
 
 
-    With the \lstinline!materials!, \lstinline!x_pos!, and \lstinline!CTEs!
-(the labels below the bars) defined, the plot can be built using the
-\lstinline!ax.bar()! method. The \lstinline!ax.bar()! method requires
-two positional arguments, a list of bar positions and a list of bar
-heights. In our case \lstinline!x_pos! is the list of positions and
-\lstinline!CTEs! is the list of bar heights.
+    The \lstinline!materials!, \lstinline!x_pos!, and \lstinline!CTEs! (the
+labels below the bars) are defined, now the bar chart is created using
+the \lstinline!ax.bar()! method. The \lstinline!ax.bar()! method
+requires two positional arguments, a list of bar positions and a list of
+bar heights. In this bar chart, \lstinline!x_pos! is the list of bar
+positions and \lstinline!CTEs! is the list of bar heights.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{c+c1}{\PYZsh{} Build the plot}
-         \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x\PYZus{}pos}\PY{p}{,} \PY{n}{CTEs}\PY{p}{,} \PY{n}{align}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coefficient of Thermal Expansion (\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{degree C\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}1\PYZcb{}\PYZdl{})}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticks}\PY{p}{(}\PY{n}{x\PYZus{}pos}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{materials}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coefficent of Thermal Expansion (CTE) of Three Metals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}
-         
-         \PY{c+c1}{\PYZsh{} Save the figure and show}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bar\PYZus{}plot.png}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{c+c1}{\PYZsh{} Build the plot}
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x\PYZus{}pos}\PY{p}{,} \PY{n}{CTEs}\PY{p}{,} \PY{n}{align}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coefficient of Thermal Expansion (\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{degree C\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}1\PYZcb{}\PYZdl{})}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticks}\PY{p}{(}\PY{n}{x\PYZus{}pos}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{materials}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coefficent of Thermal Expansion (CTE) of Three Metals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}
+        
+        \PY{c+c1}{\PYZsh{} Save the figure and show}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{tight\PYZus{}layout}\PY{p}{(}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bar\PYZus{}plot.png}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_304_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_310_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \subsection{Pie Charts}\label{pie-charts}
 
-    Pie charts can be constructed with \textbf{matplotlibs}
+    Pie charts can be constructed with \textbf{matplotlib's}
 \lstinline!ax.pie()! method. The one required positional argument is a
 list of pie piece sizes. Optional keyword arguments include a list of
-piece piece lables (\lstinline!label=!) and if the percentages will be
-auto calculated and in what format (\lstinline!autopct=!).
+piece labels (\lstinline!label=!) and if the percentages will be
+auto-calculated and in what format (\lstinline!autopct=!).
 
 The data we will plot is from the number of students that choose
 different engineering majors each year.
 
-Each year there are approximately:
+The following table lists the approximate numbers of engineering
+graduates in different engineering disciplines:
 
-15,000 civil engineering graduates
-
-50,000 electrical engineering graduates
-
-45,000 mechanical engineering graduates
-
-10,000 chemical engineering graduates
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+discipline & number of graduates\tabularnewline
+\midrule
+\endhead
+civil engineering & 15,000 graduates\tabularnewline
+electrical engineering & 50,000 graduates\tabularnewline
+mechanical engineering & 45,000 graduates\tabularnewline
+chemical engineering & 10,000 graduates\tabularnewline
+\bottomrule
+\end{longtable}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{c+c1}{\PYZsh{} Pie chart, where the slices will be ordered and plotted counter\PYZhy{}clockwise:}
-         \PY{n}{labels} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Electrical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Chemical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-         \PY{n}{sizes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{]}
-         
-         \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{pie}\PY{p}{(}\PY{n}{sizes}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{n}{labels}\PY{p}{,} \PY{n}{autopct}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}1.1f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{equal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} Equal aspect ratio ensures that pie is drawn as a circle.}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineering Diciplines}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{c+c1}{\PYZsh{} Pie chart, where the slices will be ordered and plotted counter\PYZhy{}clockwise:}
+        \PY{n}{labels} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Electrical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Chemical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{sizes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{50}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{]}
+        
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{pie}\PY{p}{(}\PY{n}{sizes}\PY{p}{,} \PY{n}{labels}\PY{o}{=}\PY{n}{labels}\PY{p}{,} \PY{n}{autopct}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}1.1f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{equal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} Equal aspect ratio ensures that pie is drawn as a circle.}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineering Diciplines}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_307_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_313_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}15}]:} \PY{c+c1}{\PYZsh{} Pie chart, where the slices will be ordered and plotted counter\PYZhy{}clockwise}
-         \PY{n}{labels} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Electrical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Chemical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-         \PY{n}{sizes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{]}
-         \PY{n}{explode} \PY{o}{=} \PY{p}{(}
-             \PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mf}{0.4}
-         \PY{p}{)}  \PY{c+c1}{\PYZsh{} \PYZdq{}explode, and highlight 4th entry \PYZsq{}Logs\PYZsq{} by offsetting it a greater amount\PYZdq{}}
-         
-         \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{pie}\PY{p}{(}
-             \PY{n}{sizes}\PY{p}{,}
-             \PY{n}{explode}\PY{o}{=}\PY{n}{explode}\PY{p}{,}
-             \PY{n}{labels}\PY{o}{=}\PY{n}{labels}\PY{p}{,}
-             \PY{n}{autopct}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}1.1f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-             \PY{n}{shadow}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,}
-             \PY{n}{startangle}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{equal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} Equal aspect ratio ensures that pie is drawn as a circle.}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineering Diciplines}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{} Pie chart, where the slices will be ordered and plotted counter\PYZhy{}clockwise}
+        \PY{n}{labels} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Electrical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Chemical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{sizes} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{45}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{]}
+        \PY{n}{explode} \PY{o}{=} \PY{p}{(}
+            \PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mf}{0.4}
+        \PY{p}{)}  \PY{c+c1}{\PYZsh{} \PYZdq{}explode, and highlight 4th entry \PYZsq{}Logs\PYZsq{} by offsetting it a greater amount\PYZdq{}}
+        
+        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{pie}\PY{p}{(}
+            \PY{n}{sizes}\PY{p}{,}
+            \PY{n}{explode}\PY{o}{=}\PY{n}{explode}\PY{p}{,}
+            \PY{n}{labels}\PY{o}{=}\PY{n}{labels}\PY{p}{,}
+            \PY{n}{autopct}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}1.1f}\PY{l+s+si}{\PYZpc{}\PYZpc{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+            \PY{n}{shadow}\PY{o}{=}\PY{k+kc}{True}\PY{p}{,}
+            \PY{n}{startangle}\PY{o}{=}\PY{l+m+mi}{90}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{axis}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{equal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}  \PY{c+c1}{\PYZsh{} Equal aspect ratio ensures that pie is drawn as a circle.}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineering Diciplines}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_308_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_314_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4389,6 +4575,8 @@ Each year there are approximately:
 
     Error bars can be created with \textbf{matplotlib} and applied to both
 line plots and bar plots.
+
+    \subsection{Error bars in bar plots}\label{error-bars-in-bar-plots}
 
     To construct a bar plot with error bars, first import
 \textbf{matplotlib}. If using a jupyter notebook, include the line
@@ -4400,6 +4588,16 @@ line plots and bar plots.
         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
 \end{Verbatim}
 
+
+    We will apply error bars to the Coefficient of Thermal Expansion data
+used in a previous section. First the data is stored in three
+\textbf{numpy} arrays. Then the mean or average of each array is
+computed. The mean of each array will be the height of the bars. Next
+the standard deviation of each array is calculated. The standard
+deviation will be height of the error bars. Finally a couple lists are
+created that correspond to the bar labels (\lstinline!labels!), the bar
+positions (\lstinline!x_pos!), the bar heights (\lstinline!CTEs!) and
+the error bar heights (\lstinline!error!).
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} Data}
@@ -4418,8 +4616,8 @@ line plots and bar plots.
         \PY{n}{steel\PYZus{}std} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{std}\PY{p}{(}\PY{n}{steel}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} Create Arrays for the plot}
-        \PY{n}{materials} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Aluminum}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Copper}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Steel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-        \PY{n}{x\PYZus{}pos} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{materials}\PY{p}{)}\PY{p}{)}
+        \PY{n}{labels} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Aluminum}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Copper}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Steel}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{n}{x\PYZus{}pos} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{labels}\PY{p}{)}\PY{p}{)}
         \PY{n}{CTEs} \PY{o}{=} \PY{p}{[}\PY{n}{aluminum\PYZus{}mean}\PY{p}{,} \PY{n}{copper\PYZus{}mean}\PY{p}{,} \PY{n}{steel\PYZus{}mean}\PY{p}{]}
         \PY{n}{error} \PY{o}{=} \PY{p}{[}\PY{n}{aluminum\PYZus{}std}\PY{p}{,} \PY{n}{copper\PYZus{}std}\PY{p}{,} \PY{n}{steel\PYZus{}std}\PY{p}{]}
 \end{Verbatim}
@@ -4431,7 +4629,7 @@ line plots and bar plots.
         \PY{n}{ax}\PY{o}{.}\PY{n}{bar}\PY{p}{(}\PY{n}{x\PYZus{}pos}\PY{p}{,} \PY{n}{CTEs}\PY{p}{,} \PY{n}{yerr}\PY{o}{=}\PY{n}{error}\PY{p}{,} \PY{n}{align}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{ecolor}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{capsize}\PY{o}{=}\PY{l+m+mi}{10}\PY{p}{)}
         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coefficient of Thermal Expansion (\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{degree C\PYZca{}}\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{\PYZhy{}1\PYZcb{}\PYZdl{})}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticks}\PY{p}{(}\PY{n}{x\PYZus{}pos}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{materials}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xticklabels}\PY{p}{(}\PY{n}{labels}\PY{p}{)}
         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Coefficent of Thermal Expansion (CTE) of Three Metals}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{n}{ax}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}
         
@@ -4443,7 +4641,7 @@ line plots and bar plots.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_314_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_322_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4471,7 +4669,7 @@ line plots and bar plots.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_318_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_326_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4479,8 +4677,8 @@ line plots and bar plots.
 
     Historgram plots can be created with \textbf{matplotlib}
 
-    First import matplotlib. If using a jupyter notebook include the line
-\lstinline!%matplotlib inline!
+    To create a histogram, first import \textbf{matplotlib}. If using a
+Jupyter notebook, include the line \lstinline!%matplotlib inline!
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
@@ -4489,8 +4687,26 @@ line plots and bar plots.
 \end{Verbatim}
 
 
+    We'll use \textbf{numpy's} \lstinline!np.random.normal()! function to
+create an array of random numbers with a normal distribution. The three
+arguments passed to the \lstinline!np.random.normal()! function are
+\lstinline!mu! (the mean), \lstinline!sigma! (the standard deviation)
+and \lstinline!size=! (the size of the array).
+
+\textbf{Matplotlib's} \lstinline!ax.hist()! method is used to build the
+histogram. The first argument passed to \lstinline!ax.hist()!
+corresponds to the array of values to plot (\lstinline!x!). The second
+argument corresponds to the number of bins, or number of bars on the
+histogram (\lstinline!20!).
+
+The line \lstinline!plt.style.use('fivethirtyeight')! is included to
+style the plot to look like plots on
+\href{https://fivethirtyeight.com}{fivethirtyeight.com}.
+\textbf{Matplotlib} styles will be addressed in a subsequent section of
+this chapter.
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fivethirtyeight}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         
@@ -4511,17 +4727,18 @@ line plots and bar plots.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_323_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_332_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \section{Box Plots and Violin Plots}\label{box-plots-and-violin-plots}
 
-    A couple other useful types of statistical plots are box plots and
-violin plots
+    A couple other useful statistical plots are box plots and violin plots.
 
-    First import matplotlib. If using a jupyter notebook include the line
-\lstinline!%matplotlib inline!
+    \subsection{Box Plots}\label{box-plots}
+
+    To create a box plot, first import \textbf{matplotlib}. If using a
+jupyter notebook include the line \lstinline!%matplotlib inline!
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
@@ -4531,7 +4748,7 @@ violin plots
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} generate some random data}
         \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{normal}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{std}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)} \PY{k}{for} \PY{n}{std} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
@@ -4555,15 +4772,22 @@ violin plots
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_328_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_338_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
+    \subsection{Violin Plots}\label{violin-plots}
+
+    Violin plots are a type of statistical plot. A violin plot is similar to
+a box plot, but it shows some additional information. The sides of the
+``violins'' in a violin plot corresponds to a kernel density estimation
+(kind of like a histogram) flipped vertically.
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} generate some random test data}
-        \PY{n}{all\PYZus{}data} \PY{o}{=} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{normal}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{std}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)} \PY{k}{for} \PY{n}{std} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
+        \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{normal}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{std}\PY{p}{,} \PY{l+m+mi}{100}\PY{p}{)} \PY{k}{for} \PY{n}{std} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{]}
         
         \PY{c+c1}{\PYZsh{} plot violin plot}
         \PY{n}{ax}\PY{o}{.}\PY{n}{violinplot}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{showmeans}\PY{o}{=}\PY{k+kc}{False}\PY{p}{,} \PY{n}{showmedians}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
@@ -4583,7 +4807,7 @@ violin plots
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_329_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_341_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4618,17 +4842,17 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_333_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_345_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \section{Plot annotations}\label{plot-annotations}
 
-    Sometimes it is useful for engineers to annotate plots. Text can be
-included on a plot to indicate a point of intrest.
+    Sometimes it is useful for problem solvers to annotate plots. Text can
+be included on a plot to indicate a point of interest.
 
-    First import \textbf{matplotlib}. If using a jupyter notebook include
-the line \lstinline!%matplotlib inline!
+    To create a plot with annottions, first import \textbf{matplotlib}. If
+using a Jupyter notebook include the line \lstinline!%matplotlib inline!
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
@@ -4640,51 +4864,51 @@ the line \lstinline!%matplotlib inline!
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}2}]:} \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
         
-        \PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{l+m+mf}{5.0}\PY{p}{,} \PY{l+m+mf}{0.01}\PY{p}{)}
-        \PY{n}{s} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{*}\PY{n}{t}\PY{p}{)}
+        
+        \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mf}{0.01}\PY{p}{)}
+        \PY{n}{y} \PY{o}{=} \PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}
         
         \PY{c+c1}{\PYZsh{} Plot a line and add some simple annotations}
-        \PY{n}{line}\PY{p}{,} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{t}\PY{p}{,} \PY{n}{s}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure pixels}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}\PY{p}{,} \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure pixels}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure points}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{80}\PY{p}{,} \PY{l+m+mi}{80}\PY{p}{)}\PY{p}{,} \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure points}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure fraction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{o}{.}\PY{l+m+mi}{025}\PY{p}{,} \PY{o}{.}\PY{l+m+mi}{975}\PY{p}{)}\PY{p}{,} \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure fraction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{horizontalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{verticalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{top}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{fontsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{function minium }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{ relative to data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,}
+                    \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,}
+                    \PY{n}{arrowprops}\PY{o}{=}
+                        \PY{n+nb}{dict}\PY{p}{(}\PY{n}{facecolor}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{shrink}\PY{o}{=}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{,}
+                        \PY{n}{horizontalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                        \PY{n}{verticalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{top}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         
-        \PY{c+c1}{\PYZsh{} The following examples show off how these arrows are drawn.}
+        \PY{n}{bbox\PYZus{}props} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{boxstyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{round,pad=0.5}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ec}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{k}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
         
-        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{point offset from data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{25}\PY{p}{)}\PY{p}{,} \PY{n}{textcoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{offset points}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{arrowprops}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}\PY{n}{facecolor}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{shrink}\PY{o}{=}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{,}
-                    \PY{n}{horizontalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{verticalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bottom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{half of range }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{ relative to axis limits}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,}
+                    \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{axes fraction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.2}\PY{p}{,} \PY{l+m+mf}{0.5}\PY{p}{)}\PY{p}{,}
+                    \PY{n}{bbox}\PY{o}{=}\PY{n}{bbox\PYZus{}props}\PY{p}{,}
+                    \PY{n}{arrowprops}\PY{o}{=}
+                        \PY{n+nb}{dict}\PY{p}{(}\PY{n}{facecolor}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{shrink}\PY{o}{=}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{,}
+                        \PY{n}{horizontalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                        \PY{n}{verticalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{center}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         
-        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{axes fraction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{data}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{l+m+mf}{0.8}\PY{p}{,} \PY{l+m+mf}{0.95}\PY{p}{)}\PY{p}{,} \PY{n}{textcoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{axes fraction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{arrowprops}\PY{o}{=}\PY{n+nb}{dict}\PY{p}{(}\PY{n}{facecolor}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{shrink}\PY{o}{=}\PY{l+m+mf}{0.05}\PY{p}{)}\PY{p}{,}
-                    \PY{n}{horizontalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{verticalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{top}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{bbox\PYZus{}props} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{boxstyle}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{larrow,pad=0.5}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{fc}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{w}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{ec}\PY{o}{=}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{k}\PY{l+s+s2}{\PYZdq{}}\PY{p}{,} \PY{n}{lw}\PY{o}{=}\PY{l+m+mi}{2}\PY{p}{)}
         
-        \PY{c+c1}{\PYZsh{} You may also use negative points or pixels to specify from (right, top).}
-        \PY{c+c1}{\PYZsh{} E.g., (\PYZhy{}10, 10) is 10 points to the left of the right side of the axes and 10}
-        \PY{c+c1}{\PYZsh{} points above the bottom}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{outside the plot }\PY{l+s+se}{\PYZbs{}n}\PY{l+s+s1}{ relative to figure window}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{20} \PY{p}{,}\PY{l+m+mi}{75}\PY{p}{)}\PY{p}{,}
+                    \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{figure pixels}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{horizontalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{left}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{verticalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{top}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
+                    \PY{n}{bbox}\PY{o}{=}\PY{n}{bbox\PYZus{}props}\PY{p}{)}
         
-        \PY{n}{ax}\PY{o}{.}\PY{n}{annotate}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pixel offset from axes fraction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xy}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{xycoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{axes fraction}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{xytext}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{)}\PY{p}{,} \PY{n}{textcoords}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{offset pixels}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{horizontalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{right}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}
-                    \PY{n}{verticalalignment}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bottom}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{ax}\PY{o}{.}\PY{n}{set}\PY{p}{(}\PY{n}{xlim}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}xlim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}ylim}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Parabolic Function with Text Notation}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_338_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_350_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4736,27 +4960,31 @@ side. This can be done in \textbf{matplotlib} using \textbf{subplots}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_343_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_355_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \section{Plot Styles}\label{plot-styles}
 
-    Sometimes it is useful for engineers to include a couple plots side by
-side. This can be done in \textbf{matplotlib} using \textbf{subplots}
+    Colors, font size, linethinkness, all have default values in
+\textbf{matplotlib}. In addition to the default style for these plot
+attributes, additional styles are available to apply to
+\textbf{matplotlib} plots
 
-    First import matplotlib. If using a jupyter notebook include the line
-\lstinline!%matplotlib inline!
+    To use the default style, either don't specify a style at all or use the
+line
+\lstinline!plt.style.use('default')``.  Remember, if using a jupyter notebook include the line!\%matplotlib
+inline```
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{default}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{default}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         
         \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
         
@@ -4778,22 +5006,51 @@ side. This can be done in \textbf{matplotlib} using \textbf{subplots}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_348_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
+    There are many different styles available besides the default
+\textbf{matplotlib} style. List the available styles with the command:
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{available}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{for} \PY{n}{style} \PY{o+ow}{in} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{available}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{style}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-['bmh', 'classic', 'dark\_background', 'fast', 'fivethirtyeight', 'ggplot', 'grayscale', 'seaborn-bright', 'seaborn-colorblind', 'seaborn-dark-palette', 'seaborn-dark', 'seaborn-darkgrid', 'seaborn-deep', 'seaborn-muted', 'seaborn-notebook', 'seaborn-paper', 'seaborn-pastel', 'seaborn-poster', 'seaborn-talk', 'seaborn-ticks', 'seaborn-white', 'seaborn-whitegrid', 'seaborn', 'Solarize\_Light2', '\_classic\_test']
+seaborn-talk
+seaborn-bright
+seaborn-muted
+seaborn-dark
+seaborn-darkgrid
+seaborn-paper
+seaborn-white
+seaborn-pastel
+seaborn-colorblind
+Solarize\_Light2
+seaborn
+fast
+seaborn-dark-palette
+tableau-colorblind10
+seaborn-notebook
+classic
+seaborn-poster
+bmh
+seaborn-whitegrid
+seaborn-deep
+dark\_background
+\_classic\_test
+fivethirtyeight
+ggplot
+seaborn-ticks
+grayscale
 
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         
@@ -4819,12 +5076,12 @@ side. This can be done in \textbf{matplotlib} using \textbf{subplots}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_350_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_363_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ggplot}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ggplot}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         
         \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
         
@@ -4846,12 +5103,12 @@ side. This can be done in \textbf{matplotlib} using \textbf{subplots}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_351_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_364_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seaborn}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seaborn}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         
         \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
         
@@ -4873,34 +5130,34 @@ side. This can be done in \textbf{matplotlib} using \textbf{subplots}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_352_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_365_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seaborn\PYZhy{}colorblind}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        
-        \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
-        
-        \PY{c+c1}{\PYZsh{} Fixing random state for reproducibility}
-        \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{19680801}\PY{p}{)}
-        
-        \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-        
-        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{seaborn\PYZhy{}colorblind}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ style sheet}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
-        
-        \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{style}\PY{o}{.}\PY{n}{use}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{seaborn\PYZhy{}colorblind}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
+         
+         \PY{c+c1}{\PYZsh{} Fixing random state for reproducibility}
+         \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{seed}\PY{p}{(}\PY{l+m+mi}{19680801}\PY{p}{)}
+         
+         \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
+         
+         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mf}{0.5} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{x} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)} \PY{o}{+} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{50}\PY{p}{)}\PY{p}{)}
+         \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}title}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{seaborn\PYZhy{}colorblind}\PY{l+s+s2}{\PYZsq{}}\PY{l+s+s2}{ style sheet}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+         
+         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_353_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4954,7 +5211,7 @@ the contour, which is represented by color in a 2D plot. The
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_373_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4998,7 +5255,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_363_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_376_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5055,7 +5312,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_379_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5110,7 +5367,7 @@ ax.contourf(X, Y, Z, cmap=mycmap)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_369_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_382_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5175,7 +5432,7 @@ quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_377_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5266,7 +5523,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_384_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5306,7 +5563,7 @@ build the arrow starting position arrays, then apply our function
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_399_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5344,7 +5601,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_388_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5382,7 +5639,7 @@ Again we can build these arrays using \textbf{numpy} and plot them with
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5466,7 +5723,7 @@ needs to have the same dimensions as the position and direction arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_393_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_406_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5518,7 +5775,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_398_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_411_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5550,7 +5807,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5585,7 +5842,7 @@ and distance relative to the point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5652,7 +5909,7 @@ statinary object and model the fluid flow around the circle.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_405_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_418_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5694,7 +5951,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_412_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5740,7 +5997,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_415_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_428_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5780,7 +6037,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_418_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_431_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5825,7 +6082,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_421_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_434_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6988,7 +7245,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_549_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_562_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10299,37 +10556,50 @@ repo on github.com to a local directory
 
     \section{LaTeX Math}\label{latex-math}
 
-    Latex Math can be included in Jupyter Notebook markdown cells and parts
-of matplotlib plots. A list of usable LaTeX commands are below
+    Latex Math can be included in Jupyter Notebook markdown cells as well as
+in parts of \textbf{matplotlib plots} like axis labels and text fields.
+A table of useful LaTeX commands and the associated output are below:
 
-\begin{lstlisting}
-\frac{}{}
-^{}
-_{}
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+LaTex Command & Output\tabularnewline
+\midrule
+\endhead
+\lstinline!2^{3}! & \(2^{3}\)\tabularnewline
+\lstinline!H_{2}! & \(H_{2}\)\tabularnewline
+\lstinline!\frac{3}{4}! & \(\frac{3}{4}\)\tabularnewline
+\lstinline!\pi! & \(\pi\)\tabularnewline
+\lstinline!\Delta! & \(\Delta\)\tabularnewline
+\lstinline!\epsilon! & \(\epsilon\)\tabularnewline
+\lstinline!\sigma! & \(\sigma\)\tabularnewline
+\lstinline!2 \times 3! & \(2 \times 3\)\tabularnewline
+\lstinline!\int_{a}^{b} x^2 dx! & \(\int_{a}^{b} x^2 dx\)\tabularnewline
+\lstinline!\sum! & \(\sum\)\tabularnewline
+\lstinline!\vec{F}! & \(\vec{F}\)\tabularnewline
+\lstinline!\hat{k}! & \(\hat{k}\)\tabularnewline
+\lstinline!\bar{x}! & \(\bar{x}\)\tabularnewline
+\lstinline!15 \%! & \(15 \%\)\tabularnewline
+\bottomrule
+\end{longtable}
 
-\pi
-\delta
-\epsilon
-\sigma
-\end{lstlisting}
-
-    \section{Python for Undergraduate Engineers Book
-Construction}\label{python-for-undergraduate-engineers-book-construction}
+    \section{Problem Solving with Python Book
+Construction}\label{problem-solving-with-python-book-construction}
 
     \subsection{Jupyter Notebooks}\label{jupyter-notebooks}
 
     This book was constructed using \textbf{jupyter notebooks} saved on
 github.com. The github repo for the books can be found at:
 
-\url{https://github.com/ProfessorKazarinoff/PythonForUndergraduateEngineers}
+\url{https://github.com/ProfessorKazarinoff/Problem-Solving-with-Python}
 
-    The directory structure of the github repo contains the \textbf{jupyter
-notebooks} that were use the write the book, a set of conversion tools
-and the output of these conversion tools, the book website and pdf's
-that make the hard copy of the book
+    The directory structure of the github repo contains all the
+\textbf{jupyter notebooks} used the write the book. The repo also
+contains a set of conversion tools which assist with the conversion of
+the book from \textbf{jupyter notebooks} to a website, .pdf and hard
+copy.
 
     \begin{lstlisting}
-PythonForUndergraduateEngineers/
+Problem-Solving-with-Python/
 |-- conversion_tools/
 |-- notebooks/
 |-- LICENSE
@@ -10339,10 +10609,11 @@ PythonForUndergraduateEngineers/
 |-- website/
 \end{lstlisting}
 
-    The notebooks directory contains a folder for each chapter of the book:
+    The notebooks directory contains a directory for each chapter of the
+book:
 
     \begin{lstlisting}
-Notebooks/
+notebooks/
 |-- 00-Preface/
 |-- 01-Orientation/
 |-- 02-The-Python-REPL/
@@ -10361,9 +10632,9 @@ Notebooks/
 `-- TOC.ipynb
 \end{lstlisting}
 
-    Within each chapter directory there is a \textbf{jupyter notebook} for
-each section and an images directory for any images used in the markdown
-sections of the notebooks
+    Within each chapter directory, there is a \textbf{jupyter notebook} for
+each section, and an images directory for any images used in the
+markdown sections of the notebooks.
 
 \begin{lstlisting}
 01-Orientation/
@@ -10379,15 +10650,18 @@ sections of the notebooks
 
     \subsection{Website}\label{website}
 
-    The website for the book was constructed using mkdocs. Jupyter noteboks
-were exported to html with the markdown cells unformatted.
+    The website for the book was constructed using \textbf{mkdocs} and the
+\textbf{Material for MkDocs} theme. Jupyter noteboks were exported to
+.html files with markdown cells unformatted.
 
     \subsection{Hardcopy}\label{hardcopy}
 
-    The hard copy of the book was constructed using \textbf{LateX} and
-\textbf{nbconvert}. A conversion script combined all of the notebooks
-into one BIG notebook and converted the one BIG notebook to
-\textbf{LaTeX} using a custom template.
+    The hard copy of the book was constructed using \textbf{LateX},
+\textbf{nbconvert} and a set of custom scripts and templates. One
+conversion script combined all of the notebooks into one BIG notebook.
+This BIG notebook was then converted into \textbf{LaTeX} using a custom
+template. Outside of the Python ecosystem, a separate installation of
+TeXworks was used to compile the LaTeX to .pdf.
 
     \section{About the Author}\label{about-the-author}
 
