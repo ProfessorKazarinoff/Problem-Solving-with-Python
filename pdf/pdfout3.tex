@@ -19,18 +19,20 @@
 
 
 \lstset{
-%language=Python, 
+language=Python, 
 basicstyle=\ttfamily,
-%stringstyle=\color{stringred},
+stringstyle=\color{stringred},
 commentstyle=\color{commentteal},
-%keywordstyle=\color{darkgreen}\bfseries,
-%keywordstyle = [3]{\color{mypurple}\bfseries},
-%morekeywords = [3]{*,math,log,log10,exp,sqrt},
+keywordstyle=\color{darkgreen}\bfseries,
+keywordstyle = [3]{\color{mypurple}\bfseries},
+morekeywords = [3]{*,math,log,log10,exp,sqrt},
 showstringspaces=false,
 }
 \newcommand{\passthrough}[1]{#1}
 
-    
+    \lstdefinelanguage{Plaintext}{
+  numbers=none
+}
     
     \usepackage[T1]{fontenc}
     % Nicer default font (+ math font) than Computer Modern for most use cases
@@ -63,9 +65,9 @@ showstringspaces=false,
 
 %custom colors
 \definecolor{stringred}{RGB}{186,33,33}
-\definecolor{commentteal}{RGB}{64,128,128}
+\definecolor{commentteal}{HTML}{408080}
 \definecolor{darkgreen}{RGB}{0,128,0}
-
+\definecolor{mypurple}{HTML}{AA22FF}
 
 
 
@@ -1357,35 +1359,36 @@ PATH
 \item
   Compute mathematical calculations using the Python REPL
 \item
-  Use the output from Python command line as input in another problem
+  Use the output from Python REPL as input in another problem
 \item
-  Import the math and statistics module from the standard library and
+  Import the math and statistics modules from the standard library and
   use their functions
 \item
   Combine \lstinline!True! and \lstinline!False! in logical statements
 \end{itemize}
 
-    \section{Python as a fancy
-calculator}\label{python-as-a-fancy-calculator}
+    \section{Python as a Calculator}\label{python-as-a-calculator}
 
-    Python can be used as a fancy calculator to do arithmetic like addition,
-subtraction, multiplication and division. It can also be used for
-trigonometric calculations and statistical calculations.
+    Python can be used as a calculator to compute arithmetic operations like
+addition, subtraction, multiplication and division. Python can also be
+used for trigonometric calculations and statistical calculations.
 
     \subsection{Arithmetic}\label{arithmetic}
 
 Python can be used as a calculator to make simple or complex
 calculations.
 
-We can do this easily with Python at the Python Prompt, often called the
-Python REPL for Read Evaluate Print Loop. The Python REPL shows three
-arrow symbols \lstinline!>>>! after which you will see a blinking
-cursor. Programmers type commands at the prompt then hit {[}ENTER{]}.
-The is Read by the interperator, results of running the commands are
-Evaluated then Printed to the command window. After the output a new
-\lstinline!>>>! prompt appears on a new line. This process happens over
-and over again (in a loop). Try the following commands at the Python
-REPL:
+We can do this easily with Python at the Python Prompt, also called the
+\lstinline!Python REPL!. REPL stands for Read Evaluate Print Loop. The
+Python REPL shows three arrow symbols \lstinline!>>>! after which you
+will see a blinking cursor. Programmers type commands at the prompt then
+hit {[}ENTER{]} to see the results. The commands are \emph{read} by the
+interpreter, results of running the commands are \emph{evaluated}, then
+\emph{printed} to the command window. After the output is printed, a new
+\lstinline!>>>! prompt appears on a new line. This process repeats over
+and over again in a continuous \emph{loop}.
+
+Try the following commands at the Python REPL:
 
 Suppose the mass of a battery is 5 kg and the mass of the battery cables
 is 3 kg. What is the mass of the battery cable assembly?
@@ -1478,23 +1481,24 @@ operator & name & description & example & result\tabularnewline
 \lstinline!2!\tabularnewline
 \lstinline!**! & exponents & raises a number to a power &
 \lstinline!10**2! & \lstinline!100!\tabularnewline
-\lstinline!_! & underscore & returns last saved value & &\tabularnewline
+\lstinline!_! & underscore & returns last saved value &
+\lstinline!_ + 7! & \lstinline!107!\tabularnewline
 \bottomrule
 \end{longtable}
 
     \subsection{Trig: sin, cos, tan}\label{trig-sin-cos-tan}
 
-    Python as a fancy calculator is not limited to simple arithmetic. Trig
-functions such as sin, cos and tan are also available.
+    Trig functions such as sine, cosine and tangent can also be calculated
+using the Python REPL.
 
-In order to use these functions, we need to learn a new concept:
-importing modules.
+In order to use these functions, we need to introduce a new concept:
+\emph{importing modules}.
 
-In python there are many functions built into the language when it
+In Python there are many operations built into the language when it
 starts. These include \lstinline!+! , \lstinline!-!, \lstinline!*!,
 \lstinline!/! like we saw in the previous section. However, not all
-functions will work right when Python starts. Say we want to find the
-sine of an angle. Try the following:
+functions will work right away when Python starts. Say we want to find
+the sine of an angle. Try the following:
 
 \begin{lstlisting}[language=Python]
 >>> sin(60)
@@ -1503,16 +1507,17 @@ Traceback (most recent call last):
 NameError: name 'sin' is not defined
 \end{lstlisting}
 
-This error is returned because we have not told python to include the
-sin function. The sin function is part of the \emph{standard library}.
-The standard library comes with every python installation and includes
-many functions, but not all of these functions are available to us when
-we start a new python window. In order to use the sin function, we first
-need to import it from math \emph{module} which is part of the standard
-library.
+This error is returned because we have not told Python to include the
+\lstinline!sin! function. The \lstinline!sin! function is part of the
+\emph{Python Standard Library}. The Python Standard Library comes with
+every python installation and includes many functions, but not all of
+these functions are available to us when we start a new Python REPL
+session. In order to use the \lstinline!sin! function, first import the
+\lstinline!sin! function from the \lstinline!math! \emph{module} which
+is part of the Python Standard Library.
 
-Importing modules and functions is easy. We use the following syntax:
-from \emph{module name} import \emph{function name}
+Importing modules and functions is easy. Use the following syntax: from
+\emph{module name} import \emph{function name}
 
 To import the \lstinline!sin()! function from the \lstinline!math!
 module try:
@@ -1583,9 +1588,10 @@ radians & \lstinline!atan(100)! & \lstinline!2.0!\tabularnewline
 
     \subsection{Exponents and Logarithms}\label{exponents-and-logarithms}
 
-It is easy to calculate expnents and logarithms as well. Note that these
-need to be imported from the \textbf{math} module just like the trig
-functions above.
+It is easy to calculate exponents and logarithms with Python. Note that
+exponent and logarithm functions need to be imported from the
+\textbf{math} module just like the trig functions were imported from the
+\textbf{math} module above.
 
 The following functions can be imported from the math module:
 
@@ -1664,9 +1670,9 @@ result\tabularnewline
     \subsection{Staticstics}\label{staticstics}
 
 To round out this section, we will look at a couple of statistics
-functions. These functions are part of the \textbf{standard library} but
-not part of the \textbf{math} module. To access these statistics
-functions we need to import them from the \textbf{statistics} module
+functions. These functions are part of the Python Standard Library, but
+not part of the \textbf{math} module. To access Python's statistics
+functions, we need to import them from the \textbf{statistics} module
 using the statement
 \lstinline!from statistics import mean, median, mode, stdev!. Then the
 functions \lstinline!mean!, \lstinline!median!, \lstinline!mode! and
@@ -1714,7 +1720,60 @@ we need to use the names \lstinline!statistics.mean!,
 14.842506526863986 
 \end{lstlisting}
 
-\subsubsection{Section Summary}\label{section-summary}
+    \subsection{Staticstics}\label{staticstics}
+
+To round out this section, we will look at a couple of statistics
+functions. These functions are part of the Python Standard Library, but
+not part of the \textbf{math} module. To access Python's statistics
+functions, we need to import them from the \textbf{statistics} module
+using the statement
+\lstinline!from statistics import mean, median, mode, stdev!. Then the
+functions \lstinline!mean!, \lstinline!median!, \lstinline!mode! and
+\lstinline!stdev!(standard deviation) can be used.
+
+\begin{lstlisting}[language=Python]
+>>> from statistics import mean, median, mode, stdev
+    
+>>> test_scores = [ 60 , 83, 83, 91, 100]
+    
+>>> mean(test_scores)
+83.4
+
+>>> median(test_scores)
+83
+
+>>> mode(test_scores)
+83
+    
+>>> stdev(test_scores)
+14.842506526863986 
+\end{lstlisting}
+
+Alternatively, we can import the whole \textbf{statistics} module using
+the statement \lstinline!import statistics!. Then to use the functions,
+we need to use the names \lstinline!statistics.mean!,
+\lstinline!statistics.median!, \lstinline!statistics.mode!, and
+\lstinline!statistics.stdev!. See below:
+
+\begin{lstlisting}[language=Python]
+>>> import statistics
+    
+>>> test_scores = [ 60 , 83, 83, 91, 100]
+    
+>>> statistics.mean(test_scores)
+83.4
+
+>>> statistics.median(test_scores)
+83
+
+>>> statistics.mode(test_scores)
+83
+    
+>>> statistics.stdev(test_scores)
+14.842506526863986 
+\end{lstlisting}
+
+    \subsubsection{Section Summary}\label{section-summary}
 
 The following functions are part of the \textbf{statistics} module:
 
@@ -1780,114 +1839,62 @@ the problem.
 
     \section{Boolean Arithemtic}\label{boolean-arithemtic}
 
-    \emph{Boolean Arithmetic} is the arithmetic of true and flase logic. A
-boolean or logical value can either be True or False.
+    \emph{Boolean Arithmetic} is the arithmetic of true and false logic. A
+\emph{boolean} or logical value can either be \lstinline!True! or
+\lstinline!False!.
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{A} \PY{o}{=} \PY{k+kc}{True}
-        \PY{n}{B} \PY{o}{=} \PY{k+kc}{False}
-\end{Verbatim}
+    \begin{lstlisting}[language=Python]
+>>> A = True
+>>> B = False
+\end{lstlisting}
 
+\begin{lstlisting}[language=Python]
+>>> A
+True
+\end{lstlisting}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{A}
-\end{Verbatim}
+\begin{lstlisting}[language=Python]
+>>> B
+False
+\end{lstlisting}
 
+\begin{lstlisting}[language=Python]
+>>> A or B
+True
+\end{lstlisting}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{B}
-\end{Verbatim}
+\begin{lstlisting}[language=Python]
+>>> A and B
+False
+\end{lstlisting}
 
+\begin{lstlisting}[language=Python]
+>>> not A
+False
+\end{lstlisting}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} False
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{A} \PY{o+ow}{or} \PY{n}{B}
-\end{Verbatim}
+\begin{lstlisting}[language=Python]
+>>> not B
+True
+\end{lstlisting}
 
+\begin{lstlisting}[language=Python]
+>>> A == B
+False
+\end{lstlisting}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{A} \PY{o+ow}{and} \PY{n}{B}
-\end{Verbatim}
+\begin{lstlisting}[language=Python]
+>>> A != B
+True
+\end{lstlisting}
 
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} False
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{o+ow}{not} \PY{n}{A}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} False
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{o+ow}{not} \PY{n}{B}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{A} \PY{o}{==} \PY{n}{B}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} False
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{A} \PY{o}{!=} \PY{n}{B}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{C} \PY{o}{=} \PY{k+kc}{False}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{A} \PY{o+ow}{or} \PY{p}{(}\PY{n}{C} \PY{o+ow}{and} \PY{n}{B}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} True
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{p}{(}\PY{n}{A} \PY{o+ow}{and} \PY{n}{B}\PY{p}{)} \PY{o+ow}{or} \PY{n}{C}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} False
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{a} \PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{me}\PY{l+s+s1}{\PYZsq{}}
-\end{Verbatim}
-
+\begin{lstlisting}[language=Python]
+>>> C = False
+>>> A or (C and B)
+True
+>>> (A and B) or C
+False
+\end{lstlisting}
 
     \section{String Opperations}\label{string-opperations}
 
@@ -1896,65 +1903,47 @@ and logical comparisions
 
     \subsection{Indexing}\label{indexing}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{name} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Lady Ada}\PY{l+s+s1}{\PYZsq{}}
-\end{Verbatim}
+    \begin{lstlisting}[language=Python]
+>>> word = 'Solution'
+>>> word[0]
+'S'
+\end{lstlisting}
 
+    \begin{lstlisting}[language=Python]
+>>> word[2]
+'1'
+\end{lstlisting}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{name}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
-\end{Verbatim}
+    \begin{lstlisting}[language=Python]
+>>> word[-1]
+'n'
+\end{lstlisting}
 
+    \begin{lstlisting}[language=Python]
+>>> word[0:3]
+'Sol'
+\end{lstlisting}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} 'a'
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{name}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
-\end{Verbatim}
+    \begin{lstlisting}
+>>> word[:]
+'Solution'
+\end{lstlisting}
 
+    \begin{lstlisting}[language=Python]
+>>> word[-3:-1]  #not including ending
+'io'
+\end{lstlisting}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} 'd'
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{name}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{]}
-\end{Verbatim}
+    \begin{lstlisting}[language=Python]
+>>> word[0:8:2]  #start:stop+1:countby
+'Slto'
+\end{lstlisting}
 
+    \begin{lstlisting}[language=Python]
+>>> word[::-1] #start=not specified :stop=note specified:step=-1
+'noituloS'
+\end{lstlisting}
 
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} 'ady'
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{name}\PY{p}{[}\PY{p}{:}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} 'Lady Ada'
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{name}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} 'a'
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{name}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}  \PY{c+c1}{\PYZsh{}not including ending}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} 'Ad'
-\end{Verbatim}
-            
     \section{Print Statements}\label{print-statements}
 
     The \lstinline!print()! function useful in Python. Below is a code
@@ -3965,7 +3954,7 @@ notebook output cells.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_278_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_269_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4281,7 +4270,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_290_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_281_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4367,7 +4356,7 @@ attribute. The \lstinline!plt.show()! line shows the plot on the screen.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_295_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_286_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4397,7 +4386,7 @@ These daughter objects in turn have methods such as
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_297_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_288_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4494,7 +4483,7 @@ positions and \lstinline!CTEs! is the list of bar heights.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_310_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_301_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4539,7 +4528,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_313_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_304_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4567,7 +4556,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_314_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_305_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4641,7 +4630,7 @@ the error bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_322_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_313_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4669,7 +4658,7 @@ the error bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_326_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_317_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4727,7 +4716,7 @@ this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_332_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_323_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4772,7 +4761,7 @@ jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_338_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_329_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4807,7 +4796,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_341_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_332_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4842,7 +4831,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_345_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_336_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4908,7 +4897,7 @@ using a Jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_350_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_341_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -4960,7 +4949,7 @@ side. This can be done in \textbf{matplotlib} using \textbf{subplots}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_355_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_346_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5006,7 +4995,7 @@ inline```
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_351_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5076,7 +5065,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_363_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_354_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5103,7 +5092,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_364_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_355_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5130,7 +5119,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_365_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5157,7 +5146,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_357_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5211,7 +5200,7 @@ the contour, which is represented by color in a 2D plot. The
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_373_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_364_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5255,7 +5244,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_376_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_367_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5312,7 +5301,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_379_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_370_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5367,7 +5356,7 @@ ax.contourf(X, Y, Z, cmap=mycmap)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_382_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_373_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5432,7 +5421,7 @@ quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_381_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5523,7 +5512,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_388_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5563,7 +5552,7 @@ build the arrow starting position arrays, then apply our function
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_399_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5601,7 +5590,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_392_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5639,7 +5628,7 @@ Again we can build these arrays using \textbf{numpy} and plot them with
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_394_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5723,7 +5712,7 @@ needs to have the same dimensions as the position and direction arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_406_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5775,7 +5764,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_411_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_402_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5807,7 +5796,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_405_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5842,7 +5831,7 @@ and distance relative to the point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5909,7 +5898,7 @@ statinary object and model the fluid flow around the circle.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_418_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_409_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5951,7 +5940,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5997,7 +5986,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_428_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_419_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6037,7 +6026,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_431_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_422_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6082,7 +6071,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_434_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6493,21 +6482,25 @@ decision tree
 
     \section{While Loops}\label{while-loops}
 
-    A \emph{While Loop} is a type of loop that will continue running as long
-as a condition is \lstinline!True!. When the condition becomes
-\lstinline!False! the loop will stop running. The general form of a
-while loop is below:
+    A \emph{While Loop} is a type of loop that continues to run as long as a
+condition is \lstinline!True!. When the condition becomes
+\lstinline!False! the loop stops running. The general form of a while
+loop is below:
 
 \begin{lstlisting}
-while <true_statement>:
+while <logical_statement>:
     <code>
 \end{lstlisting}
 
 The keyword \lstinline!while! must be included, as well as a
-\lstinline!<true_statment>! that can be evaluated as \lstinline!True! or
-\lstinline!False!. The \lstinline!<code>! after the while statement must
-be indented and each line of code that will run as part of the loop
-needs to be indented the same amount. An example is below:
+\lstinline!<logical_statement>! that can be evaluated as
+\lstinline!True! or \lstinline!False!. The \lstinline!<code>! after the
+while statement must be indented and each line of code that will run as
+part of the while loop needs to be indented the same amount. Many code
+editors, like Jupyter notebooks will auto-indent the code within a loop.
+If the indentation is added manually, 4 spaces is standard.
+
+An example of a while loop is below:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{0}
@@ -6525,18 +6518,18 @@ needs to be indented the same amount. An example is below:
 
     \end{Verbatim}
 
-    The first line \lstinline!i=0! created a variable \lstinline!i! and
-assigned it the value \lstinline!0!. The next line declared what
-condition was needed to keep the loop running. The statement
-\lstinline!i<4! will be \lstinline!True! or \lstinline!False! depending
-on the variable \lstinline!i!. Since \lstinline!i=0!, the statement
-\lstinline!i<4! is \lstinline!True! and the for loop starts to run. The
-code that run inside the loop prints the value of \lstinline!i! then
-increases \lstinline!i! by \lstinline!1!. When \lstinline!i=4!, the
-statement \lstinline!i<4! is \lstinline!False! and the while loop ends.
+    The first line \lstinline!i=0! creates a variable \lstinline!i! and
+assigs it the value \lstinline!0!. The next line declares the logical
+condition needed to keep the loop running. The statement \lstinline!i<4!
+will be \lstinline!True! or \lstinline!False! depending on the variable
+\lstinline!i!. Since \lstinline!i=0!, the statement \lstinline!i<4! is
+\lstinline!True! and the while loop starts to run. The code that run
+inside the loop prints the value of \lstinline!i! then increases
+\lstinline!i! by \lstinline!1!. When \lstinline!i=4!, the statement
+\lstinline!i<4! is \lstinline!False! and the while loop ends.
 
-    \subsection{\texorpdfstring{Using a \texttt{while} loop to validate user
-input}{Using a while loop to validate user input}}\label{using-a-while-loop-to-validate-user-input}
+    \subsection{Using a while loop to validate user
+input}\label{using-a-while-loop-to-validate-user-input}
 
 While loops can be utilized to validate user input. Say we want to
 insist that a user inputs positive number. We can code this into a while
@@ -6566,14 +6559,15 @@ negative number would have worked as well. If the while statement can't
 be evaluated as \lstinline!True! or \lstinline!False!, Python will throw
 an error. It is therefore necessary to convert the user's input from a
 string to a float. The statement \lstinline!'5' < 0! does note evaluate
-to true or false, because the string \lstinline!'5'! can't be compared
-to the number \lstinline!0!.
+to \lstinline!True! or \lstinline!False!, because the string
+\lstinline!'5'! can't be compared to the number \lstinline!0!.
 
     \section{For Loops}\label{for-loops}
 
     \emph{For Loops} are a component of many programming languages. A
 \emph{For Loop} is a programming structure where a section of code is
-run a specified number of times.
+run a specified number of times. This compares to while loops which run
+as long as a logical condition is \lstinline!True!.
 
 Say we want to print out the statement:
 
@@ -6583,8 +6577,7 @@ Engineers solve problems in teams
 Engineers solve problems in teams
 \end{lstlisting}
 
-We want to see the statement printed three times. One way to do
-accomplish this is with three print statments in a row:
+One way to do accomplish this is with three print statments in a row:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineers solve problems in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
@@ -6613,15 +6606,16 @@ for <var> in range(<num>):
 \end{lstlisting}
 
 Where \lstinline!<var>! can be any variable name,
-\lstinline!range(<num>)! is the number of times the for loop will run
-and \lstinline!<statements>! are the lines of code that execute each
-time the loop runs. Note the for loop starts with the keyword
+\lstinline!range(<num>)! is the number of times the for loop runs and
+\lstinline!<statements>! are the lines of code that execute each time
+the for loop runs. Note the for loop starts with the keyword
 \lstinline!for! and includes a colon \lstinline!:!. Both \lstinline!for!
-and the colon \lstinline!:! are required. Also note that
-\lstinline!<statements>! was indented. Each statement that will run in
-the for loop need to be indented the same amount. The standard
-indentation is 4 spaces. Let's rewrite our example above using a for
-loop:
+and the colon \lstinline!:! are required. Also note
+\lstinline!<statements>! was indented. Each statement that will run as
+part of the for loop needs to be indented the same number of spaces. The
+standard indentation is 4 spaces.
+
+Let's rewrite our example above using a for loop:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}2}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
@@ -6673,7 +6667,7 @@ are the programming statements that run for each item in the list. An
 example is below:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{my\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{electical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{my\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{electical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
         \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{my\PYZus{}list}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{n}{item}\PY{p}{)}
 \end{Verbatim}
@@ -6681,13 +6675,13 @@ example is below:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 electical
-mechanical
 civil
+mechanical
 
     \end{Verbatim}
 
     Note how the loop ran three times, becuase there were three items in the
-list. Each time through the loop the variable \lstinline!item! was set
+list. Each time through the loop, the variable \lstinline!item! was set
 to one particular item in the list. The first time through the loop,
 \lstinline!item='electrical'!. The second time through the loop
 \lstinline!item='mechanical'! and the third time through the loop
@@ -7245,7 +7239,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_562_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_553_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8354,41 +8348,43 @@ Hardware}\label{python-and-external-hardware}
 \item
   Connect external hardware to a computer running Python
 \item
-  Install the \textbf{PySerial} library
+  Install the \textbf{pyserial} library
 \item
   Read data over a serial connection using Python
 \item
-  Save data coming in over a serial line to Python variables and
-  external files
+  Save data coming in over a serial connection to variables and external
+  files using Python
 \item
   Write data to a serial line using Python
 \item
   Read data from a sensor using Python
 \item
-  Control and LED using Python
+  Control an LED using Python
 \end{itemize}
 
     \section{Pyserial}\label{pyserial}
 
-    \textbf{Pyserial} is a \textbf{Python} package that is used to assist in
-communication between external hardware and a computer running
-\textbf{Python}. \textbf{Pyserial} is a useful package for engineers
-because it allows engineers to exchange data between a computer and
-pieces of hardware such as voltmeters, oscilloscopes, strain gauges,
-flow meters etc.
+    \textbf{Pyserial} is a Python package that facilitates serial
+communication. A computer running Python with the \textbf{pyserial}
+package installed can communicate with external hardware.
+\textbf{Pyserial} is a useful package for engineers because it allows
+engineers to exchange data between a computer and pieces of hardware
+such as voltmeters, oscilloscopes, strain gauges, flow meters etc.
 
 \textbf{Pyserial} provides an interface to communicate over the
-\emph{serial} communication protocol. \emph{Serial} communication is one
-of the oldest computer communication protocols and predates the kind of
-communication now typical used between computers and other pieces of
-hardware such as USB and HDMI. USB stands for Universal Serial Bus and
-is built upon and extends the original serial communication interface.
+\emph{serial} communication protocol. Serial communication is one of the
+oldest computer communication protocols. Serial communication predates
+the USB specification now used by computers and other pieces of hardware
+like mice, keyboards and webcams. USB stands for Universal Serial Bus.
+USB and is built upon and extends the original serial communication
+interface.
 
     \subsection{Installing Pyserial}\label{installing-pyserial}
 
-    To use \textbf{pyserial} with \textbf{Python}, \textbf{pyserial} needs
-to be installed over the command line using \textbf{pip} or installed
-using the \textbf{Anaconda Prompt}:
+    To use the \textbf{pyserial} package with \textbf{Python},
+\textbf{pyserial} needs to be installed. \textbf{Pyserial} can be
+installed using the \textbf{Anaconda Prompt} or \textbf{pyserial} can be
+installed over the command line using \textbf{pip}:
 
 \begin{lstlisting}
 > conda install pyserial
@@ -8420,27 +8416,29 @@ confirmed at the Python REPL:
 
     \section{Bytes and Unicode Strings}\label{bytes-and-unicode-strings}
 
-    Before using \textbf{pyserial} and communicating with external hardware,
-it is import to understand the difference between \emph{bytes} and
-\emph{unicode strings} in Python. The distinction between the two is
-important because strings in Python are \emph{unicode} by default.
-However, external hardware like Arduino's, oscillascopes and voltmeters
-transmit characters as \emph{bytes}.
+    Before using \textbf{pyserial} and communicating with external hardware
+over the serial interface, it is import to understand the difference
+between \emph{bytes} and \emph{unicode strings} in Python.
+
+The distinction between bytes and unicode strings is important because
+strings in Python are \emph{unicode} by default. However, external
+hardware like Arduino's, oscillascopes and voltmeters transmit
+characters as \emph{bytes}.
 
     \subsection{Unicode Strings}\label{unicode-strings}
 
     In Python when a new string is defined, the syntax is:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{ustring} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A unicode string}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{ustring} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A unicode string}\PY{l+s+s1}{\PYZsq{}}
 \end{Verbatim}
 
 
-    We can see what data type \lstinline!ustring! is with the
-\lstinline!type! function:
+    We can see what data type the \lstinline!ustring! variable is assigned
+with the \lstinline!type()! function:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{ustring}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{ustring}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -8449,17 +8447,19 @@ transmit characters as \emph{bytes}.
 
     \end{Verbatim}
 
-    When Python shows the variable \lstinline!ustring! is of
-\lstinline!<class 'str'>!, it indicates \lstinline!ustring! is a
-\emph{unicode string}. \textbf{In Python 3 all strings are \emph{unicode
-strings} by defaut}. \emph{Unicode Strings} are useful because there are
-many letter and letter-like characters that are not part of the the set
-of letters, numbers and symbols on a regular computer keyboard. For
-instance, English is not the most widely spoken language on the planet.
-In Spanish, the accent character is used over certain vowels. Letters
-with accents can't be represented by the letters on a standard keyboard.
-However those accent letters are part of a set of letters, numbers and
-symbols in \emph{unicode strings}.
+    When the Python interperator declares the variable \lstinline!ustring!
+is of \lstinline!<class 'str'>!, it indicates \lstinline!ustring! is a
+\emph{unicode string}.
+
+\textbf{In Python 3 all strings are \emph{unicode strings} by defaut}.
+
+\emph{Unicode Strings} are useful because there are many letter and
+letter-like characters that are not part of the the set of letters,
+numbers and symbols on a regular computer keyboard. For instance: in
+Spanish, the accent character is used over certain vowels. Letters with
+accents can't be represented by the letters on a standard English
+keyboard. However, letters with accents are part of a set of letters,
+numbers and symbols in \emph{unicode strings}.
 
     \subsection{Byte Strings}\label{byte-strings}
 
@@ -8469,28 +8469,31 @@ information that has a fixed width (one byte long). Because of this
 fixed width, one \emph{byte} only has a small number of unique
 combinations. This limits \emph{byte strings} to basically only the
 letter, numbers and punctuation marks on a computer keyboard. This
-limited set of characters are called ASCII (pronounced \emph{ask-ee
-two}) characters. A table of ASCII character codes is in the appendix.
-For instantance, ASCII code \lstinline!49! corresponds to the number one
-\lstinline!1!. \textbf{Python does not use \emph{byte strings} by
-default}. But external hardware such as Arduinos, oscilloscopes, and
-voltmeters speak \emph{byte strings} by default. In fact almost all
-machines speak \emph{byte strings} by default including the servers that
-bring Netflix to your laptop.
+limited set of characters is called the ASCII (pronounced \emph{ask-ee
+two}) character set. A table of ASCII character codes is in the
+appendix. For instantance, ASCII code \lstinline!49! corresponds to the
+number one \lstinline!1!.
+
+\textbf{Python does not use \emph{byte strings} by default}.
+
+However, external hardware such as Arduinos, oscilloscopes, and
+voltmeters speak \emph{byte strings} by default. In fact, almost all
+machines speak \emph{byte strings} by default, including the servers
+that bring Netflix to your laptop.
 
     To define a \emph{byte string} in Python, a letter \lstinline!b! is
 placed before the quotation marks when a string is created.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{bstring} \PY{o}{=} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bstring}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{bstring} \PY{o}{=} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bstring}\PY{l+s+s1}{\PYZsq{}}
 \end{Verbatim}
 
 
     We can view the type of our \lstinline!bstring! variable using the
-\lstinline!type! function
+\lstinline!type()! function
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{bstring}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{bstring}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -8499,17 +8502,16 @@ placed before the quotation marks when a string is created.
 
     \end{Verbatim}
 
-    \subsection{Convert between unicode and
-bytes}\label{convert-between-unicode-and-bytes}
+    \subsection{Convert between unicode strings and byte
+strings}\label{convert-between-unicode-strings-and-byte-strings}
 
-    In order for Python to communicate with external hardware and external
-hardware to communicate with Python, we need to be able to convert
-between \emph{unicode strings} and \emph{byte strings}. This conversion
-is done with the \lstinline!.encode()! and \lstinline!.decode()!
-methods.
+    In order for a Python program to communicate with external hardware, we
+need to be able to convert between \emph{unicode strings} and \emph{byte
+strings}. This conversion is done with the \lstinline!.encode()! and
+\lstinline!.decode()! methods.
 
-The \lstinline!.encode()! method ``encodes'' a unicode string to a byte
-string.
+The \lstinline!.encode()! method ``encodes'' a unicode string into a
+byte string.
 
 \lstinline!<byte string> = <unicode string>.encode()!
 
@@ -8518,41 +8520,50 @@ unicode string.
 
 \lstinline!<unicode string> = <byte string>.decode!
 
-Remember machines speak bytes, Python strings are unicode. We need to
-decode what machines transmit to Python before further processing.
-Python defaults unicode (and machines do not) so within our Python code
-we need to encode our unicode strings so machines can understand it.
+\textbf{Remember: machines speak bytes, Python strings are unicode by
+default.}
+
+We need to decode what machines transmit to Python before further
+processing. Python defaults unicode (and machines do not), so within our
+Python code we need to \emph{encode} our unicode strings so machines can
+understand it.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{new\PYZus{}bstring} \PY{o}{=} \PY{n}{ustring}\PY{o}{.}\PY{n}{encode}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{ustring} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A unicode string}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{new\PYZus{}bstring} \PY{o}{=} \PY{n}{ustring}\PY{o}{.}\PY{n}{encode}\PY{p}{(}\PY{p}{)}
         \PY{n+nb}{type}\PY{p}{(}\PY{n}{new\PYZus{}bstring}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} bytes
+{\color{outcolor}Out[{\color{outcolor}9}]:} bytes
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{new\PYZus{}ustring} \PY{o}{=} \PY{n}{bstring}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{p}{)}
-        \PY{n+nb}{type}\PY{p}{(}\PY{n}{new\PYZus{}ustring}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{bstring} \PY{o}{=} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bstring}\PY{l+s+s1}{\PYZsq{}}
+         \PY{n}{new\PYZus{}ustring} \PY{o}{=} \PY{n}{bstring}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{p}{)}
+         \PY{n+nb}{type}\PY{p}{(}\PY{n}{new\PYZus{}ustring}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} str
+{\color{outcolor}Out[{\color{outcolor}10}]:} str
 \end{Verbatim}
             
-    If a command from Python (a unicode string) is sent to a piece of
-extrnal hardware (that read bytes), the \lstinline!.encode()! method
-should be applied to the unicode string before being sent from Python to
-the piece of hardware.
+    When a command from a Python program (a unicode string) is sent to a
+piece of extrnal hardware (that reads bytes):
 
-If a chunk of data is coming in from a piece of extrnal hardware (a byte
-string) and read by Python (which speaks \emph{unicode}), the
-\lstinline!.decode()! method should be applied to the byte string (to
-convert it to a unicode string) before it is processed further by
-Python.
+The \lstinline!.encode()! method needs be applied to the unicode string
+(to convert the unicode string to a byte string) before the command is
+sent to the piece of external hardware.
+
+When a chunk of data comes in from a piece of extrnal hardware (a byte
+string) and is read by a Python script (which speaks \emph{unicode} by
+the default):
+
+The \lstinline!.decode()! method needs be applied to the byte string (to
+convert the byte string to a unicode string) before it is processed
+further by Python program.
 
     \section{Reading a Sensor with
 Python}\label{reading-a-sensor-with-python}
@@ -8579,15 +8590,15 @@ the following hardware is required:
     \subsection{Set up the sensor}\label{set-up-the-sensor}
 
     Connect the sensor to the Arduino using a resistor, wires and a
-breadboard. Note the long lead of the LED is connected to PIN13 and the
-short lead of the LED is connected through a resistor to ground. If the
-LED is wired backwards, the LED will not turn on. The blue square with
-an arrow on it is a potentiometer. It is a good sensor to use because
-potentiometers can be controlled by a user and the user knows when the
-sensor signal is changed.
+breadboard. Note the long lead of the LED is connected to PIN13 on the
+Arduino and the short lead of the LED is connected through a resistor to
+ground. If the LED is wired backwards, the LED will not turn on. In the
+hardware schematic, the blue square with an arrow on it is a
+potentiometer. Potentiometers can be controlled by a user and the user
+knows when the sensor signal is changed.
 
-The hardware schematic below describes how to connect the Arudino, LED
-and potentiometer.
+The hardware schematic describes how to connect the Arudino, LED and
+potentiometer.
 
     \begin{figure}
 \centering
@@ -8599,14 +8610,17 @@ and potentiometer.
 Arduino}\label{upload-code-to-the-arduino}
 
     Once the LED and potentiometer is hooked up the the Arduino, upload the
-following code to the Arduino using the Arduino IDE. Note Arduinos use a
-programming language that is not Python. This Arduino sketch (a sketch
-is what an Arduino program is called) does a couple things. First the
-Arduino reads the sensor value and stores the sensor value in a
-variable. Then the Arduino sends the sensor value over the serial line
-(as a byte sting). Next the sensor value is compared to 500. If the
-sensor value is less than 500 the LED stays off. If the sensor value is
-greater than 500, the LED turn on. This process repeats in a loop.
+following code to the Arduino using the Arduino IDE. Note that Arduinos
+don't use the Python programming language. The programming language used
+by Arduinos is a varient of the C programming language.
+
+The Arduino sketch (a sketch is what an Arduino program is called) below
+accomplishes a couple things. First the Arduino reads the sensor value
+and stores the sensor value in the variable \lstinline!sensorValue!.
+Then the Arduino sends the sensor value over the serial line (as a byte
+sting). Next the sensor value is compared to 500. If the sensor value is
+less than 500, the LED stays off. If the sensor value is greater than
+500, the LED turn on. This process repeats in a loop.
 
     \begin{lstlisting}
 // potentiometer_read.ino
@@ -8620,7 +8634,7 @@ void setup() // this function runs once when the sketch starts
   // make the LED pin (pin 13) an output pin
   pinMode(ledPin, OUTPUT);
 
-  // initialize serial communication:
+  // initialize serial communication
   Serial.begin(9600);
 }
 
@@ -8629,13 +8643,13 @@ void loop() // this function runs repeatedly after setup() finishes
   sensorValue = analogRead(sensorPin);  // read the voltage at pin A0   
   Serial.println(sensorValue);         // Output sensor value to Serial Monitor
   
-  if (sensorValue < 500) {            // if sensor output is less than 500,
+  if (sensorValue < 500) {            // if sensor reading is less than 500,
     digitalWrite(ledPin, LOW); }     // Turn the LED off
   
-  else {                               // if sensor output is greater than 500
+  else {                               // if sensor reading is greater than 500
     digitalWrite(ledPin, HIGH); }     // Keep the LED on
   
-  delay(100);             // Pause 100 milliseconds before next reading
+  delay(100);             // Pause 100 milliseconds before next sensor reading
 }
 \end{lstlisting}
 
@@ -8643,9 +8657,9 @@ void loop() // this function runs repeatedly after setup() finishes
 Sketch}\label{connect-the-arduino-to-the-computer-and-upload-the-sketch}
 
     Connect the Arduino to the computer using a USB cable. Upload the sketch
-from the computer to the Arduino. In the Arduino IDE, click the check
-mark to verify and the arrow to upload. If the sketch does not upload,
-check which COM port is selected in Tools --\textgreater{} Ports.
+to the Arduino. In the Arduino IDE, click the {[}check mark{]} to verify
+and the {[}arrow{]} to upload. If the sketch does not upload, check
+which \lstinline!COM port! is selected in Tools --\textgreater{} Ports.
 
 \begin{figure}
 \centering
@@ -8662,10 +8676,19 @@ check which COM port is selected in Tools --\textgreater{} Ports.
     \subsection{Check the Sensor Signal}\label{check-the-sensor-signal}
 
     To verify the Arduino sketch is working correctly, the sensor signal can
-be checked in three ways: * The LED will turn on and off as the
-potentiometer dial is turned * In the Arudino Serial Monitor, numbers
-change as the potentiometer dial is turned * In the Arduino Seral
-Plotter, the line moves as the potentiometer dial is turned.
+be checked in three ways:
+
+\begin{itemize}
+\tightlist
+\item
+  The LED turns on and off as the potentiometer dial is turned
+\item
+  In the Arudino \textbf{Serial Monitor}, numbers change as the
+  potentiometer dial is turned
+\item
+  In the Arduino \textbf{Seral Plotter}, the line moves as the
+  potentiometer dial is turned
+\end{itemize}
 
     \subsubsection{LED turns ON and OFF}\label{led-turns-on-and-off}
 
@@ -8677,9 +8700,8 @@ computer.
 
     \subsubsection{Arudino Serial Monitor}\label{arudino-serial-monitor}
 
-A running list of numbers should be seen in the Arduino Serial Monitor
-if the sketch is working. To access the Arduino Serial Monitor use Tools
---\textgreater{} Serial Monitor
+Access the Arduino \textbf{Serial Monitor} using Tools --\textgreater{}
+Serial Monitor.
 
 \begin{figure}
 \centering
@@ -8687,12 +8709,15 @@ if the sketch is working. To access the Arduino Serial Monitor use Tools
 \caption{Arudion IDE Tools Serial Monitor}
 \end{figure}
 
-    The output in the Serial Monitor should be a running list of numbers
-between zero and 1024. When the potentiometer is dialed back and forth
-the numbers streaming down the Serial Monitor should change. If output
-is not shown in the Serial Monitor, ensure both Auto Scroll, NL \& CR,
-9600 baud are selected. Also make sure the Port is set correctly in
-Tools --\textgreater{} Port.
+    If the sketch is working correctly, a running list of numbers is shown
+in the Arduino \textbf{Serial Monitor}. The output in the Serial Monitor
+should be a running list of numbers between \lstinline!0! and
+\lstinline!1024!. When the potentiometer is dialed back and forth, the
+numbers streaming down the \textbf{Serial Monitor} should change. If
+output can't be seen in the \textbf{Serial Monitor}, ensure {[}Auto
+Scroll{]}, {[}Both NL \& CR{]} and {[}9600 baud{]} are selected. Also
+make sure the \lstinline!Port! is set correctly in Tools
+--\textgreater{} Port.
 
 \begin{figure}
 \centering
@@ -8702,10 +8727,11 @@ Tools --\textgreater{} Port.
 
     \subsubsection{Arduino Serial Plotter}\label{arduino-serial-plotter}
 
-A moving line should be seen in the Arduino Serial Plotter if the sketch
-is working correctly. To access the Arduino Serial Plotter use Tools
---\textgreater{} Serial Monitor. Note the Serial Monitor needs to be
-closed before the Serial Plotter can be opened.
+To access the Arduino Serial Plotter use Tools --\textgreater{} Serial
+Monitor. Note the Serial Monitor needs to be closed before the Serial
+Plotter can be opened. if the sketch is working correctly, a moving line
+is shown on the Arduino Serial Plotter when the potentiometer is dialed
+back and forth.
 
 \begin{figure}
 \centering
@@ -8715,10 +8741,10 @@ closed before the Serial Plotter can be opened.
 
 The output of the Serial Plotter should be a running line graph. The
 height of the line on the graph should change as the potentiometer is
-dialed back and forth. If the Serial Plotter is blank, make sure 9600
-baud is selected in the lower right corner of the Serial Plotter. Also
-make sure the Port has been set correctly in Tools --\textgreater{}
-Port.
+dialed back and forth. If the Serial Plotter is blank, make sure {[}9600
+baud{]} is selected in the lower right corner of the Serial Plotter.
+Also make sure the \lstinline!Port! has been set correctly in Tools
+--\textgreater{} Port.
 
 \begin{figure}
 \centering
@@ -8730,12 +8756,13 @@ Port.
 sensor}\label{write-a-pyton-script-to-read-the-sensor}
 
     Once the hardware is connected and the Arduino sketch is working
-correctly, a Python script can be constructed to read the sensor value.
-This can be accomplished using the \textbf{PySerial} package. Make sure
+properly, a Python script can be constructed to read the sensor value.
+Communication between the Python script and the Arduino an be
+accomplished using the \textbf{PySerial} package. Make sure
 \textbf{PySerial} is installed before the script is run. At the top of
-the script, import the \textbf{PySerial}. Note although the package is
-called \textbf{PySerial} to import the package use
-\lstinline!import serial!.
+the Python script, import the \textbf{PySerial} module. Note that
+although the package is called \textbf{PySerial}, use
+\lstinline!import serial! to import the package.
 
     \begin{lstlisting}[language=Python]
 import serial
@@ -8747,18 +8774,18 @@ collected from the sensor. If it seems like the loop is stuck, press
 {[}Ctrl{]} + {[}c{]}.
 
     \begin{lstlisting}[language=Python]
-data = [] #create an empty list to store the data
+data = [] # create an empty list to store the data
 for i in range(50):
     with serial.Serial('COM4', 9800, timeout=1) as ser:
         line = ser.readline()   # read a '\n' terminated line
-        string = line.decode()  # convert byte string to unicode string
-        data.append(float(string)) # convert unicode string to float and add to data list
-        time.sleep(0.1) # wait 0.1 seconds bfore reading the next line
+        string = line.decode()  # convert the byte string to a unicode string
+        data.append(float(string)) # convert the unicode string to a float and add to the data list
+        time.sleep(0.1) # wait 0.1 seconds before reading the next line
 \end{lstlisting}
 
-    Now after the data has been collected, it can be displayed with the
+    After the data has been collected, it can be displayed with the
 \lstinline!print()! function and a \lstinline!for! loop. The output
-should look like the numbers in the Arduino Serial Monitor.
+should look like the numbers in the Arduino \textbf{Serial Monitor}.
 
     \begin{lstlisting}[language=Python]
 for line in data:
@@ -8766,10 +8793,11 @@ for line in data:
 \end{lstlisting}
 
     The data can also be plotted with \textbf{matplotlib}. The plot should
-look like the line plot in the Arduino Serial Plotter.
+look like the line plot in the Arduino \textbf{Serial Plotter}.
 
     \begin{lstlisting}[language=Python]
 import matplotlib.pyplot as plt
+# if using a jupyter notebook include, comment out if using a .py file
 %matplotlib inline
 
 plt.plot(data)
@@ -8779,9 +8807,9 @@ plt.show()
     \section{Controlling an LED with
 Python}\label{controlling-an-led-with-python}
 
-    In this section we are going to control an LED connected to an external
-piece of hardware (in this case an Arduino) using Python. To accomplish
-this the following hardware is required:
+    In this section you will learn how to control an LED connected to an
+external piece of hardware (an Arduino) using Python. To accomplish this
+task the following hardware is required:
 
 \begin{itemize}
 \tightlist
@@ -8800,11 +8828,10 @@ this the following hardware is required:
     \subsection{Set up the LED}\label{set-up-the-led}
 
     Connect the LED to the Arduino using a resistor, wires and a breadboard.
-Note the short leg of the resistor should be connected to ground and the
-long leg of the resistor should be connected to a resistor and then PIN
-13. A resistor is needed to prevent too much current from flowing
-through the LED. This type of resistor is called a \emph{pull up
-resistor}.
+Note the short leg of the resistor is connected to ground and the long
+leg of the resistor is through a resistor to PIN 13. A resistor is
+needed to prevent too much current from flowing through the LED. This
+type of resistor is called a \emph{pull up resistor}.
 
     \begin{figure}
 \centering
@@ -8816,9 +8843,10 @@ resistor}.
 Arduino}\label{upload-code-to-the-arduino}
 
     Upload the following code to the Arduino using the Arduino IDE. This is
-the example sketch called \lstinline!Physical Pixel!. The sketch can be
-found in the Arduino IDE by going to File --\textgreater{} Examples
---\textgreater{} 04.Communication --\textgreater{} PhysicalPixel
+the example sketch called \lstinline!Physical Pixel!. The
+\lstinline!Physical Pixel! sketch can be found in the Arduino IDE by
+going to File --\textgreater{} Examples --\textgreater{}
+04.Communication --\textgreater{} PhysicalPixel
 
 \begin{figure}
 \centering
@@ -8826,8 +8854,8 @@ found in the Arduino IDE by going to File --\textgreater{} Examples
 \caption{Physical Pixel Example Sketch in the Arduino IDE}
 \end{figure}
 
-The code for the Physical Pixel Sketch is also shown below. Note that
-Arduinos use a programming language that is not Python.
+The code for the Physical Pixel Sketch is shown below. Note that
+Arduinos don't use the Python programming language.
 
     \begin{lstlisting}
 //  Found in the Arduino IDE: File --> Examples --> 04.Communication --> PhysicalPixel
@@ -8862,13 +8890,13 @@ void loop() {
     \subsection{Connect the Arduino to the
 Computer}\label{connect-the-arduino-to-the-computer}
 
-    Connect the Arduino to the computer using a USB cable. Make sure a port
-is selected in the Arduino IDE: Tools --\textgreater{} Port
---\textgreater{} COM4 (for example).
+    Connect the Arduino to the computer using a USB cable. Make sure the
+\lstinline!Port! is selected properly in the Arduino IDE under Tools
+--\textgreater{} Port.
 
-In the Arduino IDE, click the checkmark to verify and the arrow to
-upload. If the sketch does not upload, check which COM port is selected
-in Tools --\textgreater{} Ports.
+In the Arduino IDE, click the {[}checkmark{]} to verify and the
+{[}arrow{]} to upload. If the sketch does not upload, check which COM
+port is selected in Tools --\textgreater{} Port.
 
 \begin{figure}
 \centering
@@ -8885,71 +8913,79 @@ in Tools --\textgreater{} Ports.
     \subsection{Turn the LED on and off with the Arduino Serial
 Monitor}\label{turn-the-led-on-and-off-with-the-arduino-serial-monitor}
 
-    Bring up the Arduino Serial Monitor and type \lstinline!L! and
-\lstinline!H! and see the LED turn on and off.
+    Bring up the Arduino Serial Monitor and type \lstinline!L! or
+\lstinline!H! and click {[}Send{]} and observe the LED turn on and off.
+
+\begin{figure}
+\centering
+\includegraphics{images/serial_monitor_L.png}
+\caption{Arduino Serial Monitor}
+\end{figure}
 
     \subsection{Write a Pyton Script to turn the LED on and
 off}\label{write-a-pyton-script-to-turn-the-led-on-and-off}
 
-    After the LED is connected and the LED turns on and off based on input
-at the Arduino Serial Monitor, it is time to write a Python script to
-turn the LED on and off. This can be accomplished using the
-\textbf{PySerial} package. Make sure \textbf{PySerial} is installed
-before script is run.
+    After the LED turns on and off based on input at the Arduino Serial
+Monitor, it is time to write a Python script to turn the LED on and off.
+This can be accomplished using the \textbf{PySerial} package. Make sure
+\textbf{PySerial} is installed before script is run.
 
-At the top of the script, import the \textbf{PySerial}. Note that even
-though the package is called \textbf{PySerial} the line
-\lstinline!import serial! is used.
+At the top of the script, import the \textbf{PySerial} module. Note that
+even though the package is called \textbf{PySerial} the line
+\lstinline!import serial! is used. The \textbf{time} module is also
+imported as the \lstinline!time.sleep()! function will be used in the
+script.
 
     \begin{lstlisting}[language=Python]
 import serial
 import time
 \end{lstlisting}
 
-    In the next part of the Python scripts, create a loop that will run for
-about 5 seconds while the LED is blinked on and off. Note the byte
-string \lstinline!H! need to be sent to the Arduino, not the unicode
-string \lstinline!H!. The unicode string is pre-pended with the letter
-\lstinline!b! as in ser.writelines(b'H').
+    In the next part of the Python script, create a loop that will blink the
+LED on and off for about 5 seconds. Note the byte string
+\lstinline!b'H'! need to be sent to the Arduino, not the unicode string
+\lstinline!'H'!. The unicode string \lstinline!'H'! is pre-pended with
+the letter \lstinline!b! in \lstinline!ser.writelines(b'H')!.
 
     \begin{lstlisting}[language=Python]
-data = [] #create an empty list to store the data
+data = []
 for i in range(10):
     with serial.Serial('COM4', 9800, timeout=1) as ser:
         ser.writelines(b'H')   # send a byte
-        time.sleep(0.5) # wait 0.5 seconds bfore reading the next line
+        time.sleep(0.5)        # wait 0.5 seconds before reading the next line
         ser.writelines(b'L')   # send a byte
 \end{lstlisting}
 
     \subsection{Write a Python script to allow a user to turn the LED on and
 off}\label{write-a-python-script-to-allow-a-user-to-turn-the-led-on-and-off}
 
-    Once the LED blinks on and off, it is time to write a Python script to
-allow a user to turn the LED on and off. At the top of the Python script
-import the PySerial Module.
+    Once the LED blinks on and off successfully using a Python script, it is
+time to write a new Python script that will allow a user to turn the LED
+on and off. At the top of the new Python script import the
+\textbf{PySerial} and \textbf{time} modules.
 
     \begin{lstlisting}[language=Python]
 import serial
 import time
 \end{lstlisting}
 
-    Next give the user instructions. If the user types \lstinline!H!, the
+    Next, give the user instructions. If the user types \lstinline!H!, the
 LED will turn on. If the user types \lstinline!L! the LED will turn off.
 If the user types \lstinline!q!, the program will quit.
 
     \begin{lstlisting}[language=Python]
 print('This is a program that allows a user to turn an LED on and off')
-print('H to turn the LED on')
-print('L to turn the LED off')
-print('q to quit')
+print('type H to turn the LED on')
+print('type L to turn the LED off')
+print('type q to quit')
 \end{lstlisting}
 
-    Finally, the script needs a loop to ask the user for an \lstinline!H! or
-\lstinline!L! character. Once the user enters the letter, the letter
-needs to be converted to a byte string,. The byte string can then sent
-over the serial line to the Arduino. A delay is added so that the
-Arduino can process the previous command before dealing with the next
-one.
+    Finally, the script needs a while loop to ask the user for an
+\lstinline!H! or \lstinline!L! character. Once the user enters the
+letter, the letter needs to be converted to a byte string. Then the byte
+string is sent over the serial line to the Arduino. A delay is added so
+that the Arduino can process the previous command before dealing with
+the next one.
 
     \begin{lstlisting}[language=Python]
 user_input = input('H = on, L = off, q = quit' : )
@@ -8958,9 +8994,12 @@ while user_input != 'q':
         byte_command = encode(user_input)
         ser.writelines(byte_command)   # send a byte
         time.sleep(0.1) # wait 0.5 seconds before reading the next line
-
+        user_input = input('H = on, L = off, q = quit' : )
 print('q entered. Exiting the program')
 \end{lstlisting}
+
+    When the script is running, type \lstinline!H! and \lstinline!L! and
+observe the LED blink on and off.
 
     \section{Summary}\label{summary}
 
@@ -9941,7 +9980,7 @@ installed using the \textbf{Anaconda Prompt}. Alternatively,
 environment, active the virtual environment first before proceeding with
 the \textbf{ampy} package installation.
 
-    \begin{lstlisting}
+    \begin{lstlisting}[language=Plaintext]
 > conda activate micropython
 (micropython) > pip install ampy-adafruit
 (micropython) > ampy --help
@@ -10511,7 +10550,7 @@ program run from the command line or \textbf{Anaconda Prompt}.
 open source projects to share code and allow other users to make changes
 to existing code.
 
-    Both \textbf{git} and \textbf{github.com} are useful of engineers
+    Both \textbf{git} and \textbf{github.com} are useful for problemsolvers
 working in teams.
 
     To use git and github the understanding of a few terms is import:
@@ -10534,25 +10573,107 @@ working in teams.
 
     Useful git commands are summarized below:
 
-\lstinline!git init! initialize a new repository
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+command\strut
+\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
+description\strut
+\end{minipage}\tabularnewline
+\midrule
+\endhead
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\lstinline!git init!\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+initialize a new repository\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\lstinline!git remote add origin https://github.com/user/repo.git!\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+links a local repo with a remote repo on github.com\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\lstinline!git add .!\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+adds all the files and changes to the local git repo\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\lstinline!git commit -m "commit message"!\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+commits the changes in the local repo\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\lstinline!git push origin master!\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+pushes the changes up to the remote repo on github.com\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\lstinline!git pull origin master!\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+pulls the version in the remote repo down to the local repo\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+\lstinline!git clone https://github.com/user/repo.git!\strut
+\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
+copies a remote repo on github.com to a local directory\strut
+\end{minipage}\tabularnewline
+\bottomrule
+\end{longtable}
 
-\lstinline!git remote add origin https://github.com/user/repo.git! links
-a local git repo with a remote git repo on github.com
+    \subsection{Cloning a repo}\label{cloning-a-repo}
 
-\lstinline!git add .! adds all the files and changes to the local git
-repo
+    One common task to complete with git to to clone a repo from github.com
+and save it locally. This is accomplished with:
 
-\lstinline!git commit -m "commit message"! commits the changes in the
-local repo
+\begin{lstlisting}
+$ git clone https://github.com/user/repo.git
+\end{lstlisting}
 
-\lstinline!git push origin master! pushes the changes up to the remote
-repo on github.com
+This command will copy the repo named \lstinline!repo! from the user
+\lstinline!user!. To clone the repo for this book, use:
 
-\lstinline!git pull origin master! pulls the version in the remote repo
-down to the local repo
+\begin{lstlisting}
+$ git clone https:github.com/ProfessorKazarinoff/Problem-Solving-with-Python.git
+\end{lstlisting}
 
-\lstinline!git clone https://github.com/user/repo.git! copies a remote
-repo on github.com to a local directory
+    \subsection{Creating a synching a remote repo on github.com with a local
+repo}\label{creating-a-synching-a-remote-repo-on-github.com-with-a-local-repo}
+
+    Another common task to complete with git is to synch a remote repo with
+github.com with a local repo on any one of your computers. This is
+useful for one person if they want to keep the files in a particular
+project synched. It is also useful for a group of problem solvers who
+are working on the same project to have access to the same remote repo
+on github.com and then have the same local repo on all of their
+computers.
+
+First, go to github.com and create a new account. Log on and create a
+new repo. It is a good idea to include a license and a .gitignore file.
+For a Python project, the .gitignore file for Python is a good start.
+
+Second, create a local directory and \lstinline!cd! into it. Initialize
+a git repo locally in that directory then synch the local folder with
+the remote repo on github.com
+
+\begin{lstlisting}[language=bash]
+$ mkdir newproject
+$ cd newproject
+$ git init
+$ git remote add origin https://github.com/user/repo.git
+$ git pull origin master
+\end{lstlisting}
+
+Third, work on the project locally. You could edit one of the files or
+create a new file for example.
+
+finally, save your work and commit the changes you made with git. Push
+those changes up to the remote repo on github.com
+
+\begin{lstlisting}[language={}]
+$ git add .
+$ git commit -m "commit message"
+$ git push origin master
+\end{lstlisting}
 
     \section{LaTeX Math}\label{latex-math}
 
@@ -10668,9 +10789,10 @@ TeXworks was used to compile the LaTeX to .pdf.
     Peter D. Kazarinoff, PhD is a full-time faculty member in Engineering
 and Engineering Technology at Portland Community College in Portland,
 OR. Peter earned a PhD in Engineering from the University of Washington
-and a BA from Cornell University.
+and a BA from Cornell University. He teaches courses in Engineering
+Programming, Materials Science, Manufacturing and others.
 
-Peter currently lives in Portland OR with his wife and two kids.
+Peter lives in Portland OR with his wife and two kids.
 
 
     % Add a bibliography block to the postdoc
