@@ -121,4 +121,4 @@ showstringspaces=false,
 ((* endblock markdowncell *))
 
 % to get lstlisting use: ((( cell.source | citation2latex | strip_files_prefix | markdown2latex(extra_args=["--top-level-division=chapter", "--listings"]) )))
-% in letex doc need \usepackage{listings} \newcommand{\passthrough}[1]{#1}
+% in LaTeX doc need \usepackage{listings} \newcommand{\passthrough}[1]{#1}
