@@ -19,20 +19,18 @@
 
 
 \lstset{
-language=Python, 
+language={}, 
 basicstyle=\ttfamily,
-stringstyle=\color{stringred},
-commentstyle=\color{commentteal},
-keywordstyle=\color{darkgreen}\bfseries,
-keywordstyle = [3]{\color{mypurple}\bfseries},
-morekeywords = [3]{*,math,log,log10,exp,sqrt},
+stringstyle=\color{cm-string},
+commentstyle=\color{cm-comment},
+keywordstyle=\color{cm-keyword}\bfseries,
+%keywordstyle = {[3]\color{cm-operator}},
+%morekeywords = [3]{>>>,+,-,/,*,**,%},
 showstringspaces=false,
 }
 \newcommand{\passthrough}[1]{#1}
 
-    \lstdefinelanguage{Plaintext}{
-  numbers=none
-}
+    
     
     \usepackage[T1]{fontenc}
     % Nicer default font (+ math font) than Computer Modern for most use cases
@@ -65,9 +63,15 @@ showstringspaces=false,
 
 %custom colors
 \definecolor{stringred}{RGB}{186,33,33}
-\definecolor{commentteal}{HTML}{408080}
+\definecolor{commentteal}{RGB}{64,128,128}
 \definecolor{darkgreen}{RGB}{0,128,0}
-\definecolor{mypurple}{HTML}{AA22FF}
+\definecolor{cm-keyword}{HTML}{008000}  %jupyter notebook keyword color
+\definecolor{cm-builtin}{HTML}{008000}  %jupyter notebook built-in function color
+\definecolor{cm-number}{HTML}{008800}   %jupyter notebook number color
+\definecolor{cm-string}{HTML}{BA2121}   %jupyter notebook string color
+\definecolor{cm-operator}{HTML}{AA22FF} %jupyter notebook operator color
+\definecolor{cm-comment}{HTML}{408080}  %jupyter notebook comment color
+
 
 
 
@@ -1007,9 +1011,8 @@ The Anaconda Downloads Page will look something like this:
 \caption{anaconda download page}
 \end{figure}
 
-    \subsubsection{\texorpdfstring{2. Select MacOS and download the
-\textbf{\emph{.pkg}}
-installer}{2. Select MacOS and download the .pkg installer}}\label{select-macos-and-download-the-.pkg-installer}
+    \subsubsection{2. Select MacOS and download the .pkg
+installer}\label{select-macos-and-download-the-.pkg-installer}
 
 In the operating systems box, select \lstinline![MacOS]!. Then download
 the most recent Python 3 distribution (at the time of this writing the
@@ -1033,8 +1036,8 @@ your Work Email address.
 \caption{Anaconda ask for email}
 \end{figure}
 
-    \subsubsection{3. Open the **\_.pkg**
-installer}\label{open-the-_.pkg-installer}
+    \subsubsection{3. Open the .pkg
+installer}\label{open-the-.pkg-installer}
 
 Using the MacOS finder, navigate to the downloads folder and double
 click the \textbf{\emph{.pkg}} installer file you just downloaded. It
@@ -1940,7 +1943,7 @@ and logical comparisions
 \end{lstlisting}
 
     \begin{lstlisting}[language=Python]
->>> word[::-1] #start=not specified :stop=note specified:step=-1
+>>> word[::-1] # start=not specified :stop=not specified:step=-1
 'noituloS'
 \end{lstlisting}
 
@@ -2109,17 +2112,19 @@ By the end of this chapter you will be able to:
     \section{Numeric Data Types}\label{numeric-data-types}
 
     Python has many useful built in data types. Python variables can store
-different types of data and can be created dynamically, without first
-defining a data type. It's useful for engineers to understand a couple
-of Python's core data types in order to write well constructed code.
-Below we will discuss a few different data types.
+different types of data. A variable's data type is created dynamically,
+without the need to specifically define a data type when the variable is
+created. It's useful for problem solvers to understand a couple of
+Python's core data types in order to write well-constructed code. Below
+is a discussion of a few different data types in Python.
 
     \subsection{Integers}\label{integers}
 
 Integers are one of the Python data types. An integer is a whole number,
-negative, positive or zero. In Python, integer variables can be defined
-by simply assigning a whole number to a variable name. We can determine
-data type of a variable using the \lstinline!type()! function.
+negative, positive or zero. In Python, integer variables are defined by
+simply assigning a whole number to a variable. Python's
+\lstinline!type()! function can be used to determine the data type of a
+variable.
 
 \begin{lstlisting}[language=Python]
 >>> a = 5
@@ -2156,9 +2161,10 @@ decimal point \lstinline!.! when a variable is assigned.
 <class 'float'>
 \end{lstlisting}
 
-To make sure a variable is a float instead of an integer even if it is a
-whole number, a trailing decimal point \lstinline!.! is used. Note the
-difference when a decimal point comes after the a whole number:
+To define a variable is a float instead of an integer, even if it is
+assigned a whole number, a trailing decimal point \lstinline!.! is used.
+Note the difference when a decimal point \lstinline!.! comes after a
+whole number:
 
 \begin{lstlisting}[language=Python]
 >>> g = 5
@@ -2171,11 +2177,11 @@ difference when a decimal point comes after the a whole number:
 
     \subsubsection{Complex numbers}\label{complex-numbers}
 
-Another data type useful to engineers are complex numbers. A complex
-number is defined in Python using a real component \lstinline!+!
-imaginary component\lstinline!j!. The letter \lstinline!j! must be used
-in the imaginary component. Using the letter \lstinline!i! will return
-an error. Note how imaginary numbers can be added to integers and
+Another useful data type for problem solvers are complex numbers. A
+complex number is defined in Python using a real component \lstinline!+!
+an imaginary component\lstinline!j!. The letter \lstinline!j! must be
+used in the imaginary component. Using the letter \lstinline!i! will
+return an error. Note how imaginary numbers can be added to integers and
 floats.
 
 \begin{lstlisting}[language=Python]
@@ -2237,7 +2243,7 @@ NameError: name 'false' is not defined
 
 An int, float or complex number set to zero will always return
 \lstinline!False!. An int, float or complex number set to any other
-number positive or negative besides zero will return \lstinline!True!.
+number, positive or negative, will return \lstinline!True!.
 
 \begin{lstlisting}[language=Python]
 >>> zero_int = 0
@@ -2259,11 +2265,11 @@ True
 
     \section{Strings}\label{strings}
 
-    Strings are sequences of letters, numbers, spaces and symbols. In
+    Strings are sequences of letters, numbers, symbols and spaces. In
 Python, strings can be almost any length and can contain spaces. String
 variables are assigned in Python using quotation marks
 \lstinline!'   '!. Strings can contain blank spaces. A blank space is a
-valid string character in Python.
+valid string character in Python string.
 
 \begin{lstlisting}[language=Python]
 >>> string = 'z'
@@ -2294,8 +2300,8 @@ strings as well if surrounded with quotes.
 
     \section{Lists}\label{lists}
 
-    Lists is a data structure in Python that can contain multiple elements
-of any of the other data types. A list is defined with square brackets
+    A list is a data structure in Python that can contain multiple elements
+of any of the other data type. A list is defined with square brackets
 \lstinline![ ]! and commas \lstinline!,! between elements.
 
 \begin{lstlisting}[language=Python]
@@ -2312,9 +2318,9 @@ list
 
     \subsection{Indexing Lists}\label{indexing-lists}
 
-You can pull individual elements out of a list using bracket
-\lstinline![ ]! notation. Note that Python lists start with the index
-zero, not the index 1. For example:
+Individual elements of a list can be accessed or \emph{indexed} using
+bracket \lstinline![ ]! notation. Note that Python lists start with the
+index zero, not the index 1. For example:
 
 \begin{lstlisting}[language=Python]
 >>> lst = ['statics', 'strengths', 'dynamics']
@@ -2383,7 +2389,9 @@ multiple objects. These are \textbf{dictionaries} and \textbf{tuples}.
 
     \subsection{Tuples}\label{tuples}
 
-    Tuples are immutable lists
+    Tuples are immutable lists. Elements of a list can be modified, but
+elements in a tuple can only be accessed, not modified. The name tuple
+does not mean that only two values can be stored.
 
     \section{Summary}\label{summary}
 
@@ -8149,8 +8157,80 @@ The solution is x = -1/10, y = 17/10
     \section{Solving two equations for two
 unknows}\label{solving-two-equations-for-two-unknows}
 
-    \textbf{SymPy} can be used to solve two equations for two unknowns.
-Consider the following engineering statics problem:
+    Solving two equations for two unknown can be accomplished using
+\textbf{SymPy}. Consider the following set of two equations with two
+variables
+
+    \[ x + y - 5 = 0 \]
+
+\[ x - y + 3 = 0 \]
+
+    To solve this system of two equations for the two unknows \(x\) and
+\(y\), first the \textbf{Sympy} package needs to be imported. From the
+\textbf{sympy} package, we'll use the functions \lstinline!symbols!,
+\lstinline!Eq! and \lstinline!solve!.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
+\end{Verbatim}
+
+
+    Next we create two \textbf{sympy} symbols objects, \(x\) and \(y\). Note
+the string passed as an argument to the \lstinline!symbols()! function,
+\lstinline!'x y'!, does not have any commas. The outputs of the
+\lstinline!symbols()! function are the two symbols objects \lstinline!x!
+and \lstinline!y!. These outputs must be separated by a comma and are
+not surrounded by quotes.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    Now we can define the two equations as \textbf{Sympy} equation objects
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x} \PY{o}{+} \PY{n}{y} \PY{o}{\PYZhy{}} \PY{l+m+mi}{5}\PY{p}{)}
+        \PY{n}{eq2} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x} \PY{o}{\PYZhy{}} \PY{n}{y} \PY{o}{+} \PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+
+    Now we can use \textbf{Sympy's} solve function, to computer the value of
+\(x\) and \(y\). The first argument passed to the \lstinline!solve()!
+function is a tuple of the two equations \lstinline!(eq1, eq2)!. The
+second argument passed to the solve function is a tuple of the variables
+we want to solve for \lstinline!(x, y)!.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} \{x: 1, y: 4\}
+\end{Verbatim}
+            
+    The solution is in the form of a Python dictionary. The dictionary keys
+are the variables and the dictionary values are the numerical solutions.
+We can access the solution out of the dictionary using regular
+dictionary indexing.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{sol\PYZus{}dict} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x = }\PY{l+s+si}{\PYZob{}sol\PYZus{}dict[x]\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y = }\PY{l+s+si}{\PYZob{}sol\PYZus{}dict[y]\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+x = 1
+y = 4
+
+    \end{Verbatim}
+
+    Solving two equations for two unknown can be accomplished using
+\textbf{SymPy}. Consider the following engineering statics problem:
 
 GIVEN:
 
@@ -8158,26 +8238,26 @@ A mass of 22 lbs is hung from a ring. The ring is supported by two
 cords, cord CE is 30 degrees above the horizontal to the right and cord
 BD is 45 degrees to the left above the horizontal.
 
-m = 20 lb
+\(m\) = 20 lb
 
-TCE @ +30 degrees CCW relative to +x-axis
+\(T_{CE}\) @ +30 degrees CCW relative to +x-axis
 
-TBD @ +45 degress CW relative to -x-axis
+\(T_{BD}\) @ +45 degress CW relative to -x-axis
 
 FIND:
 
-magnitude of TCE and TBD
+magnitude of \(T_{CE}\) and \(T_{BD}\)
 
     SOLUTION:
 
-To solve for the magnitude of TCE and TBD, we will need to solve to two
+To solve for the magnitude of TCE and TBD, need to solve to two
 equations for two unknowns. To accomplish this with \textbf{SymPy},
 first we need to import \textbf{numpy} and \textbf{sympy}. The
 \textbf{SymPy} functions \lstinline!symbols!, \lstinline!Eq! and
 \lstinline!solve! will all be needed.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
 \end{Verbatim}
 
@@ -8192,12 +8272,12 @@ of the assignment operator \lstinline!=!) are separated with commas, no
 quotes.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Tce Tbd}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Tce Tbd}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
-    Next the two equations need to be defined. Assuming the ring is in
-static equilibrium:
+    Next two equations based on the sum of the forces need to be defined.
+Assuming the ring is in static equilibrium:
 
 \[ \Sigma \vec{F} = 0 \]
 
@@ -8234,12 +8314,12 @@ This equation can be represented as a \textbf{Sympy} equation object.
 Note the right-hand side of the equation is \lstinline!0!.
 \textbf{Sympy} equation objects are instantiated with expressions equal
 to zero. If the expression was not equal to zero, we would simply
-subtract both sides by the term on the right-hand side of the
-\lstinline!=! equals sign and use the resulting expression (equal to
-zero) to create the equation object.
+subtract both sides by the term on the right-hand side of the equals
+sign and use the resulting expression (equal to zero) to create the
+\textbf{Sympy} equation object.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{eq1}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{eq1}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{)}
         \PY{n+nb}{print}\PY{p}{(}\PY{n}{eq1}\PY{p}{)}
 \end{Verbatim}
 
@@ -8249,7 +8329,7 @@ Eq(-0.707106781186548*Tbd + 0.866025403784439*Tce, 0)
 
     \end{Verbatim}
 
-    Our second equation, based on the sum of the forces in the y-direction
+    The second equation, based on the sum of the forces in the y-direction
 is:
 
 \[ T_{ce} sin(30) + T_{bd} sin(45) - 22 = 0 \]
@@ -8257,53 +8337,53 @@ is:
 We can define this equation as a \textbf{Sympy} equation object as well:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{eq2}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{22}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{eq2}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{22}\PY{p}{)}
         \PY{n+nb}{print}\PY{p}{(}\PY{n}{eq2}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-Eq(0.707106781186547*Tbd + 0.5*Tce - 22, 0)
+Eq(0.707106781186548*Tbd + 0.5*Tce - 22, 0)
 
     \end{Verbatim}
 
     Now to solve the two equations for \(T_{ce}\) and \(T_{bd}\) we use
 sympy's \lstinline!solve! method. The first argument is a tuple of the
-equations we want to solve, the second argument is the variables we want
-to solve for.
+equations we want to solve, the second argument is a tuple of the
+variables we want to solve for.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} \{Tce: 16.1051177665153, Tbd: 19.7246603876972\}
+{\color{outcolor}Out[{\color{outcolor}10}]:} \{Tbd: 19.7246603876972, Tce: 16.1051177665153\}
 \end{Verbatim}
             
-    We end up with a dictionary, the keys are the variable names and the
-values are the solved numerical solution
+    The solution is saved in a dictionary. The dictionary keys are the
+variable names and the dictionary values are the numerical solution.
 
-    Now let's solve the same problem, but keep \(m\) as a variable.
+    We can solve the same problem, but keep \(m\) as a variable.
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{m}\PY{p}{,} \PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m, Tab, Tac}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{m}\PY{p}{,} \PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m, Tab, Tac}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{eq1}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{eq1}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{)}
          \PY{n}{eq2}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{m}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Tce}\PY{p}{,}\PY{n}{Tbd}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Tce}\PY{p}{,}\PY{n}{Tbd}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} \{Tab: 0.732050807568878*m, Tac: 0.896575472168054*m\}
+{\color{outcolor}Out[{\color{outcolor}13}]:} \{Tab: 0.732050807568877*m, Tac: 0.896575472168053*m\}
 \end{Verbatim}
             
     Now our solution is in terms of the variable \(m\).
@@ -9068,11 +9148,11 @@ ASCII Character
   Use MicroPython to activate a relay using a microcontroller
 \end{itemize}
 
-    \section{What is Micropython?}\label{what-is-micropython}
+    \section{What is MicroPython?}\label{what-is-micropython}
 
-    \subsection{What is Micropython?}\label{what-is-micropython}
+    \subsection{What is MicroPython?}\label{what-is-micropython}
 
-    \href{http://micropython.org/}{Micropython} is a port, or version of
+    \href{http://micropython.org/}{MicroPython} is a port, or version of
 Python designed to run on small, inexpensive, low-power
 microcontrollers. Examples of microcontrollers that Micropython can run
 on include the \href{https://store.micropython.org/}{pyboard}, the
@@ -9087,43 +9167,43 @@ because Python is too resouce intensive. Regular Python takes up too
 much hard disk space, runs on too much RAM and requires a more powerful
 processor than microcontrollers have.
 
-It is pretty amazing that a version of Python (Micropython) runs on
-these small, cheap microcontrollers like the ESP8266. To get Micropython
-to run at all on these small boards, Micropython only contains a subset
+It is pretty amazing that a version of Python (MicroPython) runs on
+these small, cheap microcontrollers like the ESP8266. To get MicroPython
+to run at all on these small boards, MicroPython only contains a subset
 of all the standard library modules included with ``regular'' Python.
-Some of the libraries that are included with Micropython don't have the
+Some of the libraries that are included with MicroPython don't have the
 full set of functions and classes that come with the full version of
-Python. This allows Micropython to be compact (around 600 kB for the
+Python. This allows MicroPython to be compact (around 600 kB for the
 ESP8266 port) and only use a small amount of RAM (down to 16k according
 to the \href{https://micropython.org/}{Micropython main page})
 
-You can try using Micropython online with this neat
-\href{https://micropython.org/unicorn/}{Micropython online emulator}.
-The emulator allows you to run commands at a Micropyton Prompt and see
+You can try using MicroPython online with this neat
+\href{https://micropython.org/unicorn/}{MicroPython online emulator}.
+The emulator allows you to run commands at a MicroPython Prompt and see
 the result on a virtual pyboard.
 
-    \subsection{What is Micropyton used
-for?}\label{what-is-micropyton-used-for}
+    \subsection{What is Micropython used
+for?}\label{what-is-micropython-used-for}
 
-    Micropython is installed on small, cheap microcontrollers like the
+    MicroPython is installed on small, cheap microcontrollers like the
 \href{https://learn.adafruit.com/adafruit-feather-huzzah-esp8266}{ESP8266}.
-Anything these small microcontrollers can do, Micropython can do. This
+Anything these small microcontrollers can do, MicroPython can do. This
 includes using the microcontroller as a remote sensor to measure things
-like temperature, humidity and light level. Micropython can also be used
+like temperature, humidity and light level. MicroPython can also be used
 to blink LED's, control arrays of LED's, or run small displays.
-Micropython can control servo motors, stepper motors and solenoids.
-Civil Engineers could use Micropython to monitor water levels.
-Michanical Engineers could use Micropython to drive robots. Electrical
-Engineers could use micropython to measure voltage levels in embedded
-systems. In the later posts in this series, we will use Micropython,
+MicroPython can control servo motors, stepper motors and solenoids.
+Civil Engineers could use MicroPython to monitor water levels.
+Michanical Engineers could use MicroPython to drive robots. Electrical
+Engineers could use microPython to measure voltage levels in embedded
+systems. In the later posts in this series, we will use MicroPython,
 running on a small cheap ESP8266 board, to create a remote
-internet-connected weather station. The last posts in the series will
-use Micropyton, running on a \textbf{really cheap} (around \$2) ESP-01
+Internet-connected weather station. The last posts in the series will
+use MicroPython, running on a \textbf{really cheap} (around \$2) ESP-01
 module to turn on and off an LED from any computer connected to the
-internet anywhere in the world.
+Internet anywhere in the world.
 
-    \subsection{Why should undergraduate Engineers learn
-Mircopython?}\label{why-should-undergraduate-engineers-learn-mircopython}
+    \subsection{Why should problem solvers learn
+MircoPython?}\label{why-should-problem-solvers-learn-mircopython}
 
     Using Python to solve engineering problems such as calculations,
 statistics, modeling and visualization is really useful for
@@ -9136,29 +9216,30 @@ light, low-power board could run a simple robot. You don't want to use a
 laptop for every small electrical measurement or embedded system
 control, but a \$2 WiFi module would work.
 
-In addition, learning how to use Micropython on small, cheap
+In addition, learning how to use MicroPython on small, cheap
 microcontrller can help undergraduates Engineers understand how
 programming works. It is a different kind of feedback and excitement
 seeing a motor whirl around compared to seeing a picture of a motor with
 the speed displayed as text. There is a different kind of wonder seeing
 an array of LED's light up compared to a 2-D plot on a computer screen.
-Plus Micropython is just fun! It's as easy to program Micropython as it
+Plus MicroPython is just fun! It's as easy to program MicroPython as it
 is to program regular Python. The little projects you can do with
-Micropython running on a small, low-cost board are almost unlimited. We
-could send Micropython to space in a micro-satellite, or bury
-Micropython underground in a small boring machine, or launch Micorpython
+MicroPython running on a small, low-cost board are almost unlimited. We
+could send MicroPython to space in a micro-satellite, or bury
+MicroPython underground in a small boring machine, or launch MicorPython
 into the sky on a weather balloon.
 
-    \section{Installing Micropython}\label{installing-micropython}
+    \section{Installing MicroPython}\label{installing-micropython}
 
-    Micropython is a port of the Python programming language that runs on
-small, inexpensive microcontrollers. In this section, we will install
-Micropython on an Adafruit Feather Huzzah ESP8266 board using Python and
-a package called \textbf{esptool}. In subsequent sections we will build
-our Feather Huzzah microcontroller into a WiFi-enabled weather station.
+    MicroPython is a port of the Python programming language that runs on
+small, inexpensive microcontrollers. In this section, you will learn how
+to install MicroPython on an Adafruit Feather Huzzah ESP8266
+microcontroller using Python and a package called \textbf{esptool}. In
+subsequent sections, you will learn how to blink an LED and read a
+sensor using MicroPython.
 
-    To install Micropython on a microcontroller, like the Adafruit Feather
-Huzzah ESP8266, we need the following hardware:
+    To install MicroPython on an ESP8266-based microcontroller, like the
+Adafruit Feather Huzzah ESP8266, we need the following hardware:
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -9167,39 +9248,26 @@ Hardware & Purpose\tabularnewline
 \endhead
 Windows 10 & install Micropython on the microcontroller\tabularnewline
 Adafruit Feather Huzzah ESP8266 & microcontroller running
-Microphythonn\tabularnewline
+MicroPython\tabularnewline
 microUSB cable & connect microcontroller to computer\tabularnewline
 \bottomrule
 \end{longtable}
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-Hardware & Purpose\tabularnewline
-\midrule
-\endhead
-Windows 10 laptop & install Micropython on the
-microcontroller\tabularnewline
-Adafruit Feather Huzzah ESP8266 & microcontroller running
-Microphython\tabularnewline
-microUSB cable & connect microcontroller to computer\tabularnewline
-\bottomrule
-\end{longtable}
-
-To install Micropython we will use the following software and tools:
+To install MicroPython we will use the following software and tools:
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
 Software & Purpose\tabularnewline
 \midrule
 \endhead
-Windows 10 & download Micropython\tabularnewline
+Windows 10 & download MicroPython\tabularnewline
 Anaconda distribution of Python & run \textbf{esptool} that installs
-Micropython\tabularnewline
+MicroPython\tabularnewline
 Anaconda Prompt & Install the \textbf{esptool} package using
 \textbf{pip}\tabularnewline
 \textbf{esptool} & A \textbf{pip} installable package used to install
-Micropython\tabularnewline
-firmware \textbf{\emph{.bin}} file & Version of Micropython run on the
+MicroPython\tabularnewline
+firmware \textbf{\emph{.bin}} file & Version of MicroPython run on the
 microcontroller\tabularnewline
 \bottomrule
 \end{longtable}
@@ -9216,7 +9284,7 @@ microcontroller\tabularnewline
   Create a new conda environment and \lstinline!pip install esptool!
 \item
   Download the \href{http://micropython.org/download\#esp8266}{latest
-  Micropython .bin firmware file}
+  MicroPython .bin firmware file}
 \item
   Install the
   \href{https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers}{SiLabs
@@ -9233,7 +9301,7 @@ microcontroller\tabularnewline
   monitor
 \item
   Use Putty to connect to the Feather Huzzah and run commands in the
-  Micropython REPL
+  MicroPython REPL
 \end{enumerate}
 
     \subsection{Install the Anaconda distribution of
@@ -9241,25 +9309,20 @@ Python}\label{install-the-anaconda-distribution-of-python}
 
     If you don't have Anaconda installed already, go to
 \href{https://www.anaconda.com/download/}{Anaconda.com/download} and
-install the latest version. The Anaconda distribution of Python is the
-Python distribution I recommend for undergraduate engineers. You want to
-download and install the Python 3.6 Version (the Python 2.7 Version is
-legacy Python). Most laptops and desktops run a 64-bit version of
-Windows 10. If in doubt, you can check your Windows installation, or
-just go with the 64-bit version.
+install the latest version.
 
-    \subsection{Create a new conda environment and install
-esptool.py}\label{create-a-new-conda-environment-and-install-esptool.py}
+    \subsection{\texorpdfstring{Create a new conda environment and install
+\textbf{esptool}}{Create a new conda environment and install esptool}}\label{create-a-new-conda-environment-and-install-esptool}
 
     It's best practice when using Python to work in virtual environments.
 We'll create a new virtual environment with conda to use with our
-Micropython projects. Open the Anaconda prompt and create a new virtual
+MicroPython projects. Open the Anaconda prompt and create a new virtual
 environment named \lstinline!micropython!. Activate the environment with
 the \lstinline!conda activate! command. After activating the virtual
 environment you should see \lstinline!(micropython)! before the Anaconda
 Prompt. Once inside the virtual environment, use \lstinline!pip! to
 install \lstinline!esptool!. The \lstinline!esptool! will be used to
-upload the Micropython .bin firmware file onto the Adafruit Feather
+upload the MicroPython .bin firmware file onto the Adafruit Feather
 Huzzah board. Confirm that \lstinline!esptool! is installed in the
 \lstinline!(micropython)! virtual environment with
 \lstinline!conda list!. I also created a new directory in the
@@ -9276,7 +9339,7 @@ project files.
 (micropython) > cd micropython
 \end{lstlisting}
 
-    \subsection{Download the latest micropython firmware .bin
+    \subsection{Download the latest MicroPython firmware .bin
 file}\label{download-the-latest-micropython-firmware-.bin-file}
 
     Go to github.com and
@@ -9295,7 +9358,7 @@ board.
 \begin{figure}
 \centering
 \includegraphics{images/firmware_download_page.PNG}
-\caption{.bin firmware on github}
+\caption{MicroPython Firmware}
 \end{figure}
 
     \subsection{Install the SiLabs driver for the Adafruit Feather Huzzah
@@ -9311,7 +9374,7 @@ installed. This is quick and easy, but does require admin privileges.
 \begin{figure}
 \centering
 \includegraphics{images/download_silabs_driver.PNG}
-\caption{SiLabs Driver}
+\caption{SiLabs Driver Download Page}
 \end{figure}
 
     \subsection{Connect the Adafruit Feather Huzzah ESP8266 board to the
@@ -9320,41 +9383,34 @@ laptop}\label{connect-the-adafruit-feather-huzzah-esp8266-board-to-the-laptop}
     Use a microUSB cable (the same kind of cable that charges many mobile
 phones) to connect the Feather Huzzah to the computer. Make sure that
 the microUSB cable is a full USB \textbf{data cable} and not just a
-simple power cable. I had trouble getting the Feather Huzzah to work,
-and it turned out the reason was the micoUSB cable was only a charging
-cable and could not transfer data.
+simple power cable. If you have trouble getting the Feather Huzzah to
+work, one reason might be the micoUSB cable is only a charging cable and
+can not transfer data.
 
     \subsection{Determine which serial port the Feather Huzzah is connected
 to}\label{determine-which-serial-port-the-feather-huzzah-is-connected-to}
 
     Use Windows Device Manager to determine which serial port the Feather
-Huzzah board is connected to. We will need the serial port as one of the
-parameters when we upload the .bin firmware file on the board. Look for
-something like \textbf{Silicon Labs CP210x USB to UART Bridge (COM4)} in
-the \textbf{Ports (COM \& LPT)} menu. The USB to UART bridge is actually
-the Feather Huzzah board. CP210x refers to the chip that handles serial
-communication on the Feather Huzzah, not the esp8266 chip itself. Make
-note of the number after \textbf{(COM )}. It often comes up as
-\textbf{(COM4)} but it may be different on your computer.
+Huzzah board is connected to. The serial port is one of the parameters
+that needs to be defined when the .bin firmware file is upload on the
+board. Look for something like \textbf{Silicon Labs CP210x USB to UART
+Bridge (COM4)} in the \textbf{Ports (COM \& LPT)} menu. The USB to UART
+bridge is actually the Feather Huzzah board. CP210x refers to the chip
+that handles serial communication on the Feather Huzzah, not the ESP8266
+chip itself. Make note of the number after \textbf{(COM )}. It often
+comes up as \textbf{(COM4)} but it may be different on your machine.
 
 \begin{figure}
 \centering
 \includegraphics{images/find_device_manager.png}
-\caption{Find Device Manager}
+\caption{Find Windows 10 Device Manager}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{images/device_manager_menu.png}
-\caption{Device Manager Menu}
+\caption{Windows 10 Device Manager Menu}
 \end{figure}
-
-The first time I plugged the board into my laptop, Windows could't see
-the board. I looked through the Device Manager under the Ports menu and
-the Feather board just didn't show up. Turns out the first USB cable I
-used was just a charging only cable. When I switched this out for a
-microUSB data cable, the board came right up under \textbf{Ports (COM \&
-LPT)}.
 
     \subsection{Run esptool to upload the .bin file to the Feather
 Huzzah}\label{run-esptool-to-upload-the-.bin-file-to-the-feather-huzzah}
@@ -9370,7 +9426,7 @@ there is no \textbf{.py} extension after \lstinline!esptool!. On my
 Windows laptop, the command \lstinline!esptool! worked, but the command
 \lstinline!esptool.py! did not (this is different than the commands
 shown on the
-\href{https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html\#deploying-the-firmware}{Micropython
+\href{https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html\#deploying-the-firmware}{MicroPython
 docs}). If you try to run esptool and you are not in the
 \lstinline!(micropython)! virtual environment, you will get an error.
 
@@ -9420,9 +9476,9 @@ position) on the board. Again, make sure the .bin firmware file name is
 correct. It is easy to mistype. Another issue I ran into was that I
 tried to use the command \lstinline!esptool.py! instead of
 \lstinline!esptool! as shown on the
-\href{https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html\#deploying-the-firmware}{Micropython
+\href{https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html\#deploying-the-firmware}{MicroPython
 docs}. The documentation for
-\href{https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html\#deploying-the-firmware}{Micropython
+\href{https://docs.micropython.org/en/latest/esp8266/esp8266/tutorial/intro.html\#deploying-the-firmware}{MicroPython
 on the ESP8266} specifies the command \lstinline!esptool.py! (including
 the \textbf{\emph{.py}} file extension). This did work on my Windows 10
 machine. Omitting the \textbf{\emph{.py}} file extension, and running
@@ -9435,28 +9491,28 @@ machine. Omitting the \textbf{\emph{.py}} file extension, and running
 \begin{figure}
 \centering
 \includegraphics{images/esptool_write_flash.PNG}
-\caption{esptool write flash}
+\caption{Use esptool to upload MicroPython firmware}
 \end{figure}
 
-    \subsection{Download and install Putty, a serial
+    \subsection{Download and install PuTTY, a serial
 monitor}\label{download-and-install-putty-a-serial-monitor}
 
-    Now that Micropthon is installed on the board, we need to talk to our
+    Now that MicroPython is installed on the board, we need to talk to our
 board over a serial connection. Windows 10 doesn't have a built-in
 serial monitor (like screen on OSX and Linux). So we need to download
-and install \textbf{Putty}. Putty is a lightweight SSH and serial client
-for Windows. Putty will allow us to communicate with the Adafruit
-Feather Huzzah board. \href{https://www.putty.org/}{Putty can be
-downloaded here}. Putty is pretty small and the download and install
+and install \textbf{PuTTY}. PuTTY is a lightweight SSH and serial client
+for Windows. PuTTY will allow us to communicate with the Adafruit
+Feather Huzzah board. \href{https://www.putty.org/}{PuTTY can be
+downloaded here}. PUTTY is pretty small and the download and install
 should be pretty quick.
 
 \begin{figure}
 \centering
 \includegraphics{images/download_putty.PNG}
-\caption{Download Putty}
+\caption{PuTTY Downloads Page}
 \end{figure}
 
-    \subsection{Use Putty to connect to the Feather
+    \subsection{Use PuTTY to connect to the Feather
 Huzzah}\label{use-putty-to-connect-to-the-feather-huzzah}
 
     Ensure the Feather board is connected to the computer with a USB cable
@@ -9474,18 +9530,18 @@ the Putty window.
 \begin{figure}
 \centering
 \includegraphics{images/putty_in_start_menu.png}
-\caption{Putty in start menu}
+\caption{PuTTY in Windows 10 Start Menu}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{images/putty_config.PNG}
-\caption{Putty config}
+\caption{PuTTY Configuration}
 \end{figure}
 
-If you see \lstinline!>>>! the Micropython REPL (the Micropython prompt)
+If you see \lstinline!>>>! the MicroPython REPL (the MicroPython prompt)
 is running and the Adafruit Feather Huzzah ESP8266 is working! This
-version of Python isn't running on your computer, it's Micropython
+version of Python isn't running on your computer, it's MicroPython
 running on the little microcontroller! Sometimes I had to type
 {[}Enter{]} or Ctrl-D to get the \lstinline!>>>! REPL prompt to show up.
 A few times I needed to close Putty, unplug then replug the board and
@@ -9495,15 +9551,15 @@ button that can be pressed to restart the board.
 \begin{figure}
 \centering
 \includegraphics{images/REPL_prompt.PNG}
-\caption{REPL Prompt}
+\caption{The MicroPython REPL Prompt}
 \end{figure}
 
-At the \lstinline!>>>! Micropython REPL prompt try the following
+At the \lstinline!>>>! MicroPython REPL prompt try the following
 commands:
 
 \begin{lstlisting}
->>> print('Micropython for Engineers!')
-Micropython for Engineers
+>>> print('MicroPython for Engineers!')
+MicroPython for Engineers
 
 >>> import sys
 >>> sys.platform
@@ -9513,23 +9569,24 @@ Micropython for Engineers
 \begin{figure}
 \centering
 \includegraphics{images/sys_dot_platform.PNG}
-\caption{sys\_dot\_platform}
+\caption{result of commands typed in the MicroPython REPL}
 \end{figure}
 
-    \section{Micropython REPL}\label{micropython-repl}
+    \section{MicroPython REPL}\label{micropython-repl}
 
-    The last section detailed the installation of Micropython on an Adafruit
+    The last section detailed the installation of MicroPython on an Adafruit
 Feather Huzzah ESP8266 microcontroller using Python and a package called
-\textbf{esptool}. In this section, we are going to write commands to the
-Micropython REPL (the Micropython prompt) to turn on and off an LED
-connected to the Feather Huzzah board. The posts in this series:
+\textbf{esptool}. In this section, you will learn how to write commands
+to the MicroPython REPL (the Micropython prompt) to turn an LED on and
+off.
 
-Before you can use the Micropython REPL (the Microython prompt) running
-on the Adafruit Feather Huzzah ESP8266, Micropython needs to be
-installed on the board and Putty needs to be installed to communicate
-with the board over serial. See the previous section for information on
-how to install Micropython on the board and install
-\href{https://www.putty.org/}{PuTTY} on a Windows 10 machine.
+Before you can use the MicroPython REPL (the MicroPython prompt) running
+on the Adafruit Feather Huzzah ESP8266, MicroPython needs to be
+installed on the board and PuTTY needs to be installed the Windows 10
+computer to communicate with the board over serial. The previous section
+detailed how to install MicroPython on an ESP8266 microcontroller and
+how to install \href{https://www.putty.org/}{PuTTY} on a Windows 10
+machine.
 
     \subsection{Summary of Steps}\label{summary-of-steps}
 
@@ -9542,7 +9599,7 @@ how to install Micropython on the board and install
   Determine which COM port the board is connected to using the Windows
   Device Manager
 \item
-  Open Putty and connect to the board at 115200 baud
+  Open PuTTY and connect to the board at 115200 baud
 \item
   Run commands at the prompt to turn the built-in LED on the Adafruit
   Feather Huzzah ESP8266 on and off
@@ -9551,39 +9608,39 @@ how to install Micropython on the board and install
     \subsection{Connect the Adafruit Feather Huzzah ESP8266 board to the
 laptop}\label{connect-the-adafruit-feather-huzzah-esp8266-board-to-the-laptop}
 
-    Use a microUSB cable to connect the Feather Huzzah to the computer. Make
-sure that the microUSB cable is a full USB data cable and not just a
-simple power cable. Cables that are just used to charge phones may only
-be power cables and may not be capable of transmitting data.
+    Use a microUSB cable to connect the microcontroller to the computer.
+Make sure that the microUSB cable is a full USB data cable and not just
+a simple power cable. Cables that are just used to charge phones may
+only be power cables and may not be capable of transmitting data.
 
     \subsection{Determine which serial port the Feather Huzzah is connected
 to}\label{determine-which-serial-port-the-feather-huzzah-is-connected-to}
 
     Use Windows Device Manager to determine which serial port the Feather
-Huzzah is connected to. On my Windows 10 laptop, it usually comes up as
-\lstinline!COM4!. You can find the serial port by looking in the Ports
-(COM \& LPT) category of the Windows Device Manager. Look for something
-like \textbf{Silicon Labs CP210x USB to UART Bridge (COM4)} in the
-\textbf{Ports (COM \& LPT)} menu. It is the \textbf{COM\#} that you are
-looking for.
+Huzzah is connected to. O Windows 10, the microcontroller usually comes
+up as \lstinline!COM4!. You can find the serial port by looking in the
+Ports (COM \& LPT) category of the Windows Device Manager. Look for
+something like \textbf{Silicon Labs CP210x USB to UART Bridge (COM4)} in
+the \textbf{Ports (COM \& LPT)} menu. It is the \textbf{COM\#} that you
+are looking for.
 
 \begin{figure}
 \centering
 \includegraphics{images/find_device_manager.png}
-\caption{Find Device Manager}
+\caption{Find the Windows 10 Device Manager}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{images/device_manager_menu.png}
-\caption{Device Manager Menu}
+\caption{Device Manager Menu on Windows 10}
 \end{figure}
 
     \subsection{Use Putty to connect to the Feather
 Huzzah}\label{use-putty-to-connect-to-the-feather-huzzah}
 
     Ensure the Feather Huzzah board is connected with a USB cable, then
-connect to it with Putty using the proper serial port (COM\#) and 115200
+connect to it with PuTTY using the proper serial port (COM\#) and 115200
 baud. Remember to use the \textbf{Serial} radio button under
 \textbf{Connection Type:} to select serial communication or you will be
 trying to communicate with the Feather Huzzah over SSH which won't work.
@@ -9591,16 +9648,16 @@ trying to communicate with the Feather Huzzah over SSH which won't work.
 \begin{figure}
 \centering
 \includegraphics{images/putty_in_start_menu.png}
-\caption{Putty in start menu}
+\caption{PuTTY in Windows 10 start menu}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{images/putty_config.PNG}
-\caption{Putty config}
+\caption{PuTTY configuration}
 \end{figure}
 
-This should bring up the Micropython REPL prompt \lstinline!>>>!. If you
+This should bring up the MicroPython REPL prompt \lstinline!>>>!. If you
 can't see the \lstinline!>>>! prompt, try typing {[}Enter{]}, Ctrl-D,
 pushing the RESET button on the Feather Huzzah or unplugging then
 replugging the USB cable.
@@ -9608,22 +9665,22 @@ replugging the USB cable.
 \begin{figure}
 \centering
 \includegraphics{images/REPL_prompt.PNG}
-\caption{REPL prompt}
+\caption{MicroPython REPL prompt}
 \end{figure}
 
     \subsection{Run commands at the prompt to turn the built-in LED on the
 Adafruit Feather Huzzah ESP8266 on and
 off}\label{run-commands-at-the-prompt-to-turn-the-built-in-led-on-the-adafruit-feather-huzzah-esp8266-on-and-off}
 
-    At the micropython REPL (the Micropython command promt \lstinline!>>>!)
+    At the MicroPython REPL (the MicroPython command prompt \lstinline!>>>!)
 try the following commands:
 
 \begin{lstlisting}
->>> print('Micropython for Engineers!')
-Micropython for Engineers
+>>> print('MicroPython for Engineers!')
+MicroPython for Engineers
 \end{lstlisting}
 
-If we import the \lstinline!sys! module, we can see the Micropython
+If we import the \lstinline!sys! module, we can see the MicroPython
 implementation and platform.
 
 \begin{lstlisting}
@@ -9637,13 +9694,13 @@ implementation and platform.
 \begin{figure}
 \centering
 \includegraphics{images/sys_dot_implementation_and_platform.PNG}
-\caption{REPL prompt}
+\caption{Results of running sys commands at the MicroPython REPL prompt}
 \end{figure}
 
-If you see similar output, that means Micropython is working on the
+If you see similar output, that means MicroPython is working on the
 Feather Huzzah. We can also view the flash memory size of our Feather
-Huzzah and the size of the Micropyton firmware we installed. Try this at
-the Micropython prompt:
+Huzzah and the size of the MicroPython firmware we installed. Try this
+at the MicroPython prompt:
 
 \begin{lstlisting}
 >>> import port_diag
@@ -9652,7 +9709,8 @@ the Micropython prompt:
 \begin{figure}
 \centering
 \includegraphics{images/import_port_diag.PNG}
-\caption{REPL prompt}
+\caption{Results of running import port\_diag at the MicroPython REPL
+prompt}
 \end{figure}
 
 We can see the flash memory size is 4 MB. Below the label
@@ -9663,18 +9721,19 @@ are running a working version of Python!
 
 Now let's turn the Feather Huzzah's built-in LED on and off. The Feather
 Huzzah has a built-in red LED connected to Pin 0. We can access this LED
-with Micropython's \lstinline!machine! module. First we use the
-\lstinline!machine! module to create a \lstinline!Pin! object. The first
-argument when we instantiate the \lstinline!Pin! object is the pin
-number on the board (in this case \lstinline!0!). Pin zero on the
-Feather Huzzah is connected to the built-in red LED. The second argument
-is the pin type. We want Pin 0 to act as an output pin
+with MicroPython's \lstinline!machine! module.
+
+First, we use the \lstinline!machine! module to create a \lstinline!Pin!
+object. The first argument when we instantiate the \lstinline!Pin!
+object is the pin number on the board (in this case \lstinline!0!). Pin
+0 on the Feather Huzzah is connected to the built-in red LED. The second
+argument is the pin type. We want Pin 0 to act as an output pin
 (\lstinline!machine.Pin.OUT!). We are going to assign our
 \lstinline!pin! the attribute \lstinline!.on()! or \lstinline!.off()!.
 This will cause the Feather board to output a positive voltage or no
 voltage to Pin 0 to turn the built-in red LED on and off. You can also
-connect Pin 0 to an LED through a resistor (then to ground) and have
-this LED turn on and off.
+connect Pin 0 to an external LED through a resistor then to ground and
+have this external LED turn on and off.
 
 \begin{lstlisting}
 >>> import machine
@@ -9694,10 +9753,10 @@ Note that Pin 0 on the Adafruit Feather Huzzah is kind of wired
 \end{lstlisting}
 
 Now let's see if we can make the LED blink. We'll do this with a simple
-\lstinline!for! loop. At the micropython REPL, initiating a loop will
+\lstinline!for! loop. At the MicroPython REPL, initiating a loop will
 automatically indent the next line, so a tab is not needed before the
-\lstinline!pin.on()! statement. To run the loop, we type backspace on an
-empty line (to backspace from an indented line) and hit return.
+\lstinline!pin.on()! statement. To run the loop, type backspace on an
+empty line (to backspace from an indented line) and hit {[}Enter{]}.
 
 \begin{lstlisting}
 >>> import time
@@ -9713,23 +9772,24 @@ This will blink the LED on and off for a total of 20 seconds.
 
     \section{Blinking a LED}\label{blinking-a-led}
 
-    This is the four section of a chapter on Micropython. In this section,
-you will learn how to blink the built in LED on to an Adafruit Feather
-Huzzah ESP8266 using the Micropython REPL.
+    In this section, you will learn how to blink the built-in LED on to an
+Adafruit Feather Huzzah ESP8266 microcontroller using the MicroPython
+REPL.
 
 Before the LED on the Adafruit Feather Huzzah ESP8266 can be blinked,
-Micropython needs to be installed on the Feather Huzzah board and Putty
+MicroPython needs to be installed on the Feather Huzzah board and PuTTY
 needs to be installed (if using Windows 10) to facilitate communication
 between the Feather Huzzah board and the computer. Alternatively, the
-MacOS or Linux terminal can be used for serial communication.
+MacOS or Linux terminal and \textbf{screen} can be used for serial
+communication.
 
     The Feather Huzzah as a built-in red LED mounted on the board close to
-the USB cable input. Micropython can be used to blink this LED on and
+the USB cable input. MicroPython can be used to blink this LED on and
 off.
 
     \subsection{Connect the Adafruit Feather Huzzah to the computer with a
-USB cable and bring up the Micropython REPL using
-Putty.}\label{connect-the-adafruit-feather-huzzah-to-the-computer-with-a-usb-cable-and-bring-up-the-micropython-repl-using-putty.}
+USB cable and bring up the MicroPython REPL using
+PuTTY.}\label{connect-the-adafruit-feather-huzzah-to-the-computer-with-a-usb-cable-and-bring-up-the-micropython-repl-using-putty.}
 
     Connect the Adafruit Feather Huzzah ESP8266 to the computer with a
 microUSB cable. Ensure this is a USB data cable, not just a charging
@@ -9740,24 +9800,24 @@ serial port (COM\#) and 115200 baud. (Remember to use the
 \begin{figure}
 \centering
 \includegraphics{images/putty_in_start_menu.png}
-\caption{Putty in start menu}
+\caption{PuTTY in the Windows 10 Start Menu}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{images/putty_config.PNG}
-\caption{Putty config}
+\caption{PuTTY Configuration}
 \end{figure}
 
-This will bring up the Micropython REPL prompt \lstinline!>>>!. If you
+This will bring up the MicroPython REPL prompt \lstinline!>>>!. If you
 can't see the \lstinline!>>>! prompt, try typing {[}Enter{]} or Ctrl-D
 or push the RESET button on the Feather Huzzah. If none of these methods
 work, try closing Putty and unplugging then replugging in the USB cable.
 
-    \subsection{Run code at the Micropython REPL to turn the LED on and
+    \subsection{Run code at the MicroPython REPL to turn the LED on and
 off}\label{run-code-at-the-micropython-repl-to-turn-the-led-on-and-off}
 
-    In the Putty Serial Window, test to see if the Micropython REPL is
+    In the PuTTY serial window, test to see if the MicroPython REPL is
 functioning with a basic \emph{Hello World} program.
 
 \begin{lstlisting}
@@ -9765,10 +9825,10 @@ functioning with a basic \emph{Hello World} program.
 Hello World
 \end{lstlisting}
 
-Next, we will blink the Feather Huzzah's builtin LED. The Feather Huzzah
-has a built-in LED connected to Pin 0. If we control the current going
-to Pin 0, we control the built-in LED. To control a Pin using
-Micropython, first the \textbf{machine} module needs to be imported.
+Next, we will blink the Feather Huzzah's built-in LED. The Feather
+Huzzah has a built-in LED connected to Pin 0. If we control the current
+going to Pin 0, we control the built-in LED. To control a Pin using
+MicroPython, first the \textbf{machine} module needs to be imported.
 Next a \lstinline!Pin! object needs to be created. The integer passed
 into \lstinline!machine.Pin()! determines the pin number assigned to the
 \lstinline!Pin! object.
@@ -9801,10 +9861,10 @@ output pin.
 >>> pin.value(1)
 \end{lstlisting}
 
-    \subsection{Run code at the Micropython REPL to blink the
+    \subsection{Run code at the MicroPython REPL to blink the
 LED}\label{run-code-at-the-micropython-repl-to-blink-the-led}
 
-    Now we can write a for loop at the Micropython REPL to blink the LED on
+    Now we can write a for loop at the MicroPython REPL to blink the LED on
 and off. In order to do this, we need to import the \textbf{machine}
 module and the \textbf{time} module.
 
@@ -9817,23 +9877,21 @@ module and the \textbf{time} module.
 ...     time.sleep(0.5)
 ...     pin.value(0)
 ...     time.sleep(0.5)
-# backspace to exit loop and execute look.
+# backspace to exit loop indent and execute the loop.
 .... 
 \end{lstlisting}
 
     \section{Reading a Sensor}\label{reading-a-sensor}
 
-    This is the fifth section of a chapter on Micropython. In this section,
-you will learn how to connect a temperature sensor to an Adafruit
-Feather Huzzah ESP8266 and use the Micropython REPL to read the
-temperature.
+    In this section, you will learn how to connect a temperature sensor to
+an Adafruit Feather Huzzah ESP8266 and use the MicroPython REPL to read
+the temperature.
 
 Before we can use the
-\href{https://www.adafruit.com/product/1782}{MCP9808 temperature sensor}
-running on the Adafruit Feather Huzzah ESP8266, Micropython needs to be
-installed on the board and Putty needs to be installed in Windows 10 to
-communicate with the board over serial. Alternatively, the MacOS or
-Linux terminal can be used for communication.
+\href{https://www.adafruit.com/product/1782}{MCP9808 temperature
+sensor}, MicroPython needs to be installed on the board and PuTTY needs
+to be installed on Windows 10 (on MacOS and Linux, use a terminal and
+\lstinline!screen!) to communicate with the board over serial.
 
     \subsection{Summary of Steps}\label{summary-of-steps}
 
@@ -9844,9 +9902,9 @@ Linux terminal can be used for communication.
   Connect the temperature sensor to the Adafruit Feather Huzzah ESP8266
 \item
   Connect the Adafruit Feather Huzzah ESP8266 to the computer with a USB
-  cable and bring up the Micropython REPL using Putty.
+  cable and bring up the MicroPython REPL using PuTTY.
 \item
-  Run code at the Micropython REPL to read the temperature
+  Run code at the MicroPython REPL to read the temperature
 \end{enumerate}
 
     \subsection{Connect the MCP9808 temperature sensor to the Adafruit
@@ -9879,12 +9937,13 @@ SCL (pin 5) & yellow & SCL\tabularnewline
 \begin{figure}
 \centering
 \includegraphics{images/feather_huzzah_temp_sensor_fritzing.png}
-\caption{Fritzing Image}
+\caption{MCP9808 temp sensor connected to an Adafruit Feather Huzzah
+ESP8266}
 \end{figure}
 
     \subsection{Connect the Adafruit Feather Huzzah to the computer with a
-USB cable and bring up the Micropython REPL using
-Putty.}\label{connect-the-adafruit-feather-huzzah-to-the-computer-with-a-usb-cable-and-bring-up-the-micropython-repl-using-putty.}
+USB cable and bring up the MicroPython REPL using
+PuTTY.}\label{connect-the-adafruit-feather-huzzah-to-the-computer-with-a-usb-cable-and-bring-up-the-micropython-repl-using-putty.}
 
     Connect the Adafruit Feather Huzzah ESP8266 to the computer with a
 microUSB cable. Ensure this is a USB data cable, not just a charging
@@ -9895,24 +9954,24 @@ serial port (COM\#) and 115200 baud. (Remember to use the
 \begin{figure}
 \centering
 \includegraphics{images/putty_in_start_menu.png}
-\caption{Putty in start menu}
+\caption{PuTTY in the Windows 10 Start Menu}
 \end{figure}
 
 \begin{figure}
 \centering
 \includegraphics{images/putty_config.PNG}
-\caption{Putty config}
+\caption{PuTTY Configuration}
 \end{figure}
 
-This will bring up the Micropython REPL prompt \lstinline!>>>!. If you
+This will bring up the MicroPython REPL prompt \lstinline!>>>!. If you
 can't see the \lstinline!>>>! prompt, try typing {[}Enter{]} or Ctrl-D
 or push the RESET button on the Feather Huzzah. If none of these methods
 work, try closing Putty and unplugging then replugging in the USB cable.
 
-    \subsection{Run code at the Micropython REPL to read the
+    \subsection{Run code at the MicroPython REPL to read the
 temperature}\label{run-code-at-the-micropython-repl-to-read-the-temperature}
 
-    In the Putty Serial Window, import the \lstinline!machine! module and
+    In the PuTTY serial window, import the \lstinline!machine! module and
 then create an instance of the \lstinline!machine.I2C! class with the
 \lstinline!scl! and \lstinline!sda! parameters set as
 \lstinline!scl=machine.Pin(5)! and \lstinline!sda=machine.Pin(4)!. Then
@@ -9941,17 +10000,18 @@ temperature sensor.
 
     \section{Uploading code}\label{uploading-code}
 
-    In this section you will learn how to create a working WiFi weather
+    In this section, you will learn how to create a working WiFi weather
 station built using an Adafruit Feather Huzzah ESP9266, and a
 temperature sensor. The working WiFi weather station will post the
 temperature to \href{https://thingspeak.com/}{ThingSpeak.com}
 
-Before the Micropython REPL (the Python prompt) running on the Adafruit
-Feather Huzzah ESP8266 can be used, Micropython needs to be installed on
-the board. Putty also needs to be installed on a computer in order for
-the computer to communicate with Feather Huzzah over serial. See the
-previous section on how to install Micropython on an Adafruit Feather
-Huzzah ESP9266 and how to install Putty on a Windows computer.
+Before the MicroPython REPL (the Python prompt) running on the Adafruit
+Feather Huzzah ESP8266 can be used, MicroPython needs to be installed on
+the board. PuTTY also needs to be installed on a computer in order for
+the computer to communicate with Feather Huzzah over a serial
+connection. See the previous section on how to install MicroPython on an
+Adafruit Feather Huzzah ESP9266 and how to install PuTTY on a Windows
+computer.
 
     \subsection{Summary of Steps}\label{summary-of-steps}
 
@@ -9965,7 +10025,7 @@ Huzzah ESP9266 and how to install Putty on a Windows computer.
 \item
   Put the code on the board with \textbf{ampy}
 \item
-  Run functions from the Micropyton REPL
+  Run functions from the MicroPython REPL
 \item
   Run a program
 \end{enumerate}
@@ -9980,7 +10040,7 @@ installed using the \textbf{Anaconda Prompt}. Alternatively,
 environment, active the virtual environment first before proceeding with
 the \textbf{ampy} package installation.
 
-    \begin{lstlisting}[language=Plaintext]
+    \begin{lstlisting}
 > conda activate micropython
 (micropython) > pip install ampy-adafruit
 (micropython) > ampy --help
@@ -10017,7 +10077,7 @@ saved into it. Next read the sensor data using the
 \lstinline!i2c.readfrom_mem_into()! function. The first argument is the
 I2C bus address for the sensor. In this case the sensor is at I2C bus
 address \lstinline!24!. The line \lstinline!>>> i2c.scan()! typed into
-the micropython REPL will show the I2C bus address. The next function
+the MicroPython REPL will show the I2C bus address. The next function
 argument is the register on the MCP9808 temperature sensor where the
 temperature value is stored, which happens to be register \lstinline!5!.
 If register \lstinline!5! is accessed on the MCP, the temperature can be
@@ -10033,7 +10093,7 @@ needed to convert the byte array into a temperature in degrees C.
 # MCP9808.py
 
 # Functions for the  MCP9808 temperature sensor
-# https://learn.adafruit.com/micropython-hardware-i2c-devices/i2c-master
+# learn.adafruit.com/micropython-hardware-i2c-devices/i2c-master
 
 def readtemp():
     import machine
@@ -10050,10 +10110,7 @@ def readtemp():
 Now build a Python file for the set of WiFi functions.
 
 \begin{lstlisting}[language=Python]
-#wifitools.py
-
-# Wifi connection and post functions for an ESP8266 board running micropython
-#https://docs.micropython.org/en/v1.8.6/esp8266/esp8266/tutorial/network_basics.html
+# wifitools.py
 
 def connect(SSID,password):
     import network
@@ -10066,14 +10123,15 @@ def connect(SSID,password):
             pass
     print('network config:', sta_if.ifconfig())
 
-#https://docs.micropython.org/en/v1.8.6/esp8266/esp8266/tutorial/network_tcp.html
+        
 def http_get(url):
     import socket
     _, _, host, path = url.split('/', 3)
     addr = socket.getaddrinfo(host, 80)[0][-1]
     s = socket.socket()
     s.connect(addr)
-    s.send(bytes('GET /%s HTTP/1.0\r\nHost: %s\r\n\r\n' % (path, host), 'utf8'))
+    str_send = 'GET /%s HTTP/1.0\r\nHost: %s\r\n\r\n' % (path, host)
+    s.send(bytes(str_send,'utf8'))
     while True:
         data = s.recv(100)
         if data:
@@ -10084,14 +10142,13 @@ def http_get(url):
 def thingspeak_post(API_key,data):
     if not isinstance(data, str):
         data = str(data)
-    #base_url = 'https://api.thingspeak.com/update?api_key=THECLASSAPIKEY&field1=87'
     base_url = 'https://api.thingspeak.com/update?api_key='
     mid_url = '&field1='
     url = base_url + API_key + mid_url + data
     http_get(url)
 \end{lstlisting}
 
-Now we will construact a Micropython script called
+Now we will construct a MicroPython script called
 \textbf{\emph{main.py}} which will use the functions stored in
 \textbf{\emph{MCP9808.py}}. The \textbf{\emph{main.py}} script will
 import the \textbf{\emph{MCP9808.py}} and \textbf{\emph{wifitools}}
@@ -10158,19 +10215,21 @@ ThingSpeak.com}\label{unplug-and-power-up-the-feather-huzzah-and-watch-the-data-
 \textbf{ampy}. To restart the board, unplug and then replug in the
 board's power (the USB cable). Once power is restored, the board will
 run through the \textbf{\emph{boot.py}} script then start the
-\textbf{\emph{main.py}} script. When it runs the \textbf{\emph{main.py}}
-script, the board will connect to the WiFi network, read the temperature
-then upload the temperature to ThingSpeak.com. When ThingSpeak.com is
-viewed, you will see the temperature plotted on the Thinkspeak.com
-Channel's page.
+\textbf{\emph{main.py}} script. When the board runs the
+\textbf{\emph{main.py}} script, the board will will connect to the WiFi
+network, read the temperature then upload the temperature to
+ThingSpeak.com. When ThingSpeak.com is viewed, you will see the
+temperature plotted on the Thinkspeak.com Channel's page.
 
     \section{Summary}\label{summary}
 
     \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
 
-    Micropython
+    MicroPython
 
 Microcontroller
+
+MicroPython REPL
 
 Baud Rate
 
@@ -10218,8 +10277,8 @@ not be used as the names for user-defined functions, classes, methods or
 modules. The key words can be accessed with the following code:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{keyword}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{There are }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{ key words}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{keyword}\PY{o}{.}\PY{n}{kwlist}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{keyword}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{There are }\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{len(keyword.kwlist)\PYZcb{} key words}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{for} \PY{n}{keywrd} \PY{o+ow}{in} \PY{n}{keyword}\PY{o}{.}\PY{n}{kwlist}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{n}{keywrd}\PY{p}{)}
 \end{Verbatim}
@@ -10265,79 +10324,57 @@ yield
 
     \subsection{Logical Key Words}\label{logical-key-words}
 
-    True
-
+    \begin{lstlisting}
+True
 False
-
 not
-
 and
-
 or
-
 is
-
 None
-
 in
+\end{lstlisting}
 
     \subsection{Control Flow Key Words}\label{control-flow-key-words}
 
-    if
-
+    \begin{lstlisting}
+if
 else
-
 elif
-
 for
-
 while
-
 break
-
 continue
-
 pass
-
 try
-
 except
-
 finally
-
 raise
-
 return
-
 yield
+\end{lstlisting}
 
     \subsection{Definition Key Words}\label{definition-key-words}
 
-    def
-
+    \begin{lstlisting}
+def
 global
-
 nonlocal
-
 class
-
 lambda
-
 with
-
 assert
-
 del
+\end{lstlisting}
 
     \subsection{Module Key Words}\label{module-key-words}
 
-    import
-
+    \begin{lstlisting}
+import
 from
-
 as
-
 with
+\end{lstlisting}
 
     \section{ASCII Character Codes}\label{ascii-character-codes}
 
@@ -10345,8 +10382,8 @@ with
 can also be acccessed using the following code:
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{for} \PY{n}{ASCIIcode} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,}\PY{l+m+mi}{127}\PY{p}{)}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ASCII code: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{    Character: }\PY{l+s+si}{\PYZob{}\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{ASCIIcode}\PY{p}{,}\PY{n+nb}{chr}\PY{p}{(}\PY{n}{ASCIIcode}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{for} \PY{n}{ASCIIcode} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{32}\PY{p}{,}\PY{l+m+mi}{127}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{ASCII code: }\PY{l+s+si}{\PYZob{}ASCIIcode\PYZcb{}}\PY{l+s+s1}{    Character: }\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{chr(ASCIIcode)\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -10458,12 +10495,11 @@ Python
 
     The code below will print out all of the numpy functions and methods:
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{c+c1}{\PYZsh{}import numpy as np}
-        \PY{c+c1}{\PYZsh{}for func in dir(np):}
-        \PY{c+c1}{\PYZsh{}    print(func)}
-\end{Verbatim}
-
+    \begin{lstlisting}[language=Python]
+import numpy as np
+for func in dir(np):
+    print(func)
+\end{lstlisting}
 
     \subsection{Numpy Statistics Fuctions and
 Methods}\label{numpy-statistics-fuctions-and-methods}
@@ -10622,7 +10658,7 @@ copies a remote repo on github.com to a local directory\strut
 
     \subsection{Cloning a repo}\label{cloning-a-repo}
 
-    One common task to complete with git to to clone a repo from github.com
+    One common task to complete with git is to clone a repo from github.com
 and save it locally. This is accomplished with:
 
 \begin{lstlisting}
@@ -10653,9 +10689,9 @@ For a Python project, the .gitignore file for Python is a good start.
 
 Second, create a local directory and \lstinline!cd! into it. Initialize
 a git repo locally in that directory then synch the local folder with
-the remote repo on github.com
+the remote repo on github.com.
 
-\begin{lstlisting}[language=bash]
+\begin{lstlisting}
 $ mkdir newproject
 $ cd newproject
 $ git init
@@ -10663,13 +10699,13 @@ $ git remote add origin https://github.com/user/repo.git
 $ git pull origin master
 \end{lstlisting}
 
-Third, work on the project locally. You could edit one of the files or
-create a new file for example.
+Third, work on the project locally. For example, you could edit one of
+the files or create a new file.
 
-finally, save your work and commit the changes you made with git. Push
+Finally, save your work and commit the changes you made with git. Push
 those changes up to the remote repo on github.com
 
-\begin{lstlisting}[language={}]
+\begin{lstlisting}
 $ git add .
 $ git commit -m "commit message"
 $ git push origin master
@@ -10679,7 +10715,7 @@ $ git push origin master
 
     Latex Math can be included in Jupyter Notebook markdown cells as well as
 in parts of \textbf{matplotlib plots} like axis labels and text fields.
-A table of useful LaTeX commands and the associated output are below:
+A table of useful LaTeX commands and the associated output is below:
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule

@@ -11,13 +11,13 @@
 
 
 \lstset{
-%language=Python, 
+language={}, 
 basicstyle=\ttfamily,
-%stringstyle=\color{stringred},
-commentstyle=\color{commentteal},
-%keywordstyle=\color{darkgreen}\bfseries,
-%keywordstyle = [3]{\color{mypurple}\bfseries},
-%morekeywords = [3]{*,math,log,log10,exp,sqrt},
+stringstyle=\color{cm-string},
+commentstyle=\color{cm-comment},
+keywordstyle=\color{cm-keyword}\bfseries,
+%keywordstyle = {[3]\color{cm-operator}},
+%morekeywords = [3]{>>>,+,-,/,*,**,%},
 showstringspaces=false,
 }
 \newcommand{\passthrough}[1]{#1}
@@ -57,6 +57,12 @@ showstringspaces=false,
 \definecolor{stringred}{RGB}{186,33,33}
 \definecolor{commentteal}{RGB}{64,128,128}
 \definecolor{darkgreen}{RGB}{0,128,0}
+\definecolor{cm-keyword}{HTML}{008000}  %jupyter notebook keyword color
+\definecolor{cm-builtin}{HTML}{008000}  %jupyter notebook built-in function color
+\definecolor{cm-number}{HTML}{008800}   %jupyter notebook number color
+\definecolor{cm-string}{HTML}{BA2121}   %jupyter notebook string color
+\definecolor{cm-operator}{HTML}{AA22FF} %jupyter notebook operator color
+\definecolor{cm-comment}{HTML}{408080}  %jupyter notebook comment color
 
 
 
