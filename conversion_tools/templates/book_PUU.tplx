@@ -102,6 +102,9 @@ showstringspaces=false,
     \usepackage{titlesec}
     \setcounter{secnumdepth}{1} %only chapter and sections are numbered, subsections and subsubsections are not numbered
     \setcounter{tocdepth}{1}    %only chapter and sections in TOC, subsections and subsubsections are not in TOC
+    \usepackage{multicol}
+    \newenvironment{problems}{\begin{multicols}{2}}{\end{multicols}} %an environment for the review question sections, where two columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment problems in notebook cell metadata.
+
     ((* endblock packages *))
 
 ((* block preamble *))
@@ -117,7 +120,17 @@ showstringspaces=false,
 ((* endblock title *))
 
 ((* block markdowncell scoped *))
-    ((( cell.source | citation2latex | strip_files_prefix | markdown2latex(extra_args=["--top-level-division=chapter", "--listings"]) )))
+
+    ((* if 'problems' in cell['metadata'].get('latex', {}).get('environment', []) *))
+        \begin{problems}
+        ((( cell.source | citation2latex | strip_files_prefix | markdown2latex(extra_args=["--top-level-division=chapter", "--listings"]) )))
+        \end{problems}
+
+    ((* else *))
+        ((( cell.source | citation2latex | strip_files_prefix | markdown2latex(extra_args=["--top-level-division=chapter", "--listings"]) )))
+    ((* endif *))
+
+
 ((* endblock markdowncell *))
 
 % to get lstlisting use: ((( cell.source | citation2latex | strip_files_prefix | markdown2latex(extra_args=["--top-level-division=chapter", "--listings"]) )))
