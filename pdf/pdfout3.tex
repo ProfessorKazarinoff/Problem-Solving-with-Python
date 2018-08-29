@@ -1588,7 +1588,8 @@ Python.org on the three major operating systems: Windows, MacOS and
 Linux. This book is based on Python version 3.6. Some of the problems
 may not work properly on legacy Python (version 2.7). I recommend using
 the Anaconda Distribution of Python on Windows and MacOSX. The
-installation of Anaconda was detailed in previous sections.
+installation of Anaconda on these operating systems was detailed in
+previous sections.
     
 
 
@@ -1633,16 +1634,58 @@ latest release.
 Linux}\label{installing-python-on-linux}
 
 Open a terminal and enter \lstinline!$ python! to see if a version of
-Python is already installed on the system. If the Python version is 2.7
-or below, download the newest release in the apt repositories.
+Python is already installed on the system.
 
 \begin{lstlisting}
-$ sudo apt-get python3.6
+$ python
+Python 2.7.12 (default, Dec  4 2017, 14:50:18)
+[GCC 5.4.0 20160609] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
 \end{lstlisting}
 
-After installation, you will need to append your PATH environment
-variable to ensure the newly installed Python3.6 version is the version
-of Python called when using the terminal.
+In the code block above the version of Python is
+\lstinline!Python 2.7.12!. If the Python version is 2.7 or below, try
+the command \lstinline!$ python3!.
+
+\begin{lstlisting}
+$ python3
+Python 3.5.2 (default, Nov 23 2017, 16:37:01) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+\end{lstlisting}
+
+If no version of Python is shown, you can download a release of Python
+3.6 from the deadsnakes package repository.
+
+\begin{lstlisting}
+$ sudo add-apt-repository ppa:deadsnakes/ppa
+$ [Enter]
+$ sudo apt-get update
+$ sudo apt-get install python3.6
+\end{lstlisting}
+
+After installation, you may need to append your PATH environment
+variable to ensure the newly installed Python 3.6 version is the version
+of Python called when using the terminal. The commands below will add
+\lstinline!/usr/bin! to \lstinline!PATH!, and add an alias in
+\textbf{\emph{.bashrc}} so that the command \lstinline!$ python3.6!
+produces the Python 3.6 REPL. Take care to ensure the double chevron
+\lstinline!>>! is used, as a single chevron \lstinline!>! will overwrite
+the \textbf{\emph{.bashrc}} file.
+
+\begin{lstlisting}
+$ cd ~
+$ echo  'PATH=/usr/bin:$PATH' >> ~/.bashrc 
+$ echo "alias python3.6='/usr/bin/python3.6'" >> ~/.bashrc
+$ source .bashrc
+$ python3.6
+Python 3.6.6 (default, Jun 28 2018, 04:42:43)
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> exit()
+\end{lstlisting}
     
 
 
@@ -2321,7 +2364,10 @@ the problem.
     
         \emph{Boolean Arithmetic} is the arithmetic of true and false logic. A
 \emph{boolean} or logical value can either be \lstinline!True! or
-\lstinline!False!.
+\lstinline!False!. In Python the key words \lstinline!True! and
+\lstinline!False! denote a boolean variable. Note that assigning
+\lstinline!true! or \lstinline!false! to a variable will produce an
+error.
     
 
 
@@ -2643,25 +2689,70 @@ Statistical Function & Description\tabularnewline
 
 
     
-        2.1
+        \begin{problems}
+        Complete the calculations
 
-2.2
+Q2.01 \(2 + \frac{1}{2}\)
 
-2.3
+Q2.02 \(4 \times 2 + \frac{2}{4}\)
 
-2.4
+Q2.03 \(\frac{5}{2} \times 3 + 4\)
 
-2.5
+Q2.04 \(4^2 + 3\)
 
-2.6
+Q2.05 \(\sqrt{16}\)
 
-2.7
+Q2.06 \(3^{4-5}\)
 
-2.8
+Q2.07 \(\frac{1+3+5}{2+4+6}\)
 
-2.9
+Q2.08 \(1 - 2 + \frac{9}{6} -3 + 5\)
 
-2.10
+Q2.09 \((3 + 5 -2)^{2/3}\)
+
+Q2.10 \(\frac{5+3}{2 \times 5}\)
+
+Q2.11 \(\sqrt{6^2 + 4}\)
+
+Q2.12 \(1 + 9 \times \frac{8}{4^2} + 1^{3-4} \times \frac{1}{2.5}\)
+
+Variables in Calculations
+
+Q2.20 \(a = 2\), \(b = 3\), calculate \(\frac{4}{5}(a^2 - b^3)\)
+
+Q2.21 The area of a circle, \(a\), is dependent on the circle's radius,
+\(r\), according to \(a=\pi r^2\). What is the area of a circle with
+radius \(r=4\)?
+
+Q2.21 The area of a circle, \(a\), is dependent on the circle's
+diameter, \(d\), according to \(a=\pi (\frac{d}{2})^2\). What is the
+area of a circle with diameter \(d=6\)?
+
+Q2.22 The volume of a sphere, \(v\), is dependent on the sphere's
+radius, \(r\), according to \(v=(\frac{4}{2})\pi r^3\). What is the
+volume of a sphere with radius \(r=1.5\)?
+
+Q2.23 The volume of a cylinder, \(v\), is dependent on the cylinder's
+radius, \(r\), and height, \(h\), according to \(v=\pi r^2 h\). What is
+the volume of a cylinder with radius \(r=5\) and height \(h=10\)?
+
+Q2.24 The surface area of a sphere, \(a_s\) is related to the sphere's
+radius, \(r\), according to \(a_s=4\pi r^2\). What is the surface area
+\(a_s\) of a sphere with radius \(r=2.5\)?
+
+Q2.25 The general equation for the distance, \(d\), that a free falling
+body travels (neglecting air resistance) is \(d = \frac{1}{2}gt^2\),
+where \(g\) is the acceleration due to gravity and \(t\) is the fall
+time. Assume the acceleration due to gravity \(g = 9.81\). How far (what
+distance) will a ball fall in time \(t = 12\)?
+
+Q2.26 The general equation for the fall time, \(t\), that a free falling
+body takes (neglecting air resistance) to cover a distance, \(d\) is
+\(t = \sqrt{\frac{d}{0.5g}}\), where \(g\) is the acceleration due to
+gravity. Assume the acceleration due to gravity \(g = 9.81\). How long
+(what time) will it take a base jumper to fall distance \(d = 2000\)?
+        \end{problems}
+
     
 
 
