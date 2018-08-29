@@ -53,9 +53,9 @@ def copy_image_dirs(notebook_dir_name='notebooks', docs_dir_name='docs'):
                 print("no images folder in directory: {}".format(str(dir)))
 
 
-# In[4]:
-
-if __name__ == "__main__":
+def main():
     copy_figures_dir()
     copy_image_dirs()
 
+if __name__ == "__main__":
+    main()

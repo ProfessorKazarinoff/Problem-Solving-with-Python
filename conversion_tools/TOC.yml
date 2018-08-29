@@ -14,12 +14,12 @@ pages:
         - Installing Anaconda on Windows: 01-Orientation/01.03-Installing-Anaconda-on-Windows.md
         - Installing Anaconda on MacOS: 01-Orientation/01.04-Installing-Anaconda-on-MacOS.md
         - Installing Anaconda on Linux: 01-Orientation/01.05-Intalling-Anaconda-on-Linux.md
-        - Installing Python from Python.org: 01-Orientation/01.06-Installing-Python-form-Python-dot-org.md
+        - Installing Python from Python.org: 01-Orientation/01.06-Installing-Python-from-Python-dot-org.md
         - Summary: 01-Orientation/01.07-Summary.md
         - Review Questions: 01-Orientation/01.08-Review-Questions.md
     - Chapter 2 The Python REPL:
         - Introduction: 02-The-Python-REPL/02.00-Introduction.md
-        - Python as a fancy calculator: 02-The-Python-REPL/02.01-Python-as-a-fancy-calculator.md
+        - Python as a Calculator: 02-The-Python-REPL/02.01-Python-as-a-Calculator.md
         - Variables: 02-The-Python-REPL/02.02-Variables.md
         - Boolean Arithemtic: 02-The-Python-REPL/02.03-Boolean-Arithemtic.md
         - String Opperations: 02-The-Python-REPL/02.04-String-Opperations.md
@@ -91,6 +91,7 @@ pages:
         - Break and Continue: 08-Loops/08.03-Break-and-Continue.md
         - Flow Charts: 08-Loops/08.04-Flow-Charts.md
         - Summary: 08-Loops/08.07-Summary.md
+        - Review Questions: 08-Loops/08.08-Review-Questions.md
     - Chapter 9 Matricies and Arrays:
         - Introduction: 09-Matricies-and-Arrays/09.00-Introduction.md
         - Numpy: 09-Matricies-and-Arrays/09.01-Numpy.md
@@ -120,9 +121,9 @@ pages:
         - Review Questions: 11-Python-and-External-Hardware/11.09-Review-Questions.md
     - Chapter 12 MicroPython:
         - Introduction: 12-MicroPython/12.00-Introduction.md
-        - What is Micropython?: 12-MicroPython/12.01-What-is-Micropython.md
-        - Installing Micropython: 12-MicroPython/12.02-Installing-Micropython.md
-        - Micropython REPL: 12-MicroPython/12.03-Micropython-REPL.md
+        - What is MicroPython?: 12-MicroPython/12.01-What-is-MicroPython.md
+        - Installing MicroPython: 12-MicroPython/12.02-Installing-MicroPython.md
+        - MicroPython REPL: 12-MicroPython/12.03-MicroPython-REPL.md
         - Blinking a LED: 12-MicroPython/12.04-Blinking-a-LED.md
         - Reading a Sensor: 12-MicroPython/12.05-Reading-a-Sensor.md
         - Uploading code: 12-MicroPython/12.06-Uploading-Code.md
