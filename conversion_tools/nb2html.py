@@ -4,8 +4,6 @@ This module provides functions and a script to turn a directory full of
 jupyter notebooks into a directory full of .md files that can be read by mkdocs.
 This script should be run after the make TOC script is run. After the make TOC script is run,
 the mkdocs.yml file appended and this script run, mkdocs can be run to build the site.
-
-
 """
 import nbformat
 from nbconvert import HTMLExporter
