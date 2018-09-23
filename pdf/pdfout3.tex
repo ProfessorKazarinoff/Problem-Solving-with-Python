@@ -113,6 +113,41 @@ showstringspaces=false,
     \usepackage{multicol}
     \newenvironment{problems}{\begin{multicols}{2}}{\end{multicols}} %an environment for the review question sections, where two columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment problems in notebook cell metadata.
 
+% in cell metadata
+%{
+%  "latex": {
+%    "environment": "problems"
+%  }
+%}
+
+
+    \newenvironment{key_terms}{\begin{multicols}{3}}{\end{multicols}} %an environment for the key_terms and concepts sections, where three columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment key terms in notebook cell metadata.
+
+% in cell metadata
+%{
+%  "latex": {
+%    "environment": "key_terms"
+%  }
+%}
+
+% to put a \new page before the cell in question. Add the json below to the cell metadata.
+
+% in cell metadata
+%{
+%  "latex": {
+%    "before_cell": "newpage"
+%  }
+%}
+
+
+% to put a \newpage after the cell in question. Add the json below to the cell metadata.
+% in cell metadata
+%{
+%  "latex": {
+%    "after_cell": "newpage"
+%  }
+%}
+
     
 
     
@@ -356,10 +391,10 @@ MATLAB is a great piece of software, but it currently costs \$49.00 for
 a student license and requires a site license to be used on school
 computers. Subsequently, it is costly for a student to use MATLAB and it
 is costly for a college to support a course that uses MATLAB. In
-addition this site license expires eventually and student need to
+addition, this site license expires eventually and students need to
 purchase another copy often before they finish their degree.
 
-The Python programming language on the other hand is open source and
+The Python programming language, on the other hand, is open source and
 free. To download and use Python, the cost to both the student and the
 college is zero (minus time spent). By moving an undergraduate
 engineering programming class to Python, students will save money and
@@ -371,7 +406,7 @@ engineering education, students can continue to use Python for free.
 
 
     
-        \section{Acknowledgements}\label{acknowledgements}
+        \section{Acknowledgments}\label{acknowledgments}
     
 
 
@@ -386,7 +421,7 @@ engineers will be a diverse group of team problem solvers.
 \emph{The Python Data Science Handbook} and \emph{Machine Learning in
 Python} as well as \emph{Reiman Equations in Python} served as
 inspiration and examples of using Jupyter notebooks to construct a book.
-The \emph{bookbook} repository on github provided a starting point for
+The \emph{bookbook} repository on GitHub provided a starting point for
 the tooling used to convert this book from Jupyter notebooks into a
 website and into LaTeX for printing.
     
@@ -402,14 +437,14 @@ website and into LaTeX for printing.
 
 
     
-        Supporting materials for this text can be found at the textbook website:
+        Supporting materials for this text can be found on the textbook website:
 
 \begin{quote}
 \url{https://problemsolvingwithpython.com}
 \end{quote}
 
 The textbook website contains all of the text in web format. Code
-examples and Jupyter notebooks for the text can be found in the github
+examples and Jupyter notebooks for the text can be found in the GitHub
 repository for the book:
 
 \begin{quote}
@@ -425,7 +460,7 @@ installing any software, are available at:
 
 If you are an instructor and using this book in a course with students-
 please send me an email using your school email address. In the email,
-include the course your are teaching and the term, approximate
+include the course you are teaching and the term, approximate
 enrollment, and a link to the course listing on your school website.
 
 \begin{quote}
@@ -469,7 +504,7 @@ https://github.com/professorkazarinoff/Problem-Solving-with-Python
         \subsection{Import terms and
 vocabulary}\label{import-terms-and-vocabulary}
 
-Important terms and vocabulary is shown in \emph{italic text}
+Important terms and vocabulary are shown in \emph{italic text}
 
 There is a difference between \emph{local variables} and \emph{global
 variables} in Python code
@@ -509,7 +544,7 @@ Inline code including variable names and extensions are shown in
 \lstinline!monospace font!
 
 To compare a variable use \lstinline!var == 'string'! and make sure to
-include \lstinline!==!, the doouble equals sign.
+include \lstinline!==!, the double equals sign.
     
 
 
@@ -550,7 +585,7 @@ enter.
 
 
     
-        \subsection{Teminal Commands}\label{teminal-commands}
+        \subsection{Terminal Commands}\label{terminal-commands}
 
 Commands typed into the terminal appear in separate boxes which contain
 the dollar symbol \lstinline!$! before each line. Note the dollar symbol
@@ -570,12 +605,12 @@ $ cd pint_srcipts
         \subsection{Python REPL Commands}\label{python-repl-commands}
 
 Commands typed into the \textbf{Python REPL}, or Python Interpreter
-appear in separate code boxes, which contain the triple arrow prompt
+appears in separate code boxes, which contain the triple arrow prompt
 \lstinline!>>>! . Note the triple arrow \lstinline!>>>! sign should not
 be typed. Triple arrows are included to indicate the Python REPL prompt,
-not a character for the user to enter. Output from the Python REPL is
-shown on a separate line below the command, without the \lstinline!>>>!
-prompt.
+not a character for the user to enter. The output from the Python REPL
+is shown on a separate line below the command, without the
+\lstinline!>>>! prompt.
 
 \begin{lstlisting}[language=Python]
 >>> 2 + 2
@@ -592,10 +627,10 @@ Problem Solving with Python
         \subsection{Jupyter Notebook cells}\label{jupyter-notebook-cells}
 
 Commands typed into Jupyter notebook cells will appear with the label
-\lstinline!In [#]:!. Output from Jupyter notebook cells are shown after
-the input cell. Only code in the input cells need to be typed. Output
-cell are be produced automatically by clicking the run button or typing
-\lstinline![shift]+[Enter]!
+\lstinline!In [#]:!. The output from Jupyter notebook cells is shown
+after the input cell. Only code in the input cells needs to be typed.
+Output cell are be produced automatically by clicking the run button or
+typing \lstinline![shift]+[Enter]!
     
 
 
@@ -617,8 +652,8 @@ cell are be produced automatically by clicking the run button or typing
     
         \subsection{Keystrokes and Buttons}\label{keystrokes-and-buttons}
 
-Keystrokes directly entered by the keyboard or buttton that are
-indicated on programs or webpages will be shown inside square brackets
+Keystrokes directly entered by the keyboard or buttons that are
+indicated on programs or web pages will be shown inside square brackets
 and in \lstinline![monospaced font]!.
 
 In order to delete a line use the \lstinline![Backspace]! key. To exit
@@ -644,7 +679,7 @@ errata@problemsolvingwithpython.com
 \end{quote}
 
 Please include the chapter number and section number in your email.
-Thank-you in advanced for helping improve this text for future readers.
+Thank-you in advance for helping improve this text for future readers.
     
 
 
@@ -665,7 +700,7 @@ Thank-you in advanced for helping improve this text for future readers.
 
 
     
-        Welcome to the world of problem solving with Python. This first
+        Welcome to the world of problem-solving with Python. This first
 Orientation Chapter will help you get started by guiding you through the
 process of installing Python on your computer.
     
@@ -731,8 +766,8 @@ same list.
 Python has an extensive standard library. A huge number of object types,
 functions and methods are available for use without importing any
 external modules. These include math functions, list methods, calls to a
-computers system. There is a lot that can be done with the standard
-library. The first couple chapters of this book will just use the
+computer's system. There is a lot that can be done with the standard
+library. The first couple of chapters of this book will just use the
 standard library. It can do a lot.
 
 Python has over 100,000 external packages available for download and
@@ -743,7 +778,7 @@ web, make complex computations, do unit conversions, plot data, work
 with .csv, .xls, and .pdf files, manipulate images and video, read data
 from sensors and test equipment, train machine learning algorithms,
 design web apps, work with GIS data, work with astronautical data, and
-many more added every day. In this book we will use some of the more
+many more added every day. In this book, we will use some of the more
 useful Python packages for engineers such as numpy, matplotlib, pandas,
 and scipy.
     
@@ -757,13 +792,13 @@ use}\label{python-is-easy-to-learn-and-use}
 
 Engineers solve the world's problems in teams. One way Python helps
 solve these problems faster than other programming languages is that it
-is easy to learn and use. Python programs tends to be shorter and
-quicker to write than a program that does a similar function in other
-languages. In the rapid design, prototype, test, iterate cycle
-programming solutions can be spun up quickly. Python is also an easy
-language for fellow engineers on your team to learn. It is also quite
-human readable. While programmers can become preoccupied with a programs
-run time, it is development time that takes the longest.
+is easy to learn and use. Python programs tend to be shorter and quicker
+to write than a program that does a similar function in other languages.
+In the rapid design, prototype, test, iterate cycle programming
+solutions can be spun up quickly. Python is also an easy language for
+fellow engineers on your team to learn. It is also quite human readable.
+While programmers can become preoccupied with a program's runtime, it is
+development time that takes the longest.
 
 \subsubsection{Python is transportable}\label{python-is-transportable}
 
@@ -771,10 +806,10 @@ Python can be installed and run on each of the three major operating
 systems: Windows, Mac and Linux. On Mac and Linux Python comes installed
 out of the box. Just open up a terminal in on a Mac OSX or Linux machine
 and type \texttt{python}. That's it, you are now using Python. On
-Windows I recommend downloading and using the Ananaconda distribution.
-The Anaconda distrobution is free and can be installed on all three
+Windows, I recommend downloading and using the Anaconda distribution.
+The Anaconda distribution is free and can be installed on all three
 major operating systems. The same programming environment can be
-replecated accross the three different opperating systems.
+replicated across the three different operating systems.
 
 \subsubsection{Python is free}\label{python-is-free}
 
@@ -782,15 +817,15 @@ MATLAB and LabView cost students to use and cost companies and colleges
 even more. Python is free to download and use. It is also open source
 and free to modify, contribute to, and propose improvements. All of the
 packages available for download on the Python Package Index, PyPI
-(pronouced pie-pee-eye) are free to download and install. Many more
+(pronounced pie-pee-eye) are free to download and install. Many more
 packages, scripts and utilities can be found in open source repos on
-github and bitbucket.
+GitHub and bitbucket.
 
 \subsubsection{Python is growing}\label{python-is-growing}
 
 Python is growing in popularity. Python is particularly growing in the
 data sciences and in use with GIS systems, physical modeling, machine
-learning and computer vision. These are growing team problem solving
+learning and computer vision. These are growing team problem-solving
 areas for engineers.
     
 
@@ -798,9 +833,9 @@ areas for engineers.
 
 
     
-        \subsection{Python has extensive standard library of modules and a vast
-array of external
-modules}\label{python-has-extensive-standard-library-of-modules-and-a-vast-array-of-external-modules}
+        \subsection{Python has an extensive standard library of modules and a
+vast array of external
+modules}\label{python-has-an-extensive-standard-library-of-modules-and-a-vast-array-of-external-modules}
     
 
 
@@ -828,10 +863,10 @@ installing Python modules can be done on the command line or at the
 Anaconda Prompt using;
 
 \begin{lstlisting}
-$ pip install module_name
+$ pip install <module_name>
 \end{lstlisting}
 
-where \lstinline!module_name! is the name of the module you want to
+where \lstinline!<module_name>! is the name of the module you want to
 install.
     
 
@@ -863,7 +898,7 @@ Python?}\label{how-is-anaconda-different-from-python}
 When you download Python from Python.org, you get the \emph{Python
 Interpreter}, a little text editing program called IDLE and all of the
 Python Standard Library modules. The Python Interpreter is an
-application or program that runs you Python code. A program written in
+application or program that runs your Python code. A program written in
 the Python programming language is run with the Python Interpreter. So
 Python corresponds to both the language that a program is written in as
 well as the application that runs the program.
@@ -880,7 +915,7 @@ Notebooks quickly.
 
 
     
-        \subsection{Why download Anaconda if I want to use is
+        \subsection{Why download Anaconda, if I want to use is
 Python?}\label{why-download-anaconda-if-i-want-to-use-is-python}
 
 Regardless if you download Python from Python.org or if you download
@@ -906,7 +941,7 @@ download).
 \subsubsection{Anaconda installs without administrator
 privileges}\label{anaconda-installs-without-administrator-privileges}
 
-Even if you don't have the ability to install program on a computer,
+Even if you don't have the ability to install programs on a computer,
 like a computer in a school computer lab, you can still download and use
 Anaconda. The Anaconda distribution of Python will also allow you to
 install additional modules from the Python package index
@@ -965,8 +1000,8 @@ Distribution of Python.
     
         This section details the installation of the Anaconda Distribution of
 Python on Windows 10. I think the Anaconda distribution of Python is the
-the best option for problemsolvers who want to use Python. Anaconda is
-free (although the download is large which can take time) and can be
+best option for problem solvers who want to use Python. Anaconda is free
+(although the download is large which can take time) and can be
 installed on school or work computers where you don't have administrator
 access or the ability to install new programs. Anaconda comes bundled
 with over 100 packages pre-installed including \textbf{numpy},
@@ -1016,7 +1051,7 @@ The Anaconda Downloads Page will look something like this:
     
         \subsubsection{2. Select Windows}\label{select-windows}
 
-Select Windows where the three opperating systems are listed.
+Select Windows where the three operating systems are listed.
 
 \begin{figure}
 \centering
@@ -1037,8 +1072,11 @@ Python. For problem solvers, select the Python 3.6 version. If you are
 unsure if your computer is running a 64-bit or 32-bit version of
 Windows, select 64-bit as that is most common.
 
-!Aanaconda select Python
-3.6{]}(images/anaconda\_python3\_or\_python2.png)
+\begin{figure}
+\centering
+\includegraphics{images/anaconda_python3_or_python2.png}
+\caption{Anaconda select Python 3.6}
+\end{figure}
 
 You may be prompted to enter your email. You can still download Anaconda
 if you click \lstinline![No Thanks]! and don't enter your Work Email
@@ -1067,7 +1105,8 @@ complete
         \subsubsection{4. Open and run the
 installer}\label{open-and-run-the-installer}
 
-Once the download completes, open and run the .exe installer
+Once the download completes, open and run the \textbf{\emph{.exe}}
+installer
 
 \begin{figure}
 \centering
@@ -1075,8 +1114,8 @@ Once the download completes, open and run the .exe installer
 \caption{anaconda installer}
 \end{figure}
 
-At the beginning of the install you will need to click \textbf{Next} to
-confirm the installation
+At the beginning of the install, you need to click \textbf{Next} to
+confirm the installation.
 
 \begin{figure}
 \centering
@@ -1084,7 +1123,7 @@ confirm the installation
 \caption{anaconda installer click next}
 \end{figure}
 
-and agree to the license
+Then agree to the license.
 
 \begin{figure}
 \centering
@@ -1106,11 +1145,11 @@ At the Advanced Installation Options screen, I recommend that you
 
 
     
-        \subsubsection{5. Open the Conda prompt from the Windows start
-menu}\label{open-the-conda-prompt-from-the-windows-start-menu}
+        \subsubsection{5. Open the Anaconda Prompt from the Windows start
+menu}\label{open-the-anaconda-prompt-from-the-windows-start-menu}
 
-After the Anaconda install is complete, you can go to the Windows start
-menu and select the Anaconda Prompt
+After the installation of Anaconda is complete, you can go to the
+Windows start menu and select the Anaconda Prompt.
 
 \begin{figure}
 \centering
@@ -1127,8 +1166,8 @@ like much, but it is really helpful for an undergraduate engineer using
 Python.
 
 At the Anaconda prompt, type \lstinline!python!. This will start the
-Python interperater, also called the Python REPL (for Read Evaluate
-Print Loop).
+Python interpreter, also called the Python REPL (for Read Evaluate Print
+Loop).
 
 \begin{lstlisting}
 > python
@@ -1141,7 +1180,7 @@ Print Loop).
 \end{figure}
 
 Note the Python version. You should see something like
-\lstinline!Python 3.6.1!. With the interperter running, you will see a
+\lstinline!Python 3.6.1!. With the interpreter running, you will see a
 set of greater-than symbols \lstinline!>>>! before the cursor.
 
 \begin{figure}
@@ -1159,16 +1198,15 @@ You should see the \textbf{\emph{Zen of Python}} by Tim Peters
 \caption{anaconda\_import\_this}
 \end{figure}
 
-To close the Python interperater, type \lstinline!exit()! at the
-interperator prompt \lstinline!>>>!. Note the double parenthesis at the
-end of the \lstinline!exit()! command. The \lstinline!()! is needed to
-stop the Python interperator and get back out to the \textbf{Anaconda
-Prompt}.
+To close the Python interpreter, type \lstinline!exit()! at the prompt
+\lstinline!>>>!. Note the double parenthesis at the end of the
+\lstinline!exit()! command. The \lstinline!()! is needed to stop the
+Python interpreter and get back out to the \textbf{Anaconda Prompt}.
 
 To close the \textbf{Anaconda Prompt}, you can either close the window
 with the mouse, or type \lstinline!exit!, no parenthesis necessary.
 
-When you want to use the Python interperater again, just click the
+When you want to use the Python interpreter again, just click the
 Windows Start button and select the \textbf{Anaconda Prompt} and type
 \lstinline!python!.
     
@@ -1205,12 +1243,12 @@ You will most likely see version 2.7 is installed. An issue for MacOS
 users is that the installed system version of Python has a set of
 permissions that will not always allow Python to run and may not allow
 Python to install external packages. Therefore, I recommend the Anaconda
-Distribution of Python is installed along side the system version of
+Distribution of Python is installed alongside the system version of
 Python that comes with MacOS. You will be able to run Python code using
 the Anaconda Distribution of Python, and you will be able to install
 external packages on the Anaconda Distribution of Python.
 
-To install the Anaconda Distribution of Python follow the steps below:
+To install the Anaconda Distribution of Python, follow the steps below:
 
 \subsubsection{Steps:}\label{steps}
 
@@ -1288,10 +1326,10 @@ your Work Email address.
         \subsubsection{3. Open the .pkg
 installer}\label{open-the-.pkg-installer}
 
-Using the MacOS finder, navigate to the downloads folder and double
-click the \textbf{\emph{.pkg}} installer file you just downloaded. It
-may be helpful to order your downloads by date to find the
-\textbf{\emph{.pkg}} file.
+Using the MacOS Finder, navigate to the downloads folder and
+double-click the \textbf{\emph{.pkg}} installer file you just
+downloaded. It may be helpful to order your downloads by date to find
+the \textbf{\emph{.pkg}} file.
     
 
 
@@ -1438,7 +1476,7 @@ The Anaconda Downloads Page will look something like this:
 \begin{figure}
 \centering
 \includegraphics{images/anaconda_download_page.png}
-\caption{anaconda download page}
+\caption{Anaconda Downloads Page}
 \end{figure}
     
 
@@ -1448,7 +1486,7 @@ The Anaconda Downloads Page will look something like this:
     
         \subsection{2. Select Linux}\label{select-linux}
 
-On the downloads page, select the Linux opperating system
+On the downloads page, select the Linux operating system
 
 \begin{figure}
 \centering
@@ -1535,7 +1573,7 @@ file to add Anaconda to your
 
 Now that \textbf{Anaconda3} is installed and \textbf{Anaconda3} is added
 to our \lstinline!PATH!, \lstinline!source! the \lstinline!.bashrc! file
-to load the new \lstinline!PATH! environmnet variable into the current
+to load the new \lstinline!PATH! environment variable into the current
 terminal session. Note the \lstinline!.bashrc! file is in the home
 directory. You can see it with \lstinline!$ ls -a!.
 
@@ -1549,7 +1587,7 @@ $ source .bashrc
 
 
     
-        \subsection{7. Start the Python REPL}\label{start-the-python-repl}
+        \subsubsection{7. Start the Python REPL}\label{start-the-python-repl}
 
 To verify the installation is complete, open Python from the command
 line:
@@ -1699,7 +1737,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
     
-        In this chapter you learned how to install the \textbf{Anaconda}
+        In this chapter, you learned how to install the \textbf{Anaconda}
 distribution of Python on your computer.
     
 
@@ -1714,6 +1752,7 @@ distribution of Python on your computer.
 
 
     
+        \begin{key_terms}
         Anaconda
 
 Download
@@ -1733,6 +1772,8 @@ Linux
 Terminal
 
 PATH
+        \end{key_terms}
+
     
 
 
@@ -1748,7 +1789,7 @@ PATH
     
         \begin{problems}
         Q1.01 What is Python? How is the Python language different than the
-Python Interperater?
+Python Interpreter?
 
 Q1.02 What is the difference between the version of Python at Python.org
 and the version of Python at Anaconda.com?
@@ -1847,7 +1888,7 @@ is 3 kg. What is the mass of the battery cable assembly?
 \end{lstlisting}
 
 Suppose one of the cables above is removed and it has a mass of 1.5 kg.
-What is the mass of the left over assembly
+What is the mass of the leftover assembly
 
 \begin{lstlisting}[language=Python]
 >>> 8 - 1.5
@@ -1862,32 +1903,30 @@ is density, m is mass and v is volume.
 
 In the problem above \(m = 5000\) and \(v=2500\)
 
-Let's solve this with Python
+Let's solve this with Python.
 
 \begin{lstlisting}[language=Python]
 >>> 5000 / 2500
 2.0
 \end{lstlisting}
 
-What if we have 2 batteries that each weight 5 kg? How much mass is two
-batteries?
+What is the total mass if we have 2 batteries, that each weight 5 kg?
 
 \begin{lstlisting}[language=Python]
 >>> 5 * 2
 2.0
 \end{lstlisting}
 
-The dimension of the battery of each battery is 3 cm. What is the area
-of the base of the battery? To do this problems, use the the double
-asterisk symbol \lstinline!**! to raise a number to a power. This is
-similar to using \(3^2\).
+The length, width, and height of each battery is 3 cm. What is the area
+of the base of the battery? To complete this problem, use the double
+asterisk symbol \lstinline!**! to raise a number to a power.
 
 \begin{lstlisting}[language=Python]
 >>> 3 ** 2
 9
 \end{lstlisting}
 
-What is the volume of the battery if each the length, width and height
+What is the volume of the battery if each the length, width, and height
 of the battery are all 3 cm?
 
 \begin{lstlisting}[language=Python]
@@ -1895,11 +1934,12 @@ of the battery are all 3 cm?
 27
 \end{lstlisting}
 
-Find the mass of the two batteries, and two cables
+Find the mass of the two batteries and two cables.
 
 We can use Python to find the mass of the batteries and then use the
 answer, which Python saves as an underscore \_ to use in our next
-operation. (This is similar to ans in MATLAB)
+operation. (The underscore \lstinline!_! in Python is comparable to the
+\lstinline!ans! variable in MATLAB)
 
 \begin{lstlisting}[language=Python]
 >>> 2 * 5 
@@ -1944,20 +1984,21 @@ operator & name & description & example & result\tabularnewline
 
 
     
-        \subsection{Trig: sin, cos, tan}\label{trig-sin-cos-tan}
+        \subsection{Trigonometry: sine, cosine, and
+tangent}\label{trigonometry-sine-cosine-and-tangent}
     
 
 
 
 
     
-        Trig functions such as sine, cosine and tangent can also be calculated
+        Trig functions such as sine, cosine, and tangent can also be calculated
 using the Python REPL.
 
-In order to use these functions, we need to introduce a new concept:
+To use these functions, we need to introduce a new concept:
 \emph{importing modules}.
 
-In Python there are many operations built into the language when it
+In Python, there are many operations built into the language when it
 starts. These include \lstinline!+! , \lstinline!-!, \lstinline!*!,
 \lstinline!/! like we saw in the previous section. However, not all
 functions will work right away when Python starts. Say we want to find
@@ -1970,12 +2011,12 @@ Traceback (most recent call last):
 NameError: name 'sin' is not defined
 \end{lstlisting}
 
-This error is returned because we have not told Python to include the
+This error results because we have not told Python to include the
 \lstinline!sin! function. The \lstinline!sin! function is part of the
 \emph{Python Standard Library}. The Python Standard Library comes with
 every python installation and includes many functions, but not all of
 these functions are available to us when we start a new Python REPL
-session. In order to use the \lstinline!sin! function, first import the
+session. To use the \lstinline!sin! function, first import the
 \lstinline!sin! function from the \lstinline!math! \emph{module} which
 is part of the Python Standard Library.
 
@@ -1995,12 +2036,12 @@ Success! Multiple modules can be imported at the same time. Say we want
 to use a bunch of different trig functions to solve the following
 problem.
 
-Angle has a value of \(\pi\)/6 radians. What is the sin, cos and tan of
-the angle?
+An angle has a value of \(\pi\)/6 radians. What is the sine, cos, and
+tangent of the angle?
 
 To solve this problem we need to import the \lstinline!sin()!,
-\lstinline!cos()!, and \lstinline!tan()! functions. It would also be use
-full to have the value of \(\pi\), rather than having to write
+\lstinline!cos()!, and \lstinline!tan()! functions. It is also useful to
+have the value of \(\pi\), rather than having to write
 \lstinline!3.14....! We can import all of these functions at the same
 time using the syntax
 \lstinline!from <module> import <function1>, <function2>, <function3>!.
@@ -2061,10 +2102,10 @@ radians & \lstinline!atan(100)! & \lstinline!2.0!\tabularnewline
     
         \subsection{Exponents and Logarithms}\label{exponents-and-logarithms}
 
-It is easy to calculate exponents and logarithms with Python. Note that
-exponent and logarithm functions need to be imported from the
-\textbf{math} module just like the trig functions were imported from the
-\textbf{math} module above.
+Calculating exponents and logarithms with Python is easy. Note the
+exponent and logarithm functions are imported from the \textbf{math}
+module just like the trig functions were imported from the \textbf{math}
+module above.
 
 The following functions can be imported from the math module:
 
@@ -2084,7 +2125,7 @@ The following functions can be imported from the math module:
   \lstinline!sqrt!
 \end{itemize}
 
-Let's try a couple of examples
+Let's try a couple of examples:
 
 \begin{lstlisting}[language=Python]
 >>> from math import log, log10, exp, e, pow, sqrt
@@ -2145,7 +2186,7 @@ result\tabularnewline
 
 
     
-        \subsection{Staticstics}\label{staticstics}
+        \subsection{Statistics}\label{statistics}
 
 To round out this section, we will look at a couple of statistics
 functions. These functions are part of the Python Standard Library, but
@@ -2174,65 +2215,7 @@ functions \lstinline!mean!, \lstinline!median!, \lstinline!mode! and
 14.842506526863986 
 \end{lstlisting}
 
-Alternatively, we can import the whole \textbf{statistics} module using
-the statement \lstinline!import statistics!. Then to use the functions,
-we need to use the names \lstinline!statistics.mean!,
-\lstinline!statistics.median!, \lstinline!statistics.mode!, and
-\lstinline!statistics.stdev!. See below:
-
-\begin{lstlisting}[language=Python]
->>> import statistics
-    
->>> test_scores = [ 60 , 83, 83, 91, 100]
-    
->>> statistics.mean(test_scores)
-83.4
-
->>> statistics.median(test_scores)
-83
-
->>> statistics.mode(test_scores)
-83
-    
->>> statistics.stdev(test_scores)
-14.842506526863986 
-\end{lstlisting}
-    
-
-
-
-
-    
-        \subsection{Staticstics}\label{staticstics}
-
-To round out this section, we will look at a couple of statistics
-functions. These functions are part of the Python Standard Library, but
-not part of the \textbf{math} module. To access Python's statistics
-functions, we need to import them from the \textbf{statistics} module
-using the statement
-\lstinline!from statistics import mean, median, mode, stdev!. Then the
-functions \lstinline!mean!, \lstinline!median!, \lstinline!mode! and
-\lstinline!stdev!(standard deviation) can be used.
-
-\begin{lstlisting}[language=Python]
->>> from statistics import mean, median, mode, stdev
-    
->>> test_scores = [ 60 , 83, 83, 91, 100]
-    
->>> mean(test_scores)
-83.4
-
->>> median(test_scores)
-83
-
->>> mode(test_scores)
-83
-    
->>> stdev(test_scores)
-14.842506526863986 
-\end{lstlisting}
-
-Alternatively, we can import the whole \textbf{statistics} module using
+Alternatively, we can import the entire \textbf{statistics} module using
 the statement \lstinline!import statistics!. Then to use the functions,
 we need to use the names \lstinline!statistics.mean!,
 \lstinline!statistics.median!, \lstinline!statistics.mode!, and
@@ -2297,15 +2280,13 @@ result\tabularnewline
 
     
         Variables are assigned in Python using the \lstinline!=! equals sign
-also called the assignment opperator. The statment:
+also called the assignment operator. The statement:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 a = 2
 \end{lstlisting}
 
-Assigns the integer \lstinline!2! to the variable \lstinline!a!. Note
-this is different from the logical opperator \lstinline!==! equivalent
-to.
+Assigns the integer \lstinline!2! to the variable \lstinline!a!.
     
 
 
@@ -2323,6 +2304,14 @@ to.
 
 
     
+        Note the assignment operator \lstinline!=!(equals), is different from
+the logical comparison operator \lstinline!==! (equivalent to).
+    
+
+
+
+
+    
         \begin{lstlisting}[language=Python]
 >>> a == 2
 True
@@ -2330,6 +2319,72 @@ True
     
 
 
+
+
+    
+        Variable names in Python must follow the rules below:
+
+\begin{itemize}
+\tightlist
+\item
+  variable names must start with a letter
+\item
+  variable names only contain letters, numbers, and the underscore
+  character \lstinline!_!
+\item
+  variable names can not contain spaces
+\item
+  variable names are not enclosed in quotes or brackets
+\end{itemize}
+    
+
+
+
+
+    
+        The following are valid variable names:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{constant} \PY{o}{=} \PY{l+m+mi}{4}
+        
+        \PY{n}{new\PYZus{}variable} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{var}\PY{l+s+s1}{\PYZsq{}}
+        
+        \PY{n}{my2rules} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rule1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rule2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        
+        \PY{n}{SQUARES} \PY{o}{=} \PY{l+m+mi}{4}
+\end{Verbatim}
+
+
+
+    
+        The following are invalid variable names:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{a} \PY{n}{constant} \PY{o}{=} \PY{l+m+mi}{4}
+        
+        \PY{l+m+mi}{3}\PY{n}{newVariables} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}
+        
+        \PY{o}{\PYZam{}}\PY{n+nb}{sum} \PY{o}{=} \PY{l+m+mi}{4} \PY{o}{+} \PY{l+m+mi}{4}
+        
+        \PY{c+c1}{\PYZsh{}a\PYZus{}new\PYZus{}variable = 6}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+          File "<ipython-input-3-d6921874e142>", line 1
+        a constant = 4
+                 \^{}
+    SyntaxError: invalid syntax
+
+
+    \end{Verbatim}
 
 
     
@@ -2355,7 +2410,7 @@ the problem.
 
 
     
-        \section{Boolean Arithemtic}\label{boolean-arithemtic}
+        \section{Boolean Arithmetic}\label{boolean-arithmetic}
     
 
 
@@ -2364,7 +2419,7 @@ the problem.
     
         \emph{Boolean Arithmetic} is the arithmetic of true and false logic. A
 \emph{boolean} or logical value can either be \lstinline!True! or
-\lstinline!False!. In Python the key words \lstinline!True! and
+\lstinline!False!. In Python, the keywords \lstinline!True! and
 \lstinline!False! denote a boolean variable. Note that assigning
 \lstinline!true! or \lstinline!false! to a variable will produce an
 error.
@@ -2432,15 +2487,15 @@ False
 
 
     
-        \section{String Opperations}\label{string-opperations}
+        \section{String Operations}\label{string-operations}
     
 
 
 
 
     
-        Some opperations we can do on strings include indexing, concatination,
-and logical comparisions
+        Some operations we can do on strings include indexing, concatenation,
+and logical comparisons.
     
 
 
@@ -2516,7 +2571,7 @@ and logical comparisions
 
     
         \begin{lstlisting}[language=Python]
->>> word[0:8:2]  #start:stop+1:countby
+>>> word[0:8:2]  #start:stop+1:step
 'Slto'
 \end{lstlisting}
     
@@ -2545,7 +2600,7 @@ and logical comparisions
         The \lstinline!print()! function useful in Python. Below is a code
 example:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 >>> name = Kendra
 >>> print('Your name is: ')
 Your name is
@@ -2565,15 +2620,10 @@ Kendra
 
 
     
-        This is the text summary for the chapter. Will be about half a page long
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-mollit anim id est laborum.
+        In this chapter, you learned how to use the Python REPL, also called the
+Python prompt, to solve calculation problems. You learned how to do
+arithmetic, powers and logarithms, trigonometry and save values to
+variables.
     
 
 
@@ -2636,7 +2686,7 @@ Trig Function & Description\tabularnewline
 \lstinline!cos! & cosine of angle in radians\tabularnewline
 \lstinline!tan! & tangent of angle in radians\tabularnewline
 \lstinline!pi! & \(\pi\)\tabularnewline
-\lstinline!degress! & convert radians to degress\tabularnewline
+\lstinline!degrees! & convert radians to degrees\tabularnewline
 \lstinline!radians! & convert degrees to radians\tabularnewline
 \lstinline!asin! & inverse sine\tabularnewline
 \lstinline!acos! & inverse cosine\tabularnewline
@@ -2690,7 +2740,7 @@ Statistical Function & Description\tabularnewline
 
     
         \begin{problems}
-        Complete the calculations
+        Arithmetic
 
 Q2.01 \(2 + \frac{1}{2}\)
 
@@ -2769,8 +2819,8 @@ Variables}\label{python-data-types-and-variables}
     
         \section{Introduction}\label{introduction}
 
-Python has many builtin data types. These include integers, floats,
-boolean, strings, and lists.
+Python has many built-in data types. These include integers, floats,
+booleans, strings, and lists.
 
 By the end of this chapter you will be able to:
 
@@ -2778,7 +2828,7 @@ By the end of this chapter you will be able to:
 \item
   Use the \lstinline!type()! function to determine an object's type
 \item
-  Define variables in Python with the assignment opperator \lstinline!=!
+  Define variables in Python with the assignment operator \lstinline!=!
 \item
   Complete mathematical calculations with variables
 \item
@@ -2786,6 +2836,10 @@ By the end of this chapter you will be able to:
 \item
   Convert variables from one data type to another
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -2799,10 +2853,10 @@ By the end of this chapter you will be able to:
 
 
     
-        Python has many useful built in data types. Python variables can store
+        Python has many useful built-in data types. Python variables can store
 different types of data. A variable's data type is created dynamically,
-without the need to specifically define a data type when the variable is
-created. It's useful for problem solvers to understand a couple of
+without the need to explicitly define a data type when the variable is
+created. It is useful for problem solvers to understand a couple of
 Python's core data types in order to write well-constructed code. Below
 is a discussion of a few different data types in Python.
     
@@ -2815,7 +2869,7 @@ is a discussion of a few different data types in Python.
 
 Integers are one of the Python data types. An integer is a whole number,
 negative, positive or zero. In Python, integer variables are defined by
-simply assigning a whole number to a variable. Python's
+merely assigning a whole number to a variable. Python's
 \lstinline!type()! function can be used to determine the data type of a
 variable.
 
@@ -2878,14 +2932,14 @@ whole number:
 
 
     
-        \subsubsection{Complex numbers}\label{complex-numbers}
+        \subsection{Complex numbers}\label{complex-numbers}
 
-Another useful data type for problem solvers are complex numbers. A
-complex number is defined in Python using a real component \lstinline!+!
-an imaginary component\lstinline!j!. The letter \lstinline!j! must be
-used in the imaginary component. Using the letter \lstinline!i! will
-return an error. Note how imaginary numbers can be added to integers and
-floats.
+Another useful data type for problem solvers is the complex number data
+type. A complex number is defined in Python using a real component
+\lstinline!+! an imaginary component\lstinline!j!. The letter
+\lstinline!j! must be used to denote the imaginary component. Using the
+letter \lstinline!i! will return an error. Note how imaginary numbers
+add to integers and floats.
 
 \begin{lstlisting}[language=Python]
 >>> comp = 4 + 2j
@@ -2925,8 +2979,8 @@ SyntaxError: invalid syntax
 
     
         The \emph{boolean} data type is either True or False. In Python, boolean
-variables are defined by the \lstinline!True! and \lstinline!False! key
-words.
+variables are defined by the \lstinline!True! and \lstinline!False!
+keywords.
 
 \begin{lstlisting}[language=Python]
 >>> a = True
@@ -2957,7 +3011,8 @@ NameError: name 'false' is not defined
 
 
     
-        \subsection{Ints and Floats as Bools}\label{ints-and-floats-as-bools}
+        \subsection{Integers and Floats as
+Booleans}\label{integers-and-floats-as-booleans}
 
 An int, float or complex number set to zero will always return
 \lstinline!False!. An int, float or complex number set to any other
@@ -2993,7 +3048,7 @@ True
 
 
     
-        Strings are sequences of letters, numbers, symbols and spaces. In
+        Strings are sequences of letters, numbers, symbols, and spaces. In
 Python, strings can be almost any length and can contain spaces. String
 variables are assigned in Python using quotation marks
 \lstinline!'   '!. Strings can contain blank spaces. A blank space is a
@@ -3019,7 +3074,7 @@ valid string character in Python string.
 Numbers and decimals can be defined as strings too. If a decimal number
 is defined using quotes \lstinline!'   '!, it will be saved as a string
 rather than as a float. Integers defined using quotes will become
-strings as well if surrounded with quotes.
+strings as well if surrounded by quotes.
 
 \begin{lstlisting}[language=Python]
 >>> num = '5.2'
@@ -3168,23 +3223,29 @@ multiple objects. These are \textbf{dictionaries} and \textbf{tuples}.
 
     
         Tuples are immutable lists. Elements of a list can be modified, but
-elements in a tuple can only be accessed, not modified. The name tuple
-does not mean that only two values can be stored.
+elements in a tuple can only be accessed, not modified. The name
+\emph{tuple} does not mean that only two values can be stored.
     
 
 
 
 
     
+        \newpage
         \section{Summary}\label{summary}
-    
-
-
-
 
     
-        In this chapter we reviewed a couple of different data types built-in to
-Python
+
+
+
+
+    
+        In this chapter, we reviewed a couple of different data types built-in
+to Python. These data types include the numeric data types: integers,
+floats, and complex numbers. The string data type is composed of
+letters, numbers, spaces, and punctuation. Python also has container
+data types which can store many values. These container data types are
+lists, tuples, and dictionaries.
     
 
 
@@ -3198,6 +3259,7 @@ Python
 
 
     
+        \begin{key_terms}
         variable
 
 integer
@@ -3212,7 +3274,11 @@ tuple
 
 list
 
-index, indexing
+index
+
+indexing
+        \end{key_terms}
+
     
 
 
@@ -3243,7 +3309,7 @@ components\tabularnewline
 symbols\tabularnewline
 \lstinline!list! & a Python list\tabularnewline
 \lstinline!dict! & a Python dictionary\tabularnewline
-\lstinline!tuple! & an imutable list\tabularnewline
+\lstinline!tuple! & an immutable list\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -3254,7 +3320,7 @@ symbols\tabularnewline
 Function & Description\tabularnewline
 \midrule
 \endhead
-\lstinline!type()! & ouputs a variable or objects data
+\lstinline!type()! & outputs a variable or objects data
 type\tabularnewline
 \lstinline!len()! & return the length of a string\tabularnewline
 \lstinline!str()! & converts a \lstinline!float! or \lstinline!int! into
@@ -3273,10 +3339,13 @@ into an \lstinline!float! (floating point number)\tabularnewline
 Operator & Description & Example & Result\tabularnewline
 \midrule
 \endhead
-{[} {]} & indexing & lst{[}1{]} & 4\tabularnewline
-: & start & lst{[}:2{]} & {[} 2, 4 {]}\tabularnewline
-: & end & lst{[}2:{]} & {[} 6, 8 {]}\tabularnewline
-: & through & lst{[}0:3{]} & {[} 2, 4, 6 {]}\tabularnewline
+{[} {]} & indexing & \lstinline!lst[1]! & \lstinline!4!\tabularnewline
+: & start & \lstinline!lst[:2]! & \lstinline![ 2, 4 ]!\tabularnewline
+: & end & \lstinline!lst[2:]! & \lstinline![ 6, 8 ]!\tabularnewline
+: & through & \lstinline!lst[0:3]! &
+\lstinline![ 2, 4, 6 ]!\tabularnewline
+: & start, step, end+1 & \lstinline!lst[0:5:2]! &
+\lstinline![2, 6]!\tabularnewline
 \bottomrule
 \end{longtable}
     
@@ -4485,21 +4554,25 @@ Files}\label{calling-functions-from-other-files}
 
 
     
-        User-defined functions can be called from other files, a different file
-than where the function definition was written. If a new file called
-\textbf{\emph{myfunctions.py}} is created and contains two function
-definitions, \lstinline!plustwo()! and \lstinline!falldist()!, these
-functions can be used by a separate file as long as the file and
-function names are imported first. It is important that the file which
-contains the functions ends in the \textbf{\emph{.py}} extension.
-Without a \textbf{\emph{.py}} extension, the file can not be imported.
+        User-defined functions can be called from other files. A function can be
+called and run in a different file than the file the function definition
+is written in. If a new file called \textbf{\emph{myfunctions.py}} is
+created and contains two function definitions, \lstinline!plustwo()! and
+\lstinline!falldist()!, these functions can be used by a separate file
+as long as the file and function names are imported first. It is
+important that the file which contains the functions ends in the
+\textbf{\emph{.py}} extension. Without a \textbf{\emph{.py}} extension,
+the file can not be imported.
     
 
 
 
 
     
-        \begin{lstlisting}
+        Inside the file \textbf{\emph{myfuctions.py}}, two functions are defined
+using the code below.
+
+\begin{lstlisting}[language=Python]
 # myfunctions.py
 
 def plustwo(n):
@@ -4517,8 +4590,11 @@ def falldist(t,g=9.81):
 
 
     
-        This file can be imported into another script, or Jupyter Notebook
-running in the same directory. Using
+        This file, \textbf{\emph{myfunctions.py}} can be imported into another
+script (another \textbf{.py} file), or Jupyter Notebook. Remember though
+that the file with the functions and the file calling the functions must
+be in the same directory. To use the functions written in one file
+inside another file include the import line,
 \lstinline!from <filename> import <function_name>!. Note that although
 the file name must contain a \textbf{\emph{.py}} extension,
 \lstinline!.py! is not used as part of the file name during import.
@@ -4556,18 +4632,19 @@ the file name must contain a \textbf{\emph{.py}} extension,
 
     
         It is good programming practice to document your code. Reusable chunks
-of code are particulary important to document as other programers may
+of code are particulary important to document as other programmers may
 use the code and you may use the code again at a different time.
 
 Python has a couple different ways for programmers to add documentation.
 One way is to use simple comments. Comments are lines of code that do
 not get run by the Python interpreter. Comments are meant to be viewed
 by humans. In Python, comment lines start with the pound symbol
-\lstinline!#!.
+\lstinline!#!. Any line that starts with a \lstinline!#! will not be run
+by the Python Python Interpreter.
 
-Another way to document code is to use docstrings. Docstrings are
-comments which are surrounded with triple quoatation marks and usually
-contain mulitple lines of explanation. A function containing a docstring
+Another way to document code is to use \emph{docstrings}. Docstrings are
+comments which are surrounded with triple quotation marks and usually
+contain multiple lines of explanation. A function containing a docstring
 takes the form:
 
 \begin{lstlisting}
@@ -4586,13 +4663,13 @@ def function_name(arguments):
 
 Doc strings are what come up when the \lstinline!help()! function is
 called. As an example, running the \lstinline!help()! function on the
-builtin function \lstinline!sum! brings up:
+built-in function \lstinline!sum! brings up:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{help}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{help}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -4620,16 +4697,16 @@ sum(iterable, start=0, /)
 
     
         Let's create our own function to convert g to kg. Let's call our
-function g2kg The first thing to do is make sure that our function name
-is not assigned to another function or is used as a keyword by Python.
-We can check quick using \lstinline!type()!. We know that sum() is a
-function, how about g2kg?
+function \lstinline!g2kg!. The first thing to do is make sure that the
+name \lstinline!g2kg! is not assigned to another function and is not a
+keyword by Python. We can check quick using \lstinline!type()!. We know
+that \lstinline!sum()! is a function, how about g2kg?
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n+nb}{sum}\PY{p}{)}\PY{p}{)}
         \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{g2kg}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
@@ -4641,11 +4718,11 @@ function, how about g2kg?
 
     \begin{Verbatim}[commandchars=\\\{\}]
 
-        ---------------------------------------------------------------------------
+        ------------------------------------------------------------------------
 
-        NameError                                 Traceback (most recent call last)
+        NameError                              Traceback (most recent call last)
 
-        <ipython-input-2-487fcfc6eb43> in <module>()
+        <ipython-input-5-487fcfc6eb43> in <module>()
           1 print(type(sum))
     ----> 2 print(type(g2kg))
     
@@ -4664,7 +4741,7 @@ parenthsis, colon and return statment.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{def} \PY{n+nf}{g2kg}\PY{p}{(}\PY{n}{g}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{def} \PY{n+nf}{g2kg}\PY{p}{(}\PY{n}{g}\PY{p}{)}\PY{p}{:}
             \PY{n}{kg} \PY{o}{=} \PY{n}{g}\PY{o}{/}\PY{l+m+mi}{1000}
             
             \PY{k}{return} \PY{n}{kg}
@@ -4680,24 +4757,25 @@ expect the output to be 1.3 kg
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{g2kg}\PY{p}{(}\PY{l+m+mi}{1300}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{g2kg}\PY{p}{(}\PY{l+m+mi}{1300}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} 1.3
+{\color{outcolor}Out[{\color{outcolor}7}]:} 1.3
 \end{Verbatim}
             
 
     
-        If we call \lstinline!help()! on our function, nothing will be returend
-because our function does not contain a docstring yet.
+        If we call \lstinline!help()! on our function \lstinline!g2kg()!,
+nothing is returned. Our \lstinline!g2kg()! function does not contain a
+docstring yet.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{help}\PY{p}{(}\PY{n}{g2kg}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{help}\PY{p}{(}\PY{n}{g2kg}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -4712,44 +4790,55 @@ g2kg(g)
 
     
         Now let's add a docstring to the function. Common components of
-docstrings include a summary of the function. What the function inputs
-and outputs are and an example of the function running.
+docstrings include:
+
+\begin{itemize}
+\tightlist
+\item
+  a summary of the function
+\item
+  the function inputs
+\item
+  the function outputs
+\item
+  an example of the function running including the result
+\end{itemize}
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{def} \PY{n+nf}{g2kg}\PY{p}{(}\PY{n}{g}\PY{p}{)}\PY{p}{:}
-            \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
-        \PY{l+s+sd}{    }
-        \PY{l+s+sd}{    Function g2kg converts between g and kg}
-        \PY{l+s+sd}{    }
-        \PY{l+s+sd}{    input: a measurement in grams, int or float}
-        \PY{l+s+sd}{    output: measurment in kg, float}
-        \PY{l+s+sd}{    }
-        \PY{l+s+sd}{    Example:}
-        \PY{l+s+sd}{    }
-        \PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} g2kg(1300)}
-        \PY{l+s+sd}{            }
-        \PY{l+s+sd}{            1.3}
-        \PY{l+s+sd}{        }
-        \PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
-            \PY{n}{kg} \PY{o}{=} \PY{n}{g}\PY{o}{/}\PY{l+m+mi}{1000}
-            
-            \PY{k}{return} \PY{n}{kg}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{k}{def} \PY{n+nf}{g2kg}\PY{p}{(}\PY{n}{g}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZdq{}\PYZdq{}\PYZdq{}}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{    Function g2kg converts between g and kg}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{    input: a measurement in grams, int or float}
+         \PY{l+s+sd}{    output: measurment in kg, float}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{    Example:}
+         \PY{l+s+sd}{    }
+         \PY{l+s+sd}{        \PYZgt{}\PYZgt{}\PYZgt{} g2kg(1300)}
+         \PY{l+s+sd}{            }
+         \PY{l+s+sd}{            1.3}
+         \PY{l+s+sd}{        }
+         \PY{l+s+sd}{    \PYZdq{}\PYZdq{}\PYZdq{}}
+             \PY{n}{kg} \PY{o}{=} \PY{n}{g}\PY{o}{/}\PY{l+m+mi}{1000}
+             
+             \PY{k}{return} \PY{n}{kg}
 \end{Verbatim}
 
 
 
     
-        Now let's ask for help on our function and see if the docstring is
-printed back.
+        Now let's ask for \lstinline!help()! on our function and see if the
+docstring is printed back.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{help}\PY{p}{(}\PY{n}{g2kg}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{help}\PY{p}{(}\PY{n}{g2kg}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -5248,7 +5337,7 @@ notebook output cells.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_269_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_274_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5619,7 +5708,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_281_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_286_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5725,7 +5814,7 @@ attribute. The \lstinline!plt.show()! line shows the plot on the screen.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_286_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_291_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5760,7 +5849,7 @@ These daughter objects in turn have methods such as
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_288_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_293_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5897,7 +5986,7 @@ positions and \lstinline!CTEs! is the list of bar heights.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_301_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_306_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5952,7 +6041,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_304_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_309_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -5980,7 +6069,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_305_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_310_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6079,7 +6168,7 @@ the error bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_313_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_318_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6117,7 +6206,7 @@ the error bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_317_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_322_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6195,7 +6284,7 @@ this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_323_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_328_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6260,7 +6349,7 @@ jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_329_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_334_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6305,7 +6394,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_332_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_337_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6350,7 +6439,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_336_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_341_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6431,7 +6520,7 @@ using a Jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_341_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_346_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6498,7 +6587,7 @@ side. This can be done in \textbf{matplotlib} using \textbf{subplots}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_346_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_351_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6559,7 +6648,7 @@ inline```
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_351_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6634,7 +6723,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_354_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_359_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6661,7 +6750,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_355_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6688,7 +6777,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_361_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6715,7 +6804,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_357_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_362_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6794,7 +6883,7 @@ the contour, which is represented by color in a 2D plot. The
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_364_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_369_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6848,7 +6937,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_367_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_372_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6915,7 +7004,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_370_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_375_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6980,7 +7069,7 @@ ax.contourf(X, Y, Z, cmap=mycmap)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_373_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_378_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7075,7 +7164,7 @@ quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_381_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7191,7 +7280,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_388_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_393_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7236,7 +7325,7 @@ build the arrow starting position arrays, then apply our function
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_395_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7279,7 +7368,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_392_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7322,7 +7411,7 @@ Again we can build these arrays using \textbf{numpy} and plot them with
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_394_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_399_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7416,7 +7505,7 @@ needs to have the same dimensions as the position and direction arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_402_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7483,7 +7572,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_402_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7525,7 +7614,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_405_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_410_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7565,7 +7654,7 @@ and distance relative to the point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_412_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7637,7 +7726,7 @@ statinary object and model the fluid flow around the circle.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_409_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7699,7 +7788,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_421_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7755,7 +7844,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_419_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_424_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7805,7 +7894,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_422_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_427_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7860,7 +7949,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_430_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8039,17 +8128,18 @@ if <logical_condition>:
 \end{lstlisting}
 
 The keyword \lstinline!if! begins the selection statement. Following
-\lstinline!if! a logical condition needs to be included. A logical
+\lstinline!if!, a logical condition needs to be included. A logical
 condition is an expression that can be evaluated as \lstinline!True! or
 \lstinline!False!. An example of logical condition is \lstinline!a<5!.
 This logical condition will return \lstinline!True! if \lstinline!a! is
 less than 5. Otherwise if \lstinline!a! is 5 or greater it will return
 \lstinline!False!. Following the logical condition, a colon
-\lstinline!:! is needed. After the if statement, a chunk of code to run
-when the condition is \lstinline!True! is included. The section of code
-must be indented and indendented the same amount. By convention this is
-4 spaces. Most Python code editors, including Jupyter Notebooks will
-indent code after an if statement automatically.
+\lstinline!:! is required. After the if statement, a section of code to
+run when the condition is \lstinline!True! is included. The section of
+code must be indented and every line in this section must be indendented
+the same amount. By convention, the indentation this is 4 spaces. Most
+Python code editors, including Jupyter Notebooks, will indent code after
+an if statement automatically.
 
 An example set of code below shows how an if statement might work:
     
@@ -8057,7 +8147,7 @@ An example set of code below shows how an if statement might work:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{2}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{2}
         \PY{k}{if} \PY{n}{a}\PY{o}{\PYZlt{}}\PY{l+m+mi}{5}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{less than five}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
@@ -8070,18 +8160,19 @@ less than five
 
 
     
-        In the first line of the code example above, the variable \lstinline!a!
-is assigned the value \lstinline!2!. The second line of code is the if
-statement. The if-statement starts with the keyword \lstinline!if! and
-is follwed by the logical condition \lstinline!a<5! and a colon
-\lstinline!:!. The logical condition \lstinline!a<5! will return either
-\lstinline!True! or \lstinline!False! depending on the value of
-\lstinline!a!. Since \lstinline!a=2!, the logical condition
+        In the first line of code in the example above, the variable
+\lstinline!a! is assigned the value \lstinline!2!. The second line of
+code is the if-statement. The if-statement starts with the keyword
+\lstinline!if! and is follwed by the logical condition \lstinline!a<5!
+and a colon \lstinline!:!. The logical condition \lstinline!a<5! will
+return either \lstinline!True! or \lstinline!False! depending on the
+value of \lstinline!a!. Since \lstinline!a=2!, the logical condition
 \lstinline!a<5! evaluates as \lstinline!True!. The line
 \lstinline!print('less than five')! is indented after the if-statement.
-This is the line of code that will run if the if-statement is
-\lstinline!True!. Since the if-statement is \lstinline!True! the
-indented line \lstinline!print('less than five')! runs and the user sees
+The line of code including the \lstinline!print()! statement will run if
+the if-statement is \lstinline!True!. Since the if-statement \emph{is}
+\lstinline!True!, the indented line \lstinline!print('less than five')!
+runs. As a result of running these three lines of code, the user sees
 the text \lstinline!less than five!.
     
 
@@ -8098,13 +8189,14 @@ the text \lstinline!less than five!.
     
         If statments can be chained together one after another to create a
 programmatic flow. For example, the following code block utilizes three
-different if-statements, each followed by an indented code block.
+different if-statements, each if-statement is followed by an indented
+code block.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{2}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{2}
         \PY{k}{if} \PY{n}{a}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{is negative}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{if} \PY{n}{a} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
@@ -8122,7 +8214,7 @@ is positive
 
     
         Note how each if-statement is followed by a logical condition and a
-colon \lstinline!:!. Also note how the code below each if statment is
+colon \lstinline!:!. Also note how the code below each if-statment is
 indented. With the code left-justified (not indented), all three code
 lines will run and the output will be different. The \lstinline!pass!
 keyword is used as code will not run unless at least one line of code is
@@ -8133,23 +8225,23 @@ does nothing.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{2}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{2}
         \PY{k}{if} \PY{n}{a}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0}\PY{p}{:}
             \PY{k}{pass}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{is negative}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a is negative}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{if} \PY{n}{a} \PY{o}{==} \PY{l+m+mi}{0}\PY{p}{:}
             \PY{k}{pass}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{is zero}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a is zero}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{if} \PY{n}{a}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{:}
             \PY{k}{pass}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{is positive}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a is positive}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-is negative
-is zero
-is positive
+a is negative
+a is zero
+a is positive
 
     \end{Verbatim}
 
@@ -8183,7 +8275,7 @@ the same amount. A sample if/else code section is below:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{5}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{5}
         \PY{k}{if} \PY{n}{a}\PY{o}{\PYZgt{}}\PY{l+m+mi}{10}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a is greater than 10}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{else}\PY{p}{:}
@@ -8210,7 +8302,7 @@ not.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{20}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{20}
         \PY{k}{if} \PY{n}{a}\PY{o}{\PYZgt{}}\PY{l+m+mi}{10}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a is greater than 10}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{else}\PY{p}{:}
@@ -8255,7 +8347,7 @@ condition is \lstinline!False!. An example section of code if below:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}
         \PY{k}{if} \PY{n}{color} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The color is red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{elif} \PY{n}{color} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
@@ -8281,7 +8373,7 @@ the \lstinline!else! will be executed.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{orange}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{color} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{orange}\PY{l+s+s1}{\PYZsq{}}
         \PY{k}{if} \PY{n}{color} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The color is red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{elif} \PY{n}{color} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
@@ -8298,10 +8390,172 @@ The color is not red or green
 
 
     
-        \section{Try-Except Statments}\label{try-except-statments}
+        \section{Try-Except Statements}\label{try-except-statements}
     
 
 
+
+
+    
+        \subsection{Syntax Errors and Exception
+Errors}\label{syntax-errors-and-exception-errors}
+    
+
+
+
+
+    
+        \subsubsection{Syntax Errors}\label{syntax-errors}
+
+Syntax errors are a type of error in Python where the syntax of a code
+line is not valid Python code. Syntax errors include quotes that are not
+closed, and variable names that do not start with a letter.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{string} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{problem solving}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+          File "<ipython-input-3-4c037f6284bc>", line 1
+        string = "problem solving
+                                 \^{}
+    SyntaxError: EOL while scanning string literal
+
+
+    \end{Verbatim}
+
+
+    
+        When you encounter syntax errors in Python, the Python interpreter gives
+you the message \lstinline!SyntaxError! with a sometimes cryptic
+message. Even if a line of code is not run over the course of the
+program, syntax errors in Python are not allowed. For instance, a line
+of code indented after the if-statement \lstinline!if 'a' == 'b:'! will
+not be executed. But if the indented line of code contains a syntax
+error, the Python interpreter still flags the error and does not
+complete the program.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{if} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{a}\PY{l+s+s1}{\PYZsq{}} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{b}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
+            \PY{n}{string} \PY{o}{=} \PY{l+m+mi}{10}\PY{n}{problems}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+          File "<ipython-input-6-532ae1edb2a2>", line 2
+        string = 10problems
+                          \^{}
+    SyntaxError: invalid syntax
+
+
+    \end{Verbatim}
+
+
+    
+        \subsubsection{Exception Errors}\label{exception-errors}
+
+Exception error are errors that result from a line of code not being
+able to run. Syntax errors are lines of code that are not valid Python.
+Lines of code with exception errors are valid Python, but the line of
+code still can not run. For example the statement
+\lstinline!f = open('file.txt','r')! is valid Python. But if the file
+\textbf{\emph{file.txt}} does not exist, then Python throws an exception
+error because the of code can not be executed.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{f} \PY{o}{=} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{file.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ------------------------------------------------------------------------
+
+        FileNotFoundError                      Traceback (most recent call last)
+
+        <ipython-input-10-cc3c27f5a0c3> in <module>()
+    ----> 1 f = open('file.txt','r')
+    
+
+        FileNotFoundError: [Errno 2] No such file or directory: 'file.txt'
+
+    \end{Verbatim}
+
+
+    
+        Another valid line of Python code is print(a{[}0{]}), but if
+\lstinline!a! is defined as an integer, \lstinline!a! can not be indexed
+and an exception error is shown.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{1}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ------------------------------------------------------------------------
+
+        TypeError                              Traceback (most recent call last)
+
+        <ipython-input-11-e2deb0d423fd> in <module>()
+          1 a = 1
+    ----> 2 print(a[0])
+    
+
+        TypeError: 'int' object is not subscriptable
+
+    \end{Verbatim}
+
+
+    
+        \subsection{Try Except statements}\label{try-except-statements}
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k}{try}\PY{p}{:}
+             \PY{n}{f}\PY{o}{=}\PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{file.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{except}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{file is open}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+file is open
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{k}{try}\PY{p}{:}
+             \PY{n}{a} \PY{o}{=} \PY{l+m+mi}{5}
+             \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}
+         \PY{k}{except}\PY{p}{:}
+             \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{variable a is not a list}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+variable a is not a list
+
+    \end{Verbatim}
 
 
     
@@ -9498,7 +9752,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_555_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_572_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -11216,14 +11470,15 @@ Hardware}\label{python-and-external-hardware}
 communication. A computer running Python with the \textbf{pyserial}
 package installed can communicate with external hardware.
 \textbf{Pyserial} is a useful package for engineers because it allows
-engineers to exchange data between a computer and pieces of hardware
-such as voltmeters, oscilloscopes, strain gauges, flow meters etc.
+engineers to exchange data between computers and pieces of external
+hardware such as voltmeters, oscilloscopes, strain gauges, flow meters,
+actuators, and lights.
 
 \textbf{Pyserial} provides an interface to communicate over the
 \emph{serial} communication protocol. Serial communication is one of the
 oldest computer communication protocols. Serial communication predates
 the USB specification now used by computers and other pieces of hardware
-like mice, keyboards and webcams. USB stands for Universal Serial Bus.
+like mice, keyboards, and webcams. USB stands for Universal Serial Bus.
 USB and is built upon and extends the original serial communication
 interface.
     
@@ -11295,7 +11550,7 @@ between \emph{bytes} and \emph{unicode strings} in Python.
 
 The distinction between bytes and unicode strings is important because
 strings in Python are \emph{unicode} by default. However, external
-hardware like Arduino's, oscillascopes and voltmeters transmit
+hardware like Arduino's, oscilloscopes and voltmeters transmit
 characters as \emph{bytes}.
     
 
@@ -11310,26 +11565,26 @@ characters as \emph{bytes}.
 
 
     
-        In Python when a new string is defined, the syntax is:
+        In Python, the syntax to define a new string is:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{ustring} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A unicode string}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{ustring} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A unicode string}\PY{l+s+s1}{\PYZsq{}}
 \end{Verbatim}
 
 
 
     
-        We can see what data type the \lstinline!ustring! variable is assigned
-with the \lstinline!type()! function:
+        We can determine the data type of the \lstinline!ustring! variable using
+the \lstinline!type()! function:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{ustring}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{ustring}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -11348,7 +11603,7 @@ is of \lstinline!<class 'str'>!, it indicates \lstinline!ustring! is a
 
 \emph{Unicode Strings} are useful because there are many letter and
 letter-like characters that are not part of the the set of letters,
-numbers and symbols on a regular computer keyboard. For instance: in
+numbers and symbols on a regular computer keyboard. For example in
 Spanish, the accent character is used over certain vowels. Letters with
 accents can't be represented by the letters on a standard English
 keyboard. However, letters with accents are part of a set of letters,
@@ -11369,7 +11624,7 @@ combinations. This limits \emph{byte strings} to basically only the
 letter, numbers and punctuation marks on a computer keyboard. This
 limited set of characters is called the ASCII (pronounced \emph{ask-ee
 two}) character set. A table of ASCII character codes is in the
-appendix. For instantance, ASCII code \lstinline!49! corresponds to the
+appendix. For instance, ASCII code \lstinline!49! corresponds to the
 number one \lstinline!1!.
 
 \textbf{Python does not use \emph{byte strings} by default}.
@@ -11398,7 +11653,7 @@ placed before the quotation marks when a string is created.
 
     
         We can view the type of our \lstinline!bstring! variable using the
-\lstinline!type()! function
+\lstinline!type()! function.
     
 
 
@@ -11450,25 +11705,25 @@ understand it.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{ustring} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A unicode string}\PY{l+s+s1}{\PYZsq{}}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{ustring} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{A unicode string}\PY{l+s+s1}{\PYZsq{}}
         \PY{n}{new\PYZus{}bstring} \PY{o}{=} \PY{n}{ustring}\PY{o}{.}\PY{n}{encode}\PY{p}{(}\PY{p}{)}
         \PY{n+nb}{type}\PY{p}{(}\PY{n}{new\PYZus{}bstring}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} bytes
+{\color{outcolor}Out[{\color{outcolor}3}]:} bytes
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{bstring} \PY{o}{=} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bstring}\PY{l+s+s1}{\PYZsq{}}
-         \PY{n}{new\PYZus{}ustring} \PY{o}{=} \PY{n}{bstring}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{p}{)}
-         \PY{n+nb}{type}\PY{p}{(}\PY{n}{new\PYZus{}ustring}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{bstring} \PY{o}{=} \PY{l+s+sa}{b}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{bstring}\PY{l+s+s1}{\PYZsq{}}
+        \PY{n}{new\PYZus{}ustring} \PY{o}{=} \PY{n}{bstring}\PY{o}{.}\PY{n}{decode}\PY{p}{(}\PY{p}{)}
+        \PY{n+nb}{type}\PY{p}{(}\PY{n}{new\PYZus{}ustring}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} str
+{\color{outcolor}Out[{\color{outcolor}4}]:} str
 \end{Verbatim}
             
 
@@ -11572,12 +11827,12 @@ following code to the Arduino using the Arduino IDE. Note that Arduinos
 don't use the Python programming language. The programming language used
 by Arduinos is a varient of the C programming language.
 
-The Arduino sketch (a sketch is what an Arduino program is called) below
+The Arduino sketch (an Arduino program is called a sketch) below
 accomplishes a couple things. First the Arduino reads the sensor value
-and stores the sensor value in the variable \lstinline!sensorValue!.
+and stores the sensor value to the variable \lstinline!sensorValue!.
 Then the Arduino sends the sensor value over the serial line (as a byte
-sting). Next the sensor value is compared to 500. If the sensor value is
-less than 500, the LED stays off. If the sensor value is greater than
+sting). Next, the sensor value is compared to 500. If the sensor value
+is less than 500, the LED stays off. If the sensor value is greater than
 500, the LED turn on. This process repeats in a loop.
     
 
@@ -11629,7 +11884,7 @@ Sketch}\label{connect-the-arduino-to-the-computer-and-upload-the-sketch}
 
 
     
-        Connect the Arduino to the computer using a USB cable. Upload the sketch
+        Connect the Arduino to the computer with a USB cable. Upload the sketch
 to the Arduino. In the Arduino IDE, click the {[}check mark{]} to verify
 and the {[}arrow{]} to upload. If the sketch does not upload, check
 which \lstinline!COM port! is selected in Tools --\textgreater{} Ports.
@@ -11699,7 +11954,7 @@ Serial Monitor.
 \begin{figure}
 \centering
 \includegraphics{images/Tools_SerialMonitor.png}
-\caption{Arudion IDE Tools Serial Monitor}
+\caption{Select the Arudino Serial Monitor from the Tools Menus}
 \end{figure}
     
 
@@ -11730,11 +11985,10 @@ make sure the \lstinline!Port! is set correctly in Tools
     
         \subsubsection{Arduino Serial Plotter}\label{arduino-serial-plotter}
 
-To access the Arduino Serial Plotter use Tools --\textgreater{} Serial
+To access the Arduino Serial Plotter, use Tools --\textgreater{} Serial
 Monitor. Note the Serial Monitor needs to be closed before the Serial
-Plotter can be opened. if the sketch is working correctly, a moving line
-is shown on the Arduino Serial Plotter when the potentiometer is dialed
-back and forth.
+Plotter can be opened. If the sketch is working correctly, potentiometer
+rotation produces a moving line on the Arduino Serial Plotter .
 
 \begin{figure}
 \centering
@@ -11752,7 +12006,7 @@ Also make sure the \lstinline!Port! has been set correctly in Tools
 \begin{figure}
 \centering
 \includegraphics{images/serial_plotter_output.png}
-\caption{Arudino Seral Plotter}
+\caption{Arudino Serial Plotter}
 \end{figure}
     
 
@@ -11760,7 +12014,7 @@ Also make sure the \lstinline!Port! has been set correctly in Tools
 
 
     
-        \subsection{Write a Pyton Script to read the
+        \subsection{Write a Pyton script to read the
 sensor}\label{write-a-pyton-script-to-read-the-sensor}
     
 
@@ -11770,6 +12024,7 @@ sensor}\label{write-a-pyton-script-to-read-the-sensor}
     
         Once the hardware is connected and the Arduino sketch is working
 properly, a Python script can be constructed to read the sensor value.
+
 Communication between the Python script and the Arduino an be
 accomplished using the \textbf{PySerial} package. Make sure
 \textbf{PySerial} is installed before the script is run. At the top of
@@ -11792,7 +12047,7 @@ import time
 
 
     
-        Next create a loop that will run for about 5 seconds while data is
+        Next, code a loop that will run for about 5 seconds while data is
 collected from the sensor. If it seems like the loop is stuck, press
 {[}Ctrl{]} + {[}c{]}.
     
@@ -11946,7 +12201,7 @@ Arduinos don't use the Python programming language.
 
     
         \begin{lstlisting}
-//  Found in the Arduino IDE: File --> Examples --> 04.Communication --> PhysicalPixel
+//  Arduino IDE: File --> Examples --> 04.Communication --> PhysicalPixel
 
 const int ledPin = 13; // the pin that the LED is attached to
 int incomingByte;      // a variable to read incoming serial data into
@@ -14249,25 +14504,27 @@ np.array
 
 
     
-        \section{Git and github.com}\label{git-and-github.com}
+        \section{Git and GitHub}\label{git-and-github}
     
 
 
 
 
     
-        \textbf{Git} is a common version control tool used by computer program
-developers to save code and work on code as a team. \textbf{Git} is a
-program run from the command line or \textbf{Anaconda Prompt}.
+        \textbf{Git} is a common \emph{version control} tool used by computer
+program developers to save code and work on code collaboratively as a
+team. \textbf{Git} is a program run from the command line or
+\textbf{Anaconda Prompt}. \textbf{Git} was created by Linus Torvalds,
+who also created the Linux operating system.
     
 
 
 
 
     
-        \href{https://github.com/}{github.com} is a website and service used by
-open source projects to share code and allow other users to make changes
-to existing code.
+        \href{https://github.com/}{github.com} run by the company GitHub is a
+website and service used by programmers and open source projects to
+share code and allow contributers to propose changes to existing code.
     
 
 
@@ -14282,21 +14539,21 @@ working in teams.
 
 
     
-        To use git and github the understanding of a few terms is import:
+        Before using git and GitHub, it is helpful to understand a couple terms:
 
 \begin{itemize}
 \tightlist
 \item
   \textbf{git} - a command line program used to track file changes and
-  colaborate on code with others
+  collaborate on code with others
 \item
   \textbf{repo} - short name for ``repository''. A repo is a directory
-  that contains files and other subfolders with files
+  and its contents
 \item
-  \textbf{local repo} - a directory that contains files and subfolders
-  on your computer that git knows about
+  \textbf{local repo} - a directory and its contents on your computer
+  that git knows about
 \item
-  \textbf{remote repo} - a set of files and subfolders stored in the
+  \textbf{remote repo} - a directory and its contents stored in the
   cloud that git knows about
 \end{itemize}
     
@@ -14366,8 +14623,10 @@ copies a remote repo on github.com to a local directory\strut
 
 
     
-        One common task to complete with git is to clone a repo from github.com
-and save it locally. This is accomplished with:
+        One common task to complete with \textbf{git} is to clone a repo from
+github.com and save it locally. This means saving all the files stored
+in a remote repo on your local computer. Cloning a repo is accomplished
+with:
 
 \begin{lstlisting}
 $ git clone https://github.com/user/repo.git
@@ -14385,21 +14644,22 @@ $ git clone https:github.com/ProfessorKazarinoff/Problem-Solving-with-Python.git
 
 
     
-        \subsection{Creating a synching a remote repo on github.com with a local
-repo}\label{creating-a-synching-a-remote-repo-on-github.com-with-a-local-repo}
+        \subsection{Creating and synching a remote repo on github.com with a
+local
+repo}\label{creating-and-synching-a-remote-repo-on-github.com-with-a-local-repo}
     
 
 
 
 
     
-        Another common task to complete with git is to synch a remote repo with
-github.com with a local repo on any one of your computers. This is
+        Another common task to complete with \textbf{git} is to synch a remote
+repo on github.com with a local repo on your local computer. This is
 useful for one person if they want to keep the files in a particular
-project synched. It is also useful for a group of problem solvers who
-are working on the same project to have access to the same remote repo
-on github.com and then have the same local repo on all of their
-computers.
+project synched accross multiple computers. It is also useful for a
+group of problem solvers who are working on the same project to have
+access to the same remote repo on github.com and then have the same
+local repo on all of their computers.
 
 First, go to github.com and create a new account. Log on and create a
 new repo. It is a good idea to include a license and a .gitignore file.
@@ -14441,8 +14701,20 @@ $ git push origin master
 
 
     
-        Latex Math can be included in Jupyter Notebook markdown cells as well as
-in parts of \textbf{matplotlib plots} like axis labels and text fields.
+        LaTeX math can be included in Jupyter notebook markdown cells. LaTeX
+math can also be included in parts of \textbf{matplotlib plots} like
+axis labels and text fields.
+
+Inline LaTeX math commands need to be enclosed by the dollar signs.
+
+\begin{lstlisting}
+angle is $2\pi$ radians
+\end{lstlisting}
+
+will be rendered as:
+
+angle is \(2\pi\) radians
+
 A table of useful LaTeX commands and the associated output is below:
 
 \begin{longtable}[]{@{}ll@{}}
