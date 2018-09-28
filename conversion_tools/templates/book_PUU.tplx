@@ -1,7 +1,6 @@
 % Inherit from report
 ((* extends 'report.tplx' *))
 
-
 ((* block docclass *))
 \documentclass{book}
 \setcounter{chapter}{0}

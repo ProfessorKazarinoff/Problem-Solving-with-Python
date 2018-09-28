@@ -110,7 +110,7 @@ showstringspaces=false,
     \usepackage{titlesec}
     \setcounter{secnumdepth}{1} %only chapter and sections are numbered, subsections and subsubsections are not numbered
     \setcounter{tocdepth}{1}    %only chapter and sections in TOC, subsections and subsubsections are not in TOC
-    \usepackage{multicol}
+    \usepackage{multicol} % need multicols for end of chapter key terms and end of chapter questions
     \newenvironment{problems}{\begin{multicols}{2}}{\end{multicols}} %an environment for the review question sections, where two columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment problems in notebook cell metadata.
 
 % in cell metadata
@@ -656,9 +656,10 @@ Keystrokes directly entered by the keyboard or buttons that are
 indicated on programs or web pages will be shown inside square brackets
 and in \lstinline![monospaced font]!.
 
+\begin{quote}
 In order to delete a line use the \lstinline![Backspace]! key. To exit
 the shell type \lstinline![shift]+[c]!
-    
+\end{quote}    
 
 
 
@@ -730,6 +731,10 @@ to:}\label{by-the-end-of-this-chapter-you-will-be-able-to}
 \item
   Install Anaconda on your computer
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -1730,7 +1735,9 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -1840,6 +1847,10 @@ Q1.07
 \item
   Combine \lstinline!True! and \lstinline!False! in logical statements
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -2382,7 +2393,7 @@ True
         a constant = 4
                  \^{}
     SyntaxError: invalid syntax
-
+    
 
     \end{Verbatim}
 
@@ -2613,7 +2624,9 @@ Kendra
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -3361,6 +3374,7 @@ Operator & Description & Example & Result\tabularnewline
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -3375,6 +3389,8 @@ Operator & Description & Example & Result\tabularnewline
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -3411,6 +3427,10 @@ Operator & Description & Example & Result\tabularnewline
 \item
   How to save and close a Jupyter Notebook
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -4132,7 +4152,9 @@ You can list all of the available magic commands by typing and running
             
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -4217,6 +4239,7 @@ function\tabularnewline
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -4228,6 +4251,8 @@ function\tabularnewline
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -4261,6 +4286,10 @@ function\tabularnewline
 
 * provide reusable code for other engineers to use
 \end{lstlisting}
+        \newpage
+
+
+
     
 
 
@@ -5050,7 +5079,9 @@ function is below:
             
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -5112,6 +5143,7 @@ class\tabularnewline
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -5121,6 +5153,8 @@ class\tabularnewline
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -5159,6 +5193,10 @@ class\tabularnewline
 \item
   Construct 3D mesh grid plots
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -7955,7 +7993,9 @@ code:
     
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -8027,6 +8067,7 @@ Python For Data Science: Matplotlib Cheat Sheet from DataCamp:
 
 
     
+        \begin{problems}
         6.1
 
 6.2
@@ -8044,6 +8085,8 @@ Python For Data Science: Matplotlib Cheat Sheet from DataCamp:
 6.8
 
 6.9
+        \end{problems}
+
     
 
 
@@ -8074,6 +8117,10 @@ Python For Data Science: Matplotlib Cheat Sheet from DataCamp:
 \item
   Construct flow charts that describe how a script opperates
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -8425,7 +8472,7 @@ closed, and variable names that do not start with a letter.
         string = "problem solving
                                  \^{}
     SyntaxError: EOL while scanning string literal
-
+    
 
     \end{Verbatim}
 
@@ -8455,7 +8502,7 @@ complete the program.
         string = 10problems
                           \^{}
     SyntaxError: invalid syntax
-
+    
 
     \end{Verbatim}
 
@@ -8609,7 +8656,9 @@ Done
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -8651,6 +8700,7 @@ decision tree
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -8660,6 +8710,8 @@ decision tree
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -8694,6 +8746,10 @@ decision tree
 \item
   construct flow charts that describe a program which contains a loop
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -8990,7 +9046,9 @@ to one particular item in the list. The first time through the loop,
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -9011,6 +9069,7 @@ to one particular item in the list. The first time through the loop,
 
 
     
+        \begin{key_terms}
         loop
 
 while loop
@@ -9024,6 +9083,8 @@ continue statement
 infinite loop
 
 flow chart
+        \end{key_terms}
+
     
 
 
@@ -9037,6 +9098,7 @@ flow chart
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -9044,6 +9106,8 @@ flow chart
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -9078,6 +9142,10 @@ flow chart
 \item
   Solve a system of linear equations using matrices
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -10520,7 +10588,9 @@ What is the tension in AC and BC?
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -10528,8 +10598,14 @@ What is the tension in AC and BC?
 
     
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
+    
 
-numpy
+
+
+
+    
+        \begin{key_terms}
+        numpy
 
 array
 
@@ -10542,6 +10618,8 @@ slice
 index
 
 homogenous data type
+        \end{key_terms}
+
     
 
 
@@ -10565,6 +10643,7 @@ Methods}\label{numpy-functions-and-methods}
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -10577,6 +10656,8 @@ Methods}\label{numpy-functions-and-methods}
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -10612,6 +10693,10 @@ Methods}\label{numpy-functions-and-methods}
 \item
   Simplify equations using symbolic math variables
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -11365,7 +11450,9 @@ variable names and the dictionary values are the numerical solution.
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -11379,6 +11466,7 @@ variable names and the dictionary values are the numerical solution.
 
 
     
+        \begin{key_terms}
         symbolic math
 
 symbolic variable
@@ -11390,6 +11478,8 @@ systems of equations
 expression
 
 equation
+        \end{key_terms}
+
     
 
 
@@ -11403,6 +11493,7 @@ equation
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -11413,6 +11504,8 @@ equation
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -11453,6 +11546,10 @@ Hardware}\label{python-and-external-hardware}
 \item
   Control an LED using Python
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -12434,7 +12531,9 @@ observe the LED blink on and off.
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -12448,6 +12547,7 @@ observe the LED blink on and off.
 
 
     
+        \begin{key_terms}
         External Hardware
 
 Sensor
@@ -12475,6 +12575,8 @@ Byte code
 ASCII
 
 ASCII Character
+        \end{key_terms}
+
     
 
 
@@ -12488,6 +12590,7 @@ ASCII Character
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -12501,6 +12604,8 @@ ASCII Character
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -12535,6 +12640,10 @@ ASCII Character
 \item
   Use MicroPython to activate a relay using a microcontroller
 \end{itemize}
+        \newpage
+
+
+
     
 
 
@@ -13984,7 +14093,9 @@ temperature plotted on the Thinkspeak.com Channel's page.
 
 
     
+        \newpage
         \section{Summary}\label{summary}
+
     
 
 
@@ -13998,6 +14109,7 @@ temperature plotted on the Thinkspeak.com Channel's page.
 
 
     
+        \begin{key_terms}
         MicroPython
 
 Microcontroller
@@ -14005,6 +14117,8 @@ Microcontroller
 MicroPython REPL
 
 Baud Rate
+        \end{key_terms}
+
     
 
 
@@ -14018,6 +14132,7 @@ Baud Rate
 
 
     
+        \begin{problems}
         \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
@@ -14030,6 +14145,8 @@ Baud Rate
 \item
 \item
 \end{enumerate}
+        \end{problems}
+
     
 
 
@@ -14056,15 +14173,17 @@ Baud Rate
 \item
   Reserved and Key Words in Python
 \item
-  Python \textbf{math} and \textbf{statistics} module fuctions
+  ACII character codes
 \item
-  Answers to selected problems
+  Virtual Environments
 \item
-  Glossary
+  Git and GitHub
 \item
-  About the Author
+  LaTeX math
 \item
-  About the contirubuors
+  Problem Solving with Python book construction
+\item
+  About the author
 \end{itemize}
     
 
@@ -14356,8 +14475,159 @@ ASCII code: 126    Character: \textasciitilde{}
 
 
     
-        Using \textbf{virtual environments} is a good standard of practice in
-Python
+        Using \textbf{virtual environments} is good standard of practice in
+Python. A virtual environment is an isolated installation of Python with
+associated packages.
+    
+
+
+
+
+    
+        \subsection{Create a virtual environment with the Anaconda
+Prompt}\label{create-a-virtual-environment-with-the-anaconda-prompt}
+
+To create the new virtual environment, open the \textbf{Anaconda Prompt}
+and issue the command:
+
+\begin{lstlisting}
+> conda create --name env_name python=3.7
+\end{lstlisting}
+
+The \lstinline!conda create! command builds the new virtual environment.
+The \lstinline!--name env_name! flag gives our new virtual environment
+the name \lstinline!env_name!. Including \lstinline!python=3.6! ensures
+the virtual environment has a current version of Python.
+
+The following output or something similar will result:
+
+\begin{lstlisting}
+The following NEW packages will be INSTALLED:
+
+    certifi:        2016.2.28-py36_0
+    pip:            9.0.1-py36_1
+    python:         3.7.1-0
+    setuptools:     36.4.0-py36_0
+    vs2015_runtime: 14.0.25420-0
+    wheel:          0.29.0-py36_0
+    wincertstore:   0.2-py36_0
+
+Proceed ([y]/n)? y
+\end{lstlisting}
+
+Type \lstinline!y! to confirm and create the new virtual environment.
+    
+
+
+
+
+    
+        \subsection{Activate the virtual
+environment}\label{activate-the-virtual-environment}
+
+To use the new virtual environment \lstinline!env_name!, it first needs
+to be activated:
+
+\begin{lstlisting}
+> conda activate env_name
+\end{lstlisting}
+
+The virtual environment is active when you see \lstinline!(env_name)! in
+parenthesis at the start of the prompt:
+
+\begin{lstlisting}
+(env_name) > 
+\end{lstlisting}
+
+\subsection{Install packages in the virtual
+environment}\label{install-packages-in-the-virtual-environment}
+
+When a new virtual environment is created, no packages will be
+installed. If you have the Anaconda distribution of Python, the
+\lstinline!base! environment contains all 200+ packages that come with
+Anaconda. But a fresh new virtual environment will just have the version
+of Python installed, no other packages.
+
+To install a package into the virtual environment, first make sure the
+environment is active (\lstinline!(env_name)! before the prompt).
+Package installation is accomplished with the \lstinline!conda install!
+command followed by the package name. To install matplotlib into the
+virtual environment type:
+
+\begin{lstlisting}
+(env_name) > conda install matplotlib
+\end{lstlisting}
+
+Multiple packages can be installed with the same command. To install
+both \textbf{numpy} and \textbf{jupyter} use:
+
+\begin{lstlisting}
+(env_name) > conda install numpy jupyter
+\end{lstlisting}
+    
+
+
+
+
+    
+        \subsection{Decative the virtual
+environment}\label{decative-the-virtual-environment}
+
+To deactivate an active environment, use:
+
+\begin{lstlisting}
+(env_name) > conda deactivate
+>
+\end{lstlisting}
+
+When the virtual environment is deactivated, the prompt looks normal
+\lstinline!>!, with no environment name in parenthesis before it.
+    
+
+
+
+
+    
+        \subsection{List your virtual
+environments}\label{list-your-virtual-environments}
+
+View a list of your virtual environments using the command
+\lstinline!conda info --envs! or \lstinline!conda env list!.
+
+\begin{lstlisting}
+> conda activate env_name
+(env_name) > conda info --envs
+
+# conda environments:
+#
+matplotlib               /home/tribilium/anaconda3/envs/matplotlib
+env_name               * /home/tribilium/anaconda3/envs/env_name
+root                     /home/tribilium/anaconda3
+\end{lstlisting}
+
+Notice the \lstinline!*! asterisk on the line with \lstinline!env_name!.
+The virtual environment with the \lstinline!*! is currently active.
+
+To exit the virtual environment, use the command
+\lstinline!conda deactivate!.
+
+\begin{lstlisting}
+(env_name) > conda deactive
+\end{lstlisting}
+
+If you run \lstinline!conda env list! again, there is no \lstinline!*!
+in front of \lstinline!env_name!. That's because the
+\lstinline!env_name! virtual environment is no longer active.
+
+\begin{lstlisting}
+> conda env list
+
+# conda environments:
+#
+matplotlib               /home/tribilium/anaconda3/envs/matplotlib
+webscrape                /home/tribilium/anaconda3/envs/pelican
+root                  *  /home/tribilium/anaconda3
+\end{lstlisting}
     
 
 
@@ -14545,16 +14815,16 @@ working in teams.
 \tightlist
 \item
   \textbf{git} - a command line program used to track file changes and
-  collaborate on code with others
+  collaborate on code with others.
 \item
   \textbf{repo} - short name for ``repository''. A repo is a directory
-  and its contents
+  and its contents.
 \item
   \textbf{local repo} - a directory and its contents on your computer
-  that git knows about
+  that git knows about.
 \item
   \textbf{remote repo} - a directory and its contents stored in the
-  cloud that git knows about
+  cloud that git knows about.
 \end{itemize}
     
 
@@ -14656,17 +14926,27 @@ repo}\label{creating-and-synching-a-remote-repo-on-github.com-with-a-local-repo}
         Another common task to complete with \textbf{git} is to synch a remote
 repo on github.com with a local repo on your local computer. This is
 useful for one person if they want to keep the files in a particular
-project synched accross multiple computers. It is also useful for a
-group of problem solvers who are working on the same project to have
-access to the same remote repo on github.com and then have the same
-local repo on all of their computers.
+project synched accross multiple computers. Synched remote and local
+repos are also useful for a group of problem solvers working on the same
+project. Each team member has access to the same remote repo on
+github.com and each team member has the same local repo on all of their
+computers.
+
+\subsubsection{Create a the remote repo on
+GitHub}\label{create-a-the-remote-repo-on-github}
 
 First, go to github.com and create a new account. Log on and create a
 new repo. It is a good idea to include a license and a .gitignore file.
 For a Python project, the .gitignore file for Python is a good start.
+Two common licenses for open source projects you are willing to share
+with others is \emph{GNU General Public License v3.0} and the \emph{MIT
+License}.
+
+\subsubsection{Make a new local repo and link it to the remote repo on
+GitHub}\label{make-a-new-local-repo-and-link-it-to-the-remote-repo-on-github}
 
 Second, create a local directory and \lstinline!cd! into it. Initialize
-a git repo locally in that directory then synch the local folder with
+a git repo locally in that directory. Then synch the local folder with
 the remote repo on github.com.
 
 \begin{lstlisting}
@@ -14676,6 +14956,9 @@ $ git init
 $ git remote add origin https://github.com/user/repo.git
 $ git pull origin master
 \end{lstlisting}
+
+\subsubsection{Add, commit and push any
+changes}\label{add-commit-and-push-any-changes}
 
 Third, work on the project locally. For example, you could edit one of
 the files or create a new file.
@@ -14687,6 +14970,26 @@ those changes up to the remote repo on github.com
 $ git add .
 $ git commit -m "commit message"
 $ git push origin master
+\end{lstlisting}
+
+\subsubsection{Pull the most recent version before each work
+session}\label{pull-the-most-recent-version-before-each-work-session}
+
+If using git and GitHub, remember to pull the most recent version of the
+repo down from GitHub before making any changes locally. If changes are
+made locally before the version of the repo on GitHub is synched, the
+local and remote repos will be out of synch.
+
+\begin{lstlisting}
+$ git pull origin master
+\end{lstlisting}
+
+After local changes are made, save them and push to GitHub
+
+\begin{lstlisting}
+$ git add .
+$ git commit -m "commit message"
+$ git push orign master
 \end{lstlisting}
     
 
@@ -14711,7 +15014,7 @@ Inline LaTeX math commands need to be enclosed by the dollar signs.
 angle is $2\pi$ radians
 \end{lstlisting}
 
-will be rendered as:
+The markup above will be rendered as:
 
 angle is \(2\pi\) radians
 
@@ -14759,8 +15062,8 @@ Construction}\label{problem-solving-with-python-book-construction}
 
 
     
-        This book was constructed using \textbf{jupyter notebooks} saved on
-github.com. The github repo for the books can be found at:
+        This book was constructed using \textbf{jupyter notebooks}. The GitHub
+repo for the books can be found at:
 
 \url{https://github.com/ProfessorKazarinoff/Problem-Solving-with-Python}
     
@@ -14771,9 +15074,9 @@ github.com. The github repo for the books can be found at:
     
         The directory structure of the github repo contains all the
 \textbf{jupyter notebooks} used the write the book. The repo also
-contains a set of conversion tools which assist with the conversion of
-the book from \textbf{jupyter notebooks} to a website, .pdf and hard
-copy.
+contains a set of custom conversion scripts and templates which convert
+the jupyuter notebooks into \textbf{\emph{.html}} and
+\textbf{\emph{.tex}} files.
     
 
 
@@ -14859,7 +15162,7 @@ markdown sections of the notebooks.
     
         The website for the book was constructed using \textbf{mkdocs} and the
 \textbf{Material for MkDocs} theme. Jupyter noteboks were exported to
-.html files with markdown cells unformatted.
+\textbf{\emph{.html}} files with markdown cells unformatted.
     
 
 
@@ -14876,9 +15179,10 @@ markdown sections of the notebooks.
         The hard copy of the book was constructed using \textbf{LateX},
 \textbf{nbconvert} and a set of custom scripts and templates. One
 conversion script combined all of the notebooks into one BIG notebook.
-This BIG notebook was then converted into \textbf{LaTeX} using a custom
-template. Outside of the Python ecosystem, a separate installation of
-TeXworks was used to compile the LaTeX to .pdf.
+This BIG notebook was then converted into \textbf{LaTeX} using
+\textbf{nbconvert} and a custom template. Outside of the Python
+ecosystem, a separate installation of TeXworks compiled the LaTeX
+\textbf{\emph{.tex}} to \textbf{\emph{.pdf}}.
     
 
 
@@ -14894,9 +15198,10 @@ TeXworks was used to compile the LaTeX to .pdf.
     
         Peter D. Kazarinoff, PhD is a full-time faculty member in Engineering
 and Engineering Technology at Portland Community College in Portland,
-OR. Peter earned a PhD in Engineering from the University of Washington
-and a BA from Cornell University. He teaches courses in Engineering
-Programming, Materials Science, Manufacturing and others.
+OR. Peter earned a PhD in Materials Science and Engineering from the
+University of Washington and a BA from Cornell University. He teaches
+courses in Engineering Programming, Materials Science, Manufacturing and
+others at Portland Community College.
 
 Peter lives in Portland, OR with his wife and two kids.
     
