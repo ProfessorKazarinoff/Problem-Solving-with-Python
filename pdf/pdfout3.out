@@ -91,8 +91,8 @@
 \BOOKMARK [1][-]{section.9.7}{Review\040Questions}{chapter.9}% 91
 \BOOKMARK [0][-]{chapter.10}{Matricies\040and\040Arrays}{}% 92
 \BOOKMARK [1][-]{section.10.1}{Introduction}{chapter.10}% 93
-\BOOKMARK [1][-]{section.10.2}{Numpy}{chapter.10}% 94
-\BOOKMARK [1][-]{section.10.3}{Installing\040Numpy}{chapter.10}% 95
+\BOOKMARK [1][-]{section.10.2}{NumPy}{chapter.10}% 94
+\BOOKMARK [1][-]{section.10.3}{Installing\040NumPy}{chapter.10}% 95
 \BOOKMARK [1][-]{section.10.4}{Array\040Creation}{chapter.10}% 96
 \BOOKMARK [1][-]{section.10.5}{Array\040Indexing}{chapter.10}% 97
 \BOOKMARK [1][-]{section.10.6}{Array\040Slicing}{chapter.10}% 98
@@ -111,7 +111,7 @@
 \BOOKMARK [1][-]{section.11.7}{Review\040Questions}{chapter.11}% 111
 \BOOKMARK [0][-]{chapter.12}{Python\040and\040External\040Hardware}{}% 112
 \BOOKMARK [1][-]{section.12.1}{Introduction}{chapter.12}% 113
-\BOOKMARK [1][-]{section.12.2}{Pyserial}{chapter.12}% 114
+\BOOKMARK [1][-]{section.12.2}{PySerial}{chapter.12}% 114
 \BOOKMARK [1][-]{section.12.3}{Bytes\040and\040Unicode\040Strings}{chapter.12}% 115
 \BOOKMARK [1][-]{section.12.4}{Reading\040a\040Sensor\040with\040Python}{chapter.12}% 116
 \BOOKMARK [1][-]{section.12.5}{Controlling\040an\040LED\040with\040Python}{chapter.12}% 117
