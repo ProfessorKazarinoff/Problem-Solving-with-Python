@@ -93,7 +93,7 @@
 \contentsline {subsubsection}{Trigonometry}{44}{section.3.8}
 \contentsline {subsubsection}{Logarithms and Exponents}{44}{section.3.8}
 \contentsline {subsubsection}{Variables in Calculations}{45}{section.3.8}
-\contentsline {subsubsection}{Error Explanations}{45}{section.3.8}
+\contentsline {subsubsection}{Error Explanations}{46}{section.3.8}
 \contentsline {chapter}{\numberline {4}Python Data Types and Variables}{47}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{47}{section.4.1}
 \contentsline {section}{\numberline {4.2}Numeric Data Types}{48}{section.4.2}
