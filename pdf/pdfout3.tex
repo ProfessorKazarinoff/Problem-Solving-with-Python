@@ -2408,7 +2408,7 @@ True
         a constant = 4
                  \^{}
     SyntaxError: invalid syntax
-    
+
 
     \end{Verbatim}
 
@@ -2874,10 +2874,10 @@ Q02.38 A problem with sin and AC current
         \begin{problems}
         \subsubsection{Logarithms and Exponents}\label{logarithms-and-exponents}
 
-Q03.41 Show that the natural log of Euler's number, \(\ln(e)\), is equal
+Q02.41 Show that the natural log of Euler's number, \(\ln(e)\), is equal
 to one.
 
-Q03.42 Logarithms turn multiplication into addition. Complete both of
+Q02.42 Logarithms turn multiplication into addition. Complete both of
 the calculations below to see if the expressions are equal to each
 other:
 
@@ -2885,14 +2885,14 @@ other:
 
 \[ \log(87.1) + \log(210) + \log(10^{3}) \]
 
-Q03.43 Logarithms turn exponents into multiplication. Complete both of
+Q02.43 Logarithms turn exponents into multiplication. Complete both of
 the calculations below to see if the expressions are equal.
 
 \[ \log(6.02 \times 10^{23}) \]
 
 \[ (23)\log(6.02) \]
 
-Q03.44 Python's math module has the natural log (\(\ln\)) function
+Q02.44 Python's math module has the natural log (\(\ln\)) function
 \lstinline!math.log()! and the log (base 10) function
 \lstinline!math.log10()!. If you want to find the log with an arbitrary
 base, \(b\), of a number \(n\), you can use a ratio of natural
@@ -2904,15 +2904,16 @@ Calculate the base 4 logarithm of \(3.9 \times 10^{-9}\)
 
 \[ log_{4}(3.9 \times 10^{-9}) \]
 
-Q03.45 The magnitude of a vector \(|\vec{v}|\) is equal to the square
+Q02.45 The magnitude of a vector \(|\vec{v}|\) is equal to the square
 root of the sum of the squares of the vector's components \(v_x\),
 \(v_y\), and \(v_z\) according to:
 
 \[ |\vec{v}| = \sqrt{{v_x}^2 + {v_y}^2 + {v_z}^2} \]
 
+What is the magnitude of a vector \(\vec{v}\) that has components
+\(v_x = 76.3\), \(v_y = 70.9\), \(v_z = 93.6\) ?
 
-
-Q03.46 Moore's Law, a relationship that states the number of transistors
+Q02.46 Moore's Law, a relationship that states the number of transistors
 that fit on a microchip doubles every two years can be modeled as:
 
 \[ P_n = P_0 \times 2^n \]
@@ -4483,11 +4484,24 @@ function\tabularnewline
 
     
         \begin{problems}
-        Q04.01
+        Q04.01 Run the following code in two different Jupyter notebook cells.
+Run one cell as a code cell. Run the other cell as a Markdown cell. Why
+is the output different?
 
-Q04.02
+\begin{lstlisting}
+# Problem Solving with Python
+\end{lstlisting}
 
-Q04.03
+Q04.02 Run the following code in two different Jupyter notebook cells.
+Run one cell as a code cell. Run the other cell as a Markdown cell. Why
+is the output different?
+
+\begin{lstlisting}
+print('Problem Solving with Python')
+\end{lstlisting}
+
+Q04.03 Recreate the following headings in one Jupyter notebook markdown
+cell
 
 Q04.04
 
@@ -8910,7 +8924,7 @@ closed, and variable names that do not start with a letter.
         string = "problem solving
                                  \^{}
     SyntaxError: EOL while scanning string literal
-    
+
 
     \end{Verbatim}
 
@@ -8940,7 +8954,7 @@ complete the program.
         string = 10problems
                           \^{}
     SyntaxError: invalid syntax
-    
+
 
     \end{Verbatim}
 
@@ -11828,6 +11842,11 @@ A mass of 20 lbs is hung from a ring. The ring is supported by two
 cords, cord CE is 30 degrees above the horizontal to the right and cord
 BD is 45 degrees to the left above the horizontal.
 
+\begin{figure}
+\centering
+\includegraphics{images/statics_problem_diagram.svg}
+\caption{Statics Diagram Problem}
+\end{figure}
 
 \(m\) = 20 lb
 
