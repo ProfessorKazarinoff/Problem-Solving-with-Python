@@ -3,9 +3,9 @@ pages:
     - Home: index.md
     - Preface:
         - Motivation: 00-Preface/00.00-Motivation.md
-        - Acknowledgements: 00-Preface/00.02-Acknowledgements.md
+        - Acknowledgments: 00-Preface/00.02-Acknowledgments.md
         - Supporting Materials: 00-Preface/00.03-Supporting-Materials.md
-        - Formatting Conventions: 00-Preface/00.04-Formatting Conventions.md
+        - Formatting Conventions: 00-Preface/00.04-Formatting-Conventions.md
         - Errata: 00-Preface/00.05-Errata.md
     - Chapter 1 Orientation:
         - Introduction: 01-Orientation/01.00-Welcome.md
@@ -13,7 +13,7 @@ pages:
         - The Anaconda Distribution of Python: 01-Orientation/01.02-The-Anaconda-Distribution-of-Python.md
         - Installing Anaconda on Windows: 01-Orientation/01.03-Installing-Anaconda-on-Windows.md
         - Installing Anaconda on MacOS: 01-Orientation/01.04-Installing-Anaconda-on-MacOS.md
-        - Installing Anaconda on Linux: 01-Orientation/01.05-Intalling-Anaconda-on-Linux.md
+        - Installing Anaconda on Linux: 01-Orientation/01.05-Installing-Anaconda-on-Linux.md
         - Installing Python from Python.org: 01-Orientation/01.06-Installing-Python-from-Python-dot-org.md
         - Summary: 01-Orientation/01.07-Summary.md
         - Review Questions: 01-Orientation/01.08-Review-Questions.md
@@ -21,8 +21,8 @@ pages:
         - Introduction: 02-The-Python-REPL/02.00-Introduction.md
         - Python as a Calculator: 02-The-Python-REPL/02.01-Python-as-a-Calculator.md
         - Variables: 02-The-Python-REPL/02.02-Variables.md
-        - Boolean Arithemtic: 02-The-Python-REPL/02.03-Boolean-Arithemtic.md
-        - String Opperations: 02-The-Python-REPL/02.04-String-Opperations.md
+        - Boolean Arithmetic: 02-The-Python-REPL/02.03-Boolean-Arithmetic.md
+        - String Operations: 02-The-Python-REPL/02.04-String-Operations.md
         - Print Statements: 02-The-Python-REPL/02.05-Print-Statements.md
         - Summary: 02-The-Python-REPL/02.06-Summary.md
         - Review Questions: 02-The-Python-REPL/02.07-Review-Questions.md
@@ -47,10 +47,10 @@ pages:
         - Review Questions: 04-Jupyter-Notebooks/04.09-Review-Questions.md
     - Chapter 5 Functions and Modules:
         - Introduction: 05-Functions-and-Modules/05.00-Introduction.md
-        - Why Functions?: 05-Functions-and-Modules/05.01-Why-functions.md
-        - First Function: 05-Functions-and-Modules/05.02-First-function.md
-        - Functions with Multiple Arguments: 05-Functions-and-Modules/05.03-Functions-with-multiple-arguments.md
-        - Functions with Default Arguments: 05-Functions-and-Modules/05.04-Functions-with-default-arguments.md
+        - Why Functions?: 05-Functions-and-Modules/05.01-Why-Functions.md
+        - First Function: 05-Functions-and-Modules/05.02-First-Function.md
+        - Functions with Multiple Arguments: 05-Functions-and-Modules/05.03-Functions-with-Multiple-Arguments.md
+        - Functions with Default Arguments: 05-Functions-and-Modules/05.04-Functions-with-Default-Arguments.md
         - Calling Functions from Other Files: 05-Functions-and-Modules/05.05-Calling-Functions-from-Other-Files.md
         - Docstrings in Functions: 05-Functions-and-Modules/05.06-Docstrings-in-Functions.md
         - Positional and Keyword Arguments: 05-Functions-and-Modules/05.07-Positional-and-Keyword-Arguments.md
@@ -80,7 +80,7 @@ pages:
         - Selection Statements: 07-If-Else-Try-Except/07.01-Selection-Statements.md
         - If statements: 07-If-Else-Try-Except/07.02-If-Statements.md
         - If-Else Statements: 07-If-Else-Try-Except/07.03-If-Else-Statements.md
-        - Try-Except Statments: 07-If-Else-Try-Except/07.04-Try-Except-Statements.md
+        - Try-Except Statements: 07-If-Else-Try-Except/07.04-Try-Except-Statements.md
         - Flow Charts: 07-If-Else-Try-Except/07.05-Flow-Charts.md
         - Summary: 07-If-Else-Try-Except/07.09-Summary.md
         - Review Questions: 07-If-Else-Try-Except/07.10-Review-Questions.md
@@ -94,8 +94,8 @@ pages:
         - Review Questions: 08-Loops/08.08-Review-Questions.md
     - Chapter 9 Matricies and Arrays:
         - Introduction: 09-Matricies-and-Arrays/09.00-Introduction.md
-        - Numpy: 09-Matricies-and-Arrays/09.01-Numpy.md
-        - Installing Numpy: 09-Matricies-and-Arrays/09.02-Installing-Numpy.md
+        - NumPy: 09-Matricies-and-Arrays/09.01-NumPy.md
+        - Installing NumPy: 09-Matricies-and-Arrays/09.02-Installing-NumPy.md
         - Array Creation: 09-Matricies-and-Arrays/09.03-Array-Creation.md
         - Array Indexing: 09-Matricies-and-Arrays/09.04-Array-Indexing.md
         - Array Slicing: 09-Matricies-and-Arrays/09.05-Array-Slicing.md
@@ -113,7 +113,7 @@ pages:
         - Review Questions: 10-Symbolic-Math/10.09-Review-Questions.md
     - Chapter 11 Python and External Hardware:
         - Introduction: 11-Python-and-External-Hardware/11.00-Introduction.md
-        - Pyserial: 11-Python-and-External-Hardware/11.01-Pyserial.md
+        - PySerial: 11-Python-and-External-Hardware/11.01-PySerial.md
         - Bytes and Unicode Strings: 11-Python-and-External-Hardware/11.02-Bytes-and-Unicode-Strings.md
         - Reading a Sensor with Python: 11-Python-and-External-Hardware/11.03-Reading-a-Sensor-with-Python.md
         - Controlling an LED with Python: 11-Python-and-External-Hardware/11.04-Controlling-an-LED.md
@@ -135,7 +135,7 @@ pages:
         - ASCII Character Codes: 99-Appendix/99.02-ASCII-Character-Codes.md
         - Virtual Environments: 99-Appendix/99.03-Virtual-Environments.md
         - Numpy Math Functions: 99-Appendix/99.04-Numpy-Math-Functions.md
-        - Git and github.com: 99-Appendix/99.05-Git-and-github.md
+        - Git and GitHub: 99-Appendix/99.05-Git-and-GitHub.md
         - LaTeX Math: 99-Appendix/99.06-LaTeX-Math.md
         - Problem Solving with Python Book Construction: 99-Appendix/99.07-Problem-Solving-with-Python-Book-Construction.md
         - About the Author: 99-Appendix/99.10-About-the-Author.md
