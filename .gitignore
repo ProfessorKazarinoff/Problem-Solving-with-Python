@@ -181,6 +181,7 @@ website/site/
 .out
 .pdf
 .toc
+.synctex(busy)
 
 # Any config files with user settings
 .config

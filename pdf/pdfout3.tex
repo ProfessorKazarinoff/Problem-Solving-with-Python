@@ -4573,9 +4573,9 @@ of most programming languages. Functions provide a couple of benefits:
 
 \begin{itemize}
 \item
-  Functions allow the same peice of code to be run multiple times
+  Functions allow the same peice of code to run multiple times
 \item
-  Functions can break a long program up into smaller pieces
+  Functions break a long programs up into smaller pieces
 \item
   Functions can be shared with other programmers
 \end{itemize}
@@ -4687,28 +4687,28 @@ plustwo(3)
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{def} \PY{n+nf}{plustwo}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{plustwo}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
             \PY{n}{n} \PY{o}{=} \PY{n}{n} \PY{o}{+} \PY{l+m+mi}{2}
             \PY{k}{return} \PY{n}{n}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} 5
+{\color{outcolor}Out[{\color{outcolor}5}]:} 5
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} 12
+{\color{outcolor}Out[{\color{outcolor}6}]:} 12
 \end{Verbatim}
             
 
@@ -4830,12 +4830,12 @@ default value assigned in the first line of the function.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{falldist}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mf}{1.625}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{falldist}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mf}{1.625}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} 7.3125
+{\color{outcolor}Out[{\color{outcolor}3}]:} 7.3125
 \end{Verbatim}
             
 
@@ -5652,7 +5652,7 @@ common to most Python packages.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} '2.1.2'
+{\color{outcolor}Out[{\color{outcolor}1}]:} '3.0.1'
 \end{Verbatim}
             
 
@@ -9072,59 +9072,157 @@ specific use:
 \begin{itemize}
 \tightlist
 \item
-  oval: start and stop
-\item
-  diamond: selection structures and loops
+  oval: start and end
 \item
   parallelogram: input and output
 \item
   rectangle: calculations
+\item
+  diamond: selection structures
 \end{itemize}
 
-Below is a sample program:
+\begin{figure}
+\centering
+\includegraphics{images/four_flow_chart_shapes.png}
+\caption{four flow chart shapes}
+\end{figure}
+
+The basic shapes in a flow chart are connected by arrows. The shapes and
+arrows of a flow chart describe the flow of a program from start to end.
     
 
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{} start}
-        \PY{n}{num} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Enter a number: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{num} \PY{o}{=} \PY{n+nb}{float}\PY{p}{(}\PY{n}{num}\PY{p}{)}
-        \PY{k}{if} \PY{n}{num}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num greater than zero}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{k}{if} \PY{n}{num}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num less than zero}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Done}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} end}
-\end{Verbatim}
+
+    
+        Below is the description of a simple program:
+
+\begin{quote}
+The program starts. Then the program prints out ``Output!''. Finally,
+the program ends.
+\end{quote}
+
+A flow chart that describes this simple program is below:
+
+\begin{figure}
+\centering
+\includegraphics{images/flow_chart_simple_print_program.png}
+\caption{flow chart of a simple print program}
+\end{figure}
+
+The Python code that corresponds to this flow chart is:
+
+\begin{lstlisting}[language=Python]
+# start
+print("Output!")
+# end
+\end{lstlisting}
+    
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-Enter a number: 1
-num greater than zero
-Done
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{c+c1}{\PYZsh{} start}
-        \PY{n}{num} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Enter a number: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{num} \PY{o}{=} \PY{n+nb}{float}\PY{p}{(}\PY{n}{num}\PY{p}{)}
-        \PY{k}{if} \PY{n}{num}\PY{o}{\PYZgt{}}\PY{l+m+mi}{0}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num greater than zero}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{k}{if} \PY{n}{num}\PY{o}{\PYZlt{}}\PY{l+m+mi}{0}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{num less than zero}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Done}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{} end}
-\end{Verbatim}
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-Enter a number: -1
-num less than zero
-Done
+    
+        The description of another program which includes a calculation is
+below:
 
-    \end{Verbatim}
+\begin{quote}
+The program starts. Next the program asks a user for a number. Two is
+added to the number. Next the resulting sum is printed. Finally, the
+program ends.
+\end{quote}
+
+A flow chart that describes this program is below:
+
+\begin{figure}
+\centering
+\includegraphics{images/flow_chart_calculation_program.png}
+\caption{flow chart of a program that contains a calculation}
+\end{figure}
+
+The Python code that corresponds to this flow chart is:
+
+\begin{lstlisting}[language=Python]
+# start
+num = input("Enter a number: ")
+num = float(num)
+num_plus_2 = num + 2
+print(num_plus_2)
+# end
+\end{lstlisting}
+    
+
+
+
+
+    
+        The description of another program is below:
+
+\begin{quote}
+The program starts. Next the program asks a user for a number. If the
+number is greater than zero, the program prints ``Greater than 0'', then
+the program ends.
+\end{quote}
+
+A flow chart that describes this program is below:
+
+\begin{figure}
+\centering
+\includegraphics{images/flow_chart_simple_user_input_program.png}
+\caption{flow chart of a simple program that contains user input and a
+selection structure}
+\end{figure}
+
+The Python code that corresponds to this flow chart is:
+
+\begin{lstlisting}[language=Python]
+# start
+num = input("Enter a number: ")
+num = float(num)
+if num>0:
+    print("Greater than 0")
+# end
+\end{lstlisting}
+    
+
+
+
+
+    
+        The description of a more complex program is below:
+
+\begin{quote}
+The program starts. Next the program asks a user for a number. If the
+number is greater than zero, the program prints ``Greater than 0''. If
+the number is less than zero, the program prints ``Less than 0''. Then
+the program prints ``Done'' and the program ends.
+\end{quote}
+
+A flow chart that describes this program is below:
+
+\begin{figure}
+\centering
+\includegraphics{images/flow_chart_more_complex_user_input_program.png}
+\caption{flow chart of a simple program that contains user input and a
+selection structure}
+\end{figure}
+
+The Python code that corresponds to this flow chart is:
+
+\begin{lstlisting}[language=Python]
+# start
+num = input('Enter a number: ')
+num = float(num)
+if num>0:
+    print('num greater than zero')
+if num<0:
+    print('num less than zero')
+print('Done')
+# end
+\end{lstlisting}
+    
+
+
 
 
     
@@ -9559,7 +9657,128 @@ Loop exited
 
 
     
-        Flow charts show the flow of a program graphically.
+        Flow charts show the flow of a program graphically. Flow charts were
+introduced in the previous chapter to describe how a program that
+includes \emph{if} statements can be described graphically. This chapter
+is about \emph{loops}. Flow charts can describe programs which contain
+\emph{for loops} and \emph{while loops}
+    
+
+
+
+
+    
+        \subsection{Basic Flow Chart Shapes}\label{basic-flow-chart-shapes}
+    
+
+
+
+
+    
+        Let's review the four basic shapes in a flow chart. Each shape is used
+to represent a different type of operation.
+
+\begin{itemize}
+\tightlist
+\item
+  oval: start and end
+\item
+  parallelogram: input and output
+\item
+  rectangle: calculations
+\item
+  diamond: selection structures
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{images/four_flow_chart_shapes.png}
+\caption{four flow chart shapes}
+\end{figure}
+
+The basic shapes in a flow chart are connected by arrows. The shapes and
+arrows in a flow chart describe the flow of a program from start to end.
+    
+
+
+
+
+    
+        \subsection{Flow chart of a program that contains a for
+loop}\label{flow-chart-of-a-program-that-contains-a-for-loop}
+    
+
+
+
+
+    
+        Below is the description of a program could be coded with a \emph{for
+loop}:
+
+\begin{quote}
+The program starts. The program prints the word ``looping'' 10 times.
+Finally, the program ends.
+\end{quote}
+
+A flow chart that describes this program is below:
+
+\begin{figure}
+\centering
+\includegraphics{images/flow_chart_of_program_that_contains_a_for_loop.png}
+\caption{flow chart of a program that contains a for loop}
+\end{figure}
+
+The Python code that corresponds to this flow chart is:
+
+\begin{lstlisting}[language=Python]
+# start
+for i in range(10):
+    print("looping")
+# end
+\end{lstlisting}
+    
+
+
+
+
+    
+        \subsection{Flow chart of a program that contains a while
+loop}\label{flow-chart-of-a-program-that-contains-a-while-loop}
+    
+
+
+
+
+    
+        Below is the description of a program could be coded with a \emph{while
+loop}:
+
+\begin{quote}
+The program starts. The program asks the user for a positive number. If
+the number the user enters is negative, the program asks the user for a
+positive number again. If the number the user enters is positive, the
+program prints positive. Finally, the program ends.
+\end{quote}
+
+A flow chart that describes this program is below:
+
+\begin{figure}
+\centering
+\includegraphics{images/flow_chart_of_program_that_contains_a_while_loop.png}
+\caption{flow chart of a program that contains a for loop}
+\end{figure}
+
+The Python code that corresponds to this flow chart is:
+
+\begin{lstlisting}[language=Python]
+# start
+num = -1
+while num < 0:
+    num = input("Enter a positive number: ")
+    num = float(num)
+print("positive")
+# end
+\end{lstlisting}
     
 
 
@@ -9596,9 +9815,9 @@ while loop
 
 for loop
 
-break statement
+break
 
-continue statement
+continue
 
 infinite loop
 
@@ -10371,7 +10590,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_588_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_596_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -11156,7 +11375,7 @@ What is the tension in AC and BC?
 
     
         \begin{key_terms}
-        numpy
+        NumPy
 
 array
 
@@ -13275,21 +13494,49 @@ Q11.83
 
     
         \begin{problems}
-        \begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\item
-\item
-\item
-\item
-\item
-\item
-\item
-\item
-\item
-\item
-\end{enumerate}
+        Q11.01
+
+Q11.02
+
+Q11.03
+
+Q11.04
+
+Q11.05
+
+Q11.06
+
+Q11.07
+
+Q11.08
+
+Q11.09
+
+Q11.10
+
+Q11.11
         \end{problems}
 
+    
+
+
+
+
+    
+        \subsubsection{Errors, Explanations, and
+Solutions}\label{errors-explanations-and-solutions}
+
+Q11.80
+
+Q11.81
+
+Q11.82
+
+Q11.83
+
+Q11.84
+
+Q11.85
     
 
 
@@ -15726,7 +15973,9 @@ The markup above will be rendered as:
 
 angle is \(2\pi\) radians
 
-A table of useful LaTeX commands and the associated output is below:
+A table of useful LaTeX commands and the associated output is below.
+Note curely braces \lstinline!{ }! are used to surround LaTeX math
+elements:
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -15891,6 +16140,43 @@ This BIG notebook was then converted into \textbf{LaTeX} using
 \textbf{nbconvert} and a custom template. Outside of the Python
 ecosystem, a separate installation of TeXworks compiled the LaTeX
 \textbf{\emph{.tex}} to \textbf{\emph{.pdf}}.
+    
+
+
+
+
+    
+        \section{Contributions}\label{contributions}
+    
+
+
+
+
+    
+        Any corrections, typos or suggestions to improve the text can be emailed
+to:
+
+\begin{quote}
+\url{errata@problemsolvingwithpython.com}
+\end{quote}
+
+Please include the chapter number and section number in your email.
+Include in your email if you would like to remain anonymous or have your
+name recognized in the contributor list. Thank-you in advance for
+improving the text for others.
+    
+
+
+
+
+    
+        \subsection{Contributor List}\label{contributor-list}
+
+\begin{itemize}
+\item
+\item
+\item
+\end{itemize}
     
 
 

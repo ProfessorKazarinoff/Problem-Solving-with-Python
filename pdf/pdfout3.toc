@@ -252,178 +252,184 @@
 \contentsline {subsubsection}{Exception Errors}{150}{section.8.5}
 \contentsline {subsection}{Try Except statements}{151}{section.8.5}
 \contentsline {section}{\numberline {8.6}Flow Charts}{151}{section.8.6}
-\contentsline {section}{\numberline {8.7}Summary}{153}{section.8.7}
-\contentsline {subsection}{Key Terms and Concepts}{153}{section.8.7}
-\contentsline {section}{\numberline {8.8}Review Questions}{153}{section.8.8}
-\contentsline {subsubsection}{Errors, Explanations and Solutions}{153}{section.8.8}
-\contentsline {chapter}{\numberline {9}Loops}{155}{chapter.9}
-\contentsline {section}{\numberline {9.1}Introduction}{155}{section.9.1}
-\contentsline {section}{\numberline {9.2}While Loops}{156}{section.9.2}
-\contentsline {subsection}{Using a while loop to validate user input}{156}{lstnumber.-152.2}
-\contentsline {section}{\numberline {9.3}For Loops}{157}{section.9.3}
-\contentsline {subsection}{For Loops with \texttt {range()}}{157}{lstnumber.-153.3}
-\contentsline {subsection}{For loops with lists}{158}{lstnumber.-154.3}
-\contentsline {section}{\numberline {9.4}Break and Continue}{158}{section.9.4}
-\contentsline {section}{\numberline {9.5}Flow Charts}{159}{section.9.5}
-\contentsline {section}{\numberline {9.6}Summary}{160}{section.9.6}
-\contentsline {subsection}{Key Terms and Concpets}{160}{section.9.6}
-\contentsline {section}{\numberline {9.7}Review Questions}{160}{section.9.7}
-\contentsline {subsubsection}{Errors, Explainations, and Solutions}{160}{section.9.7}
-\contentsline {chapter}{\numberline {10}Matricies and Arrays}{161}{chapter.10}
-\contentsline {section}{\numberline {10.1}Introduction}{161}{section.10.1}
-\contentsline {section}{\numberline {10.2}NumPy}{162}{section.10.2}
-\contentsline {section}{\numberline {10.3}Installing NumPy}{164}{section.10.3}
-\contentsline {subsection}{Install NumPy on Anaconda}{164}{section.10.3}
-\contentsline {subsection}{Install NumPy with the Anaconda Prompt}{164}{section.10.3}
-\contentsline {subsection}{Install NumPy with pip}{164}{lstnumber.-158.1}
-\contentsline {subsection}{Verify NumPy installation}{164}{lstnumber.-159.1}
-\contentsline {section}{\numberline {10.4}Array Creation}{164}{section.10.4}
-\contentsline {subsection}{Arrays of Reguarly Spaced Numbers}{165}{section.10.4}
-\contentsline {subsubsection}{np.arange()}{165}{section.10.4}
-\contentsline {subsubsection}{np.linspace()}{165}{lstnumber.-160.1}
-\contentsline {subsubsection}{np.logspace()}{166}{lstnumber.-161.1}
-\contentsline {subsubsection}{np.zeros()}{166}{lstnumber.-162.1}
-\contentsline {subsubsection}{np.ones()}{166}{lstnumber.-163.1}
-\contentsline {subsection}{Arrays of Random Numbers}{167}{lstnumber.-164.1}
-\contentsline {subsubsection}{Array of Random Integers}{167}{lstnumber.-164.1}
-\contentsline {subsubsection}{Array of Random Floats}{167}{lstnumber.-165.1}
-\contentsline {subsubsection}{Random Array Choice from a List}{167}{lstnumber.-166.1}
-\contentsline {subsubsection}{Random Array with a Normal Distribution}{168}{lstnumber.-167.1}
-\contentsline {subsection}{2-D Arrays}{169}{lstnumber.-168.1}
-\contentsline {subsubsection}{np.meshgrid}{169}{lstnumber.-168.1}
-\contentsline {subsubsection}{np.mgrid}{170}{lstnumber.-168.1}
-\contentsline {subsection}{Section Summary}{170}{lstnumber.-168.1}
-\contentsline {section}{\numberline {10.5}Array Indexing}{170}{section.10.5}
-\contentsline {subsection}{Multi-dimensional Array Indexing}{171}{lstnumber.-169.1}
-\contentsline {subsection}{Assigning Values with Indexing}{172}{lstnumber.-170.1}
-\contentsline {section}{\numberline {10.6}Array Slicing}{172}{section.10.6}
-\contentsline {subsection}{Slicing 2D Arrays}{173}{lstnumber.-173.1}
-\contentsline {section}{\numberline {10.7}Array Operations}{174}{section.10.7}
-\contentsline {subsection}{Scalar Addition}{174}{section.10.7}
-\contentsline {section}{\numberline {10.8}Scalar Multiplication}{175}{section.10.8}
-\contentsline {subsection}{Matrix Multiplication}{175}{section.10.8}
-\contentsline {subsubsection}{Element-wise multiplication}{175}{section.10.8}
-\contentsline {subsubsection}{Dot Product}{175}{section.10.8}
-\contentsline {subsubsection}{Cross Product}{176}{section.10.8}
-\contentsline {subsection}{Exponents and Logarithms}{176}{section.10.8}
-\contentsline {subsection}{Trigonometry}{176}{lstnumber.-175.5}
-\contentsline {section}{\numberline {10.9}Systems of Linear Equations}{176}{section.10.9}
-\contentsline {section}{\numberline {10.10}Summary}{178}{section.10.10}
-\contentsline {subsection}{Key Terms and Concepts}{178}{section.10.10}
-\contentsline {subsection}{Numpy Functions and Methods}{178}{section.10.10}
-\contentsline {section}{\numberline {10.11}Review Questions}{178}{section.10.11}
-\contentsline {subsubsection}{Errors, Explanations, and Solutions}{178}{section.10.11}
-\contentsline {chapter}{\numberline {11}Symbolic Math}{179}{chapter.11}
-\contentsline {section}{\numberline {11.1}Introduction}{179}{section.11.1}
-\contentsline {section}{\numberline {11.2}SymPy}{180}{section.11.2}
-\contentsline {section}{\numberline {11.3}Defining Variables}{180}{section.11.3}
-\contentsline {subsection}{Substitution}{181}{section.11.3}
-\contentsline {section}{\numberline {11.4}Defining Equations}{183}{section.11.4}
-\contentsline {section}{\numberline {11.5}Solving two equations for two unknows}{184}{section.11.5}
-\contentsline {section}{\numberline {11.6}Summary}{189}{section.11.6}
-\contentsline {subsection}{Key Terms and Concepts}{189}{section.11.6}
-\contentsline {section}{\numberline {11.7}Review Questions}{189}{section.11.7}
-\contentsline {subsubsection}{Errors, Explanations, and Solutions}{189}{section.11.7}
-\contentsline {chapter}{\numberline {12}Python and External Hardware}{191}{chapter.12}
-\contentsline {section}{\numberline {12.1}Introduction}{191}{section.12.1}
-\contentsline {section}{\numberline {12.2}PySerial}{192}{section.12.2}
-\contentsline {subsection}{Installing PySerial}{192}{section.12.2}
-\contentsline {section}{\numberline {12.3}Bytes and Unicode Strings}{192}{section.12.3}
-\contentsline {subsection}{Unicode Strings}{192}{section.12.3}
-\contentsline {subsection}{Byte Strings}{193}{section.12.3}
-\contentsline {subsection}{Convert between unicode strings and byte strings}{193}{section.12.3}
-\contentsline {section}{\numberline {12.4}Reading a Sensor with Python}{194}{section.12.4}
-\contentsline {subsection}{Wire the sensor to the Arduino}{194}{section.12.4}
-\contentsline {subsection}{Upload code to the Arduino}{195}{figure.caption.30}
-\contentsline {subsection}{Connect the Arduino to the computer and Upload the Sketch}{196}{lstnumber.-180.28}
-\contentsline {subsection}{Check the Sensor Signal}{196}{figure.caption.32}
-\contentsline {subsubsection}{LED turns ON and OFF}{197}{figure.caption.32}
-\contentsline {subsubsection}{Arudino Serial Monitor}{197}{figure.caption.32}
-\contentsline {subsubsection}{Arduino Serial Plotter}{197}{figure.caption.34}
-\contentsline {subsection}{Write a Pyton script to read the sensor}{199}{figure.caption.36}
-\contentsline {section}{\numberline {12.5}Controlling an LED with Python}{200}{section.12.5}
-\contentsline {subsection}{Wire the LED to the Arduino}{200}{section.12.5}
-\contentsline {subsection}{Upload code to the Arduino}{201}{figure.caption.37}
-\contentsline {subsection}{Connect the Arduino to the Computer}{202}{lstnumber.-185.27}
-\contentsline {subsection}{Turn the LED on and off with the Arduino Serial Monitor}{202}{figure.caption.40}
-\contentsline {subsection}{Write a Pyton Script to turn the LED on and off}{202}{figure.caption.41}
-\contentsline {subsection}{Write a Python script to allow a user to turn the LED on and off}{203}{lstnumber.-187.6}
-\contentsline {section}{\numberline {12.6}Summary}{205}{section.12.6}
-\contentsline {subsection}{Key Terms and Concepts}{205}{section.12.6}
-\contentsline {subsection}{Additional Resources}{205}{section.12.6}
-\contentsline {subsection}{Review Questions}{205}{section.12.6}
-\contentsline {subsubsection}{Errors, Explanations, and Solutions}{205}{section.12.6}
-\contentsline {section}{\numberline {12.7}Review Questions}{205}{section.12.7}
-\contentsline {chapter}{\numberline {13}MicroPython}{207}{chapter.13}
-\contentsline {section}{\numberline {13.1}Introduction}{207}{section.13.1}
-\contentsline {section}{\numberline {13.2}What is MicroPython?}{208}{section.13.2}
-\contentsline {subsection}{What is MicroPython?}{208}{section.13.2}
-\contentsline {subsection}{What is Micropython used for?}{208}{section.13.2}
-\contentsline {subsection}{Why should problem solvers learn MircoPython?}{208}{section.13.2}
-\contentsline {section}{\numberline {13.3}Installing MicroPython}{209}{section.13.3}
-\contentsline {subsection}{Summary of Steps:}{209}{table.13.2}
-\contentsline {subsection}{Install the Anaconda distribution of Python}{210}{Item.48}
-\contentsline {subsection}{Create a new conda environment and install \textbf {esptool}}{210}{Item.48}
-\contentsline {subsection}{Download the latest MicroPython firmware .bin file}{210}{lstnumber.-192.7}
-\contentsline {subsection}{Install the SiLabs driver for the Adafruit Feather Huzzah ESP8266}{210}{figure.caption.42}
-\contentsline {subsection}{Connect the Adafruit Feather Huzzah ESP8266 board to the laptop}{212}{figure.caption.43}
-\contentsline {subsection}{Determine which serial port the Feather Huzzah is connected to}{212}{figure.caption.43}
-\contentsline {subsection}{Run esptool to upload the .bin file to the Feather Huzzah}{213}{figure.caption.45}
-\contentsline {subsection}{Download and install PuTTY, a serial monitor}{215}{figure.caption.48}
-\contentsline {subsection}{Use PuTTY to connect to the Feather Huzzah}{215}{figure.caption.49}
-\contentsline {section}{\numberline {13.4}MicroPython REPL}{218}{section.13.4}
-\contentsline {subsection}{Summary of Steps}{218}{section.13.4}
-\contentsline {subsection}{Connect the Adafruit Feather Huzzah ESP8266 board to the laptop}{218}{Item.52}
-\contentsline {subsection}{Determine which serial port the Feather Huzzah is connected to}{218}{Item.52}
-\contentsline {subsection}{Use Putty to connect to the Feather Huzzah}{218}{figure.caption.55}
-\contentsline {subsection}{Run commands at the prompt to turn the built-in LED on the Adafruit Feather Huzzah ESP8266 on and off}{220}{figure.caption.58}
-\contentsline {section}{\numberline {13.5}Blinking a LED}{224}{section.13.5}
-\contentsline {subsection}{Connect the ESP8266 Microcontroller to the computer with a USB cable and bring up the MicroPython REPL using PuTTY.}{224}{section.13.5}
-\contentsline {subsection}{Run code at the MicroPython REPL to turn the LED on and off}{224}{figure.caption.62}
-\contentsline {subsection}{Run code at the MicroPython REPL to blink the LED}{226}{lstnumber.-206.7}
-\contentsline {section}{\numberline {13.6}Reading a Sensor}{227}{section.13.6}
-\contentsline {subsection}{Summary of Steps}{227}{section.13.6}
-\contentsline {subsection}{Connect the MCP9808 temperature sensor to the Adafruit Feather Huzzah board}{227}{Item.55}
-\contentsline {subsection}{Connect the Adafruit Feather Huzzah to the computer with a USB cable and bring up the MicroPython REPL using PuTTY.}{227}{figure.caption.63}
-\contentsline {subsection}{Run code at the MicroPython REPL to read the temperature}{228}{figure.caption.65}
-\contentsline {section}{\numberline {13.7}Uploading code}{228}{section.13.7}
-\contentsline {subsection}{Summary of Steps}{230}{section.13.7}
-\contentsline {subsection}{Install ampy with pip}{230}{Item.60}
-\contentsline {subsection}{Write Python Code}{231}{lstnumber.-209.3}
-\contentsline {subsection}{Upload Python Code to the ESP8266 Microcontroller with \textbf {ampy}}{233}{lstnumber.-212.19}
-\contentsline {subsection}{Unplug and power up the Feather Huzzah and watch the data on ThingSpeak.com}{233}{lstnumber.-213.9}
-\contentsline {section}{\numberline {13.8}Summary}{234}{section.13.8}
-\contentsline {subsection}{Key Terms and Concepts}{234}{section.13.8}
-\contentsline {section}{\numberline {13.9}Review Questions}{234}{section.13.9}
-\contentsline {subsubsection}{Errors, Explanations, and Solutions}{234}{Item.69}
-\contentsline {chapter}{\numberline {14}Appendix}{235}{chapter.14}
-\contentsline {section}{\numberline {14.1}Contents}{235}{section.14.1}
-\contentsline {section}{\numberline {14.2}Reserved and Key Words in Python}{235}{section.14.2}
-\contentsline {subsection}{Logical Key Words}{236}{section.14.2}
-\contentsline {subsection}{Control Flow Key Words}{236}{lstnumber.-214.8}
-\contentsline {subsection}{Definition Key Words}{237}{lstnumber.-215.14}
-\contentsline {subsection}{Module Key Words}{237}{lstnumber.-216.8}
-\contentsline {section}{\numberline {14.3}ASCII Character Codes}{237}{section.14.3}
-\contentsline {section}{\numberline {14.4}Virtual Environments}{239}{section.14.4}
-\contentsline {subsection}{Create a virtual environment with the Anaconda Prompt}{239}{section.14.4}
-\contentsline {subsection}{Activate the virtual environment}{240}{lstnumber.-219.11}
-\contentsline {subsection}{Install packages in the virtual environment}{240}{lstnumber.-221.1}
-\contentsline {subsection}{Decative the virtual environment}{241}{lstnumber.-223.1}
-\contentsline {subsection}{List your virtual environments}{241}{lstnumber.-224.2}
-\contentsline {section}{\numberline {14.5}Numpy Math Functions}{241}{section.14.5}
-\contentsline {subsection}{Numpy Statistics Fuctions and Methods}{242}{lstnumber.-228.3}
-\contentsline {subsection}{Numpy Trigonometric Functions and Methods}{242}{lstnumber.-229.5}
-\contentsline {subsection}{Numpy Matrix Creation and Manipulation Functions and Methods}{242}{lstnumber.-231.11}
-\contentsline {section}{\numberline {14.6}Git and GitHub}{243}{section.14.6}
-\contentsline {subsection}{Cloning a repo}{245}{table.14.1}
-\contentsline {subsection}{Creating and synching a remote repo on github.com with a local repo}{245}{lstnumber.-234.1}
-\contentsline {subsubsection}{Create a the remote repo on GitHub}{245}{lstnumber.-234.1}
-\contentsline {subsubsection}{Make a new local repo and link it to the remote repo on GitHub}{245}{lstnumber.-234.1}
-\contentsline {subsubsection}{Add, commit and push any changes}{246}{lstnumber.-235.5}
-\contentsline {subsubsection}{Pull the most recent version before each work session}{246}{lstnumber.-236.3}
-\contentsline {section}{\numberline {14.7}LaTeX Math}{246}{section.14.7}
-\contentsline {section}{\numberline {14.8}Problem Solving with Python Book Construction}{247}{section.14.8}
-\contentsline {subsection}{Jupyter Notebooks}{247}{section.14.8}
-\contentsline {subsection}{Website}{248}{lstnumber.-242.9}
-\contentsline {subsection}{Hardcopy}{248}{lstnumber.-242.9}
-\contentsline {section}{\numberline {14.9}About the Author}{248}{section.14.9}
+\contentsline {section}{\numberline {8.7}Summary}{158}{section.8.7}
+\contentsline {subsection}{Key Terms and Concepts}{158}{section.8.7}
+\contentsline {section}{\numberline {8.8}Review Questions}{158}{section.8.8}
+\contentsline {subsubsection}{Errors, Explanations and Solutions}{158}{section.8.8}
+\contentsline {chapter}{\numberline {9}Loops}{159}{chapter.9}
+\contentsline {section}{\numberline {9.1}Introduction}{159}{section.9.1}
+\contentsline {section}{\numberline {9.2}While Loops}{160}{section.9.2}
+\contentsline {subsection}{Using a while loop to validate user input}{160}{lstnumber.-156.2}
+\contentsline {section}{\numberline {9.3}For Loops}{161}{section.9.3}
+\contentsline {subsection}{For Loops with \texttt {range()}}{161}{lstnumber.-157.3}
+\contentsline {subsection}{For loops with lists}{162}{lstnumber.-158.3}
+\contentsline {section}{\numberline {9.4}Break and Continue}{162}{section.9.4}
+\contentsline {section}{\numberline {9.5}Flow Charts}{163}{section.9.5}
+\contentsline {subsection}{Basic Flow Chart Shapes}{163}{section.9.5}
+\contentsline {subsection}{Flow chart of a program that contains a for loop}{163}{figure.caption.34}
+\contentsline {subsection}{Flow chart of a program that contains a while loop}{166}{lstnumber.-160.4}
+\contentsline {section}{\numberline {9.6}Summary}{168}{section.9.6}
+\contentsline {subsection}{Key Terms and Concpets}{168}{section.9.6}
+\contentsline {section}{\numberline {9.7}Review Questions}{168}{section.9.7}
+\contentsline {subsubsection}{Errors, Explainations, and Solutions}{168}{section.9.7}
+\contentsline {chapter}{\numberline {10}Matricies and Arrays}{169}{chapter.10}
+\contentsline {section}{\numberline {10.1}Introduction}{169}{section.10.1}
+\contentsline {section}{\numberline {10.2}NumPy}{170}{section.10.2}
+\contentsline {section}{\numberline {10.3}Installing NumPy}{172}{section.10.3}
+\contentsline {subsection}{Install NumPy on Anaconda}{172}{section.10.3}
+\contentsline {subsection}{Install NumPy with the Anaconda Prompt}{172}{section.10.3}
+\contentsline {subsection}{Install NumPy with pip}{172}{lstnumber.-164.1}
+\contentsline {subsection}{Verify NumPy installation}{172}{lstnumber.-165.1}
+\contentsline {section}{\numberline {10.4}Array Creation}{172}{section.10.4}
+\contentsline {subsection}{Arrays of Reguarly Spaced Numbers}{173}{section.10.4}
+\contentsline {subsubsection}{np.arange()}{173}{section.10.4}
+\contentsline {subsubsection}{np.linspace()}{173}{lstnumber.-166.1}
+\contentsline {subsubsection}{np.logspace()}{174}{lstnumber.-167.1}
+\contentsline {subsubsection}{np.zeros()}{174}{lstnumber.-168.1}
+\contentsline {subsubsection}{np.ones()}{174}{lstnumber.-169.1}
+\contentsline {subsection}{Arrays of Random Numbers}{175}{lstnumber.-170.1}
+\contentsline {subsubsection}{Array of Random Integers}{175}{lstnumber.-170.1}
+\contentsline {subsubsection}{Array of Random Floats}{175}{lstnumber.-171.1}
+\contentsline {subsubsection}{Random Array Choice from a List}{175}{lstnumber.-172.1}
+\contentsline {subsubsection}{Random Array with a Normal Distribution}{176}{lstnumber.-173.1}
+\contentsline {subsection}{2-D Arrays}{177}{lstnumber.-174.1}
+\contentsline {subsubsection}{np.meshgrid}{177}{lstnumber.-174.1}
+\contentsline {subsubsection}{np.mgrid}{178}{lstnumber.-174.1}
+\contentsline {subsection}{Section Summary}{178}{lstnumber.-174.1}
+\contentsline {section}{\numberline {10.5}Array Indexing}{178}{section.10.5}
+\contentsline {subsection}{Multi-dimensional Array Indexing}{179}{lstnumber.-175.1}
+\contentsline {subsection}{Assigning Values with Indexing}{180}{lstnumber.-176.1}
+\contentsline {section}{\numberline {10.6}Array Slicing}{180}{section.10.6}
+\contentsline {subsection}{Slicing 2D Arrays}{181}{lstnumber.-179.1}
+\contentsline {section}{\numberline {10.7}Array Operations}{182}{section.10.7}
+\contentsline {subsection}{Scalar Addition}{182}{section.10.7}
+\contentsline {section}{\numberline {10.8}Scalar Multiplication}{183}{section.10.8}
+\contentsline {subsection}{Matrix Multiplication}{183}{section.10.8}
+\contentsline {subsubsection}{Element-wise multiplication}{183}{section.10.8}
+\contentsline {subsubsection}{Dot Product}{183}{section.10.8}
+\contentsline {subsubsection}{Cross Product}{184}{section.10.8}
+\contentsline {subsection}{Exponents and Logarithms}{184}{section.10.8}
+\contentsline {subsection}{Trigonometry}{184}{lstnumber.-181.5}
+\contentsline {section}{\numberline {10.9}Systems of Linear Equations}{184}{section.10.9}
+\contentsline {section}{\numberline {10.10}Summary}{186}{section.10.10}
+\contentsline {subsection}{Key Terms and Concepts}{186}{section.10.10}
+\contentsline {subsection}{Numpy Functions and Methods}{186}{section.10.10}
+\contentsline {section}{\numberline {10.11}Review Questions}{186}{section.10.11}
+\contentsline {subsubsection}{Errors, Explanations, and Solutions}{186}{section.10.11}
+\contentsline {chapter}{\numberline {11}Symbolic Math}{187}{chapter.11}
+\contentsline {section}{\numberline {11.1}Introduction}{187}{section.11.1}
+\contentsline {section}{\numberline {11.2}SymPy}{188}{section.11.2}
+\contentsline {section}{\numberline {11.3}Defining Variables}{188}{section.11.3}
+\contentsline {subsection}{Substitution}{189}{section.11.3}
+\contentsline {section}{\numberline {11.4}Defining Equations}{191}{section.11.4}
+\contentsline {section}{\numberline {11.5}Solving two equations for two unknows}{192}{section.11.5}
+\contentsline {section}{\numberline {11.6}Summary}{197}{section.11.6}
+\contentsline {subsection}{Key Terms and Concepts}{197}{section.11.6}
+\contentsline {section}{\numberline {11.7}Review Questions}{197}{section.11.7}
+\contentsline {subsubsection}{Errors, Explanations, and Solutions}{197}{section.11.7}
+\contentsline {chapter}{\numberline {12}Python and External Hardware}{199}{chapter.12}
+\contentsline {section}{\numberline {12.1}Introduction}{199}{section.12.1}
+\contentsline {section}{\numberline {12.2}PySerial}{200}{section.12.2}
+\contentsline {subsection}{Installing PySerial}{200}{section.12.2}
+\contentsline {section}{\numberline {12.3}Bytes and Unicode Strings}{200}{section.12.3}
+\contentsline {subsection}{Unicode Strings}{200}{section.12.3}
+\contentsline {subsection}{Byte Strings}{201}{section.12.3}
+\contentsline {subsection}{Convert between unicode strings and byte strings}{201}{section.12.3}
+\contentsline {section}{\numberline {12.4}Reading a Sensor with Python}{202}{section.12.4}
+\contentsline {subsection}{Wire the sensor to the Arduino}{202}{section.12.4}
+\contentsline {subsection}{Upload code to the Arduino}{203}{figure.caption.38}
+\contentsline {subsection}{Connect the Arduino to the computer and Upload the Sketch}{204}{lstnumber.-186.28}
+\contentsline {subsection}{Check the Sensor Signal}{204}{figure.caption.40}
+\contentsline {subsubsection}{LED turns ON and OFF}{205}{figure.caption.40}
+\contentsline {subsubsection}{Arudino Serial Monitor}{205}{figure.caption.40}
+\contentsline {subsubsection}{Arduino Serial Plotter}{205}{figure.caption.42}
+\contentsline {subsection}{Write a Pyton script to read the sensor}{207}{figure.caption.44}
+\contentsline {section}{\numberline {12.5}Controlling an LED with Python}{208}{section.12.5}
+\contentsline {subsection}{Wire the LED to the Arduino}{208}{section.12.5}
+\contentsline {subsection}{Upload code to the Arduino}{209}{figure.caption.45}
+\contentsline {subsection}{Connect the Arduino to the Computer}{210}{lstnumber.-191.27}
+\contentsline {subsection}{Turn the LED on and off with the Arduino Serial Monitor}{210}{figure.caption.48}
+\contentsline {subsection}{Write a Pyton Script to turn the LED on and off}{210}{figure.caption.49}
+\contentsline {subsection}{Write a Python script to allow a user to turn the LED on and off}{211}{lstnumber.-193.6}
+\contentsline {section}{\numberline {12.6}Summary}{213}{section.12.6}
+\contentsline {subsection}{Key Terms and Concepts}{213}{section.12.6}
+\contentsline {subsection}{Additional Resources}{213}{section.12.6}
+\contentsline {subsection}{Review Questions}{213}{section.12.6}
+\contentsline {subsubsection}{Errors, Explanations, and Solutions}{213}{section.12.6}
+\contentsline {section}{\numberline {12.7}Review Questions}{213}{section.12.7}
+\contentsline {subsubsection}{Errors, Explanations, and Solutions}{214}{section.12.7}
+\contentsline {chapter}{\numberline {13}MicroPython}{215}{chapter.13}
+\contentsline {section}{\numberline {13.1}Introduction}{215}{section.13.1}
+\contentsline {section}{\numberline {13.2}What is MicroPython?}{216}{section.13.2}
+\contentsline {subsection}{What is MicroPython?}{216}{section.13.2}
+\contentsline {subsection}{What is Micropython used for?}{216}{section.13.2}
+\contentsline {subsection}{Why should problem solvers learn MircoPython?}{216}{section.13.2}
+\contentsline {section}{\numberline {13.3}Installing MicroPython}{217}{section.13.3}
+\contentsline {subsection}{Summary of Steps:}{217}{table.13.2}
+\contentsline {subsection}{Install the Anaconda distribution of Python}{218}{Item.38}
+\contentsline {subsection}{Create a new conda environment and install \textbf {esptool}}{218}{Item.38}
+\contentsline {subsection}{Download the latest MicroPython firmware .bin file}{218}{lstnumber.-198.7}
+\contentsline {subsection}{Install the SiLabs driver for the Adafruit Feather Huzzah ESP8266}{218}{figure.caption.50}
+\contentsline {subsection}{Connect the Adafruit Feather Huzzah ESP8266 board to the laptop}{220}{figure.caption.51}
+\contentsline {subsection}{Determine which serial port the Feather Huzzah is connected to}{220}{figure.caption.51}
+\contentsline {subsection}{Run esptool to upload the .bin file to the Feather Huzzah}{221}{figure.caption.53}
+\contentsline {subsection}{Download and install PuTTY, a serial monitor}{223}{figure.caption.56}
+\contentsline {subsection}{Use PuTTY to connect to the Feather Huzzah}{223}{figure.caption.57}
+\contentsline {section}{\numberline {13.4}MicroPython REPL}{226}{section.13.4}
+\contentsline {subsection}{Summary of Steps}{226}{section.13.4}
+\contentsline {subsection}{Connect the Adafruit Feather Huzzah ESP8266 board to the laptop}{226}{Item.42}
+\contentsline {subsection}{Determine which serial port the Feather Huzzah is connected to}{226}{Item.42}
+\contentsline {subsection}{Use Putty to connect to the Feather Huzzah}{226}{figure.caption.63}
+\contentsline {subsection}{Run commands at the prompt to turn the built-in LED on the Adafruit Feather Huzzah ESP8266 on and off}{228}{figure.caption.66}
+\contentsline {section}{\numberline {13.5}Blinking a LED}{232}{section.13.5}
+\contentsline {subsection}{Connect the ESP8266 Microcontroller to the computer with a USB cable and bring up the MicroPython REPL using PuTTY.}{232}{section.13.5}
+\contentsline {subsection}{Run code at the MicroPython REPL to turn the LED on and off}{232}{figure.caption.70}
+\contentsline {subsection}{Run code at the MicroPython REPL to blink the LED}{234}{lstnumber.-212.7}
+\contentsline {section}{\numberline {13.6}Reading a Sensor}{235}{section.13.6}
+\contentsline {subsection}{Summary of Steps}{235}{section.13.6}
+\contentsline {subsection}{Connect the MCP9808 temperature sensor to the Adafruit Feather Huzzah board}{235}{Item.45}
+\contentsline {subsection}{Connect the Adafruit Feather Huzzah to the computer with a USB cable and bring up the MicroPython REPL using PuTTY.}{235}{figure.caption.71}
+\contentsline {subsection}{Run code at the MicroPython REPL to read the temperature}{236}{figure.caption.73}
+\contentsline {section}{\numberline {13.7}Uploading code}{236}{section.13.7}
+\contentsline {subsection}{Summary of Steps}{238}{section.13.7}
+\contentsline {subsection}{Install ampy with pip}{238}{Item.50}
+\contentsline {subsection}{Write Python Code}{239}{lstnumber.-215.3}
+\contentsline {subsection}{Upload Python Code to the ESP8266 Microcontroller with \textbf {ampy}}{241}{lstnumber.-218.19}
+\contentsline {subsection}{Unplug and power up the Feather Huzzah and watch the data on ThingSpeak.com}{241}{lstnumber.-219.9}
+\contentsline {section}{\numberline {13.8}Summary}{242}{section.13.8}
+\contentsline {subsection}{Key Terms and Concepts}{242}{section.13.8}
+\contentsline {section}{\numberline {13.9}Review Questions}{242}{section.13.9}
+\contentsline {subsubsection}{Errors, Explanations, and Solutions}{242}{Item.59}
+\contentsline {chapter}{\numberline {14}Appendix}{243}{chapter.14}
+\contentsline {section}{\numberline {14.1}Contents}{243}{section.14.1}
+\contentsline {section}{\numberline {14.2}Reserved and Key Words in Python}{243}{section.14.2}
+\contentsline {subsection}{Logical Key Words}{244}{section.14.2}
+\contentsline {subsection}{Control Flow Key Words}{244}{lstnumber.-220.8}
+\contentsline {subsection}{Definition Key Words}{245}{lstnumber.-221.14}
+\contentsline {subsection}{Module Key Words}{245}{lstnumber.-222.8}
+\contentsline {section}{\numberline {14.3}ASCII Character Codes}{245}{section.14.3}
+\contentsline {section}{\numberline {14.4}Virtual Environments}{247}{section.14.4}
+\contentsline {subsection}{Create a virtual environment with the Anaconda Prompt}{247}{section.14.4}
+\contentsline {subsection}{Activate the virtual environment}{248}{lstnumber.-225.11}
+\contentsline {subsection}{Install packages in the virtual environment}{248}{lstnumber.-227.1}
+\contentsline {subsection}{Decative the virtual environment}{249}{lstnumber.-229.1}
+\contentsline {subsection}{List your virtual environments}{249}{lstnumber.-230.2}
+\contentsline {section}{\numberline {14.5}Numpy Math Functions}{249}{section.14.5}
+\contentsline {subsection}{Numpy Statistics Fuctions and Methods}{250}{lstnumber.-234.3}
+\contentsline {subsection}{Numpy Trigonometric Functions and Methods}{250}{lstnumber.-235.5}
+\contentsline {subsection}{Numpy Matrix Creation and Manipulation Functions and Methods}{250}{lstnumber.-237.11}
+\contentsline {section}{\numberline {14.6}Git and GitHub}{251}{section.14.6}
+\contentsline {subsection}{Cloning a repo}{253}{table.14.1}
+\contentsline {subsection}{Creating and synching a remote repo on github.com with a local repo}{253}{lstnumber.-240.1}
+\contentsline {subsubsection}{Create a the remote repo on GitHub}{253}{lstnumber.-240.1}
+\contentsline {subsubsection}{Make a new local repo and link it to the remote repo on GitHub}{253}{lstnumber.-240.1}
+\contentsline {subsubsection}{Add, commit and push any changes}{254}{lstnumber.-241.5}
+\contentsline {subsubsection}{Pull the most recent version before each work session}{254}{lstnumber.-242.3}
+\contentsline {section}{\numberline {14.7}LaTeX Math}{254}{section.14.7}
+\contentsline {section}{\numberline {14.8}Problem Solving with Python Book Construction}{255}{section.14.8}
+\contentsline {subsection}{Jupyter Notebooks}{255}{section.14.8}
+\contentsline {subsection}{Website}{256}{lstnumber.-248.9}
+\contentsline {subsection}{Hardcopy}{256}{lstnumber.-248.9}
+\contentsline {section}{\numberline {14.9}Contributions}{256}{section.14.9}
+\contentsline {subsection}{Contributor List}{256}{section.14.9}
+\contentsline {section}{\numberline {14.10}About the Author}{257}{section.14.10}
