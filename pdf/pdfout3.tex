@@ -510,7 +510,7 @@ Important terms and vocabulary are shown in \emph{italic text}
 
 \begin{quote}
 There is a difference between \emph{local variables} and \emph{global
-variables} in Python code
+variables} in Python code.
 \end{quote}
     
 
@@ -537,7 +537,7 @@ the current directory.
 Module and Package names will be shown in \textbf{bold text}
 
 \begin{quote}
-\textbf{Numpy} and \textbf{matplotlib} are two useful packages for
+\textbf{NumPy} and \textbf{Matplotlib} are two useful packages for
 problem solvers.
 \end{quote}
     
@@ -548,7 +548,7 @@ problem solvers.
     
         \subsection{Inline code}\label{inline-code}
 
-Inline code including variable names and extensions are shown in
+Inline code, including variable names, is shown in
 \lstinline!monospace font!
 
 \begin{quote}
@@ -563,10 +563,10 @@ include \lstinline!==!, the double equals sign.
     
         \subsection{Separate code blocks}\label{separate-code-blocks}
 
-Separate code blocks will appear in their own sections in
+Separate code blocks appear in their own sections in
 \lstinline!monospaced font!
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -580,14 +580,14 @@ import matplotlib.pyplot as plt
         \subsection{Anaconda Prompt Commands}\label{anaconda-prompt-commands}
 
 Commands typed into the \textbf{Anaconda Prompt} are shown in separate
-boxes which contain the prompt symbol \lstinline!>! before each line.
-Note the prompt \lstinline!>! should not be typed. It is included to
-indicate \textbf{Anaconda Prompt}, not a character for the user to
-enter.
+sections which contain the prompt symbol \lstinline!>! before each line.
+Note the prompt \lstinline!>! should not be typed. The prompt symbol is
+included to indicate \textbf{Anaconda Prompt}, not a character for the
+user to enter.
 
 \begin{lstlisting}
-> conda create -n newenv pyton=3.6
-> conda activate newenv
+> conda create -n env python=3.7
+> conda activate env
 \end{lstlisting}
     
 
@@ -597,10 +597,11 @@ enter.
     
         \subsection{Terminal Commands}\label{terminal-commands}
 
-Commands typed into the terminal appear in separate boxes which contain
-the dollar symbol \lstinline!$! before each line. Note the dollar symbol
-\lstinline!$! should not be typed. It is included to indicate a terminal
-prompt, not a character for the user to enter.
+Commands typed into the MacOS or Linux terminal appear in separate
+sections which contain the dollar symbol \lstinline!$! before each line.
+Note the dollar symbol \lstinline!$! should not be typed. The dollar
+symbol is included to indicate a terminal prompt, not a character for
+the user to enter.
 
 \begin{lstlisting}
 $ pip install pint
@@ -614,12 +615,12 @@ $ cd pint_srcipts
     
         \subsection{Python REPL Commands}\label{python-repl-commands}
 
-Commands typed into the \textbf{Python REPL}, or Python Interpreter
-appears in separate code boxes, which contain the triple arrow prompt
-\lstinline!>>>! . Note the triple arrow \lstinline!>>>! sign should not
-be typed. Triple arrows are included to indicate the Python REPL prompt,
-not a character for the user to enter. The output from the Python REPL
-is shown on a separate line below the command, without the
+Commands typed into the \textbf{Python REPL} (the Python Interpreter)
+appears in separate code sections, which contain the triple arrow prompt
+\lstinline!>>>! . Note the triple arrow \lstinline!>>>! prompt should
+not be typed. Triple arrows are included to indicate the Python REPL
+prompt, not a character for the user to enter. The output from the
+Python REPL is shown on a separate line below the command, without the
 \lstinline!>>>! prompt.
 
 \begin{lstlisting}[language=Python]
@@ -636,11 +637,11 @@ Problem Solving with Python
     
         \subsection{Jupyter Notebook cells}\label{jupyter-notebook-cells}
 
-Commands typed into Jupyter notebook cells will appear with the label
-\lstinline!In [#]:!. The output from Jupyter notebook cells is shown
-after the input cell. Only code in the input cells needs to be typed.
-Output cell are be produced automatically by clicking the run button or
-typing \lstinline![shift]+[Enter]!
+Commands typed into Jupyter notebook cells appear with the label
+\lstinline!In [#]:! to the left of the code section. The output from
+Jupyter notebook cells is shown below the input cell. Only code in the
+input cells needs to be typed. Output cell are be produced automatically
+by clicking the run button or typing \lstinline![shift]+[Enter]!
     
 
 
@@ -663,8 +664,8 @@ typing \lstinline![shift]+[Enter]!
         \subsection{Keystrokes and Buttons}\label{keystrokes-and-buttons}
 
 Keystrokes directly entered by the keyboard or buttons that are
-indicated on programs or web pages will be shown inside square brackets
-and in \lstinline![monospaced font]!.
+indicated on programs or web pages are shown inside square brackets in
+\lstinline![monospaced font]!.
 
 \begin{quote}
 In order to delete a line use the \lstinline![Backspace]! key. To exit
@@ -1020,8 +1021,8 @@ best option for problem solvers who want to use Python. Anaconda is free
 (although the download is large which can take time) and can be
 installed on school or work computers where you don't have administrator
 access or the ability to install new programs. Anaconda comes bundled
-with over 100 packages pre-installed including \textbf{numpy},
-\textbf{matplotlib} and \textbf{sympy}. These three packages are very
+with over 100 packages pre-installed including \textbf{NumPy},
+\textbf{Matplotlib} and \textbf{SymPy}. These three packages are very
 useful for problem solvers and will be discussed in subsequent chapters.
 
 \subsubsection{Steps:}\label{steps}
@@ -1086,7 +1087,7 @@ Download the most recent Python 3 release. At the time of writing, the
 most recent release was the Python 3.6 Version. Python 2.7 is legacy
 Python. For problem solvers, select the Python 3.6 version. If you are
 unsure if your computer is running a 64-bit or 32-bit version of
-Windows, select 64-bit as that is most common.
+Windows, select 64-bit as 64-bit Windows is most common.
 
 \begin{figure}
 \centering
@@ -1173,17 +1174,16 @@ Windows start menu and select the Anaconda Prompt.
 \caption{anaconda in start menu}
 \end{figure}
 
-This will open up the \textbf{Anaconda Prompt}, which is often called
-the \textbf{conda prompt}. \textbf{Anaconda} is the Python distribution
-and the \textbf{Anaconda Prompt} is a command line shell (a program
-where you type in your commands instead of using a mouse). The black
+This opens the \textbf{Anaconda Prompt}. \textbf{Anaconda} is the Python
+distribution and the \textbf{Anaconda Prompt} is a command line shell (a
+program where you type in commands instead of using a mouse). The black
 screen and text that makes up the \textbf{Anaconda Prompt} doesn't look
 like much, but it is really helpful for an undergraduate engineer using
 Python.
 
-At the Anaconda prompt, type \lstinline!python!. This will start the
-Python interpreter, also called the Python REPL (for Read Evaluate Print
-Loop).
+At the Anaconda prompt, type \lstinline!python! and hit
+\lstinline![Enter]!. The \lstinline!python! command starts the Python
+interpreter, also called the Python REPL (for Read Evaluate Print Loop).
 
 \begin{lstlisting}
 > python
@@ -1405,9 +1405,13 @@ At the Python REPL (the Python \lstinline!>>>! prompt) try:
 \end{lstlisting}
 
 If you see the Zen of Python, the installation was successful. Exit out
-of the Python REPL using \lstinline!>>> exit()!. Make sure to include
-the double parenthesis \lstinline!()! after the \lstinline!exit!
+of the Python REPL using the command \lstinline!exit()!. Make sure to
+include the double parenthesis \lstinline!()! after the \lstinline!exit!
 command.
+
+\begin{lstlisting}
+>>> exit()
+\end{lstlisting}
     
 
 
@@ -1423,10 +1427,10 @@ Linux}\label{installing-anaconda-on-linux}
 
     
         This section details the installation of the Anaconda distribution of
-Python on Linux, specifically Ubuntu 16.04, but the instructions should
+Python on Linux, specifically Ubuntu 18.04, but the instructions should
 work for other Debian-based Linux distributions as well.
 
-Ubuntu 16.04 comes pre-installed with Python (Version 3.3) and legacy
+Ubuntu 18.04 comes pre-installed with Python (Version 3.6) and legacy
 Python (Version 2.7). You can confirm the legacy version of Python is
 installed by opening up a terminal.
 
@@ -1442,7 +1446,7 @@ You will most likely see version 2.7 is installed. If you enter:
 $ python3
 \end{lstlisting}
 
-You will most likely see version 3.3 is installed. You can use this
+You will most likely see version 3.6 is installed. You can use this
 version of Python, but each time a new package needs to be downloaded,
 the \lstinline!$ pip3 install! command must be used.
 
@@ -1574,9 +1578,9 @@ $ bash Anaconda3-5.2.0-Linux-x86_64.sh
 \end{lstlisting}
 
 Accept the Licence Agreement and allow Anaconda to be added to your
-\lstinline!PATH!. By adding Anaconda to your \lstinline!PATH! the
+\lstinline!PATH!. By adding Anaconda to your \lstinline!PATH!, the
 Anaconda distribution of Python will be called when you type
-\lstinline!$ python!.
+\lstinline!$ python! in a terminal.
     
 
 
@@ -1637,12 +1641,14 @@ Python.org}\label{installing-python-from-python.org}
 
 
     
-        Below are the recommended ways to install a new version of Python from
-Python.org on the three major operating systems: Windows, MacOS and
-Linux. This book is based on Python version 3.6. Some of the problems
-may not work properly on legacy Python (version 2.7). I recommend using
-the Anaconda Distribution of Python on Windows and MacOSX. The
-installation of Anaconda on these operating systems was detailed in
+        Below is the recommended way to install a new version of Python from
+Python.org on each of the three major operating systems: Windows, MacOS
+and Linux.
+
+This book is based on Python version 3.6. Some of the examples in the
+book may not work properly on legacy Python (version 2.7). I recommend
+installing the Anaconda Distribution of Python on Windows and MacOSX.
+The installation of Anaconda on these operating systems was detailed in
 previous sections.
     
 
@@ -1654,7 +1660,8 @@ previous sections.
 Windows}\label{installing-python-on-windows}
 
 Go to \url{https://www.python.org/downloads/} and download the latest
-release. Make sure to select the box {[}add Python to my path{]}.
+release. Make sure to select the box \lstinline![add Python to my path]!
+during the installation.
 
 \begin{figure}
 \centering
@@ -1704,8 +1711,8 @@ the command \lstinline!$ python3!.
 
 \begin{lstlisting}
 $ python3
-Python 3.5.2 (default, Nov 23 2017, 16:37:01) 
-[GCC 5.4.0 20160609] on linux
+Python 3.6.7 (default, Oct 22 2018, 11:32:17) 
+[GCC 8.2.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 \end{lstlisting}
@@ -1715,7 +1722,7 @@ If no version of Python is shown, you can download a release of Python
 
 \begin{lstlisting}
 $ sudo add-apt-repository ppa:deadsnakes/ppa
-$ [Enter]
+[Enter]
 $ sudo apt-get update
 $ sudo apt-get install python3.6
 \end{lstlisting}
@@ -1723,7 +1730,7 @@ $ sudo apt-get install python3.6
 After installation, you may need to append your PATH environment
 variable to ensure the newly installed Python 3.6 version is the version
 of Python called when using the terminal. The commands below will add
-\lstinline!/usr/bin! to \lstinline!PATH!, and add an alias in
+\lstinline!/usr/bin! to your \lstinline!PATH!, and add an alias in
 \textbf{\emph{.bashrc}} so that the command \lstinline!$ python3.6!
 produces the Python 3.6 REPL. Take care to ensure the double chevron
 \lstinline!>>! is used, as a single chevron \lstinline!>! will overwrite
@@ -1855,10 +1862,10 @@ Q01.07
 \item
   Compute mathematical calculations using the Python REPL
 \item
-  Use the output from Python REPL as input in another problem
+  Use the output from Python REPL as the input for another command
 \item
-  Import the math and statistics modules from the standard library and
-  use their functions
+  Import the math and statistics modules from the Python Standard
+  Library and use their functions
 \item
   Combine \lstinline!True! and \lstinline!False! in logical statements
 \end{itemize}
@@ -1890,16 +1897,18 @@ used for trigonometric calculations and statistical calculations.
     
         \subsection{Arithmetic}\label{arithmetic}
 
-Python can be used as a calculator to make simple or complex
+Python can be used as a calculator to make simple arithmetic
 calculations.
 
-We can do this easily with Python at the Python Prompt, also called the
-\lstinline!Python REPL!. REPL stands for Read Evaluate Print Loop. The
-Python REPL shows three arrow symbols \lstinline!>>>! after which you
-will see a blinking cursor. Programmers type commands at the prompt then
-hit {[}ENTER{]} to see the results. The commands are \emph{read} by the
-interpreter, results of running the commands are \emph{evaluated}, then
-\emph{printed} to the command window. After the output is printed, a new
+Simple arithmetic calculations can be completed at the Python Prompt,
+also called the \emph{Python REPL}. REPL stands for Read Evaluate Print
+Loop. The Python REPL shows three arrow symbols \lstinline!>>>! followed
+by a blinking cursor. Programmers type commands at the \lstinline!>>>!
+prompt then hit \lstinline![ENTER]! to see the results.
+
+Commands typed into the Python REPL are \emph{read} by the interpreter,
+results of running the commands are \emph{evaluated}, then
+\emph{printed} to the command window. After the output is printed, the
 \lstinline!>>>! prompt appears on a new line. This process repeats over
 and over again in a continuous \emph{loop}.
 
@@ -1914,7 +1923,7 @@ is 3 kg. What is the mass of the battery cable assembly?
 \end{lstlisting}
 
 Suppose one of the cables above is removed and it has a mass of 1.5 kg.
-What is the mass of the leftover assembly
+What is the mass of the leftover assembly?
 
 \begin{lstlisting}[language=Python]
 >>> 8 - 1.5
@@ -1922,8 +1931,8 @@ What is the mass of the leftover assembly
 \end{lstlisting}
 
 If the battery has a mass of 5000 g and a volume of 2500 \(cm^3\) What
-is the density of the battery? The formula for density is below, where D
-is density, m is mass and v is volume.
+is the density of the battery? The formula for density is below, where
+\(D\) is density, \(m\) is mass and \(v\) is volume.
 
 \[ D = \frac{m}{v} \]
 
@@ -1936,7 +1945,8 @@ Let's solve this with Python.
 2.0
 \end{lstlisting}
 
-What is the total mass if we have 2 batteries, that each weight 5 kg?
+What is the total mass if we have 2 batteries, and each battery weighs 5
+kg?
 
 \begin{lstlisting}[language=Python]
 >>> 5 * 2
@@ -2250,7 +2260,7 @@ we need to use the names \lstinline!statistics.mean!,
 \begin{lstlisting}[language=Python]
 >>> import statistics
     
->>> test_scores = [ 60 , 83, 83, 91, 100]
+>>> test_scores = [ 60 , 83, 83, 91, 100 ]
     
 >>> statistics.mean(test_scores)
 83.4
@@ -2348,14 +2358,14 @@ True
 
 
     
-        Variable names in Python must follow the rules below:
+        Variable names in Python must conform to the following rules:
 
 \begin{itemize}
 \tightlist
 \item
   variable names must start with a letter
 \item
-  variable names only contain letters, numbers, and the underscore
+  variable names cab only contain letters, numbers, and the underscore
   character \lstinline!_!
 \item
   variable names can not contain spaces
@@ -2373,15 +2383,19 @@ True
 
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{constant} \PY{o}{=} \PY{l+m+mi}{4}
-        
-        \PY{n}{new\PYZus{}variable} \PY{o}{=} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{var}\PY{l+s+s1}{\PYZsq{}}
-        
-        \PY{n}{my2rules} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rule1}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{rule2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-        
-        \PY{n}{SQUARES} \PY{o}{=} \PY{l+m+mi}{4}
-\end{Verbatim}
+
+    
+        \begin{lstlisting}[language=Python]
+constant = 4
+
+new_variable = 'var'
+
+my2rules = ['rule1','rule2']
+
+SQUARES = 4
+\end{lstlisting}
+    
+
 
 
 
@@ -2391,35 +2405,33 @@ True
 
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{a} \PY{n}{constant} \PY{o}{=} \PY{l+m+mi}{4}
-        
-        \PY{l+m+mi}{3}\PY{n}{newVariables} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}
-        
-        \PY{o}{\PYZam{}}\PY{n+nb}{sum} \PY{o}{=} \PY{l+m+mi}{4} \PY{o}{+} \PY{l+m+mi}{4}
-        
-        \PY{c+c1}{\PYZsh{}a\PYZus{}new\PYZus{}variable = 6}
-\end{Verbatim}
+
+    
+        \begin{lstlisting}[language=Python]
+a constant = 4
+
+3newVariables = [1, 2, 3]
+
+&sum = 4 + 4
+\end{lstlisting}
+    
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-
-          File "<ipython-input-3-d6921874e142>", line 1
-        a constant = 4
-                 \^{}
-    SyntaxError: invalid syntax
-
-
-    \end{Verbatim}
 
 
     
-        Problem: The Arrhenius relationship states that
+        Below is a problem that can be solved at the Python REPL using
+variables.
+
+The Arrhenius relationship states
 
 \[ n = n_{v}e^{-Q_v/(RT)} \]
 
-We can use variables to assign a value to each one of the constants in
-the problem.
+for a system where \(n_v = 2.0 \times 10^{-3}\), \(Q_v = 5\),
+\(R=3.18\), and \(T=293\), calculate \(n\).
+
+Use variables to assign a value to each one of the constants in the
+problem and calculate \(n\).
 
 \begin{lstlisting}[language=Python]
 >>> nv = 2.0**(-0.3)
@@ -2436,83 +2448,6 @@ the problem.
 
 
     
-        \section{Boolean Arithmetic}\label{boolean-arithmetic}
-    
-
-
-
-
-    
-        \emph{Boolean Arithmetic} is the arithmetic of true and false logic. A
-\emph{boolean} or logical value can either be \lstinline!True! or
-\lstinline!False!. In Python, the keywords \lstinline!True! and
-\lstinline!False! denote a boolean variable. Note that assigning
-\lstinline!true! or \lstinline!false! to a variable will produce an
-error.
-    
-
-
-
-
-    
-        \begin{lstlisting}[language=Python]
->>> A = True
->>> B = False
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> A
-True
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> B
-False
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> A or B
-True
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> A and B
-False
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> not A
-False
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> not B
-True
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> A == B
-False
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> A != B
-True
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> C = False
->>> A or (C and B)
-True
->>> (A and B) or C
-False
-\end{lstlisting}
-    
-
-
-
-
-    
         \section{String Operations}\label{string-operations}
     
 
@@ -2520,15 +2455,126 @@ False
 
 
     
-        Some operations we can do on strings include indexing, concatenation,
-and logical comparisons.
+        Strings are sequences of letters, numbers, punctuation and spaces.
+Strings are defined at the Python REPL by enclosing letters, numbers,
+punctuation and spaces in single or double quotes.
+
+\begin{lstlisting}[language=Python]
+>>> word = "Solution"
+>>> another_word = "my solution"
+>>> third_word = "3rd solution!"
+\end{lstlisting}
+
+Some operations we can do on strings include concatenation (combining
+strings), logical comparisons (comparing strings) and indexing (pulling
+specific characters out of strings).
     
 
 
 
 
     
-        \subsection{Indexing}\label{indexing}
+        \subsection{String Concatenation}\label{string-concatenation}
+    
+
+
+
+
+    
+        Strings can be \emph{concatenated} or combined using the \lstinline!+!
+operator.
+
+\begin{lstlisting}[language=Python]
+>>> word = "Solution"
+>>> another_word = "my solution"
+>>> third_word = "3rd solution!"
+>>> all_words = word+another_word+third_word
+>>> all_words
+'Solutionmy solution3rd solution!'
+\end{lstlisting}
+
+To include spaces in the concatenated string, add a string which just
+contains one space \lstinline!" "! in between each string you combine.
+
+\begin{lstlisting}[language=Python]
+>>> word = "Solution"
+>>> another_word = "my solution"
+>>> third_word = "3rd solution!"
+>>> all_words = word + " " + another_word + " " + third_word
+>>> all_words
+'Solution my solution 3rd solution!'
+\end{lstlisting}
+    
+
+
+
+
+    
+        \subsection{String Comparison}\label{string-comparison}
+    
+
+
+
+
+    
+        Strings can be compared using the comparison operator, the double equals
+sign \lstinline!==!. Note the comparison operator double equals
+\lstinline!==! is not the same as the assignment operator, a single
+equals sign \lstinline!=!.
+
+\begin{lstlisting}[language=Python]
+>>> name1 = 'Kendra'
+>>> name2 = 'Kendra'
+>>> name1 == name2
+True
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> name1 = 'Kendra'
+>>> name2 = 'Sydney'
+>>> name1 == name2
+False
+\end{lstlisting}
+
+Capital letters and lower case letters are different characters in
+Python. A string with the same letters, but different capitalization are
+not equivalent.
+
+\begin{lstlisting}[language=Python]
+>>> name1 = 'Kendra'
+>>> name2 = 'kenda'
+>>> name1 == name2
+False
+\end{lstlisting}
+    
+
+
+
+
+    
+        \subsection{String Indexing}\label{string-indexing}
+
+String indexing is the process of pulling out specific characters from a
+string in a specific order. In Python, strings are indexed using square
+brackets \lstinline![ ]!. Python counting starts at \lstinline!0! and
+ends at \lstinline!n-1!. This means for the word
+
+\begin{lstlisting}
+Solution
+\end{lstlisting}
+
+The letter \lstinline!S! is at the zero index, the letter \lstinline!o!
+is at the first index. The last letter of the word \lstinline!Solution!
+is \lstinline!n!. \lstinline!n! is in the seventh index. Even though the
+word \lstinline!Solution! has eight letters, the last letter is in the
+seventh index. This is because Python indexing starts at zero and ends
+at n-1.
+
+\begin{figure}
+\centering
+\includegraphics{images/string_indexing.png}
+\caption{Python indexing}
+\end{figure}
     
 
 
@@ -2547,8 +2593,8 @@ and logical comparisons.
 
     
         \begin{lstlisting}[language=Python]
->>> word[2]
-'1'
+>>> word[1]
+'o'
 \end{lstlisting}
     
 
@@ -2557,7 +2603,7 @@ and logical comparisons.
 
     
         \begin{lstlisting}[language=Python]
->>> word[-1]
+>>> word[7]
 'n'
 \end{lstlisting}
     
@@ -2566,7 +2612,45 @@ and logical comparisons.
 
 
     
-        \begin{lstlisting}[language=Python]
+        If the eighth index of the word \lstinline!Solution! is called, you get
+an error.
+
+\begin{lstlisting}[language=Python]
+>>> word[8]
+
+IndexError: string index out of range
+\end{lstlisting}
+    
+
+
+
+
+    
+        Placing a negative number inside of the square brackets pulls a
+character out of a string starting from the end of the string.
+
+\begin{lstlisting}[language=Python]
+>>> word[-1]
+'n'
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> word[-2]
+'o'
+\end{lstlisting}
+    
+
+
+
+
+    
+        A colon on the inside of the square brackets indicates between two
+numbers indicates \emph{through}. As in \lstinline![0:3]! are the
+characters at positions \lstinline!0! to \lstinline!3!. Remember Python
+counting starts at zero and ends at n-1. So \lstinline![0:3]! indicates
+the first through third letters, which are the zero to two index.
+
+\begin{lstlisting}[language=Python]
 >>> word[0:3]
 'Sol'
 \end{lstlisting}
@@ -2576,7 +2660,9 @@ and logical comparisons.
 
 
     
-        \begin{lstlisting}[language=Python]
+        A colon by itself on the inside of square brackets indicates \emph{all}.
+
+\begin{lstlisting}[language=Python]
 >>> word[:]
 'Solution'
 \end{lstlisting}
@@ -2586,18 +2672,12 @@ and logical comparisons.
 
 
     
-        \begin{lstlisting}[language=Python]
->>> word[-3:-1]  #not including ending
-'io'
-\end{lstlisting}
-    
+        When three numbers separated by two colons are used inside of square
+brackets, the numbers represent \emph{start} : \emph{stop} : step. But
+remember that Python counting starts at zero and ends at n-1.
 
-
-
-
-    
-        \begin{lstlisting}[language=Python]
->>> word[0:8:2]  #start:stop+1:step
+\begin{lstlisting}[language=Python]
+>>> word[0:7:2]  #start:stop:step
 'Slto'
 \end{lstlisting}
     
@@ -2606,8 +2686,30 @@ and logical comparisons.
 
 
     
-        \begin{lstlisting}[language=Python]
->>> word[::-1] # start=not specified :stop=not specified:step=-1
+        When two colons are used inside of square brackets, but less than three
+numbers are specified, the missing numbers are set to their
+``defaults''. The default start is \lstinline!0!, the default stop is
+\lstinline!n-1! and the default step is \lstinline!1!.
+
+The two code lines below produce the same output since \lstinline!0! is
+the default start and \lstinline!7! (n-1) is the default stop. Both
+lines of code use a step of \lstinline!2!.
+
+\begin{lstlisting}[language=Python]
+>>> word[0:7:2]
+'Slto'
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> word[::2]
+'Slto'
+\end{lstlisting}
+
+The characters that make up a string can be reversed by using the
+default start and stop values, and specify the step as \lstinline!-1!.
+
+\begin{lstlisting}[language=Python]
+>>> word[::-1]
 'noituloS'
 \end{lstlisting}
     
@@ -2623,15 +2725,87 @@ and logical comparisons.
 
 
     
-        The \lstinline!print()! function useful in Python. Below is a code
-example:
+        The \lstinline!print()! function useful in Python. The expression inside
+of the parenthesis ``print'' out to the Python REPL when the
+\lstinline!print()! function is called.
+
+An example using the \lstinline!print()! function is below:
 
 \begin{lstlisting}[language=Python]
->>> name = Kendra
->>> print('Your name is: ')
+>>> name = "Kendra"
+>>> print("Your name is: ")
 Your name is
 >>> print(name)
 Kendra
+\end{lstlisting}
+
+Remember that strings must be enclosed by quotation marks. The following
+command produces an error.
+
+\begin{lstlisting}[language=Python]
+>>> print(Kendra)
+
+NameError: name 'Kendra' is not defined
+\end{lstlisting}
+
+This error is corrected by surrounding the string \lstinline!Kendra!
+with quotation marks
+
+\begin{lstlisting}[language=Python]
+>>> print("Kendra")
+Kendra
+\end{lstlisting}
+    
+
+
+
+
+    
+        Expressions passed to the \lstinline!print()! function are evaluated
+before they are printed out. For instance, the sum of two numbers can be
+shown with the \lstinline!print()! function.
+
+\begin{lstlisting}[language=Python]
+>>>print(1+2)
+3
+\end{lstlisting}
+
+If you want to see the text \lstinline!1+2!, you need to define
+\lstinline!"1+2"! as a string and print out the string \lstinline!"1+2"!
+instead.
+
+\begin{lstlisting}[language=Python]
+>>>print("1+2")
+1+2
+\end{lstlisting}
+    
+
+
+
+
+    
+        Strings can be concatenated (combined) inside of a \lstinline!print()!
+statement.
+
+\begin{lstlisting}[language=Python]
+>>> name = Kendra
+>>> print('Your name is: ' + name)
+Your name is Kendra
+\end{lstlisting}
+    
+
+
+
+
+    
+        The \lstinline!print()! function also prints out individual expressions
+one after another with a space in between when the expressions are
+placed inside the \lstinline!print()! function and separated by a
+comma.```
+
+\begin{lstlisting}[language=Python]
+>>> print("Name:","Kendra","Age:", 3+5)
+Name: Kendra Age: 8
 \end{lstlisting}
     
 
@@ -3216,7 +3390,7 @@ Note that \lstinline!True! and \lstinline!False! must have an Upper Case
 first letter. Using a lowercase \lstinline!true! returns an error.
 
 \begin{lstlisting}[language=Python]
->> c = true
+>>> c = true
 Traceback (most recent call last):
   File "<input>", line 1, in <module>
 NameError: name 'true' is not defined
@@ -3234,9 +3408,11 @@ NameError: name 'false' is not defined
         \subsection{Integers and Floats as
 Booleans}\label{integers-and-floats-as-booleans}
 
-An int, float or complex number set to zero will always return
-\lstinline!False!. An int, float or complex number set to any other
-number, positive or negative, will return \lstinline!True!.
+Integers and floating point numbers can be converted to the boolean data
+type using Python's \lstinline!bool()! function. An int, float or
+complex number set to zero returns as \lstinline!False!. An int, float
+or complex number set to any other number, positive or negative, will
+returns as \lstinline!True!.
 
 \begin{lstlisting}[language=Python]
 >>> zero_int = 0
@@ -3261,6 +3437,102 @@ True
 
 
     
+        \subsection{Boolean Arithmetic}\label{boolean-arithmetic}
+
+\emph{Boolean Arithmetic} is the arithmetic of true and false logic. A
+\emph{boolean} or logical value can either be \lstinline!True! or
+\lstinline!False!. Boolean values can be manipulated and combined with
+boolean operators.
+
+The common boolean operators in Python are below:
+
+\begin{itemize}
+\tightlist
+\item
+  \lstinline!or!
+\item
+  \lstinline!and!
+\item
+  \lstinline!not!
+\item
+  \lstinline!==!(equivalent)
+\item
+  \lstinline"!=" (not equivalent)
+\end{itemize}
+
+\begin{lstlisting}[language=Python]
+>>> A = True
+>>> B = False
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> A or B
+True
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> A and B
+False
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> not A
+False
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> not B
+True
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> A == B
+False
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> A != B
+True
+\end{lstlisting}
+
+Boolean operators such as \lstinline!and!, \lstinline!or!,
+\lstinline!not! can be combined with parenthesis to make compound
+boolean expressions.
+
+\begin{lstlisting}[language=Python]
+>>> C = False
+>>> A or (C and B)
+True
+>>> (A and B) or C
+False
+\end{lstlisting}
+    
+
+
+
+
+    
+        A summary of boolean arithmetic and boolean operators is shown in the
+table below.
+
+\begin{longtable}[]{@{}llllllll@{}}
+\toprule
+A & B & not A & not B & A == B & A =! B & A or B & A and
+B\tabularnewline
+\midrule
+\endhead
+T & F & F & T & F & T & T & F\tabularnewline
+F & T & T & F & F & T & T & F\tabularnewline
+T & T & F & F & T & F & T & T\tabularnewline
+F & F & T & T & T & F & F & F\tabularnewline
+\bottomrule
+\end{longtable}
+    
+
+
+
+
+    
         \section{Strings}\label{strings}
     
 
@@ -3270,9 +3542,13 @@ True
     
         Strings are sequences of letters, numbers, symbols, and spaces. In
 Python, strings can be almost any length and can contain spaces. String
-variables are assigned in Python using quotation marks
-\lstinline!'   '!. Strings can contain blank spaces. A blank space is a
-valid string character in Python string.
+variables are assigned in Python using quotation marks \lstinline!'   '!
+or \lstinline!" "!. In Python, strings can be defined by single
+quotation marks \lstinline!' '! or double quotation marks
+\lstinline!" "!.
+
+Python strings can contain blank spaces. A blank space is a valid
+character in Python string.
 
 \begin{lstlisting}[language=Python]
 >>> string = 'z'
@@ -3304,6 +3580,39 @@ strings as well if surrounded by quotes.
 >>> num = '2'
 >>> type(num)
 <class 'str'>
+\end{lstlisting}
+    
+
+
+
+
+    
+        \subsection{Strings as Boolean Values}\label{strings-as-boolean-values}
+
+Strings can be converted to boolean values (converted to True or False).
+The empty string \lstinline!""! converts to \lstinline!False!. All other
+strings convert to \lstinline!True!.
+
+\begin{lstlisting}[language=Python]
+>>> name = "Kendra"
+>>> bool(name)
+True
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> empty = ""
+>>> bool(empty)
+False
+\end{lstlisting}
+
+Note that a string which contains just one space is not empty. It
+contains the space character. Therefore a string made up of just one
+space converts to \lstinline!True!.
+
+\begin{lstlisting}[language=Python]
+>>> space = " "
+>>> bool(space)
+True
 \end{lstlisting}
     
 
@@ -3414,7 +3723,8 @@ an index will not be returned.
 
     
         Besides lists, Python has two additional data structures that can store
-multiple objects. These are \textbf{dictionaries} and \textbf{tuples}.
+multiple objects. These data structures are \textbf{dictionaries} and
+\textbf{tuples}.
     
 
 
@@ -3428,7 +3738,69 @@ multiple objects. These are \textbf{dictionaries} and \textbf{tuples}.
 
 
     
-        Dictionaries are made up of key: value pairs
+        Dictionaries are made up of key: value pairs. In Python, lists are
+organized and accessed based on position. Dictionaries in Python are
+organized and accessed using keys and values. The position of a pair of
+keys and values stored in a Python dictionary is irrelevant.
+
+Dictionaries are defined in Python with curly braces \lstinline!{ }!.
+The key value pairs that make up the dictionary are separated by commas
+and related by colons \lstinline!:!.
+
+Let's store the ages of two people in a dictionary. The two people are
+\lstinline!Gabby! and \lstinline!Maelle!. \lstinline!Gabby! is
+\lstinline!8! and \lstinline!Maelle! is \lstinline!5!. Note the name
+\lstinline!Gabby! is a string and the age \lstinline!8! is an integer.
+
+\begin{lstlisting}[language=Python]
+>>> age_dict = {"Gabby": 8 , "Maelle": 5}
+>>> type(age_dict)
+dict
+\end{lstlisting}
+
+The values stored in a dictionary are called and assigned using the
+following syntax:
+
+\begin{lstlisting}
+dict_name[key] = value
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> age_dict = {"Gabby": 8 , "Maelle": 5}
+>>> age_dict["Gabby"]
+8
+\end{lstlisting}
+
+We can add a new person to our \lstinline!age_dict! with the following
+command:
+
+\begin{lstlisting}[language=Python]
+>>> age_dict = {"Gabby": 8 , "Maelle": 5}
+
+>>> age_dict["Peter"]= 40
+>>> age_dict
+{'Gabby': 8, 'Maelle': 5, 'Peter': 40}
+\end{lstlisting}
+
+Dictionaries can be converted to lists by calling the
+\lstinline!.items()!, \lstinline!.keys()!, and \lstinline!.values()!
+methods.
+
+\begin{lstlisting}[language=Python]
+>>> age_dict = {"Gabby": 8 , "Maelle": 5}
+
+>>> whole_list = list(age_dict.items())
+>>> whole_list
+[('Gabby', 8), ('Maelle', 5)]
+
+>>> name_list = list(age_dict.keys())
+>>> name_list
+['Gabby', 'Maelle']
+
+>>> age_list = list(age_dict.values())
+>>> age_list
+[8, 5]
+\end{lstlisting}
     
 
 
@@ -3444,7 +3816,57 @@ multiple objects. These are \textbf{dictionaries} and \textbf{tuples}.
     
         Tuples are immutable lists. Elements of a list can be modified, but
 elements in a tuple can only be accessed, not modified. The name
-\emph{tuple} does not mean that only two values can be stored.
+\emph{tuple} does not mean that only two values can be stored in this
+data type.
+
+Tuples are defined in Python by enclosing elements in parenthesis and
+separating elements with commas. The command below creates a tuple
+containing the numbers \lstinline!3!, \lstinline!4!, and \lstinline!5!.
+
+\begin{lstlisting}[language=Python]
+>>> t_var = (1,2,3)
+>>> t_var
+(1, 2, 3)
+\end{lstlisting}
+
+Note how the elements of a list can be modified:
+
+\begin{lstlisting}[language=Python]
+>>> l_var = [3,4,5]  # a list
+>>> l_var[0]= 8
+>>> l_var
+[8, 4, 5]
+\end{lstlisting}
+
+The elements of a tuple can not be modified. If you try to assign a new
+value to one of the elements in a tuple, an error is returned.
+
+\begin{lstlisting}[language=Python]
+>>> t_var = (3,4,5)  # a tuple
+>>> t_var[0]= 8
+>>> t_var
+
+TypeError: 'tuple' object does not support item assignment
+\end{lstlisting}
+
+To create a tuple that just contains one numerical value, the number
+must be followed by a comma. Without a comma, the variable is just
+defined as a number.
+
+\begin{lstlisting}[language=Python]
+>>> num = (5)
+>>> type(num)
+int
+\end{lstlisting}
+
+When a comma is included after the number, the variable is defined as a
+tuple.
+
+\begin{lstlisting}[language=Python]
+>>> t_var = (5,)
+>>> type(t_var)
+tuple
+\end{lstlisting}
     
 
 
@@ -3583,12 +4005,13 @@ Operator & Description & Example & Result\tabularnewline
     
         \begin{problems}
         Q03.01 Write two lines of code that pulls out the first three letters of
-the word ``solution''
+the word ``Problem''
 
 Q03.02 Write two lines of code that pulls out the last four letters of
-the word ``solution''
+the word ``Problem''
 
-Q03.03
+Q03.03 Write two lines of code that pulls out every other letter of the
+word ``Problem'' starting with the letter ``P''.
 
 Q03.04
 
@@ -3612,7 +4035,7 @@ solutions}\label{errors-explaination-and-solutions}
 Q03.50 Run the following lines of code and explain the error in your own
 words:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 n = 503
 n[3]
 \end{lstlisting}
@@ -3620,7 +4043,7 @@ n[3]
 Q03.51 Run the following lines of code and explain the error in your own
 words:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 a = 321
 b = 'go!'
 c = a + b
@@ -3629,7 +4052,7 @@ c = a + b
 Q03.52 Run the following lines of code and explain the error in your own
 words:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 d = {one:1, two:2, three:3}
 d[one]
 \end{lstlisting}
@@ -3688,15 +4111,41 @@ d[one]
 
 
     
-        A Jupyter notebook is sort of half way between the Python REPL and a
-Python module .py file.
+        A \emph{Jupyter notebook} is a electronic file type which can contain
+both programming code and text descriptions. Jupyter notebooks can also
+contain embedded charts, plots, images, videos and links. Jupyter
+notebooks run in a web browser like Google Chrome or Firefox.
 
-Jupyter notebooks run in a web browser like Google Chrome where as .py
-files are edited with a text editor like notepad. Regular .py files only
-contain Python commands and comments. Jupyter notebooks contain two
-types of cells: code cells and markdown cells. Lines of Python code are
-run in code cells. Markdown cells contain comment like descriptions to
-describe code cells.
+Although Jupyter notebooks can contain the code of many different
+programming languages, many Jupyter notebooks contain Python code. The
+Python code in a Jupyter Notebook is the same type of Python code found
+in a \textbf{\emph{.py}} file. The text description sections of Jupyter
+notebooks contain explanations and clarifications of the programming
+code in the \emph{markdown} format. \emph{Markdown} files have the
+extension \textbf{\emph{.md}}. Markdown sections of a Jupyter notebook
+can include formatting to make text bold, italic, form tables and lists,
+show code listings and images.
+
+One way to think of a Jupyter notebook is as a combination of the Python
+REPL and a Python module \textbf{\emph{.py}} file with a markdown
+**\_.md** file thrown in between code sections.
+
+In the Python REPL, only one command can be typed at a time, and only
+one line of output is shown at a time. In a \textbf{\emph{.py}} file,
+the entire file is run at one time, line by line. The output of the
+entire file is produced all at once. Markdown \textbf{\emph{.md}} files
+contain text in markdown format, but that text isn't rendered. In a
+Jupyter notebook, chunks of code one line or many lines long can be run
+individually and in any order without running all of the code in the
+Jupyter notebook. Jupyter Notebooks render the markdown sections and
+display rich text with headings, formatting and images.
+
+Jupyter notebooks contain three types of cells: code cells, output cells
+and markdown cells. Lines of Python code are run in code cells. The
+output from running the code cells is also shown in output cells.
+Markdown cells contain text like descriptions of what will happens in
+subsequent code cells. Charts, plots, command line output and images can
+all be shown in Jupyter notebooks as well.
     
 
 
@@ -3712,39 +4161,60 @@ describe code cells.
     
         There is a vast array of editors and IDE's (Integrated Development
 Environments) which can be used to edit and run Python code. Why should
-engineers learn to use Jupyter Notebooks?
+problem solvers learn to use Jupyter Notebooks?
 
 Below is a table of simple text editors and IDE's which can be used to
 edit and run Python code:
 
-\begin{longtable}[]{@{}l@{}}
+\begin{longtable}[]{@{}ll@{}}
 \toprule
-Text Editors\tabularnewline
+Python Text Editors and IDE's &\tabularnewline
 \midrule
 \endhead
-Notepad\tabularnewline
-Idle\tabularnewline
-Vim\tabularnewline
-Sublime Text\tabularnewline
-Atom\tabularnewline
+Notepad & simple text editor, included with Windows\tabularnewline
+Idle & included with Python from Python.org\tabularnewline
+Sublime Text & full featured editor with long-time no cost
+license\tabularnewline
+Spyder & IDE included with the Anaconda Distribution of
+Python\tabularnewline
+Visual Studio Code & An multi-language open source IDE\tabularnewline
+PyCharm & Professional Developer-friendly Python IDE\tabularnewline
 \bottomrule
 \end{longtable}
 
-\begin{longtable}[]{@{}l@{}}
-\toprule
-IDE's\tabularnewline
-\midrule
-\endhead
-PyCharm\tabularnewline
-Visual Studio Code\tabularnewline
-Spyder\tabularnewline
-\bottomrule
-\end{longtable}
+A Jupyter notebook is neither a simple text editor nor a full-featured
+IDE. Jupyter notebooks provide a quick and streamlined way for
+problem-solvers to prototype code and quickly share code. Jupyter
+notebooks also provide a way for problem-solvers to share programming
+solutions with team members, supervisors and customers.
 
-Jupyter Notebooks provide a quick and streamlined way for engineers to
-prototype code and quickly share code. Jupyter notebooks also provide a
-way for engineers to share solutions with team members, supervisors and
-customers.
+\begin{figure}
+\centering
+\includegraphics{images/jupyter_notebook_example.png}
+\caption{Example Jupyter Notebook}
+\end{figure}
+
+In a way, Jupyter notebooks strike a balance between simple text
+editors, which are fast to start and simple and easy to manipulate, and
+IDE's which tend to start slower and be feature-rich and complex. Simple
+text editors typically can only edit code, and cannot run code. A full
+IDE can edit code, run code, debug code, provide syntax highlighting and
+context help.
+    
+
+
+
+
+    
+        In the context of problem-solving, Jupyter notebooks can be extremely
+useful. Jupyter notebooks are quick to open and quick to produce output.
+Data exploration, data cleaning, and plot building is accomplished in
+Jupyter notebooks easier and quicker than in a text editor or an IDE.
+
+In the context of sharing solutions to problems, Jupyter notebooks are
+also useful. Markdown cells render text in different sizes, bold and
+italic. Tables and images, plots and code can all be shown together in
+the same Jupyter notebook.
     
 
 
@@ -3760,17 +4230,18 @@ customers.
     
         To install \textbf{Jupyter Notebooks}, the simplest way is to use the
 \textbf{Anaconda} distribution of Python. Anaconda has \textbf{Jupyter
-Notebooks} pre-installed and no further steps are necessary.
+Notebooks} pre-installed and no further installation steps are
+necessary.
     
 
 
 
 
     
-        \subsection{Installing Jupyter on
-Windows}\label{installing-jupyter-on-windows}
+        \subsection{Installing Jupyter on Windows using the Anaconda
+Prompt}\label{installing-jupyter-on-windows-using-the-anaconda-prompt}
 
-To install jupyter on Windows, open the Anaconda prompt and type:
+To install Jupyter on Windows, open the Anaconda prompt and type:
 
 \begin{lstlisting}
 > conda install jupyter
@@ -3786,13 +4257,39 @@ Type \lstinline!y! for yes when prompted.
         \subsection{Installing Jupyter on Mac
 OSX}\label{installing-jupyter-on-mac-osx}
 
-To install jupyter on Mac OSX, open the OSX terminal and type:
+To install Jupyter on MacOS, open the MacOS terminal and type:
 
 \begin{lstlisting}
 $ conda install jupyter
 \end{lstlisting}
 
 Type \lstinline!y! for yes when prompted.
+
+If \textbf{conda} is not installed, the \textbf{Anaconda} Distribution
+of Python can be installed, which should install \textbf{conda} for use
+in the MacOS terminal.
+
+Problems can crop up on MacOS when using the MacOS provided system
+version of Python. Python packages may not install on the system version
+of Python properly. Moreover, packages which do install on the system
+version of Python may not run correctly. It is therefore recommended
+that MacOS users install the \textbf{Anaconda} distribution of Python or
+use \textbf{homebrew} to install a separate non-system version of
+Python.
+
+To install a non-system version of Python with \textbf{homebrew}, key in
+the following in the MacOS terminal:
+
+\begin{lstlisting}
+$ brew install Python
+\end{lstlisting}
+
+After \textbf{homebrew} installs a non-system version of Python,
+\textbf{pip} can be used to install Jupyter.
+
+\begin{lstlisting}
+$ pip install jupyter
+\end{lstlisting}
     
 
 
@@ -3802,13 +4299,20 @@ Type \lstinline!y! for yes when prompted.
         \subsection{Installing Jupyter on Ubuntu
 Linux}\label{installing-jupyter-on-ubuntu-linux}
 
-To install jupyter on Ubuntu Linux, open a terminal and type:
+To install Jupyter on Linux, open a terminal and type:
 
 \begin{lstlisting}
 $ conda install jupyter
 \end{lstlisting}
 
 Type \lstinline!y! for yes when prompted.
+
+Alternatively, if the \textbf{Anaconda} distribution of Python is not
+installed, one can use:
+
+\begin{lstlisting}
+$ pip3 install jupyter
+\end{lstlisting}
     
 
 
@@ -3822,52 +4326,221 @@ Type \lstinline!y! for yes when prompted.
 
 
     
-        One simple way to open a jupyter notebook on Windows is to click the
-Windows Start Button in the lower left-hand corner, select the Anaconda
-Folder, and click Jupyter Notebook.
+        In this section, you will learn how to open a \emph{jupyter notebook} on
+Windows 10 and MacOS.
+
+Jupyter notebooks are one way problem solvers can write and execute
+Python code. Jupyter notebooks contain Python code, the output of that
+code produces when it is run and markdown cells to explain what the code
+means.
+
+On Windows 10, a Jupyter notebook can be started from the
+\textbf{Anaconda Prompt}, the Windows start menu and \textbf{Anaconda
+Navigator}.
+
+\subsubsection{\texorpdfstring{3 ways to open a \textbf{Jupyter
+notebook}:}{3 ways to open a Jupyter notebook:}}\label{ways-to-open-a-jupyter-notebook}
+
+\begin{itemize}
+\item
+  Windows Start Menu
+\item
+  \textbf{Anaconda Prompt}
+\item
+  Anaconda Navigator
+\end{itemize}
     
 
 
 
 
     
-        \subsection{Open a Jupyter Notebook from the Anaconda
-prompt}\label{open-a-jupyter-notebook-from-the-anaconda-prompt}
+        \subsection{Open a Jupyter notebook with the Windows Start
+Menu}\label{open-a-jupyter-notebook-with-the-windows-start-menu}
     
 
 
 
 
     
-        To Open a Jupyter notebook from the Anaconda prompt, first open the
-Anaconda prompt, then type:
+        A simple way to open a Jupyter notebook is to use the Windows start
+menu. Note that the Anaconda distribution of Python must be installed in
+order to use the Windows Start Menu to open a Jupyter notebook. Download
+\textbf{Anaconda} at the following link:
+\href{https://www.anaconda.com/download/}{Anaconda.com/downloads}
+
+Open the Windows start menu and select \textbf{{[}Anaconda3(64 bit){]}}
+--\textgreater{} \textbf{{[}Jupyter Notebook{]}}
+
+\begin{figure}
+\centering
+\includegraphics{images/windows_start_jupyter_notebook.png}
+\caption{Windows 10 Start Menu showing the Jupyter Notebook application}
+\end{figure}
+
+This will open the \textbf{Jupyter file browser} in a web browser tab.
+
+In the upper right select \textbf{{[}New{]}} --\textgreater{}
+\textbf{{[}Python 3{]}}
+
+\begin{figure}
+\centering
+\includegraphics{images/new_notebook_from_browser.png}
+\caption{Jupyter Notebook file browser}
+\end{figure}
+
+A new \textbf{notebook} will open as a new tab in your web browser
+
+\begin{figure}
+\centering
+\includegraphics{images/new_notebook.png}
+\caption{a newly opened Jupyter Nobebook}
+\end{figure}
+
+Try typing this in the first cell in the notebook to the right of the
+\lstinline!In [ ]:! prompt:
+
+\begin{lstlisting}[language=Python]
+import this
+\end{lstlisting}
+
+Then click the run button in the middle of the menu at the top of the
+notebook.
+
+\begin{figure}
+\centering
+\includegraphics{images/run_import_this.png}
+\caption{Jupyter Notebook running ``import this''}
+\end{figure}
+    
+
+
+
+
+    
+        \subsection{Open a Jupyter Notebook with the Anaconda
+Prompt}\label{open-a-jupyter-notebook-with-the-anaconda-prompt}
+    
+
+
+
+
+    
+        Another method to open a Jupyter notebook is to use the \textbf{Anaconda
+Prompt}.
+
+Go to the Windows start menu and select \textbf{{[}Anaconda Prompt{]}}
+under \textbf{{[}Anaconda3{]}}.
+
+\begin{figure}
+\centering
+\includegraphics{images/anaconda_start_menu.png}
+\caption{Windows 10 Start Menu showing the Anaconda Prompt application}
+\end{figure}
+
+If you don't see the \textbf{Anaconda Prompt} in the Windows Start Menu,
+then you need to install the Anaconda distribution of Python. Download
+\textbf{Anaconda} at the following link:
+\href{https://www.anaconda.com/download/}{Anaconda.com/downloads}
+
+The \textbf{Anaconda Prompt} window should look something like:
+
+\begin{figure}
+\centering
+\includegraphics{images/jupyter_notebook_anaconda_prompt.png}
+\caption{Anaconda Prompt}
+\end{figure}
+
+At the \textbf{Anaconda Prompt} type:
 
 \begin{lstlisting}
 > jupyter notebook
 \end{lstlisting}
 
-This will produce output in the Anaconda Prompt Window which looks
-something like:
+This command starts the \textbf{jupyter notebook} server. The output in
+the \textbf{Anaconda Prompt} will look something like below:
+
+\begin{lstlisting}
+Copy/paste this URL into your browser when you connect for the first time,
+    to login with a token:
+        http://localhost:8888/?token=6bdef677d3503fbb23e1b4fa0c802e ...
+[I 16:14:12.661 NotebookApp] Accepting one-time-token-authenticated ...
+\end{lstlisting}
+
+A web browser should open and you should be able to see the
+\textbf{Jupyter file browser}.
 
 \begin{figure}
 \centering
-\includegraphics{images/Anaconda_Prompt_Jupyter_Notebook.png}
-\caption{Anaconda Prompt Jupyter Notebook}
+\includegraphics{images/new_notebook_from_browser.png}
+\caption{Jupyter Notebook file browser- create new notebook}
 \end{figure}
 
-A webbrowser will open and something which looks kind of like a file
-browser will be shown:
+In the upper right select \textbf{{[}New{]}} --\textgreater{}
+\textbf{{[}Python 3{]}}
+
+You will see a new tab open in your web browser. This web browser page
+is a \textbf{Jupyter notebook}.
 
 \begin{figure}
 \centering
-\includegraphics{images/Jupyter_Home_Browser.png}
-\caption{Jupyter File Browser}
+\includegraphics{images/new_notebook.png}
+\caption{Newly opened Jupyter Notebook}
+\end{figure}
+    
+
+
+
+
+    
+        \subsection{Open a Jupyter Notebook with Anaconda
+Navigator}\label{open-a-jupyter-notebook-with-anaconda-navigator}
+    
+
+
+
+
+    
+        One additional way to open a Jupyter notebook is to use \textbf{Anaconda
+Navigator}. Anaconda Navigator comes with the Anaconda distribution of
+Python. Open \textbf{Anaconda Navigator} using the Windows start menu
+and select \textbf{{[}Anaconda3(64-bit){]}} --\textgreater{}
+\textbf{{[}Anaconda Navigator{]}}.
+
+\begin{figure}
+\centering
+\includegraphics{images/windows_start_anaconda_navigator.png}
+\caption{Windows 10 Start Menu showing the Anaconda Navigator
+application}
 \end{figure}
 
-Here you can select an exhisting jupyter notebook file which will end
-with the \lstinline!.ipynb! extension (which stands for IPython
-Notebook). You can also start a new Jupyter Notebook my clicking the
-{[}New{]} button in the upper right and selecting {[}Python 3{]}
+An \textbf{Anaconda Navigator} window will open. In the middle of the
+page, in the \textbf{Jupyter notebook} tile, click \textbf{{[}Launch{]}}
+
+\begin{figure}
+\centering
+\includegraphics{images/anaconda_navigator_jupyter_notebook_launch.png}
+\caption{Anaconda Navigator- launch new Jupyter Notebook}
+\end{figure}
+
+A \textbf{Jupyter file browser} will open in a web browser tab.
+
+In the upper right select \textbf{{[}New{]}} --\textgreater{}
+\textbf{{[}Python 3{]}}
+
+\begin{figure}
+\centering
+\includegraphics{images/new_notebook_from_browser.png}
+\caption{Jupyter Notebook file browser - create new Notebook}
+\end{figure}
+
+A new \textbf{notebook} will open as a new tab in your web browser
+
+\begin{figure}
+\centering
+\includegraphics{images/new_notebook.png}
+\caption{Newly opened Jupyter Notebook}
+\end{figure}
     
 
 
@@ -3892,9 +4565,10 @@ extension.
     
         \subsection{Menus and Buttons}\label{menus-and-buttons}
 
-A jupyter notebook is comprised of a bunch of cells which are arrayed
-one after another in boxes below the menu items and buttons. There are
-two main types of cells: Markdown cells and Code cells.
+A Jupyter notebook is comprised of a bunch of \emph{cells} which are
+arrayed one after another in boxes below the menu items and buttons.
+There are three main types of cells: code cells, output Cells and
+markdown cells.
     
 
 
@@ -3903,12 +4577,56 @@ two main types of cells: Markdown cells and Code cells.
     
         \subsection{Code Cells}\label{code-cells}
 
-In code cells you can type Python Code and see the output. An example of
-a code cell is shown below. Note that the code cell has an the text
-\lstinline!In[ ]! to the left of it.
+In code cells, you can write Python code, then execute the Python code
+and see the resulting output. An example of a code cell is shown below.
 
-To run the code in a code cell push the {[}Run{]} button or type
-{[}Shift{]}+{[}Enter{]}
+\begin{figure}
+\centering
+\includegraphics{images/code_cell.png}
+\caption{Jupyter Notebook Code Cell}
+\end{figure}
+
+You can tell you are typing in a code cell because \lstinline!In [ ]:!
+is shown to the left of the cell and the cell-type drop down menu shows
+\textbf{Code}.
+
+To run the Python code in a code cell push the {[}Run{]} button or type
+{[}Shift{]}+{[}Enter{]}. Hitting {[}Enter{]} when inside a code cell
+will only bring the cursor down to a new line.
+
+\begin{figure}
+\centering
+\includegraphics{images/run_cell.png}
+\caption{Jupyter Notebook Run Cell}
+\end{figure}
+    
+
+
+
+
+    
+        \subsection{Output Cells}\label{output-cells}
+
+After a code cell is run, an output cell is often produced below. The
+output cell contains the output from the code cell above it. Not all
+code produces output, so not all code cells produce output cells. The
+results in output cells can't be edited. If a code cell produces plots,
+charts or images, these outputs are shown in output cells.
+
+\begin{figure}
+\centering
+\includegraphics{images/output_cell.png}
+\caption{Jupyter Notebook Output Cell}
+\end{figure}
+
+You can clear all the output cells and re-run code cells by selecting
+\textbf{Kernal -- \textgreater{} Restart Kernal and Clear All Outputs}.
+
+\begin{figure}
+\centering
+\includegraphics{images/kernel_restart_and_clear_output.png}
+\caption{Jupyter Notebook Clear All Outputs}
+\end{figure}
     
 
 
@@ -3917,12 +4635,35 @@ To run the code in a code cell push the {[}Run{]} button or type
     
         \subsection{Markdown Cells}\label{markdown-cells}
 
-In markdown cells you can type text and headings. Markdown cells are
-used for documentation and explaining your code. The text in a markdown
-cell is not executed. Markdown cells can be formatted with a few special
-characters
+Markdown cells don't contain Python code, they contain text written in
+Markdown format. Text in markdown cells can be formatted to show
+\textbf{bold} or \emph{italic} text. Tables, images and lists can also
+be included in markdown cells.
+
+\begin{figure}
+\centering
+\includegraphics{images/markdown_cell.png}
+\caption{Jupyter Notebook Markdown Cell}
+\end{figure}
+
+Markdown cells are used for documentation and explaining your code. The
+text in a markdown cell is not executed. Markdown cells can be formatted
+with a few special characters.
+
+Markdown cells are run like code cells. The difference is that when
+markdown cells are run, the text is formatted (when code cells run, code
+is executed). Markdown cells are run by clicking the {[}Run{]} button or
+by pressing \lstinline![Shift]! + \lstinline![Enter]!
+
+Text in markdown cells can be formatted using \emph{markdown syntax}. An
+example of markdown syntax is putting an underscore before and after a
+word to cause the word to be formatted in \emph{italics}.
 
 \subsubsection{Headings}\label{headings}
+
+Headings are created in markdown cells using the hash symbol
+\lstinline!#!. One \lstinline!#! is the largest heading. Four hashes
+\lstinline!####! is the smallest heading.
 
 \begin{lstlisting}
 # H1 Heading
@@ -3942,24 +4683,25 @@ characters
 
 \subsubsection{Code Blocks}\label{code-blocks}
 
-For inline code blocks use the ` left quote character, the character to
-the left of the number 1 and above tab on most keyboards.
+Code blocks can inserted in Jupyter notebook markdown cells. For inline
+code blocks use the ` left quote character, the character to the left of
+the number \lstinline![1]``` and above ```[Tab]! on most keyboards.
 
 This is inline code: ` ` ` Inline code block ` ` ` within a paragraph
 
-For seperate code blocks use three ` left quote characters on one line,
-followed by the code block on seperate lines. Terminate the seperate
-code block with a line of three ` left quote characters.
+For a separated code block use three ` left quote characters on one
+line, followed by the code block on separate lines. Terminate the
+separate code block with a line of three ` left quote characters.
 
 ```
 
-Seperated code blocks
+Separated code block
 
 ```
 
 \subsubsection{Bold and italics}\label{bold-and-italics}
 
-\textbf{Bold} and \emph{italic font} is diplayed by surrounding text
+\textbf{Bold} and \emph{italic font} is displayed by surrounding text
 with a double asterisk for \lstinline!**bold**! and a single underscore
 for \lstinline!_italics_!
 
@@ -3974,8 +4716,9 @@ italic}}
 
 Tables are displayed using the pipe \lstinline!|! character, which is
 {[}Shift{]}+{[}\textbackslash{}{]} on most keyboards. Columns are
-seperated by pipes and rows are seperated by lines. After the header
-row, a row of pipes and dashes are needed to define the table.
+separated by pipes \lstinline!|! and rows are separated by lines. After
+the header row, a row of pipes and dashes \lstinline!---! are needed to
+define the table.
 
 \begin{lstlisting}
 | header1 | header 2 | header 3 |
@@ -4057,7 +4800,8 @@ produces
 
 \subsubsection{Horizontal Rule}\label{horizontal-rule}
 
-A horizontal rule is specified with three asterisks on a single line.
+A horizontal rule is specified with three asterisks \lstinline!***! on a
+single line.
 
 \begin{lstlisting}
 ***
@@ -4072,29 +4816,30 @@ produces
 Hyperlinks are specified using a set of square brackets \lstinline![ ]!
 followed by pair of parenthesis \lstinline!( )! The text inside the
 square brackets will be the link, the link address goes in the
-parenthesis
+parenthesis.
 
 \begin{lstlisting}
-[link to docs](https://docs.python.org/3/)
+[Problem Solving with Python Book Link](https://problemsolvingwithpython.com/)
 \end{lstlisting}
 
 produces
 
-\href{https://docs.python.org/3/}{link to docs}
+\href{https://problemsolvingwithpython.com/}{Problem Solving with Python
+Book Link}
 
 \subsubsection{Images}\label{images}
 
-Images are embedded in Jupyter Notebook markdown using the exclaimation
+Images are embedded in Jupyter Notebook markdown using the exclamation
 point and square brackets \lstinline"![ ]", followed by the image file
 path in parenthesis \lstinline!( )!. If the image can not be displayed,
 the text in square brackets will be shown. The image can be in the same
 directory as the notebook, or a relative path can be specified. In this
-case the image \lstinline!engineering.png! is stored in the images
-directory, which is a subdirectory of the directory the notebook is
-saved in.
+case the image \lstinline!engineering.png! is stored in the
+\lstinline!images! directory, which is a subdirectory of the directory
+the notebook is saved in.
 
 \begin{lstlisting}
-![Python Logo](images/engineering.png)
+![Engineering Image](images/engineering.png)
 \end{lstlisting}
 
 produces
@@ -4102,7 +4847,7 @@ produces
 \begin{figure}
 \centering
 \includegraphics{images/engineering.png}
-\caption{Python Logo}
+\caption{Image displayed in a Jupyter notebook}
 \end{figure}
 
 \subsubsection{LaTeX Math}\label{latex-math}
@@ -4120,10 +4865,10 @@ produces
 
 \subsubsection{html}\label{html}
 
-Because jupyter notebooks are rendered by web browsers, just about any
+Because Jupyter notebooks are rendered by web browsers, just about any
 html tag can be included in the markdown portion of a notebook. An
 example is the \lstinline!<sup>! \lstinline!</sup>! tags that surround
-super script text
+super script text.
 
 \begin{lstlisting}
 x<sup>2</sup>
@@ -4146,7 +4891,7 @@ Red Text
 
 \subsubsection{warning boxes}\label{warning-boxes}
 
-bootstrap style warning boxes can be included in jupyter notebook
+bootstrap style warning boxes can be included in Jupyter notebook
 markdown using \lstinline!<div>! tags
 
 \begin{lstlisting}
@@ -4164,12 +4909,130 @@ Warning! Python lists start at 0
 
 
     
+        \subsection{Creating a new cell}\label{creating-a-new-cell}
+
+You can create a new cell in a Jupyter Notebook by clicking the {[}+{]}
+button in the upper menu. This produces a new code cell below the
+current active cell.
+
+\begin{figure}
+\centering
+\includegraphics{images/insert_cell_above.png}
+\caption{Jupyter Notebook New Cell Button}
+\end{figure}
+
+You can also create a new cell using \textbf{Insert --\textgreater{}
+Insert Cell Above} or \textbf{Insert Cell Below}. You can choose to
+insert a cell above or below the current active cell.
+    
+
+
+
+
+    
+        \subsection{Changing the cell type}\label{changing-the-cell-type}
+
+The type of cell: code cell or markdown cell, can be changed by clicking
+on a cell and selecting the cell type from the dropdown menu. Typing
+\lstinline![Esc]! + \lstinline![m]! changes the cell type to a markdown
+cell. Typing \lstinline![Esc]! + \lstinline![y]! changes the cell type
+to a code cell.
+
+\begin{figure}
+\centering
+\includegraphics{images/change_cell_type.png}
+\caption{Jupyter Notebook Change Cell Type}
+\end{figure}
+    
+
+
+
+
+    
+        \subsection{Saving a Jupyter Notebook}\label{saving-a-jupyter-notebook}
+
+Jupyter notebooks can be saved using the save icon in the upper menu or
+by pressing {[}Ctrl{]} + {[}s{]}.
+
+\begin{figure}
+\centering
+\includegraphics{images/save_notebook.png}
+\caption{Jupyter Notebook Save}
+\end{figure}
+
+Jupyter notebooks can also be saved as a copy, similar to the Save As
+command common in many programs. To save a copy of a Jupyter notebook
+use \textbf{File --\textgreater{} Make a Copy\ldots{}}
+
+\begin{figure}
+\centering
+\includegraphics{images/file_make_a_copy.png}
+\caption{Jupyter Notebook save a copy}
+\end{figure}
+    
+
+
+
+
+    
+        \subsection{Renaming a Jupyter
+Notebook}\label{renaming-a-jupyter-notebook}
+
+Jupyter notebooks are renamed by clicking on the notebook name above the
+upper menu and typing a new name into the dialog box.
+
+\begin{figure}
+\centering
+\includegraphics{images/rename_notebook.png}
+\caption{Jupyter Notebook rename notebook}
+\end{figure}
+
+\begin{figure}
+\centering
+\includegraphics{images/rename_dialog.png}
+\caption{Jupyter Notebook rename dialog box}
+\end{figure}
+    
+
+
+
+
+    
+        \subsection{Downloading a Jupyter
+Notebok}\label{downloading-a-jupyter-notebok}
+
+Jupyter notebooks can be downloaded and saved using \textbf{File
+--\textgreater{} Download As --\textgreater{} Notebook (.ipynb)}. This
+will download the notebook as a .ipynb file.
+
+\begin{figure}
+\centering
+\includegraphics{images/file_download_as_notebook.png}
+\caption{Jupyter Notebook downloaded as .ipynb file}
+\end{figure}
+
+Note that when a .ipynb file is viewed in a text editor like notepad,
+the notebook is unformatted and looks like a confusing jumble of text.
+The notebook needs to be opened in a Jupyter notebook file browser in
+order for it to be rendered.
+
+\begin{figure}
+\centering
+\includegraphics{images/notebook_json.png}
+\caption{Jupyter Notebook JSON in notepad}
+\end{figure}
+    
+
+
+
+
+    
         \subsection{Saving Jupyter Notebooks in Other
 Formats}\label{saving-jupyter-notebooks-in-other-formats}
 
 Jupyter notebooks can be saved in other formats besides the native
-\lstinline!.ipynb! format. These formats can be acceed on the {[}File{]}
---\textgreater{} {[}Download As{]} menu.
+\lstinline!.ipynb! format. These formats can be accessed using the
+{[}File{]} --\textgreater{} {[}Download As{]} menu.
 
 \begin{figure}
 \centering
@@ -4206,15 +5069,6 @@ code.
 \includegraphics{images/jupyter_notebook_markdown_cells_as_comments.png}
 \caption{Markdown Cells as Comments}
 \end{figure}
-
-The \lstinline!.py! file after this notebook is
-\lstinline!Downloaded as! a \lstinline!Python(.py)! looks like:
-
-\begin{figure}
-\centering
-\includegraphics{images/jupyter_notebook_dot_py_file.png}
-\caption{Image of Notebook}
-\end{figure}
     
 
 
@@ -4249,13 +5103,13 @@ valid Python code, but will affect the behavior of the notebook
 %matplotlib inline
 \end{lstlisting}
 
-Using this command at the top of a jupyter notebook will produce
-matplotlib plots in cells of the notebook. Without
+Using this command at the top of a Jupyter notebook will produce
+Matplotlib plots in cells of the notebook. Without
 \lstinline!%matplotlib inline!, plots will jump out as external windows.
-A typical start to a jupyter notebook using \textbf{matplotlib} might
+A typical start to a Jupyter notebook using \textbf{Matplotlib} might
 start as:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -4264,6 +5118,43 @@ import matplotlib.pyplot as plt
     
 
 
+
+
+    
+        \subsection{\%load}\label{load}
+
+The \lstinline!%load! command will load a python module, webpage or file
+into a Jupyter notebook. If there is a file called
+\textbf{\emph{hello.py}} in the same directory as the notebook with some
+Python code written in it, we can load that same code into a Jupyter
+notebook code cell with the \lstinline!%load! command.
+
+Within a Jupyter notebook code cell type the command
+
+\begin{lstlisting}[language=Python]
+%load hello.py
+\end{lstlisting}
+
+The results are the code from the file \textbf{\emph{hello.py}} in the
+current notebook.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{c+c1}{\PYZsh{} \PYZpc{}load hello.py}
+        \PY{c+c1}{\PYZsh{} hello.py}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{This code was run from a seperate Python file}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Hello from the file hello.py}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+This code was run from a seperate Python file
+Hello from the file hello.py
+
+    \end{Verbatim}
 
 
     
@@ -4287,64 +5178,28 @@ jupyter notebook. The directory structure will look something like this:
 
 In the file \lstinline!hello.py! is the code:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
+# hello.py
+
 print('This code was run from a seperate Python file')
-print('Hellow from the file hello.py')
+print('Hello from the file hello.py')
 \end{lstlisting}
 
-Within our jupyter notebook, if we \lstinline!%run! this file, we will
-get the output of or hello.py script in a jupyter notebook output cell.
+Within our Jupyter notebook, if we \lstinline!%run! this file, we will
+get the output of or hello.py script in a \textbf{\emph{hello.py}}
+script in a Jupyter notebook output cell.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{o}{\PYZpc{}}\PY{k}{run} hello.py
+{\color{incolor}In [{\color{incolor}2}]:} \PY{o}{\PYZpc{}}\PY{k}{run} hello.py
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
 This code was run from a seperate Python file
-Hellow from the file hello.py
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{o}{\PYZpc{}}\PY{k}{pwd}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} 'C:\textbackslash{}\textbackslash{}Users\textbackslash{}\textbackslash{}peter.kazarinoff\textbackslash{}\textbackslash{}Documents\textbackslash{}\textbackslash{}book\textbackslash{}\textbackslash{}notebooks\textbackslash{}\textbackslash{}04-Jupyter-Notebooks'
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{o}{\PYZpc{}}\PY{k}{ls}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
- Volume in drive C is Windows
- Volume Serial Number is A048-4C53
-
- Directory of C:\textbackslash{}Users\textbackslash{}peter.kazarinoff\textbackslash{}Documents\textbackslash{}book\textbackslash{}notebooks\textbackslash{}04-Jupyter-Notebooks
-
-04/19/2018  06:01 PM    <DIR>          .
-04/19/2018  06:01 PM    <DIR>          ..
-04/18/2018  12:24 PM    <DIR>          .ipynb\_checkpoints
-04/18/2018  12:17 PM             1,164 04.00-Introduction.ipynb
-04/18/2018  12:21 PM             1,125 04.01-What-is-a-Jupyter-Notebook.ipynb
-04/18/2018  12:21 PM             1,477 04.02-Why-Jupyter-Notebooks.ipynb
-04/18/2018  12:26 PM             1,901 04.03-Installing-Juypter.ipynb
-04/18/2018  02:37 PM             2,029 04.04-Opening-a-Jupyter-Notebook.ipynb
-04/19/2018  07:23 AM             4,196 04.05-The-Jupyter-Notebook-Interface.ipynb
-04/19/2018  06:01 PM            11,102 04.07-Magic-Cells.ipynb
-04/18/2018  12:24 PM             1,325 04.08-Summary.ipynb
-04/03/2018  04:11 PM               970 04.09-Review-Questions.ipynb
-04/19/2018  05:53 PM                94 hello.py
-04/18/2018  02:36 PM    <DIR>          images
-              10 File(s)         25,383 bytes
-               4 Dir(s)  133,241,610,240 bytes free
+Hello from the file hello.py
 
     \end{Verbatim}
 
@@ -4358,7 +5213,7 @@ commands}\label{other-usefull-magic-commands}
 
 
     
-        Other usefull magic commands are:
+        Below is a table of other useful Jupyter notebook magic commands
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -4374,26 +5229,185 @@ commands\tabularnewline
 \end{longtable}
 
 You can list all of the available magic commands by typing and running
-\lstinline!%lsmagic! in a jupyter notebook code cell:
+\lstinline!%lsmagic! in a Jupyter notebook code cell:
+
+\begin{lstlisting}[language=Python]
+%lsmagic
+\end{lstlisting}
+
+The output will show all the available line magic commands that begin
+with the percent sign \%.
+
+\begin{lstlisting}
+Available line magics:
+%alias  %alias_magic  %autocall  %automagic  %autosave ...
+%dhist  %dirs  %doctest_mode  %ed  %edit  %env  %gui ...
+dir  %more  %mv  %notebook  %page  %pastebin  %pdb  %pdef ...
+...
+
+Available cell magics:
+%%!  %%HTML  %%SVG  %%bash  %%capture  %%debug  %%file  %%html ...
+%%python  %%python2  %%python3  %%ruby  %%script  %%sh  %%svg ...
+\end{lstlisting}
+    
+
+
+
+
+    
+        \section{Getting Help in a Jupyter
+Notebook}\label{getting-help-in-a-jupyter-notebook}
+    
+
+
+
+
+    
+        There are a couple different ways to get help when using a Jupyter
+notebook.
+    
+
+
+
+
+    
+        \subsection{\texorpdfstring{Get help using
+\texttt{dir}}{Get help using dir}}\label{get-help-using-dir}
+    
+
+
+
+
+    
+        Typing \lstinline!dir()! and passing in a function, method, variable or
+object shows the possible object, method and function calls available to
+that object. For example, we can investigate the different functions in
+the \textbf{urllib} module, part of Python's Standard Library, by
+importing \lstinline!urllib!, then calling \lstinline!dir(urllib)!
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{o}{\PYZpc{}}\PY{k}{lsmagic}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{urllib}
+        \PY{n+nb}{dir}\PY{p}{(}\PY{n}{urllib}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} Available line magics:
-         \%alias  \%alias\_magic  \%autocall  \%automagic  \%autosave  \%bookmark  \%cd  \%clear  \%cls  \%colors  \%config  \%connect\_info  \%copy  \%ddir  \%debug  \%dhist  \%dirs  \%doctest\_mode  \%echo  \%ed  \%edit  \%env  \%gui  \%hist  \%history  \%killbgscripts  \%ldir  \%less  \%load  \%load\_ext  \%loadpy  \%logoff  \%logon  \%logstart  \%logstate  \%logstop  \%ls  \%lsmagic  \%macro  \%magic  \%matplotlib  \%mkdir  \%more  \%notebook  \%page  \%pastebin  \%pdb  \%pdef  \%pdoc  \%pfile  \%pinfo  \%pinfo2  \%popd  \%pprint  \%precision  \%profile  \%prun  \%psearch  \%psource  \%pushd  \%pwd  \%pycat  \%pylab  \%qtconsole  \%quickref  \%recall  \%rehashx  \%reload\_ext  \%ren  \%rep  \%rerun  \%reset  \%reset\_selective  \%rmdir  \%run  \%save  \%sc  \%set\_env  \%store  \%sx  \%system  \%tb  \%time  \%timeit  \%unalias  \%unload\_ext  \%who  \%who\_ls  \%whos  \%xdel  \%xmode
-         
-         Available cell magics:
-         \%\%!  \%\%HTML  \%\%SVG  \%\%bash  \%\%capture  \%\%cmd  \%\%debug  \%\%file  \%\%html  \%\%javascript  \%\%js  \%\%latex  \%\%perl  \%\%prun  \%\%pypy  \%\%python  \%\%python2  \%\%python3  \%\%ruby  \%\%script  \%\%sh  \%\%svg  \%\%sx  \%\%system  \%\%time  \%\%timeit  \%\%writefile
-         
-         Automagic is ON, \% prefix IS NOT needed for line magics.
+{\color{outcolor}Out[{\color{outcolor}1}]:} ['\_\_builtins\_\_',
+         '\_\_cached\_\_',
+         '\_\_doc\_\_',
+         '\_\_file\_\_',
+         '\_\_loader\_\_',
+         '\_\_name\_\_',
+         '\_\_package\_\_',
+         '\_\_path\_\_',
+         '\_\_spec\_\_',
+         'parse']
 \end{Verbatim}
             
+
+    
+        \subsection{Get help using . {[}Tab{]}}\label{get-help-using-.-tab}
+
+After typing the name of a variable, object or function following the
+\lstinline!.! character hit the \textbf{{[}Tab{]}} key. Typing
+\textbf{{[}Tab{]}} brings up a list of available options. Scroll through
+the list or type a letter to filter the list to certain starting
+letters. Use {[}Enter{]} to select the option you want.
+
+Tab completion can also be used during module importing, to see which
+functions and classes are available in a given module.
+    
+
+
+
+
+    
+        \begin{lstlisting}[language=Python]
+from math import <tab>
+\end{lstlisting}
+    
+
+
+
+
+    
+        \subsection{\texorpdfstring{Get help using the \texttt{help()}
+function}{Get help using the help() function}}\label{get-help-using-the-help-function}
+
+after importing a module, you can use the help() function to see
+documentation about the command if it is available:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{math}
+        \PY{n}{help}\PY{p}{(}\PY{n}{math}\PY{o}{.}\PY{n}{sin}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Help on built-in function sin in module math:
+
+sin({\ldots})
+    sin(x)
+    
+    Return the sine of x (measured in radians).
+
+
+    \end{Verbatim}
+
+
+    
+        \subsection{\texorpdfstring{Get help using \texttt{?} and
+\texttt{??}}{Get help using ? and ??}}\label{get-help-using-and}
+
+After importing a module, you can view help on the imported module by
+typing the module name followed by a question mark \lstinline!?!
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{statistics}
+        statistics.mean\PY{o}{?}
+\end{Verbatim}
+
+
+
+    
+        You can view the source code where a particular function lives using a
+double question mark \lstinline!??!
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} statistics.median\PY{o}{??}
+\end{Verbatim}
+
+
+
+    
+        \subsection{Help online}\label{help-online}
+
+Help is also avaiable online at on the Jupyter Notebook docs:
+
+\begin{quote}
+\url{http://jupyter.readthedocs.io/en/latest/}
+\end{quote}
+
+You can always try to find help by typing something into Google. The
+site Stack Overflow is devoted to programming questions and answers. The
+highest rated answers on Stack Overflow are at the top of each question
+page.
+    
+
+
+
 
     
         \newpage
@@ -5706,7 +6720,7 @@ output cells.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_280_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_312_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6077,7 +7091,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_292_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_324_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6183,7 +7197,7 @@ line shows the plot on the screen.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_297_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_329_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6224,7 +7238,7 @@ These daughter objects in turn have methods such as
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_299_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_331_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6361,7 +7375,7 @@ positions and \lstinline!CTEs! is the list of bar heights.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_312_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_344_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6416,7 +7430,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_315_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_347_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6444,7 +7458,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_316_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_348_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6544,7 +7558,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_324_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6581,7 +7595,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_328_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6659,7 +7673,7 @@ styles will be addressed in a subsequent section of this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_334_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6726,7 +7740,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_340_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_372_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6771,7 +7785,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_343_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_375_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6826,7 +7840,7 @@ the number of y-values. The list or array sizes passed to
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_346_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_378_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6887,7 +7901,7 @@ plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_348_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_380_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -6969,7 +7983,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_353_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_385_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7037,7 +8051,7 @@ side by side. This can be done in Matplotlib using \emph{subplots}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_358_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7097,7 +8111,7 @@ notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_363_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_395_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7172,7 +8186,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_398_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7199,7 +8213,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_367_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_399_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7226,7 +8240,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_368_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_400_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7253,7 +8267,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_369_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7332,7 +8346,7 @@ two 1D arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_376_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_408_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7386,7 +8400,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_379_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_411_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7454,7 +8468,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_382_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7521,7 +8535,7 @@ different color map.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_385_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_417_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7615,7 +8629,7 @@ define the quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_393_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7678,7 +8692,7 @@ arrow points straight down.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_429_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7753,7 +8767,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_433_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7798,7 +8812,7 @@ the \(x\) and \(y\) arrow starting point arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_435_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7841,7 +8855,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_405_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7884,7 +8898,7 @@ Matplotlib.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_439_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7978,7 +8992,7 @@ plots each in color
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_410_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_442_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8044,7 +9058,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_415_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_447_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8086,7 +9100,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_418_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_450_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8126,7 +9140,7 @@ and distance relative to the point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_420_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_452_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8198,7 +9212,7 @@ statinary object and model the fluid flow around the circle.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_422_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_454_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8261,7 +9275,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_429_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_461_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8316,7 +9330,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_432_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_464_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8366,7 +9380,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_435_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_467_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8421,7 +9435,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_438_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_470_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8924,7 +9938,7 @@ closed, and variable names that do not start with a letter.
         string = "problem solving
                                  \^{}
     SyntaxError: EOL while scanning string literal
-
+    
 
     \end{Verbatim}
 
@@ -8954,7 +9968,7 @@ complete the program.
         string = 10problems
                           \^{}
     SyntaxError: invalid syntax
-
+    
 
     \end{Verbatim}
 
@@ -10590,7 +11604,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_596_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_628_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
