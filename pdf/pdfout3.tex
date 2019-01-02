@@ -21,6 +21,7 @@
 \lstset{
 language={}, 
 basicstyle=\ttfamily,
+xleftmargin=4ex,
 stringstyle=\color{cm-string},
 commentstyle=\color{cm-comment},
 keywordstyle=\color{cm-keyword}\bfseries,
@@ -103,6 +104,9 @@ showstringspaces=false,
     % internal cross-reference links, web links for URLs, etc.)
     \usepackage{hyperref}
     \usepackage{longtable} % longtable support required by pandoc >1.10
+    
+
+    
     \usepackage{booktabs}  % table support for pandoc > 1.12.2
     \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
@@ -111,7 +115,7 @@ showstringspaces=false,
     \setcounter{secnumdepth}{1} %only chapter and sections are numbered, subsections and subsubsections are not numbered
     \setcounter{tocdepth}{1}    %only chapter and sections in TOC, subsections and subsubsections are not in TOC
     \usepackage{multicol} % need multicols for end of chapter key terms and end of chapter questions
-    \newenvironment{problems}{\begin{multicols}{2}}{\end{multicols}} %an environment for the review question sections, where two columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment problems in notebook cell metadata.
+    \newenvironment{problems}{}{} %an environment for the review question sections, where two columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment problems in notebook cell metadata.
 
 % in cell metadata
 %{
@@ -780,24 +784,24 @@ Python. Objects can change in size. Python objects can also contain
 mixed data types. Strings and floating point numbers can be part of the
 same list.
 
-Python has an extensive standard library. A huge number of object types,
+Python has an extensive Standard Library. A huge number of object types,
 functions and methods are available for use without importing any
-external modules. These include math functions, list methods, calls to a
-computer's system. There is a lot that can be done with the standard
-library. The first couple of chapters of this book will just use the
-standard library. It can do a lot.
+external modules. These include math functions, list methods, and calls
+to a computer's system. There is a lot that can be done with the Python
+Standard Library. The first couple of chapters of this book will just
+use the standard library. It can do a lot.
 
 Python has over 100,000 external packages available for download and
-use. They are easy to install off of the python package index, commonly
-called PyPI (``pie pee eye''). There is a python package for just about
+use. They are easy to install off of the Python Package Index, commonly
+called PyPI (``pie pee eye''). There is a Python package for just about
 everything. There are packages which can help you: interact with the
-web, make complex computations, do unit conversions, plot data, work
-with .csv, .xls, and .pdf files, manipulate images and video, read data
-from sensors and test equipment, train machine learning algorithms,
-design web apps, work with GIS data, work with astronautical data, and
-many more added every day. In this book, we will use some of the more
-useful Python packages for engineers such as numpy, matplotlib, pandas,
-and scipy.
+web, make complex computations, calculate unit conversions, plot data,
+work with .csv, .xls, and .pdf files, manipulate images and video, read
+data from sensors and test equipment, train machine learning algorithms,
+design web apps, work with GIS data, work with astronautical data. There
+are and many more Python packages added to PyPI every day. In this book,
+we will use some of the more useful Python packages for problem solvers
+such as NumPy, Matplotlib, and SymPy.
     
 
 
@@ -807,36 +811,36 @@ and scipy.
         \subsection{Python is easy to learn and
 use}\label{python-is-easy-to-learn-and-use}
 
-Engineers solve the world's problems in teams. One way Python helps
-solve these problems faster than other programming languages is that it
-is easy to learn and use. Python programs tend to be shorter and quicker
-to write than a program that does a similar function in other languages.
-In the rapid design, prototype, test, iterate cycle programming
-solutions can be spun up quickly. Python is also an easy language for
-fellow engineers on your team to learn. It is also quite human readable.
-While programmers can become preoccupied with a program's runtime, it is
+One way Problem solvers code solutions faster in Python faster than
+coding solutions in other programming languages is that Python is easy
+to learn and use. Python programs tend to be shorter and quicker to
+write than a program which completes a similar function in another
+languages. In the rapid design, prototype, test, iterate cycle
+programming solutions in Python can be written and tested quickly.
+Python is also an easy language for fellow problem solvers on your team
+to learn. Python's language syntax is also quite human readable. While
+programmers can become preoccupied with a program's runtime, it is
 development time that takes the longest.
 
 \subsubsection{Python is transportable}\label{python-is-transportable}
 
 Python can be installed and run on each of the three major operating
 systems: Windows, Mac and Linux. On Mac and Linux Python comes installed
-out of the box. Just open up a terminal in on a Mac OSX or Linux machine
-and type \texttt{python}. That's it, you are now using Python. On
-Windows, I recommend downloading and using the Anaconda distribution.
-The Anaconda distribution is free and can be installed on all three
-major operating systems. The same programming environment can be
-replicated across the three different operating systems.
+out of the box. Just open up a terminal in on a MacOS or Linux machine
+and type \lstinline!python!. That's it, you are now using Python. On
+Windows, I recommend downloading and installing the Anaconda
+distribution of Python. The Anaconda distribution of Python is free and
+can be installed on all three major operating systems.
 
 \subsubsection{Python is free}\label{python-is-free}
 
-MATLAB and LabView cost students to use and cost companies and colleges
-even more. Python is free to download and use. It is also open source
-and free to modify, contribute to, and propose improvements. All of the
-packages available for download on the Python Package Index, PyPI
-(pronounced pie-pee-eye) are free to download and install. Many more
-packages, scripts and utilities can be found in open source repos on
-GitHub and bitbucket.
+Some computer languages used for problem solving such as MATLAB and
+LabView cost money to download and install. Python is free to download
+and use. Python is also open source and individuals are free to modify,
+contribute to, and propose improvements to Python. All of the packages
+available on the Python Package Index are free to download and install.
+Many more packages, scripts and utilities can be found in open source
+code repositories on GitHub and BitBucket.
 
 \subsubsection{Python is growing}\label{python-is-growing}
 
@@ -1780,11 +1784,19 @@ distribution of Python on your computer.
         \begin{key_terms}
         Anaconda
 
+Anaconda distribution of Python
+
+Anaconda Prompt
+
 download
 
 install
 
 Python
+
+Python Interpreter
+
+Python REPL
 
 operating system
 
@@ -1817,7 +1829,7 @@ PATH
 Python Interpreter?
 
 Q01.02 What is the difference between the version of Python at
-Python.org and the version of Python at Anaconda.com?
+python.org and the version of Python at Anaconda.com?
 
 Q01.03 What are the advantages and disadvantages of using the Anaconda
 distribution of Python compared to using the version of Python at
@@ -1825,13 +1837,225 @@ python.org?
 
 Q01.04 There are many different applications to edit Python code. Some
 examples include: JupyterLab, Sublime Text, Visual Studio Code, and
-Pycharm. Pick two Python code editors and explain some features.
+PyCharm. Pick two Python code editors and explain a feature of each code
+editor.
 
-Q01.05
+Q01.05 What are some advantages of Python compared to other computer
+programming languages?
 
-Q01.06
+Q01.06 What is PyPI? How many packages are currently available for
+download on PyPI?
 
-Q01.07
+Q01.07 Name three modules that are part of the Python Standard Library.
+Write a short description of what each of the modules you choose is used
+for.
+
+Q01.08 Which computer operating systems can Python be installed on?
+
+Q01.09 How much does Python cost to download and install?
+
+Q01.10 What are three subject areas that have seen a growth in the use
+of Python.
+
+Q01.11 Besides PyPI where else can problem solvers go to find Python
+packages, scripts and utilities?
+
+Q01.12 Name three packages that come pre-installed with the Anaconda
+distribution of Python
+
+Q01.13 How much does the Anaconda distribution of Python cost to
+download and install?
+
+Q01.14 Which operating systems can the Anaconda distribution of Python
+be installed on?
+
+Q01.15 What type of program is the Anaconda Prompt?
+
+Q01.16 What is another name for the Python interpreter?
+
+Q01.17 How can you bring up the Python interpreter (the Python REPL)
+using the Anaconda Prompt?
+
+Q01.18 What prompt is shown in the Python interpreter (the Python REPL)?
+
+Q01.19 What command do you type to close the Python interpreter (the
+Python REPL)?
+
+Q01.20 What are the first three lines in \emph{The Zen of Python} by Tim
+Peters?
+
+Q01.21 How can you bring up the Anaconda Prompt?
+        \end{problems}
+
+    
+
+
+
+
+    
+        \subsubsection{Installing Python on
+MacOS}\label{installing-python-on-macos}
+    
+
+
+
+
+    
+        \begin{problems}
+        Q01.30 What web address do you go to download the Anaconda distribution
+of Python for MacOS?
+
+Q01.31 What file extension does the installer for MacOS of the Anaconda
+distribution of Python use?
+
+Q01.32 When you install the Anaconda distribution of Python on MacOS,
+what is advised to do for the installation options?
+
+Q01.33 Why do you need to \lstinline!source! the \textbf{\emph{.bashrc}}
+file after you install the Anaconda distribution of Python for MacOS?
+
+Q01.34 How can you bring up the Python interpreter (the Python REPL)
+using the MacOS terminal?
+
+Q01.35 Which version of Python is it advisable to download and install
+on MacOS?
+
+Q01.36 Python can be installed on MacOS using a terminal program called
+\textbf{Homebrew}. What command is issued to the MacOS terminal to
+install Python using \textbf{Homebrew}?
+
+Q01.37 What version of Python comes pre-installed on MacOS?
+        \end{problems}
+
+    
+
+
+
+
+    
+        \subsubsection{Installing Python on
+Linux}\label{installing-python-on-linux}
+    
+
+
+
+
+    
+        \begin{problems}
+        Q01.40 What version(s) of Python comes pre-installed on most Linux
+distributions?
+
+Q01.41 In Linux, what happens when you type \lstinline!python! at the
+terminal compared to when you type \lstinline!python3! at the terminal?
+
+Q01.42 If you use the system version of Python 3 installed on Linux,
+what command must you enter to install Python packages to the Python 3
+version that comes pre-installed?
+
+Q01.43 What kind of file type (what is the file extension) is downloaded
+from Anaconda.com to install the Anaconda distribution of Python on
+Linux?
+
+Q01.44 Why do you need to \lstinline!source! the \textbf{\emph{.bashrc}}
+file after you install the Anaconda distribution of Python for Linux?
+
+Q01.45 How can you bring up the Python interpreter (the Python REPL)
+using a Linux terminal?
+
+Q01.46 Which version of Python is it advisable to download and install
+on Linux?
+
+Q01.47 What is a disadvantage of using the version of Python that comes
+pre-installed on Linux, compared to using the Anaconda distribution of
+Python on Linux?
+
+Q01.48 Before you install the Anaconda distribution of Python on Linux,
+what version of Python are you most likely to see when you enter the
+command \lstinline!$ python! in a Linux terminal?
+
+Q01.49 Before you install the Anaconda distribution of Python on Linux,
+what version of Python are you most likely to see when you enter the
+command \lstinline!$ python3! in a Linux terminal?
+        \end{problems}
+
+    
+
+
+
+
+    
+        \subsubsection{Installing Python from
+Python.org}\label{installing-python-from-python.org}
+    
+
+
+
+
+    
+        \begin{problems}
+        Q01.50 What web address do you go to download Python from Python.org?
+
+Q01.51 What option is advised to select when downloading and installing
+Python from Python.org on Windows?
+
+Q01.52 If Python 3 is not available on Linux, what package repository
+can Python 3.6 be downloaded from?
+
+Q01.53 Go to Python.org. What is the current version of Python available
+for download?
+        \end{problems}
+
+    
+
+
+
+
+    
+        \subsubsection{Errors and Explanations}\label{errors-and-explanations}
+    
+
+
+
+
+    
+        \begin{problems}
+        For each of the problems below, run the line of code. Copy the output,
+then suggest and run a line of code that fixes the error.
+
+Q01.91 Open the Python Interpreter (the Python REPL). Try to close the
+Python Interpreter with the command:
+
+\begin{lstlisting}
+>>> exit
+\end{lstlisting}
+
+Q02.92 Open the Python Interpreter (the Python REPL). Try to view
+\emph{The Zen of Python} by Tim Peters with the command:
+
+\begin{lstlisting}
+>>> Zen of Python
+\end{lstlisting}
+
+Q01.93 Open the Anaconda Prompt. Try to open the Python Interpreter (the
+Python REPL) with the command:
+
+\begin{lstlisting}
+> python3
+\end{lstlisting}
+
+Q01.94 Open the Anaconda Prompt. Try to open the Python Interpreter (the
+Python REPL) with the command:
+
+\begin{lstlisting}
+> Python
+\end{lstlisting}
+
+Q02.95 Open the Python Interpreter (the Python REPL). Try to view
+\emph{The Zen of Python} by Tim Peters with the command:
+
+\begin{lstlisting}
+>>> import this()
+\end{lstlisting}
         \end{problems}
 
     
@@ -6720,7 +6944,7 @@ output cells.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_312_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_320_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7091,7 +7315,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_324_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_332_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7197,7 +7421,7 @@ line shows the plot on the screen.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_329_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_337_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7238,7 +7462,7 @@ These daughter objects in turn have methods such as
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_331_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_339_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7375,7 +7599,7 @@ positions and \lstinline!CTEs! is the list of bar heights.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_344_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_352_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7430,7 +7654,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_347_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_355_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7458,7 +7682,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_348_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7558,7 +7782,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_364_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7595,7 +7819,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_368_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7673,7 +7897,7 @@ styles will be addressed in a subsequent section of this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_374_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7740,7 +7964,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_372_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_380_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7785,7 +8009,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_375_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_383_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7840,7 +8064,7 @@ the number of y-values. The list or array sizes passed to
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_378_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7901,7 +8125,7 @@ plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_380_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_388_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7983,7 +8207,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_385_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_393_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8051,7 +8275,7 @@ side by side. This can be done in Matplotlib using \emph{subplots}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_398_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8111,7 +8335,7 @@ notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_395_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8186,7 +8410,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_398_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_406_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8213,7 +8437,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_399_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8240,7 +8464,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_400_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_408_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8267,7 +8491,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_409_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8346,7 +8570,7 @@ two 1D arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_408_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8400,7 +8624,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_411_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_419_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8468,7 +8692,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_422_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8535,7 +8759,7 @@ different color map.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_417_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8629,7 +8853,7 @@ define the quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_433_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8692,7 +8916,7 @@ arrow points straight down.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_429_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8767,7 +8991,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_433_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_441_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8812,7 +9036,7 @@ the \(x\) and \(y\) arrow starting point arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_435_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_443_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8855,7 +9079,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_445_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8898,7 +9122,7 @@ Matplotlib.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_439_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_447_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8992,7 +9216,7 @@ plots each in color
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_442_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_450_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9058,7 +9282,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_447_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_455_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9100,7 +9324,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_450_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_458_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9140,7 +9364,7 @@ and distance relative to the point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_452_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_460_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9212,7 +9436,7 @@ statinary object and model the fluid flow around the circle.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_454_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_462_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9275,7 +9499,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_461_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_469_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9330,7 +9554,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_464_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_472_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9380,7 +9604,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_467_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_475_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9435,7 +9659,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_470_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_478_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9515,24 +9739,208 @@ Python For Data Science: Matplotlib Cheat Sheet from DataCamp:
 
 
     
+        \subsubsection{Line plots}\label{line-plots}
+    
+
+
+
+
+    
         \begin{problems}
-        Q06.01
+        Q06.01 Create a plot of the function \(y=\cos(x)\) from \(x = -2\pi\) to
+\(2\pi\)
 
-Q06.02
+Q06.02 Create a plot of the function \(y=\frac{1}{2}{e^x}\) from
+\(x = 0\) to \(5\)
 
-Q06.03
+Q06.03 Create a plot of the function \(y=\sqrt{2x}\) from \(x = 1\) to
+\(10\)
 
-Q06.04
+Q06.04 Create a plot of the function \(y=mx+b\), where \(m=-1\) and
+\(b=-4\). Limit the plot to values of \(x=-5\) to \(5\).
 
-Q06.05
+Q06.05 Create a plot of the function \(y=ax^2+bx+c\), where \(a=1/2\),
+\(b=-1/3\) and \(c=4\). Limit the plot to values of \(x=-10\) to
+\(x=10\)
 
-Q06.06
+Q06.06 Create a plot of the function \(y=x^3+3\) from \(x=-3\) to
+\(x=3\).
 
-Q06.07
+Q06.07 Create a plot of the function \(y=2x^3-9x^2+7x+6\) from \(x=-3\)
+to \(x=4\).
 
-Q06.08
+Q06.08 Plot the data set below with a line plot. Use Matplotlib's
+default index system, or create a set of x values from \(x=0\) to
+\(x = 4\).
 
-Q06.09
+\[ y = [-1, 2, -3, 1, 0] \]
+
+Q06.09 Plot the following three functions on the same set of axis. Use a
+different color line for each function.
+
+\[ x = \cos(t) \]
+
+\[ y = \cos(t/2) \]
+
+\[ z = \cos(\sqrt(t)) \]
+
+Set values of \(t=-4\pi\) to \(4\pi\)
+
+Q06.10 Plot the following three functions on the same set of axis. Use a
+thick red line for the \(\cos\) function. A line blue line for the
+\(\sin\) function and a dashed green line for the \(atan\) function (the
+arc tangent function).
+
+\[ x = \cos(r/10) \]
+
+\[ y = \sin(r/4) \]
+
+\[ z = atan(r) \]
+
+Set values of \(r=-1/2\) to \(1/2\)
+        \end{problems}
+
+    
+
+
+
+
+    
+        \subsubsection{Bar Charts and Pie
+Charts}\label{bar-charts-and-pie-charts}
+    
+
+
+
+
+    
+        \begin{problems}
+        Q06.30 According to the University of Waterloo, world energy consumption
+in 2006 from the 5 top energy resources were:
+
+\[ Natural \ Gas = 24\% \]
+
+\[ Hydro = 6\% \]
+
+\[ Nuclear = 6\% \]
+
+\[ Oil = 36\% \]
+
+\[ Coal = 28\% \]
+
+Build a pie chart of distribution of world energy consumption based on
+the data above.
+
+Q06.31 According to the 2017 Python Developer's Survey. The computer
+operating system used by Python Developers breaks down as follows
+
+\[ Windows = 49\% \]
+
+\[ Linux = 19\% \]
+
+\[ MacOS = 15\% \]
+
+\[ Other = 17\% \]
+
+Build a pie chart of the computer operating system used by Python
+Developers in 2017.
+
+Q06.32 According to the 2017 Python Developer's Survey. The commercial
+cloud providers used by Python Developers breaks down as follows:
+
+\[ Amazon Web Services = 67\% \]
+
+\[ Google Cloud = 29\% \]
+
+\[ Heroku = 26\% \]
+
+\[ Digital Ocean = 23\% \]
+
+\[ Microsoft Azure = 16\% \]
+
+\[ Other = 13\% \]
+
+Build a pie chart of the commercial cloud providers used by Python
+Developers in 2017.
+
+Q06.33 Create a plot of the function \(y=\sqrt{2x}\) from \(x = 1\) to
+\(10\)
+
+Q06.35 A list of grades in a college engineering course and the
+corresponding number of students who earned each grade is shown below:
+
+\begin{lstlisting}
+grades = ['A','B','C','D','F']
+
+number_of_students =[3, 5, 8, 1, 2]
+\end{lstlisting}
+
+Build a bar plot of the grade distribution from the college engineering
+class.
+
+Q06.36 The proof strength of four different grades of bolts is shown
+below:
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Bolt Type & Proof Strength (psi)\tabularnewline
+\midrule
+\endhead
+Grade 2 & 33,000 psi\tabularnewline
+Grade 5 & 74,000 psi\tabularnewline
+Grade 8 & 120,000 psi\tabularnewline
+Grade A325 & 85,000 psi\tabularnewline
+\bottomrule
+\end{longtable}
+
+Build a bar chart of the proof strength of the four types of bolts.
+Include labels on the x-axis and y-axis. Include a title.
+
+Q06.37 According to the 2017 Python Developer's Survey, the IDE
+(Integrated Development Environment) used by \emph{Scientific} Python
+Developers breaks down as follows:
+
+\[ PyCharm \ Professional = 12\% \]
+
+\[ PyCharm \ CE = 17\% \]
+
+\[ Sublime \ Text = 9\% \]
+
+\[ Vim = 8\% \]
+
+\[ IDLE = 7\% \]
+
+\[ Atom = 7\% \]
+
+\[ VS \ Code = 6\% \]
+
+\[ Notepad \ ++ = 6\% \]
+
+\[ Eclipse = 3\% \]
+
+\[ Emacs = 3\% \]
+
+Build a bar chart of the IDE's used by Python Developers in 2017.
+
+Q06.38 Create a plot of the function \(y=x^3+3\) from \(x=-3\) to
+\(x=3\).
+
+Q06.39 The tensile strength of 4 steel heat treatments is below.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Heat Treatment & Tensile Strength (MPa)\tabularnewline
+\midrule
+\endhead
+Annealed & 390 MPa\tabularnewline
+Normalized & 452 MPa\tabularnewline
+Oil Quench & 734 MPa\tabularnewline
+Oil Quench and Temper & 422 MPa\tabularnewline
+\bottomrule
+\end{longtable}
+
+Build a bar plot of tensile strength vs.~heat treatment using the data
+above.
         \end{problems}
 
     
@@ -9938,7 +10346,7 @@ closed, and variable names that do not start with a letter.
         string = "problem solving
                                  \^{}
     SyntaxError: EOL while scanning string literal
-    
+
 
     \end{Verbatim}
 
@@ -9968,7 +10376,7 @@ complete the program.
         string = 10problems
                           \^{}
     SyntaxError: invalid syntax
-    
+
 
     \end{Verbatim}
 
@@ -11604,7 +12012,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_628_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_639_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
