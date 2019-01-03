@@ -104,9 +104,6 @@ showstringspaces=false,
     % internal cross-reference links, web links for URLs, etc.)
     \usepackage{hyperref}
     \usepackage{longtable} % longtable support required by pandoc >1.10
-    
-
-    
     \usepackage{booktabs}  % table support for pandoc > 1.12.2
     \usepackage[inline]{enumitem} % IRkernel/repr support (it uses the enumerate* environment)
     \usepackage[normalem]{ulem} % ulem is needed to support strikethroughs (\sout)
@@ -115,7 +112,9 @@ showstringspaces=false,
     \setcounter{secnumdepth}{1} %only chapter and sections are numbered, subsections and subsubsections are not numbered
     \setcounter{tocdepth}{1}    %only chapter and sections in TOC, subsections and subsubsections are not in TOC
     \usepackage{multicol} % need multicols for end of chapter key terms and end of chapter questions
-    \newenvironment{problems}{}{} %an environment for the review question sections, where two columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment problems in notebook cell metadata.
+
+    \newenvironment{problems}{}{}  %keep regular one column formatting in problems environment. Long table would not output in two col mode
+%    \newenvironment{problems}{\begin{multicols}{2}}{\end{multicols}} %an environment for the review question sections, where two columns are shown instead of one column everywhere else. Depends on the logic looking for latex environment problems in notebook cell metadata.
 
 % in cell metadata
 %{
@@ -732,8 +731,7 @@ to:}\label{by-the-end-of-this-chapter-you-will-be-able-to}
 \begin{itemize}
 \tightlist
 \item
-  Describe why Python is a good programming language for undergraduate
-  engineers
+  Describe why Python is a good programming language for problem solvers
 \item
   Describe applications where Python is used
 \item
@@ -854,47 +852,6 @@ areas for engineers.
 
 
     
-        \subsection{Python has an extensive standard library of modules and a
-vast array of external
-modules}\label{python-has-an-extensive-standard-library-of-modules-and-a-vast-array-of-external-modules}
-    
-
-
-
-
-    
-        \subsubsection{The Python Standard
-Library}\label{the-python-standard-library}
-
-The Python Standard Library includes:
-
-math, statistics, os, urllib, table for what they are used for. More can
-be found on Read-the-docs
-
-\subsubsection{External Modules available on
-PyPI}\label{external-modules-available-on-pypi}
-
-There are over 100,000 external modules available for Python on PyPI.
-Ones useful for engineers include
-
-\textbf{numpy}, \textbf{matplotlib} and \textbf{jupyter} table for what
-they are used for
-
-installing Python modules can be done on the command line or at the
-Anaconda Prompt using;
-
-\begin{lstlisting}
-$ pip install <module_name>
-\end{lstlisting}
-
-where \lstinline!<module_name>! is the name of the module you want to
-install.
-    
-
-
-
-
-    
         \section{The Anaconda Distribution of
 Python}\label{the-anaconda-distribution-of-python}
     
@@ -903,7 +860,7 @@ Python}\label{the-anaconda-distribution-of-python}
 
 
     
-        I recommend problem solvers install the \emph{Anaconda Distribution of
+        I recommend problem solvers install the \emph{Anaconda distribution of
 Python}. The following section details the differences between the
 Anaconda distribution of Python and the version of Python you can
 download from \href{https://python.org}{Python.org}
@@ -917,19 +874,21 @@ download from \href{https://python.org}{Python.org}
 Python?}\label{how-is-anaconda-different-from-python}
 
 When you download Python from Python.org, you get the \emph{Python
-Interpreter}, a little text editing program called IDLE and all of the
-Python Standard Library modules. The Python Interpreter is an
-application or program that runs your Python code. A program written in
-the Python programming language is run with the Python Interpreter. So
-Python corresponds to both the language that a program is written in as
-well as the application that runs the program.
+Interpreter}, a little text editing program called \textbf{IDLE} and all
+of the Python Standard Library modules.
 
-When you download Anaconda from Anaconda.com, you get a Python
-Interpreter, Anaconda Prompt (a command line program), Spyder (a code
-editor) and about 200 extra Python modules that aren't included in The
-Standard Library. The Anaconda distribution of Python also includes a
-program called Anaconda Navigator that allows you to launch Jupyter
-Notebooks quickly.
+The Python Interpreter is an application or program that runs your
+Python code. A program written in the Python programming language is run
+with the Python Interpreter. So Python corresponds to both the language
+that a program is written in as well as the application that runs the
+program.
+
+When you download the Anaconda distribution of Python from Anaconda.com,
+you get a Python Interpreter, the \textbf{Anaconda Prompt} (a command
+line program), \textbf{Spyder} (a code editor) and about 600 extra
+Python modules that aren't included in the Python Standard Library. The
+Anaconda distribution of Python also includes a program called Anaconda
+Navigator that allows you to launch Jupyter notebooks quickly.
     
 
 
@@ -944,20 +903,20 @@ Anaconda (with all the extra stuff it comes with) from Anaconda.com, you
 will be able to write and execute Python code. However, there are a
 couple of advantages to using the Anaconda distribution of Python.
 
-\subsubsection{Anaconda includes Python plus about 200 additional Python
-packages}\label{anaconda-includes-python-plus-about-200-additional-python-packages}
+\subsubsection{Anaconda includes Python plus about 600 additional Python
+packages}\label{anaconda-includes-python-plus-about-600-additional-python-packages}
 
-Anaconda is advantageous because it includes Python as well as about 200
-additional Python packages. These other packages are all free to use.
-The packages that come with Anaconda includes many of the most common
-Python packages use to solve problems. If you download Anaconda, you get
-Python including The Standard Library plus 200 extra packages. If you
-download Python from Python.org, you just get Python and The Standard
-Library but no additional modules. You could install the extra modules
-that come with Anaconda (that don't come with plain old Python), but why
-not save a step (or 200 steps) and download one thing (Anaconda) instead
-of downloading 201 and one things (200 extra modules + 1 Python
-download).
+The Anaconda distribution of Python is advantageous because it includes
+Python as well as about 600 additional Python packages. These additional
+packages are all free to install. The packages that come with Anaconda
+includes many of the most common Python packages use to solve problems.
+If you download Anaconda, you get Python including the Python Standard
+Library plus about 600 extra packages. If you download Python from
+Python.org, you just get Python and The Standard Library but no
+additional modules. You could install the extra modules that come with
+Anaconda (that don't come with plain old Python), but why not save a
+step (or about 600 steps) and just install Anaconda instead of
+installing about 600 different modules?
 
 \subsubsection{Anaconda installs without administrator
 privileges}\label{anaconda-installs-without-administrator-privileges}
@@ -966,7 +925,8 @@ Even if you don't have the ability to install programs on a computer,
 like a computer in a school computer lab, you can still download and use
 Anaconda. The Anaconda distribution of Python will also allow you to
 install additional modules from the Python package index
-(\href{https://pypi.org/}{PyPI.org}) and conda-forge, the conda package
+(\href{https://pypi.org/}{PyPI.org}) and conda-forge
+(\href{https://conda-forge.org/}{conda-forge.org}), the conda package
 index.
 
 \subsubsection{Anaconda works on MacOS}\label{anaconda-works-on-macos}
@@ -976,13 +936,15 @@ computer. Most MacOS installations come with Python included. The
 problem is that the version of Python that comes with MacOS is old
 (usually legacy Python, Python 2) and the version of Python that comes
 with MacOS is locked up behind a set of administrator privileges.
-Because the pre-installed version of Python can require administrator
-privileges, you can have trouble using the version of Python that comes
-on MacOS. Some things will seem to work fine, and then other things
-won't run at all, or you will keep getting asked for an administrator
-password over and over. Downloading and installing Anaconda (separate
-from the version of Python that came with MacOS) prevents most of these
-problems.
+Because the pre-installed version of Python included with MacOS can
+require administrator privileges, you can have trouble with installation
+and run-time problems. Some things will seem to work fine, and then
+other things won't run at all, or you will keep getting asked for an
+administrator password over and over.
+
+Downloading and installing Anaconda (separate from the version of Python
+that came with MacOS) prevents most of the problems on MacOS caused by
+using the pre-installed version of Python.
 
 \subsubsection{Anaconda makes package management and virtual
 environments
@@ -1012,22 +974,25 @@ Windows}\label{installing-anaconda-on-windows}
 
     
         For problem solvers, I recommend installing and using the Anaconda
-Distribution of Python.
+distribution of Python.
     
 
 
 
 
     
-        This section details the installation of the Anaconda Distribution of
+        This section details the installation of the Anaconda distribution of
 Python on Windows 10. I think the Anaconda distribution of Python is the
 best option for problem solvers who want to use Python. Anaconda is free
 (although the download is large which can take time) and can be
 installed on school or work computers where you don't have administrator
 access or the ability to install new programs. Anaconda comes bundled
-with over 100 packages pre-installed including \textbf{NumPy},
+with about 600 packages pre-installed including \textbf{NumPy},
 \textbf{Matplotlib} and \textbf{SymPy}. These three packages are very
 useful for problem solvers and will be discussed in subsequent chapters.
+
+Follow the steps below to install the Anaconda distribution of Python on
+Windows.
 
 \subsubsection{Steps:}\label{steps}
 
@@ -1039,11 +1004,11 @@ useful for problem solvers and will be discussed in subsequent chapters.
 \item
   Select Windows
 \item
-  Download the .exe installer
+  Download the \textbf{\emph{.exe}} installer
 \item
-  Open and run the .exe installer
+  Open and run the \textbf{\emph{.exe}} installer
 \item
-  Open the Anaconda prompt and run some Python code
+  Open the \textbf{Anaconda Prompt} and run some Python code
 \end{enumerate}
     
 
@@ -1109,8 +1074,8 @@ address.
 \caption{anaconda}
 \end{figure}
 
-The download is quite large (over 500 MB) so it may take a while to
-complete
+The download is quite large (over 500 MB) so it may take a while to for
+Anaconda to download.
 
 \begin{figure}
 \centering
@@ -1182,8 +1147,7 @@ This opens the \textbf{Anaconda Prompt}. \textbf{Anaconda} is the Python
 distribution and the \textbf{Anaconda Prompt} is a command line shell (a
 program where you type in commands instead of using a mouse). The black
 screen and text that makes up the \textbf{Anaconda Prompt} doesn't look
-like much, but it is really helpful for an undergraduate engineer using
-Python.
+like much, but it is really helpful for problem solvers using Python.
 
 At the Anaconda prompt, type \lstinline!python! and hit
 \lstinline![Enter]!. The \lstinline!python! command starts the Python
@@ -1245,8 +1209,8 @@ MacOS}\label{installing-anaconda-on-macos}
     
         This section details the installation of the Anaconda Distribution of
 Python on MacOS. Most versions of MacOS come pre-installed with legacy
-Python (Version 2.7). You can confirm this legacy version of Python is
-installed by opening and running a command at the MacOS
+Python (Version 2.7). You can confirm the legacy version of Python is
+installed on MacOS by opening and running a command at the MacOS
 \textbf{terminal}. To open the MacOS terminal use
 \lstinline![command]+[Space Bar]! and type \lstinline!terminal! in the
 Spotlight Search bar.
@@ -1259,16 +1223,18 @@ need to be typed):
 $ python
 \end{lstlisting}
 
-You will most likely see version 2.7 is installed. An issue for MacOS
-users is that the installed system version of Python has a set of
-permissions that will not always allow Python to run and may not allow
-Python to install external packages. Therefore, I recommend the Anaconda
-Distribution of Python is installed alongside the system version of
-Python that comes with MacOS. You will be able to run Python code using
-the Anaconda Distribution of Python, and you will be able to install
-external packages on the Anaconda Distribution of Python.
+You will most likely see Python version 2.7 is installed. An issue for
+MacOS users is that the installed system version of Python has a set of
+permissions that may always allow Python to run and may not allow users
+to install external packages. Therefore, I recommend the Anaconda
+distribution of Python is installed alongside the system version of
+Python that comes pre-installed with MacOS. You will be able to run
+Python code using the Anaconda distribution of Python, and you will be
+able to install external packages using the Anaconda distribution of
+Python.
 
-To install the Anaconda Distribution of Python, follow the steps below:
+Follow the steps below to install the Anaconda distribution of Python on
+MacOS.
 
 \subsubsection{Steps:}\label{steps}
 
@@ -1346,9 +1312,9 @@ your Work Email address.
         \subsubsection{3. Open the .pkg
 installer}\label{open-the-.pkg-installer}
 
-Using the MacOS Finder, navigate to the downloads folder and
-double-click the \textbf{\emph{.pkg}} installer file you just
-downloaded. It may be helpful to order your downloads by date to find
+Navigate to the Downloads folder and double-click the
+\textbf{\emph{.pkg}} installer file you just downloaded. It may be
+helpful to order the contents of the Downloads folder by date to find
 the \textbf{\emph{.pkg}} file.
     
 
@@ -1444,15 +1410,15 @@ In the terminal type:
 $ python
 \end{lstlisting}
 
-You will most likely see version 2.7 is installed. If you enter:
+You will most likely see Python Version 2.7 is installed. If you enter:
 
 \begin{lstlisting}
 $ python3
 \end{lstlisting}
 
-You will most likely see version 3.6 is installed. You can use this
-version of Python, but each time a new package needs to be downloaded,
-the \lstinline!$ pip3 install! command must be used.
+You will most likely see Python Version 3.6 is also installed. You can
+use the 3.6 Version of Python, but each time a new package needs to be
+downloaded, the \lstinline!$ pip3 install! command must be used.
 
 Install the Anaconda distribution of Python to follow the examples in
 the book without the need to install additional third-party packages.
@@ -1575,7 +1541,7 @@ $ ls
 Anaconda3-5.2.0-Linux-x86_64.sh
 \end{lstlisting}
 
-Run the installer script with bash
+Run the installer script with bash.
 
 \begin{lstlisting}
 $ bash Anaconda3-5.2.0-Linux-x86_64.sh
@@ -1678,8 +1644,8 @@ during the installation.
 
 
     
-        \subsection{Installing Python on Mac
-OSX}\label{installing-python-on-mac-osx}
+        \subsection{Installing Python on
+MacOS}\label{installing-python-on-macos}
 
 Go to \url{https://www.python.org/downloads/mac-osx/} and download the
 latest release.
@@ -1709,7 +1675,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> exit()
 \end{lstlisting}
 
-In the code block above the version of Python is
+In the code block above, the version of Python is
 \lstinline!Python 2.7.12!. If the Python version is 2.7 or below, try
 the command \lstinline!$ python3!.
 
@@ -1742,7 +1708,7 @@ the \textbf{\emph{.bashrc}} file.
 
 \begin{lstlisting}
 $ cd ~
-$ echo  'PATH=/usr/bin:$PATH' >> ~/.bashrc 
+$ echo  "PATH=/usr/bin:$PATH" >> ~/.bashrc 
 $ echo "alias python3.6='/usr/bin/python3.6'" >> ~/.bashrc
 $ source .bashrc
 $ python3.6
@@ -1784,8 +1750,6 @@ distribution of Python on your computer.
         \begin{key_terms}
         Anaconda
 
-Anaconda distribution of Python
-
 Anaconda Prompt
 
 download
@@ -1793,6 +1757,8 @@ download
 install
 
 Python
+
+Legacy Python
 
 Python Interpreter
 
@@ -2589,7 +2555,7 @@ True
 \item
   variable names must start with a letter
 \item
-  variable names cab only contain letters, numbers, and the underscore
+  variable names can only contain letters, numbers, and the underscore
   character \lstinline!_!
 \item
   variable names can not contain spaces
@@ -2609,7 +2575,7 @@ True
 
 
     
-        \begin{lstlisting}[language=Python]
+        \begin{lstlisting}
 constant = 4
 
 new_variable = 'var'
@@ -2631,7 +2597,7 @@ SQUARES = 4
 
 
     
-        \begin{lstlisting}[language=Python]
+        \begin{lstlisting}
 a constant = 4
 
 3newVariables = [1, 2, 3]
@@ -2651,18 +2617,19 @@ The Arrhenius relationship states
 
 \[ n = n_{v}e^{-Q_v/(RT)} \]
 
-for a system where \(n_v = 2.0 \times 10^{-3}\), \(Q_v = 5\),
-\(R=3.18\), and \(T=293\), calculate \(n\).
+In a system where \(n_v = 2.0 \times 10^{-3}\), \(Q_v = 5\), \(R=3.18\),
+and \(T=293\), calculate \(n\).
 
 Use variables to assign a value to each one of the constants in the
 problem and calculate \(n\).
 
 \begin{lstlisting}[language=Python]
->>> nv = 2.0**(-0.3)
+>>> nv = 2.0e(-0.3)
 >>> Qv = 5
 >>> R = 3.18
 >>> T = 293
->>> n = nv*e**(-1*Qv/(R*T))
+>>> from math import exp
+>>> n = nv*exp(-1*Qv/(R*T))
 >>> n
 0.8079052775625613
 \end{lstlisting}
@@ -2685,13 +2652,13 @@ punctuation and spaces in single or double quotes.
 
 \begin{lstlisting}[language=Python]
 >>> word = "Solution"
->>> another_word = "my solution"
+>>> another_word = "another solution"
 >>> third_word = "3rd solution!"
 \end{lstlisting}
 
-Some operations we can do on strings include concatenation (combining
-strings), logical comparisons (comparing strings) and indexing (pulling
-specific characters out of strings).
+In Python, some operations we can do on strings include concatenation
+(combining strings), logical comparisons (comparing strings) and
+indexing (pulling specific characters out of strings).
     
 
 
@@ -2710,11 +2677,11 @@ operator.
 
 \begin{lstlisting}[language=Python]
 >>> word = "Solution"
->>> another_word = "my solution"
+>>> another_word = "another solution"
 >>> third_word = "3rd solution!"
 >>> all_words = word+another_word+third_word
 >>> all_words
-'Solutionmy solution3rd solution!'
+'Solutionanother solution3rd solution!'
 \end{lstlisting}
 
 To include spaces in the concatenated string, add a string which just
@@ -2722,11 +2689,11 @@ contains one space \lstinline!" "! in between each string you combine.
 
 \begin{lstlisting}[language=Python]
 >>> word = "Solution"
->>> another_word = "my solution"
+>>> another_word = "another solution"
 >>> third_word = "3rd solution!"
 >>> all_words = word + " " + another_word + " " + third_word
 >>> all_words
-'Solution my solution 3rd solution!'
+'Solution another solution 3rd solution!'
 \end{lstlisting}
     
 
@@ -2747,15 +2714,15 @@ sign \lstinline!==!. Note the comparison operator double equals
 equals sign \lstinline!=!.
 
 \begin{lstlisting}[language=Python]
->>> name1 = 'Kendra'
->>> name2 = 'Kendra'
+>>> name1 = 'Gabby'
+>>> name2 = 'Gabby'
 >>> name1 == name2
 True
 \end{lstlisting}
 
 \begin{lstlisting}[language=Python]
->>> name1 = 'Kendra'
->>> name2 = 'Sydney'
+>>> name1 = 'Gabby'
+>>> name2 = 'Maelle'
 >>> name1 == name2
 False
 \end{lstlisting}
@@ -2765,8 +2732,8 @@ Python. A string with the same letters, but different capitalization are
 not equivalent.
 
 \begin{lstlisting}[language=Python]
->>> name1 = 'Kendra'
->>> name2 = 'kenda'
+>>> name1 = 'Gabby'
+>>> name2 = 'gabby'
 >>> name1 == name2
 False
 \end{lstlisting}
@@ -2797,7 +2764,7 @@ at n-1.
 \begin{figure}
 \centering
 \includegraphics{images/string_indexing.png}
-\caption{Python indexing}
+\caption{String index assignments}
 \end{figure}
     
 
@@ -2862,17 +2829,23 @@ character out of a string starting from the end of the string.
 >>> word[-2]
 'o'
 \end{lstlisting}
+
+\begin{figure}
+\centering
+\includegraphics{images/reverse_string_indexing.png}
+\caption{Negative String Indexing}
+\end{figure}
     
 
 
 
 
     
-        A colon on the inside of the square brackets indicates between two
-numbers indicates \emph{through}. As in \lstinline![0:3]! are the
-characters at positions \lstinline!0! to \lstinline!3!. Remember Python
-counting starts at zero and ends at n-1. So \lstinline![0:3]! indicates
-the first through third letters, which are the zero to two index.
+        A colon on the inside of the square brackets between two numbers
+indicates \emph{through}. As in \lstinline![0:3]! are the characters at
+positions \lstinline!0! through \lstinline!3!. Remember Python counting
+starts at zero and ends at n-1. So \lstinline![0:3]! indicates the first
+through third letters, which are the zero to two indexes.
 
 \begin{lstlisting}[language=Python]
 >>> word[0:3]
@@ -2896,7 +2869,7 @@ the first through third letters, which are the zero to two index.
 
 
     
-        When three numbers separated by two colons are used inside of square
+        When three numbers are separated by two colons inside of square
 brackets, the numbers represent \emph{start} : \emph{stop} : step. But
 remember that Python counting starts at zero and ends at n-1.
 
@@ -2949,35 +2922,36 @@ default start and stop values, and specify the step as \lstinline!-1!.
 
 
     
-        The \lstinline!print()! function useful in Python. The expression inside
-of the parenthesis ``print'' out to the Python REPL when the
-\lstinline!print()! function is called.
+        The \lstinline!print()! function useful in Python. The value or
+expression inside of the parenthesis in the \lstinline!print()! function
+``prints'' out to the REPL when the \lstinline!print()! function is
+called.
 
 An example using the \lstinline!print()! function is below:
 
 \begin{lstlisting}[language=Python]
->>> name = "Kendra"
+>>> name = "Gabby"
 >>> print("Your name is: ")
 Your name is
 >>> print(name)
-Kendra
+Gabby
 \end{lstlisting}
 
 Remember that strings must be enclosed by quotation marks. The following
 command produces an error.
 
 \begin{lstlisting}[language=Python]
->>> print(Kendra)
+>>> print(Gabby)
 
-NameError: name 'Kendra' is not defined
+NameError: name 'Gabby' is not defined
 \end{lstlisting}
 
-This error is corrected by surrounding the string \lstinline!Kendra!
-with quotation marks
+This error is corrected by surrounding the string \lstinline!Gabby! with
+quotation marks
 
 \begin{lstlisting}[language=Python]
->>> print("Kendra")
-Kendra
+>>> print("Gabby")
+Gabby
 \end{lstlisting}
     
 
@@ -3012,9 +2986,9 @@ instead.
 statement.
 
 \begin{lstlisting}[language=Python]
->>> name = Kendra
+>>> name = Gabby
 >>> print('Your name is: ' + name)
-Your name is Kendra
+Your name is Gabby
 \end{lstlisting}
     
 
@@ -3023,13 +2997,12 @@ Your name is Kendra
 
     
         The \lstinline!print()! function also prints out individual expressions
-one after another with a space in between when the expressions are
-placed inside the \lstinline!print()! function and separated by a
-comma.```
+on after another with a space in between when the expressions are placed
+inside the \lstinline!print()! function and separated by a comma.
 
 \begin{lstlisting}[language=Python]
->>> print("Name:","Kendra","Age:", 3+5)
-Name: Kendra Age: 8
+>>> print("Name:","Gabby","Age", 3+5)
+Name: Gabby Age 8
 \end{lstlisting}
     
 
@@ -3404,23 +3377,59 @@ error in your words. Give an explanation more specific than
 \lstinline!invalid syntax!. Then suggest and run a line of code that
 fixes the error.
 
-Q02.91 \lstinline!9 x 10!
+Q02.91
 
-Q02.92 \lstinline!1 1/2 + 2 2/3!
+\begin{lstlisting}[language=Python]
+>>> 9 x 10
+\end{lstlisting}
 
-Q02.93 \lstinline!3cos(35)!
+Q02.92
 
-Q02.94 \lstinline!8.31 x 10^9!
+\begin{lstlisting}[language=Python]
+>>> 1 1/2 + 2 2/3
+\end{lstlisting}
 
-Q02.95 \lstinline!(2+3)**(2-3e(4)!
+Q02.93
 
-Q02.96 \lstinline!7% + 8% + 9%!
+\begin{lstlisting}[language=Python]
+>>> 3cos(35)
+\end{lstlisting}
 
-Q02.97 \lstinline!(-)54.2 + 9.2!
+Q02.94
 
-Q02.98 \lstinline!'5' / '4'!
+\begin{lstlisting}[language=Python]
+>>> 8.31 x 10^9
+\end{lstlisting}
 
-Q02.99 \lstinline!ln(e) - log(10)!
+Q02.95
+
+\begin{lstlisting}[language=Python]
+>>> (2+3)**(2-3e(4)
+\end{lstlisting}
+
+Q02.96
+
+\begin{lstlisting}[language=Python]
+>>> 7% + 8% + 9%
+\end{lstlisting}
+
+Q02.97
+
+\begin{lstlisting}[language=Python]
+>>> (-)54.2 + 9.2
+\end{lstlisting}
+
+Q02.98
+
+\begin{lstlisting}[language=Python]
+>>> '5' / '4'
+\end{lstlisting}
+
+Q02.99
+
+\begin{lstlisting}[language=Python]
+>>> ln(e) - log(10)
+\end{lstlisting}
     
 
 
@@ -3474,9 +3483,41 @@ By the end of this chapter you will be able to:
         Python has many useful built-in data types. Python variables can store
 different types of data. A variable's data type is created dynamically,
 without the need to explicitly define a data type when the variable is
-created. It is useful for problem solvers to understand a couple of
-Python's core data types in order to write well-constructed code. Below
-is a discussion of a few different data types in Python.
+created.
+
+It is useful for problem solvers to understand a couple of Python's core
+data types in order to write well-constructed code.
+
+\subsection{A review of Variable assignment in
+Python}\label{a-review-of-variable-assignment-in-python}
+
+Remember from the previous chapter that variables in Python are defined
+with the assignment operator, the equals sign \lstinline!=!. Recall that
+to define a variable in Python, the variable name is written first, then
+the assignment operator \lstinline!=! followed by a value or expression.
+
+The general syntax to assign a value to variable name is below:
+
+\begin{lstlisting}
+variable_name = value
+\end{lstlisting}
+
+Variable names in Python must adhere to the following rules:
+
+\begin{itemize}
+\tightlist
+\item
+  variable names must start with a letter
+\item
+  variable names can only contain letters, numbers and the underscore
+  character \lstinline!_!
+\item
+  variable names can not contain spaces
+\item
+  variable names are not enclosed in quotes or brackets
+\end{itemize}
+
+Below is a discussion of a few different built-in data types in Python.
     
 
 
@@ -3485,9 +3526,9 @@ is a discussion of a few different data types in Python.
     
         \subsection{Integers}\label{integers}
 
-Integers are one of the Python data types. An integer is a whole number,
-negative, positive or zero. In Python, integer variables are defined by
-merely assigning a whole number to a variable. Python's
+\emph{Integers} are one of the Python data types. An integer is a whole
+number, negative, positive or zero. In Python, integer variables are
+defined by simply assigning a whole number to a variable. Python's
 \lstinline!type()! function can be used to determine the data type of a
 variable.
 
@@ -3495,6 +3536,12 @@ variable.
 >>> a = 5
 >>> type(a)
 <class 'int'>
+\end{lstlisting}
+
+The output \lstinline!<class 'int'>! indicates the variable
+\lstinline!a! is an integer. Integers can be negative or zero.
+
+\begin{lstlisting}[language=Python]
 >>> b = -2
 >>> type(b)
 <class 'int'>
@@ -3513,8 +3560,8 @@ variable.
 Floating point numbers or \emph{floats} are another Python data type.
 Floats are decimals, positive, negative and zero. Floats can also be
 numbers in scientific notation which contain exponents. Both a lower
-case \lstinline!e! or an upper case \lstinline!E! work to define floats
-in scientific notation. In Python, a float can be defined using a
+case \lstinline!e! or an upper case \lstinline!E! can be used to define
+floats in scientific notation. In Python, a float can be defined using a
 decimal point \lstinline!.! when a variable is assigned.
 
 \begin{lstlisting}[language=Python]
@@ -3531,10 +3578,10 @@ decimal point \lstinline!.! when a variable is assigned.
 <class 'float'>
 \end{lstlisting}
 
-To define a variable is a float instead of an integer, even if it is
-assigned a whole number, a trailing decimal point \lstinline!.! is used.
-Note the difference when a decimal point \lstinline!.! comes after a
-whole number:
+To define a variable as a float instead of an integer, even if the
+variable is assigned a whole number, a trailing decimal point
+\lstinline!.! is used. Note the difference when a decimal point
+\lstinline!.! comes after a whole number:
 
 \begin{lstlisting}[language=Python]
 >>> g = 5
@@ -3552,12 +3599,12 @@ whole number:
     
         \subsection{Complex numbers}\label{complex-numbers}
 
-Another useful data type for problem solvers is the complex number data
-type. A complex number is defined in Python using a real component
-\lstinline!+! an imaginary component\lstinline!j!. The letter
+Another useful data type for problem solvers is the \emph{complex
+number} data type. A complex number is defined in Python using a real
+component \lstinline!+! an imaginary component\lstinline!j!. The letter
 \lstinline!j! must be used to denote the imaginary component. Using the
-letter \lstinline!i! will return an error. Note how imaginary numbers
-add to integers and floats.
+letter \lstinline!i! to define a complex number in Python returns an
+error. Note how imaginary numbers add to integers and floats.
 
 \begin{lstlisting}[language=Python]
 >>> comp = 4 + 2j
@@ -3610,6 +3657,9 @@ keywords.
 <class 'bool'>
 \end{lstlisting}
 
+The output \lstinline!<class 'bool'>! indicates the variable is a
+boolean data type.
+
 Note that \lstinline!True! and \lstinline!False! must have an Upper Case
 first letter. Using a lowercase \lstinline!true! returns an error.
 
@@ -3618,7 +3668,8 @@ first letter. Using a lowercase \lstinline!true! returns an error.
 Traceback (most recent call last):
   File "<input>", line 1, in <module>
 NameError: name 'true' is not defined
-d = false
+   
+>>> d = false
 Traceback (most recent call last):
   File "<input>", line 1, in <module>
 NameError: name 'false' is not defined
@@ -3635,8 +3686,8 @@ Booleans}\label{integers-and-floats-as-booleans}
 Integers and floating point numbers can be converted to the boolean data
 type using Python's \lstinline!bool()! function. An int, float or
 complex number set to zero returns as \lstinline!False!. An int, float
-or complex number set to any other number, positive or negative, will
-returns as \lstinline!True!.
+or complex number set to any other number, positive or negative, returns
+as \lstinline!True!.
 
 \begin{lstlisting}[language=Python]
 >>> zero_int = 0
@@ -3664,9 +3715,10 @@ True
         \subsection{Boolean Arithmetic}\label{boolean-arithmetic}
 
 \emph{Boolean Arithmetic} is the arithmetic of true and false logic. A
-\emph{boolean} or logical value can either be \lstinline!True! or
+boolean or logical value can either be \lstinline!True! or
 \lstinline!False!. Boolean values can be manipulated and combined with
-boolean operators.
+\emph{boolean operators}. Boolean operators include \lstinline!and!,
+\lstinline!or!, and \lstinline!not!.
 
 The common boolean operators in Python are below:
 
@@ -3679,10 +3731,14 @@ The common boolean operators in Python are below:
 \item
   \lstinline!not!
 \item
-  \lstinline!==!(equivalent)
+  \lstinline!==! (equivalent)
 \item
   \lstinline"!=" (not equivalent)
 \end{itemize}
+
+In the code section below, two variables are assigned the boolean values
+\lstinline!True! and \lstinline!False!. Then these boolean values are
+combined and manipulated with boolean operators.
 
 \begin{lstlisting}[language=Python]
 >>> A = True
@@ -3719,9 +3775,9 @@ False
 True
 \end{lstlisting}
 
-Boolean operators such as \lstinline!and!, \lstinline!or!,
+Boolean operators such as \lstinline!and!, \lstinline!or!, and
 \lstinline!not! can be combined with parenthesis to make compound
-boolean expressions.
+\emph{boolean expressions}.
 
 \begin{lstlisting}[language=Python]
 >>> C = False
@@ -3737,7 +3793,7 @@ False
 
     
         A summary of boolean arithmetic and boolean operators is shown in the
-table below.
+table below:
 
 \begin{longtable}[]{@{}llllllll@{}}
 \toprule
@@ -3764,12 +3820,12 @@ F & F & T & T & T & F & F & F\tabularnewline
 
 
     
-        Strings are sequences of letters, numbers, symbols, and spaces. In
-Python, strings can be almost any length and can contain spaces. String
-variables are assigned in Python using quotation marks \lstinline!'   '!
-or \lstinline!" "!. In Python, strings can be defined by single
-quotation marks \lstinline!' '! or double quotation marks
-\lstinline!" "!.
+        Another built-in data type in Python is \emph{strings}. Strings are
+sequences of letters, numbers, symbols, and spaces. In Python, strings
+can be almost any length and can contain spaces. String variables are
+assigned in Python using quotation marks \lstinline!'   '! or
+\lstinline!" "!. In Python, strings can be defined by single quotation
+marks \lstinline!' '! or double quotation marks \lstinline!" "!.
 
 Python strings can contain blank spaces. A blank space is a valid
 character in Python string.
@@ -3783,6 +3839,8 @@ character in Python string.
 >>> type(string)
 <class 'str'>
 \end{lstlisting}
+
+The output \lstinline!<class 'str'>! indicates the variable is a string.
     
 
 
@@ -3792,9 +3850,9 @@ character in Python string.
         \subsection{Numbers as Strings}\label{numbers-as-strings}
 
 Numbers and decimals can be defined as strings too. If a decimal number
-is defined using quotes \lstinline!'   '!, it will be saved as a string
-rather than as a float. Integers defined using quotes will become
-strings as well if surrounded by quotes.
+is defined using quotes \lstinline!'   '!, the number is saved as a
+string rather than saved as a float. Like floats, integers also become
+strings if surrounded by quotes.
 
 \begin{lstlisting}[language=Python]
 >>> num = '5.2'
@@ -3814,7 +3872,7 @@ strings as well if surrounded by quotes.
         \subsection{Strings as Boolean Values}\label{strings-as-boolean-values}
 
 Strings can be converted to boolean values (converted to True or False).
-The empty string \lstinline!""! converts to \lstinline!False!. All other
+The empty string \lstinline!""! returns as \lstinline!False!. All other
 strings convert to \lstinline!True!.
 
 \begin{lstlisting}[language=Python]
@@ -3829,9 +3887,9 @@ True
 False
 \end{lstlisting}
 
-Note that a string which contains just one space is not empty. It
-contains the space character. Therefore a string made up of just one
-space converts to \lstinline!True!.
+Note that a string which contains just one space (\lstinline!" "!) is
+not empty. It contains the space character. Therefore a string made up
+of just one space converts to \lstinline!True!.
 
 \begin{lstlisting}[language=Python]
 >>> space = " "
@@ -6944,7 +7002,7 @@ output cells.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_320_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_318_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7315,7 +7373,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_332_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_330_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7421,7 +7479,7 @@ line shows the plot on the screen.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_337_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_335_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7462,7 +7520,7 @@ These daughter objects in turn have methods such as
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_339_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_337_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7599,7 +7657,7 @@ positions and \lstinline!CTEs! is the list of bar heights.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_352_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_350_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7654,7 +7712,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_355_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_353_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7682,7 +7740,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_354_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7782,7 +7840,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_364_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_362_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7819,7 +7877,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_368_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7897,7 +7955,7 @@ styles will be addressed in a subsequent section of this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_374_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_372_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7964,7 +8022,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_380_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_378_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8009,7 +8067,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_383_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_381_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8064,7 +8122,7 @@ the number of y-values. The list or array sizes passed to
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_384_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8125,7 +8183,7 @@ plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_388_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8207,7 +8265,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_393_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_391_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8275,7 +8333,7 @@ side by side. This can be done in Matplotlib using \emph{subplots}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_398_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_396_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8335,7 +8393,7 @@ notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8410,7 +8468,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_406_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_404_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8437,7 +8495,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_405_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8464,7 +8522,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_408_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_406_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8491,7 +8549,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_409_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8570,7 +8628,7 @@ two 1D arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8624,7 +8682,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_419_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_417_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8692,7 +8750,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_422_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_420_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8759,7 +8817,7 @@ different color map.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_423_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8853,7 +8911,7 @@ define the quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_433_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_431_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8916,7 +8974,7 @@ arrow points straight down.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_435_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8991,7 +9049,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_441_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_439_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9036,7 +9094,7 @@ the \(x\) and \(y\) arrow starting point arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_443_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_441_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9079,7 +9137,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_445_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_443_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9122,7 +9180,7 @@ Matplotlib.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_447_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_445_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9216,7 +9274,7 @@ plots each in color
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_450_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_448_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9282,7 +9340,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_455_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_453_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9324,7 +9382,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_458_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_456_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9364,7 +9422,7 @@ and distance relative to the point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_460_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_458_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9436,7 +9494,7 @@ statinary object and model the fluid flow around the circle.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_462_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_460_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9499,7 +9557,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_469_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_467_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9554,7 +9612,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_472_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_470_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9604,7 +9662,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_475_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_473_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9659,7 +9717,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_478_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_476_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -12012,7 +12070,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_639_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_637_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
