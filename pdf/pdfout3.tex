@@ -729,7 +729,6 @@ process of installing Python on your computer.
 to:}\label{by-the-end-of-this-chapter-you-will-be-able-to}
 
 \begin{itemize}
-\tightlist
 \item
   Describe why Python is a good programming language for problem solvers
 \item
@@ -2246,8 +2245,11 @@ session. To use the \lstinline!sin! function, first import the
 \lstinline!sin! function from the \lstinline!math! \emph{module} which
 is part of the Python Standard Library.
 
-Importing modules and functions is easy. Use the following syntax: from
-\emph{module name} import \emph{function name}
+Importing modules and functions is easy. Use the following syntax:
+
+\begin{lstlisting}
+from module import function
+\end{lstlisting}
 
 To import the \lstinline!sin()! function from the \lstinline!math!
 module try:
@@ -2269,8 +2271,12 @@ To solve this problem we need to import the \lstinline!sin()!,
 \lstinline!cos()!, and \lstinline!tan()! functions. It is also useful to
 have the value of \(\pi\), rather than having to write
 \lstinline!3.14....! We can import all of these functions at the same
-time using the syntax
-\lstinline!from <module> import <function1>, <function2>, <function3>!.
+time using the syntax:
+
+\begin{lstlisting}
+from module import function1, function2, function3
+\end{lstlisting}
+
 Note the commas in between the function names.
 
 Try:
@@ -2426,7 +2432,7 @@ functions \lstinline!mean!, \lstinline!median!, \lstinline!mode! and
 \begin{lstlisting}[language=Python]
 >>> from statistics import mean, median, mode, stdev
     
->>> test_scores = [ 60 , 83, 83, 91, 100]
+>>> test_scores = [60 , 83, 83, 91, 100]
     
 >>> mean(test_scores)
 83.4
@@ -3370,7 +3376,8 @@ Q02.81 Electrical power \(P\) is related to current \(I\) and resistance
 
 
     
-        \subsubsection{Error Explanations}\label{error-explanations}
+        \subsubsection{Errors, Explanations, and
+Solutions}\label{errors-explanations-and-solutions}
 
 For each of the problems below, run the line of code. Then explain the
 error in your words. Give an explanation more specific than
@@ -4311,8 +4318,8 @@ Q03.07
 
     
         \begin{problems}
-        \subsubsection{Errors, Explaination and
-solutions}\label{errors-explaination-and-solutions}
+        \subsubsection{Errors, Explanations, and
+Solutions}\label{errors-explanations-and-solutions}
 
 Q03.50 Run the following lines of code and explain the error in your own
 words:
@@ -4360,21 +4367,23 @@ d[one]
 
 
     
-        In this chapter you will learn:
+        By the end of this chapter you will be able to:
 
 \begin{itemize}
 \item
-  What a Jupyter Notebook is
+  Explain what a Jupyter notebook is
 \item
-  How to open a Jupyter Notebook
+  Open a Jupyter notebook
 \item
-  How to write code in a Jupyter Notebook
+  Write Python code in a Jupyter notebook
 \item
-  How to run code in a Jupyter Notebook
+  Run Python code in a Jupyter notebook
 \item
-  How to write text in a Jupyter Notebook
+  Write and render markdown text in a Jupyter notebook
 \item
-  How to save and close a Jupyter Notebook
+  Save and close a Jupyter notebook
+\item
+  Download a Jupyter notebook in different file formats
 \end{itemize}
         \newpage
 
@@ -4393,22 +4402,32 @@ d[one]
 
 
     
-        A \emph{Jupyter notebook} is a electronic file type which can contain
+        A \emph{Jupyter notebook} is an electronic file type which can contain
 both programming code and text descriptions. Jupyter notebooks can also
-contain embedded charts, plots, images, videos and links. Jupyter
+contain embedded charts, plots, images, videos, and links. Jupyter
 notebooks run in a web browser like Google Chrome or Firefox.
+    
 
-Although Jupyter notebooks can contain the code of many different
+
+
+
+    
+        Although Jupyter notebooks can contain the code of many different
 programming languages, many Jupyter notebooks contain Python code. The
-Python code in a Jupyter Notebook is the same type of Python code found
+Python code in a Jupyter notebook is the same type of Python code found
 in a \textbf{\emph{.py}} file. The text description sections of Jupyter
 notebooks contain explanations and clarifications of the programming
 code in the \emph{markdown} format. \emph{Markdown} files have the
 extension \textbf{\emph{.md}}. Markdown sections of a Jupyter notebook
 can include formatting to make text bold, italic, form tables and lists,
-show code listings and images.
+show code listings and render images.
+    
 
-One way to think of a Jupyter notebook is as a combination of the Python
+
+
+
+    
+        One way to think of a Jupyter notebook is as a combination of the Python
 REPL and a Python module \textbf{\emph{.py}} file with a markdown
 **\_.md** file thrown in between code sections.
 
@@ -4416,18 +4435,23 @@ In the Python REPL, only one command can be typed at a time, and only
 one line of output is shown at a time. In a \textbf{\emph{.py}} file,
 the entire file is run at one time, line by line. The output of the
 entire file is produced all at once. Markdown \textbf{\emph{.md}} files
-contain text in markdown format, but that text isn't rendered. In a
+contain text in markdown format, but that text is not rendered. In a
 Jupyter notebook, chunks of code one line or many lines long can be run
 individually and in any order without running all of the code in the
-Jupyter notebook. Jupyter Notebooks render the markdown sections and
-display rich text with headings, formatting and images.
+Jupyter notebook. Jupyter notebooks render the markdown sections and
+display rich text with headings, formatting, and images.
+    
 
-Jupyter notebooks contain three types of cells: code cells, output cells
-and markdown cells. Lines of Python code are run in code cells. The
-output from running the code cells is also shown in output cells.
+
+
+
+    
+        Jupyter notebooks contain three types of cells: code cells, output
+cells, and markdown cells. Lines of Python code are run in code cells.
+The output from running the code cells is also shown in output cells.
 Markdown cells contain text like descriptions of what will happens in
-subsequent code cells. Charts, plots, command line output and images can
-all be shown in Jupyter notebooks as well.
+subsequent code cells. Charts, plots, command line output, and images
+can all be shown in Jupyter notebooks as well.
     
 
 
@@ -4453,9 +4477,9 @@ edit and run Python code:
 Python Text Editors and IDE's &\tabularnewline
 \midrule
 \endhead
-Notepad & simple text editor, included with Windows\tabularnewline
+Notepad & simple text editor - included with Windows\tabularnewline
 Idle & included with Python from Python.org\tabularnewline
-Sublime Text & full featured editor with long-time no cost
+Sublime Text & full-featured editor with long-time no-cost
 license\tabularnewline
 Spyder & IDE included with the Anaconda Distribution of
 Python\tabularnewline
@@ -4468,7 +4492,7 @@ A Jupyter notebook is neither a simple text editor nor a full-featured
 IDE. Jupyter notebooks provide a quick and streamlined way for
 problem-solvers to prototype code and quickly share code. Jupyter
 notebooks also provide a way for problem-solvers to share programming
-solutions with team members, supervisors and customers.
+solutions with team members, supervisors, and customers.
 
 \begin{figure}
 \centering
@@ -4479,24 +4503,25 @@ solutions with team members, supervisors and customers.
 In a way, Jupyter notebooks strike a balance between simple text
 editors, which are fast to start and simple and easy to manipulate, and
 IDE's which tend to start slower and be feature-rich and complex. Simple
-text editors typically can only edit code, and cannot run code. A full
-IDE can edit code, run code, debug code, provide syntax highlighting and
-context help.
+text editors typically can only edit code, and cannot run the code. A
+full IDE can edit code, run the code, debug code, provide syntax
+highlighting and context help.
     
 
 
 
 
     
-        In the context of problem-solving, Jupyter notebooks can be extremely
-useful. Jupyter notebooks are quick to open and quick to produce output.
-Data exploration, data cleaning, and plot building is accomplished in
+        In the context of problem-solving, Jupyter notebooks can be quite handy.
+Jupyter notebooks are quick to open and quick to produce output. Data
+exploration, data cleaning, and plot building are accomplished in
 Jupyter notebooks easier and quicker than in a text editor or an IDE.
 
 In the context of sharing solutions to problems, Jupyter notebooks are
 also useful. Markdown cells render text in different sizes, bold and
 italic. Tables and images, plots and code can all be shown together in
-the same Jupyter notebook.
+the same Jupyter notebook. Notebooks can be exported to a variety of
+formats including \textbf{\emph{.html}} and \textbf{\emph{.pdf}}.
     
 
 
@@ -4510,10 +4535,13 @@ the same Jupyter notebook.
 
 
     
-        To install \textbf{Jupyter Notebooks}, the simplest way is to use the
-\textbf{Anaconda} distribution of Python. Anaconda has \textbf{Jupyter
-Notebooks} pre-installed and no further installation steps are
-necessary.
+        The simplest way to install \textbf{Jupyter notebooks} is to download
+and install the Anaconda distribution of Python. The Anaconda
+distribution of Python comes with Jupyter notebook included and no
+further installation steps are necessary.
+
+Below are additional methods to install Jupyter notebooks if you are not
+using the Anaconda distribution of Python.
     
 
 
@@ -4523,21 +4551,28 @@ necessary.
         \subsection{Installing Jupyter on Windows using the Anaconda
 Prompt}\label{installing-jupyter-on-windows-using-the-anaconda-prompt}
 
-To install Jupyter on Windows, open the Anaconda prompt and type:
+To install Jupyter on Windows, open the \textbf{Anaconda Prompt} and
+type:
 
 \begin{lstlisting}
 > conda install jupyter
 \end{lstlisting}
 
-Type \lstinline!y! for yes when prompted.
+Type \lstinline!y! for yes when prompted. Once Jupyter is installed,
+type the command below into the \textbf{Anaconda Prompt} to open the
+Jupyter notebook file browser and start using Jupyter notebooks.
+
+\begin{lstlisting}
+> jupyter notebook
+\end{lstlisting}
     
 
 
 
 
     
-        \subsection{Installing Jupyter on Mac
-OSX}\label{installing-jupyter-on-mac-osx}
+        \subsection{Installing Jupyter on
+MacOS}\label{installing-jupyter-on-macos}
 
 To install Jupyter on MacOS, open the MacOS terminal and type:
 
@@ -4547,9 +4582,9 @@ $ conda install jupyter
 
 Type \lstinline!y! for yes when prompted.
 
-If \textbf{conda} is not installed, the \textbf{Anaconda} Distribution
-of Python can be installed, which should install \textbf{conda} for use
-in the MacOS terminal.
+If \textbf{conda} is not installed, the Anaconda distribution of Python
+can be installed, which will install \textbf{conda} for use in the MacOS
+terminal.
 
 Problems can crop up on MacOS when using the MacOS provided system
 version of Python. Python packages may not install on the system version
@@ -4559,10 +4594,11 @@ that MacOS users install the \textbf{Anaconda} distribution of Python or
 use \textbf{homebrew} to install a separate non-system version of
 Python.
 
-To install a non-system version of Python with \textbf{homebrew}, key in
-the following in the MacOS terminal:
+To install a non-system version of Python with \textbf{homebrew}, key
+the following into the MacOS terminal:
 
 \begin{lstlisting}
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 $ brew install Python
 \end{lstlisting}
 
@@ -4578,8 +4614,8 @@ $ pip install jupyter
 
 
     
-        \subsection{Installing Jupyter on Ubuntu
-Linux}\label{installing-jupyter-on-ubuntu-linux}
+        \subsection{Installing Jupyter on
+Linux}\label{installing-jupyter-on-linux}
 
 To install Jupyter on Linux, open a terminal and type:
 
@@ -4589,8 +4625,8 @@ $ conda install jupyter
 
 Type \lstinline!y! for yes when prompted.
 
-Alternatively, if the \textbf{Anaconda} distribution of Python is not
-installed, one can use:
+Alternatively, if the Anaconda distribution of Python is not installed,
+one can use \textbf{pip}.
 
 \begin{lstlisting}
 $ pip3 install jupyter
@@ -4608,17 +4644,16 @@ $ pip3 install jupyter
 
 
     
-        In this section, you will learn how to open a \emph{jupyter notebook} on
-Windows 10 and MacOS.
+        In this section, you will learn how to open a Jupyter notebook on
+Windows and MacOS.
 
-Jupyter notebooks are one way problem solvers can write and execute
-Python code. Jupyter notebooks contain Python code, the output of that
-code produces when it is run and markdown cells to explain what the code
+One way problem solvers can write and execute Python code is in a
+Jupyter notebook. Jupyter notebooks contain Python code, the output that
+code produces and markdown cells usually used to explain what the code
 means.
 
-On Windows 10, a Jupyter notebook can be started from the
-\textbf{Anaconda Prompt}, the Windows start menu and \textbf{Anaconda
-Navigator}.
+On Windows, a Jupyter notebook can be started from the \textbf{Anaconda
+Prompt}, the Windows start menu and \textbf{Anaconda Navigator}.
 
 \subsubsection{\texorpdfstring{3 ways to open a \textbf{Jupyter
 notebook}:}{3 ways to open a Jupyter notebook:}}\label{ways-to-open-a-jupyter-notebook}
@@ -4645,9 +4680,9 @@ Menu}\label{open-a-jupyter-notebook-with-the-windows-start-menu}
 
 
     
-        A simple way to open a Jupyter notebook is to use the Windows start
-menu. Note that the Anaconda distribution of Python must be installed in
-order to use the Windows Start Menu to open a Jupyter notebook. Download
+        One simple way to open a Jupyter notebook is to use the Windows Start
+Menu. Note that the Anaconda distribution of Python must be installed to
+use the Windows Start Menu to open a Jupyter notebook. Download
 \textbf{Anaconda} at the following link:
 \href{https://www.anaconda.com/download/}{Anaconda.com/downloads}
 
@@ -4660,7 +4695,8 @@ Open the Windows start menu and select \textbf{{[}Anaconda3(64 bit){]}}
 \caption{Windows 10 Start Menu showing the Jupyter Notebook application}
 \end{figure}
 
-This will open the \textbf{Jupyter file browser} in a web browser tab.
+This action opens the \textbf{Jupyter file browser} in a web browser
+tab.
 
 In the upper right select \textbf{{[}New{]}} --\textgreater{}
 \textbf{{[}Python 3{]}}
@@ -4671,7 +4707,7 @@ In the upper right select \textbf{{[}New{]}} --\textgreater{}
 \caption{Jupyter Notebook file browser}
 \end{figure}
 
-A new \textbf{notebook} will open as a new tab in your web browser
+A new \textbf{notebook} will open as a new tab in your web browser.
 
 \begin{figure}
 \centering
@@ -4725,7 +4761,8 @@ then you need to install the Anaconda distribution of Python. Download
 \textbf{Anaconda} at the following link:
 \href{https://www.anaconda.com/download/}{Anaconda.com/downloads}
 
-The \textbf{Anaconda Prompt} window should look something like:
+The \textbf{Anaconda Prompt} window should look something like the image
+below.
 
 \begin{figure}
 \centering
@@ -4739,18 +4776,25 @@ At the \textbf{Anaconda Prompt} type:
 > jupyter notebook
 \end{lstlisting}
 
-This command starts the \textbf{jupyter notebook} server. The output in
-the \textbf{Anaconda Prompt} will look something like below:
+This command starts the \textbf{Jupyter notebook} server. The output in
+the \textbf{Anaconda Prompt} will look something like the output shown
+below:
 
 \begin{lstlisting}
+
 Copy/paste this URL into your browser when you connect for the first time,
+
     to login with a token:
+
         http://localhost:8888/?token=6bdef677d3503fbb23e1b4fa0c802e ...
+
 [I 16:14:12.661 NotebookApp] Accepting one-time-token-authenticated ...
 \end{lstlisting}
 
-A web browser should open and you should be able to see the
-\textbf{Jupyter file browser}.
+A web browser should open, and you should be able to see the
+\textbf{Jupyter file browser}. If a web browser doesn't open
+automatically, you can copy the web address from the \textbf{Anaconda
+Prompt} and paste it into a web browser's address bar.
 
 \begin{figure}
 \centering
@@ -4816,7 +4860,7 @@ In the upper right select \textbf{{[}New{]}} --\textgreater{}
 \caption{Jupyter Notebook file browser - create new Notebook}
 \end{figure}
 
-A new \textbf{notebook} will open as a new tab in your web browser
+A new \textbf{notebook} will open as a new tab in your web browser.
 
 \begin{figure}
 \centering
@@ -4831,14 +4875,19 @@ A new \textbf{notebook} will open as a new tab in your web browser
     
         \section{The Jupyter Notebook
 Interface}\label{the-jupyter-notebook-interface}
+    
 
-When a new notebook opens, you will see the Jupter Notebook interface.
-Accross the top of the notebook will the the Jupyter icon and the
-Notebook name. You can click in the notebook name field and change the
-name of the notebook. Note that the file extension \lstinline!.ipynb! is
-not printed in the file name field, but if you look in the Home tab, you
-will see that the notebook is saved with the \lstinline!.ipynb!
-extension.
+
+
+
+    
+        When a new Jupyter notebook opens, you will see the Jupyter notebook
+interface. Across the top of the notebook you see the Jupyter icon and
+the Notebook name. You can click on the notebook name field and change
+the name of the notebook. Note that the file extension
+\lstinline!.ipynb! is not printed in the file name field, but if you
+look in the Home tab, you will see that the notebook is saved with the
+\lstinline!.ipynb! extension.
     
 
 
@@ -4849,7 +4898,7 @@ extension.
 
 A Jupyter notebook is comprised of a bunch of \emph{cells} which are
 arrayed one after another in boxes below the menu items and buttons.
-There are three main types of cells: code cells, output Cells and
+There are three main types of cells: code cells, output cells, and
 markdown cells.
     
 
@@ -4869,12 +4918,12 @@ and see the resulting output. An example of a code cell is shown below.
 \end{figure}
 
 You can tell you are typing in a code cell because \lstinline!In [ ]:!
-is shown to the left of the cell and the cell-type drop down menu shows
+is shown to the left of the cell and the cell-type drop-down menu shows
 \textbf{Code}.
 
 To run the Python code in a code cell push the {[}Run{]} button or type
-{[}Shift{]}+{[}Enter{]}. Hitting {[}Enter{]} when inside a code cell
-will only bring the cursor down to a new line.
+{[}Shift{]}+{[}Enter{]}. Hitting {[}Enter{]} when the cursor is inside a
+code cell brings the cursor down to a new line.
 
 \begin{figure}
 \centering
@@ -4889,11 +4938,12 @@ will only bring the cursor down to a new line.
     
         \subsection{Output Cells}\label{output-cells}
 
-After a code cell is run, an output cell is often produced below. The
-output cell contains the output from the code cell above it. Not all
-code produces output, so not all code cells produce output cells. The
-results in output cells can't be edited. If a code cell produces plots,
-charts or images, these outputs are shown in output cells.
+After a code cell is run, an output cell can be produced below the code
+cell. The output cell contains the output from the code cell above it.
+Not all code produces output, so not all code cells produce output
+cells. The results in output cells can't be edited. If a code cell
+produces plots, charts or images, these outputs are shown in output
+cells.
 
 \begin{figure}
 \centering
@@ -4902,7 +4952,8 @@ charts or images, these outputs are shown in output cells.
 \end{figure}
 
 You can clear all the output cells and re-run code cells by selecting
-\textbf{Kernal -- \textgreater{} Restart Kernal and Clear All Outputs}.
+\textbf{{[}Kernal{]}} --\textgreater{} \textbf{{[}Restart Kernal and
+Clear Output{]}}.
 
 \begin{figure}
 \centering
@@ -4917,10 +4968,10 @@ You can clear all the output cells and re-run code cells by selecting
     
         \subsection{Markdown Cells}\label{markdown-cells}
 
-Markdown cells don't contain Python code, they contain text written in
-Markdown format. Text in markdown cells can be formatted to show
-\textbf{bold} or \emph{italic} text. Tables, images and lists can also
-be included in markdown cells.
+Markdown cells don't contain Python code. Markdown cells contain text
+written in Markdown format. Text in markdown cells can be formatted to
+show \textbf{bold} or \emph{italic} text. Tables, images, and lists can
+also be included in markdown cells.
 
 \begin{figure}
 \centering
@@ -4965,9 +5016,10 @@ Headings are created in markdown cells using the hash symbol
 
 \subsubsection{Code Blocks}\label{code-blocks}
 
-Code blocks can inserted in Jupyter notebook markdown cells. For inline
-code blocks use the ` left quote character, the character to the left of
-the number \lstinline![1]``` and above ```[Tab]! on most keyboards.
+Code blocks can be inserted in Jupyter notebook markdown cells. For
+inline code blocks use the ` left quote character, the character to the
+left of the number \lstinline![1]``` and above ```[Tab]! on most
+keyboards.
 
 This is inline code: ` ` ` Inline code block ` ` ` within a paragraph
 
@@ -5096,7 +5148,7 @@ produces
 \subsubsection{Links}\label{links}
 
 Hyperlinks are specified using a set of square brackets \lstinline![ ]!
-followed by pair of parenthesis \lstinline!( )! The text inside the
+followed by a pair of parenthesis \lstinline!( )! The text inside the
 square brackets will be the link, the link address goes in the
 parenthesis.
 
@@ -5116,7 +5168,7 @@ point and square brackets \lstinline"![ ]", followed by the image file
 path in parenthesis \lstinline!( )!. If the image can not be displayed,
 the text in square brackets will be shown. The image can be in the same
 directory as the notebook, or a relative path can be specified. In this
-case the image \lstinline!engineering.png! is stored in the
+case, the image \lstinline!engineering.png! is stored in the
 \lstinline!images! directory, which is a subdirectory of the directory
 the notebook is saved in.
 
@@ -5148,9 +5200,9 @@ produces
 \subsubsection{html}\label{html}
 
 Because Jupyter notebooks are rendered by web browsers, just about any
-html tag can be included in the markdown portion of a notebook. An
-example is the \lstinline!<sup>! \lstinline!</sup>! tags that surround
-super script text.
+HTML tag can be included in the markdown portion of a notebook. An
+example of an HTML tag is the \lstinline!<sup>! \lstinline!</sup>! tags
+that surround superscript text.
 
 \begin{lstlisting}
 x<sup>2</sup>
@@ -5194,8 +5246,8 @@ Warning! Python lists start at 0
         \subsection{Creating a new cell}\label{creating-a-new-cell}
 
 You can create a new cell in a Jupyter Notebook by clicking the {[}+{]}
-button in the upper menu. This produces a new code cell below the
-current active cell.
+button in the upper menu. Clicking the {[}+{]} button produces a new
+code cell below the currently active cell.
 
 \begin{figure}
 \centering
@@ -5203,9 +5255,9 @@ current active cell.
 \caption{Jupyter Notebook New Cell Button}
 \end{figure}
 
-You can also create a new cell using \textbf{Insert --\textgreater{}
-Insert Cell Above} or \textbf{Insert Cell Below}. You can choose to
-insert a cell above or below the current active cell.
+You can also create a new cell using \textbf{Insert} --\textgreater{}
+\textbf{Insert Cell Above} or \textbf{Insert Cell Below}. You can choose
+to insert a cell above or below the currently active cell.
     
 
 
@@ -5214,8 +5266,8 @@ insert a cell above or below the current active cell.
     
         \subsection{Changing the cell type}\label{changing-the-cell-type}
 
-The type of cell: code cell or markdown cell, can be changed by clicking
-on a cell and selecting the cell type from the dropdown menu. Typing
+The type of cell: code cell or markdown cell, is changed by clicking on
+a cell and selecting the cell type from the drop-down menu. Typing
 \lstinline![Esc]! + \lstinline![m]! changes the cell type to a markdown
 cell. Typing \lstinline![Esc]! + \lstinline![y]! changes the cell type
 to a code cell.
@@ -5244,7 +5296,7 @@ by pressing {[}Ctrl{]} + {[}s{]}.
 
 Jupyter notebooks can also be saved as a copy, similar to the Save As
 command common in many programs. To save a copy of a Jupyter notebook
-use \textbf{File --\textgreater{} Make a Copy\ldots{}}
+use \textbf{File} --\textgreater{} \textbf{Make a Copy\ldots{}}
 
 \begin{figure}
 \centering
@@ -5281,11 +5333,12 @@ upper menu and typing a new name into the dialog box.
 
     
         \subsection{Downloading a Jupyter
-Notebok}\label{downloading-a-jupyter-notebok}
+Notebook}\label{downloading-a-jupyter-notebook}
 
 Jupyter notebooks can be downloaded and saved using \textbf{File
---\textgreater{} Download As --\textgreater{} Notebook (.ipynb)}. This
-will download the notebook as a .ipynb file.
+--\textgreater{} Download As --\textgreater{} Notebook (.ipynb)}.
+Selecting this menu option will download the notebook as a
+\lstinline!.ipynb! file.
 
 \begin{figure}
 \centering
@@ -5293,10 +5346,11 @@ will download the notebook as a .ipynb file.
 \caption{Jupyter Notebook downloaded as .ipynb file}
 \end{figure}
 
-Note that when a .ipynb file is viewed in a text editor like notepad,
-the notebook is unformatted and looks like a confusing jumble of text.
-The notebook needs to be opened in a Jupyter notebook file browser in
-order for it to be rendered.
+Note that when a \lstinline!.ipynb! file is viewed in a text editor like
+notepad, the notebook is unformatted and looks like a confusing jumble
+of text. The notebook needs to be opened in a Jupyter notebook file
+browser in order for the code in the notebook to run and the markdown
+text to render.
 
 \begin{figure}
 \centering
@@ -5314,7 +5368,7 @@ Formats}\label{saving-jupyter-notebooks-in-other-formats}
 
 Jupyter notebooks can be saved in other formats besides the native
 \lstinline!.ipynb! format. These formats can be accessed using the
-{[}File{]} --\textgreater{} {[}Download As{]} menu.
+\textbf{{[}File{]} --\textgreater{} {[}Download As{]}} menu.
 
 \begin{figure}
 \centering
@@ -5322,7 +5376,7 @@ Jupyter notebooks can be saved in other formats besides the native
 \caption{Jupyter Notebook Export Optinos}
 \end{figure}
 
-The available file types are:
+The available file download types are:
 
 \begin{itemize}
 \tightlist
@@ -5337,13 +5391,13 @@ The available file types are:
 \item
   reST (.rst) - Restructured text format
 \item
-  LaTeX (.tex) - LaTeX Artile format
+  LaTeX (.tex) - LaTeX Article format
 \item
   PDF via LaTeX - a pdf exported from LeTeX, requires a converter
 \end{itemize}
 
-When a Notebook is saved as a \lstinline!.py! file, any text in Mardown
-Cells are converted to commments, and any code cells are kept as Python
+When a Notebook is saved as a \lstinline!.py! file, all text in markdown
+cells is converted to comments, and any code cells stay intact as Python
 code.
 
 \begin{figure}
@@ -5364,8 +5418,8 @@ code.
 
 
     
-        Jupyter notebook code cells can contain special commands which are note
-valid Python code, but will affect the behavior of the notebook
+        Jupyter notebook code cells can contain special commands which are not
+valid Python code but affect the behavior of the notebook.
     
 
 
@@ -5379,17 +5433,19 @@ valid Python code, but will affect the behavior of the notebook
 
 
     
-        One of the most popular magic commands is:
+        \subsection{\%matplotlib inline}\label{matplotlib-inline}
+
+One of the most popular magic commands is:
 
 \begin{lstlisting}
 %matplotlib inline
 \end{lstlisting}
 
-Using this command at the top of a Jupyter notebook will produce
-Matplotlib plots in cells of the notebook. Without
-\lstinline!%matplotlib inline!, plots will jump out as external windows.
-A typical start to a Jupyter notebook using \textbf{Matplotlib} might
-start as:
+Entering the \lstinline!%matplotlib inline! command at the top of a
+Jupyter notebook renders Matplotlib plots in cells of the notebook.
+Without \lstinline!%matplotlib inline!, plots may jump out as external
+windows. A typical start to a Jupyter notebook using \textbf{Matplotlib}
+might start as:
 
 \begin{lstlisting}[language=Python]
 import numpy as np
@@ -5405,20 +5461,20 @@ import matplotlib.pyplot as plt
     
         \subsection{\%load}\label{load}
 
-The \lstinline!%load! command will load a python module, webpage or file
+The \lstinline!%load! command loads a Python module, webpage or file
 into a Jupyter notebook. If there is a file called
 \textbf{\emph{hello.py}} in the same directory as the notebook with some
 Python code written in it, we can load that same code into a Jupyter
 notebook code cell with the \lstinline!%load! command.
 
-Within a Jupyter notebook code cell type the command
+Within a Jupyter notebook code cell type the command:
 
 \begin{lstlisting}[language=Python]
 %load hello.py
 \end{lstlisting}
 
-The results are the code from the file \textbf{\emph{hello.py}} in the
-current notebook.
+The result is the code from the file \textbf{\emph{hello.py}} is copied
+into the current notebook.
     
 
 
@@ -5447,10 +5503,10 @@ Hello from the file hello.py
 
 
     
-        The \lstinline!%run! magic command followed by the name of a python file
-will run the current python file as a script. Suppose the file
+        If the \lstinline!%run! magic command followed by the name of a valid
+Python file, the Python file runs as a script. Suppose the file
 \lstinline!hello.py! is created in the same directory as the running
-jupyter notebook. The directory structure will look something like this:
+Jupyter notebook. The directory structure will look something like this:
 
 \begin{lstlisting}
 | folder
@@ -5463,13 +5519,13 @@ In the file \lstinline!hello.py! is the code:
 \begin{lstlisting}[language=Python]
 # hello.py
 
-print('This code was run from a seperate Python file')
+print('This code was run from a separate Python file')
 print('Hello from the file hello.py')
 \end{lstlisting}
 
-Within our Jupyter notebook, if we \lstinline!%run! this file, we will
-get the output of or hello.py script in a \textbf{\emph{hello.py}}
-script in a Jupyter notebook output cell.
+Within our Jupyter notebook, if we \lstinline!%run! this file, we get
+the output of the \textbf{\emph{hello.py}} script in a Jupyter notebook
+output cell.
     
 
 
@@ -5480,15 +5536,15 @@ script in a Jupyter notebook output cell.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-This code was run from a seperate Python file
+This code was run from a separate Python file
 Hello from the file hello.py
 
     \end{Verbatim}
 
 
     
-        \subsection{Other usefull magic
-commands}\label{other-usefull-magic-commands}
+        \subsection{Other useful magic
+commands}\label{other-useful-magic-commands}
     
 
 
@@ -5517,8 +5573,8 @@ You can list all of the available magic commands by typing and running
 %lsmagic
 \end{lstlisting}
 
-The output will show all the available line magic commands that begin
-with the percent sign \%.
+The output shows all the available line magic commands that begin with
+the percent sign \lstinline!%!.
 
 \begin{lstlisting}
 Available line magics:
@@ -5545,7 +5601,7 @@ Notebook}\label{getting-help-in-a-jupyter-notebook}
 
 
     
-        There are a couple different ways to get help when using a Jupyter
+        There are a couple of different ways to get help when using a Jupyter
 notebook.
     
 
@@ -5555,43 +5611,56 @@ notebook.
     
         \subsection{\texorpdfstring{Get help using
 \texttt{dir}}{Get help using dir}}\label{get-help-using-dir}
-    
 
-
-
-
-    
-        Typing \lstinline!dir()! and passing in a function, method, variable or
+Typing \lstinline!dir()! and passing in a function, method, variable or
 object shows the possible object, method and function calls available to
 that object. For example, we can investigate the different functions in
-the \textbf{urllib} module, part of Python's Standard Library, by
-importing \lstinline!urllib!, then calling \lstinline!dir(urllib)!
+the \textbf{glob} module, part of Python's Standard Library, by
+importing \lstinline!glob!, then calling \lstinline!dir(glob)!.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{urllib}
-        \PY{n+nb}{dir}\PY{p}{(}\PY{n}{urllib}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{glob}
+        \PY{n+nb}{dir}\PY{p}{(}\PY{n}{glob}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} ['\_\_builtins\_\_',
+{\color{outcolor}Out[{\color{outcolor}1}]:} ['\_\_all\_\_',
+         '\_\_builtins\_\_',
          '\_\_cached\_\_',
          '\_\_doc\_\_',
          '\_\_file\_\_',
          '\_\_loader\_\_',
          '\_\_name\_\_',
          '\_\_package\_\_',
-         '\_\_path\_\_',
          '\_\_spec\_\_',
-         'parse']
+         '\_glob0',
+         '\_glob1',
+         '\_glob2',
+         '\_iglob',
+         '\_ishidden',
+         '\_isrecursive',
+         '\_iterdir',
+         '\_rlistdir',
+         'escape',
+         'fnmatch',
+         'glob',
+         'glob0',
+         'glob1',
+         'has\_magic',
+         'iglob',
+         'magic\_check',
+         'magic\_check\_bytes',
+         'os',
+         're']
 \end{Verbatim}
             
 
     
-        \subsection{Get help using . {[}Tab{]}}\label{get-help-using-.-tab}
+        \subsection{Get help using Tab}\label{get-help-using-tab}
 
 After typing the name of a variable, object or function following the
 \lstinline!.! character hit the \textbf{{[}Tab{]}} key. Typing
@@ -5599,8 +5668,9 @@ After typing the name of a variable, object or function following the
 the list or type a letter to filter the list to certain starting
 letters. Use {[}Enter{]} to select the option you want.
 
-Tab completion can also be used during module importing, to see which
-functions and classes are available in a given module.
+Tab completion can also be used during module import. Hit tab after
+typing the module name to see which functions and classes are available
+in that module.
     
 
 
@@ -5619,8 +5689,8 @@ from math import <tab>
         \subsection{\texorpdfstring{Get help using the \texttt{help()}
 function}{Get help using the help() function}}\label{get-help-using-the-help-function}
 
-after importing a module, you can use the help() function to see
-documentation about the command if it is available:
+After importing a module, you can use the \lstinline!help()! function to
+see documentation about the command if it is available.
     
 
 
@@ -5644,10 +5714,7 @@ sin({\ldots})
 
 
     
-        \subsection{\texorpdfstring{Get help using \texttt{?} and
-\texttt{??}}{Get help using ? and ??}}\label{get-help-using-and}
-
-After importing a module, you can view help on the imported module by
+        After importing a module, you can view help on the imported module by
 typing the module name followed by a question mark \lstinline!?!
     
 
@@ -5661,22 +5728,77 @@ typing the module name followed by a question mark \lstinline!?!
 
 
     
-        You can view the source code where a particular function lives using a
-double question mark \lstinline!??!
+        \begin{lstlisting}
+Signature: statistics.mean(data)
+Docstring:
+Return the sample arithmetic mean of data.
+
+>>> mean([1, 2, 3, 4, 4])
+2.8
+
+>>> from fractions import Fraction as F
+>>> mean([F(3, 7), F(1, 21), F(5, 3), F(1, 3)])
+Fraction(13, 21)
+
+>>> from decimal import Decimal as D
+>>> mean([D("0.5"), D("0.75"), D("0.625"), D("0.375")])
+Decimal('0.5625')
+
+If ``data`` is empty, StatisticsError will be raised.
+File:      ~/anaconda3/envs/book/lib/python3.6/statistics.py
+Type:      function
+\end{lstlisting}
+    
+
+
+
+
+    
+        You can view the source code where a particular function is defined
+using a double question mark \lstinline!??!
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} statistics.median\PY{o}{??}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{statistics}
+        statistics.mean\PY{o}{??}
 \end{Verbatim}
+
+
+
+    
+        \begin{lstlisting}
+Signature: statistics.mean(data)
+Source:   
+def mean(data):
+    """Return the sample arithmetic mean of data.
+
+    >>> mean([1, 2, 3, 4, 4])
+    2.8
+
+    >>> from fractions import Fraction as F
+    >>> mean([F(3, 7), F(1, 21), F(5, 3), F(1, 3)])
+    Fraction(13, 21)
+
+    >>> from decimal import Decimal as D
+    >>> mean([D("0.5"), D("0.75"), D("0.625"), D("0.375")])
+    Decimal('0.5625')
+
+    If ``data`` is empty, StatisticsError will be raised.
+    """
+    if iter(data) is data:
+        data = list(data)
+\end{lstlisting}
+    
+
 
 
 
     
         \subsection{Help online}\label{help-online}
 
-Help is also avaiable online at on the Jupyter Notebook docs:
+Help is also available online at in the offical Jupyter documentation:
 
 \begin{quote}
 \url{http://jupyter.readthedocs.io/en/latest/}
@@ -5715,11 +5837,14 @@ page.
 
 
     
-        Kernal
+        \begin{key_terms}
+        Kernel
 
 Notebook
 
 Jupyter
+
+Jupyter notebook
 
 iPython
 
@@ -5728,6 +5853,8 @@ Execute
 .ipynb file
 
 backend
+        \end{key_terms}
+
     
 
 
@@ -5836,17 +5963,20 @@ Q04.10
     
         By the end of this chapter you will be able to:
 
-\begin{lstlisting}
-* import functions and use them in scripts
-
-* create your own functions 
-
-* run functions defined in separate files
-
-* create functions with default arguments
-
-* provide reusable code for other problem solvers to use
-\end{lstlisting}
+\begin{itemize}
+\item
+  Call functions in Python scripts
+\item
+  Import functions into Python scripts
+\item
+  Create user-defined functions
+\item
+  Create Python functions with default arguments
+\item
+  Utilize functions with positional and keyword arguments
+\item
+  Write reusable code for other problem solvers to use
+\end{itemize}
         \newpage
 
 
@@ -5864,17 +5994,53 @@ Q04.10
 
 
     
-        Functions are reusable pieces of code. Functions are an essention part
-of most programming languages. Functions provide a couple of benefits:
+        Functions are an essential part of most programming languages. Functions
+are reusable pieces of code that can be called using the function's
+name. Functions can be called anywhere in a Python program, including
+calling functions within other functions.
+
+Functions provide a couple of benefits:
 
 \begin{itemize}
 \item
-  Functions allow the same peice of code to run multiple times
+  Functions allow the same piece of code to run multiple times
 \item
-  Functions break a long programs up into smaller pieces
+  Functions break long programs up into smaller components
 \item
-  Functions can be shared with other programmers
+  Functions can be shared and used by other programmers
 \end{itemize}
+
+Every function has a \emph{name}. The function name is used when the
+function is \emph{called} in a program. Calling a function means running
+a function.
+
+Functions can receive input from the program. The input provided to a
+function is called \emph{input arguments} or just \emph{arguments}.
+Arguments are the code passed to a function as input.
+
+Functions can produce output. We say a function \emph{returns} output to
+the program. The output of a function can be assigned to a variable for
+use in a program.
+
+Below is an example of calling the \lstinline!pow()! a function in
+Python:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{out} \PY{o}{=} \PY{n+nb}{pow}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+
+
+    
+        In the function call above, the function name is \lstinline!pow!.
+\lstinline!pow! is the power function. The \lstinline!pow! function
+raises a number to a power. The input arguments are the numbers
+\lstinline!3! and \lstinline!2!. The function output is assigned to the
+variable \lstinline!out!. In this example, the function returns the
+value \lstinline!9! (3 raised to the 2 power, \(3^2 = 9\)).
     
 
 
@@ -5888,9 +6054,16 @@ of most programming languages. Functions provide a couple of benefits:
 
 
     
-        For our first function will create a simple function that adds two to
-any number. Functions in Python typically contain at least two lines.
-The first line defines the function name and arguments.
+        \subsection{Defining Functions in
+Python}\label{defining-functions-in-python}
+    
+
+
+
+
+    
+        Function definitions in Python typically contain at least two lines. The
+first line defines the function name and arguments.
 
 \begin{lstlisting}
 def function_name(arguments):
@@ -5898,13 +6071,13 @@ def function_name(arguments):
     return output
 \end{lstlisting}
 
-This line contains a couple parts:
+The first line of code above contains a couple of parts:
 
 \begin{lstlisting}
 def
 \end{lstlisting}
 
-The key word \lstinline!def! needs to be the start of the line that
+The keyword \lstinline!def! needs to be the start of the line that
 declares the function. Def stands for \emph{definition} and indicates to
 the Python interpreter that a function definition will follow.
 
@@ -5917,7 +6090,7 @@ and is typically all lowercase (in Python names that start with
 Uppercase are usually used to define \emph{Classes}). Function names
 need to start with a letter and can only contain letters, numbers and
 the underscore character. Just about any name will do, but it is best to
-avoid using any Python key words such as \lstinline!def!,
+avoid using any Python keywords such as \lstinline!def!,
 \lstinline!class!, \lstinline!if!, \lstinline!else!, \lstinline!for!. A
 complete list of reserved Python keywords is in the index.
 
@@ -5926,11 +6099,11 @@ complete list of reserved Python keywords is in the index.
 \end{lstlisting}
 
 Function names are followed by a set of parenthesis \lstinline!( )!.
-Many functions have variable names, called \emph{arguments} in between
-the parenthesis. The name used for the function argument should be used
-in the body of the function and is only local to that function. After
-the parenthesis comes a \lstinline!:! colon. A colon is required to end
-the first line of a function.
+Many functions have code, called \emph{arguments} in between the
+parenthesis. The name used for the function argument(s) should be used
+in the body of the function. After the function name, parenthesis, and
+arguments comes a \lstinline!:! colon. In Python, a colon is required to
+end the first line of all functions.
 
 A colon : is required at the end of the first line of every function. If
 the : is not present the code will not run.
@@ -5939,72 +6112,137 @@ the : is not present the code will not run.
 <code>
 \end{lstlisting}
 
-The body of the fuction contains the code that will run when the
+The body of the function contains the code that will run when the
 function is called. Any variables declared by the function arguments can
-be used in the body of the fuction. Any variables used in the body of
-the function are \emph{local variables}. Local variables can not be
+be used in the body of the function. Any variables used in the body of
+the function are \emph{local variables}. Local variables cannot be
 called or accessed by other scripts.
 
 \begin{lstlisting}
 return
 \end{lstlisting}
 
-The \lstinline!return! key word is often the last line of a function.
+The \lstinline!return! keyword is often the last line of a function.
 \lstinline!return! indicates that whatever expression that follows will
 be the output of the function. The \lstinline!return! keyword is not a
-function or a method and parenthesis are not used after
-\lstinline!return!, just a space
+function or a method, and parenthesis are not used after
+\lstinline!return!, just a space.
 
 \begin{lstlisting}
 output
 \end{lstlisting}
 
 Whatever expression is included after \lstinline!return! will be
-\emph{returned} or outputted by the function. The output expression
-after \lstinline!return! can be a single variable, value or be a more
-complex expression that includes multiple variables.
+\emph{returned} by the function. The output expression after
+\lstinline!return! can be a single variable, value or be a complex
+expression that includes multiple variables.
     
 
 
 
 
     
-        A simple first function, is a function that will add two to any number.
-The function will be called \lstinline!plustwo! and have one input
-argument, a number. The function will return that number plus
-\lstinline!2!. So the function should operate as shown below:
+        \subsection{Your First User-defined
+Function}\label{your-first-user-defined-function}
+    
 
-\begin{lstlisting}
+
+
+
+    
+        When you write your own functions, called \emph{user-defined functions},
+you need to consider at least four things:
+
+\begin{itemize}
+\tightlist
+\item
+  What will be the function name?
+\item
+  What, if any, input arguments will the function accept?
+\item
+  What will the function do? What is the purpose of the chunk of code
+  which runs when the function is called?
+\item
+  What, if any, output will the function return?
+\end{itemize}
+
+Let's write a simple function which adds two to any number. We will call
+our function \lstinline!plustwo!. Our function has one input argument, a
+number. The function will return that number plus \lstinline!2!.
+
+Let's apply this description to our four criteria:
+
+\begin{itemize}
+\tightlist
+\item
+  Function name: \lstinline!plustwo!
+\item
+  Input arguments: a number
+\item
+  What does the function do: add 2 to any number
+\item
+  Output: a number (2 + the input number)
+\end{itemize}
+
+Our \lstinline!plustwo()! function will operate as shown below:
+
+\begin{lstlisting}[language=Python]
 plustwo(3)
 5
 \end{lstlisting}
+
+The code section below defines our \lstinline!plustwo()! function.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{plustwo}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
-            \PY{n}{n} \PY{o}{=} \PY{n}{n} \PY{o}{+} \PY{l+m+mi}{2}
-            \PY{k}{return} \PY{n}{n}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{def} \PY{n+nf}{plustwo}\PY{p}{(}\PY{n}{n}\PY{p}{)}\PY{p}{:}
+            \PY{n}{out} \PY{o}{=} \PY{n}{n} \PY{o}{+} \PY{l+m+mi}{2}
+            \PY{k}{return} \PY{n}{out}
 \end{Verbatim}
 
 
+
+    
+        The code section above includes the keyword \lstinline!def!, a space and
+then the function name \lstinline!plustwo!. The input argument,
+\lstinline!n!, is enclosed in parenthesis \lstinline!(  )! after the
+function name. After the set of parenthesis is a colon \lstinline!:!.
+The body of the function includes the code \lstinline!out = n + 2!. The
+last line of the function includes the keyword \lstinline!return!
+followed by a space and the variable \lstinline!out!.
+
+Let's run our \lstinline!plustwo()! function and see the output.
+    
+
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} 5
+{\color{outcolor}Out[{\color{outcolor}2}]:} 5
 \end{Verbatim}
             
+
+    
+        The output of the \lstinline!plustwo()! function can be assigned to
+variable.
+    
+
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{ans} \PY{o}{=} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+        \PY{n}{ans}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} 12
+{\color{outcolor}Out[{\color{outcolor}3}]:} 12
 \end{Verbatim}
             
 
@@ -6017,9 +6255,9 @@ Arguments}\label{functions-with-multiple-arguments}
 
 
     
-        Functions can be written to accept multiple arguments. When multiple
-arguments are specified, they are listed within the parenthesis after
-the fuction name and seperated by a comma:
+        Functions can be written to accept multiple input arguments. When
+multiple arguments are specified, the arguments are listed within the
+parenthesis after the function name and separated by a comma:
 
 \begin{lstlisting}
 def function_name(argument1, argument2):
@@ -6027,9 +6265,16 @@ def function_name(argument1, argument2):
     return output
 \end{lstlisting}
 
-An example function that adds that finds the area of a triangle given
-the base and height would accept two arguments \lstinline!base! and
-\lstinline!height!.
+A function that calculates the area of a triangle given the base and
+height of the triangle would accept two arguments \lstinline!base! and
+\lstinline!height!. The formula for the area \(A\) of a triangle given
+base \(b\) and height \(h\) is below.
+
+\[ A = \frac{1}{2} b \times h \]
+
+Let's name our function \lstinline!triarea! and accept \lstinline!base!
+and \lstinline!height! as input arguments. The \lstinline!triarea!
+function will return a number, the area of a triangle.
     
 
 
@@ -6041,6 +6286,14 @@ the base and height would accept two arguments \lstinline!base! and
 \end{Verbatim}
 
 
+
+    
+        We can test our \lstinline!triarea()! function with a couple of sets of
+input arguments.
+    
+
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}2}]:} \PY{n}{triarea}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
 \end{Verbatim}
@@ -6050,6 +6303,43 @@ the base and height would accept two arguments \lstinline!base! and
 {\color{outcolor}Out[{\color{outcolor}2}]:} 25.0
 \end{Verbatim}
             
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{A} \PY{o}{=} \PY{n}{triarea}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}
+        \PY{n}{A}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} 2.0
+\end{Verbatim}
+            
+
+    
+        Note that only one input argument is supplied to the
+\lstinline!triarea()! function, an error is returned:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{triarea}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ------------------------------------------------------------------------
+
+        TypeError                              Traceback (most recent call last)
+
+        <ipython-input-4-ddd55ccdd949> in <module>
+    ----> 1 triarea(2)
+    
+
+        TypeError: triarea() missing 1 required positional argument: 'height'
+
+    \end{Verbatim}
+
 
     
         \section{Functions with Default
@@ -6060,9 +6350,10 @@ Arguments}\label{functions-with-default-arguments}
 
 
     
-        Functions can be specified with default arguemnts. If values for these
+        Functions can be specified with default arguments. If values for these
 arguemnts are not supplied when the fuction is called, the default
-values will be used. The general format is below:
+values are used. The general format to define a function with default
+arguments is below:
 
 \begin{lstlisting}
 def function_name(arugment1=default_value, arguemnt2=default_value):
@@ -6075,17 +6366,18 @@ def function_name(arugment1=default_value, arguemnt2=default_value):
 
 
     
-        An example function is one that calculates the distance an object falls
-based on time. The general formula for fall distance \(d\) based on fall
-time \(t\) can be modeled as:
+        An example a function with default arguments is a function that
+calculates the distance an object falls based on time. The general
+formula for fall distance \(d\) based on fall time \(t\) can be modeled
+as:
 
 \[ d = \frac{1}{2}gt^2 \]
 
-Where \(g\) is the accelleration due to gravity. On earth the value of
-\(g\) is 9.81 m/s2. But on the moon, \(g\) is about 1.625 m/s2. Our
-function will include the default value for earth's gravity and give
-programmers the option of specifying a different value for \(g\) if they
-choose.
+Where \(g\) is the acceleration due to gravity. On earth the value of
+\(g = 9.81 m/s^2\). But on the moon, \(g = 1.625 m/s^2\). Our
+\lstinline!falldist()! function will include the default value for
+earth's gravity and give programmers the option of specifying a
+different value for \(g\) if they choose.
     
 
 
@@ -6099,8 +6391,10 @@ choose.
 
 
     
-        On earth, a ball that falls for three seconds, can be calculated using
-\lstinline!falldist(3)! and leaving out a value for \lstinline!g!.
+        On earth, the distance a ball that falls for three seconds is calculated
+by \lstinline!falldist(3)!. In the function call
+\lstinline!falldist(3)!, no value is specified for \lstinline!g!, so the
+default value \lstinline!9.81! is used.
     
 
 
@@ -6116,22 +6410,26 @@ choose.
             
 
     
-        On the moon, gravity is much weaker. The acceleration of falling objects
-on the moon is 1.625 m/s2. To calculate how far a ball falls on the moon
-in three seconds, two arguments need to be supplied \lstinline!3! and
-\lstinline!1.625!. If a second argument is given, this overrides the
-default value assigned in the first line of the function.
+        On earth, we see the ball falls \lstinline!44.145! meters in 3 seconds.
+
+On the moon, gravity is much weaker. The acceleration of falling objects
+on the moon is \(g = 1.625 m/s^2\). To calculate how far a ball falls on
+the moon in three seconds, two arguments need to be supplied to the
+\lstinline!falldist()! function: \lstinline!3! and \lstinline!1.625!. If
+a second argument is provided to the \lstinline!falldist()! function, in
+this case \lstinline!1.625!,it overrides the default value assigned in
+the first line of the function.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{falldist}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mf}{1.625}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{falldist}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mf}{1.625}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} 7.3125
+{\color{outcolor}Out[{\color{outcolor}4}]:} 7.3125
 \end{Verbatim}
             
 
@@ -6145,14 +6443,15 @@ Files}\label{calling-functions-from-other-files}
 
     
         User-defined functions can be called from other files. A function can be
-called and run in a different file than the file the function definition
-is written in. If a new file called \textbf{\emph{myfunctions.py}} is
+called and run in a different file than the file where the function is
+definition. If a new file called \textbf{\emph{myfunctions.py}} is
 created and contains two function definitions, \lstinline!plustwo()! and
-\lstinline!falldist()!, these functions can be used by a separate file
-as long as the file and function names are imported first. It is
-important that the file which contains the functions ends in the
-\textbf{\emph{.py}} extension. Without a \textbf{\emph{.py}} extension,
-the file can not be imported.
+\lstinline!falldist()!, these functions can be used by a separate script
+as long as the file and function names are imported in the separate
+script first. It is essential that the file which contains the function
+definitions ends in the \textbf{\emph{.py}} extension. Without a
+\textbf{\emph{.py}} extension, the file where the functions are defined
+can not be imported.
     
 
 
@@ -6166,8 +6465,8 @@ using the code below.
 # myfunctions.py
 
 def plustwo(n):
-    n = n + 2
-    return n
+    out = n + 2
+    return out
 
 
 def falldist(t,g=9.81):
@@ -6188,12 +6487,26 @@ inside another file include the import line,
 \lstinline!from <filename> import <function_name>!. Note that although
 the file name must contain a \textbf{\emph{.py}} extension,
 \lstinline!.py! is not used as part of the file name during import.
+
+The general syntax to import and call a function from a separate file is
+below:
+
+\begin{lstlisting}
+from function_file import function_name
+
+function_name(arguments)
+\end{lstlisting}
+
+An example using this syntax with the \textbf{\emph{myfunctions.py}}
+file and the functions \lstinline!plustwo()! and \lstinline!falldist()!
+is below:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{myfunctions} \PY{k}{import} \PY{n}{plustwo}
+        
         \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
 \end{Verbatim}
 
@@ -6202,14 +6515,81 @@ the file name must contain a \textbf{\emph{.py}} extension,
 {\color{outcolor}Out[{\color{outcolor}1}]:} 5
 \end{Verbatim}
             
+
+    
+        Multiple functions can be imported from the same file by separating the
+imported functions with commas. The general syntax to import and call
+multiple functions from the same file is below:
+
+\begin{lstlisting}
+from function_file import function_name1, function_name2
+
+function_name1(arguments)
+function_name2(arguments)
+\end{lstlisting}
+
+An example using this syntax with the \textbf{\emph{myfunctions.py}}
+file and the functions \lstinline!plustwo()! and \lstinline!falldist()!
+is below:
+    
+
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{myfunctions} \PY{k}{import} \PY{n}{falldist}
-        \PY{n}{falldist}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{myfunctions} \PY{k}{import} \PY{n}{falldist}\PY{p}{,} \PY{n}{plustwo}
+        
+        \PY{n}{out1} \PY{o}{=} \PY{n}{falldist}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+        \PY{n}{out2} \PY{o}{=} \PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+        
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{out1}\PY{p}{,} \PY{n}{out2}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+44.145 5
+
+    \end{Verbatim}
+
+
+    
+        Another way to import and use the functions from
+\textbf{\emph{myfunctions.py}} into another script or Jupyter notebook
+is to import the entire \textbf{\emph{myfunctions.py}} file with
+\lstinline!import myfunctions!, then call the functions with the syntax
+below.
+
+\begin{lstlisting}
+import function_file
+
+function_file.function_name()
+\end{lstlisting}
+
+An example using this syntax with the \textbf{\emph{myfunctions.py}}
+file is below.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{myfunctions}
+        
+        \PY{n}{myfunctions}\PY{o}{.}\PY{n}{plustwo}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} 44.145
+{\color{outcolor}Out[{\color{outcolor}3}]:} 5
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{myfunctions}
+        
+        \PY{n}{myfunctions}\PY{o}{.}\PY{n}{falldist}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} 44.145
 \end{Verbatim}
             
 
@@ -6222,15 +6602,15 @@ the file name must contain a \textbf{\emph{.py}} extension,
 
     
         It is good programming practice to document your code. Reusable chunks
-of code are particulary important to document as other programmers may
-use the code and you may use the code again at a different time.
+of code are particularly relevant to document as other programmers may
+use the code, and you may use the code again at a different time.
 
-Python has a couple different ways for programmers to add documentation.
-One way is to use simple comments. Comments are lines of code that do
-not get run by the Python interpreter. Comments are meant to be viewed
-by humans. In Python, comment lines start with the pound symbol
-\lstinline!#!. Any line that starts with a \lstinline!#! will not be run
-by the Python Python Interpreter.
+Python has a couple of different ways for programmers to add
+documentation. One way is to use simple comments. Comments are lines of
+code that do not get run by the Python interpreter. Comments are meant
+to be viewed by humans. In Python, comment lines start with the pound
+symbol \lstinline!#!. Any line that starts with a \lstinline!#! symbol
+will not be run by the Python Interpreter.
 
 Another way to document code is to use \emph{docstrings}. Docstrings are
 comments which are surrounded with triple quotation marks and usually
@@ -6247,7 +6627,7 @@ def function_name(arguments):
     """
     <code>
     
-    return <output>
+    return output
     
 \end{lstlisting}
 
@@ -6286,11 +6666,12 @@ sum(iterable, start=0, /)
 
 
     
-        Let's create our own function to convert g to kg. Let's call our
-function \lstinline!g2kg!. The first thing to do is make sure that the
-name \lstinline!g2kg! is not assigned to another function and is not a
-keyword by Python. We can check quick using \lstinline!type()!. We know
-that \lstinline!sum()! is a function, how about g2kg?
+        Let's create a new function that converts grams (g) to kilograms (kg).
+Let's call our function \lstinline!g2kg!. The first thing to do is make
+sure that the name \lstinline!g2kg! is not assigned to another function
+and is not a keyword by Python. We can check quick using Python's
+built-in \lstinline!type()! function. We know that \lstinline!sum()! is
+a function, how about \lstinline!g2kg()!?
     
 
 
@@ -6312,7 +6693,7 @@ that \lstinline!sum()! is a function, how about g2kg?
 
         NameError                              Traceback (most recent call last)
 
-        <ipython-input-2-487fcfc6eb43> in <module>()
+        <ipython-input-2-487fcfc6eb43> in <module>
           1 print(type(sum))
     ----> 2 print(type(g2kg))
     
@@ -6323,9 +6704,9 @@ that \lstinline!sum()! is a function, how about g2kg?
 
 
     
-        Since \lstinline!g2kg! is not defined, we can use \lstinline!g2kg! as
-the name of a user-defined function. Once we know that our Remember the
-parenthsis, colon and return statment.
+        Since \lstinline!g2kg! is already defined in Python, we can use
+\lstinline!g2kg! as the name of a new user-defined function. Remember
+the \textbf{parenthesis}, \textbf{colon}, and return statement.
     
 
 
@@ -6340,8 +6721,8 @@ parenthsis, colon and return statment.
 
 
     
-        Now let's try and use our function. How many kg's is 1300 grams. We
-expect the output to be 1.3 kg
+        Now let's try and use our function. How many kilograms is 1300 grams? We
+expect the output to be \lstinline!1.3! kilograms.
     
 
 
@@ -6357,9 +6738,10 @@ expect the output to be 1.3 kg
             
 
     
-        If we call \lstinline!help()! on our function \lstinline!g2kg()!,
-nothing is returned. Our \lstinline!g2kg()! function does not contain a
-docstring yet.
+        If we call \lstinline!help()! on our \lstinline!g2kg()! function,
+nothing is returned. \lstinline!help(g2kg)! does not return any output
+because our new \lstinline!g2kg()! function does not contain a docstring
+yet.
     
 
 
@@ -6379,8 +6761,12 @@ g2kg(g)
 
 
     
-        Now let's add a docstring to the function. Common components of
-docstrings include:
+        If we insert a docstring into the function definition,
+\lstinline!help(g2kg)! will return whatever text we included in the
+docstring.
+
+The standard components of docstrings included in function definitions
+include:
 
 \begin{itemize}
 \tightlist
@@ -6393,6 +6779,28 @@ docstrings include:
 \item
   an example of the function running including the result
 \end{itemize}
+
+The docstring is included right below the \lstinline!def! line and is
+enclosed in triple quotes \lstinline!"""  """!. The triple quotes are
+typically included on their own lines. The syntax to add a docstring in
+a function definition is below.
+
+```text def function\_name(arguments): ``''"
+
+\begin{lstlisting}
+ <docstring text>
+ 
+ """
+ 
+ <code>
+ 
+ return output
+\end{lstlisting}
+
+```
+
+Let's include a docstring with our \lstinline!g2kg()! function
+definition.
     
 
 
@@ -6404,7 +6812,7 @@ docstrings include:
         \PY{l+s+sd}{    Function g2kg converts between g and kg}
         \PY{l+s+sd}{    }
         \PY{l+s+sd}{    input: a measurement in grams, int or float}
-        \PY{l+s+sd}{    output: measurment in kg, float}
+        \PY{l+s+sd}{    output: measurment in kilograms, float}
         \PY{l+s+sd}{    }
         \PY{l+s+sd}{    Example:}
         \PY{l+s+sd}{    }
@@ -6421,8 +6829,9 @@ docstrings include:
 
 
     
-        Now let's ask for \lstinline!help()! on our function and see if the
-docstring is printed back.
+        Now let's ask for \lstinline!help()! on our \lstinline!g2kg()! function
+and see the docstring we wrote in the \lstinline!g2kg()! function
+definition printed back to us.
     
 
 
@@ -6439,7 +6848,7 @@ g2kg(g)
     Function g2kg converts between g and kg
     
     input: a measurement in grams, int or float
-    output: measurment in kg, float
+    output: measurment in kilograms, float
     
     Example:
     
@@ -6461,7 +6870,9 @@ Arguments}\label{positional-and-keyword-arguments}
 
     
         Python functions can contain two types of arguments: \emph{positional
-arguments} and \emph{keyword arguments}.
+arguments} and \emph{keyword arguments}. Positional arguments are
+included in the correct order. Keyword arguments are added with a
+keyword and equals sign.
     
 
 
@@ -6472,10 +6883,11 @@ arguments} and \emph{keyword arguments}.
 
 An \emph{argument} is a variable, value or object passed to a function
 or method. \emph{Positional arguments} are arguments that need to be
-included when a function is called in the proper position or order. The
-first positional argument always needs to be listed first, the second
-positional argument needs to be listed second, the third positional
-argument listed third etc.
+included when a function is called in the proper position or order.
+
+The first positional argument always needs to be listed first. The
+second positional argument needs to be listed second and the third
+positional argument listed third, etc.
 
 An example of positional arguments can be seen in Python's
 \lstinline!complex()! function. This function returns a complex number
@@ -6483,10 +6895,10 @@ with a real term and an imaginary term. The order that numbers are
 passed to the complex function determines which number is the real term
 and which term is the imaginary term.
 
-If the complex number \lstinline!3 + 5j! needs to be created, the two
-positional arguments are the numbers \lstinline!3! and \lstinline!5!.
-The \lstinline!3! must be listed first and the \lstinline!5! must be
-listed second.
+If the complex number \lstinline!3 + 5j! is created, the two positional
+arguments are the numbers \lstinline!3! and \lstinline!5!. The
+\lstinline!3! must be listed first, and the \lstinline!5! must be listed
+second.
     
 
 
@@ -6521,12 +6933,12 @@ order produces a different result.
             
 
     
-        \subsubsection{Positional Arguments specified an
-iterable}\label{positional-arguments-specified-an-iterable}
+        \subsubsection{Positional Arguments Specified by an
+Iterable}\label{positional-arguments-specified-by-an-iterable}
 
 Positional arguments can also be passed to functions and methods using
-an iterable object. Examples of iterable objects include lists, tuples
-and sets. The general syntax to use is:
+an iterable object. Examples of iterable objects in Python include lists
+and tuples. The general syntax to use is:
 
 \begin{lstlisting}
 function(*iterable)
@@ -6534,8 +6946,12 @@ function(*iterable)
 
 Where \lstinline!function! is the name of the function and
 \lstinline!iterable! is the name of the iterable preceded by the
-ampersand \lstinline!*! character. An example of using a list to pass
-positional arguments to the \lstinline!complex()! function is below:
+ampersand \lstinline!*! character.
+
+An example of using a list to pass positional arguments to the
+\lstinline!complex()! function is below. Note the ampersand
+\lstinline!*! character is included before the \lstinline!term_list!
+argument.
     
 
 
@@ -6554,9 +6970,9 @@ positional arguments to the \lstinline!complex()! function is below:
     
         \subsection{Keyword Arguments}\label{keyword-arguments}
 
-A \emph{keyword argument} is an argument passed to a function or a
-method which is preceded by a \emph{keyword} and an equals sign the
-general form is:
+A \emph{keyword argument} is an argument passed to a function or method
+which is preceded by a \emph{keyword} and an equals sign. The general
+form is:
 
 \begin{lstlisting}
 function(keyword=value)
@@ -6566,8 +6982,8 @@ Where \lstinline!function! is the function name, \lstinline!keyword! is
 the keyword argument and value is the value or object passed as that
 keyword. Python's complex function can also accept two keyword
 arguments. The two keyword arguments are \lstinline!real=! and
-\lstinline!imag=!. To create the complex number \lstinline!3 + 5j! the,
-\lstinline!3! and \lstinline!5! can be passed to the function as the
+\lstinline!imag=!. To create the complex number \lstinline!3 + 5j!
+the\lstinline!3! and \lstinline!5! can be passed to the function as the
 values assigned to the keyword arguments \lstinline!real=! and
 \lstinline!imag=!.
     
@@ -6585,11 +7001,39 @@ values assigned to the keyword arguments \lstinline!real=! and
             
 
     
+        Keyword arguments are passed to functions after any required positional
+arguments. But the order of one keyword argument compared to another
+keyword argument does not matter as illustrated by the code sections
+below.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n+nb}{complex}\PY{p}{(}\PY{n}{real}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{imag}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} (3+5j)
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n+nb}{complex}\PY{p}{(}\PY{n}{imag}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{real}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} (3+5j)
+\end{Verbatim}
+            
+
+    
         \subsubsection{Keyword Arguments specified by a
 dictionary}\label{keyword-arguments-specified-by-a-dictionary}
 
-Keyword arguments can also be passed to functions and methods using
-dictionary. The dictionary used must contain the keywords as keys and
+Keyword arguments can also be passed to functions and methods using a
+Python dictionary. The dictionary must contain the keywords as keys and
 the values as values. The general form is:
 
 \begin{lstlisting}
@@ -6600,8 +7044,8 @@ function(**keyword_dict)
 Where \lstinline!function! is the name of the function and
 \lstinline!keyword_dict! is the name of the dictionary containing
 keywords and values preceded by the double ampersand \lstinline!**!
-character. Note that the keywords when assigned as keys in a dictionary
-must be surounded by quotes \lstinline!' '!. An example of using a
+character. Note that the keywords assigned as keys in a dictionary must
+be surrounded by quotes \lstinline!' '!. An example of using a
 dictionary to pass keyword arguments to the \lstinline!complex()!
 function is below:
     
@@ -6609,13 +7053,13 @@ function is below:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{keyword\PYZus{}dict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{real}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{imag}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{5}\PY{p}{\PYZcb{}}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{keyword\PYZus{}dict} \PY{o}{=} \PY{p}{\PYZob{}}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{real}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{imag}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:} \PY{l+m+mi}{5}\PY{p}{\PYZcb{}}
         \PY{n+nb}{complex}\PY{p}{(}\PY{o}{*}\PY{o}{*}\PY{n}{keyword\PYZus{}dict}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} (3+5j)
+{\color{outcolor}Out[{\color{outcolor}7}]:} (3+5j)
 \end{Verbatim}
             
 
@@ -6629,6 +7073,14 @@ function is below:
 
 
     
+        summary text
+    
+
+
+
+
+    
+        \begin{key_terms}
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
 
 function
@@ -6652,8 +7104,15 @@ return
 .py-file
 
 import
+        \end{key_terms}
 
-\subsection{Python Commands}\label{python-commands}
+    
+
+
+
+
+    
+        \subsection{Python Commands}\label{python-commands}
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -6703,7 +7162,7 @@ Convert 5,000 meters into feet using your function.
 
 Q05.31 In mechanical engineering, there are a couple different units of
 \emph{stress}. Units of stress include: Pascals (Pa), Mega Pascals
-(MPa), pounds per square inch (psi) and kilo pounds per square inch
+(MPa), pounds per square inch (psi) and kilopounds per square inch
 (ksi).
 
 \begin{enumerate}
@@ -6713,10 +7172,10 @@ Q05.31 In mechanical engineering, there are a couple different units of
   Pascals (Pa) and Mega Pascals (MPa)
 \item
   Write a function called \lstinline!mpa_to_ksi! to convert between Mega
-  Pascals (MPa) and kilo pounds per square inch (ksi)
+  Pascals (MPa) and kilopounds per square inch (ksi)
 \item
-  Write a function called \lstinline!ksi_to_psi! to convert between kilo
-  pounds per square inch (ksi) and pounds per square inch (psi)
+  Write a function called \lstinline!ksi_to_psi! to convert between
+  kilopounds per square inch (ksi) and pounds per square inch (psi)
 \item
   Combine the three functions \lstinline!pa_to_mpa!,
   \lstinline!mpa_to_ksi!, \lstinline!ksi_to_psi! into a single function
@@ -6742,46 +7201,37 @@ Q05.31 In mechanical engineering, there are a couple different units of
 
 
     
-        \subsubsection{Error Checking}\label{error-checking}
+        \subsubsection{Errors, Explanations, and
+Solutions}\label{errors-explanations-and-solutions}
 
 For the sections of code below, run the lines of code. Then explain the
 error in your own words. Below your error explanation, rewrite and run
 an improved section of code that fixes the error.
 
-Q05.81 Run the code below and explain the error. Write the code and run
+Q05.80 Run the code below and explain the error. Write the code and run
 it error free.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 def add_me(num)
     return num + 2
 
 add_me(1)
 \end{lstlisting}
 
-Q05.82 Run the code below and explain the error. Re-write the code and
+Q05.81 Run the code below and explain the error. Re-write the code and
 run it error free.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 def add_you[nix]:
     return num + 2
     
 add_you(2)
 \end{lstlisting}
 
-Q05.83 Run the code below and explain the error. Re-write the code and
+Q05.82 Run the code below and explain the error. Re-write the code and
 run it error free.
 
-\begin{lstlisting}
-def my_func():
-    print('yup')
-    
-my_func('yup')
-\end{lstlisting}
-
-Q05.83 Run the code below and explain the error. Re-write the code and
-run it error free.
-
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 def my_func():
     print('yup')
     
@@ -7002,7 +7452,7 @@ output cells.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_318_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_342_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7373,7 +7823,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_330_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_354_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7479,7 +7929,7 @@ line shows the plot on the screen.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_335_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_359_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7520,7 +7970,7 @@ These daughter objects in turn have methods such as
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_337_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_361_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7657,7 +8107,7 @@ positions and \lstinline!CTEs! is the list of bar heights.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_350_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_374_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7712,7 +8162,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_353_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_377_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7740,7 +8190,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_354_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_378_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7840,7 +8290,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_362_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7877,7 +8327,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_390_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7955,7 +8405,7 @@ styles will be addressed in a subsequent section of this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_372_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_396_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8022,7 +8472,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_378_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_402_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8067,7 +8517,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_381_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_405_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8122,7 +8572,7 @@ the number of y-values. The list or array sizes passed to
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_384_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_408_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8183,7 +8633,7 @@ plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_410_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8265,7 +8715,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_391_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_415_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8333,7 +8783,7 @@ side by side. This can be done in Matplotlib using \emph{subplots}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_396_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_420_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8393,7 +8843,7 @@ notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_401_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_425_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8468,7 +8918,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_404_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_428_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8495,7 +8945,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_405_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_429_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8522,7 +8972,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_406_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_430_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8549,7 +8999,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_407_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_431_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8628,7 +9078,7 @@ two 1D arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_438_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8682,7 +9132,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_417_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_441_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8750,7 +9200,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_420_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_444_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8817,7 +9267,7 @@ different color map.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_423_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_447_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8911,7 +9361,7 @@ define the quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_431_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_455_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8974,7 +9424,7 @@ arrow points straight down.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_435_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_459_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9049,7 +9499,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_439_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_463_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9094,7 +9544,7 @@ the \(x\) and \(y\) arrow starting point arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_441_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_465_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9137,7 +9587,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_443_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_467_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9180,7 +9630,7 @@ Matplotlib.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_445_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_469_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9274,7 +9724,7 @@ plots each in color
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_448_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_472_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9340,7 +9790,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_453_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_477_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9382,7 +9832,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_456_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_480_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9422,7 +9872,7 @@ and distance relative to the point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_458_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_482_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9494,7 +9944,7 @@ statinary object and model the fluid flow around the circle.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_460_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_484_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9557,7 +10007,7 @@ the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_467_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_491_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9612,7 +10062,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_470_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_494_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9662,7 +10112,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_473_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_497_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9717,7 +10167,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_476_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_500_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -12070,7 +12520,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_637_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_661_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
