@@ -10112,9 +10112,9 @@ vector field.
         \subsubsection{Stream plot of two point
 charges}\label{stream-plot-of-two-point-charges}
 
-We can build a stream plot showing the electric field due to two point
-charages. The electric field at any point is dependant upon the position
-and distance relative to the point charges.
+We can build a stream plot to demonstrate the electric field due to two
+point charges. The electric field at any point depends on the position
+and distance relative to the two point charges.
     
 
 
@@ -10122,6 +10122,7 @@ and distance relative to the point charges.
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}13}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
          \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
          
          \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{)}
          \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mf}{0.2}\PY{p}{)}
@@ -10144,77 +10145,6 @@ and distance relative to the point charges.
 
     \begin{center}
     \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_489_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-
-    
-        \subsubsection{Stream plot showing fluid flow around an
-object}\label{stream-plot-showing-fluid-flow-around-an-object}
-
-Stream plots can also be used to show how fluid flows around a
-stationary object. In this example, we will consider a 2D circle as the
-statinary object and model the fluid flow around the circle. This
-example comes from Tony S. Yu, a developer and engineer in Austin, TX.
-The code section comes from Tony's his personal blog.
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{c+c1}{\PYZsh{} from: https://tonysyu.github.io/plotting\PYZhy{}streamlines\PYZhy{}with\PYZhy{}matplotlib\PYZhy{}and\PYZhy{}sympy.html\PYZsh{}.Wzq5M9JKjIU}
-         
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{k+kn}{import} \PY{n+nn}{sympy}
-         \PY{k+kn}{from} \PY{n+nn}{sympy}\PY{n+nn}{.}\PY{n+nn}{abc} \PY{k}{import} \PY{n}{x}\PY{p}{,} \PY{n}{y}
-         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-         
-         \PY{k}{def} \PY{n+nf}{cylinder\PYZus{}stream\PYZus{}function}\PY{p}{(}\PY{n}{U}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{R}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
-             \PY{n}{r} \PY{o}{=} \PY{n}{sympy}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n}{y}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
-             \PY{n}{theta} \PY{o}{=} \PY{n}{sympy}\PY{o}{.}\PY{n}{atan2}\PY{p}{(}\PY{n}{y}\PY{p}{,} \PY{n}{x}\PY{p}{)}
-             \PY{k}{return} \PY{n}{U} \PY{o}{*} \PY{p}{(}\PY{n}{r} \PY{o}{\PYZhy{}} \PY{n}{R}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{/} \PY{n}{r}\PY{p}{)} \PY{o}{*} \PY{n}{sympy}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{theta}\PY{p}{)}
-         
-         \PY{k}{def} \PY{n+nf}{velocity\PYZus{}field}\PY{p}{(}\PY{n}{psi}\PY{p}{)}\PY{p}{:}
-             \PY{n}{u} \PY{o}{=} \PY{n}{sympy}\PY{o}{.}\PY{n}{lambdify}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{,} \PY{n}{psi}\PY{o}{.}\PY{n}{diff}\PY{p}{(}\PY{n}{y}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numpy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{v} \PY{o}{=} \PY{n}{sympy}\PY{o}{.}\PY{n}{lambdify}\PY{p}{(}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{psi}\PY{o}{.}\PY{n}{diff}\PY{p}{(}\PY{n}{x}\PY{p}{)}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{numpy}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{k}{return} \PY{n}{u}\PY{p}{,} \PY{n}{v}
-         
-         \PY{k}{def} \PY{n+nf}{plot\PYZus{}streamlines}\PY{p}{(}\PY{n}{ax}\PY{p}{,} \PY{n}{u}\PY{p}{,} \PY{n}{v}\PY{p}{,} \PY{n}{xlim}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{,} \PY{n}{ylim}\PY{o}{=}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}\PY{p}{:}
-             \PY{n}{x0}\PY{p}{,} \PY{n}{x1} \PY{o}{=} \PY{n}{xlim}
-             \PY{n}{y0}\PY{p}{,} \PY{n}{y1} \PY{o}{=} \PY{n}{ylim}
-             \PY{n}{Y}\PY{p}{,} \PY{n}{X} \PY{o}{=}  \PY{n}{np}\PY{o}{.}\PY{n}{ogrid}\PY{p}{[}\PY{n}{y0}\PY{p}{:}\PY{n}{y1}\PY{p}{:}\PY{l+m+mi}{100}\PY{n}{j}\PY{p}{,} \PY{n}{x0}\PY{p}{:}\PY{n}{x1}\PY{p}{:}\PY{l+m+mi}{100}\PY{n}{j}\PY{p}{]}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{streamplot}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{u}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{)}\PY{p}{,} \PY{n}{v}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{)}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cornflowerblue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         
-         \PY{k}{def} \PY{n+nf}{format\PYZus{}axes}\PY{p}{(}\PY{n}{ax}\PY{p}{)}\PY{p}{:}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}aspect}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{equal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{figure}\PY{o}{.}\PY{n}{subplots\PYZus{}adjust}\PY{p}{(}\PY{n}{bottom}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{top}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{left}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{right}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{)}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{set\PYZus{}ticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{set\PYZus{}ticks}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}
-             \PY{n}{ax}\PY{o}{.}\PY{n}{set\PYZus{}aspect}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{equal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         
-         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
-         
-         \PY{n}{psi} \PY{o}{=} \PY{n}{cylinder\PYZus{}stream\PYZus{}function}\PY{p}{(}\PY{p}{)}
-         \PY{n}{u}\PY{p}{,} \PY{n}{v} \PY{o}{=} \PY{n}{velocity\PYZus{}field}\PY{p}{(}\PY{n}{psi}\PY{p}{)}
-         
-         \PY{n}{xlim} \PY{o}{=} \PY{n}{ylim} \PY{o}{=} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{)}
-         \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
-         \PY{n}{plot\PYZus{}streamlines}\PY{p}{(}\PY{n}{ax}\PY{p}{,} \PY{n}{u}\PY{p}{,} \PY{n}{v}\PY{p}{,} \PY{n}{xlim}\PY{p}{,} \PY{n}{ylim}\PY{p}{)}
-         \PY{c+c1}{\PYZsh{}ax.streamplot(u,v,xlim,ylim)}
-         
-         \PY{n}{c} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{Circle}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{,} \PY{n}{radius}\PY{o}{=}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{facecolor}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{cornflowerblue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{ax}\PY{o}{.}\PY{n}{add\PYZus{}patch}\PY{p}{(}\PY{n}{c}\PY{p}{)}
-         
-         \PY{n}{format\PYZus{}axes}\PY{p}{(}\PY{n}{ax}\PY{p}{)}
-         
-         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_491_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10247,6 +10177,19 @@ the line \lstinline!%matplotlib inline!
 
     
         \subsection{Surface Plots}\label{surface-plots}
+
+Surface plots are created with Matplotlib's
+\lstinline!ax.plot_surface()! method. By default surface plots are a
+single color. The general method call is:
+
+\begin{lstlisting}
+ax.plot_surface(X, Y, Z)
+\end{lstlisting}
+
+Where \lstinline!X! and \lstinline!Y! are 2D array of x and y points and
+\lstinline!Z! is a 2D array of heights.
+
+An example of a 3D surface plot is in the next code section.
     
 
 
@@ -10254,30 +10197,25 @@ the line \lstinline!%matplotlib inline!
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{cm}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{c+c1}{\PYZsh{}if using a Jupyter notebook, include:}
         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
+        
+        \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
         \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
         \PY{n}{X}\PY{p}{,}\PY{n}{Y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{meshgrid}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}
         \PY{n}{Z} \PY{o}{=} \PY{n}{X}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{X}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{Y}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+        
+        \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
         \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{,} \PY{n}{projection}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3d}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{ax}\PY{o}{.}\PY{n}{plot\PYZus{}surface}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{)}
+        \PY{n}{ax}\PY{o}{.}\PY{n}{plot\PYZus{}surface}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_498_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_494_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10307,8 +10245,9 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
         
         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
@@ -10332,7 +10271,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_501_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_497_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10350,18 +10289,28 @@ Along with the z-axis height included on the surface, a color is also
 included. The general method call is:
 
 \begin{lstlisting}
-surf = ax.plot_surface(X, Y, Z, cmap=cm.coolwarm, linewidth=0, antialiased=False)
+surf = ax.plot_surface(X, Y, Z, 
+                        cmap=<color map>,
+                        linewidth=0,
+                        antialiased=False)
 \end{lstlisting}
 
-Where the keyword argument \lstinline!cmap=! assigns the colors to the
-surface.
+Where the keyword argument \lstinline!cmap=<color map>! assigns the
+colors to the surface. There is a huge array of color map options in
+Matplotlib. Options include \lstinline!'coolwarm'!,
+\lstinline!'gist_earth'!, and \lstinline!ocean!. Find all of
+Matplotlib's colormaps at
+\href{https://matplotlib.org/tutorials/colors/colormaps.html}{matplotlib.org/tutorials/colors/colormaps}.
+A color bar can be added along side the plot by calling the method
+\lstinline!fig.colorbar()! and passing in the surface plot object.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+        \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
         
         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
@@ -10382,7 +10331,7 @@ surface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_504_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_500_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10396,31 +10345,29 @@ projections}\label{d-surface-plots-with-2d-contour-plot-projections}
 
 
     
-        3D Surface Plots can be projected onto 2D surfaces. Below is sample
-code:
+        3D Surface Plots can be projected onto 2D surfaces. Below is sample code
+and the plot produced.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{from} \PY{n+nn}{mpl\PYZus{}toolkits}\PY{n+nn}{.}\PY{n+nn}{mplot3d} \PY{k}{import} \PY{n}{axes3d}
         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{k+kn}{from} \PY{n+nn}{matplotlib} \PY{k}{import} \PY{n}{cm}
         
         \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{figure}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
         \PY{n}{ax} \PY{o}{=} \PY{n}{fig}\PY{o}{.}\PY{n}{add\PYZus{}subplot}\PY{p}{(}\PY{l+m+mi}{111}\PY{p}{,} \PY{n}{projection}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3d}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{c+c1}{\PYZsh{}ax = fig.gca(projection=\PYZsq{}3d\PYZsq{})}
         
         \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
         \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mf}{0.1}\PY{p}{)}
         \PY{n}{X}\PY{p}{,}\PY{n}{Y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{meshgrid}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}
         \PY{n}{Z} \PY{o}{=} \PY{n}{X}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{X}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{Y}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
         
-        \PY{n}{mycmap} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{get\PYZus{}cmap}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gist\PYZus{}earth}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n}{surf} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{plot\PYZus{}surface}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{rstride}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{cstride}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{mycmap}\PY{p}{)}
-        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contourf}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{n}{Z}\PY{p}{)}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{mycmap}\PY{p}{)}
-        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contourf}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{mycmap}\PY{p}{)}
-        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contourf}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{mycmap}\PY{p}{)}
+        \PY{n}{surf} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{plot\PYZus{}surface}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{rstride}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{cstride}\PY{o}{=}\PY{l+m+mi}{8}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.8}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{cm}\PY{o}{.}\PY{n}{ocean}\PY{p}{)}
+        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contourf}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{min}\PY{p}{(}\PY{n}{Z}\PY{p}{)}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{cm}\PY{o}{.}\PY{n}{ocean}\PY{p}{)}
+        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contourf}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{cm}\PY{o}{.}\PY{n}{ocean}\PY{p}{)}
+        \PY{n}{cset} \PY{o}{=} \PY{n}{ax}\PY{o}{.}\PY{n}{contourf}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{Y}\PY{p}{,} \PY{n}{Z}\PY{p}{,} \PY{n}{zdir}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{offset}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{cmap}\PY{o}{=}\PY{n}{cm}\PY{o}{.}\PY{n}{ocean}\PY{p}{)}
         
         \PY{n}{fig}\PY{o}{.}\PY{n}{colorbar}\PY{p}{(}\PY{n}{surf}\PY{p}{,} \PY{n}{ax}\PY{o}{=}\PY{n}{ax}\PY{p}{,} \PY{n}{shrink}\PY{o}{=}\PY{l+m+mf}{0.5}\PY{p}{,} \PY{n}{aspect}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{)}
         
@@ -10437,7 +10384,7 @@ code:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_507_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_503_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -11123,22 +11070,22 @@ The color is not red or green
 
 
     
-        \section{Try / Except Blocks}\label{try-except-blocks}
+        \section{Try-Except Statements}\label{try-except-statements}
     
 
 
 
 
     
-        Try except statements are another selection structure in Python. Like
-\lstinline!if!, \lstinline!elif! and \lstinline!else! statements, a try
-except statements selects a particular block of code to run based on a
-condition. Unlike \lstinline!if!, \lstinline!elif! and \lstinline!else!
-clauses, try except blocks are not base on \emph{logical conditions}.
-Try except blocks are based upon whether a certain line or section of
-code returns an error.
+        Try-except statements are another selection structure in Python. Like
+\lstinline!if!, \lstinline!elif! and \lstinline!else! statements, a
+try-except statements select a particular block of code to run based on
+a condition. Unlike \lstinline!if!, \lstinline!elif! and
+\lstinline!else! clauses, try-except blocks are not based on
+\emph{logical conditions}. Try-except blocks are based upon whether a
+line or section of code returns an error.
 
-Therefore, before we learn how to use a try except block, we need to
+Therefore, before we learn how to use try-except statements, we need to
 understand two types of errors in Python: syntax errors and exception
 errors.
     
@@ -11155,13 +11102,15 @@ Errors}\label{syntax-errors-and-exception-errors}
 
 
     
-        \subsubsection{Syntax Errors}\label{syntax-errors}
+        \subsection{Syntax Errors}\label{syntax-errors}
 
-Syntax errors are a type of error in Python that occur when the syntax
-in a line of code is not valid Python code. Syntax errors include quotes
-that are not closed, and variable names that do not start with a letter.
+A \emph{syntax error} is a type of error in Python that occur when the
+syntax in a line of code is not valid Python code. Syntax errors include
+quotes that are not closed and variable names that do not start with a
+letter.
 
-A line of code with a syntax error is below:
+The line of code below contains a syntax error. The string
+\lstinline!"problem solving! is missing a quotation mark \lstinline!"!.
     
 
 
@@ -11173,9 +11122,9 @@ A line of code with a syntax error is below:
 
     \begin{Verbatim}[commandchars=\\\{\}]
 
-          File "<ipython-input-1-4c037f6284bc>", line 1
+          File "<ipython-input-1-c1b051155f57>", line 1
         string = "problem solving
-                                 \^{}
+                                \^{}
     SyntaxError: EOL while scanning string literal
 
 
@@ -11183,14 +11132,15 @@ A line of code with a syntax error is below:
 
 
     
-        When you encounter syntax errors in Python, the Python interpreter gives
-you the message \lstinline!SyntaxError! and often a cryptic message.
+        When you encounter syntax errors in Python, the Python interpreter
+displays \lstinline!SyntaxError! and often a cryptic message.
 
-Even if a line of code is not run when a program is executed, syntax
+Even if a line of code does not run when a program is executed, syntax
 errors in Python are not allowed. For instance, a line of code indented
 after the if-statement \lstinline!if 'a' == 'b:'! will not be executed.
 But if the indented line of code contains a syntax error, the Python
-interpreter still flags the error and does not complete the program.
+interpreter still flags the error as a syntax error and does not
+complete the program.
     
 
 
@@ -11203,7 +11153,7 @@ interpreter still flags the error and does not complete the program.
 
     \begin{Verbatim}[commandchars=\\\{\}]
 
-          File "<ipython-input-2-532ae1edb2a2>", line 2
+          File "<ipython-input-2-a22f64681124>", line 2
         string = 10problems
                           \^{}
     SyntaxError: invalid syntax
@@ -11216,13 +11166,15 @@ interpreter still flags the error and does not complete the program.
         \subsubsection{Exception Errors}\label{exception-errors}
 
 Syntax errors are lines of code that are not valid Python. Another type
-of error in Python is an \emph{exception error}. Exception error are
-errors that result from a line of code \emph{not able to run}. Lines of
-code with exception errors contain valid Python code, but the line of
-code still can not run. For example, the statement
-\lstinline!f = open('file.txt','r')! is valid Python. But if the file
-\textbf{\emph{file.txt}} does not exist, Python throws an exception
-error because the of code can not be executed.
+of error in Python is an \emph{exception error}. Exception errors result
+when a \emph{valid} line of Python code \emph{cannot run}. Lines of code
+with exception errors contain \emph{valid} Python code, but the line of
+code still cannot run.
+
+For example, the statement \lstinline!f = open('file.txt','r')! is valid
+Python code. But if the file \textbf{\emph{file.txt}} does not exist,
+Python throws an exception error because
+\lstinline!f = open('file.txt','r')! code cannot be executed.
     
 
 
@@ -11236,19 +11188,19 @@ error because the of code can not be executed.
 
         ---------------------------------------------------------------------------
 
-        FileNotFoundError                         Traceback (most recent call last)
+        IOError                                   Traceback (most recent call last)
 
-        <ipython-input-3-cc3c27f5a0c3> in <module>()
+        <ipython-input-3-b0ee218ebbfc> in <module>()
     ----> 1 f = open('file.txt','r')
     
 
-        FileNotFoundError: [Errno 2] No such file or directory: 'file.txt'
+        IOError: [Errno 2] No such file or directory: 'file.txt'
 
     \end{Verbatim}
 
 
     
-        Another valid line of Python code is print(a{[}0{]}), but if
+        Another valid line of Python code is \lstinline!print(a[0])!, but if
 \lstinline!a! is defined as an integer, \lstinline!a! can not be indexed
 and an exception error is shown.
     
@@ -11267,33 +11219,31 @@ and an exception error is shown.
 
         TypeError                                 Traceback (most recent call last)
 
-        <ipython-input-4-0e1fa8aeb4c3> in <module>()
+        <ipython-input-4-df093d7733e3> in <module>()
           1 a = 1
     ----> 2 print(a[5])
     
 
-        TypeError: 'int' object is not subscriptable
+        TypeError: 'int' object has no attribute '\_\_getitem\_\_'
 
     \end{Verbatim}
 
 
     
-        \subsection{Try Except statements}\label{try-except-statements}
-
-Try except statements can be used to try an run sections of Python code
-that may return an exception error. The general syntax of a try except
-statement is below:
+        Try except statements can be used to try run sections of Python code
+that \emph{may} return an exception error. The general syntax of a try
+except statement is below:
 
 \begin{lstlisting}[language=Python]
 try:
-    <code to try and run>
+    <code to try>
 except:
-    <code to run if the try didn't work>
+    <code to run instead>
 \end{lstlisting}
 
 For instance, if the file \textbf{\emph{file.txt}} does not exist, a
 line of code that tries to open \textbf{\emph{file.txt}} can be included
-as part of a \lstinline!try! statement.
+in a \lstinline!try! statement.
     
 
 
@@ -11302,12 +11252,12 @@ as part of a \lstinline!try! statement.
 {\color{incolor}In [{\color{incolor}5}]:} \PY{k}{try}\PY{p}{:}
             \PY{n}{f}\PY{o}{=}\PY{n+nb}{open}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{file.txt}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{r}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{k}{except}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{file does not exhist}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{file does not exist}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-file does not exhist
+file does not exist
 
     \end{Verbatim}
 
@@ -11337,8 +11287,8 @@ variable a is not a list
 
 
     
-        When Python code in a try block does run and does not throw an exception
-error, the code in the \lstinline!except! does not run.
+        When the Python code in a try block does run and does not throw an
+exception error, the code in the \lstinline!except! does not run.
     
 
 
@@ -11359,23 +11309,22 @@ S
 
 
     
-        \section{Flow Charts}\label{flow-charts}
+        \section{Flowcharts}\label{flowcharts}
     
 
 
 
 
     
-        Flow charts are used to graphically represent the flow of a program.
-There are for basic shapes used in a flow chart. Each shape has a
-specific use:
+        Flowcharts graphically represent the flow of a program. There are four
+basic shapes used in a flow chart. Each shape has a specific use:
 
 \begin{itemize}
 \tightlist
 \item
-  oval: start and end
+  oval: start / end
 \item
-  parallelogram: input and output
+  parallelogram: input / output
 \item
   rectangle: calculations
 \item
@@ -11385,11 +11334,13 @@ specific use:
 \begin{figure}
 \centering
 \includegraphics{images/four_flow_chart_shapes.png}
-\caption{four flow chart shapes}
+\caption{four flowchart shapes}
 \end{figure}
 
-The basic shapes in a flow chart are connected by arrows. The shapes and
-arrows of a flow chart describe the flow of a program from start to end.
+Arrows connect the basic shapes in a flowchart. The shapes and arrows of
+a flowchart describe the flow of a program from start to end. Flowcharts
+typically flow from the top to the bottom or flow from the left to the
+right.
     
 
 
@@ -11403,7 +11354,7 @@ The program starts. Then the program prints out ``Output!''. Finally,
 the program ends.
 \end{quote}
 
-A flow chart that describes this simple program is below:
+A flowchart that describes this simple program is below:
 
 \begin{figure}
 \centering
@@ -11411,7 +11362,7 @@ A flow chart that describes this simple program is below:
 \caption{flow chart of a simple print program}
 \end{figure}
 
-The Python code that corresponds to this flow chart is:
+The Python code that corresponds to this flowchart is:
 
 \begin{lstlisting}[language=Python]
 # start
@@ -11424,16 +11375,15 @@ print("Output!")
 
 
     
-        The description of another program which includes a calculation is
-below:
+        A description of a program that includes a calculation is below:
 
 \begin{quote}
-The program starts. Next the program asks a user for a number. Two is
-added to the number. Next the resulting sum is printed. Finally, the
+The program starts. Next, the program asks a user for a number. Two is
+added to the number. Next, the resulting sum is printed. Finally, the
 program ends.
 \end{quote}
 
-A flow chart that describes this program is below:
+A flowchart that describes this program is below:
 
 \begin{figure}
 \centering
@@ -11493,13 +11443,13 @@ if num>0:
         The description of a more complex program is below:
 
 \begin{quote}
-The program starts. Next the program asks a user for a number. If the
+The program starts. Next, the program asks a user for a number. If the
 number is greater than zero, the program prints ``Greater than 0''. If
 the number is less than zero, the program prints ``Less than 0''. Then
 the program prints ``Done'' and the program ends.
 \end{quote}
 
-A flow chart that describes this program is below:
+A flowchart that describes this program is below:
 
 \begin{figure}
 \centering
@@ -11564,8 +11514,6 @@ try
 except
 
 flow chart
-
-decision tree
     
 
 
@@ -12899,7 +12847,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_673_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_669_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -15007,7 +14955,7 @@ Python}\label{controlling-an-led-with-python}
 
 
     
-        In this section you will learn how to control an LED connected to an
+        In this section, you will learn how to control an LED connected to an
 external piece of hardware (an Arduino) using Python. To accomplish this
 task, the following hardware is required:
 
@@ -15030,7 +14978,7 @@ task, the following hardware is required:
 
 
     
-        You will also need to download the Arduino IDE (Integraded Development
+        You will also need to download the Arduino IDE (Integrated Development
 Environment). Download the Arduino IDE using the following link:
 
 \begin{quote}
@@ -15090,10 +15038,10 @@ Arduino}\label{upload-code-to-the-arduino}
 
 
     
-        Upload the following code to the Arduino using the Arduino IDE. This is
-the example sketch called \lstinline!Physical Pixel!. The
-\lstinline!Physical Pixel! sketch can be found in the Arduino IDE under
-File --\textgreater{} Examples --\textgreater{} 04.Communication
+        Upload the following code to the Arduino using the Arduino IDE. The code
+is same as in the example sketch called \lstinline!Physical Pixel!. The
+\lstinline!Physical Pixel! sketch is found in the Arduino IDE under File
+--\textgreater{} Examples --\textgreater{} 04.Communication
 --\textgreater{} PhysicalPixel
 
 \begin{figure}
@@ -15210,8 +15158,61 @@ turn the LED on. Send \lstinline!L! to turn the LED off.
 
 
     
-        \subsection{Write a Pyton Script to turn the LED on and
-off}\label{write-a-pyton-script-to-turn-the-led-on-and-off}
+        \subsection{Use the Python REPL to turn the Arduino LED on and
+off}\label{use-the-python-repl-to-turn-the-arduino-led-on-and-off}
+    
+
+
+
+
+    
+        Next, use the Python REPL to turn the Arduino on and off. (You can open
+the Python REPL by typing \lstinline!> python! at the \textbf{Anaconda
+Prompt}) At the Python REPL, type the following commands. If a REPL
+prompt \lstinline!>>>! precedes the command, type the command into the
+REPL. If the line does not start with a REPL prompt, the line represents
+expected output.
+
+When you type the command:
+\lstinline!ser = serial.Serial('COM4', 9800, timeout=1)!, ensure the
+\lstinline!'COM#'! corresponds to the port that worked with the Arduino
+IDE in Tools --\textgreater{} Port.
+
+\begin{lstlisting}[language=Python]
+>>> import serial
+>>> import time
+
+>>> ser = serial.Serial('COM4', 9600)  # open serial port
+>>> time.sleep(2)                      # wait 2 seconds
+>>> ser.name()
+'COM4'
+
+>>> ser.write(b'H')
+# LED turns on
+
+>>> ser.write(b'L')
+# LED turns off
+
+>>> ser.write(b'H')
+# LED turns on
+
+>>> ser.write(b'L')
+# LED turns off
+
+>>> ser.close()
+>>> exit()
+\end{lstlisting}
+
+Ensure the command \lstinline!ser.close()! is issued before exiting the
+Python REPL.
+    
+
+
+
+
+    
+        \subsection{Write a Python Script to turn the LED on and
+off}\label{write-a-python-script-to-turn-the-led-on-and-off}
     
 
 
@@ -15219,10 +15220,11 @@ off}\label{write-a-pyton-script-to-turn-the-led-on-and-off}
 
     
         After the LED turns on and off based on sending \lstinline!H! and
-\lstinline!L! with the Arduino Serial Monitor, you can write a Python
-script to turn the LED on and off. Again, the serial communication
-between the Python script and the Arduino is facilitated by the PySerial
-package. Ensure PySerial is installed before running the Python script.
+\lstinline!L! with the Arduino Serial Monitor and you can turn the LED
+on and off with the Python REPL, it's time to write a Python script to
+turn the LED on and off. Again, the serial communication between the
+Python script and the Arduino is facilitated by the PySerial package.
+Ensure PySerial is installed before running the Python script.
 
 At the top of the Python script, import the PySerial package. Note that
 even though the package is called PySerial, the line
@@ -15236,6 +15238,8 @@ used in the script.
 
     
         \begin{lstlisting}[language=Python]
+# blink.py
+
 import serial
 import time
 \end{lstlisting}
@@ -15245,15 +15249,16 @@ import time
 
 
     
-        In the next part of the Python script, create a loop that blinks the
-Arduino LED on and off for about 5 seconds. In the line
-\lstinline!serial.Serial('COM4', 9800, timeout=1) as ser!, ensure the
+        In the next part of the Python script, connect to the Arduino over the
+serial port. In the line
+\lstinline!ser = serial.Serial('COM4', 9800, timeout=1)!, ensure the
 \lstinline!'COM#'! corresponds to the port that worked with the Arduino
-IDE. Notice the byte string \lstinline!b'H'! is sent to the Arduino, not
-the Unicode string \lstinline!'H'!. The Unicode string \lstinline!'H'!
-is prepended with the letter \lstinline!b! in the line
-\lstinline!ser.writelines(b'H')! to turn the Unicode string into a byte
-string before it is sent to the Arduino.
+IDE. Then create a loop that blinks the Arduino LED on and off for about
+5 seconds. Notice the byte string \lstinline!b'H'! is sent to the
+Arduino, not the Unicode string \lstinline!'H'!. The Unicode string
+\lstinline!'H'! is prepended with the letter \lstinline!b! in the line
+\lstinline!ser.writelines(b'H')!. This line of code turns the Unicode
+string into a byte string before it is sent to the Arduino.
     
 
 
@@ -15261,13 +15266,27 @@ string before it is sent to the Arduino.
 
     
         \begin{lstlisting}[language=Python]
-data = []
+ser = serial.Serial('COM4', 9800, timeout=1)
+time.sleep(2)
+
 for i in range(10):
-    with serial.Serial('COM4', 9800, timeout=1) as ser:
-        ser.writelines(b'H')   # send a byte
-        time.sleep(0.5)        # wait 0.5 seconds before reading the next line
-        ser.writelines(b'L')   # send a byte
+    ser.writelines(b'H')   # send a byte
+    time.sleep(0.5)        # wait 0.5 seconds
+    ser.writelines(b'L')   # send a byte
+    time.sleep(0.5)
+
+ser.close()
 \end{lstlisting}
+    
+
+
+
+
+    
+        Run the entire Python script and watch the Arduino LED blink ten times.
+A common problem is the serial port was not closed before the script
+starts. Make sure the Arduino Serial Monitor is closed and try running
+\lstinline!>>> ser.close()! at the Python REPL.
     
 
 
@@ -15323,7 +15342,7 @@ print('type q to quit')
 
 
     
-        Finally, the script needs a while loop to ask the user to~ enter the
+        Finally, the script needs a while loop to ask the user to enter the
 letter \lstinline!H!, \lstinline!L! or \lstinline!q!. Once the user
 enters the letter, the letter is converted to a byte string. Next, the
 byte string is sent over the serial line to the Arduino. A delay is
@@ -15336,14 +15355,18 @@ the next one.
 
     
         \begin{lstlisting}[language=Python]
-user_input = input('H = on, L = off, q = quit' : )
+ser = serial.Serial('COM4', 9800, timeout=1)
+time.sleep(2)
+
+user_input = 'L'
 while user_input != 'q':
-    with serial.Serial('COM4', 9800, timeout=1) as ser:
-        byte_command = encode(user_input)
-        ser.writelines(byte_command)   # send a byte
-        time.sleep(0.1) # wait 0.5 seconds before reading the next line
-        user_input = input('H = on, L = off, q = quit' : )
+    user_input = input('H = on, L = off, q = quit' : )
+    byte_command = encode(user_input)
+    ser.writelines(byte_command)   # send a byte
+    time.sleep(0.5) # wait 0.5 seconds
+        
 print('q entered. Exiting the program')
+ser.close()
 \end{lstlisting}
     
 
@@ -15367,7 +15390,7 @@ Python}\label{reading-a-sensor-with-python}
 
 
     
-        In this section you will learn how to read a sensor connected to an
+        In this section, you will learn how to read a sensor connected to an
 external piece of hardware (an Arduino) with Python. To accomplish this,
 the following hardware is required:
 
@@ -15412,15 +15435,14 @@ and a breadboard. The middle pin of the potentiometer is connected to
 pin A0 on the Arduino (green wire). Connect the LED to the Arduino. Note
 the long lead of the LED is connected to PIN13 on the Arduino (yellow
 wire) and the short lead of the LED is connected through a resistor to
-ground (black wire). If the LED is wired backwards, the LED will not
-turn on.
+ground (black wire). If the LED is wired backward, the LED will not turn
+on.
 
 In the hardware schematic, the blue square with an arrow on it is a
-potentiometer. Potentiometers are controlled by a user and the user
-knows when the sensor signal changes because the user has turned the
-potentiometer dial.
+potentiometer. , and the user knows when the sensor signal changes
+because the user has turned the potentiometer dial.
 
-The hardware schematic describes how to the Arudino, LED, resistor, and
+The hardware schematic describes how to the Arduino, LED, resistor, and
 potentiometer are connected with jumper wires and a breadboard.
     
 
@@ -15447,10 +15469,10 @@ Arduino}\label{upload-code-to-the-arduino}
 
 
     
-        Once the LED and potentiometer is hooked up the the Arduino, upload the
+        Once the LED and potentiometer are hooked up the Arduino, upload the
 following code to the Arduino using the Arduino IDE. Note that Arduinos
 don't use the Python programming language. The programming language used
-by Arduinos is a varient of the C programming language.
+by Arduinos is a variant of the C programming language.
 
 The Arduino sketch below (an Arduino program is called a sketch)
 accomplishes a couple things. First, the Arduino reads the potentiometer
@@ -15567,7 +15589,7 @@ be checked in three ways:
 The LED should turn on and off as the potentiometer is rotated. If the
 LED does not turn on and off when the potentiometer is rotated, make
 sure the potentiometer is turned back and forth through it's full range
-of rotation. Also ensure the USB cable is plugged in to both the Arudino
+of rotation. Also, ensure the USB cable is plugged into both the Arduino
 and the computer.
     
 
@@ -15583,7 +15605,7 @@ Serial Monitor.
 \begin{figure}
 \centering
 \includegraphics{images/Tools_SerialMonitor.png}
-\caption{Select the Arudino Serial Monitor from the Tools Menus}
+\caption{Select the Arduino Serial Monitor from the Tools Menus}
 \end{figure}
     
 
@@ -15599,7 +15621,7 @@ running list of numbers between \lstinline!0! and \lstinline!1024!.
 
 If a running list of numbers can't be seen in the Arduino \textbf{Serial
 Monitor}, ensure {[}Auto Scroll{]}, {[}Both NL \& CR{]} and {[}9600
-baud{]} are selected. Also make sure the \lstinline!Port! is set
+baud{]} are selected. Also, make sure the \lstinline!Port! is set
 correctly in the Arduino IDE under Tools --\textgreater{} Port.
 
 \begin{figure}
@@ -15619,7 +15641,7 @@ To access the Arduino Serial Plotter, select Tools --\textgreater{}
 Serial Monitor in the Arduino IDE. Note the Arduino Serial Monitor needs
 to be closed before the Arduino Serial Plotter can be opened. If the
 sketch is working correctly, potentiometer rotation produces a moving
-line on the Arduino Serial Plotter .
+line on the Arduino Serial Plotter.
 
 \begin{figure}
 \centering
@@ -15631,7 +15653,7 @@ The output of the Arduino Serial Plotter should be a running line graph.
 The height of the line on the graph should change as the potentiometer
 is dialed back and forth. If the Arduino Serial Plotter is blank, make
 sure {[}9600 baud{]} is selected in the lower right corner of the Serial
-Plotter. Also make sure the \lstinline!Port! has been set correctly in
+Plotter. Also, make sure the \lstinline!Port! has been set correctly in
 the Arduino IDE in Tools --\textgreater{} Port.
 
 \begin{figure}
@@ -15648,10 +15670,10 @@ the Arduino IDE in Tools --\textgreater{} Port.
         \subsection{Use the Python REPL to read the potentiometer
 data}\label{use-the-python-repl-to-read-the-potentiometer-data}
 
-At the Python REPL, type the following commands. If the command is
-preceded by the REPL prompt \lstinline!>>>! type the command into the
-the REPL. If the line does not start with a REPL prompt, this line
-represents expected output.
+At the Python REPL, type the following commands. If the REPL prompt
+\lstinline!>>>! precedes the command, type the command into the REPL. If
+the line does not start with a REPL prompt, this line represents
+expected output.
 
 \begin{lstlisting}[language=Python]
 # serial read using the Python REPL
@@ -15688,8 +15710,8 @@ b'409\r\n'
 
 
     
-        \subsection{Write a Pyton script to read the
-sensor}\label{write-a-pyton-script-to-read-the-sensor}
+        \subsection{Write a Python script to read the
+sensor}\label{write-a-python-script-to-read-the-sensor}
     
 
 
@@ -15697,12 +15719,12 @@ sensor}\label{write-a-pyton-script-to-read-the-sensor}
 
     
         After the hardware is connected and the Arduino sketch is working
-properly, you can construct a Python script to read the sensor value.
+correctly, you can construct a Python script to read the sensor value.
 
-Communication between the Python script and the Arduino an be
-accomplished using the PySerial package. Make sure PySerial is installed
-before the script is run. See a previous section in this chapter on how
-to install the PySerial package.
+Communication between the Python script and the Arduino is accomplished
+using the PySerial package. Make sure PySerial is installed before the
+script is run. See a previous section in this chapter on how to install
+the PySerial package.
 
 At the top of the Python script, import the PySerial module. Note that
 although the package is called PySerial, use the line
@@ -15734,7 +15756,6 @@ port specified in the command
 
     
         \begin{lstlisting}[language=Python]
-
 # set up the serial line
 ser = serial.Serial('COM4', 9600)
 time.sleep(2)
@@ -15755,17 +15776,16 @@ the sensor. If it seems like the loop is stuck, press {[}Ctrl{]} +
 
     
         \begin{lstlisting}[language=Python]
-
 # Read and record the data
-data =[]                           # initialize and empty list to store the data
+data =[]                       # empty list to store the data
 for i in range(50):
-    b = ser.readline()             # read a byte string line from the Arduino's serial output
-    string_n = b.decode()          # decode byte string into regular string with \n and \r 
-    string = string_n.rstrip()     # remove \n and \r from string
-    flt = float(string)            # convert string to float
+    b = ser.readline()         # read a byte string
+        string_n = b.decode()  # decode byte string into Unicode  
+    string = string_n.rstrip() # remove \n and \r
+    flt = float(string)        # convert string to float
     print(flt)
-    data.append(flt)               # add float to the end of the data list
-    time.sleep(0.1)                # wait (sleep) 0.2 seconds before the next reading
+    data.append(flt)           # add to the end of data list
+    time.sleep(0.1)            # wait (sleep) 0.1 seconds
 
 ser.close()
 \end{lstlisting}
@@ -15806,12 +15826,32 @@ like the line plot in the Arduino \textbf{Serial Plotter}.
     
         \begin{lstlisting}[language=Python]
 import matplotlib.pyplot as plt
-# if using a jupyter notebook include, comment out if using a .py file
+# if using a Jupyter notebook include
 %matplotlib inline
 
 plt.plot(data)
+plt.xlabel('Time (seconds)')
+plt.ylabel('Potentiometer Reading')
+plt.title('Potentiometer Reading vs. Time')
 plt.show()
 \end{lstlisting}
+    
+
+
+
+
+    
+        Run the entire script and twist the potentiometer. You should see the
+potentiometer values running by in the Python REPL command window.
+
+After all the data is collected, you will see a plot like the one below.
+
+\begin{figure}
+\centering
+\includegraphics{images/matplotlib_potentiometer_plot.png}
+\caption{Matplotlib plot of potentiometer readings recorded with an
+Arduino and PySerial}
+\end{figure}
     
 
 
