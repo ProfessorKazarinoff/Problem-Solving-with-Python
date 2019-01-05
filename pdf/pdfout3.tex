@@ -11629,10 +11629,10 @@ in Python: \emph{for loops} and \emph{while loops}. This section
 describes for loops.
 
 \emph{For Loops} are a component of many programming languages. A
-\emph{For Loop} is a programming structure where a section of code runs
-a specified number of times.
+\emph{For Loop} is a repetition structure where a section of code runs a
+specified number of times.
 
-Say we want to print out the statement:
+Say we want to print out the statements:
 
 \begin{lstlisting}
 Problem solving in teams
@@ -11676,11 +11676,11 @@ the number of times the for loop runs and \lstinline!<code>! are the
 lines of code that execute each time the for loop runs. Note the for
 loop starts with the keyword \lstinline!for! and includes a colon
 \lstinline!:!. Both \lstinline!for! and the colon \lstinline!:! are
-required. Also, note \lstinline!<code>! is indented. Each statement that
-runs as part of the for loop needs to be indented the same number of
-spaces. The standard indentation in Python is four spaces.
+required. Also, note \lstinline!<code>! is indented. Each line of code
+that runs as part of the for loop needs to be indented the same number
+of spaces. Standard indentation in Python is four spaces.
 
-Let's rewrite our example above using a for loop:
+The example above can be rewritten using a for loop:
     
 
 
@@ -11700,12 +11700,15 @@ Problem solving in teams
 
 
     
-        Python's \lstinline!range()! function returns an iterable list of values
-starting at zero and ending at \lstinline!n-1!. For instance, when
+        \subsubsection{\texorpdfstring{\texttt{range()}
+function}{range() function}}\label{range-function}
+
+Python's \lstinline!range()! function returns an iterable list of values
+starting at zero and ending at \lstinline!n-1!. For example, when
 \lstinline!range(3)! is called, the values \lstinline!0, 1, 2! are
-returned. Note that \lstinline!3! is not part of the iterable, even
-though the function input was \lstinline!range(3)!. This can be
-confirmed with a for loop:
+returned. Note \lstinline!3! is not part of the output, even though the
+function input was \lstinline!range(3)!. We can be confirm the behavior
+of \lstinline!range()! with a for loop:
     
 
 
@@ -11729,7 +11732,7 @@ confirmed with a for loop:
 \texttt{range()}}{Customizing range()}}\label{customizing-range}
 
 Python's \lstinline!range()! function can be customized by supplying up
-to three arguments. The general output of the range function is below:
+to three arguments. The general format of the range function is below:
 
 \begin{lstlisting}[language=Python]
 range(start,stop,step)
@@ -11738,12 +11741,12 @@ range(start,stop,step)
 When \lstinline!range(3)! is called, it produces the same output as
 \lstinline!range(0,3,1)!
 (\lstinline!start=0!,\lstinline!stop=3!,\lstinline!step=1!). Remember
-Python counting starts at zero and ends at \lstinline!n-1!. If only two
-arguments are supplied as in \lstinline!range(0,3)!, a
+Python counting starts at \lstinline!0! and ends at \lstinline!n-1!. If
+only two arguments are supplied, as in \lstinline!range(0,3)!, a
 \lstinline!step=1! is assumed.
 
 The table below includes examples of the Python's \lstinline!range()!
-function.
+function and the associated output.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -11759,7 +11762,8 @@ function.
 \bottomrule
 \end{longtable}
 
-A loop that uses \lstinline!range()! and three arguments is below:
+A code section that uses a for loop and \lstinline!range()! with three
+arguments is below:
     
 
 
@@ -11783,8 +11787,7 @@ A loop that uses \lstinline!range()! and three arguments is below:
         \subsection{For loops with lists}\label{for-loops-with-lists}
 
 For loops can also be run using lists. If a list is used, the loop will
-run as many times as there are items in the list. The general structure
-is:
+run as many times as there are items in the list. The general syntax is:
 
 \begin{lstlisting}[language=Python]
 for <var> in <list>:
@@ -11840,18 +11843,19 @@ the items in the list.
 
 For loops can also be run using strings. In Python, strings can be
 indexed just like lists. A loop defined by a string runs as many times
-as there are characters in the string. The general structure is:
+as there are characters in the string. The general structure a for loop
+using a string is:
 
 \begin{lstlisting}[language=Python]
 for <char> in <string>:
     <code>
 \end{lstlisting}
 
-Where \lstinline!<car>! is one of the characters in the string
+Where \lstinline!<char>! is one of the characters in the string
 \lstinline!<string>!. Just like for loops with \lstinline!range()! and
 for loops with lists, make sure to include a colon \lstinline!:! after
 the list. \lstinline!<code>! is the programming code that runs for each
-character in the string.
+character in the string. \lstinline!<code>! needs to be indented
 
 An example of a string in a for loop is below:
     
@@ -11895,13 +11899,13 @@ while <logical_condition>:
 The keyword \lstinline!while! must be included, as well as a
 \lstinline!<logical_condition>! which can be evaluated as
 \lstinline!True! or \lstinline!False!. The \lstinline!<code>! after the
-while statement must be indented. Each line of code runs as part of the
-while loop needs to be indented the same number of spaces. Many code
-editors, including Jupyter notebooks, auto-indent after a while loop
-statement. If you add indentation manually, four space spaces is the
-Python standard.
+while statement must be indented. Each line of code runs in the while
+loop needs to be indented the same number of spaces. (Many code editors,
+including Jupyter notebooks, auto-indent after a while loop statement)
+If you add indentation manually, four space spaces is the Python
+standard.
 
-An example of a while loop in Python is below:
+An example of a while loop is below:
     
 
 
@@ -11929,9 +11933,9 @@ assigns it the value \lstinline!0!. The next line declares the logical
 condition needed to keep the loop running. The statement \lstinline!i<4!
 is \lstinline!True! or \lstinline!False! depending on the variable
 \lstinline!i!. Since \lstinline!i=0!, the statement \lstinline!i<4! is
-\lstinline!True! and the while loop starts to run. The code inside the
-loop prints the value of \lstinline!i! then increases \lstinline!i! by
-\lstinline!1!. When \lstinline!i=4!, the statement \lstinline!i<4! is
+\lstinline!True! and the while loop starts to run. The code inside while
+the loop prints the value of \lstinline!i! then increases \lstinline!i!
+by \lstinline!1!. When \lstinline!i=4!, the statement \lstinline!i<4! is
 \lstinline!False! and the while loop ends.
     
 
@@ -11944,7 +11948,8 @@ input}\label{using-a-while-loop-to-validate-user-input}
 
 While loops can be used to validate user input. Say you want to insist
 that a user inputs positive number. You can code this into a while loop
-that keeps repeating until the user enters valid input.
+that keeps repeating \lstinline!'Enter a positive number: '! until the
+user enters valid input.
 
 The code below continues to ask a user for a positive number until a
 positive number is entered.
@@ -11969,12 +11974,12 @@ Enter a positive number: 5
 
     
         In the section of code above, it is important to initialize the variable
-\lstinline!num_input! with a value that causes the while statement
+\lstinline!num_input! with a value that causes the statement
 \lstinline!num_input < 0! to evaluate as \lstinline!True!.
 \lstinline!num_input = -1! causes the statement
 \lstinline!num_input < 0! to evaluate as \lstinline!True!. Besides
-\lstinline!-1!, and any other negative number would have worked. If the
-while statement can't be evaluated as \lstinline!True! or
+\lstinline!num_input = -1!, any other negative number would have worked.
+If the while statement can't be evaluated as \lstinline!True! or
 \lstinline!False!, Python throws an error. Therefore, it is necessary to
 convert the user's input from a string to a float. The statement
 \lstinline!'5' < 0! does not evaluate to \lstinline!True! or
@@ -11994,7 +11999,7 @@ to the number \lstinline!0!.
 
     
         \emph{Break} and \emph{continue} are two ways to modify the behavior of
-a loop.
+a for loop or while loop.
     
 
 
@@ -12035,7 +12040,10 @@ Loop exited
 
 
     
-        An example using \lstinline!break! in a while loop is below.
+        When the loop hits \lstinline!i=3!, \lstinline!break! is encountered and
+the program exits the loop.
+
+An example using \lstinline!break! in a while loop is below.
     
 
 
@@ -12062,12 +12070,13 @@ Loop exited
         \subsection{Continue}\label{continue}
 
 In Python, the keyword \lstinline!continue! causes the program to stop
-running code in a loop and start back at the top of the loop. The
-keyword \lstinline!break! cause the program to exit a loop.
-\lstinline!continue! causes the program to stop the current iteration of
-the loop and start the next iteration back at the top of the loop.
+running code in a loop and start back at the top of the loop. Remember
+the keyword \lstinline!break! cause the program to \emph{exit} a loop.
+\lstinline!continue! is similar, but \lstinline!continue! causes the
+program to stop the \emph{current iteration} of the loop and \emph{start
+the next iteration at the top} of the loop.
 
-An code section that uses \lstinline!continue! in a for loop is below.
+A code section that uses \lstinline!continue! in a for loop is below.
     
 
 
@@ -12108,11 +12117,11 @@ start of the loop with the next number \lstinline!i=3!.
 
     
         Flowcharts show the flow of a program graphically. Flow charts were
-introduced in the previous chapter to describe how a program that
-includes \emph{if} statements is illustrated graphically.
+introduced in the previous chapter to describe how a programs that
+include \emph{if} statements are illustrated graphically.
 
-This chapter is about \emph{loops}. Flowcharts can describe programs
-which contain \emph{for loops} and \emph{while loops}.
+This chapter is about \emph{loops}. Flowcharts can also be used to
+describe programs which contain \emph{for loops} and \emph{while loops}.
     
 
 
@@ -12127,7 +12136,7 @@ which contain \emph{for loops} and \emph{while loops}.
 
     
         Let's review the four basic flowchart shapes. Each shape represents a
-different type of operation in a program.
+different type of operation.
 
 \begin{itemize}
 \tightlist
@@ -12144,7 +12153,7 @@ different type of operation in a program.
 \begin{figure}
 \centering
 \includegraphics{images/four_flow_chart_shapes.png}
-\caption{four the four flowchart shapes: Oval, parallelogram, rectangle,
+\caption{Four the four flowchart shapes: oval, parallelogram, rectangle,
 and diamond}
 \end{figure}
 
@@ -13937,14 +13946,17 @@ Q09.85
 \item
   Define Python variables as symbolic math variables
 \item
-  Define mathematical equations using symbolic math variables
+  Define mathematical expressions and equations using symbolic math
+  variables
 \item
   Solve for symbolic math variables in terms of other symbolic math
   variables
 \item
   Derive numerical solutions using symbolic math variable substitution
 \item
-  Simplify equations using symbolic math variables
+  Solve linear and quadratic equations using symbolic math
+\item
+  Solve systems of equations using symbolic math
 \end{itemize}
         \newpage
 
@@ -13967,92 +13979,58 @@ Q09.85
 math}.
 
 In symbolic math, symbols are used to represent mathematical
-expressions. An example symbolic math expression is below.
-    
+expressions. An example of a symbolic math expression is below.
 
+\[ x^{2} + y^{2} = z \]
 
+The expression contains the symbols \(x\), \(y\), and \(z\).
 
+If we define a second symbolic math expression:
 
-    
-        \[ x^{2} + y^{2} = z \]
-    
+\[ x = a + b \]
 
+then we can substitue in \(a + b\) for \(x\).
 
+The result is the expression:
 
-
-    
-        The expression contains the symbols \(x\), \(y\), and \(z\).
-    
-
-
-
-
-    
-        If we define a second symbolic math expression:
-    
-
-
-
-
-    
-        \[ x = a + b \]
-    
-
-
-
-
-    
-        then we can substitue in \(a + b\) for \(x\).
-    
-
-
-
-
-    
-        The result is the expression:
-    
-
-
-
-
-    
-        \[ (a + b)^{2} + y^{2} = z \]
+\[ (a + b)^{2} + y^{2} = z \]
 
 \[ a^{2} + 2ab + b^{2} + y^{2} = z \]
-    
 
-
-
-
-    
-        If solve for \(y\) in terms of \(a\),\(b\) and \(z\), would result in:
+Solving for \(y\) in terms of \(a\),\(b\) and \(z\), results in:
 
 \[ y = \sqrt{z - a^{2} - 2ab - b^{2}} \]
 
 In the symbolic math substitution above, symbolic math variables were
 rearranged, grouped and inserted. None of the variables were equal to a
 specific number, like 5 or 0.001, but you can still solve for one
-variable in terms on the others.
+variable in terms on the other variables.
     
 
 
 
 
     
-        If there are numerical values for \(z\), \(a\) and \(b\), we can use
-Python to calculate the value of \(y\). But if we don't have numerical
-values for \(z\), \(a\) and \(b\) Python can also be used to rearrange
-terms and solve for one variable in terms of the other. Working with
-mathematical symbols in a programmatic way instead of working with
-numerical values in a programmatic way is call symbolic math.
+        If we have numerical values for \(z\), \(a\) and \(b\), we can use
+Python to calculate the value of \(y\).
+
+But if we don't have numerical values for \(z\), \(a\) and \(b\), Python
+and the SymPy package can be used to rearrange terms and solve for one
+variable in terms of the other.
+
+Working with mathematical symbols in a programmatic way instead of
+working with numerical values in a programmatic way is called
+\emph{symbolic math}.
     
 
 
 
 
     
-        To work with symbolic math, the SymPy library needs to be installed.
-Using the Anaconda Prompt this can be accomplished with the command:
+        To work with symbolic math in Python, the SymPy library needs to be
+installed. SymPy comes pre-installed with the Anaconda distribution of
+Python. If you are not using the Anaconda distribution of Python, SymPy
+can be installed with the \textbf{Anaconda Prompt}. Use the command:
 
 \begin{lstlisting}
 > conda install sympy
@@ -14063,26 +14041,19 @@ Using the Anaconda Prompt this can be accomplished with the command:
 
 
     
-        SymPy is included with the Anaconda distribution of Python, so if you
-have the full Anaconda distribution, you will be notified that the SymPy
-library is already installed.
+        \section{Defining Varaibles}\label{defining-varaibles}
     
 
 
 
 
     
-        \section{Defining Variables}\label{defining-variables}
-    
+        Before we can construct symbolic math expressions, we first need to
+create symbolic math variables, also called symbolic math
+\emph{symbols}.
 
-
-
-
-    
-        Before we can construct symbolic math expressions, we need to first
-create symbolic math variables or symbols. To define variables with
-SymPy, first import the \lstinline!symbols()! function from the SymPy
-module:
+To define symbolic math variables with SymPy, first import the
+\lstinline!symbols()! function from the SymPy module:
     
 
 
@@ -14095,17 +14066,75 @@ module:
 
     
         Symbolic math symbols are declared using SymPy's \lstinline!symbols()!
-function. Note that in the arguments of the \lstinline!symbols()!
-function, symbol names, are separated by a space (no comma) and
-surrounded by quotes. The output of the \lstinline!symbols()! function
-are SymPy symbol objects. These output objects need to be separated by
-comas with no quotation marks.
+function. A string is passed to the \lstinline!symbols()! function as an
+input argument and the output is assigned to a SymPy symbols object (not
+a string).
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+
+    
+        SymPy's \lstinline!symbol()! function can define multiple symbols in the
+same line of code. Note the input arguments passed to the
+\lstinline!symbols()! function is a string, entries separated by a space
+(no comma) and surrounded by quotes. The output of the
+\lstinline!symbols()! function are SymPy symbol objects. Comas separate
+these output objects (no quotation marks).
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+
+    
+        \section{Expressions and
+Substitutions}\label{expressions-and-substitutions}
+    
+
+
+
+
+    
+        Symbolic math variables can be combined into symbolic math expressions.
+Once in an expression, symbolic math variables can be exchanged with
+substituion.
+    
+
+
+
+
+    
+        \subsection{Expressions}\label{expressions}
+
+A symbolic math expression is a combination of symbolic math variables
+with numbers and mathematical operators (such as
+\lstinline!+!,\lstinline!-!,\lstinline!/! and \lstinline!*!. The
+standard Python rules for calculating numbers apply in SymPy symbolic
+math expressions.
+
+After the symbols \lstinline!x! and \lstinline!y! are created, a
+symbolic math expression using \lstinline!x! and \lstinline!y! can be
+created.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}
+        
+        \PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{expr} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{n}{y}
 \end{Verbatim}
 
 
@@ -14118,26 +14147,8 @@ comas with no quotation marks.
 
 
     
-        Now that the symbols \lstinline!x! and \lstinline!y! are instantiated, a
-symbolic math expression using \lstinline!x! and \lstinline!y! can be
-created. A symbolic math expression is a combination of symbolic math
-variables with numbers and mathematical opporators (such as
-\lstinline!+!,\lstinline!-!,\lstinline!/! and \lstinline!*!. The
-standard Python rules for calculating numbers apply in \textbf{SymPy}
-symbolic math expressions.
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{expr} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{n}{y}
-\end{Verbatim}
-
-
-
-    
-        Use the \lstinline!.subs()! method to insert a numerical value into a
-symbolic math expression, . The first argument of the
+        Use SymPy's \lstinline!.subs()! method to insert a numerical value into
+a symbolic math expression. The first argument of the
 \lstinline!.subs()! method is the variable and the second argument is
 the numerical value. In the expression above:
 
@@ -14155,12 +14166,12 @@ The resulting expression should be
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} y + 4
+{\color{outcolor}Out[{\color{outcolor}2}]:} y + 4
 \end{Verbatim}
             
 
@@ -14174,45 +14185,44 @@ after the \lstinline!.subs()! method is applied, the original
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{expr}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{expr}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} 2*x + y
+{\color{outcolor}Out[{\color{outcolor}3}]:} 2*x + y
 \end{Verbatim}
             
 
     
-        In order to make the substitution permanent, a new expression object
-needs to be instantiated as the output of the \lstinline!.subs()!
-method.
+        To make the substitution permanent, a new expression object needs to be
+assigned to the output of the \lstinline!.subs()! method.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{expr} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{n}{y}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{expr} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{n}{y}
         \PY{n}{expr2} \PY{o}{=} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}
         \PY{n}{expr2}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} y + 4
+{\color{outcolor}Out[{\color{outcolor}4}]:} y + 4
 \end{Verbatim}
             
 
     
         SymPy variables can also be substituted into SymPy expressions. In the
-code section below, the symbol \(x\) is substituted for the symbol
-\(z\).
+code section below, the symbol \(z\) is substituted for the symbol \(x\)
+(\(z\) replaces \(x\)).
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{z} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{z} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{n}{expr} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{n}{y}
         \PY{n}{expr2} \PY{o}{=} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{z}\PY{p}{)}
         \PY{n}{expr2}
@@ -14220,7 +14230,7 @@ code section below, the symbol \(x\) is substituted for the symbol
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} y + 2*z
+{\color{outcolor}Out[{\color{outcolor}5}]:} y + 2*z
 \end{Verbatim}
             
 
@@ -14242,7 +14252,7 @@ results in
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{z} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{z} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{n}{expr} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{n}{y}
         \PY{n}{expr2} \PY{o}{=} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{y}\PY{p}{,} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n}{z}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{)}
         \PY{n}{expr2}
@@ -14250,13 +14260,13 @@ results in
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} 2*x**2 + 2*x + z**(-3)
+{\color{outcolor}Out[{\color{outcolor}6}]:} 2*x**2 + 2*x + z**(-3)
 \end{Verbatim}
             
 
     
-        A more practical example could involve a large equation and several
-variable substitutions.
+        A practical example involving symbolic math variables, expressions and
+substitutions could include a large equation and several replacements.
 
 \[ n_0e^{-Q_v/RT} \]
 
@@ -14272,7 +14282,7 @@ variable substitutions.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{exp}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{exp}
         \PY{n}{n0}\PY{p}{,} \PY{n}{Qv}\PY{p}{,} \PY{n}{R}\PY{p}{,} \PY{n}{T} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{n0 Qv R T}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{n}{expr} \PY{o}{=} \PY{n}{n0}\PY{o}{*}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{Qv}\PY{o}{/}\PY{p}{(}\PY{n}{R}\PY{o}{*}\PY{n}{T}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
@@ -14281,124 +14291,281 @@ variable substitutions.
 
     
         Multiply SymPy \lstinline!subs()! methods can be chained together to
-substitue multiple variables in one line of code.
+substitute multiple variables in one line of code.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n0}\PY{p}{,} \PY{l+m+mf}{3.48e\PYZhy{}6}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{Qv}\PY{p}{,}\PY{l+m+mi}{12700}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{l+m+mi}{8031}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{l+m+mi}{1000}\PY{o}{+}\PY{l+m+mi}{273}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n0}\PY{p}{,} \PY{l+m+mf}{3.48e\PYZhy{}6}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{Qv}\PY{p}{,}\PY{l+m+mi}{12700}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{l+m+mi}{8031}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{l+m+mi}{1000}\PY{o}{+}\PY{l+m+mi}{273}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} 3.48e-6*exp(-12700/10223463)
+{\color{outcolor}Out[{\color{outcolor}8}]:} 3.48e-6*exp(-12700/10223463)
 \end{Verbatim}
             
 
     
-        To evaluate an expression as a floating point number, use the
+        To evaluate an expression as a floating point number, use SymPy's
 \lstinline!.evalf()! method.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{expr2} \PY{o}{=} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n0}\PY{p}{,} \PY{l+m+mf}{3.48e\PYZhy{}6}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{Qv}\PY{p}{,}\PY{l+m+mi}{12700}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{l+m+mi}{8031}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{l+m+mi}{1000}\PY{o}{+}\PY{l+m+mi}{273}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{expr2} \PY{o}{=} \PY{n}{expr}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{n0}\PY{p}{,} \PY{l+m+mf}{3.48e\PYZhy{}6}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{Qv}\PY{p}{,}\PY{l+m+mi}{12700}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{R}\PY{p}{,} \PY{l+m+mi}{8031}\PY{p}{)}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{T}\PY{p}{,} \PY{l+m+mi}{1000}\PY{o}{+}\PY{l+m+mi}{273}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{expr2}\PY{o}{.}\PY{n}{evalf}\PY{p}{(}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{expr2}\PY{o}{.}\PY{n}{evalf}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} 3.47567968697765e-6
+{\color{outcolor}Out[{\color{outcolor}10}]:} 3.47567968697765e-6
 \end{Verbatim}
             
 
     
-        \section{Defining Equations}\label{defining-equations}
+        \section{Equations}\label{equations}
     
 
 
 
 
     
-        We can define equations using SymPy using symbolic math variables .
+        You can define equations using SymPy using symbolic math variables.
 \emph{Equations} in SymPy are different than \emph{expressions}. An
 expression does not have equality. An expression is a collection of
-symbols and operators, but expressions aren't equal to anything.
+symbols and operators, but expressions are not equal to anything.
 Equations have equality. An equation can be thought of as an expression
 equal to something else.
+
+A code section that defines the equation \(4x + 2 = 0\) is below. Note
+all equations defined in SymPy are assumed to equal zero.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solveset}\PY{p}{,} \PY{n}{solve}
-        \PY{k+kn}{from} \PY{n+nn}{sympy}\PY{n+nn}{.}\PY{n+nn}{solvers}\PY{n+nn}{.}\PY{n+nn}{solveset} \PY{k}{import} \PY{n}{linsolve}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}
+        
+        \PY{n}{x} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{x}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
+
+
+
+    
+        If you want to define the equation \(2y - x = 5\), which is not equal to
+zero, you just have to subtract the right hand side of the equation by
+the left hand side first.
+
+\[2y - x = 5\]
+
+\[2y - x -5 = 0\]
+    
+
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
 {\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{eq2} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{y} \PY{o}{\PYZhy{}} \PY{n}{x} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}
 \end{Verbatim}
 
 
+
+    
+        \subsection{Substituions in Equations}\label{substituions-in-equations}
+
+Symbols and expressions can be substituted into equations. In the code
+section below, the variable \(z\) is substituted in for the variable
+\(z\) (\(z\) replaces \$x).
+    
+
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{l+m+mi}{4}\PY{o}{*}\PY{n}{x}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{y} \PY{o}{\PYZhy{}} \PY{l+m+mi}{3}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{,} \PY{n}{z} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x y z}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        
+        \PY{n}{eq2} \PY{o}{=} \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{y} \PY{o}{\PYZhy{}} \PY{n}{x} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}
+        \PY{n}{eq3} \PY{o}{=} \PY{n}{eq2}\PY{o}{.}\PY{n}{subs}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{z}\PY{p}{)}
+        \PY{n}{eq3}
 \end{Verbatim}
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{eq2} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{6}\PY{o}{*}\PY{n}{y} \PY{o}{+} \PY{l+m+mi}{10}\PY{p}{)}
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} 2*y - z - 5
 \end{Verbatim}
+            
+
+    
+        \section{Solving Equations}\label{solving-equations}
+    
+
+
+
+
+    
+        SymPy's \lstinline!solve()! function can be used to solve equations and
+expressions that contain symbolic math variables.
+    
+
+
+
+
+    
+        \subsection{Equations with one
+solution}\label{equations-with-one-solution}
+
+A simple equation that contains one variable like \(x-4-2 = 0\) can be
+solved using the solve function. When only one value is part of the
+solution, the solution is in the form of a list.
+
+The code section below demonstrates SymPy's \lstinline!solve()! function
+when an expression is defined with symbolic math variables.
+    
+
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,} \PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{solve}
+        
+        \PY{n}{x} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{expr} \PY{o}{=} \PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}
+        
+        \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{expr}\PY{p}{)}
+        
         \PY{n}{sol}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} \{x: -1/10, y: 17/10\}
+{\color{outcolor}Out[{\color{outcolor}8}]:} [6]
 \end{Verbatim}
             
 
     
-        The SymPy solution object is a dictionary. The keys in the solution
-dictionary are the SymPy variable objects. The values in the solution
-dictionary are the numerical values the variables are equal to.
+        To pull the value out of the list, regular list indexing can be used.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{The solution is x = }\PY{l+s+si}{\PYZob{}sol[x]\PYZcb{}}\PY{l+s+s1}{, y = }\PY{l+s+si}{\PYZob{}sol[y]\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{num} \PY{o}{=} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+        
+        \PY{n}{num}
 \end{Verbatim}
 
 
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} 6
+\end{Verbatim}
+            
+
+    
+        The code section below demonstrates SymPy's solve() function when an
+equation is defined with symbolic math variables.
+    
+
+
+
     \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
+         
+         \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{y} \PY{o}{+} \PY{l+m+mi}{3} \PY{o}{+} \PY{l+m+mi}{8}\PY{p}{)}
+         
+         \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{)}
+         \PY{n}{sol}
+\end{Verbatim}
 
-        ------------------------------------------------------------------------
 
-        NameError                              Traceback (most recent call last)
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} [-11]
+\end{Verbatim}
+            
 
-        <ipython-input-1-82f40b20ea0e> in <module>()
-    ----> 1 print(f'The solution is x = \{sol[x]\}, y = \{sol[y]\}')
+    
+        \subsection{Equations with two
+solutions}\label{equations-with-two-solutions}
+
+Quadratic equations like \(x^2 - 5x + 6 = 0\) have two solutions.
+SymPy's \lstinline!solve()! function can be used to solve an equation
+with 2 solutions. When a solution has two solutions, SymPy outputs a
+list and inside the list are the two solutions.
+
+The code section below shows how SymPy's \lstinline!solve()! function
+solves an equation with two solutions
     
 
-        NameError: name 'sol' is not defined
 
-    \end{Verbatim}
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
+         
+         \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{6}\PY{p}{)}
+         
+         \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{)}
+         \PY{n}{sol}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} [2, 3]
+\end{Verbatim}
+            
 
     
-        \section{Solving two equations for two
-unknows}\label{solving-two-equations-for-two-unknows}
+        If you specify the keyword argument \lstinline!dict=True! to SymPy's
+\lstinline!solve()! function, the out put is still a list, but inside
+the list is a dictionary that shows which variable was solved for.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
+         
+         \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{6}\PY{p}{)}
+         
+         \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{,} \PY{n+nb}{dict}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+         \PY{n}{sol}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}12}]:} [\{x: 2\}, \{x: 3\}]
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} \{x: 2\}
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} \{x: 3\}
+\end{Verbatim}
+            
+
+    
+        \section{Solving Two Equations for Two
+Unknows}\label{solving-two-equations-for-two-unknows}
     
 
 
@@ -14407,24 +14574,15 @@ unknows}\label{solving-two-equations-for-two-unknows}
     
         Solving two equations for two unknown can be accomplished using SymPy.
 Consider the following set of two equations with two variables:
-    
 
-
-
-
-    
-        \[ x + y - 5 = 0 \]
+\[ x + y - 5 = 0 \]
 
 \[ x - y + 3 = 0 \]
-    
 
-
-
-
-    
-        To solve this system of two equations for the two unknowns, \(x\) and
-\(y\), first import the SymPy package. From the SymPy package, we'll use
-the functions \lstinline!symbols!, \lstinline!Eq! and \lstinline!solve!.
+To solve this system of two equations for the two unknowns, \(x\) and
+\(y\), first import the SymPy package. From the SymPy package, the
+functions \lstinline!symbols!, \lstinline!Eq! and \lstinline!solve! are
+needed.
     
 
 
@@ -14437,12 +14595,12 @@ the functions \lstinline!symbols!, \lstinline!Eq! and \lstinline!solve!.
 
 
     
-        Next, we create two SymPy symbols objects, \(x\) and \(y\). Note the
-string passed as an argument to the \lstinline!symbols()! function,
-\lstinline!'x y'!, does not have any commas. The outputs of the
-\lstinline!symbols()! function are the two symbol objects \lstinline!x!
-and \lstinline!y!. These outputs must be separated by a comma and are
-not surrounded by quotes.
+        Next, create two SymPy symbols objects, \(x\) and \(y\). As shown in a
+previous section, the string passed as an input argument to the
+\lstinline!symbols()! function, \lstinline!'x y'!, does not have any
+commas. The outputs of the \lstinline!symbols()! function are the two
+symbol objects \lstinline!x! and \lstinline!y!. These outputs must be
+separated by a comma and are not surrounded by quotes.
     
 
 
@@ -14454,7 +14612,7 @@ not surrounded by quotes.
 
 
     
-        Now we can define the two equations as SymPy equation objects.
+        Now define the two equations as SymPy equation objects.
     
 
 
@@ -14467,12 +14625,11 @@ not surrounded by quotes.
 
 
     
-        To compute the value of \(x\) and \(y\), we use SymPy's
-\lstinline!solve()! function, The first argument passed to the
-\lstinline!solve()! function is a tuple of the two equations
-\lstinline!(eq1, eq2)!. The second argument passed to the
-\lstinline!solve()! function is a tuple of the variables we want to
-solve for \lstinline!(x, y)!.
+        We can use SymPy's \lstinline!solve()! function to compute the value of
+\(x\) and \(y\). The first argument passed to the \lstinline!solve()!
+function is a tuple of the two equations \lstinline!(eq1, eq2)!. The
+second argument passed to the \lstinline!solve()! function is a tuple of
+the variables we want to solve for \lstinline!(x, y)!.
     
 
 
@@ -14490,7 +14647,8 @@ solve for \lstinline!(x, y)!.
     
         The solution is in the form of a Python dictionary. The dictionary keys
 are the variables and the dictionary values are the numerical solutions.
-We can access the solution out of the dictionary using regular
+
+We can access the solution out of the solution dictionary using regular
 dictionary indexing.
     
 
@@ -14511,27 +14669,31 @@ y = 4
 
 
     
-        Consider the following engineering statics problem:
+        \subsection{Solve a statics problem with
+SymPy}\label{solve-a-statics-problem-with-sympy}
+    
 
-GIVEN:
 
-A mass of 20 lbs is hung from a ring. The ring is supported by two
-cords, cord CE is 30 degrees above the horizontal to the right and cord
-BD is 45 degrees to the left above the horizontal.
 
-\begin{figure}
-\centering
-\includegraphics{images/statics_problem_diagram.png}
-\caption{Statics Diagram Problem}
-\end{figure}
 
-\(m\) = 20 lb
+    
+        onsider the following engineering statics problem can be solved with
+symbolic math and the SymPy package.
+
+\subsubsection{GIVEN:}\label{given}
+
+A weight of 20 lbs is hung from a ring. The ring is supported by two
+cords. The first cord, cord CE, is 30 degrees above the horizontal and
+to the right. The second cord, cord BD, is 45 degrees to the left above
+the horizontal.
+
+\(w\) = 22 lb
 
 \(T_{CE}\) @ +30 degrees CCW relative to +x-axis
 
 \(T_{BD}\) @ +45 degress CW relative to -x-axis
 
-FIND:
+\subsubsection{FIND:}\label{find}
 
 magnitude of \(T_{CE}\) and \(T_{BD}\)
     
@@ -14540,12 +14702,12 @@ magnitude of \(T_{CE}\) and \(T_{BD}\)
 
 
     
-        SOLUTION:
+        \subsubsection{SOLUTION:}\label{solution}
 
-To solve for the magnitude of TCE and TBD, need to solve to two
-equations for two unknowns. To accomplish this with SymPy, first we need
-to import NumPy and SymPy. The SymPy functions \lstinline!symbols!,
-\lstinline!Eq! and \lstinline!solve! will all be needed.
+To solve for the magnitude of \(T_{CE}\) and \(T_{BD}\), you need to
+solve to two equations for two unknowns. To accomplish this with SymPy,
+first we need to import NumPy and SymPy. The SymPy functions
+\lstinline!symbols!, \lstinline!Eq! and \lstinline!solve! are needed.
     
 
 
@@ -14558,13 +14720,12 @@ to import NumPy and SymPy. The SymPy functions \lstinline!symbols!,
 
 
     
-        Next define the symbolic math variables (that will be used in the
-equations) as SymPy \lstinline!symbols! objects. Multiple symbolic math
-variables can be defined at the same time. Note the argument names (on
-the right-hand side of the assignment operator \lstinline!=!) need to be
-enclosed in quotes\lstinline!' '! and separated by spaces, no commas.
-The object names (on the left-hand side of the assignment operator
-\lstinline!=!) are separated with commas, no quotes.
+        Next, define the symbolic math variables. Multiple symbolic math
+variables can be defined at the same time. Remember the argument names
+(on the right-hand side of the assignment operator \lstinline!=!) need
+to be enclosed in quotes\lstinline!'  '! and separated by spaces, no
+commas. The object names (on the left-hand side of the assignment
+operator \lstinline!=!) are separated with commas, no quotes.
     
 
 
@@ -14576,7 +14737,8 @@ The object names (on the left-hand side of the assignment operator
 
 
     
-        Next two equations based on the sum of the forces need to be defined.
+        Two equations based on the sum of the forces need to be defined.
+
 Assuming the ring is in static equilibrium:
 
 \[ \Sigma \vec{F} = 0 \]
@@ -14595,7 +14757,7 @@ The three forces opperating on the ring are defined as:
 
 \[ \vec{T_{bd}} = - T_{bd} cos(45)\hat{i} + T_{bd} sin(45)\hat{j} \]
 
-\[ \vec{m} = 0 \hat{i} - 20 \hat{j} \]
+\[ \vec{w} = 0 \hat{i} - 20 \hat{j} \]
 
 Taking \(\Sigma F_{x} = 0\) (sum of the \(\hat{i}\) terms):
 
@@ -14610,7 +14772,7 @@ Taking \(\Sigma F_{y} = 0\) (sum of the \(\hat{j}\) terms):
 
 
     
-        Our first equation, based on the sum of the forces in the x-direction
+        The first equation, based on the sum of the forces in the x-direction
 (the \(\hat{i}\) terms) is:
 
 \[ T_{ce} cos(30) - T_{bd} cos(45) = 0 \]
@@ -14641,9 +14803,9 @@ Eq(-0.707106781186548*Tbd + 0.866025403784439*Tce, 0)
         The second equation, based on the sum of the forces in the y-direction
 is:
 
-\[ T_{ce} sin(30) + T_{bd} sin(45) - 20 = 0 \]
+\[ T_{ce} sin(30) + T_{bd} sin(45) - 22 = 0 \]
 
-We can define this equation as a SymPy equation object as well:
+Define this equation as a SymPy equation object as well:
     
 
 
@@ -14661,10 +14823,11 @@ Eq(0.707106781186547*Tbd + 0.5*Tce - 22, 0)
 
 
     
-        Now to solve the two equations for \(T_{ce}\) and \(T_{bd}\) we use
-sympy's \lstinline!solve! method. The first argument is a tuple of the
-equations we want to solve, the second argument is a tuple of the
-variables we want to solve for.
+        Now solve the two equations for \(T_{ce}\) and \(T_{bd}\) with SymPy's
+\lstinline!solve()! method. The first argument passed to the
+\lstinline!solve()! method is a tuple of equations to solve, the
+argument passed to the \lstinline!solve()! method is a tuple of the
+variables to solve for.
     
 
 
@@ -14680,42 +14843,54 @@ variables we want to solve for.
             
 
     
-        The solution is saved in a dictionary. The dictionary keys are the
-variable names and the dictionary values are the numerical solution.
-    
+        The solution is saved in a Python dictionary. The dictionary keys are
+the variable names and the dictionary values are the numerical
+solutions.
 
-
-
-
-    
-        We can solve the same problem, but keep \(m\) as a variable.
+The numerical solutions can be pulled out of the dictionary using
+regular Python dictionary access. Note \lstinline!Tce! and
+\lstinline!Tbd! are SymPy symbols objects, not strings.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{m}\PY{p}{,} \PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{m, Tab, Tac}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{sol\PYZus{}dict} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Tce = }\PY{l+s+si}{\PYZob{}sol\PYZus{}dict[Tce]\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Tce = }\PY{l+s+si}{\PYZob{}sol\PYZus{}dict[Tbd]\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{eq1}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{)}
-         \PY{n}{eq2}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{m}\PY{p}{)}
-\end{Verbatim}
+Tce = 16.1051177665153
+Tce = 19.7246603876972
+
+    \end{Verbatim}
+
+
+    
+        The same problem can be solved again, \(w\) cab be kept as a variable.
+    
+
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Tce}\PY{p}{,}\PY{n}{Tbd}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{w}\PY{p}{,} \PY{n}{Tce}\PY{p}{,} \PY{n}{Tbd} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{w, Tab, Tac}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+         
+         \PY{n}{eq1}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+         \PY{n}{eq2}\PY{o}{=}\PY{n}{Eq}\PY{p}{(}\PY{n}{Tce}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}\PY{p}{)} \PY{o}{+} \PY{n}{Tbd}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{radians}\PY{p}{(}\PY{l+m+mi}{45}\PY{p}{)}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{w}\PY{p}{)}
+         
+         \PY{n}{solve}\PY{p}{(}\PY{p}{(}\PY{n}{eq1}\PY{p}{,}\PY{n}{eq2}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{n}{Tce}\PY{p}{,}\PY{n}{Tbd}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} \{Tab: 0.732050807568878*m, Tac: 0.896575472168054*m\}
+{\color{outcolor}Out[{\color{outcolor}12}]:} \{Tab: 0.732050807568878*w, Tac: 0.896575472168054*w\}
 \end{Verbatim}
             
 
     
-        Now our solution is in terms of the variable \(m\).
+        Now the solution is in terms of the variable \(w\).
     
 
 
