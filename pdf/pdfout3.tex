@@ -10706,13 +10706,15 @@ Q06.84
 
 
     
-        After completing the following chapter, you will be able to:
+        By the end of this chapter you will be able to:
 
 \begin{itemize}
 \item
-  Use if, else if and else selection structures
+  Use if, else if, and else selection structures
 \item
-  Use the pass, try and except keywords
+  Explain the difference between syntax errors and exception errors
+\item
+  Use try-except statements
 \item
   Construct flowcharts to describe the flow of a Python program
 \end{itemize}
@@ -10756,20 +10758,20 @@ The primary selection statements in Python are:
 
 
     
-        So far in this text, all of the Python code has either been written
-purely linearly or be linear and include functions. A strictly linear
-program is one that runs top to bottom, and every line of code in the
-program is run. In a linear program with functions, the program still
-runs head to base, but the program takes a side excursion to execute
-functions on the way down.
+        So far in this text, all of the Python code has either been strictly
+linear or linear and include functions. A strictly linear program is a
+program that runs top to bottom. Every line of code in a linear program
+runs. In a linear program with functions, the program still runs head to
+base, but the program takes side excursions to execute functions on the
+way down.
 
-If this next couple chapters, you will begin to write programs
-non-linearly. Non-linear programs do not just run every line of code top
-to bottom. In a non-linear program, sections of code may not be run
-based on a selection statement like \emph{if} or \emph{try}. Another way
-to have a non-linear program is to include loops, sections of code that
-run multiple times, with repetition structures like \emph{for loops} and
-\emph{while loops}.
+If this next couple chapters, you learn to write programs non-linearly.
+Non-linear programs do not run every line of code top to bottom. In
+non-linear programs, sections of code may not run based on selection
+statements like \emph{if} and \emph{try}. Non-linear programs can
+include loops. Inside loops are sections of code that run multiple
+times. Loops are defined by repetition structures like \emph{for loops}
+and \emph{while loops}.
 
 To start our discussion of non-linear programs, we will begin with
 \emph{if statements}.
@@ -10786,31 +10788,31 @@ To start our discussion of non-linear programs, we will begin with
 
 
     
-        The \emph{if} statement is one of the basic selection structures in
-Python. The syntax for a section of code that uses an if statement is
-below:
+        The \emph{if-statement} is one of the basic selection structures in
+Python. The syntax for a section of code that contains an if statement
+is below:
 
 \begin{lstlisting}[language=Python]
 if <logical_condition>:
     <code to run>
 \end{lstlisting}
 
-The keyword \lstinline!if! begins the selection statement. Following
-\lstinline!if!, a logical condition needs to be included. A logical
-condition is an expression that can be evaluated as \lstinline!True! or
-\lstinline!False!. An example of a logical condition is \lstinline!a<5!.
-This logical condition returns \lstinline!True! if \lstinline!a! is less
-than 5. Otherwise if \lstinline!a! is 5 or greater \lstinline!a<5!
-returns \lstinline!False!. Following the logical condition, a colon
-\lstinline!:! is required. After the if statement, a section of code to
-run when the condition is \lstinline!True! is included. The section of
-code \lstinline!<code to run>! must be indented and every line in this
-section of code must be indented the same number of spaces. By
-convention, the indentation in Python is four spaces. Most Python code
-editors, including Jupyter notebooks, indent code after if statements
-automatically.
+The keyword \lstinline!if! begins the statement. Following
+\lstinline!if!, a logical condition must to be included. A logical
+condition is an variable or expression that can be evaluated as
+\lstinline!True! or \lstinline!False!. An example of a logical condition
+is \lstinline!a<5!. The logical condition \lstinline!a<5! returns
+\lstinline!True! if \lstinline!a! is less than 5. Otherwise, if
+\lstinline!a! is 5 or greater \lstinline!a<5! returns \lstinline!False!.
+Following the logical condition, a colon \lstinline!:! is required.
+After the if-statement, a section of code to run when the condition is
+\lstinline!True! is included. The section of \lstinline!<code to run>!
+must be indented and every line in this section of code must be indented
+the same number of spaces. By convention, indentation is four spaces in
+Python. Most Python code editors, including Jupyter notebooks, indent
+code after if-statements automatically.
 
-The section of code below shows how an if statement in Python works:
+The section of code below demonstrates an if-statement in Python:
     
 
 
@@ -11334,7 +11336,8 @@ basic shapes used in a flow chart. Each shape has a specific use:
 \begin{figure}
 \centering
 \includegraphics{images/four_flow_chart_shapes.png}
-\caption{four flowchart shapes}
+\caption{four basic flow chart shapes: oval, parallelogram, rectangle
+and diamond}
 \end{figure}
 
 Arrows connect the basic shapes in a flowchart. The shapes and arrows of
@@ -11359,7 +11362,7 @@ A flowchart that describes this simple program is below:
 \begin{figure}
 \centering
 \includegraphics{images/flow_chart_simple_print_program.png}
-\caption{flow chart of a simple print program}
+\caption{Flow chart of a simple print program}
 \end{figure}
 
 The Python code that corresponds to this flowchart is:
@@ -11388,7 +11391,8 @@ A flowchart that describes this program is below:
 \begin{figure}
 \centering
 \includegraphics{images/flow_chart_calculation_program.png}
-\caption{flow chart of a program that contains a calculation}
+\caption{Flowchart of a program that includes input, output, and a
+calculation}
 \end{figure}
 
 The Python code that corresponds to this flow chart is:
@@ -11420,7 +11424,7 @@ A flow chart that describes this program is below:
 \begin{figure}
 \centering
 \includegraphics{images/flow_chart_simple_user_input_program.png}
-\caption{flow chart of a simple program that contains user input and a
+\caption{flow chart of a program that contains user input and a
 selection structure}
 \end{figure}
 
@@ -11454,8 +11458,8 @@ A flowchart that describes this program is below:
 \begin{figure}
 \centering
 \includegraphics{images/flow_chart_more_complex_user_input_program.png}
-\caption{flow chart of a simple program that contains user input and a
-selection structure}
+\caption{Flowchart of a program that contains user input and two
+if-statements}
 \end{figure}
 
 The Python code that corresponds to this flow chart is:
@@ -11597,11 +11601,11 @@ else if a = 1:
 \item
   use a for loop
 \item
-  use the break statment
+  use the break statement
 \item
-  use the continue statment
+  use the continue statement
 \item
-  construct flow charts that describe a program which contains a loop
+  construct flowcharts that describe programs with loops
 \end{itemize}
         \newpage
 
@@ -11613,6 +11617,264 @@ else if a = 1:
 
 
     
+        \section{For Loops}\label{for-loops}
+    
+
+
+
+
+    
+        In this chapter, you will learn about two kinds of repetition structures
+in Python: \emph{for loops} and \emph{while loops}. This section
+describes for loops.
+
+\emph{For Loops} are a component of many programming languages. A
+\emph{For Loop} is a programming structure where a section of code runs
+a specified number of times.
+
+Say we want to print out the statement:
+
+\begin{lstlisting}
+Problem solving in teams
+Problem solving in teams
+Problem solving in teams
+\end{lstlisting}
+
+One way to accomplish this task is by coding three print statements in a
+row:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Problem solving in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Problem solving in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Problem solving in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Problem solving in teams
+Problem solving in teams
+Problem solving in teams
+
+    \end{Verbatim}
+
+
+    
+        Another way to accomplish the same task is to use a for loop. The basic
+structure of a for loop in Python is below:
+
+\begin{lstlisting}[language=Python]
+for <var> in range(<num>):
+    <code>
+    
+\end{lstlisting}
+
+Where \lstinline!<var>! can be any variable, \lstinline!range(<num>)! is
+the number of times the for loop runs and \lstinline!<code>! are the
+lines of code that execute each time the for loop runs. Note the for
+loop starts with the keyword \lstinline!for! and includes a colon
+\lstinline!:!. Both \lstinline!for! and the colon \lstinline!:! are
+required. Also, note \lstinline!<code>! is indented. Each statement that
+runs as part of the for loop needs to be indented the same number of
+spaces. The standard indentation in Python is four spaces.
+
+Let's rewrite our example above using a for loop:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Problem solving in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Problem solving in teams
+Problem solving in teams
+Problem solving in teams
+
+    \end{Verbatim}
+
+
+    
+        Python's \lstinline!range()! function returns an iterable list of values
+starting at zero and ending at \lstinline!n-1!. For instance, when
+\lstinline!range(3)! is called, the values \lstinline!0, 1, 2! are
+returned. Note that \lstinline!3! is not part of the iterable, even
+though the function input was \lstinline!range(3)!. This can be
+confirmed with a for loop:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0
+1
+2
+
+    \end{Verbatim}
+
+
+    
+        \subsubsection{\texorpdfstring{Customizing
+\texttt{range()}}{Customizing range()}}\label{customizing-range}
+
+Python's \lstinline!range()! function can be customized by supplying up
+to three arguments. The general output of the range function is below:
+
+\begin{lstlisting}[language=Python]
+range(start,stop,step)
+\end{lstlisting}
+
+When \lstinline!range(3)! is called, it produces the same output as
+\lstinline!range(0,3,1)!
+(\lstinline!start=0!,\lstinline!stop=3!,\lstinline!step=1!). Remember
+Python counting starts at zero and ends at \lstinline!n-1!. If only two
+arguments are supplied as in \lstinline!range(0,3)!, a
+\lstinline!step=1! is assumed.
+
+The table below includes examples of the Python's \lstinline!range()!
+function.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\lstinline!range()! function & output\tabularnewline
+\midrule
+\endhead
+\lstinline!range(3)! & 0, 1, 2\tabularnewline
+\lstinline!range(0,3)! & 0, 1, 2\tabularnewline
+\lstinline!range(0,3,1)! & 0, 1, 2\tabularnewline
+\lstinline!range(2,7,2)! & 2, 4, 6\tabularnewline
+\lstinline!range(0,-5,-1)! & 0, -1, -2, -3, -4\tabularnewline
+\lstinline!range(2,-3,1)! & (no output)\tabularnewline
+\bottomrule
+\end{longtable}
+
+A loop that uses \lstinline!range()! and three arguments is below:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+5
+6
+7
+8
+
+    \end{Verbatim}
+
+
+    
+        \subsection{For loops with lists}\label{for-loops-with-lists}
+
+For loops can also be run using lists. If a list is used, the loop will
+run as many times as there are items in the list. The general structure
+is:
+
+\begin{lstlisting}[language=Python]
+for <var> in <list>:
+    <code>
+\end{lstlisting}
+
+Where \lstinline!<var>! is a variable name assigned to the item in the
+list and \lstinline!<list>! is the list object. Remember to include a
+colon \lstinline!:! after the list. \lstinline!<code>! is the
+programming code that runs for each item in the list.
+
+An example of a list in a for loop is below:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{my\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{electrical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
+        \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{my\PYZus{}list}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{item}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+electrical
+civil
+mechanical
+
+    \end{Verbatim}
+
+
+    
+        The loop ran three times because there are three items in the list. Each
+time through the loop, the variable \lstinline!item! is set to one of
+the items in the list.
+
+\begin{itemize}
+\tightlist
+\item
+  first time through the loop, \lstinline!item='electrical'!
+\item
+  second time through the loop \lstinline!item='mechanical'!
+\item
+  third time through the loop \lstinline!item='civil'!.
+\end{itemize}
+    
+
+
+
+
+    
+        \subsection{For loops with strings}\label{for-loops-with-strings}
+
+For loops can also be run using strings. In Python, strings can be
+indexed just like lists. A loop defined by a string runs as many times
+as there are characters in the string. The general structure is:
+
+\begin{lstlisting}[language=Python]
+for <char> in <string>:
+    <code>
+\end{lstlisting}
+
+Where \lstinline!<car>! is one of the characters in the string
+\lstinline!<string>!. Just like for loops with \lstinline!range()! and
+for loops with lists, make sure to include a colon \lstinline!:! after
+the list. \lstinline!<code>! is the programming code that runs for each
+character in the string.
+
+An example of a string in a for loop is below:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{for} \PY{n}{letter} \PY{o+ow}{in} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Gabby}\PY{l+s+s2}{\PYZdq{}}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{looping over letters in name: }\PY{l+s+si}{\PYZob{}letter\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+looping over letters in name: G
+looping over letters in name: a
+looping over letters in name: b
+looping over letters in name: b
+looping over letters in name: y
+
+    \end{Verbatim}
+
+
+    
         \section{While Loops}\label{while-loops}
     
 
@@ -11620,25 +11882,26 @@ else if a = 1:
 
 
     
-        A \emph{While Loop} is a type of loop that continues to run as long as a
-condition is \lstinline!True!. When the condition becomes
-\lstinline!False! the loop stops running. The general form of a while
-loop is below:
+        A \emph{while loop} is a type of loop that runs as long as a logical
+condition is \lstinline!True!. When the logical condition becomes
+\lstinline!False!, the loop stops running. The general form of a while
+loop in Python is below:
 
-\begin{lstlisting}
-while <logical_statement>:
+\begin{lstlisting}[language=Python]
+while <logical_condition>:
     <code>
 \end{lstlisting}
 
 The keyword \lstinline!while! must be included, as well as a
-\lstinline!<logical_statement>! that can be evaluated as
+\lstinline!<logical_condition>! which can be evaluated as
 \lstinline!True! or \lstinline!False!. The \lstinline!<code>! after the
-while statement must be indented and each line of code that will run as
-part of the while loop needs to be indented the same amount. Many code
-editors, including Jupyter notebooks, auto-indent the code within a
-loop. If the indentation is added manually, 4 spaces is standard.
+while statement must be indented. Each line of code runs as part of the
+while loop needs to be indented the same number of spaces. Many code
+editors, including Jupyter notebooks, auto-indent after a while loop
+statement. If you add indentation manually, four space spaces is the
+Python standard.
 
-An example of a while loop is below:
+An example of a while loop in Python is below:
     
 
 
@@ -11661,15 +11924,15 @@ An example of a while loop is below:
 
 
     
-        The first line \lstinline!i=0! creates a variable \lstinline!i! and
-assigs it the value \lstinline!0!. The next line declares the logical
+        The first line \lstinline!i=0! creates the variable \lstinline!i! and
+assigns it the value \lstinline!0!. The next line declares the logical
 condition needed to keep the loop running. The statement \lstinline!i<4!
-will be \lstinline!True! or \lstinline!False! depending on the variable
+is \lstinline!True! or \lstinline!False! depending on the variable
 \lstinline!i!. Since \lstinline!i=0!, the statement \lstinline!i<4! is
-\lstinline!True! and the while loop starts to run. The code that run
-inside the loop prints the value of \lstinline!i! then increases
-\lstinline!i! by \lstinline!1!. When \lstinline!i=4!, the statement
-\lstinline!i<4! is \lstinline!False! and the while loop ends.
+\lstinline!True! and the while loop starts to run. The code inside the
+loop prints the value of \lstinline!i! then increases \lstinline!i! by
+\lstinline!1!. When \lstinline!i=4!, the statement \lstinline!i<4! is
+\lstinline!False! and the while loop ends.
     
 
 
@@ -11679,11 +11942,12 @@ inside the loop prints the value of \lstinline!i! then increases
         \subsection{Using a while loop to validate user
 input}\label{using-a-while-loop-to-validate-user-input}
 
-While loops can be utilized to validate user input. Say we want to
-insist that a user inputs positive number. We can code this into a while
-loop that keeps on repeating until the user enters valid input. The code
-below will continue to ask a user for a positive number until one is
-entered.
+While loops can be used to validate user input. Say you want to insist
+that a user inputs positive number. You can code this into a while loop
+that keeps repeating until the user enters valid input.
+
+The code below continues to ask a user for a positive number until a
+positive number is entered.
     
 
 
@@ -11708,168 +11972,14 @@ Enter a positive number: 5
 \lstinline!num_input! with a value that causes the while statement
 \lstinline!num_input < 0! to evaluate as \lstinline!True!.
 \lstinline!num_input = -1! causes the statement
-\lstinline!num_input < 0! to evaluate as \lstinline!True! and any other
-negative number would have worked as well. If the while statement can't
-be evaluated as \lstinline!True! or \lstinline!False!, Python will throw
-an error. It is therefore necessary to convert the user's input from a
-string to a float. The statement \lstinline!'5' < 0! does note evaluate
-to \lstinline!True! or \lstinline!False!, because the string
-\lstinline!'5'! can't be compared to the number \lstinline!0!.
-    
-
-
-
-
-    
-        \section{For Loops}\label{for-loops}
-    
-
-
-
-
-    
-        \emph{For Loops} are a component of many programming languages. A
-\emph{For Loop} is a programming structure where a section of code is
-run a specified number of times. This compares to while loops which run
-as long as a logical condition is \lstinline!True!.
-
-Say we want to print out the statement:
-
-\begin{lstlisting}
-Engineers solve problems in teams
-Engineers solve problems in teams
-Engineers solve problems in teams
-\end{lstlisting}
-
-One way to do accomplish this is with three print statments in a row:
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineers solve problems in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineers solve problems in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineers solve problems in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-Engineers solve problems in teams
-Engineers solve problems in teams
-Engineers solve problems in teams
-
-    \end{Verbatim}
-
-
-    
-        \subsection{\texorpdfstring{For Loops with
-\texttt{range()}}{For Loops with range()}}\label{for-loops-with-range}
-
-Another way to accomplish the same thing is to use a for loop. The basic
-structure of a for loop is below:
-
-\begin{lstlisting}
-for <var> in range(<num>):
-    <statements>
-    
-\end{lstlisting}
-
-Where \lstinline!<var>! can be any variable name,
-\lstinline!range(<num>)! is the number of times the for loop runs and
-\lstinline!<statements>! are the lines of code that execute each time
-the for loop runs. Note the for loop starts with the keyword
-\lstinline!for! and includes a colon \lstinline!:!. Both \lstinline!for!
-and the colon \lstinline!:! are required. Also note
-\lstinline!<statements>! was indented. Each statement that will run as
-part of the for loop needs to be indented the same number of spaces. The
-standard indentation is 4 spaces.
-
-Let's rewrite our example above using a for loop:
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Engineers solve problems in teams}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-Engineers solve problems in teams
-Engineers solve problems in teams
-Engineers solve problems in teams
-
-    \end{Verbatim}
-
-
-    
-        The Python \lstinline!range()! function will return a interable list of
-values starting from zero and ending at \lstinline!n-1!. For instance,
-when \lstinline!range(3)! is called, the values \lstinline!0, 1, 2! are
-returned. Note that \lstinline!3! is not part of the iterable, even
-though the function input was \lstinline!range(3)!. This can be
-confirmed with a for loop:
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{This is range number: }\PY{l+s+si}{\PYZob{}i\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-This is range number: 0
-This is range number: 1
-This is range number: 2
-
-    \end{Verbatim}
-
-
-    
-        \subsection{For loops with lists}\label{for-loops-with-lists}
-
-For loops can also be run using lists. If a list is used, the loop will
-run as many times as there are items in the list. The general structure
-is:
-
-\begin{lstlisting}
-for <var> in <list>:
-    <statements>
-\end{lstlisting}
-
-Where \lstinline!<var>! is a variable name assigned to the item in the
-list, \lstinline!<list>! is the list object and \lstinline!<statements>!
-are the programming statements that run for each item in the list. An
-example is below:
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{my\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{electical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{civil}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{mechanical}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
-        \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{my\PYZus{}list}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{n}{item}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-electical
-civil
-mechanical
-
-    \end{Verbatim}
-
-
-    
-        Note how the loop ran three times, becuase there were three items in the
-list. Each time through the loop, the variable \lstinline!item! was set
-to one particular item in the list. The first time through the loop,
-\lstinline!item='electrical'!. The second time through the loop
-\lstinline!item='mechanical'! and the third time through the loop
-\lstinline!item='civil'!.
+\lstinline!num_input < 0! to evaluate as \lstinline!True!. Besides
+\lstinline!-1!, and any other negative number would have worked. If the
+while statement can't be evaluated as \lstinline!True! or
+\lstinline!False!, Python throws an error. Therefore, it is necessary to
+convert the user's input from a string to a float. The statement
+\lstinline!'5' < 0! does not evaluate to \lstinline!True! or
+\lstinline!False!, because the string \lstinline!'5'! can't be compared
+to the number \lstinline!0!.
     
 
 
@@ -11883,13 +11993,55 @@ to one particular item in the list. The first time through the loop,
 
 
     
-        Break and continue are two ways to modify the behavior of a loop
+        \emph{Break} and \emph{continue} are two ways to modify the behavior of
+a loop.
+    
+
+
+
+
+    
+        \subsection{Break}\label{break}
+
+In Python, the keyword \lstinline!break! causes the program to exit a
+loop early. \lstinline!break! causes the program to jump out of for
+loops even if the for loop hasn't run the specified number of
+times.\lstinline!break! causes the program to jump out of while loops
+even if the logical condition that defines the loop is still
+\lstinline!True!.
+
+An example using \lstinline!break! in a for loop is below.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{100}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+            \PY{k}{if} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{3}\PY{p}{:}
+                \PY{k}{break}
+        \PY{n+nb}{print}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Loop exited}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0
+1
+2
+3
+Loop exited
+
+    \end{Verbatim}
+
+
+    
+        An example using \lstinline!break! in a while loop is below.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{while} \PY{k+kc}{True}\PY{p}{:}
             \PY{n}{out} \PY{o}{=} \PY{n+nb}{input}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{type q to exit the loop: }\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
             \PY{k}{if} \PY{n}{out} \PY{o}{==} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{q}\PY{l+s+s1}{\PYZsq{}}\PY{p}{:}
                 \PY{k}{break}
@@ -11898,8 +12050,8 @@ to one particular item in the list. The first time through the loop,
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-type q to exit the loop: t
-type q to exit the loop: m
+type q to exit the loop: 1
+type q to exit the loop: 2
 type q to exit the loop: q
 Loop exited
 
@@ -11907,18 +12059,60 @@ Loop exited
 
 
     
-        \section{Flow Charts}\label{flow-charts}
+        \subsection{Continue}\label{continue}
+
+In Python, the keyword \lstinline!continue! causes the program to stop
+running code in a loop and start back at the top of the loop. The
+keyword \lstinline!break! cause the program to exit a loop.
+\lstinline!continue! causes the program to stop the current iteration of
+the loop and start the next iteration back at the top of the loop.
+
+An code section that uses \lstinline!continue! in a for loop is below.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{:}
+            \PY{k}{if} \PY{n}{i}\PY{o}{==}\PY{l+m+mi}{2}\PY{p}{:}
+                \PY{k}{continue}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0
+1
+3
+
+    \end{Verbatim}
+
+
+    
+        When the code section is run, the number \lstinline!2! is not printed.
+This is because when \lstinline!i=2! the program hits the
+\lstinline!continue! statement. Therefore, the line \lstinline!print(i)!
+isn't run when \lstinline!i=2!. Then the program starts back up to the
+start of the loop with the next number \lstinline!i=3!.
     
 
 
 
 
     
-        Flow charts show the flow of a program graphically. Flow charts were
+        \section{Flowcharts Describing Loops}\label{flowcharts-describing-loops}
+    
+
+
+
+
+    
+        Flowcharts show the flow of a program graphically. Flow charts were
 introduced in the previous chapter to describe how a program that
-includes \emph{if} statements can be described graphically. This chapter
-is about \emph{loops}. Flow charts can describe programs which contain
-\emph{for loops} and \emph{while loops}
+includes \emph{if} statements is illustrated graphically.
+
+This chapter is about \emph{loops}. Flowcharts can describe programs
+which contain \emph{for loops} and \emph{while loops}.
     
 
 
@@ -11932,8 +12126,8 @@ is about \emph{loops}. Flow charts can describe programs which contain
 
 
     
-        Let's review the four basic shapes in a flow chart. Each shape is used
-to represent a different type of operation.
+        Let's review the four basic flowchart shapes. Each shape represents a
+different type of operation in a program.
 
 \begin{itemize}
 \tightlist
@@ -11950,42 +12144,42 @@ to represent a different type of operation.
 \begin{figure}
 \centering
 \includegraphics{images/four_flow_chart_shapes.png}
-\caption{four flow chart shapes}
+\caption{four the four flowchart shapes: Oval, parallelogram, rectangle,
+and diamond}
 \end{figure}
 
-The basic shapes in a flow chart are connected by arrows. The shapes and
-arrows in a flow chart describe the flow of a program from start to end.
+The basic shapes in a flowchart are connected by arrows. The shapes and
+arrows in a flowchart represent the flow of a program from start to end.
     
 
 
 
 
     
-        \subsection{Flow chart of a program that contains a for
-loop}\label{flow-chart-of-a-program-that-contains-a-for-loop}
+        \subsection{Flowchart of a program that contains a for
+loop}\label{flowchart-of-a-program-that-contains-a-for-loop}
     
 
 
 
 
     
-        Below is the description of a program could be coded with a \emph{for
-loop}:
+        Below is the description of a program that can be coded with a for loop:
 
 \begin{quote}
 The program starts. The program prints the word ``looping'' 10 times.
 Finally, the program ends.
 \end{quote}
 
-A flow chart that describes this program is below:
+A flowchart that describes this program is below:
 
 \begin{figure}
 \centering
 \includegraphics{images/flow_chart_of_program_that_contains_a_for_loop.png}
-\caption{flow chart of a program that contains a for loop}
+\caption{Flowchart of a program that contains a for loop}
 \end{figure}
 
-The Python code that corresponds to this flow chart is:
+The Python code that corresponds to this flowchart is:
 
 \begin{lstlisting}[language=Python]
 # start
@@ -11999,25 +12193,25 @@ for i in range(10):
 
 
     
-        \subsection{Flow chart of a program that contains a while
-loop}\label{flow-chart-of-a-program-that-contains-a-while-loop}
+        \subsection{Flowchart of a program that contains a while
+loop}\label{flowchart-of-a-program-that-contains-a-while-loop}
     
 
 
 
 
     
-        Below is the description of a program could be coded with a \emph{while
-loop}:
+        Below is the description of a program which can be coded with a while
+loop:
 
 \begin{quote}
 The program starts. The program asks the user for a positive number. If
 the number the user enters is negative, the program asks the user for a
 positive number again. If the number the user enters is positive, the
-program prints positive. Finally, the program ends.
+program prints ``positive''. Finally, the program ends.
 \end{quote}
 
-A flow chart that describes this program is below:
+A flowchart that describes this program is below:
 
 \begin{figure}
 \centering
@@ -12066,7 +12260,9 @@ print("positive")
 
     
         \begin{key_terms}
-        loop
+        repetition structure
+
+loop
 
 while loop
 
@@ -12078,7 +12274,7 @@ continue
 
 infinite loop
 
-flow chart
+flowchart
         \end{key_terms}
 
     
@@ -12847,7 +13043,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_669_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_679_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
