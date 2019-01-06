@@ -12376,9 +12376,13 @@ Q08.82
 
 
     
-        Before NumPy's functions and methods can be used, NumPy must be
-installed. Depending on which distribution of Python is being used, the
-installation methods are slightly different.
+        NumPy is a Python package used for numerical computation. NumPy's core
+data type is the array. NumPy fuctions operate on arrays. NumPy is one
+of the foundational packages for scientific computing with Python.
+
+Before NumPy's functions and methods can be used, NumPy must be
+installed. Depending on which distribution of Python you use, the
+installation method is slightly different.
     
 
 
@@ -12387,11 +12391,11 @@ installation methods are slightly different.
     
         \subsection{Install NumPy on Anaconda}\label{install-numpy-on-anaconda}
 
-If the Anaconda distribution of Python is installed, NumPy comes
-pre-packaged and no further installation steps are necessary.
+If you installed the Anaconda distribution of Python, NumPy comes
+pre-installed and no further installation steps are necessary.
 
-If using a version of Python from python.org or a version of Python that
-came with the operating system, the \textbf{Anaconda Prompt} and
+If you use a version of Python from python.org or a version of Python
+that came with your operating system, the \textbf{Anaconda Prompt} and
 \textbf{conda} or \textbf{pip} can be used to install NumPy.
     
 
@@ -12423,7 +12427,7 @@ To install NumPy with \textbf{pip}, bring up a terminal window and type:
 $ pip install numpy
 \end{lstlisting}
 
-This will install NumPy in the current working Python environment.
+This command installs NumPy in the current working Python environment.
     
 
 
@@ -12432,9 +12436,9 @@ This will install NumPy in the current working Python environment.
     
         \subsection{Verify NumPy installation}\label{verify-numpy-installation}
 
-To verify NumPy is installed, try to invoke NumPy version at the Python
-REPL by calling the \lstinline!.__version__! an attribute common to most
-Python packages.
+To verify NumPy is installed, invoke the NumPy's version at the Python
+REPL. Import NumPy and call the \lstinline!.__version__! attribute
+common to most Python packages.
     
 
 
@@ -12446,7 +12450,7 @@ Python packages.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} '1.11.2'
+{\color{outcolor}Out[{\color{outcolor}1}]:} '1.14.3'
 \end{Verbatim}
             
 
@@ -12459,9 +12463,9 @@ Python packages.
 
     
         NumPy is a Python package used for numerical calculations, working with
-arrays of homogeneous values, and scientific computing. This section is
-a discussion about NumPy, arrays and the difference between Python lists
-and NumPy arrays.
+arrays of homogeneous values, and scientific computing. This section
+introduces NumPy and arrays then explains the difference between Python
+lists and NumPy arrays.
     
 
 
@@ -12471,20 +12475,19 @@ and NumPy arrays.
         \subsection{Python Lists and NumPy
 Arrays}\label{python-lists-and-numpy-arrays}
 
-In previous chapters, NumPy was used for the different functions and
-methods it provides. In addition to NumPy math functions such as
-\lstinline!np.sin()!, NumPy can also be used to construct homogeneous
-arrays and perform mathematical operations on arrays. A NumPy array is
-different from a Python list. The data types stored in a Python list can
-all be different:
+In previous chapters, NumPy was used some of the functions and methods
+the package provides. NumPy is used to construct homogeneous arrays and
+perform mathematical operations on arrays. A NumPy array is different
+from a Python list. The data types stored in a Python list can all be
+different.
 
 \begin{lstlisting}[language=Python]
 python_list =[ 1, -0.038, 'gear', True]
 \end{lstlisting}
 
-The list above contains four different data types: \lstinline!1! is an
-integer, \lstinline!-0.038! is a float, \lstinline!'gear'! is a string,
-and \lstinline!'True'! is a boolean.
+The Python list above contains four different data types: \lstinline!1!
+is an integer, \lstinline!-0.038! is a float, \lstinline!'gear'! is a
+string, and \lstinline!'True'! is a boolean.
 
 The code below prints the data type of each value store in
 \lstinline!python_list!.
@@ -12500,16 +12503,16 @@ The code below prints the data type of each value store in
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-<type 'int'>
-<type 'float'>
-<type 'str'>
-<type 'bool'>
+<class 'int'>
+<class 'float'>
+<class 'str'>
+<class 'bool'>
 
     \end{Verbatim}
 
 
     
-        The values stored in a NumPy array all must share the same data type.
+        The values stored in a NumPy array must all share the same data type.
 Consider the NumPy array below:
 
 \begin{lstlisting}[language=Python]
@@ -12536,10 +12539,10 @@ array above.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-<type 'numpy.float64'>
-<type 'numpy.float64'>
-<type 'numpy.float64'>
-<type 'numpy.float64'>
+<class 'numpy.float64'>
+<class 'numpy.float64'>
+<class 'numpy.float64'>
+<class 'numpy.float64'>
 
     \end{Verbatim}
 
@@ -12550,7 +12553,9 @@ in a NumPy array, NumPy forces all of the four items in the list to
 conform to the same data type.
 
 In the next code section, all four items are converted to type
-\lstinline!'<U32'!, which is a string data type in NumPy.
+\lstinline!'<U32'!, which is a string data type in NumPy (the
+\lstinline!U! refers Unicode strings; all strings in Python are Unicode
+by default).
     
 
 
@@ -12561,8 +12566,7 @@ In the next code section, all four items are converted to type
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} array(['1', '-0.038', 'gear', 'True'], 
-              dtype='|S32')
+{\color{outcolor}Out[{\color{outcolor}3}]:} array(['1', '-0.038', 'gear', 'True'], dtype='<U32')
 \end{Verbatim}
             
 
@@ -12577,10 +12581,9 @@ stored in each array is limited to the same type.
 
     
         NumPy arrays are useful because mathematical operations can be run on an
-entire array simultaneously. If a list of numbers is stored in a regular
-Python list, when the list is multiplied by a scalar, the list extends
-and repeats instead of multiplying each number in the list by the
-scalar.
+entire array simultaneously. If a numbers are stored in a regular Python
+list, when the list is multiplied by a scalar, the list extends and
+repeats- instead of multiplying each number in the list by the scalar.
     
 
 
@@ -12620,13 +12623,14 @@ scalar.
         The method above is relatively cumbersome and is also quite
 \emph{computationally expensive}. An operation that is computationally
 expensive is an operation that takes a lot of processing time or storage
-resources like RAM.
+resources like RAM or CPU bandwidth.
 
 Another way of completing the same action as the loop above is to use a
 NumPy array.
 
-The whole NumPy array can be multiplied by a scalar. This operation
-produces an array with each element multiplied by the scalar.
+An entire NumPy array can be multiplied by a scalar in one step. The
+scalar multiplication operation below produces an array with each
+element multiplied by the scalar \lstinline!2!.
     
 
 
@@ -12643,16 +12647,16 @@ produces an array with each element multiplied by the scalar.
             
 
     
-        If we have a very long list, we can compare the amount of time it takes
-for each of the two computation methods above to complete the same
-operation. We'll compare a Python list calculation to the NumPy array
-calculation.
+        If we have a very long list of numbers, we can compare the amount of
+time it takes each of the two computation methods above to complete the
+same operation. We'll compare the Python list calculation to the NumPy
+array calculation.
 
-Jupyter notebooks have a nice built-in way to time how long it takes a
-line of code to execute. In a Jupyter notebook, when a line starts with
-\lstinline!%timeit! followed by code, the notebook will run the line of
-code multiple times and output an average of the time spent to complete
-the line of code.
+Jupyter notebooks have a nice built-in way to time how a line of code
+takes to execute. In a Jupyter notebook, when a line starts with
+\lstinline!%timeit! followed by code, the notebook runs the line of code
+multiple times and outputs an average of the time spent to execute the
+line of code.
 
 We can use \lstinline!%timit! to compare a mathematical operation on a
 Python list using a for loop to the same mathematical operation on a
@@ -12668,7 +12672,7 @@ NumPy array.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-1000 loops, best of 3: 2.73 ms per loop
+4.47 ms ± 1.41 ms per loop (mean ± std. dev. of 7 runs, 1000 loops each)
 
     \end{Verbatim}
 
@@ -12679,19 +12683,18 @@ NumPy array.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-The slowest run took 6.85 times longer than the fastest. This could mean that an intermediate result is being cached.
-100000 loops, best of 3: 10.6 µs per loop
+11.9 µs ± 155 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
 
     \end{Verbatim}
 
 
     
         With 10,000 integers, the Python list and for loop takes an average of
-single milliseconds, while the NumPy array completing the same operation
-takes tens of microseconds. This is a speed increase of over 100x by
-using the NumPy array (1 millisecond = 1000 microseconds).
+single milliseconds, while the NumPy array completes the same operation
+in tens of microseconds. This is a speed increase of over 100x by using
+the NumPy array (1 millisecond = 1000 microseconds).
 
-For larger lists and NumPy arrays, the speed increase using NumPy is
+For larger lists of numbers, the speed increase using NumPy is
 considerable.
     
 
@@ -12728,8 +12731,8 @@ passed into the function with square brackets at either end.
     
         The data type can be passed into the \lstinline!np.array()! function as
 a second optional positional arguments. Available data types include
-\lstinline!'int64'!, \lstinline!'float'!, \lstinline!complex! and
-\lstinline!>U32! (string data type).
+\lstinline!'int64'!, \lstinline!'float'!, \lstinline!'complex'! and
+\lstinline!'>U32'! (string data type).
     
 
 
@@ -12741,14 +12744,14 @@ a second optional positional arguments. Available data types include
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} array([ 1.,  2.,  3.])
+{\color{outcolor}Out[{\color{outcolor}2}]:} array([1., 2., 3.])
 \end{Verbatim}
             
 
     
         The data type store in a NumPy array can be determined using the
 \lstinline!.dtype! method. For instance, an array of \lstinline!floats!
-will return \lstinline!float64!.
+returns \lstinline!float64!.
     
 
 
@@ -12768,6 +12771,9 @@ will return \lstinline!float64!.
     
         \subsection{Arrays of Regularly Spaced
 Numbers}\label{arrays-of-regularly-spaced-numbers}
+
+There are multiple ways to create arrays of regularly spaced numbers
+with NumPy
     
 
 
@@ -12777,18 +12783,18 @@ Numbers}\label{arrays-of-regularly-spaced-numbers}
         \subsubsection{np.arange()}\label{np.arange}
 
 NumPy's \lstinline!np.arange()! function creates a NumPy array according
-the arguments \lstinline!start!, \lstinline!stop+1!,\lstinline!step!.
+the arguments \lstinline!start!, \lstinline!stop!,\lstinline!step!.
 
 \begin{lstlisting}[language=Python]
-my_array = np.arange(start, stop+1, step)
+my_array = np.arange(start, stop, step)
 \end{lstlisting}
 
 The \lstinline!np.arange()! function is useful for creating an array of
-regularly spaced numbers.
+regularly spaced numbers where you know the step size.
 
 Consider creating a NumPy array of even numbers between \lstinline!0!
 and \lstinline!10!. Note that just like counting in Python, counting in
-NumPy starts at zero and ends at n+1.
+NumPy starts at \lstinline!0! and ends at \lstinline!n-1!.
     
 
 
@@ -12808,7 +12814,7 @@ NumPy starts at zero and ends at n+1.
 
 NumPy's \lstinline!np.linspace()! function creates a NumPy array
 according the arguments \lstinline!start!,
-\lstinline!stop+1!,\lstinline!number of elements!.
+\lstinline!stop!,\lstinline!number of elements!.
 
 \begin{lstlisting}[language=Python]
 my_array = np.linspace(start, stop, number of elements)
@@ -12828,8 +12834,8 @@ between \lstinline!0! and \lstinline!2pi!.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}5}]:} array([ 0.        ,  0.6981317 ,  1.3962634 ,  2.0943951 ,  2.7925268 ,
-                3.4906585 ,  4.1887902 ,  4.88692191,  5.58505361,  6.28318531])
+{\color{outcolor}Out[{\color{outcolor}5}]:} array([0.        , 0.6981317 , 1.3962634 , 2.0943951 , 2.7925268 ,
+               3.4906585 , 4.1887902 , 4.88692191, 5.58505361, 6.28318531])
 \end{Verbatim}
             
 
@@ -12839,7 +12845,7 @@ between \lstinline!0! and \lstinline!2pi!.
 NumPy's \lstinline!np.logspace()! function creates a NumPy array
 according the arguments \lstinline!start!,
 \lstinline!stop!,\lstinline!number of elements!, but unlike
-\lstinline!np.linspace()!, \lstinline!np.logspace()! will produce a
+\lstinline!np.linspace()!, \lstinline!np.logspace()! produces a
 logarithmically spaced array.
 
 \begin{lstlisting}[language=Python]
@@ -12850,10 +12856,10 @@ This function is useful for creating an array of logarithmically spaced
 numbers where the spacing interval is not known but the number of values
 is. Consider creating a NumPy array of 4 logarithmically spaced numbers
 between \lstinline!10! and \lstinline!100!. The function call is
-\lstinline!np.logspace(1, 2, 4)!. The start is \(10^1 = 10\) and the
-stop is \(10^2 = 100\). Be careful about putting large numbers in for
-\lstinline!stop! becuase the argument is the power 10 is raised to, not
-the stop value.
+\lstinline!np.logspace(1, 2, 4)!. The \lstinline!start! is \(10^1 = 10\)
+and the \lstinline!stop! is \(10^2 = 100\). Be careful about putting
+large numbers in for \lstinline!stop! because the argument is the power
+of 10, not the stop value.
     
 
 
@@ -12864,7 +12870,7 @@ the stop value.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}6}]:} array([  10.        ,   21.5443469 ,   46.41588834,  100.        ])
+{\color{outcolor}Out[{\color{outcolor}6}]:} array([ 10.        ,  21.5443469 ,  46.41588834, 100.        ])
 \end{Verbatim}
             
 
@@ -12873,8 +12879,8 @@ the stop value.
 
 NumPy's \lstinline!np.zeros()! function creates a NumPy array containing
 all zeros of a specific size. \lstinline!np.zeros()! is useful when the
-size of an array is known, but the values that will go into it have not
-been created yet.
+size of an array is known, but the values that will go into the array
+have not been created yet.
 
 \begin{lstlisting}[language=Python]
 my_array = np.zeros((rows,cols))
@@ -12889,11 +12895,11 @@ my_array = np.zeros((rows,cols))
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}7}]:} array([[ 0.,  0.,  0.,  0.,  0.],
-               [ 0.,  0.,  0.,  0.,  0.],
-               [ 0.,  0.,  0.,  0.,  0.],
-               [ 0.,  0.,  0.,  0.,  0.],
-               [ 0.,  0.,  0.,  0.,  0.]])
+{\color{outcolor}Out[{\color{outcolor}7}]:} array([[0., 0., 0., 0., 0.],
+               [0., 0., 0., 0., 0.],
+               [0., 0., 0., 0., 0.],
+               [0., 0., 0., 0., 0.],
+               [0., 0., 0., 0., 0.]])
 \end{Verbatim}
             
 
@@ -12903,7 +12909,7 @@ my_array = np.zeros((rows,cols))
 NumPy's \lstinline!np.ones()! function creates a NumPy array containing
 all 1's of a specific size. Like \lstinline!np.zeros()!,
 \lstinline!np.ones()! is useful when the size of an array is known, but
-the values that will go into it have not been created yet.
+the values that will go into the array have not been created yet.
 
 \begin{lstlisting}[language=Python]
 my_array = np.ones((rows,cols))
@@ -12918,9 +12924,9 @@ my_array = np.ones((rows,cols))
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} array([[ 1.,  1.,  1.,  1.,  1.],
-               [ 1.,  1.,  1.,  1.,  1.],
-               [ 1.,  1.,  1.,  1.,  1.]])
+{\color{outcolor}Out[{\color{outcolor}8}]:} array([[1., 1., 1., 1., 1.],
+               [1., 1., 1., 1., 1.],
+               [1., 1., 1., 1., 1.]])
 \end{Verbatim}
             
 
@@ -12932,9 +12938,9 @@ my_array = np.ones((rows,cols))
 
 
     
-        NumPy has functions to create many different types of random number
-arrays in the \lstinline!np.random! module. A few of the common random
-number types are below.
+        NumPy has functions to create arrays of many different types of random
+numbers in the \lstinline!np.random! module. A few of the common random
+number types are detailed below.
     
 
 
@@ -12962,12 +12968,12 @@ between 1 and 10:
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} array([2, 3, 4, 3, 9])
+{\color{outcolor}Out[{\color{outcolor}9}]:} array([6, 7, 2, 3, 0])
 \end{Verbatim}
             
 
     
-        A multi-dimensional size can be provided as the third argument. A 5 x 5
+        Array dimensions can be provided as the third argument. A 5 \(\times\) 5
 array of random numbers between 1 and 10:
     
 
@@ -12979,11 +12985,11 @@ array of random numbers between 1 and 10:
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} array([[1, 5, 5, 7, 7],
-                [7, 2, 7, 0, 0],
-                [6, 8, 7, 7, 4],
-                [4, 5, 8, 7, 3],
-                [0, 1, 6, 1, 5]])
+{\color{outcolor}Out[{\color{outcolor}10}]:} array([[7, 2, 1, 7, 7],
+                [7, 5, 7, 1, 0],
+                [9, 1, 1, 4, 3],
+                [3, 3, 4, 0, 7],
+                [0, 8, 6, 8, 0]])
 \end{Verbatim}
             
 
@@ -12997,8 +13003,7 @@ Arrays of random floating point numbers can be created with NumPy's
 np.random.rand(number of values)
 \end{lstlisting}
 
-To create an array of 5 different random numbers, each random number
-between 0 and 1:
+To create an array of 5 different random numbers between 0 and 1:
     
 
 
@@ -13009,7 +13014,7 @@ between 0 and 1:
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} array([ 0.40502534,  0.8861029 ,  0.35642409,  0.69722897,  0.24569434])
+{\color{outcolor}Out[{\color{outcolor}11}]:} array([0.87496687, 0.53720722, 0.46532805, 0.34379277, 0.40271602])
 \end{Verbatim}
             
 
@@ -13034,7 +13039,7 @@ use:
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} array([1, 5, 5])
+{\color{outcolor}Out[{\color{outcolor}12}]:} array([11,  1, 11])
 \end{Verbatim}
             
 
@@ -13042,8 +13047,8 @@ use:
         \subsubsection{Random Array with a Normal
 Distribution}\label{random-array-with-a-normal-distribution}
 
-\lstinline!np.random.randn()! will return a random array of numbers with
-a normal distribution, assuming a mean of 0 and variance of 1.
+\lstinline!np.random.randn()! returns an array of random numbers with a
+normal distribution, assuming a mean of 0 and variance of 1.
 
 \begin{lstlisting}[language=Python]
 np.random.randn(number of values)
@@ -13058,8 +13063,8 @@ np.random.randn(number of values)
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} array([ 1.18048373,  1.09743535,  0.14087206,  0.51723631,  0.43173378,
-                -0.56612216, -1.14951239, -1.49265268,  0.29367839, -1.18280421])
+{\color{outcolor}Out[{\color{outcolor}13}]:} array([-0.8587019 ,  0.51022209,  1.52989165, -0.62763827,  0.42359871,
+                -0.12794222, -0.05960913,  0.1018347 , -0.13226924,  1.21221629])
 \end{Verbatim}
             
 
@@ -13079,9 +13084,8 @@ np.random.randn(number of values)
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}14}]:} array([ 56.00638638,  75.00259465,  76.93650341,  62.5821746 ,
-                 81.1177076 ,  67.60792702,  62.01086621,  59.65126306,
-                 75.02831912,  67.44327052])
+{\color{outcolor}Out[{\color{outcolor}14}]:} array([83.08982467, 63.75617079, 54.80340275, 65.64987114, 60.86298488,
+                71.15108776, 72.68180092, 67.74486107, 62.88712717, 71.53153691])
 \end{Verbatim}
             
 
@@ -13125,9 +13129,9 @@ function.
 
 NumPy's \lstinline!np.meshgrid()! function takes in two positional
 arguments which are 1D NumPy arrays. The two input arrays do not have to
-have the same to contain the same number of elements. The outputs of the
+contain the same number of elements. The outputs of the
 \lstinline!np.meshgrid()! function are two 2D arrays. One of the 2D
-arrays have the same values in each row; the other 2D array has the same
+arrays has the same values in each row; the other 2D array has the same
 values in each column.
 
 \begin{lstlisting}[language=Python]
@@ -13214,7 +13218,7 @@ np.mgrid[start:stop:step, start:stop:step]
 
 
     
-        Below is a list of NumPy functioDescriptionns used in this section.
+        Below is a list of NumPy function descriptions used in this section.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -13257,14 +13261,13 @@ meshgrid\tabularnewline
 
 
     
-        Elements in a NumPy array can be accessed using \emph{indexing}.
-Indexing is an operation that pulls out a select set of values from an
-array. The \emph{index} of a value in an array is that value's location
-within the array. There is a difference between the value that is stored
-and the index or location of that value within an array.
+        Elements in NumPy arrays can be accessed by \emph{indexing}. Indexing is
+an operation that pulls out a select set of values from an array. The
+\emph{index} of a value in an array is that value's \emph{location}
+within the array. There is a difference between \emph{the value} and
+\emph{where the value is stored} in an array.
 
-An array with 3 values is created in the code section below. Remember
-counting in Python starts at \lstinline!0! and ends at \lstinline!n-1!.
+An array with 3 values is created in the code section below.
     
 
 
@@ -13279,15 +13282,19 @@ counting in Python starts at \lstinline!0! and ends at \lstinline!n-1!.
 
     
         The array above contains three values: \lstinline!2!, \lstinline!4! and
-\lstinline!6!. Each of these values has a different index. The value
-\lstinline!2! has an index of 0. \lstinline!2! is in the 0 location in
-the array. The value \lstinline!4! has an index of \lstinline!1! and the
-value \lstinline!6! has an index of \lstinline!2!. The table below shows
-the index of each value in the array.
+\lstinline!6!. Each of these values has a different index.
+
+\textbf{Remember counting in Python starts at \lstinline!0! and ends at
+\lstinline!n-1!.}
+
+The value \lstinline!2! has an index of 0. \lstinline!2! is in the 0
+location of the array. The value \lstinline!4! has an index of
+\lstinline!1! and the value \lstinline!6! has an index of \lstinline!2!.
+The table below shows the index of each value in the array.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Index or Location & Value\tabularnewline
+Index (or location) & Value\tabularnewline
 \midrule
 \endhead
 0 & \lstinline!2!\tabularnewline
@@ -13296,9 +13303,9 @@ Index or Location & Value\tabularnewline
 \bottomrule
 \end{longtable}
 
-Individual values stored in an array can be accessed using indexing.
+Individual values stored in an array can be accessed with indexing.
 
-The general form is:
+The general form to index a NumPy array is:
 
 \begin{lstlisting}
 <value> = <array>[index]
@@ -13314,7 +13321,7 @@ In the array above, the value 6 is stored at index 2.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
         \PY{n}{value} \PY{o}{=} \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
@@ -13337,7 +13344,7 @@ Indexing}\label{multi-dimensional-array-indexing}
 
 
     
-        Multi-dimensional arrays are indexed as well. A simple 2-D array is
+        Multi-dimensional arrays can be indexed as well. A simple 2-D array is
 defined by a list of lists.
     
 
@@ -13365,11 +13372,10 @@ defined by a list of lists.
 <value> = <array>[row,col]
 \end{lstlisting}
 
-Where \lstinline!<value>! is the value pulled out of the 2-D array named
-\lstinline!<array!. \lstinline![row,col]! specifies the row and column
-index of the value. Remember that Python counting starts at
-\lstinline!0!, so the first row is row zero and the first column is
-column zero.
+Where \lstinline!<value>! is the value pulled out of the 2-D array and
+\lstinline![row,col]! specifies the row and column index of the value.
+Remember Python counting starts at \lstinline!0!, so the first row is
+row zero and the first column is column zero.
 
 We can access the value \lstinline!8! in the array above by calling the
 row and column index \lstinline![1,2]! for the 2nd row (remember row 0
@@ -13403,8 +13409,8 @@ Indexing}\label{assigning-values-with-indexing}
 
 
     
-        Array indexing can be used to \emph{access} values in an array, and
-array indexing can also be used for \emph{assigning} values of an array.
+        Array indexing is used to \emph{access} values in an array. And array
+indexing can also be used for \emph{assigning} values of an array.
 
 The general form used to assign a value to a particular index or
 location in an array is below:
@@ -13413,12 +13419,10 @@ location in an array is below:
 <array>[index] = <value>
 \end{lstlisting}
 
-Where \lstinline!<array>! is the array object that \lstinline!<value>!
-will be assigned to, \lstinline![index]! is the index or location
-\lstinline!<value>! will be put in and \lstinline!<value>! is the value
-assigned to that location.
+Where \lstinline!<value>! is the new value going into the array and
+\lstinline![index]! is the location the new value will occupy.
 
-The code below puts the value \lstinline!10! into the third index or
+The code below puts the value \lstinline!10! into the second index or
 location of the array \lstinline!a!.
     
 
@@ -13446,8 +13450,8 @@ using the form:
 <array>[row,col] = <value>
 \end{lstlisting}
 
-An example that shows a value assigned to a location in a 2-D array is
-shown below:
+The code example below shows the value \lstinline!20! assigned to the
+2nd column and 3rd row of the array.
     
 
 
@@ -13485,16 +13489,16 @@ with array \emph{slicing}. To pull out a section or slice of an array,
 the colon operator \lstinline!:! is used when calling the index. The
 general form is:
 
-\begin{lstlisting}
-<slice> = <array>[start:end+1]
+\begin{lstlisting}[language=Python]
+<slice> = <array>[start:stop]
 \end{lstlisting}
 
 Where \lstinline!<slice>! is the slice or section of the array object
 \lstinline!<array>!. The index of the slice is specified in
-\lstinline![start:end+1]!. Note that Python counting starts at
+\lstinline![start:stop]!. Remember Python counting starts at
 \lstinline!0! and ends at \lstinline!n-1!. The index \lstinline![0:2]!
 pulls the first two values out of an array. The index \lstinline![1:3]!
-pulls the second and third values out of an array
+pulls the second and third values out of an array.
 
 An example of array slicing the first two elements out of an array is
 below.
@@ -13541,8 +13545,7 @@ below.
 
     
         A blank also stands in for the first index. The slicing operation
-\lstinline![:3]! will pull out the first through third values of an
-array.
+\lstinline![:3]! pulls out the first through third values of an array.
     
 
 
@@ -13573,11 +13576,11 @@ array.
         2D NumPy arrays can be sliced with the general form:
 
 \begin{lstlisting}[language=Python]
-<slice> = <array>[start_row:end_row+1, start_col:end_col-1]
+<slice> = <array>[start_row:end_row, start_col:end_col]
 \end{lstlisting}
 
-The code section below creates a two row by four column array and index
-out the first two rows and the first three columns.
+The code section below creates a two row by four column array and
+indexes out the first two rows and the first three columns.
     
 
 
@@ -13662,9 +13665,7 @@ and subtracted from each other:
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
         \PY{n}{c} \PY{o}{=} \PY{n}{a} \PY{o}{+} \PY{n}{b}
         \PY{n+nb}{print}\PY{p}{(}\PY{n}{c}\PY{p}{)}
@@ -13687,9 +13688,7 @@ floats:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{l+m+mi}{3}\PY{o}{*}\PY{n}{a}
         \PY{n+nb}{print}\PY{p}{(}\PY{n}{b}\PY{p}{)}
 \end{Verbatim}
@@ -13701,9 +13700,7 @@ floats:
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{a}\PY{o}{/}\PY{l+m+mi}{2}
         \PY{n+nb}{print}\PY{p}{(}\PY{n}{b}\PY{p}{)}
 \end{Verbatim}
@@ -13737,9 +13734,7 @@ element-wise multiplication on NumPy arrays.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
         \PY{n}{a} \PY{o}{*} \PY{n}{b}
 \end{Verbatim}
@@ -13757,9 +13752,7 @@ element-wise multiplication on NumPy arrays.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
         \PY{n}{np}\PY{o}{.}\PY{n}{dot}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{)}
 \end{Verbatim}
@@ -13777,9 +13770,7 @@ element-wise multiplication on NumPy arrays.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
         \PY{n}{np}\PY{o}{.}\PY{n}{cross}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{)}
 \end{Verbatim}
@@ -13807,9 +13798,7 @@ exponentiation.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-        
-        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \end{Verbatim}
 
@@ -13989,7 +13978,7 @@ The steps to solve the system of linear equations with
   Create NumPy array \lstinline!A! as a 3 by 3 array of the coefficients
 \item
   Create a NumPy array \lstinline!b! as the right-hand side of the
-  equations.
+  equations
 \item
   Solve for the values of \(x\), \(y\) and \(z\) using
   \lstinline!np.linalg.solve(A, b)!.
@@ -18227,7 +18216,7 @@ Q12.85
 
 
     
-        The following will be detailed in the appendix:
+        The following is detailed in the appendix:
 
 \begin{itemize}
 \item
@@ -18243,6 +18232,10 @@ Q12.85
 \item
   Problem Solving with Python book construction
 \item
+  Contributions
+\item
+  About the cover
+\item
   About the author
 \end{itemize}
     
@@ -18251,76 +18244,53 @@ Q12.85
 
 
     
-        \section{Reserved and Key Words in
-Python}\label{reserved-and-key-words-in-python}
+        \section{Reserved and Keywords in
+Python}\label{reserved-and-keywords-in-python}
     
 
 
 
 
     
-        The following are reserved and key words in Python. These words should
+        The following are reserved and keywords in Python. These words should
 not be used as the names for user-defined functions, classes, methods or
-modules. The key words can be accessed with the following code:
+modules. The keywords can be accessed with the following code:
     
 
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{keyword}
-        \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{There are }\PY{l+s+s1}{\PYZob{}}\PY{l+s+s1}{len(keyword.kwlist)\PYZcb{} key words}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-        \PY{k}{for} \PY{n}{keywrd} \PY{o+ow}{in} \PY{n}{keyword}\PY{o}{.}\PY{n}{kwlist}\PY{p}{:}
-            \PY{n+nb}{print}\PY{p}{(}\PY{n}{keywrd}\PY{p}{)}
-\end{Verbatim}
 
+    
+        \begin{lstlisting}[language=Python]
+import keyword
+print(f'There are {len(keyword.kwlist)} key words')
+for keywrd in keyword.kwlist:
+    print(keywrd)
+\end{lstlisting}
 
-    \begin{Verbatim}[commandchars=\\\{\}]
+\begin{lstlisting}
 There are 33 key words
 False
 None
 True
 and
 as
-assert
-break
-class
-continue
-def
-del
-elif
-else
-except
-finally
-for
-from
-global
-if
-import
-in
-is
-lambda
-nonlocal
-not
-or
-pass
-raise
-return
-try
-while
-with
-yield
-
-    \end{Verbatim}
-
-
-    
-        \subsection{Logical Key Words}\label{logical-key-words}
+...
+\end{lstlisting}
     
 
 
 
 
     
+        \subsection{Logical Keywords}\label{logical-keywords}
+    
+
+
+
+
+    
+        \begin{key_terms}
         \begin{lstlisting}
 True
 False
@@ -18331,6 +18301,8 @@ is
 None
 in
 \end{lstlisting}
+        \end{key_terms}
+
     
 
 
@@ -18344,6 +18316,7 @@ in
 
 
     
+        \begin{key_terms}
         \begin{lstlisting}
 if
 else
@@ -18360,6 +18333,8 @@ raise
 return
 yield
 \end{lstlisting}
+        \end{key_terms}
+
     
 
 
@@ -18373,6 +18348,7 @@ yield
 
 
     
+        \begin{key_terms}
         \begin{lstlisting}
 def
 global
@@ -18383,25 +18359,30 @@ with
 assert
 del
 \end{lstlisting}
-    
+        \end{key_terms}
 
-
-
-
-    
-        \subsection{Module Key Words}\label{module-key-words}
     
 
 
 
 
     
+        \subsection{Module Keywords}\label{module-keywords}
+    
+
+
+
+
+    
+        \begin{key_terms}
         \begin{lstlisting}
 import
 from
 as
 with
 \end{lstlisting}
+        \end{key_terms}
+
     
 
 
@@ -18415,8 +18396,8 @@ with
 
 
     
-        The following is a list of ASCII character codes. These character codes
-can also be acccessed using the following code:
+        A listing of ASCII character codes is below. ASCII character codes
+character codes can be accessed using the following code:
     
 
 
@@ -18535,9 +18516,14 @@ ASCII code: 126    Character: \textasciitilde{}
 
 
     
-        Using \textbf{virtual environments} is good standard of practice in
-Python. A virtual environment is an isolated installation of Python with
-associated packages.
+        Using \emph{virtual environments} is standard practice in Python. A
+virtual environment is an isolated installation of Python with
+associated packages. When you use virtual environments, one project can
+have a separate version of Python and packages. Another project can use
+a different virtual environment and therefore have a separate version of
+Python and packages. By utilizing virtual environments, two projects on
+the same computer can use different versions of Python and different
+versions of packages.
     
 
 
@@ -18551,7 +18537,7 @@ To create the new virtual environment, open the \textbf{Anaconda Prompt}
 and issue the command:
 
 \begin{lstlisting}
-> conda create --name env_name python=3.7
+> conda create --name env_name python=3.6
 \end{lstlisting}
 
 The \lstinline!conda create! command builds the new virtual environment.
@@ -18559,20 +18545,30 @@ The \lstinline!--name env_name! flag gives our new virtual environment
 the name \lstinline!env_name!. Including \lstinline!python=3.6! ensures
 the virtual environment has a current version of Python.
 
-The following output or something similar will result:
+The following output or something similar results:
 
 \begin{lstlisting}
 The following NEW packages will be INSTALLED:
 
-    certifi:        2016.2.28-py36_0
-    pip:            9.0.1-py36_1
-    python:         3.7.1-0
-    setuptools:     36.4.0-py36_0
-    vs2015_runtime: 14.0.25420-0
-    wheel:          0.29.0-py36_0
-    wincertstore:   0.2-py36_0
+    ca-certificates: 2018.03.07-0           
+    certifi:         2018.11.29-py36_0      
+    libedit:         3.1.20170329-h6b74fdf_2
+    libffi:          3.2.1-hd88cf55_4       
+    libgcc-ng:       8.2.0-hdf63c60_1       
+    libstdcxx-ng:    8.2.0-hdf63c60_1       
+    ncurses:         6.1-he6710b0_1         
+    openssl:         1.1.1a-h7b6447c_0      
+    pip:             18.1-py36_0            
+    python:          3.6.8-h0371630_0       
+    readline:        7.0-h7b6447c_5         
+    setuptools:      40.6.3-py36_0          
+    sqlite:          3.26.0-h7b6447c_0      
+    tk:              8.6.8-hbc83047_0       
+    wheel:           0.32.3-py36_0          
+    xz:              5.2.4-h14c3975_4       
+    zlib:            1.2.11-h7b6447c_3      
 
-Proceed ([y]/n)? y
+Proceed ([y]/n)?
 \end{lstlisting}
 
 Type \lstinline!y! to confirm and create the new virtual environment.
@@ -18582,8 +18578,8 @@ Type \lstinline!y! to confirm and create the new virtual environment.
 
 
     
-        \subsection{Activate the virtual
-environment}\label{activate-the-virtual-environment}
+        \subsection{Activate a virtual
+environment}\label{activate-a-virtual-environment}
 
 To use the new virtual environment \lstinline!env_name!, it first needs
 to be activated:
@@ -18592,23 +18588,28 @@ to be activated:
 > conda activate env_name
 \end{lstlisting}
 
-The virtual environment is active when you see \lstinline!(env_name)! in
-parenthesis at the start of the prompt:
+The virtual environment is active when you see \lstinline!(env_name) >!
+in parenthesis at the start of the prompt:
 
 \begin{lstlisting}
 (env_name) > 
 \end{lstlisting}
+    
 
-\subsection{Install packages in the virtual
-environment}\label{install-packages-in-the-virtual-environment}
+
+
+
+    
+        \subsection{Install packages in a virtual
+environment}\label{install-packages-in-a-virtual-environment}
 
 When a new virtual environment is created, no packages will be
-installed. If you have the Anaconda distribution of Python, the
-\lstinline!base! environment contains all 200+ packages that come with
-Anaconda. But a fresh new virtual environment will just have the version
-of Python installed, no other packages.
+installed. If you use the Anaconda distribution of Python, the
+\lstinline!base! environment contains about 600 packages that come with
+Anaconda. But a fresh new virtual environment will just have Python
+installed, no other packages.
 
-To install a package into the virtual environment, first make sure the
+To install a package into the virtual environment, first, make sure the
 environment is active (\lstinline!(env_name)! before the prompt).
 Package installation is accomplished with the \lstinline!conda install!
 command followed by the package name. To install matplotlib into the
@@ -18619,7 +18620,7 @@ virtual environment type:
 \end{lstlisting}
 
 Multiple packages can be installed with the same command. To install
-both \textbf{numpy} and \textbf{jupyter} use:
+both NumPy and Jupyter use:
 
 \begin{lstlisting}
 (env_name) > conda install numpy jupyter
@@ -18630,8 +18631,8 @@ both \textbf{numpy} and \textbf{jupyter} use:
 
 
     
-        \subsection{Decative the virtual
-environment}\label{decative-the-virtual-environment}
+        \subsection{Deactivate a virtual
+environment}\label{deactivate-a-virtual-environment}
 
 To deactivate an active environment, use:
 
@@ -18660,9 +18661,9 @@ View a list of your virtual environments using the command
 
 # conda environments:
 #
-matplotlib               /home/tribilium/anaconda3/envs/matplotlib
+base                     /home/tribilium/anaconda3
 env_name               * /home/tribilium/anaconda3/envs/env_name
-root                     /home/tribilium/anaconda3
+matplotlib               /home/tribilium/anaconda3/envs/matplotlib
 \end{lstlisting}
 
 Notice the \lstinline!*! asterisk on the line with \lstinline!env_name!.
@@ -18684,9 +18685,9 @@ in front of \lstinline!env_name!. That's because the
 
 # conda environments:
 #
+base                  *  /home/tribilium/anaconda3
+env_name                 /home/tribilium/anaconda3/envs/env_name
 matplotlib               /home/tribilium/anaconda3/envs/matplotlib
-webscrape                /home/tribilium/anaconda3/envs/pelican
-root                  *  /home/tribilium/anaconda3
 \end{lstlisting}
     
 
@@ -18694,21 +18695,61 @@ root                  *  /home/tribilium/anaconda3
 
 
     
-        \section{Numpy Math Functions}\label{numpy-math-functions}
+        \subsection{Remove a virtual
+environment}\label{remove-a-virtual-environment}
+
+Remove a virtual environment with the command
+\lstinline!conda remove --name env_name --all!. Exit out of the
+environment to want to remove before you remove it.
+
+Check to see if the virtual environment you want to remove is present:
+
+\begin{lstlisting}
+> conda env list
+
+# conda environments:
+#
+base                  *  /home/tribilium/anaconda3
+env_name                 /home/tribilium/anaconda3/envs/env_name
+matplotlib               /home/tribilium/anaconda3/envs/matplotlib
+\end{lstlisting}
+
+Remove the virtual environment called \lstinline!env_name!.
+
+\begin{lstlisting}
+> conda remove --name env_name --all
+
+Proceed ([y]/n)?
+\end{lstlisting}
+
+Type {[}y{]} to remove the environment. View a list of your virtual
+environments again. Note that \lstinline!env_name!is no longer in the
+list.
+
+\begin{lstlisting}
+> conda env list
+
+# conda environments:
+#
+base                  *  /home/tribilium/anaconda3
+matplotlib               /home/tribilium/anaconda3/envs/matplotlib
+\end{lstlisting}
     
 
 
 
 
     
-        The code below will print out all of the numpy functions and methods:
+        \section{NumPy Math Functions}\label{numpy-math-functions}
     
 
 
 
 
     
-        \begin{lstlisting}[language=Python]
+        The code below prints out all NumPy functions and methods:
+
+\begin{lstlisting}[language=Python]
 import numpy as np
 for func in dir(np):
     print(func)
@@ -18719,28 +18760,70 @@ for func in dir(np):
 
 
     
-        \subsection{Numpy Statistics Fuctions and
-Methods}\label{numpy-statistics-fuctions-and-methods}
+        \subsection{NumPy Array Creation and Manipulation Functions and
+Methods}\label{numpy-array-creation-and-manipulation-functions-and-methods}
     
 
 
 
 
     
+        \begin{key_terms}
         \begin{lstlisting}
-np.mean
-np.median
-np.std
-np.var
-np.erf
+np.array
+np.arange
+np.ndarray
+np.zeros
+np.ones
+np.matrix
+np.traspose
+np.size
+np.shape
+np.reshape
+np.meshgrid
+np.dot
+np.asmatrix
+np.asarray
 \end{lstlisting}
+        \end{key_terms}
+
+    
+
+
+
+
+    
+        \subsection{NumPy Exponential and Logarithmic Functions and
+Methods}\label{numpy-exponential-and-logarithmic-functions-and-methods}
     
 
 
 
 
     
-        \subsection{Numpy Trigonometric Functions and
+        \begin{key_terms}
+        \begin{lstlisting}
+np.log
+np.log10
+np.log1p
+np.log2
+np.logaddexp
+np.logaddexp2
+np.exp
+np.exp2
+np.sqrt
+np.power
+np.e
+\end{lstlisting}
+        \end{key_terms}
+
+    
+
+
+
+
+    
+        \subsection{NumPy Trigonometric Functions and
 Methods}\label{numpy-trigonometric-functions-and-methods}
     
 
@@ -18748,6 +18831,7 @@ Methods}\label{numpy-trigonometric-functions-and-methods}
 
 
     
+        \begin{key_terms}
         \begin{lstlisting}
 np.pi
 np.sin
@@ -18771,63 +18855,38 @@ np.tanh
 
 np.angle
 \end{lstlisting}
-    
+        \end{key_terms}
 
-
-
-
-    
-        Numpy Exponential and Logrithmic Functions and Methods
     
 
 
 
 
     
+        \subsection{NumPy Statistics Functions and
+Methods}\label{numpy-statistics-functions-and-methods}
+    
+
+
+
+
+    
+        \begin{key_terms}
         \begin{lstlisting}
-np.log
-np.log10
-np.log1p
-np.log2
-np.logaddexp
-np.logaddexp2
-np.exp
-np.exp2
-np.sqrt
-np.power
-np.e
+np.mean
+np.average
+np.median
+np.std
+np.var
+np.correlate
+np.histogram
+np.amin
+np.amax
+np.ptp
+np.percentile
 \end{lstlisting}
-    
+        \end{key_terms}
 
-
-
-
-    
-        \subsection{Numpy Matrix Creation and Manipulation Functions and
-Methods}\label{numpy-matrix-creation-and-manipulation-functions-and-methods}
-    
-
-
-
-
-    
-        \begin{lstlisting}
-np.linspace
-np.zeros
-np.ones
-np.ndarray
-np.matrix
-np.traspose
-np.size
-np.shape
-np.reshape
-np.meshgrid
-np.dot
-np.asmatrix
-np.asarray
-np.arange
-np.array
-\end{lstlisting}
     
 
 
@@ -18841,35 +18900,39 @@ np.array
 
 
     
-        \textbf{Git} is a common \emph{version control} tool used by computer
-program developers to save code and work on code collaboratively as a
-team. \textbf{Git} is a program run from the command line or
-\textbf{Anaconda Prompt}. \textbf{Git} was created by Linus Torvalds,
-who also created the Linux operating system.
+        \textbf{Git} is one of the standard \emph{version-control} systems used
+by developers to save code and work on code collaboratively as a team.
+\textbf{Git} is a program run from the command line or \textbf{Anaconda
+Prompt}. If you use Windows, the \textbf{gitbash} program can be
+downloaded at
+\href{https://git-scm.com/downloads}{git-scm.com/downloads}.
+\textbf{Git} was created by Linus Torvalds, who also designed the Linux
+operating system.
     
 
 
 
 
     
-        \href{https://github.com/}{github.com} run by the company GitHub is a
+        \href{https://github.com/}{GitHub.com} (now owned by Microsoft) is a
 website and service used by programmers and open source projects to
-share code and allow contributers to propose changes to existing code.
+share code and allow contributors to propose changes to existing code.
     
 
 
 
 
     
-        Both \textbf{git} and \textbf{github.com} are useful for problemsolvers
-working in teams.
+        Both \textbf{git} and \href{https://github.com/}{GitHub.com} are useful
+for problem solvers working in teams.
     
 
 
 
 
     
-        Before using git and GitHub, it is helpful to understand a couple terms:
+        Before using \textbf{git} and GitHub, it is helpful to understand a
+couple of terms:
 
 \begin{itemize}
 \tightlist
@@ -18881,10 +18944,10 @@ working in teams.
   and its contents.
 \item
   \textbf{local repo} - a directory and its contents on your computer
-  that git knows about.
+  that \textbf{git} knows about.
 \item
   \textbf{remote repo} - a directory and its contents stored in the
-  cloud that git knows about.
+  cloud that \textbf{git} knows about.
 \end{itemize}
     
 
@@ -18892,54 +18955,28 @@ working in teams.
 
 
     
-        Useful git commands are summarized below:
+        Useful \textbf{git} commands are summarized below:
 
-\begin{longtable}[]{@{}ll@{}}
-\toprule
-\begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
-command\strut
-\end{minipage} & \begin{minipage}[b]{0.05\columnwidth}\raggedright\strut
-description\strut
-\end{minipage}\tabularnewline
-\midrule
-\endhead
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\lstinline!git init!\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-initialize a new repository\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\lstinline!git remote add origin https://github.com/user/repo.git!\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-links a local repo with a remote repo on github.com\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\lstinline!git add .!\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-adds all the files and changes to the local git repo\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\lstinline!git commit -m "commit message"!\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-commits the changes in the local repo\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\lstinline!git push origin master!\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-pushes the changes up to the remote repo on github.com\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\lstinline!git pull origin master!\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-pulls the version in the remote repo down to the local repo\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-\lstinline!git clone https://github.com/user/repo.git!\strut
-\end{minipage} & \begin{minipage}[t]{0.05\columnwidth}\raggedright\strut
-copies a remote repo on github.com to a local directory\strut
-\end{minipage}\tabularnewline
-\bottomrule
-\end{longtable}
+\begin{itemize}
+\item
+  \lstinline!git clone https://github.com/user/repo.git! copy a remote
+  repo from GitHub.com into a local directory
+\item
+  \lstinline!git init! create a new local repo in the current folder
+\item
+  \lstinline!git remote add origin https://github.com/user/repo.git!
+  link a local repo to a remote repo on GitHub.com
+\item
+  \lstinline!git add .! add all files and changes to the local repo
+\item
+  \lstinline!git commit -m "commit message"! commits the changes in the
+  local repo with the message \lstinline!"commit message"!
+\item
+  \lstinline!git push origin master! push changes up to the remote repo
+\item
+  \lstinline!git pull origin master! pull down the version in the remote
+  repo down into the local repo
+\end{itemize}
     
 
 
@@ -18953,20 +18990,21 @@ copies a remote repo on github.com to a local directory\strut
 
 
     
-        One common task to complete with \textbf{git} is to clone a repo from
-github.com and save it locally. This means saving all the files stored
-in a remote repo on your local computer. Cloning a repo is accomplished
-with:
+        One common operation to complete with \textbf{git} is to clone a repo
+from GitHub.com and save it locally. This means you copy all the files
+stored in the remote repo onto your local computer. Cloning a repo is
+accomplished with:
 
 \begin{lstlisting}
 $ git clone https://github.com/user/repo.git
 \end{lstlisting}
 
-This command will copy the repo named \lstinline!repo! from the user
-\lstinline!user!. To clone the repo for this book, use:
+This command copies the repo named \lstinline!repo! from the user named
+\lstinline!user! to a local computer. To clone the repo for MicroPython,
+use:
 
 \begin{lstlisting}
-$ git clone https:github.com/ProfessorKazarinoff/Problem-Solving-with-Python.git
+$ git clone https://github.com/micropython/micropython.git
 \end{lstlisting}
     
 
@@ -18974,7 +19012,7 @@ $ git clone https:github.com/ProfessorKazarinoff/Problem-Solving-with-Python.git
 
 
     
-        \subsection{Creating and synching a remote repo on github.com with a
+        \subsection{Creating and synching a remote repo on GitHub.com with a
 local
 repo}\label{creating-and-synching-a-remote-repo-on-github.com-with-a-local-repo}
     
@@ -18984,30 +19022,30 @@ repo}\label{creating-and-synching-a-remote-repo-on-github.com-with-a-local-repo}
 
     
         Another common task to complete with \textbf{git} is to synch a remote
-repo on github.com with a local repo on your local computer. This is
-useful for one person if they want to keep the files in a particular
-project synched accross multiple computers. Synched remote and local
-repos are also useful for a group of problem solvers working on the same
-project. Each team member has access to the same remote repo on
-github.com and each team member has the same local repo on all of their
-computers.
+repo on GitHub.com with a local repo on your local computer. This is
+useful you want to keep the files in a particular project synched
+accross multiple computers. Synched remote and local repos are also
+useful for a group of problem solvers working on the same project. Each
+team member has access to the same remote repo on GitHub.com and each
+team member has the same local repo on their computer.
 
-\subsubsection{Create a the remote repo on
-GitHub}\label{create-a-the-remote-repo-on-github}
+\subsubsection{Create a remote repo on
+GitHub.com}\label{create-a-remote-repo-on-github.com}
 
-First, go to github.com and create a new account. Log on and create a
-new repo. It is a good idea to include a license and a .gitignore file.
-For a Python project, the .gitignore file for Python is a good start.
-Two common licenses for open source projects you are willing to share
-with others is \emph{GNU General Public License v3.0} and the \emph{MIT
-License}.
+First, go to GitHub.com and create a new account. Log in and create a
+new repo. It is a good idea to include a license and a
+\textbf{\emph{.gitignore}} file. For a Python project, the
+\textbf{\emph{.gitignore}} file for Python is a good start. Two common
+licenses for open source projects you are willing to share with others
+is \emph{GNU General Public License v3.0} and the \emph{MIT License}.
 
-\subsubsection{Make a new local repo and link it to the remote repo on
-GitHub}\label{make-a-new-local-repo-and-link-it-to-the-remote-repo-on-github}
+\subsubsection{Make a new local repo and link the local repo to the
+remote repo on
+GitHub.com}\label{make-a-new-local-repo-and-link-the-local-repo-to-the-remote-repo-on-github.com}
 
 Second, create a local directory and \lstinline!cd! into it. Initialize
 a git repo locally in that directory. Then synch the local folder with
-the remote repo on github.com.
+the remote repo on GitHub.com.
 
 \begin{lstlisting}
 $ mkdir newproject
@@ -19017,14 +19055,15 @@ $ git remote add origin https://github.com/user/repo.git
 $ git pull origin master
 \end{lstlisting}
 
-\subsubsection{Add, commit and push any
-changes}\label{add-commit-and-push-any-changes}
+\subsubsection{Add, commit and push changes up to
+Github.com}\label{add-commit-and-push-changes-up-to-github.com}
 
 Third, work on the project locally. For example, you could edit one of
-the files or create a new file.
+the files in the directory \lstinline!newproject! or create a new file
+in the directory \lstinline!newproject!.
 
-Finally, save your work and commit the changes you made with git. Push
-those changes up to the remote repo on github.com
+Finally, save your work and commit the changes you made with
+\textbf{git}. Push those changes up to the remote repo on GitHub.com
 
 \begin{lstlisting}
 $ git add .
@@ -19035,16 +19074,16 @@ $ git push origin master
 \subsubsection{Pull the most recent version before each work
 session}\label{pull-the-most-recent-version-before-each-work-session}
 
-If using git and GitHub, remember to pull the most recent version of the
-repo down from GitHub before making any changes locally. If changes are
-made locally before the version of the repo on GitHub is synched, the
-local and remote repos will be out of synch.
+If using \textbf{git} and GitHub.com, remember to pull the most recent
+version of the repo down from GitHub.com before making any changes
+locally. If changes are made locally before the version of the repo on
+GitHub.com is synched, the local and remote repos will be out of synch.
 
 \begin{lstlisting}
 $ git pull origin master
 \end{lstlisting}
 
-After local changes are made, save them and push to GitHub
+After local changes are made, save them and push to GitHub.com
 
 \begin{lstlisting}
 $ git add .
