@@ -12349,13 +12349,13 @@ Q08.82
 
 \begin{itemize}
 \item
-  Create \textbf{NumPy} arrays
+  Create NumPy arrays
 \item
-  Modify \textbf{NumPy} arrays
+  Modify NumPy arrays
 \item
-  Index \textbf{NumPy} arrays
+  Index NumPy arrays
 \item
-  Run mathematical operations on \textbf{NumPy} arrays
+  Run mathematical operations on NumPy arrays
 \item
   Solve a system of linear equations using matrices
 \end{itemize}
@@ -12363,211 +12363,6 @@ Q08.82
 
 
 
-    
-
-
-
-
-    
-        \section{NumPy}\label{numpy}
-    
-
-
-
-
-    
-        NumPy is a Python package used for numerical calculations, working with
-arrays of a homogeneous values, and scientific computing.
-
-In previous chapters, NumPy was used for the different functions and
-methods it provides. In addition to NumPy math functions such as
-\lstinline!np.sin()! NumPy can also be used to construct homogeneous
-arrays and preform mathematical operations on arrays. A NumPy array is
-different from a Python list. The data types stored in a Python list can
-all be different:
-
-\begin{lstlisting}[language=Python]
-python_list =[ 1, -0.038, 'gear', True]
-\end{lstlisting}
-
-The list above contains four different data types: \lstinline!1! is an
-integer, \lstinline!-0.038! is a float, \lstinline!'gear'! is a string,
-and \lstinline!'True'! is a boolean.
-
-The code below prints the data type of each value store in
-\lstinline!python_list!.
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{python\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.038}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}
-         \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{python\PYZus{}list}\PY{p}{:}
-             \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{item}\PY{p}{)}\PY{p}{)}
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-<class 'int'>
-<class 'float'>
-<class 'str'>
-<class 'bool'>
-
-    \end{Verbatim}
-
-
-    
-        The data types stored in a NumPy array need to all share the same data
-type. Consider the NumPy array below:
-
-\begin{lstlisting}
-np.array([1.0, 3.1, 5e-04, 0.007])
-\end{lstlisting}
-
-All four values stored in the NumPy array above share the same data
-type: \lstinline!1.0!, \lstinline!3.1!, \lstinline!5e-04!, and
-\lstinline!0.007! are all floats.
-    
-
-
-
-
-    
-        If the same four elements stored in the previous Python list are stored
-in a NumPy array, NumPy will force all of the four items in the list to
-conform to the same data type. In the case below, all four items are
-converted to type \lstinline!'<U32'!, which is a string data type in
-NumPy.
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}16}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.038}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}\PY{p}{)}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}16}]:} array(['1', '-0.038', 'gear', 'True'], dtype='<U32')
-\end{Verbatim}
-            
-
-    
-        NumPy arrays can also be two-dimensional, three-dimensional, or up to
-n-dimensional. The array size is only limited by compter resources, but
-the data type stored in each array is limited to the same type.
-    
-
-
-
-
-    
-        NumPy arrays are useful because mathematical operations can be run on an
-entire array simultaneously. If a list of numbers is stored in a regular
-Python list, when the list is multiplied by a scalar, the list extends
-and repeats instead of multiplying each number in the list by the
-scalar.
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{lst} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
-         \PY{n}{lst}\PY{o}{*}\PY{l+m+mi}{2}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}17}]:} [1, 2, 3, 4, 1, 2, 3, 4]
-\end{Verbatim}
-            
-
-    
-        To multiply each element of a Python list by the scalar number
-\lstinline!2!, a loop can be used:
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{lst} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
-         \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{item} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{lst}\PY{p}{)}\PY{p}{:}
-             \PY{n}{lst}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{lst}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}
-         \PY{n}{lst}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}18}]:} [2, 4, 6, 8]
-\end{Verbatim}
-            
-
-    
-        The method above is fairly cumbersome and is also quite
-\emph{computationally expensive}. An operation that is computationally
-expensive is an operation that takes a lot of processing time and/or
-storage resources like RAM. Another way of completing this same action
-is to use a NumPy array. The NumPy array can be multiplied by a scalar
-and this will produce an array with each element multiplied by the
-scalar.
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{nparray}\PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{)}
-         \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{nparray}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}19}]:} array([2, 4, 6, 8])
-\end{Verbatim}
-            
-
-    
-        If we have a very long list, we can compare the amount of time it takes
-for each operation. Jupyter notebooks have a nice built-in way to time
-how long it takes a line of code to execute. In a Jupyter notebook, when
-a line start with \lstinline!%timeit! followed by code, the notebook
-will run the line of code multiple times and output an average of the
-time spent to complete the line of code. We can use \lstinline!%timit!
-to compare an mathematical operation on a Python list using a for loop
-to the same mathematical operation on a NumPy array.
-    
-
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{lst} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10000}\PY{p}{)}\PY{p}{)}
-         \PY{o}{\PYZpc{}}\PY{k}{timeit} for i, item in enumerate(lst): lst[i] = lst[i]*2
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-4.29 ms ± 1.23 ms per loop (mean ± std. dev. of 7 runs, 1000 loops each)
-
-    \end{Verbatim}
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{nparray}\PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10000}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
-         \PY{o}{\PYZpc{}}\PY{k}{timeit} 2*nparray
-\end{Verbatim}
-
-
-    \begin{Verbatim}[commandchars=\\\{\}]
-7.4 µs ± 158 ns per loop (mean ± std. dev. of 7 runs, 100000 loops each)
-
-    \end{Verbatim}
-
-
-    
-        With 10,000 integers, the Python list and for-loop takes an average of
-single milliseconds, while the NumPy array completing the same operation
-takes tens of microseconds. This is a speed increase of over 100x by
-using the NumPy array (1 millisecond = 1000 micorseconds). For larger
-lists and NumPy arrays, the speed increase using NumPy is considerable.
     
 
 
@@ -12638,7 +12433,7 @@ This will install NumPy in the current working Python environment.
         \subsection{Verify NumPy installation}\label{verify-numpy-installation}
 
 To verify NumPy is installed, try to invoke NumPy version at the Python
-REPL by calling the \lstinline!.__version__! attribute common to most
+REPL by calling the \lstinline!.__version__! an attribute common to most
 Python packages.
     
 
@@ -12651,9 +12446,257 @@ Python packages.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}1}]:} '1.14.3'
+{\color{outcolor}Out[{\color{outcolor}1}]:} '1.11.2'
 \end{Verbatim}
             
+
+    
+        \section{NumPy}\label{numpy}
+    
+
+
+
+
+    
+        NumPy is a Python package used for numerical calculations, working with
+arrays of homogeneous values, and scientific computing. This section is
+a discussion about NumPy, arrays and the difference between Python lists
+and NumPy arrays.
+    
+
+
+
+
+    
+        \subsection{Python Lists and NumPy
+Arrays}\label{python-lists-and-numpy-arrays}
+
+In previous chapters, NumPy was used for the different functions and
+methods it provides. In addition to NumPy math functions such as
+\lstinline!np.sin()!, NumPy can also be used to construct homogeneous
+arrays and perform mathematical operations on arrays. A NumPy array is
+different from a Python list. The data types stored in a Python list can
+all be different:
+
+\begin{lstlisting}[language=Python]
+python_list =[ 1, -0.038, 'gear', True]
+\end{lstlisting}
+
+The list above contains four different data types: \lstinline!1! is an
+integer, \lstinline!-0.038! is a float, \lstinline!'gear'! is a string,
+and \lstinline!'True'! is a boolean.
+
+The code below prints the data type of each value store in
+\lstinline!python_list!.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{python\PYZus{}list} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.038}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}
+        \PY{k}{for} \PY{n}{item} \PY{o+ow}{in} \PY{n}{python\PYZus{}list}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{item}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<type 'int'>
+<type 'float'>
+<type 'str'>
+<type 'bool'>
+
+    \end{Verbatim}
+
+
+    
+        The values stored in a NumPy array all must share the same data type.
+Consider the NumPy array below:
+
+\begin{lstlisting}[language=Python]
+np.array([1.0, 3.1, 5e-04, 0.007])
+\end{lstlisting}
+
+All four values stored in the NumPy array above share the same data
+type: \lstinline!1.0!, \lstinline!3.1!, \lstinline!5e-04!, and
+\lstinline!0.007! are all floats.
+
+The code below prints the data type of each value stored in the NumPy
+array above.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
+        \PY{n}{np\PYZus{}array} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.038}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}
+        \PY{k}{for} \PY{n}{value} \PY{o+ow}{in} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{3.1}\PY{p}{,} \PY{l+m+mf}{5e\PYZhy{}04}\PY{p}{,} \PY{l+m+mf}{0.007}\PY{p}{]}\PY{p}{)}\PY{p}{:}
+            \PY{n+nb}{print}\PY{p}{(}\PY{n+nb}{type}\PY{p}{(}\PY{n}{value}\PY{p}{)}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<type 'numpy.float64'>
+<type 'numpy.float64'>
+<type 'numpy.float64'>
+<type 'numpy.float64'>
+
+    \end{Verbatim}
+
+
+    
+        If the same four elements stored in the previous Python list are stored
+in a NumPy array, NumPy forces all of the four items in the list to
+conform to the same data type.
+
+In the next code section, all four items are converted to type
+\lstinline!'<U32'!, which is a string data type in NumPy.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{0.038}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{gear}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{k+kc}{True}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} array(['1', '-0.038', 'gear', 'True'], 
+              dtype='|S32')
+\end{Verbatim}
+            
+
+    
+        NumPy arrays can also be two-dimensional, three-dimensional, or up to
+n-dimensional. Computer resources limit array size, but the data type
+stored in each array is limited to the same type.
+    
+
+
+
+
+    
+        NumPy arrays are useful because mathematical operations can be run on an
+entire array simultaneously. If a list of numbers is stored in a regular
+Python list, when the list is multiplied by a scalar, the list extends
+and repeats instead of multiplying each number in the list by the
+scalar.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{lst} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
+        \PY{n}{lst}\PY{o}{*}\PY{l+m+mi}{2}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} [1, 2, 3, 4, 1, 2, 3, 4]
+\end{Verbatim}
+            
+
+    
+        To multiply each element of a Python list by the scalar number
+\lstinline!2!, a loop can be used:
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{lst} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{]}
+        \PY{k}{for} \PY{n}{i}\PY{p}{,} \PY{n}{item} \PY{o+ow}{in} \PY{n+nb}{enumerate}\PY{p}{(}\PY{n}{lst}\PY{p}{)}\PY{p}{:}
+            \PY{n}{lst}\PY{p}{[}\PY{n}{i}\PY{p}{]} \PY{o}{=} \PY{n}{lst}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{*}\PY{l+m+mi}{2}
+        \PY{n}{lst}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} [2, 4, 6, 8]
+\end{Verbatim}
+            
+
+    
+        The method above is relatively cumbersome and is also quite
+\emph{computationally expensive}. An operation that is computationally
+expensive is an operation that takes a lot of processing time or storage
+resources like RAM.
+
+Another way of completing the same action as the loop above is to use a
+NumPy array.
+
+The whole NumPy array can be multiplied by a scalar. This operation
+produces an array with each element multiplied by the scalar.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{nparray}\PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{)}
+        \PY{l+m+mi}{2}\PY{o}{*}\PY{n}{nparray}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}6}]:} array([2, 4, 6, 8])
+\end{Verbatim}
+            
+
+    
+        If we have a very long list, we can compare the amount of time it takes
+for each of the two computation methods above to complete the same
+operation. We'll compare a Python list calculation to the NumPy array
+calculation.
+
+Jupyter notebooks have a nice built-in way to time how long it takes a
+line of code to execute. In a Jupyter notebook, when a line starts with
+\lstinline!%timeit! followed by code, the notebook will run the line of
+code multiple times and output an average of the time spent to complete
+the line of code.
+
+We can use \lstinline!%timit! to compare a mathematical operation on a
+Python list using a for loop to the same mathematical operation on a
+NumPy array.
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{lst} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{10000}\PY{p}{)}\PY{p}{)}
+        \PY{o}{\PYZpc{}}\PY{k}{timeit} for i, item in enumerate(lst): lst[i] = lst[i]*2
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+1000 loops, best of 3: 2.73 ms per loop
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{nparray}\PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10000}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{o}{\PYZpc{}}\PY{k}{timeit} 2*nparray
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+The slowest run took 6.85 times longer than the fastest. This could mean that an intermediate result is being cached.
+100000 loops, best of 3: 10.6 µs per loop
+
+    \end{Verbatim}
+
+
+    
+        With 10,000 integers, the Python list and for loop takes an average of
+single milliseconds, while the NumPy array completing the same operation
+takes tens of microseconds. This is a speed increase of over 100x by
+using the NumPy array (1 millisecond = 1000 microseconds).
+
+For larger lists and NumPy arrays, the speed increase using NumPy is
+considerable.
+    
+
+
+
 
     
         \section{Array Creation}\label{array-creation}
@@ -12672,11 +12715,15 @@ passed into the function with square brackets at either end.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 
 
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}1}]:} array([1, 2, 3])
+\end{Verbatim}
+            
 
     
         The data type can be passed into the \lstinline!np.array()! function as
@@ -12688,14 +12735,18 @@ a second optional positional arguments. Available data types include
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor} }]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{,}\PY{n}{dtype}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{float}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
 
 
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}2}]:} array([ 1.,  2.,  3.])
+\end{Verbatim}
+            
 
     
-        The data type store in a NumPy array can be determinded using the
+        The data type store in a NumPy array can be determined using the
 \lstinline!.dtype! method. For instance, an array of \lstinline!floats!
 will return \lstinline!float64!.
     
@@ -12715,8 +12766,8 @@ will return \lstinline!float64!.
             
 
     
-        \subsection{Arrays of Reguarly Spaced
-Numbers}\label{arrays-of-reguarly-spaced-numbers}
+        \subsection{Arrays of Regularly Spaced
+Numbers}\label{arrays-of-regularly-spaced-numbers}
     
 
 
@@ -12725,103 +12776,107 @@ Numbers}\label{arrays-of-reguarly-spaced-numbers}
     
         \subsubsection{np.arange()}\label{np.arange}
 
-NumPy's \lstinline!np.arange()! function will create a NumPy array
-according the arguments \lstinline!start!,
-\lstinline!stop+1!,\lstinline!step!.
+NumPy's \lstinline!np.arange()! function creates a NumPy array according
+the arguments \lstinline!start!, \lstinline!stop+1!,\lstinline!step!.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 my_array = np.arange(start, stop+1, step)
 \end{lstlisting}
 
-This function is useful for creating an array of regularly spaced
-numbers. Consider creating a NumPy array of even numbers between
-\lstinline!0! and \lstinline!10!. Note that just like counting in
-Python, counting in numpy starts at zero and ends at n+1.
+The \lstinline!np.arange()! function is useful for creating an array of
+regularly spaced numbers.
+
+Consider creating a NumPy array of even numbers between \lstinline!0!
+and \lstinline!10!. Note that just like counting in Python, counting in
+NumPy starts at zero and ends at n+1.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}19}]:} array([ 0,  2,  4,  6,  8, 10])
+{\color{outcolor}Out[{\color{outcolor}4}]:} array([ 0,  2,  4,  6,  8, 10])
 \end{Verbatim}
             
 
     
         \subsubsection{np.linspace()}\label{np.linspace}
 
-Numpy's \lstinline!np.linspace()! function will create a NumPy array
+NumPy's \lstinline!np.linspace()! function creates a NumPy array
 according the arguments \lstinline!start!,
 \lstinline!stop+1!,\lstinline!number of elements!.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 my_array = np.linspace(start, stop, number of elements)
 \end{lstlisting}
 
-This function is useful for creating an array of regularly spaced
-numbers where the spacing is not known but the number of values is.
-Consider creating a \textbf{numpy} array of 10 numbers between
-\lstinline!0! and \lstinline!2pi!.
+The \lstinline!np.linspace()! function is useful for creating an array
+of regularly spaced numbers where the spacing is not known, but the
+number of values is. Consider creating a NumPy array of 10 numbers
+between \lstinline!0! and \lstinline!2pi!.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{np}\PY{o}{.}\PY{n}{linspace}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}20}]:} array([0.        , 0.6981317 , 1.3962634 , 2.0943951 , 2.7925268 ,
-                3.4906585 , 4.1887902 , 4.88692191, 5.58505361, 6.28318531])
+{\color{outcolor}Out[{\color{outcolor}5}]:} array([ 0.        ,  0.6981317 ,  1.3962634 ,  2.0943951 ,  2.7925268 ,
+                3.4906585 ,  4.1887902 ,  4.88692191,  5.58505361,  6.28318531])
 \end{Verbatim}
             
 
     
         \subsubsection{np.logspace()}\label{np.logspace}
 
-\textbf{Numpy's} \lstinline!np.logspace()! function will create a
-\textbf{numpy} array according the arguments \lstinline!start!,
+NumPy's \lstinline!np.logspace()! function creates a NumPy array
+according the arguments \lstinline!start!,
 \lstinline!stop!,\lstinline!number of elements!, but unlike
 \lstinline!np.linspace()!, \lstinline!np.logspace()! will produce a
 logarithmically spaced array.
 
-\begin{lstlisting}
-my_array = np.logspace(start, stop, number of elements)
+\begin{lstlisting}[language=Python]
+my_array = np.logspace(start, stop, number of elements, base=<num>)
 \end{lstlisting}
 
 This function is useful for creating an array of logarithmically spaced
 numbers where the spacing interval is not known but the number of values
-is. Consider creating a \textbf{numpy} array of 10 logarithmically
-spaced numbers between \lstinline!0.1! and \lstinline!1!.
+is. Consider creating a NumPy array of 4 logarithmically spaced numbers
+between \lstinline!10! and \lstinline!100!. The function call is
+\lstinline!np.logspace(1, 2, 4)!. The start is \(10^1 = 10\) and the
+stop is \(10^2 = 100\). Be careful about putting large numbers in for
+\lstinline!stop! becuase the argument is the power 10 is raised to, not
+the stop value.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{np}\PY{o}{.}\PY{n}{logspace}\PY{p}{(}\PY{l+m+mf}{0.1}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{10}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{np}\PY{o}{.}\PY{n}{logspace}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}26}]:} array([ 1.25892541,  1.58489319,  1.99526231,  2.51188643,  3.16227766,
-                 3.98107171,  5.01187234,  6.30957344,  7.94328235, 10.        ])
+{\color{outcolor}Out[{\color{outcolor}6}]:} array([  10.        ,   21.5443469 ,   46.41588834,  100.        ])
 \end{Verbatim}
             
 
     
         \subsubsection{np.zeros()}\label{np.zeros}
 
-\textbf{Numpy's} \lstinline!np.zeros()! function will create a
-\textbf{numpy} array containing zeros of a specific size. This is often
-useful when the size of an array is known, but the values that will go
-into it have not been created yet.
+NumPy's \lstinline!np.zeros()! function creates a NumPy array containing
+all zeros of a specific size. \lstinline!np.zeros()! is useful when the
+size of an array is known, but the values that will go into it have not
+been created yet.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 my_array = np.zeros((rows,cols))
 \end{lstlisting}
     
@@ -12829,28 +12884,28 @@ my_array = np.zeros((rows,cols))
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{np}\PY{o}{.}\PY{n}{zeros}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}53}]:} array([[0., 0., 0., 0., 0.],
-                [0., 0., 0., 0., 0.],
-                [0., 0., 0., 0., 0.],
-                [0., 0., 0., 0., 0.],
-                [0., 0., 0., 0., 0.]])
+{\color{outcolor}Out[{\color{outcolor}7}]:} array([[ 0.,  0.,  0.,  0.,  0.],
+               [ 0.,  0.,  0.,  0.,  0.],
+               [ 0.,  0.,  0.,  0.,  0.],
+               [ 0.,  0.,  0.,  0.,  0.],
+               [ 0.,  0.,  0.,  0.,  0.]])
 \end{Verbatim}
             
 
     
         \subsubsection{np.ones()}\label{np.ones}
 
-\textbf{Numpy's} \lstinline!np.ones()! function will create a
-\textbf{numpy} array containing all 1's of a specific size. This is
-often useful when the size of an array is known, but the values that
-will go into it have not been created yet.
+NumPy's \lstinline!np.ones()! function creates a NumPy array containing
+all 1's of a specific size. Like \lstinline!np.zeros()!,
+\lstinline!np.ones()! is useful when the size of an array is known, but
+the values that will go into it have not been created yet.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 my_array = np.ones((rows,cols))
 \end{lstlisting}
     
@@ -12858,14 +12913,14 @@ my_array = np.ones((rows,cols))
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}54}]:} \PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{np}\PY{o}{.}\PY{n}{ones}\PY{p}{(}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}54}]:} array([[1., 1., 1., 1., 1.],
-                [1., 1., 1., 1., 1.],
-                [1., 1., 1., 1., 1.]])
+{\color{outcolor}Out[{\color{outcolor}8}]:} array([[ 1.,  1.,  1.,  1.,  1.],
+               [ 1.,  1.,  1.,  1.,  1.],
+               [ 1.,  1.,  1.,  1.,  1.]])
 \end{Verbatim}
             
 
@@ -12877,9 +12932,9 @@ my_array = np.ones((rows,cols))
 
 
     
-        \textbf{Numpy} has functions to create many different types of random
-number arrays in the \lstinline!np.random! module. A few of the common
-random number types are below.
+        NumPy has functions to create many different types of random number
+arrays in the \lstinline!np.random! module. A few of the common random
+number types are below.
     
 
 
@@ -12888,10 +12943,10 @@ random number types are below.
     
         \subsubsection{Array of Random Integers}\label{array-of-random-integers}
 
-Arrays of random integers can be created with \textbf{numpy's}
+Arrays of random integers can be created with NumPy's
 \lstinline!np.random.randint()! function. The general syntax is:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 np.random.randint(lower limit, upper limit, number of values)
 \end{lstlisting}
 
@@ -12902,44 +12957,43 @@ between 1 and 10:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}30}]:} array([9, 4, 9, 1, 9])
+{\color{outcolor}Out[{\color{outcolor}9}]:} array([2, 3, 4, 3, 9])
 \end{Verbatim}
             
 
     
-        A multi-dimentional size can be provided as the third arument. A 5 x 5
+        A multi-dimensional size can be provided as the third argument. A 5 x 5
 array of random numbers between 1 and 10:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randint}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}31}]:} array([[8, 1, 6, 7, 7],
-                [9, 9, 0, 7, 7],
-                [6, 2, 1, 0, 2],
-                [8, 3, 4, 2, 1],
-                [4, 5, 1, 0, 3]])
+{\color{outcolor}Out[{\color{outcolor}10}]:} array([[1, 5, 5, 7, 7],
+                [7, 2, 7, 0, 0],
+                [6, 8, 7, 7, 4],
+                [4, 5, 8, 7, 3],
+                [0, 1, 6, 1, 5]])
 \end{Verbatim}
             
 
     
         \subsubsection{Array of Random Floats}\label{array-of-random-floats}
 
-Arrays of random floating point numbers can be created with
-\textbf{numpy's} \lstinline!np.random.rand()! function. The general
-syntax is:
+Arrays of random floating point numbers can be created with NumPy's
+\lstinline!np.random.rand()! function. The general syntax is:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 np.random.rand(number of values)
 \end{lstlisting}
 
@@ -12950,12 +13004,12 @@ between 0 and 1:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{rand}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}36}]:} array([0.02421777, 0.06312956, 0.45358935, 0.72194406, 0.65034115])
+{\color{outcolor}Out[{\color{outcolor}11}]:} array([ 0.40502534,  0.8861029 ,  0.35642409,  0.69722897,  0.24569434])
 \end{Verbatim}
             
 
@@ -12963,7 +13017,7 @@ between 0 and 1:
         \subsubsection{Random Array Choice from a
 List}\label{random-array-choice-from-a-list}
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 np.random.choice(list of choices, number of choices)
 \end{lstlisting}
 
@@ -12974,13 +13028,13 @@ use:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{lst} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{lst} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{]}
          \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{choice}\PY{p}{(}\PY{n}{lst}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}37}]:} array([1, 1, 9])
+{\color{outcolor}Out[{\color{outcolor}12}]:} array([1, 5, 5])
 \end{Verbatim}
             
 
@@ -12991,7 +13045,7 @@ Distribution}\label{random-array-with-a-normal-distribution}
 \lstinline!np.random.randn()! will return a random array of numbers with
 a normal distribution, assuming a mean of 0 and variance of 1.
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 np.random.randn(number of values)
 \end{lstlisting}
     
@@ -12999,13 +13053,13 @@ np.random.randn(number of values)
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}38}]:} array([-1.88792019,  0.5247404 , -1.16660705,  0.68567961, -0.57930791,
-                -0.54634836,  0.1534303 , -1.64928217, -0.01712827,  0.9343703 ])
+{\color{outcolor}Out[{\color{outcolor}13}]:} array([ 1.18048373,  1.09743535,  0.14087206,  0.51723631,  0.43173378,
+                -0.56612216, -1.14951239, -1.49265268,  0.29367839, -1.18280421])
 \end{Verbatim}
             
 
@@ -13017,7 +13071,7 @@ np.random.randn(number of values)
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{mu} \PY{o}{=} \PY{l+m+mi}{70}
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{mu} \PY{o}{=} \PY{l+m+mi}{70}
          \PY{n}{sigma} \PY{o}{=} \PY{l+m+mf}{6.6}
          
          \PY{n}{sigma} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{random}\PY{o}{.}\PY{n}{randn}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{)} \PY{o}{+} \PY{n}{mu}
@@ -13025,20 +13079,22 @@ np.random.randn(number of values)
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}39}]:} array([65.56436887, 70.7579809 , 78.70706918, 76.5538997 , 72.83272356,
-                62.17107227, 57.15193348, 66.07326289, 75.47326815, 76.13660167])
+{\color{outcolor}Out[{\color{outcolor}14}]:} array([ 56.00638638,  75.00259465,  76.93650341,  62.5821746 ,
+                 81.1177076 ,  67.60792702,  62.01086621,  59.65126306,
+                 75.02831912,  67.44327052])
 \end{Verbatim}
             
 
     
-        To quickly plot a normal distribution, \textbf{matplotlib}
-\lstinline!plt.hist()! function can be used.
+        Matplotlib's \lstinline!plt.hist()! function can be used to quickly plot
+a normal distribution created with NumPy's \lstinline!np.random.randn()!
+function.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}43}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
          \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
          \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
          
@@ -13052,7 +13108,7 @@ np.random.randn(number of values)
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_679_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_681_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -13065,13 +13121,24 @@ np.random.randn(number of values)
 
 
     
-        \subsubsection{np.meshgrid}\label{np.meshgrid}
+        \subsubsection{np.meshgrid()}\label{np.meshgrid}
+
+NumPy's \lstinline!np.meshgrid()! function takes in two positional
+arguments which are 1D NumPy arrays. The two input arrays do not have to
+have the same to contain the same number of elements. The outputs of the
+\lstinline!np.meshgrid()! function are two 2D arrays. One of the 2D
+arrays have the same values in each row; the other 2D array has the same
+values in each column.
+
+\begin{lstlisting}[language=Python]
+np.meshgrid(array1,array2)
+\end{lstlisting}
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{)}
          \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{11}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
          \PY{n}{X}\PY{p}{,} \PY{n}{Y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{meshgrid}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}
          \PY{n+nb}{print}\PY{p}{(}\PY{n}{X}\PY{p}{)}
@@ -13097,13 +13164,28 @@ np.random.randn(number of values)
 
 
     
-        \subsubsection{np.mgrid}\label{np.mgrid}
+        \subsubsection{np.mgrid{[}{]}}\label{np.mgrid}
+
+NumPy's \lstinline!np.mgrid[]! function is similar to
+\lstinline!np.meshgrid()!, but has a ``MATLAB-like'' syntax and
+behavior.
+
+Use square brackets \lstinline![ ]! after the \lstinline!np.mgrid!
+function name. Separate the two ``lists'' passed as input arguments with
+a comma and use the \lstinline!start:stop:step! indexing method. The
+outputs of the \lstinline!np.mgrid[]! function are two 2D arrays. The
+first 2D array have the same values in each row; the second 2D array has
+the same values in each column.
+
+\begin{lstlisting}[language=Python]
+np.mgrid[start:stop:step, start:stop:step]
+\end{lstlisting}
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}52}]:} \PY{n}{X}\PY{p}{,} \PY{n}{Y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mgrid}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{11}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{X}\PY{p}{,} \PY{n}{Y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mgrid}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{11}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{]}
          \PY{n+nb}{print}\PY{p}{(}\PY{n}{X}\PY{p}{)}
          \PY{n+nb}{print}\PY{p}{(}\PY{n}{Y}\PY{p}{)}
 \end{Verbatim}
@@ -13132,10 +13214,36 @@ np.random.randn(number of values)
 
 
     
-        Below is a list of numpy functions used in this section
+        Below is a list of NumPy functioDescriptionns used in this section.
 
-np.array np.arange np.linspace np.logspace np.zeros np.ones
-np.random.rand np.random.randint np.random.randn np.meshgrid np.mgrid
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Function & Description\tabularnewline
+\midrule
+\endhead
+\lstinline!np.array([list,of,numbers])! & Array from a
+list\tabularnewline
+\lstinline!np.arange(start,stop,step)! & Array with know
+step\tabularnewline
+\lstinline!np.linspace(start, stop, num)! & Array with known
+num\tabularnewline
+\lstinline!np.logspace(start,stop,num)! & Logorithmically spaced
+array\tabularnewline
+\lstinline!np.zeros((rows,cols))! & Array of zeros\tabularnewline
+\lstinline!np.ones((rows,cols))! & Array of ones\tabularnewline
+\lstinline!np.random.randint(start, stop, num)! & Random
+integers\tabularnewline
+\lstinline!np.random.rand(num)! & Random float 0 to 1\tabularnewline
+\lstinline!np.random.choice(list,num)! & Randome choice from a
+list\tabularnewline
+\lstinline!np.random.randn(num)! & Random normal
+distribution\tabularnewline
+\lstinline!np.meshgrid(array1,array2)! & Two 2D arrays from two 1D
+arrays\tabularnewline
+\lstinline!np.mgrid[start:stop:step, start:stop:step]! & MATLAB
+meshgrid\tabularnewline
+\bottomrule
+\end{longtable}
     
 
 
@@ -13149,18 +13257,20 @@ np.random.rand np.random.randint np.random.randn np.meshgrid np.mgrid
 
 
     
-        Elements in a numpy array can be accessed using \emph{indexing}.
-Indexing is an opperation that pulls out a select set of values from an
-array. The \emph{index} of a value in an array is that value's location.
-There is a difference between the the value that is stored and the index
-or location of that value within an array. Take the following example.
-Remember that counting in Python starts at zero.
+        Elements in a NumPy array can be accessed using \emph{indexing}.
+Indexing is an operation that pulls out a select set of values from an
+array. The \emph{index} of a value in an array is that value's location
+within the array. There is a difference between the value that is stored
+and the index or location of that value within an array.
+
+An array with 3 values is created in the code section below. Remember
+counting in Python starts at \lstinline!0! and ends at \lstinline!n-1!.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
 \end{Verbatim}
@@ -13168,12 +13278,12 @@ Remember that counting in Python starts at zero.
 
 
     
-        In the array above, there are three values stored: \lstinline!2!,
-\lstinline!4! and \lstinline!6!. Each of these values has a different
-index. The value \lstinline!2! has an index of 0. \lstinline!2! is in
-the 0 location in the array. The value \lstinline!4! has an index of
-\lstinline!1! and the value \lstinline!6! has an index of 2. A table
-summarizes this below:
+        The array above contains three values: \lstinline!2!, \lstinline!4! and
+\lstinline!6!. Each of these values has a different index. The value
+\lstinline!2! has an index of 0. \lstinline!2! is in the 0 location in
+the array. The value \lstinline!4! has an index of \lstinline!1! and the
+value \lstinline!6! has an index of \lstinline!2!. The table below shows
+the index of each value in the array.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
@@ -13186,23 +13296,25 @@ Index or Location & Value\tabularnewline
 \bottomrule
 \end{longtable}
 
-Individual values stored in array can be accessed using indexing. The
-general form is:
+Individual values stored in an array can be accessed using indexing.
+
+The general form is:
 
 \begin{lstlisting}
 <value> = <array>[index]
 \end{lstlisting}
 
-Where \lstinline!<value>! is the value store in the array,
+Where \lstinline!<value>! is the value stored in the array,
 \lstinline!<array>! is the array object name and \lstinline![index]!
-specifies the index or location of that value. Applied to our example
-above, the value 6 is stored at index 2.
+specifies the index or location of that value.
+
+In the array above, the value 6 is stored at index 2.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
         \PY{n}{value} \PY{o}{=} \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
@@ -13225,14 +13337,14 @@ Indexing}\label{multi-dimensional-array-indexing}
 
 
     
-        Mulit-dimensional arrays are indexed as well. A simple 2-D array is
+        Multi-dimensional arrays are indexed as well. A simple 2-D array is
 defined by a list of lists.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{]}\PY{p}{]}\PY{p}{)}
         \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{)}
@@ -13249,25 +13361,26 @@ defined by a list of lists.
     
         Values in a 2-D array can be accessed using the general notation below:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 <value> = <array>[row,col]
 \end{lstlisting}
 
 Where \lstinline!<value>! is the value pulled out of the 2-D array named
 \lstinline!<array!. \lstinline![row,col]! specifies the row and column
-index of the value. Remember that Python counting starts at 0, so the
-first row is row zero and the first column is column zero.
+index of the value. Remember that Python counting starts at
+\lstinline!0!, so the first row is row zero and the first column is
+column zero.
 
 We can access the value \lstinline!8! in the array above by calling the
-row and column index \lstinline![1,2]! for the 2nd row (rememeber row 0
-is the first row) and the 3rd column (rememeber column 0 is the first
+row and column index \lstinline![1,2]! for the 2nd row (remember row 0
+is the first row) and the 3rd column (remember column 0 is the first
 column).
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{]}\PY{p}{]}\PY{p}{)}
         \PY{n}{value} \PY{o}{=} \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}
@@ -13290,28 +13403,29 @@ Indexing}\label{assigning-values-with-indexing}
 
 
     
-        Array indexing can be used to access values in an array and they can
-also be used for \emph{assigning} values of an array. In order to assign
-a value to a particular index or location in an array, the following
-general form is used:
+        Array indexing can be used to \emph{access} values in an array, and
+array indexing can also be used for \emph{assigning} values of an array.
 
-\begin{lstlisting}
+The general form used to assign a value to a particular index or
+location in an array is below:
+
+\begin{lstlisting}[language=Python]
 <array>[index] = <value>
 \end{lstlisting}
 
-Where \lstinline!<array>! is the array object that value will be
-assigned to, \lstinline![index]! is the index or location the value will
-be put in and \lstinline!<value>! is the value assigned to that
-location.
+Where \lstinline!<array>! is the array object that \lstinline!<value>!
+will be assigned to, \lstinline![index]! is the index or location
+\lstinline!<value>! will be put in and \lstinline!<value>! is the value
+assigned to that location.
 
-If we want to put the value \lstinline!10! into the third index or
-location of an array, it can be coded as follows:
+The code below puts the value \lstinline!10! into the third index or
+location of the array \lstinline!a!.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
         \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{10}
         \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{)}
@@ -13325,25 +13439,27 @@ location of an array, it can be coded as follows:
 
 
     
-        Values can also be assigned into 2-D arrays using the form
+        Values can also be assigned to a particular location in a 2-D arrays
+using the form:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 <array>[row,col] = <value>
 \end{lstlisting}
 
-An example is below:
+An example that shows a value assigned to a location in a 2-D array is
+shown below:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{]}\PY{p}{]}\PY{p}{)}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{)}
-         
-         \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{20}
-         \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
+        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{,}\PY{p}{[}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+        
+        \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{o}{=}\PY{l+m+mi}{20}
+        \PY{n+nb}{print}\PY{p}{(}\PY{n}{a}\PY{p}{)}
 \end{Verbatim}
 
 
@@ -13375,9 +13491,13 @@ general form is:
 
 Where \lstinline!<slice>! is the slice or section of the array object
 \lstinline!<array>!. The index of the slice is specified in
-\lstinline![start:end+1]!. Note that Python counting starts at zero and
-ends at n+1. To pull the first 2 values out of an array, the indexing
-operation is \lstinline![0:2]!. An example is below:
+\lstinline![start:end+1]!. Note that Python counting starts at
+\lstinline!0! and ends at \lstinline!n-1!. The index \lstinline![0:2]!
+pulls the first two values out of an array. The index \lstinline![1:3]!
+pulls the second and third values out of an array
+
+An example of array slicing the first two elements out of an array is
+below.
     
 
 
@@ -13398,14 +13518,14 @@ operation is \lstinline![0:2]!. An example is below:
 
 
     
-        A blank stands in for the last index. A slicing opperation
-\lstinline![1:]! will pull out the 2nd through last value of an array
+        A blank stands in for the last index. The slicing operation
+\lstinline![1:]! pulls out the 2nd through the last values of an array.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{:}\PY{p}{]}
@@ -13420,14 +13540,15 @@ operation is \lstinline![0:2]!. An example is below:
 
 
     
-        A blank also stands in for the first index. The slicing opperation
-\lstinline![:3]! will pull out the 1st through third values of an array
+        A blank also stands in for the first index. The slicing operation
+\lstinline![:3]! will pull out the first through third values of an
+array.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{a}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}
@@ -13449,17 +13570,20 @@ operation is \lstinline![0:2]!. An example is below:
 
 
     
-        2D arrays can be sliced with the general form
+        2D NumPy arrays can be sliced with the general form:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 <slice> = <array>[start_row:end_row+1, start_col:end_col-1]
 \end{lstlisting}
+
+The code section below creates a two row by four column array and index
+out the first two rows and the first three columns.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{]}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{a}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}
@@ -13476,14 +13600,16 @@ operation is \lstinline![0:2]!. An example is below:
 
     
         Again, a blank represents the first index or the last index. The colon
-opperator also represents ``all''. To slice out the first two rows and
-all columns that code is:
+operator also represents ``all''.
+
+The code section below slices out the first two rows and all columns
+from array \lstinline!a!.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{20}\PY{p}{,} \PY{l+m+mi}{30}\PY{p}{,} \PY{l+m+mi}{40}\PY{p}{]}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{a}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{:}\PY{p}{]}  \PY{c+c1}{\PYZsh{}[first two rows, all columns]}
@@ -13506,7 +13632,7 @@ all columns that code is:
 
 
     
-        Mathematical operations can be completed using numpy arrays.
+        Mathematical operations can be completed using NumPy arrays.
     
 
 
@@ -13516,13 +13642,13 @@ all columns that code is:
         \subsection{Scalar Addition}\label{scalar-addition}
 
 Scalars can be added and subtracted from arrays and arrays can be added
-and subtrated from eachother:
+and subtracted from each other:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{a} \PY{o}{+} \PY{l+m+mi}{2}
@@ -13536,7 +13662,7 @@ and subtrated from eachother:
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
@@ -13552,15 +13678,16 @@ and subtrated from eachother:
 
 
     
-        \section{Scalar Multiplication}\label{scalar-multiplication}
+        \subsection{Scalar Multiplication}\label{scalar-multiplication}
 
-Numpy arrays can be multiplied and divied by scalars:
+NumPy arrays can be multiplied and divided by scalar integers and
+floats:
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{l+m+mi}{3}\PY{o}{*}\PY{n}{a}
@@ -13574,7 +13701,7 @@ Numpy arrays can be multiplied and divied by scalars:
     \end{Verbatim}
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         
         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{a}\PY{o}{/}\PY{l+m+mi}{2}
@@ -13589,11 +13716,11 @@ Numpy arrays can be multiplied and divied by scalars:
 
 
     
-        \subsection{Matrix Multiplication}\label{matrix-multiplication}
+        \subsection{Array Multiplication}\label{array-multiplication}
 
-Numpy array can be multiplied by each other using matrix multiplication.
+NumPy array can be multiplied by each other using matrix multiplication.
 These matrix multiplication methods include element-wise multiplication,
-the dot product and the cross product
+the dot product, and the cross product.
     
 
 
@@ -13601,22 +13728,25 @@ the dot product and the cross product
 
     
         \subsubsection{Element-wise
-multiplication}\label{element-wise-multiplication}
+Multiplication}\label{element-wise-multiplication}
+
+The standard multiplication sign in Python \lstinline!*! produces
+element-wise multiplication on NumPy arrays.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
-         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
-         \PY{n}{a} \PY{o}{*} \PY{n}{b}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
+        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+        \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
+        \PY{n}{a} \PY{o}{*} \PY{n}{b}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}14}]:} array([ 4, 10, 18])
+{\color{outcolor}Out[{\color{outcolor}5}]:} array([ 4, 10, 18])
 \end{Verbatim}
             
 
@@ -13627,16 +13757,16 @@ multiplication}\label{element-wise-multiplication}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
-         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
-         \PY{n}{np}\PY{o}{.}\PY{n}{dot}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
+        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+        \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
+        \PY{n}{np}\PY{o}{.}\PY{n}{dot}\PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} 32
+{\color{outcolor}Out[{\color{outcolor}6}]:} 32
 \end{Verbatim}
             
 
@@ -13647,16 +13777,16 @@ multiplication}\label{element-wise-multiplication}
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
-         
-         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
-         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
-         \PY{n}{np}\PY{o}{.}\PY{n}{cross}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
+        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+        \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
+        \PY{n}{np}\PY{o}{.}\PY{n}{cross}\PY{p}{(}\PY{n}{a}\PY{p}{,} \PY{n}{b}\PY{p}{)}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} array([-3,  6, -3])
+{\color{outcolor}Out[{\color{outcolor}7}]:} array([-3,  6, -3])
 \end{Verbatim}
             
 
@@ -13668,44 +13798,156 @@ multiplication}\label{element-wise-multiplication}
 
 
     
-        \begin{lstlisting}
-np.exp()
-np.log() - natural log
-np.log2() base-2 log
-np.log10() base 10 log
-np.e
-\end{lstlisting}
+        \subsubsection{np.exp()}\label{np.exp}
+
+NumPy's \lstinline!np.exp()! function produces element-wise \(e^x\)
+exponentiation.
     
 
 
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
+        \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+        \PY{n}{np}\PY{o}{.}\PY{n}{exp}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}8}]:} array([ 2.71828183,  7.3890561 , 20.08553692])
+\end{Verbatim}
+            
+
+    
+        \subsubsection{Logarithms}\label{logarithms}
+
+NumPy has three logarithmic functions.
+
+\begin{itemize}
+\tightlist
+\item
+  \lstinline!np.log()! - natural logarithm (log base \(e\))
+\item
+  \lstinline!np.log2()! - logarithm base 2
+\item
+  \lstinline!np.log10()! - logarithm base 10
+\end{itemize}
+    
+
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{np}\PY{o}{.}\PY{n}{log}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{e}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} 1.0
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{np}\PY{o}{.}\PY{n}{log2}\PY{p}{(}\PY{l+m+mi}{16}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} 4.0
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{np}\PY{o}{.}\PY{n}{log10}\PY{p}{(}\PY{l+m+mi}{1000}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}11}]:} 3.0
+\end{Verbatim}
+            
 
     
         \subsection{Trigonometry}\label{trigonometry}
+
+NumPy also contains all of the standard trigonometry functions which
+operate on arrays.
+
+\begin{itemize}
+\tightlist
+\item
+  \lstinline!np.sin()! - sin
+\item
+  \lstinline!np.cos()! - cosine
+\item
+  \lstinline!np.tan()! - tangent
+\item
+  \lstinline!np.asin()! - arc sine
+\item
+  \lstinline!np.acos()! - arc cosine
+\item
+  \lstinline!np.atan()! - arc tangent
+\item
+  \lstinline!np.hypot()! - given sides of a triangle, returns hypotenuse
+\end{itemize}
     
 
 
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+         \PY{n}{np}\PY{o}{.}\PY{n}{set\PYZus{}printoptions}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}
+         
+         \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{4}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{cos}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{tan}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{)}
+         \PY{n+nb}{print}\PY{p}{(}\PY{n}{f}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{Sides 3 and 4, hypotenuse }\PY{l+s+s2}{\PYZob{}}\PY{l+s+s2}{np.hypot(3,4)\PYZcb{}}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}
+\end{Verbatim}
+
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[0.     0.7071 0.866  1.    ]
+[1.0000e+00 7.0711e-01 5.0000e-01 6.1232e-17]
+[0.0000e+00 1.0000e+00 1.7321e+00 1.6331e+16]
+Sides 3 and 4, hypotenuse 5.0
+
+    \end{Verbatim}
+
 
     
-        \begin{lstlisting}
-sin()
-cos()
-tan()
-arcsin()
-arccos()
-arctan()
-hypot() Given the sides of a right triangle, returns the hypotenuse.
+        NumPy contains functions to convert arrays of angles between degrees and
+radians.
 
-degrees()
-radians()
-deg2rad()
-rad2deg()
-\end{lstlisting}
+\begin{itemize}
+\tightlist
+\item
+  \lstinline!deg2rad()! - convert from degrees to radians
+\item
+  \lstinline!rad2deg()! - convert from radians to degrees
+\end{itemize}
     
 
 
 
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{]}\PY{p}{)}
+         \PY{n}{np}\PY{o}{.}\PY{n}{rad2deg}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} array([180., 360.])
+\end{Verbatim}
+            
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{a} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{90}\PY{p}{,} \PY{l+m+mi}{180}\PY{p}{,} \PY{l+m+mi}{270}\PY{p}{]}\PY{p}{)}
+         \PY{n}{np}\PY{o}{.}\PY{n}{deg2rad}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+\end{Verbatim}
+
+
+\begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} array([0.    , 1.5708, 3.1416, 4.7124])
+\end{Verbatim}
+            
 
     
         \section{Systems of Linear Equations}\label{systems-of-linear-equations}
@@ -13722,14 +13964,9 @@ rad2deg()
 
 
     
-        A system of linear equations is shown below
-    
+        A system of linear equations is shown below:
 
-
-
-
-    
-        \[ 8x + 3y -2z = 9 \]
+\[ 8x + 3y -2z = 9 \]
 
 \[ -4x + 7y + 5z = 15 \]
 
@@ -13740,19 +13977,32 @@ rad2deg()
 
 
     
-        The \lstinline!np.linalg.solve()! function can be used to solve this
-system for the variables \(x\), \(y\) and \(z\). Set a NumP``y array
-\lstinline!A! as a 3 by 3 array of the coefficients. Set a NumPy array
-\lstinline!b! as the right-hand side of the equations. Then solve for
-the values of \(x\), \(y\) and \(z\) using
-\lstinline!np.linalg.solve(A, b)!. The resulting array has three
-entries. One entry for each variable.
+        NumPy's \lstinline!np.linalg.solve()! function can be used to solve this
+system of equations for the variables \(x\), \(y\) and \(z\).
+
+The steps to solve the system of linear equations with
+\lstinline!np.linalg.solve()! are below:
+
+\begin{itemize}
+\tightlist
+\item
+  Create NumPy array \lstinline!A! as a 3 by 3 array of the coefficients
+\item
+  Create a NumPy array \lstinline!b! as the right-hand side of the
+  equations.
+\item
+  Solve for the values of \(x\), \(y\) and \(z\) using
+  \lstinline!np.linalg.solve(A, b)!.
+\end{itemize}
+
+The resulting array has three entries. One entry for each variable.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
+        
         \PY{n}{A} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{7}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{12}\PY{p}{]}\PY{p}{]}\PY{p}{)}
         \PY{n}{b} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{9}\PY{p}{,} \PY{l+m+mi}{15}\PY{p}{,} \PY{l+m+mi}{35}\PY{p}{]}\PY{p}{)}
         \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{linalg}\PY{o}{.}\PY{n}{solve}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{n}{b}\PY{p}{)}
@@ -13761,16 +14011,7 @@ entries. One entry for each variable.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}2}]:} array([-0.58226371,  3.22870478, -1.98599767])
-\end{Verbatim}
-            
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
-\end{Verbatim}
-
-
-\begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}3}]:} -0.5822637106184365
+{\color{outcolor}Out[{\color{outcolor}1}]:} array([-0.58226371,  3.22870478, -1.98599767])
 \end{Verbatim}
             
 
@@ -13778,10 +14019,8 @@ entries. One entry for each variable.
         We can plug the valuse of \(x\), \(y\) and \(z\) back into one of the
 equations to check the answer.
 
-\[ 8x + 3y -2z = 9 \]
-
-Where \(x\) is the first entry in the array, \(y\) is the second entry
-in the array and \(z\) is the third entry in the array.
+\(x\) is the first entry of the array, \(y\) is the second entry of the
+array, and \(z\) is the third entry of the array.
 
 \(x\) = \lstinline!x[0]!
 
@@ -13789,38 +14028,24 @@ in the array and \(z\) is the third entry in the array.
 
 \(z\) = \lstinline!x[2]!
 
-When these values are plugged into the equation above, the answer should
-be \lstinline!9.0!.
+When these values are plugged into the equation from above:
+
+\[ 8x + 3y -2z = 9 \]
+
+The answer should be \lstinline!9.0!.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{l+m+mi}{8} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+m+mi}{3} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{l+m+mi}{8} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]} \PY{o}{+} \PY{l+m+mi}{3} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}4}]:} 9.0
+{\color{outcolor}Out[{\color{outcolor}2}]:} 9.0
 \end{Verbatim}
             
-
-    
-        Another example from engineering statics is the following:
-
-three forces opperate on a point. The forces are defined as:
-
-F1 =
-
-F2 =
-
-F3 =
-
-What is the tension in AC and BC?
-    
-
-
-
 
     
         \newpage
@@ -13852,7 +14077,11 @@ slice
 
 index
 
+homogenous
+
 homogenous data type
+
+element-wise
 
 system of linear equations
         \end{key_terms}
@@ -14380,11 +14609,12 @@ the left hand side first.
 
 
     
-        \subsection{Substituions in Equations}\label{substituions-in-equations}
+        \subsection{Substitutions in
+Equations}\label{substitutions-in-equations}
 
 Symbols and expressions can be substituted into equations. In the code
 section below, the variable \(z\) is substituted in for the variable
-\(z\) (\(z\) replaces \$x).
+\(x\) (\(z\) replaces \(x\)).
     
 
 
@@ -14494,13 +14724,13 @@ equation is defined with symbolic math variables.
         \subsection{Equations with two
 solutions}\label{equations-with-two-solutions}
 
-Quadratic equations like \(x^2 - 5x + 6 = 0\) have two solutions.
+Quadratic equations, like \(x^2 - 5x + 6 = 0\), have two solutions.
 SymPy's \lstinline!solve()! function can be used to solve an equation
-with 2 solutions. When a solution has two solutions, SymPy outputs a
-list and inside the list are the two solutions.
+with two solutions. When an equation has two solutions, SymPy outputs a
+list. The elements in the list are the two solutions.
 
 The code section below shows how SymPy's \lstinline!solve()! function
-solves an equation with two solutions
+solves an equation with two solutions.
     
 
 
@@ -14677,15 +14907,15 @@ SymPy}\label{solve-a-statics-problem-with-sympy}
 
 
     
-        onsider the following engineering statics problem can be solved with
-symbolic math and the SymPy package.
+        Consider the following engineering statics problem which can be solved
+with symbolic math and SymPy.
 
 \subsubsection{GIVEN:}\label{given}
 
-A weight of 20 lbs is hung from a ring. The ring is supported by two
+A weight of 22 lbs is hung from a ring. The ring is supported by two
 cords. The first cord, cord CE, is 30 degrees above the horizontal and
-to the right. The second cord, cord BD, is 45 degrees to the left above
-the horizontal.
+to the right. The second cord, cord BD, is 45 degrees to the left and
+above the horizontal.
 
 \(w\) = 22 lb
 
@@ -14705,9 +14935,11 @@ magnitude of \(T_{CE}\) and \(T_{BD}\)
         \subsubsection{SOLUTION:}\label{solution}
 
 To solve for the magnitude of \(T_{CE}\) and \(T_{BD}\), you need to
-solve to two equations for two unknowns. To accomplish this with SymPy,
-first we need to import NumPy and SymPy. The SymPy functions
-\lstinline!symbols!, \lstinline!Eq! and \lstinline!solve! are needed.
+solve to two equations for two unknowns.
+
+To accomplish this with SymPy, first import NumPy and SymPy. The SymPy
+functions \lstinline!symbols!, \lstinline!Eq! and \lstinline!solve! are
+needed.
     
 
 
@@ -14757,7 +14989,7 @@ The three forces opperating on the ring are defined as:
 
 \[ \vec{T_{bd}} = - T_{bd} cos(45)\hat{i} + T_{bd} sin(45)\hat{j} \]
 
-\[ \vec{w} = 0 \hat{i} - 20 \hat{j} \]
+\[ \vec{w} = 0 \hat{i} - 22 \hat{j} \]
 
 Taking \(\Sigma F_{x} = 0\) (sum of the \(\hat{i}\) terms):
 
@@ -14765,7 +14997,7 @@ Taking \(\Sigma F_{x} = 0\) (sum of the \(\hat{i}\) terms):
 
 Taking \(\Sigma F_{y} = 0\) (sum of the \(\hat{j}\) terms):
 
-\[ T_{ce} sin(30) + T_{bd} sin(45) - 20 = 0 \]
+\[ T_{ce} sin(30) + T_{bd} sin(45) - 22 = 0 \]
     
 
 
@@ -14780,8 +15012,8 @@ Taking \(\Sigma F_{y} = 0\) (sum of the \(\hat{j}\) terms):
 This equation can be represented as a SymPy equation object. Note the
 right-hand side of the equation is \lstinline!0!. SymPy equation objects
 are instantiated with expressions equal to zero. If the expression was
-not equal to zero, we would simply subtract both sides by the term on
-the right-hand side of the equals sign and use the resulting expression
+not equal to zero, simply subtract both sides by the term on the
+right-hand side of the equals sign and use the resulting expression
 (equal to zero) to create the SymPy equation object.
     
 
@@ -14869,7 +15101,7 @@ Tce = 19.7246603876972
 
 
     
-        The same problem can be solved again, \(w\) cab be kept as a variable.
+        The same problem can be solved again, but with \(w\) kept as a variable.
     
 
 
@@ -14890,7 +15122,7 @@ Tce = 19.7246603876972
             
 
     
-        Now the solution is in terms of the variable \(w\).
+        The result is a solution is in terms of the variable \(w\).
     
 
 
