@@ -2051,12 +2051,14 @@ Q02.95 Open the Python Interpreter (the Python REPL). Try to view
 \item
   Compute mathematical calculations using the Python REPL
 \item
-  Use the output from Python REPL as the input for another command
+  Use the output from Python REPL as input in another problem
 \item
-  Import the math and statistics modules from the Python Standard
-  Library and use their functions
+  Import the math and statistics modules from the standard library and
+  use their functions
 \item
-  Combine \lstinline!True! and \lstinline!False! in logical statements
+  Assign values to variables
+\item
+  Use variables in calculations
 \end{itemize}
         \newpage
 
@@ -2512,7 +2514,7 @@ result\tabularnewline
 
     
         Variables are assigned in Python using the \lstinline!=! equals sign
-also called the assignment operator. The statement:
+also called the \emph{assignment operator}. The statement:
 
 \begin{lstlisting}[language=Python]
 a = 2
@@ -2652,9 +2654,13 @@ problem and calculate \(n\).
 
 
     
-        Strings are sequences of letters, numbers, punctuation and spaces.
+        Strings are sequences of letters, numbers, punctuation, and spaces.
 Strings are defined at the Python REPL by enclosing letters, numbers,
-punctuation and spaces in single or double quotes.
+punctuation, and spaces in single quotes \lstinline!' '! or double
+quotes \lstinline!" "!.
+
+Some operations which can be performed on strings include indexing,
+concatenation, and logical comparisons.
 
 \begin{lstlisting}[language=Python]
 >>> word = "Solution"
@@ -2714,7 +2720,7 @@ contains one space \lstinline!" "! in between each string you combine.
 
 
     
-        Strings can be compared using the comparison operator, the double equals
+        Strings can be compared using the comparison operator; the double equals
 sign \lstinline!==!. Note the comparison operator double equals
 \lstinline!==! is not the same as the assignment operator, a single
 equals sign \lstinline!=!.
@@ -2752,9 +2758,11 @@ False
         \subsection{String Indexing}\label{string-indexing}
 
 String indexing is the process of pulling out specific characters from a
-string in a specific order. In Python, strings are indexed using square
-brackets \lstinline![ ]!. Python counting starts at \lstinline!0! and
-ends at \lstinline!n-1!. This means for the word
+string in a particular order. In Python, strings are indexed using
+square brackets \lstinline![ ]!. Python counting starts at \lstinline!0!
+and ends at \lstinline!n-1!.
+
+Consider the word below.
 
 \begin{lstlisting}
 Solution
@@ -2809,8 +2817,8 @@ at n-1.
 
 
     
-        If the eighth index of the word \lstinline!Solution! is called, you get
-an error.
+        If the eighth index of the word \lstinline!Solution! is called, an error
+is returned.
 
 \begin{lstlisting}[language=Python]
 >>> word[8]
@@ -2823,7 +2831,9 @@ IndexError: string index out of range
 
 
     
-        Placing a negative number inside of the square brackets pulls a
+        \subsubsection{Negative Indexing}\label{negative-indexing}
+
+Placing a negative number inside of the square brackets pulls a
 character out of a string starting from the end of the string.
 
 \begin{lstlisting}[language=Python]
@@ -2847,11 +2857,14 @@ character out of a string starting from the end of the string.
 
 
     
-        A colon on the inside of the square brackets between two numbers
-indicates \emph{through}. As in \lstinline![0:3]! are the characters at
-positions \lstinline!0! through \lstinline!3!. Remember Python counting
-starts at zero and ends at n-1. So \lstinline![0:3]! indicates the first
-through third letters, which are the zero to two indexes.
+        \subsection{String Slicing}\label{string-slicing}
+
+A colon on the inside of the square brackets between two numbers
+indicates \emph{through}. If the index \lstinline![0:3]! is called, the
+characters at positions \lstinline!0! through \lstinline!3! are
+returned. Remember Python counting starts at \lstinline!0! and ends at
+\lstinline!n-1!. So \lstinline![0:3]! indicates the first through third
+letters, which are indexes \lstinline!0! to \lstinline!2!.
 
 \begin{lstlisting}[language=Python]
 >>> word[0:3]
@@ -2876,8 +2889,9 @@ through third letters, which are the zero to two indexes.
 
     
         When three numbers are separated by two colons inside of square
-brackets, the numbers represent \emph{start} : \emph{stop} : step. But
-remember that Python counting starts at zero and ends at n-1.
+brackets, the numbers represent \emph{start} : \emph{stop} :
+\emph{step}. But remember that Python counting starts at \lstinline!0!
+and ends at \lstinline!n-1!.
 
 \begin{lstlisting}[language=Python]
 >>> word[0:7:2]  #start:stop:step
@@ -2889,10 +2903,10 @@ remember that Python counting starts at zero and ends at n-1.
 
 
     
-        When two colons are used inside of square brackets, but less than three
+        When two colons are used inside of square brackets, and less than three
 numbers are specified, the missing numbers are set to their
 ``defaults''. The default start is \lstinline!0!, the default stop is
-\lstinline!n-1! and the default step is \lstinline!1!.
+\lstinline!n-1!, and the default step is \lstinline!1!.
 
 The two code lines below produce the same output since \lstinline!0! is
 the default start and \lstinline!7! (n-1) is the default stop. Both
@@ -2909,7 +2923,7 @@ lines of code use a step of \lstinline!2!.
 \end{lstlisting}
 
 The characters that make up a string can be reversed by using the
-default start and stop values, and specify the step as \lstinline!-1!.
+default start and stop values and specify the step as \lstinline!-1!.
 
 \begin{lstlisting}[language=Python]
 >>> word[::-1]
@@ -2953,7 +2967,7 @@ NameError: name 'Gabby' is not defined
 \end{lstlisting}
 
 This error is corrected by surrounding the string \lstinline!Gabby! with
-quotation marks
+quotation marks.
 
 \begin{lstlisting}[language=Python]
 >>> print("Gabby")
@@ -3003,8 +3017,8 @@ Your name is Gabby
 
     
         The \lstinline!print()! function also prints out individual expressions
-on after another with a space in between when the expressions are placed
-inside the \lstinline!print()! function and separated by a comma.
+one after another with a space in between when the expressions are
+placed inside the \lstinline!print()! function and separated by a comma.
 
 \begin{lstlisting}[language=Python]
 >>> print("Name:","Gabby","Age", 3+5)
@@ -3028,7 +3042,11 @@ Name: Gabby Age 8
         In this chapter, you learned how to use the Python REPL, also called the
 Python prompt, to solve calculation problems. You learned how to do
 arithmetic, powers and logarithms, trigonometry and save values to
-variables.
+variables. Operations on strings were introduced including
+concatenation, comparison, indexing, and slicing. In the last section of
+the chapter, Python's \lstinline!print()! function was introduced. As
+shown multiple times through this chapter, remember Python counting
+starts at \lstinline!0! and ends at \lstinline!n-1!.
     
 
 
@@ -3039,19 +3057,51 @@ variables.
 
 REPL
 
+Python REPL
+
+Python Prompt
+
+prompt
+
+Python Interpreter
+
+interpreter
+
 operator
 
 mathematical operator
+
+import
+
+module
+
+Python Standard Library
+
+Standard Library
+
+syntax
+
+functions
 
 command line
 
 error
 
-module
+variable
 
-Standard Library
+assignment operator
 
-Import
+comparison operator
+
+concatenate
+
+equivalent
+
+index
+
+indexing
+
+slicing
     
 
 
@@ -3067,14 +3117,14 @@ Below is a summary of the functions and operators used in this chapter:
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-Arithmetic Operators & description\tabularnewline
+Arithmetic Operators & Description\tabularnewline
 \midrule
 \endhead
-\lstinline!+! & Addition\tabularnewline
-\lstinline!-! & Subtraction\tabularnewline
-\lstinline!*! & Multiplication\tabularnewline
-\lstinline!/! & Division\tabularnewline
-\lstinline!**! & Exponents\tabularnewline
+\lstinline!+! & addition\tabularnewline
+\lstinline!-! & subtraction\tabularnewline
+\lstinline!*! & multiplication\tabularnewline
+\lstinline!/! & division\tabularnewline
+\lstinline!**! & exponents\tabularnewline
 \lstinline!_! & answer in memory\tabularnewline
 \bottomrule
 \end{longtable}
@@ -3443,8 +3493,7 @@ Q02.99
 
 
     
-        \chapter{Python Data Types and
-Variables}\label{python-data-types-and-variables}
+        \chapter{Data Types and Variables}\label{data-types-and-variables}
     
 
 
@@ -3452,21 +3501,32 @@ Variables}\label{python-data-types-and-variables}
 
     
         \section{Introduction}\label{introduction}
+        \newpage
 
-Python has many built-in data types. These include integers, floats,
+
+
+    
+
+
+
+
+    
+        Python has many built-in data types. These include integers, floats,
 booleans, strings, and lists.
 
 By the end of this chapter you will be able to:
 
 \begin{itemize}
 \item
-  Use the \lstinline!type()! function to determine an object's type
+  Explain the difference between Python's built-in data types
 \item
-  Define variables in Python with the assignment operator \lstinline!=!
+  Define variables with the assignment operator \lstinline!=!
 \item
-  Complete mathematical calculations with variables
+  Create variables with different data types
 \item
-  Complete logical evaluations with variables
+  Use Python's \lstinline!type()! function to determine an object's type
+\item
+  Complete logical evaluations of variables
 \item
   Convert variables from one data type to another
 \end{itemize}
@@ -3495,7 +3555,7 @@ created.
 It is useful for problem solvers to understand a couple of Python's core
 data types in order to write well-constructed code.
 
-\subsection{A review of Variable assignment in
+\subsection{A review of variable assignment in
 Python}\label{a-review-of-variable-assignment-in-python}
 
 Remember from the previous chapter that variables in Python are defined
@@ -3566,10 +3626,11 @@ The output \lstinline!<class 'int'>! indicates the variable
 
 Floating point numbers or \emph{floats} are another Python data type.
 Floats are decimals, positive, negative and zero. Floats can also be
-numbers in scientific notation which contain exponents. Both a lower
-case \lstinline!e! or an upper case \lstinline!E! can be used to define
-floats in scientific notation. In Python, a float can be defined using a
-decimal point \lstinline!.! when a variable is assigned.
+numbers in scientific notation which contain exponents.
+
+Both a lower case \lstinline!e! or an upper case \lstinline!E! can be
+used to define floats in scientific notation. In Python, a float can be
+defined using a decimal point \lstinline!.! when a variable is assigned.
 
 \begin{lstlisting}[language=Python]
 >>> c = 6.2
@@ -3604,14 +3665,15 @@ variable is assigned a whole number, a trailing decimal point
 
 
     
-        \subsection{Complex numbers}\label{complex-numbers}
+        \subsection{Complex Numbers}\label{complex-numbers}
 
-Another useful data type for problem solvers is the \emph{complex
-number} data type. A complex number is defined in Python using a real
-component \lstinline!+! an imaginary component\lstinline!j!. The letter
-\lstinline!j! must be used to denote the imaginary component. Using the
-letter \lstinline!i! to define a complex number in Python returns an
-error. Note how imaginary numbers add to integers and floats.
+Another useful numeric data type for problem solvers is the
+\emph{complex number} data type. A complex number is defined in Python
+using a real component \lstinline!+! an imaginary component
+\lstinline!j!. The letter \lstinline!j! must be used to denote the
+imaginary component. Using the letter \lstinline!i! to define a complex
+number in Python returns an error. Note how imaginary numbers add to
+integers and floats.
 
 \begin{lstlisting}[language=Python]
 >>> comp = 4 + 2j
@@ -3692,9 +3754,9 @@ Booleans}\label{integers-and-floats-as-booleans}
 
 Integers and floating point numbers can be converted to the boolean data
 type using Python's \lstinline!bool()! function. An int, float or
-complex number set to zero returns as \lstinline!False!. An int, float
-or complex number set to any other number, positive or negative, returns
-as \lstinline!True!.
+complex number set to zero returns as \lstinline!False!. An integer,
+float or complex number set to any other number, positive or negative,
+returns as \lstinline!True!.
 
 \begin{lstlisting}[language=Python]
 >>> zero_int = 0
@@ -3721,7 +3783,7 @@ True
     
         \subsection{Boolean Arithmetic}\label{boolean-arithmetic}
 
-\emph{Boolean Arithmetic} is the arithmetic of true and false logic. A
+\emph{Boolean arithmetic} is the arithmetic of true and false logic. A
 boolean or logical value can either be \lstinline!True! or
 \lstinline!False!. Boolean values can be manipulated and combined with
 \emph{boolean operators}. Boolean operators include \lstinline!and!,
@@ -3827,7 +3889,7 @@ F & F & T & T & T & F & F & F\tabularnewline
 
 
     
-        Another built-in data type in Python is \emph{strings}. Strings are
+        Another built-in Python data type is \emph{strings}. Strings are
 sequences of letters, numbers, symbols, and spaces. In Python, strings
 can be almost any length and can contain spaces. String variables are
 assigned in Python using quotation marks \lstinline!'   '! or
@@ -3858,8 +3920,8 @@ The output \lstinline!<class 'str'>! indicates the variable is a string.
 
 Numbers and decimals can be defined as strings too. If a decimal number
 is defined using quotes \lstinline!'   '!, the number is saved as a
-string rather than saved as a float. Like floats, integers also become
-strings if surrounded by quotes.
+string rather than as a float. Integers defined using quotes will become
+strings as well if surrounded by quotes.
 
 \begin{lstlisting}[language=Python]
 >>> num = '5.2'
@@ -3883,7 +3945,7 @@ The empty string \lstinline!""! returns as \lstinline!False!. All other
 strings convert to \lstinline!True!.
 
 \begin{lstlisting}[language=Python]
->>> name = "Kendra"
+>>> name = "Gabby"
 >>> bool(name)
 True
 \end{lstlisting}
@@ -3924,9 +3986,7 @@ of any of the other data type. A list is defined with square brackets
 >>> lst = [ 1, 2, 3 ]
 >>> type(lst)
 list
-\end{lstlisting}
 
-\begin{lstlisting}[language=Python]
 >>> lst = [ 1, 5.3, '3rd_Element']
 >>> type(lst)
 list
@@ -3959,7 +4019,8 @@ Remember! Python lists start indexing at {[}0{]} not at {[}1{]}. To call
 the elements in a list with 3 values use: lst{[}0{]}, lst{[}1{]},
 lst{[}2{]}.
 
-Colons \lstinline!:! are used inside the brackets to denote \emph{all}
+Colons \lstinline!:! are used inside the square brackets to denote
+\emph{all}
 
 \begin{lstlisting}[language=Python]
 >>> lst = [2, 4, 6]
@@ -3983,9 +4044,9 @@ The colon operator can also be used to denote \emph{all upto} and
 >>> lst = [2, 4, 6]
 >>> lst[:2]
 [2, 4]
-\end{lstlisting}
 
-\begin{lstlisting}[language=Python]
+
+
 lst = [2, 4, 6]
 lst[2:]
 [6]
@@ -3994,7 +4055,7 @@ lst[2:]
 The colon operator can also be used to denote \emph{start : end + 1}.
 Note that the indexing here in not inclusive. \lstinline!lst[1:3]! will
 return the 2nd element, and 3rd element but not the fourth even though
-the \lstinline!3! is used in the index.
+\lstinline!3! is used in the index.
 
 Remember! Python indexing is not inclusive. The last element called in
 an index will not be returned.
@@ -4012,8 +4073,8 @@ an index will not be returned.
 
     
         Besides lists, Python has two additional data structures that can store
-multiple objects. These data structures are \textbf{dictionaries} and
-\textbf{tuples}.
+multiple objects. These data structures are \emph{dictionaries} and
+\emph{tuples}.
     
 
 
@@ -4029,12 +4090,12 @@ multiple objects. These data structures are \textbf{dictionaries} and
     
         Dictionaries are made up of key: value pairs. In Python, lists are
 organized and accessed based on position. Dictionaries in Python are
-organized and accessed using keys and values. The position of a pair of
+organized and accessed using keys and values. The location of a pair of
 keys and values stored in a Python dictionary is irrelevant.
 
-Dictionaries are defined in Python with curly braces \lstinline!{ }!.
-The key value pairs that make up the dictionary are separated by commas
-and related by colons \lstinline!:!.
+Dictionaries are defined in Python with curly braces \lstinline!{  }!.
+Commas separate the key-value pairs that make up the dictionary. Each
+key-value pair is related by a colon \lstinline!:!.
 
 Let's store the ages of two people in a dictionary. The two people are
 \lstinline!Gabby! and \lstinline!Maelle!. \lstinline!Gabby! is
@@ -4050,7 +4111,7 @@ dict
 The values stored in a dictionary are called and assigned using the
 following syntax:
 
-\begin{lstlisting}
+\begin{lstlisting}[language=Python]
 dict_name[key] = value
 \end{lstlisting}
 
@@ -4106,11 +4167,12 @@ methods.
         Tuples are immutable lists. Elements of a list can be modified, but
 elements in a tuple can only be accessed, not modified. The name
 \emph{tuple} does not mean that only two values can be stored in this
-data type.
+data structure.
 
-Tuples are defined in Python by enclosing elements in parenthesis and
-separating elements with commas. The command below creates a tuple
-containing the numbers \lstinline!3!, \lstinline!4!, and \lstinline!5!.
+Tuples are defined in Python by enclosing elements in parenthesis
+\lstinline!( )! and separating elements with commas. The command below
+creates a tuple containing the numbers \lstinline!3!, \lstinline!4!, and
+\lstinline!5!.
 
 \begin{lstlisting}[language=Python]
 >>> t_var = (1,2,3)
@@ -4139,8 +4201,8 @@ TypeError: 'tuple' object does not support item assignment
 \end{lstlisting}
 
 To create a tuple that just contains one numerical value, the number
-must be followed by a comma. Without a comma, the variable is just
-defined as a number.
+must be followed by a comma. Without a comma, the variable is defined as
+a number.
 
 \begin{lstlisting}[language=Python]
 >>> num = (5)
@@ -4191,13 +4253,43 @@ lists, tuples, and dictionaries.
 
     
         \begin{key_terms}
-        variable
+        data type
+
+variable
+
+assignment operator
 
 integer
 
+int
+
+whole number
+
 floating point number
 
+float
+
+scientific notation
+
+complex number
+
+string
+
 boolean
+
+bool
+
+boolean arithmetic
+
+boolean operators
+
+or
+
+and
+
+not
+
+data structure
 
 dictionary
 
@@ -7495,7 +7587,7 @@ to include the double parenthesis \lstinline!()! in
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_344_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_345_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7916,7 +8008,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_356_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_357_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -7985,7 +8077,7 @@ the image file \textbf{\emph{plot.png}}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_359_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8125,7 +8217,7 @@ Matplotlib's object-oriented interface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_364_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_365_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8171,7 +8263,7 @@ methods to build a multi-line plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_367_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8319,7 +8411,7 @@ method.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_379_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_380_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8375,7 +8467,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_382_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_383_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8413,7 +8505,7 @@ are two additional keyword arguments that can be passed to the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_384_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_385_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8521,7 +8613,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_392_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_393_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8558,7 +8650,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_396_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8637,7 +8729,7 @@ styles will be addressed in a subsequent section of this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_402_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8705,7 +8797,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_408_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_409_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8752,7 +8844,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_411_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_412_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8813,7 +8905,7 @@ y-values. The size of the list or array passed to
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_414_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_415_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8875,7 +8967,7 @@ plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_417_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8992,7 +9084,7 @@ bottom left corner of the figure window.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_422_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_423_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9060,7 +9152,7 @@ side by side. This can be done in Matplotlib using \emph{subplots}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_427_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_428_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9120,7 +9212,7 @@ notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_432_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_433_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9195,7 +9287,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_435_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_436_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9222,7 +9314,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_436_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9249,7 +9341,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_438_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9276,7 +9368,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_438_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_439_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9355,7 +9447,7 @@ two 1D arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_445_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_446_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9409,7 +9501,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_448_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_449_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9477,7 +9569,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_451_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_452_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9544,7 +9636,7 @@ different color map.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_454_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_455_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9638,7 +9730,7 @@ define the quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_462_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_463_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9701,7 +9793,7 @@ arrow points straight down.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_466_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_467_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9776,7 +9868,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_470_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_471_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9821,7 +9913,7 @@ the \(x\) and \(y\) arrow starting point arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_472_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_473_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9864,7 +9956,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_474_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_475_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9907,7 +9999,7 @@ Matplotlib.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_476_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_477_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9995,7 +10087,7 @@ plots each in color
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_479_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_480_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10061,7 +10153,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_484_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_485_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10103,7 +10195,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_487_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_488_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10144,7 +10236,7 @@ and distance relative to the two point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_489_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_490_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10215,7 +10307,7 @@ An example of a 3D surface plot is in the next code section.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_494_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_495_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10271,7 +10363,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_497_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_498_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10331,7 +10423,7 @@ A color bar can be added along side the plot by calling the method
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_500_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_501_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10384,7 +10476,7 @@ and the plot produced.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_503_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_504_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -13112,7 +13204,7 @@ function.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_681_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_682_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
