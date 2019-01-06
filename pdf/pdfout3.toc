@@ -447,36 +447,37 @@
 \contentsline {subsubsection}{Errors, Explanations, and Solutions}{292}{Item.63}
 \contentsline {chapter}{\numberline {14}Appendix}{293}{chapter.14}
 \contentsline {section}{\numberline {14.1}Contents}{293}{section.14.1}
-\contentsline {section}{\numberline {14.2}Reserved and Keywords in Python}{293}{section.14.2}
+\contentsline {section}{\numberline {14.2}Reserved and Keywords in Python}{294}{section.14.2}
 \contentsline {subsection}{Logical Keywords}{294}{lstnumber.-291.7}
 \contentsline {subsection}{Control Flow Key Words}{294}{lstnumber.-292.8}
 \contentsline {subsection}{Definition Key Words}{294}{lstnumber.-293.14}
 \contentsline {subsection}{Module Keywords}{294}{lstnumber.-294.8}
-\contentsline {section}{\numberline {14.3}ASCII Character Codes}{294}{section.14.3}
+\contentsline {section}{\numberline {14.3}ASCII Character Codes}{295}{section.14.3}
 \contentsline {section}{\numberline {14.4}Virtual Environments}{297}{section.14.4}
 \contentsline {subsection}{Create a virtual environment with the Anaconda Prompt}{297}{section.14.4}
-\contentsline {subsection}{Activate a virtual environment}{297}{lstnumber.-297.21}
+\contentsline {subsection}{Activate a virtual environment}{298}{lstnumber.-297.21}
 \contentsline {subsection}{Install packages in a virtual environment}{298}{lstnumber.-299.1}
 \contentsline {subsection}{Deactivate a virtual environment}{298}{lstnumber.-301.1}
-\contentsline {subsection}{List your virtual environments}{298}{lstnumber.-302.2}
+\contentsline {subsection}{List your virtual environments}{299}{lstnumber.-302.2}
 \contentsline {subsection}{Remove a virtual environment}{299}{lstnumber.-305.7}
-\contentsline {section}{\numberline {14.5}NumPy Math Functions}{299}{section.14.5}
+\contentsline {section}{\numberline {14.5}NumPy Math Functions}{300}{section.14.5}
 \contentsline {subsection}{NumPy Array Creation and Manipulation Functions and Methods}{300}{lstnumber.-309.3}
-\contentsline {subsection}{NumPy Exponential and Logarithmic Functions and Methods}{300}{lstnumber.-310.14}
+\contentsline {subsection}{NumPy Exponential and Logarithmic Functions and Methods}{300}{lstnumber.-310.15}
 \contentsline {subsection}{NumPy Trigonometric Functions and Methods}{300}{lstnumber.-311.11}
-\contentsline {subsection}{NumPy Statistics Functions and Methods}{300}{lstnumber.-312.21}
-\contentsline {section}{\numberline {14.6}Git and GitHub}{300}{section.14.6}
+\contentsline {subsection}{NumPy Statistics Functions and Methods}{301}{lstnumber.-312.19}
+\contentsline {section}{\numberline {14.6}Git and GitHub}{301}{section.14.6}
 \contentsline {subsection}{Cloning a repo}{301}{section.14.6}
-\contentsline {subsection}{Creating and synching a remote repo on GitHub.com with a local repo}{301}{lstnumber.-315.1}
-\contentsline {subsubsection}{Create a remote repo on GitHub.com}{301}{lstnumber.-315.1}
+\contentsline {subsection}{Creating and synching a remote repo on GitHub.com with a local repo}{302}{lstnumber.-315.1}
+\contentsline {subsubsection}{Create a remote repo on GitHub.com}{302}{lstnumber.-315.1}
 \contentsline {subsubsection}{Make a new local repo and link the local repo to the remote repo on GitHub.com}{302}{lstnumber.-315.1}
 \contentsline {subsubsection}{Add, commit and push changes up to Github.com}{302}{lstnumber.-316.5}
-\contentsline {subsubsection}{Pull the most recent version before each work session}{302}{lstnumber.-317.3}
-\contentsline {section}{\numberline {14.7}LaTeX Math}{302}{section.14.7}
+\contentsline {subsubsection}{Pull the most recent version from GitHub.com before each work session}{303}{lstnumber.-317.3}
+\contentsline {section}{\numberline {14.7}LaTeX Math}{303}{section.14.7}
 \contentsline {section}{\numberline {14.8}Problem Solving with Python Book Construction}{304}{section.14.8}
 \contentsline {subsection}{Jupyter Notebooks}{304}{section.14.8}
-\contentsline {subsection}{Website}{305}{lstnumber.-323.9}
-\contentsline {subsection}{Hardcopy}{305}{lstnumber.-323.9}
+\contentsline {subsection}{Website}{305}{lstnumber.-323.11}
+\contentsline {subsection}{Hardcopy}{305}{lstnumber.-323.11}
 \contentsline {section}{\numberline {14.9}Contributions}{305}{section.14.9}
 \contentsline {subsection}{Contributor List}{305}{section.14.9}
-\contentsline {section}{\numberline {14.10}About the Author}{306}{section.14.10}
+\contentsline {section}{\numberline {14.10}Cover Artwork}{305}{section.14.10}
+\contentsline {section}{\numberline {14.11}About the Author}{306}{section.14.11}
