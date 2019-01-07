@@ -21,12 +21,11 @@ pages:
         - Introduction: 02-The-Python-REPL/02.00-Introduction.md
         - Python as a Calculator: 02-The-Python-REPL/02.01-Python-as-a-Calculator.md
         - Variables: 02-The-Python-REPL/02.02-Variables.md
-        - Boolean Arithmetic: 02-The-Python-REPL/02.03-Boolean-Arithmetic.md
-        - String Operations: 02-The-Python-REPL/02.04-String-Operations.md
-        - Print Statements: 02-The-Python-REPL/02.05-Print-Statements.md
-        - Summary: 02-The-Python-REPL/02.06-Summary.md
-        - Review Questions: 02-The-Python-REPL/02.07-Review-Questions.md
-    - Chapter 3 Python Data Types and Variables:
+        - String Operations: 02-The-Python-REPL/02.03-String-Operations.md
+        - Print Statements: 02-The-Python-REPL/02.04-Print-Statements.md
+        - Summary: 02-The-Python-REPL/02.05-Summary.md
+        - Review Questions: 02-The-Python-REPL/02.06-Review-Questions.md
+    - Chapter 3 Data Types and Variables:
         - Introduction: 03-Data-Types-and-Variables/03.00-Introduction.md
         - Numeric Data Types: 03-Data-Types-and-Variables/03.01-Numeric-Data-Types.md
         - Boolean Data Type: 03-Data-Types-and-Variables/03.02-Boolean-Data-Type.md
@@ -42,15 +41,16 @@ pages:
         - Installing Juypter: 04-Jupyter-Notebooks/04.03-Installing-Juypter.md
         - Opening a Jupyter Notebook: 04-Jupyter-Notebooks/04.04-Opening-a-Jupyter-Notebook.md
         - The Jupyter Notebook Interface: 04-Jupyter-Notebooks/04.05-The-Jupyter-Notebook-Interface.md
-        - Magic Cells: 04-Jupyter-Notebooks/04.07-Magic-Cells.md
+        - Magic Cells: 04-Jupyter-Notebooks/04.06-Magic-Cells.md
+        - Getting Help in a Jupyter Notebook: 04-Jupyter-Notebooks/04.07-Getting-Help-in-a-Jupyter-Notebook.md
         - Summary: 04-Jupyter-Notebooks/04.08-Summary.md
-        - Review Questions: 04-Jupyter-Notebooks/04.09-Review-Questions.md
+        - Review Questions: 04-Jupyter-Notebooks/04.10-Review-Questions.md
     - Chapter 5 Functions and Modules:
         - Introduction: 05-Functions-and-Modules/05.00-Introduction.md
-        - Why Functions?: 05-Functions-and-Modules/05.01-Why-Functions.md
-        - First Function: 05-Functions-and-Modules/05.02-First-Function.md
-        - Functions with Multiple Arguments: 05-Functions-and-Modules/05.03-Functions-with-Multiple-Arguments.md
-        - Functions with Default Arguments: 05-Functions-and-Modules/05.04-Functions-with-Default-Arguments.md
+        - Why Functions?: 05-Functions-and-Modules/05.01-Why-functions.md
+        - First Function: 05-Functions-and-Modules/05.02-First-function.md
+        - Functions with Multiple Arguments: 05-Functions-and-Modules/05.03-Functions-with-multiple-arguments.md
+        - Functions with Default Arguments: 05-Functions-and-Modules/05.04-Functions-with-default-arguments.md
         - Calling Functions from Other Files: 05-Functions-and-Modules/05.05-Calling-Functions-from-Other-Files.md
         - Docstrings in Functions: 05-Functions-and-Modules/05.06-Docstrings-in-Functions.md
         - Positional and Keyword Arguments: 05-Functions-and-Modules/05.07-Positional-and-Keyword-Arguments.md
@@ -60,7 +60,8 @@ pages:
         - Introduction: 06-Plotting-with-Matplotlib/06.00-Introduction.md
         - What is Matplotlib?: 06-Plotting-with-Matplotlib/06.01-What-is-Matplotlib.md
         - Installing Matplotlib: 06-Plotting-with-Matplotlib/06.02-Installing Matplotlib.md
-        - Line Plots: 06-Plotting-with-Matplotlib/06.04-Line-Plots.md
+        - Line Plots: 06-Plotting-with-Matplotlib/06.03-Line-Plots.md
+        - Saving plots: 06-Plotting-with-Matplotlib/06.04-Saving-Plots.md
         - Multi Line Plots: 06-Plotting-with-Matplotlib/06.05-Multi-Line-Plots.md
         - Bar Charts and Pie Charts: 06-Plotting-with-Matplotlib/06.06-Bar-Charts-and-Pie-Charts.md
         - Error Bars: 06-Plotting-with-Matplotlib/06.07-Error-Bars.md
@@ -79,63 +80,67 @@ pages:
         - Introduction: 07-If-Else-Try-Except/07.00-Introduction.md
         - Selection Statements: 07-If-Else-Try-Except/07.01-Selection-Statements.md
         - If statements: 07-If-Else-Try-Except/07.02-If-Statements.md
-        - If-Else Statements: 07-If-Else-Try-Except/07.03-If-Else-Statements.md
+        - If Else Statements: 07-If-Else-Try-Except/07.03-If-Else-Statements.md
         - Try-Except Statements: 07-If-Else-Try-Except/07.04-Try-Except-Statements.md
-        - Flow Charts: 07-If-Else-Try-Except/07.05-Flow-Charts.md
-        - Summary: 07-If-Else-Try-Except/07.09-Summary.md
-        - Review Questions: 07-If-Else-Try-Except/07.10-Review-Questions.md
+        - Flowcharts: 07-If-Else-Try-Except/07.05-Flowcharts.md
+        - Summary: 07-If-Else-Try-Except/07.06-Summary.md
+        - Review Questions: 07-If-Else-Try-Except/07.07-Review-Questions.md
     - Chapter 8 Loops:
         - Introduction: 08-Loops/08.00-Introduction.md
-        - While Loops: 08-Loops/08.01-While-Loops.md
-        - For Loops: 08-Loops/08.02-For-Loops.md
+        - For Loops: 08-Loops/08.01-For-Loops.md
+        - While Loops: 08-Loops/08.02-While-Loops.md
         - Break and Continue: 08-Loops/08.03-Break-and-Continue.md
-        - Flow Charts: 08-Loops/08.04-Flow-Charts.md
-        - Summary: 08-Loops/08.07-Summary.md
-        - Review Questions: 08-Loops/08.08-Review-Questions.md
+        - Flowcharts Describing Loops: 08-Loops/08.04-Flowcharts-Describing-Loops.md
+        - Summary: 08-Loops/08.05-Summary.md
+        - Review Questions: 08-Loops/08.06-Review-Questions.md
     - Chapter 9 Matricies and Arrays:
         - Introduction: 09-Matricies-and-Arrays/09.00-Introduction.md
-        - NumPy: 09-Matricies-and-Arrays/09.01-NumPy.md
-        - Installing NumPy: 09-Matricies-and-Arrays/09.02-Installing-NumPy.md
+        - Installing NumPy: 09-Matricies-and-Arrays/09.01-Installing-NumPy.md
+        - NumPy: 09-Matricies-and-Arrays/09.02-NumPy.md
         - Array Creation: 09-Matricies-and-Arrays/09.03-Array-Creation.md
         - Array Indexing: 09-Matricies-and-Arrays/09.04-Array-Indexing.md
         - Array Slicing: 09-Matricies-and-Arrays/09.05-Array-Slicing.md
-        - Scalar Multiplication: 09-Matricies-and-Arrays/09.06-Array-Opperations.md
+        - Array Operations: 09-Matricies-and-Arrays/09.06-Array-Opperations.md
         - Systems of Linear Equations: 09-Matricies-and-Arrays/09.07-Systems-of-Linear-Equations.md
         - Summary: 09-Matricies-and-Arrays/09.08-Summary.md
         - Review Questions: 09-Matricies-and-Arrays/09.10-Review-Questions.md
     - Chapter 10 Symbolic Math:
         - Introduction: 10-Symbolic-Math/10.00-Introduction.md
         - SymPy: 10-Symbolic-Math/10.01-SymPy.md
-        - Defining Variables: 10-Symbolic-Math/10.02-Defining-Variables.md
-        - Defining Equations: 10-Symbolic-Math/10.03-Defining-Equations.md
-        - Solving two equations for two unknows: 10-Symbolic-Math/10.04-Solving-2-Equations-for-2-Unknowns.md
-        - Summary: 10-Symbolic-Math/10.08-Summary.md
-        - Review Questions: 10-Symbolic-Math/10.09-Review-Questions.md
+        - Defining Varaibles: 10-Symbolic-Math/10.02-Defining-Varaibles.md
+        - Expressions and Substitutions: 10-Symbolic-Math/10.03-Expressions-and-Substitutions.md
+        - Equations: 10-Symbolic-Math/10.04-Equations.md
+        - Solving Equations: 10-Symbolic-Math/10.05-Solving-Equations.md
+        - Solving Two Equations for Two Unknows: 10-Symbolic-Math/10.06-Solving-Two-Equations-for-Two-Unknowns.md
+        - Summary: 10-Symbolic-Math/10.07-Summary.md
+        - Review Questions: 10-Symbolic-Math/10.08-Review-Questions.md
     - Chapter 11 Python and External Hardware:
         - Introduction: 11-Python-and-External-Hardware/11.00-Introduction.md
         - PySerial: 11-Python-and-External-Hardware/11.01-PySerial.md
         - Bytes and Unicode Strings: 11-Python-and-External-Hardware/11.02-Bytes-and-Unicode-Strings.md
-        - Reading a Sensor with Python: 11-Python-and-External-Hardware/11.03-Reading-a-Sensor-with-Python.md
-        - Controlling an LED with Python: 11-Python-and-External-Hardware/11.04-Controlling-an-LED.md
+        - Controlling an LED with Python: 11-Python-and-External-Hardware/11.03-Controlling-an-LED.md
+        - Reading a Sensor with Python: 11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python.md
         - Summary: 11-Python-and-External-Hardware/11.08-Summary.md
         - Review Questions: 11-Python-and-External-Hardware/11.09-Review-Questions.md
     - Chapter 12 MicroPython:
         - Introduction: 12-MicroPython/12.00-Introduction.md
         - What is MicroPython?: 12-MicroPython/12.01-What-is-MicroPython.md
         - Installing MicroPython: 12-MicroPython/12.02-Installing-MicroPython.md
-        - MicroPython REPL: 12-MicroPython/12.03-MicroPython-REPL.md
+        - The MicroPython REPL: 12-MicroPython/12.03-MicroPython-REPL.md
         - Blinking a LED: 12-MicroPython/12.04-Blinking-a-LED.md
         - Reading a Sensor: 12-MicroPython/12.05-Reading-a-Sensor.md
-        - Uploading code: 12-MicroPython/12.06-Uploading-Code.md
+        - Uploading Code: 12-MicroPython/12.06-Uploading-Code.md
         - Summary: 12-MicroPython/12.08-Summary.md
         - Review Questions: 12-MicroPython/12.09-Review-Questions.md
     - Appendix:
         - Contents: 99-Appendix/99.00-Appendix.md
-        - Reserved and Key Words in Python: 99-Appendix/99.01-Reserved-and-Key-Words-in-Python.md
+        - Reserved and Keywords in Python: 99-Appendix/99.01-Reserved-and-Key-Words-in-Python.md
         - ASCII Character Codes: 99-Appendix/99.02-ASCII-Character-Codes.md
         - Virtual Environments: 99-Appendix/99.03-Virtual-Environments.md
-        - Numpy Math Functions: 99-Appendix/99.04-Numpy-Math-Functions.md
+        - NumPy Math Functions: 99-Appendix/99.04-NumPy-Math-Functions.md
         - Git and GitHub: 99-Appendix/99.05-Git-and-GitHub.md
         - LaTeX Math: 99-Appendix/99.06-LaTeX-Math.md
         - Problem Solving with Python Book Construction: 99-Appendix/99.07-Problem-Solving-with-Python-Book-Construction.md
+        - Contributions: 99-Appendix/99.08-Contributions.md
+        - Cover Artwork: 99-Appendix/99.09-Cover-Artwork.md
         - About the Author: 99-Appendix/99.10-About-the-Author.md
