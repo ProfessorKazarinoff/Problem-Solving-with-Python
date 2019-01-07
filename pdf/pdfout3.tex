@@ -1731,8 +1731,20 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
     
-        In this chapter, you learned how to install the \textbf{Anaconda}
-distribution of Python on your computer.
+        In this chapter, you learned about the Anaconda distribution of Python
+and how the Anaconda distribution of Python compares the version of
+Python at Python.org. The Anaconda distribution of Python comes with
+about 600 packages pre-installed as well as Jupyter notebooks and the
+Anaconda Prompt. Jupyter notebooks and some of the pre-installed
+packages that come with Anaconda will be used later chapters. This text
+recommends that problem solvers install the Anaconda distribution of
+Python.
+
+This chapter showed how to install the Anaconda distribution of Python
+on Windows, MacOS, and Linux.
+
+At the end of the chapter, a description of how to download and install
+Python from Python.org was shown.
     
 
 
@@ -1762,6 +1774,8 @@ Legacy Python
 Python Interpreter
 
 Python REPL
+
+package
 
 operating system
 
@@ -2053,12 +2067,16 @@ Q02.95 Open the Python Interpreter (the Python REPL). Try to view
 \item
   Use the output from Python REPL as input in another problem
 \item
-  Import the math and statistics modules from the standard library and
-  use their functions
+  Import the math and statistics modules from the Python Standard
+  Library and use their functions
 \item
   Assign values to variables
 \item
   Use variables in calculations
+\item
+  Create strings
+\item
+  Combine, compare, and pull characters out of strings
 \end{itemize}
         \newpage
 
@@ -2219,14 +2237,14 @@ tangent}\label{trigonometry-sine-cosine-and-tangent}
 
 
     
-        Trig functions such as sine, cosine, and tangent can also be calculated
-using the Python REPL.
+        Trigonometry functions such as sine, cosine, and tangent can also be
+calculated using the Python REPL.
 
-To use these functions, we need to introduce a new concept:
+To use Python's trig functions, we need to introduce a new concept:
 \emph{importing modules}.
 
-In Python, there are many operations built into the language when it
-starts. These include \lstinline!+! , \lstinline!-!, \lstinline!*!,
+In Python, there are many operations built into the language when the
+REPL starts. These include \lstinline!+! , \lstinline!-!, \lstinline!*!,
 \lstinline!/! like we saw in the previous section. However, not all
 functions will work right away when Python starts. Say we want to find
 the sine of an angle. Try the following:
@@ -2241,9 +2259,9 @@ NameError: name 'sin' is not defined
 This error results because we have not told Python to include the
 \lstinline!sin! function. The \lstinline!sin! function is part of the
 \emph{Python Standard Library}. The Python Standard Library comes with
-every python installation and includes many functions, but not all of
+every Python installation and includes many functions, but not all of
 these functions are available to us when we start a new Python REPL
-session. To use the \lstinline!sin! function, first import the
+session. To use Python's \lstinline!sin! function, first import the
 \lstinline!sin! function from the \lstinline!math! \emph{module} which
 is part of the Python Standard Library.
 
@@ -2287,11 +2305,12 @@ Try:
 >>> from math import sin, cos, tan, pi
 >>> pi
 3.141592653589793
->>> pi/4
-0.7853981633974483
->>> sin(pi/4)
-0.7853981633974483
->>> sin(2*pi)
+>>> sin(pi/6)
+0.49999999999999994
+>>> >>> cos(pi/6)
+0.8660254037844387
+>>> tan(pi/6)
+0.5773502691896257
 \end{lstlisting}
     
 
@@ -2341,7 +2360,8 @@ exponent and logarithm functions are imported from the \textbf{math}
 module just like the trig functions were imported from the \textbf{math}
 module above.
 
-The following functions can be imported from the math module:
+The following exponents and logarithms functions can be imported from
+Python's math module:
 
 \begin{itemize}
 \tightlist
@@ -2390,7 +2410,7 @@ operator to raise a number to a power.
 
 \subsubsection{Section Summary}\label{section-summary}
 
-The following exponent and logarithm functions are part of the
+The following exponent and logarithm functions are part of Python's
 \textbf{math} module:
 
 \begin{longtable}[]{@{}lllll@{}}
@@ -2434,7 +2454,7 @@ functions \lstinline!mean!, \lstinline!median!, \lstinline!mode! and
 \begin{lstlisting}[language=Python]
 >>> from statistics import mean, median, mode, stdev
     
->>> test_scores = [60 , 83, 83, 91, 100]
+>>> test_scores = [60, 83, 83, 91, 100]
     
 >>> mean(test_scores)
 83.4
@@ -2458,7 +2478,7 @@ we need to use the names \lstinline!statistics.mean!,
 \begin{lstlisting}[language=Python]
 >>> import statistics
     
->>> test_scores = [ 60 , 83, 83, 91, 100 ]
+>>> test_scores = [60, 83, 83, 91, 100 ]
     
 >>> statistics.mean(test_scores)
 83.4
@@ -2480,7 +2500,7 @@ we need to use the names \lstinline!statistics.mean!,
     
         \subsubsection{Section Summary}\label{section-summary}
 
-The following functions are part of the \textbf{statistics} module:
+The following functions are part of Python's \textbf{statistics} module:
 
 \begin{longtable}[]{@{}lllll@{}}
 \toprule
@@ -2576,7 +2596,7 @@ True
 
 
     
-        The following are valid variable names:
+        The following code lines show valid variable names:
     
 
 
@@ -2598,7 +2618,7 @@ SQUARES = 4
 
 
     
-        The following are invalid variable names:
+        The following code lines show invalid variable names:
     
 
 
@@ -2618,10 +2638,11 @@ a constant = 4
 
 
     
-        Below is a problem that can be solved at the Python REPL using
-variables.
+        Let's solve the problem below at the Python REPL using variables.
 
-The Arrhenius relationship states
+\subsubsection{Problem}\label{problem}
+
+The Arrhenius relationship states:
 
 \[ n = n_{v}e^{-Q_v/(RT)} \]
 
@@ -2658,9 +2679,6 @@ problem and calculate \(n\).
 Strings are defined at the Python REPL by enclosing letters, numbers,
 punctuation, and spaces in single quotes \lstinline!' '! or double
 quotes \lstinline!" "!.
-
-Some operations which can be performed on strings include indexing,
-concatenation, and logical comparisons.
 
 \begin{lstlisting}[language=Python]
 >>> word = "Solution"
@@ -2721,8 +2739,8 @@ contains one space \lstinline!" "! in between each string you combine.
 
     
         Strings can be compared using the comparison operator; the double equals
-sign \lstinline!==!. Note the comparison operator double equals
-\lstinline!==! is not the same as the assignment operator, a single
+sign \lstinline!==!. Note the comparison operator (double equals
+\lstinline!==!) is not the same as the assignment operator, a single
 equals sign \lstinline!=!.
 
 \begin{lstlisting}[language=Python]
@@ -2759,8 +2777,9 @@ False
 
 String indexing is the process of pulling out specific characters from a
 string in a particular order. In Python, strings are indexed using
-square brackets \lstinline![ ]!. Python counting starts at \lstinline!0!
-and ends at \lstinline!n-1!.
+square brackets \lstinline![ ]!. An important point to remember:
+\textbf{Python counting starts at \lstinline!0! and ends at
+\lstinline!n-1!}.
 
 Consider the word below.
 
@@ -2772,8 +2791,8 @@ The letter \lstinline!S! is at the zero index, the letter \lstinline!o!
 is at the first index. The last letter of the word \lstinline!Solution!
 is \lstinline!n!. \lstinline!n! is in the seventh index. Even though the
 word \lstinline!Solution! has eight letters, the last letter is in the
-seventh index. This is because Python indexing starts at zero and ends
-at n-1.
+seventh index. This is because Python indexing at \lstinline!0! and ends
+at \lstinline!n-1!.
 
 \begin{figure}
 \centering
@@ -2849,7 +2868,7 @@ character out of a string starting from the end of the string.
 \begin{figure}
 \centering
 \includegraphics{images/reverse_string_indexing.png}
-\caption{Negative String Indexing}
+\caption{Negative string index assignments}
 \end{figure}
     
 
@@ -2923,7 +2942,7 @@ lines of code use a step of \lstinline!2!.
 \end{lstlisting}
 
 The characters that make up a string can be reversed by using the
-default start and stop values and specify the step as \lstinline!-1!.
+default start and stop values and specifying a step of \lstinline!-1!.
 
 \begin{lstlisting}[language=Python]
 >>> word[::-1]
@@ -3053,6 +3072,7 @@ starts at \lstinline!0! and ends at \lstinline!n-1!.
 
 
     
+        \begin{key_terms}
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
 
 REPL
@@ -3102,6 +3122,8 @@ index
 indexing
 
 slicing
+        \end{key_terms}
+
     
 
 
@@ -5915,7 +5937,36 @@ page.
 
 
     
-        In this chapter we learned\ldots{}
+        In this chapter, you learned about Jupyter notebooks. You learned what a
+Jupyter notebook is and why Jupyter notebooks are useful for problem
+solvers. This chapter showed how to install Jupyter notebooks on
+Windows, MacOS, and Linux. Some specific operations with Jupiter
+notebooks were introduced:
+
+\begin{itemize}
+\tightlist
+\item
+  how to open a Jupyter Notebook
+\item
+  how to rename a Jupyter Notebook
+\item
+  how to write Python code in a Jupyter notebook code cells
+\item
+  how to run Python code in a Jupyter notebook code cell
+\item
+  how to write text in Jupyter notebook markdown cells
+\item
+  how to use markdown syntax to produce formatted text, headings, lists,
+  and tables
+\item
+  how to save a Jupyter notebook
+\item
+  how to download a Jupyter notebook as different file types
+\end{itemize}
+
+You also learned about special ``magic'' commands that can be used in a
+Jupyter notebook. The final section of the chapter detailed a couple of
+ways to get help when working with Jupyter notebooks.
     
 
 
@@ -5930,21 +5981,51 @@ page.
 
     
         \begin{key_terms}
-        Kernel
+        Jupyter
 
-Notebook
-
-Jupyter
+notebook
 
 Jupyter notebook
 
+kernel
+
 iPython
 
-Execute
+IDE
 
-.ipynb file
+text editor
 
-backend
+markdown
+
+execute
+
+Anaconda Prompt
+
+file browser
+
+code cell
+
+markdown cell
+
+code block
+
+inline code block
+
+pipe character
+
+hyperlink
+
+LaTeX
+
+HTML tag
+
+.ipynb-file
+
+.py-file
+
+.md-file
+
+magic commands
         \end{key_terms}
 
     
@@ -7167,7 +7248,25 @@ function is below:
 
 
     
-        summary text
+        This chapter introduced user-defined functions. Functions are useful
+because functions are reusable pieces of code. All functions have names.
+Some functions take input arguments and produce output. Functions in
+Python are defined with the keyword \lstinline!def!. You learned how to
+create functions with default arguments. You also learned the difference
+between positional arguments and keyword arguments. Positional arguments
+must be included in the proper order. Keyword arguments must include the
+keyword name and an equals sign. You learned how to call functions which
+are contained in a different file than the file that calls the function.
+One section of the chapter reviewed how docstrings work in Python
+functions and the results of calling Python's \lstinline!help()! on a
+function that contains a docstring.
+    
+
+
+
+
+    
+        \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
     
 
 
@@ -7175,9 +7274,7 @@ function is below:
 
     
         \begin{key_terms}
-        \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
-
-function
+        function
 
 function definition
 
@@ -7189,15 +7286,25 @@ positional arguments
 
 keyword arguments
 
+keyword
+
 output
 
-doc string
+docstring
 
 return
 
 .py-file
 
 import
+
+syntax
+
+comments
+
+documentation
+
+iterable
         \end{key_terms}
 
     
@@ -7540,7 +7647,7 @@ causes Matplotlib plots to display directly inside Jupyter notebook
 output cells.
 
 We will also use NumPy, a numerical computing library for Python, to
-build the plot. Numpy is typically imported with the alias
+build the plot. NumPy is typically imported with the alias
 \lstinline!np!.
     
 
@@ -7587,7 +7694,7 @@ to include the double parenthesis \lstinline!()! in
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_345_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_346_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8008,7 +8115,7 @@ below:
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_357_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_358_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8077,7 +8184,7 @@ the image file \textbf{\emph{plot.png}}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_360_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_361_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8217,7 +8324,7 @@ Matplotlib's object-oriented interface.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_365_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_366_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8263,7 +8370,7 @@ methods to build a multi-line plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_367_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_368_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8411,7 +8518,7 @@ method.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_380_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_381_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8467,7 +8574,7 @@ chemical engineering & 10,000 graduates\tabularnewline
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_383_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_384_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8505,7 +8612,7 @@ are two additional keyword arguments that can be passed to the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_385_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_386_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8613,7 +8720,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_393_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_394_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8650,7 +8757,7 @@ bar heights (\lstinline!error!).
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_397_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_398_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8729,7 +8836,7 @@ styles will be addressed in a subsequent section of this chapter.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_403_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_404_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8797,7 +8904,7 @@ Jupyter notebook include the line \lstinline!%matplotlib inline!.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_409_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_410_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8844,7 +8951,7 @@ a box plot, but it shows some additional information. The sides of the
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_412_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_413_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8905,7 +9012,7 @@ y-values. The size of the list or array passed to
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_415_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_416_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -8967,7 +9074,7 @@ plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_417_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_418_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9084,7 +9191,7 @@ bottom left corner of the figure window.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_423_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_424_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9152,7 +9259,7 @@ side by side. This can be done in Matplotlib using \emph{subplots}.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_428_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_429_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9212,7 +9319,7 @@ notebook include the line \lstinline!%matplotlib inline!
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_433_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_434_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9287,7 +9394,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_436_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9314,7 +9421,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_437_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_438_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9341,7 +9448,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_438_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_439_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9368,7 +9475,7 @@ grayscale
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_439_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_440_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9447,7 +9554,7 @@ two 1D arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_446_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_447_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9501,7 +9608,7 @@ areas on the 2D plot.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_449_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_450_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9569,7 +9676,7 @@ object.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_452_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_453_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9636,7 +9743,7 @@ different color map.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_455_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_456_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9730,7 +9837,7 @@ define the quiver arrow's direction as pointing up and to the right
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_463_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_464_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9793,7 +9900,7 @@ arrow points straight down.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_467_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_468_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9868,7 +9975,7 @@ to 1:1.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_471_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_472_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9913,7 +10020,7 @@ the \(x\) and \(y\) arrow starting point arrays.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_473_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_474_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9956,7 +10063,7 @@ gradient function to every arrow's x,y starting position.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_475_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_476_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -9999,7 +10106,7 @@ Matplotlib.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_477_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_478_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10087,7 +10194,7 @@ plots each in color
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_480_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_481_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10153,7 +10260,7 @@ the stream lines are parallel and point to the right.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_485_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_486_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10195,7 +10302,7 @@ vector field.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_488_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_489_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10236,7 +10343,7 @@ and distance relative to the two point charges.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_490_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_491_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10307,7 +10414,7 @@ An example of a 3D surface plot is in the next code section.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_495_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_496_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10363,7 +10470,7 @@ the ``wires'' in the wireplot are drawn.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_498_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_499_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10423,7 +10530,7 @@ A color bar can be added along side the plot by calling the method
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_501_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_502_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10476,7 +10583,7 @@ and the plot produced.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_504_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_505_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -10491,17 +10598,19 @@ and the plot produced.
 
 
     
-        In this chapter you learned how to create plots using Python and
-Matplotlib.
-    
+        In this chapter, you learned how to create plots using Python and
+Matplotlib. You learned what Matplotlib is and why problem solvers
+should learn how to use Matplotlib. How to install Matplotlib on your
+computer was shown at the start of the chapter. You learned how to
+customize Matplotlib plots and save plots as images. You learned how to
+include axis label, titles, and legends on your plots. You also learned
+how to add annotations to plots.
 
-
-
-
-    
-        Types of charts: * line graphs * bar graphs * pie charts * bar and line
-graphs with error bars * scatter plots * histograms * box plots and
-violin plots * quiver plots * heat maps
+Types of charts detailed in this chapter: * line plots * multiline plots
+* bar graphs * pie charts * bar and line graphs with error bars *
+scatter plots * histograms * box plots and violin plots * contour plots
+* quiver plots * stream plots * 3D surface plots * 3D wire frame plots *
+3D surface plots with projections
     
 
 
@@ -10509,16 +10618,62 @@ violin plots * quiver plots * heat maps
 
     
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
+    
 
-plot
+
+
+
+    
+        \begin{key_terms}
+        plot
+
+install
+
+invoke
+
+library
+
+parameters
+
+RGBA
 
 object
 
 attribute
 
-object oriented programming
+object-oriented programming
 
 method
+
+image resolution
+
+error bars
+
+box plot
+
+violin plot
+
+histogram
+
+annotation
+
+reference frame
+
+contour plot
+
+quiver plot
+
+stream plot
+
+gradient
+
+field
+
+wireframe plot
+
+projection
+        \end{key_terms}
+
     
 
 
@@ -11582,6 +11737,27 @@ print('Done')
 
 
     
+        Selection structures in Python include \lstinline!if!, \lstinline!elif!,
+\lstinline!else!, \lstinline!try! and \lstinline!except!. These
+selection structures allow certain blocks of code to run or not run
+based on logical conditions. Logical conditions are expressions or
+variables that can be evaluated as \lstinline!True! or
+\lstinline!False!. You learned that Python uses indentation segment code
+after \lstinline!if!, \lstinline!elif!, and \lstinline!else! statements.
+The standard indentation in Python is four spaces.
+
+The difference between syntax errors and exception errors was
+demonstrated in this chapter. \lstinline!try!/\lstinline!except! blocks
+only check for exception errors.
+
+At the end of the chapter, you learned how to use flowcharts to describe
+the flow of a program with four basic shapes and arrows.
+    
+
+
+
+
+    
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
     
 
@@ -11589,9 +11765,22 @@ print('Done')
 
 
     
+        \begin{key_terms}
         selection structures
 
 if
+
+logical condition
+
+True
+
+False
+
+programmatic flow
+
+indentation
+
+pass
 
 else
 
@@ -11610,6 +11799,8 @@ try
 except
 
 flow chart
+        \end{key_terms}
+
     
 
 
@@ -12346,7 +12537,19 @@ print("positive")
 
 
     
-        The summary from this chapter
+        Repetition structures allow the same piece of code to run multiple
+times.
+
+In this chapter, you learned how to write for loops and while loops in
+Python. You learned how to use Python's \lstinline!range()! function in
+a for loops and how to use a list or string in a for loop. For loops run
+a block of code a definite number of times. A while loop runs a block of
+code as long as a logical condition is true. The keywords
+\lstinline!break! and \lstinline!continue! cause for and while loops to
+exit early.
+
+At the end of the chapter, you learned how to build flowcharts that
+describe programs with for loops and while loops.
     
 
 
@@ -12368,6 +12571,8 @@ loop
 while loop
 
 for loop
+
+iterate
 
 break
 
@@ -13204,7 +13409,7 @@ function.
 
 
     \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_682_0.png}
+    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{combined_files/combined_684_0.png}
     \end{center}
     { \hspace*{\fill} \\}
     
@@ -14138,6 +14343,45 @@ The answer should be \lstinline!9.0!.
 
 
     
+        In this chapter, you learned how to work with NumPy arrays. NumPy is a
+Python package used for numerical calculations and arrays. An array is a
+data structure only contains objects that share the same data type.
+Arrays are faster than lists in large-scale numerical calculations.
+
+You learned how to create arrays in a variety of ways:
+
+\begin{itemize}
+\tightlist
+\item
+  Create an array from a Python list with \lstinline!np.array()!
+\item
+  Create an array of regularly spaced numbers with
+  \lstinline!np.arange()!, \lstinline!np.linspace()!, and
+  \lstinline!np.logspace!
+\item
+  Create an array of random numbers with \lstinline!np.random.ranint()!,
+  \lstinline!np.random.rand()!, and \lstinline!np.random.randn()!
+\item
+  Create two 2D arrays from two 1D arrays with \lstinline!np.meshgrid()!
+  and \lstinline!np.mgrid()!
+\end{itemize}
+
+You learned how to index and slice arrays. Slicing NumPy arrays share
+the same syntax used to slice Python lists and strings.
+
+At the end of the chapter, you learned how to run mathematical
+operations on arrays. NumPy's mathematical functions operate on arrays
+like Python's math functions operate on integers and floats. NumPy has
+additional functions like \lstinline!np.dot()! and
+\lstinline!np.cross()! that cannot be applied to scalars. NumPy's
+\lstinline!np.linalg.solve()! function can be used to solve systems of
+linear equations.
+    
+
+
+
+
+    
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
     
 
@@ -14150,13 +14394,15 @@ The answer should be \lstinline!9.0!.
 
 array
 
-matrix
+scalar
 
 computationally expensive
 
 slice
 
 index
+
+data type
 
 homogenous
 
@@ -14165,18 +14411,28 @@ homogenous data type
 element-wise
 
 system of linear equations
+
+attribute
+
+scientific computing
+
+Unicode
+
+iterable
+
+logarithmically spaced numbers
+
+normal distribution
+
+meshgrid
+
+matrix multiplication methods
+
+dot product
+
+cross product
         \end{key_terms}
 
-    
-
-
-
-
-    
-        \subsection{Numpy Functions and
-Methods}\label{numpy-functions-and-methods}
-
-\lstinline!np.array()!
     
 
 
@@ -14358,9 +14614,9 @@ can be installed with the \textbf{Anaconda Prompt}. Use the command:
 
 
     
-        Before we can construct symbolic math expressions, we first need to
-create symbolic math variables, also called symbolic math
-\emph{symbols}.
+        Before we can construct symbolic math expressions or symbolic math
+equations, we first need to create symbolic math variables, also called
+symbolic math \emph{symbols}.
 
 To define symbolic math variables with SymPy, first import the
 \lstinline!symbols()! function from the SymPy module:
@@ -14395,7 +14651,7 @@ a string).
 same line of code. Note the input arguments passed to the
 \lstinline!symbols()! function is a string, entries separated by a space
 (no comma) and surrounded by quotes. The output of the
-\lstinline!symbols()! function are SymPy symbol objects. Comas separate
+\lstinline!symbols()! function are SymPy symbol objects. Commas separate
 these output objects (no quotation marks).
     
 
@@ -14671,8 +14927,8 @@ all equations defined in SymPy are assumed to equal zero.
 
     
         If you want to define the equation \(2y - x = 5\), which is not equal to
-zero, you just have to subtract the right hand side of the equation by
-the left hand side first.
+zero, you just have to subtract the right hand side of the equation from
+the left hand side of the equation first.
 
 \[2y - x = 5\]
 
@@ -14744,7 +15000,7 @@ when an expression is defined with symbolic math variables.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}8}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{solve}
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{solve}
         
         \PY{n}{x} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
         \PY{n}{expr} \PY{o}{=} \PY{n}{x}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}
@@ -14756,7 +15012,7 @@ when an expression is defined with symbolic math variables.
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}8}]:} [6]
+{\color{outcolor}Out[{\color{outcolor}1}]:} [6]
 \end{Verbatim}
             
 
@@ -14767,14 +15023,14 @@ when an expression is defined with symbolic math variables.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{num} \PY{o}{=} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{num} \PY{o}{=} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
         
         \PY{n}{num}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}9}]:} 6
+{\color{outcolor}Out[{\color{outcolor}2}]:} 6
 \end{Verbatim}
             
 
@@ -14786,18 +15042,18 @@ equation is defined with symbolic math variables.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}10}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
-         
-         \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{y} \PY{o}{+} \PY{l+m+mi}{3} \PY{o}{+} \PY{l+m+mi}{8}\PY{p}{)}
-         
-         \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{)}
-         \PY{n}{sol}
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
+        
+        \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{y}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{y} \PY{o}{+} \PY{l+m+mi}{3} \PY{o}{+} \PY{l+m+mi}{8}\PY{p}{)}
+        
+        \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{)}
+        \PY{n}{sol}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}10}]:} [-11]
+{\color{outcolor}Out[{\color{outcolor}3}]:} [-11]
 \end{Verbatim}
             
 
@@ -14817,60 +15073,60 @@ solves an equation with two solutions.
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}11}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
-         
-         \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{6}\PY{p}{)}
-         
-         \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{)}
-         \PY{n}{sol}
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
+        
+        \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{6}\PY{p}{)}
+        
+        \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{)}
+        \PY{n}{sol}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}11}]:} [2, 3]
+{\color{outcolor}Out[{\color{outcolor}4}]:} [2, 3]
 \end{Verbatim}
             
 
     
         If you specify the keyword argument \lstinline!dict=True! to SymPy's
-\lstinline!solve()! function, the out put is still a list, but inside
-the list is a dictionary that shows which variable was solved for.
+\lstinline!solve()! function, the output is still a list, but inside the
+list is a dictionary that shows which variable was solved for.
     
 
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}12}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
-         
-         \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-         \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{6}\PY{p}{)}
-         
-         \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{,} \PY{n+nb}{dict}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
-         \PY{n}{sol}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{from} \PY{n+nn}{sympy} \PY{k}{import} \PY{n}{symbols}\PY{p}{,} \PY{n}{Eq}\PY{p}{,} \PY{n}{solve}
+        
+        \PY{n}{y} \PY{o}{=} \PY{n}{symbols}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{x}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+        \PY{n}{eq1} \PY{o}{=} \PY{n}{Eq}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}}\PY{l+m+mi}{5}\PY{o}{*}\PY{n}{x} \PY{o}{+} \PY{l+m+mi}{6}\PY{p}{)}
+        
+        \PY{n}{sol} \PY{o}{=} \PY{n}{solve}\PY{p}{(}\PY{n}{eq1}\PY{p}{,} \PY{n+nb}{dict}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}
+        \PY{n}{sol}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}12}]:} [\{x: 2\}, \{x: 3\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} [\{x: 2\}, \{x: 3\}]
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}13}]:} \{x: 2\}
+{\color{outcolor}Out[{\color{outcolor}6}]:} \{x: 2\}
 \end{Verbatim}
             
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{sol}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
 \end{Verbatim}
 
 
 \begin{Verbatim}[commandchars=\\\{\}]
-{\color{outcolor}Out[{\color{outcolor}14}]:} \{x: 3\}
+{\color{outcolor}Out[{\color{outcolor}7}]:} \{x: 3\}
 \end{Verbatim}
             
 
@@ -15219,6 +15475,29 @@ Tce = 19.7246603876972
 
 
     
+        In this chapter, you learned about symbolic math and how to complete
+symbolic math calculations with the SymPy package. Symbolic math treats
+variables as mathematical symbols rather than defining variables as
+defined numbers.
+
+You learned how to create symbolic math variables with SymPy's
+\lstinline!symbols()! function.
+
+Symbolic math variables can be combined into symbolic math expressions
+and symbolic math equations. You learned how to substitute variables and
+numbers into symbolic math expressions and equations.
+
+At the end of the chapter, you learned how to solve linear and quadratic
+equations with SymPy.
+
+The final example in the chapter was a multi-variable statics problem
+where two variables were solved for two unknowns.
+    
+
+
+
+
+    
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
     
 
@@ -15231,6 +15510,8 @@ Tce = 19.7246603876972
 
 symbolic variable
 
+object
+
 numerical calculation
 
 systems of equations
@@ -15238,6 +15519,14 @@ systems of equations
 expression
 
 equation
+
+substitution
+
+evaluate
+
+linear equation
+
+quadratic equation
         \end{key_terms}
 
     
@@ -16646,6 +16935,116 @@ Q11.83
 
 
     
+        \section{Summary}\label{summary}
+    
+
+
+
+
+    
+        In this chapter, you learned how to use Python to interact with external
+hardware. In particular, you learned how to use Python and the PySerial
+package to communicate with an Arduino.
+
+The chapter began with a discussion of Unicode strings and byte strings.
+In Python, all strings are Unicode by default, but machines speak in
+bytes. To create a byte string in Python, prepend a string with the
+letter \lstinline!b! as in \lstinline!b'my string'!. Python's
+\lstinline!.encode()! and \lstinline!.decode()! methods convert between
+Unicode strings and byte strings.
+
+In the first project of the chapter, you learned how to use Python and
+the PySerial package to control an LED attached to an Arduino. The
+general steps were:
+
+\begin{itemize}
+\tightlist
+\item
+  download and install the Arduino IDE
+\item
+  wire a LED to an Arduino
+\item
+  connect the Arduino the computer and upload code
+\item
+  blink the LED with the Arduino Serial Monitor
+\item
+  blink the LED with the Python REPL
+\item
+  blink the LED with a Python script
+\item
+  run a Python script to have a user turn the LED on and off
+\end{itemize}
+
+The second project of the chapter involved reading a sensor connected to
+an Arduino with Python and PySerial. To complete this project, the
+general steps were:
+
+\begin{itemize}
+\tightlist
+\item
+  download and install the Arduino IDE
+\item
+  wire a potentiometer sensor and LED to the Arduino
+\item
+  connect the Arduino the computer and upload an Arduino sketch
+\item
+  check the sensor signal with the LED, Arduino Serial Monitor and
+  Arduino Serial Plotter
+\item
+  use the Python REPL to read the potentiometer sensor
+\item
+  run a Python script to collect the potentiometer sensor data and plot
+  the data using Matplotlib
+\end{itemize}
+    
+
+
+
+
+    
+        \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
+    
+
+
+
+
+    
+        \begin{key_terms}
+        Arduino
+
+IDE
+
+serial
+
+serial communication
+
+serial line
+
+USB
+
+Unicode
+
+Unicode string
+
+byte string
+
+port
+
+.ino-file
+
+C programming language
+
+baud
+
+newline character
+        \end{key_terms}
+
+    
+
+
+
+
+    
         \section{Review Questions}\label{review-questions}
     
 
@@ -16885,7 +17284,7 @@ ESP8266-based microcontroller:
 Hardware & Purpose\tabularnewline
 \midrule
 \endhead
-A laptop or desktop computer & install Micropython on the
+A laptop or desktop computer & install MicroPython on the
 microcontroller\tabularnewline
 Adafruit Feather Huzzah ESP8266 & microcontroller running
 MicroPython\tabularnewline
@@ -16903,7 +17302,7 @@ Software & Purpose\tabularnewline
 \endhead
 Anaconda distribution of Python & run \textbf{esptool} that installs
 MicroPython\tabularnewline
-Anaconda Prompt & Install the \textbf{esptool} package with
+Anaconda Prompt & Install \textbf{esptool} package with
 \textbf{pip}\tabularnewline
 \textbf{esptool} & A \textbf{pip} installable package used to install
 MicroPython\tabularnewline
@@ -17214,7 +17613,8 @@ make sure the \textbf{\emph{.bin}} firmware file name is correct. The
 long file name is easy to mistype.
 
 \begin{lstlisting}
-(micropython) > esptool --port COM4 --baud 115200 write_flash --flash_size=detect 0 esp8266-20171101-v1.9.3.bin
+(micropython) > esptool --port COM4 --baud 115200 write_flash \
+--flash_size=detect 0 esp8266-20171101-v1.9.3.bin
 \end{lstlisting}
 
 \begin{figure}
@@ -18223,6 +18623,39 @@ The output below demonstrates the results shown in a terminal window.
 
 
     
+        In this chapter, you learned about MicroPython. MicroPython is a small
+slimed down port of the Python programming language designed to run on
+small cheap microcontrollers. The first part of the chapter introduced
+MicroPython. ``Regular'' Python consumes to much hard disk space and RAM
+to be run installed on a microcontroller. But MicroPython is very small
+for a programming language. It only takes up less than 1MB on a
+microcontroller.
+
+The next section of the chapter involved how to install MicroPython on a
+microcontroller. To install MicroPython on a microcontroller, use a
+package called \textbf{esptool} and upload a .bin firmware file to the
+board.
+
+The rest of the chapter involved two projects. Blinking an LED with
+MicroPython and reading a sensor with MicroPython.
+
+To blink an LED on a microcontroller, you need to connect to the
+microcontroller with a program called PuTTY. Through a PuTTY terminal,
+you can use MicroPython's \lstinline!machine! module to write high and
+low values to the pins on the microcontroller.
+
+An MCP9808 temperature sensor was read using MicroPython in the second
+project. The sensor first needed to be wired up to the microcontroller,
+and then the MicroPython's \lstinline!ic2! class was used to read data
+off the sensor. At the end of the project, a Python package called
+\textbf{ampy} was used to upload a \textbf{\emph{.py}} file to the
+microcontroller.
+    
+
+
+
+
+    
         \subsection{Key Terms and Concepts}\label{key-terms-and-concepts}
     
 
@@ -18233,11 +18666,37 @@ The output below demonstrates the results shown in a terminal window.
         \begin{key_terms}
         MicroPython
 
-Microcontroller
+microcontroller
 
 MicroPython REPL
 
-Baud Rate
+REPL prompt
+
+baud rate
+
+port
+
+pyboard
+
+ESP8266
+
+resource intensive
+
+esptool
+
+.bin firmware file
+
+driver
+
+USB data cable
+
+PuTTY
+
+MCP9808 temperature sensor
+
+ampy
+
+Hello World
         \end{key_terms}
 
     
