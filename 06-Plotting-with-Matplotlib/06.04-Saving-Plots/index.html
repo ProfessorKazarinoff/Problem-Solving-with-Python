@@ -1,0 +1,2369 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Website companion for the book Problem Solving with Python by Peter D. Kazarinoff">
+      
+      
+      
+        <meta name="author" content="Peter D. Kazarinoff">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.2">
+    
+    
+      
+        <title>Saving plots - Problem Solving with Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.6079476c.css">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <a href="#saving-plots" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Problem Solving with Python" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Problem Solving with Python
+              </span>
+              <span class="md-header-nav__topic">
+                Saving plots
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/professorkazarinoff/Problem-Solving-with-Python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    <span class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </span>
+    Problem Solving with Python
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/professorkazarinoff/Problem-Solving-with-Python/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Preface
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Preface
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00-Preface/00.00-Motivation/" title="Motivation" class="md-nav__link">
+      Motivation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00-Preface/00.02-Acknowledgments/" title="Acknowledgments" class="md-nav__link">
+      Acknowledgments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00-Preface/00.03-Supporting-Materials/" title="Supporting Materials" class="md-nav__link">
+      Supporting Materials
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00-Preface/00.04-Formatting-Conventions/" title="Formatting Conventions" class="md-nav__link">
+      Formatting Conventions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../00-Preface/00.05-Errata/" title="Errata" class="md-nav__link">
+      Errata
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Chapter 1 Orientation
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Chapter 1 Orientation
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.00-Welcome/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.01-Why-Python/" title="Why Python?" class="md-nav__link">
+      Why Python?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.02-The-Anaconda-Distribution-of-Python/" title="The Anaconda Distribution of Python" class="md-nav__link">
+      The Anaconda Distribution of Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.03-Installing-Anaconda-on-Windows/" title="Installing Anaconda on Windows" class="md-nav__link">
+      Installing Anaconda on Windows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.04-Installing-Anaconda-on-MacOS/" title="Installing Anaconda on MacOS" class="md-nav__link">
+      Installing Anaconda on MacOS
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.05-Installing-Anaconda-on-Linux/" title="Installing Anaconda on Linux" class="md-nav__link">
+      Installing Anaconda on Linux
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.06-Installing-Python-from-Python-dot-org/" title="Installing Python from Python.org" class="md-nav__link">
+      Installing Python from Python.org
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.07-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../01-Orientation/01.08-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Chapter 2 The Python REPL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Chapter 2 The Python REPL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02-The-Python-REPL/02.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02-The-Python-REPL/02.01-Python-as-a-Calculator/" title="Python as a Calculator" class="md-nav__link">
+      Python as a Calculator
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02-The-Python-REPL/02.02-Variables/" title="Variables" class="md-nav__link">
+      Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02-The-Python-REPL/02.03-String-Operations/" title="String Operations" class="md-nav__link">
+      String Operations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02-The-Python-REPL/02.04-Print-Statements/" title="Print Statements" class="md-nav__link">
+      Print Statements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02-The-Python-REPL/02.05-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../02-The-Python-REPL/02.06-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Chapter 3 Data Types and Variables
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Chapter 3 Data Types and Variables
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.01-Numeric-Data-Types/" title="Numeric Data Types" class="md-nav__link">
+      Numeric Data Types
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.02-Boolean-Data-Type/" title="Boolean Data Type" class="md-nav__link">
+      Boolean Data Type
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.03-Strings/" title="Strings" class="md-nav__link">
+      Strings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.04-Lists/" title="Lists" class="md-nav__link">
+      Lists
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.05-Dictionaries-and-Tuples/" title="Dictionaries and Tuples" class="md-nav__link">
+      Dictionaries and Tuples
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.06-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../03-Data-Types-and-Variables/03.07-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Chapter 4 Jupyter Notebooks
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Chapter 4 Jupyter Notebooks
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.01-What-is-a-Jupyter-Notebook/" title="What is a Jupyter Notebook?" class="md-nav__link">
+      What is a Jupyter Notebook?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.02-Why-Jupyter-Notebooks/" title="Why Jupyter Notebooks?" class="md-nav__link">
+      Why Jupyter Notebooks?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.03-Installing-Juypter/" title="Installing Juypter" class="md-nav__link">
+      Installing Juypter
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.04-Opening-a-Jupyter-Notebook/" title="Opening a Jupyter Notebook" class="md-nav__link">
+      Opening a Jupyter Notebook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.05-The-Jupyter-Notebook-Interface/" title="The Jupyter Notebook Interface" class="md-nav__link">
+      The Jupyter Notebook Interface
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.06-Magic-Cells/" title="Magic Cells" class="md-nav__link">
+      Magic Cells
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.07-Getting-Help-in-a-Jupyter-Notebook/" title="Getting Help in a Jupyter Notebook" class="md-nav__link">
+      Getting Help in a Jupyter Notebook
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.08-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../04-Jupyter-Notebooks/04.10-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Chapter 5 Functions and Modules
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Chapter 5 Functions and Modules
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.01-Why-functions/" title="Why Functions?" class="md-nav__link">
+      Why Functions?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.02-First-function/" title="First Function" class="md-nav__link">
+      First Function
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.03-Functions-with-multiple-arguments/" title="Functions with Multiple Arguments" class="md-nav__link">
+      Functions with Multiple Arguments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.04-Functions-with-default-arguments/" title="Functions with Default Arguments" class="md-nav__link">
+      Functions with Default Arguments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.05-Calling-Functions-from-Other-Files/" title="Calling Functions from Other Files" class="md-nav__link">
+      Calling Functions from Other Files
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.06-Docstrings-in-Functions/" title="Docstrings in Functions" class="md-nav__link">
+      Docstrings in Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.07-Positional-and-Keyword-Arguments/" title="Positional and Keyword Arguments" class="md-nav__link">
+      Positional and Keyword Arguments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.08-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../05-Functions-and-Modules/05.09-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Chapter 6 Plotting with Matplotlib
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Chapter 6 Plotting with Matplotlib
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.01-What-is-Matplotlib/" title="What is Matplotlib?" class="md-nav__link">
+      What is Matplotlib?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.02-Installing Matplotlib/" title="Installing Matplotlib" class="md-nav__link">
+      Installing Matplotlib
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.03-Line-Plots/" title="Line Plots" class="md-nav__link">
+      Line Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Saving plots
+      </label>
+    
+    <a href="./" title="Saving plots" class="md-nav__link md-nav__link--active">
+      Saving plots
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#saving-plots" title="Saving plots" class="md-nav__link">
+    Saving plots
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.05-Multi-Line-Plots/" title="Multi Line Plots" class="md-nav__link">
+      Multi Line Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.06-Bar-Charts-and-Pie-Charts/" title="Bar Charts and Pie Charts" class="md-nav__link">
+      Bar Charts and Pie Charts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.07-Error-Bars/" title="Error Bars" class="md-nav__link">
+      Error Bars
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.08-Histograms/" title="Histograms" class="md-nav__link">
+      Histograms
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.09-Box-Plots-and-Violin-Plots/" title="Box Plots and Violin Plots" class="md-nav__link">
+      Box Plots and Violin Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.10-Scatter-Plots/" title="Scatter Plots" class="md-nav__link">
+      Scatter Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.11-Plot-Annotations/" title="Plot annotations" class="md-nav__link">
+      Plot annotations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.12-Subplots/" title="Subplots" class="md-nav__link">
+      Subplots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.13-Plot-Styles/" title="Plot Styles" class="md-nav__link">
+      Plot Styles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.14-Contour-Plots/" title="Contour Plots" class="md-nav__link">
+      Contour Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.15-Quiver-and-Stream-Plots/" title="Quiver and Stream Plots" class="md-nav__link">
+      Quiver and Stream Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.16-3D-Surface-Plots/" title="3D Surface Plots" class="md-nav__link">
+      3D Surface Plots
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.17-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.18-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Chapter 7 If Else Try Except
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Chapter 7 If Else Try Except
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.01-Selection-Statements/" title="Selection Statements" class="md-nav__link">
+      Selection Statements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.02-If-Statements/" title="If statements" class="md-nav__link">
+      If statements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.03-If-Else-Statements/" title="If Else Statements" class="md-nav__link">
+      If Else Statements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.04-Try-Except-Statements/" title="Try-Except Statements" class="md-nav__link">
+      Try-Except Statements
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.05-Flowcharts/" title="Flowcharts" class="md-nav__link">
+      Flowcharts
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.06-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../07-If-Else-Try-Except/07.07-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Chapter 8 Loops
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Chapter 8 Loops
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../08-Loops/08.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../08-Loops/08.01-For-Loops/" title="For Loops" class="md-nav__link">
+      For Loops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../08-Loops/08.02-While-Loops/" title="While Loops" class="md-nav__link">
+      While Loops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../08-Loops/08.03-Break-and-Continue/" title="Break and Continue" class="md-nav__link">
+      Break and Continue
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../08-Loops/08.04-Flowcharts-Describing-Loops/" title="Flowcharts Describing Loops" class="md-nav__link">
+      Flowcharts Describing Loops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../08-Loops/08.05-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../08-Loops/08.06-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Chapter 9 Matricies and Arrays
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Chapter 9 Matricies and Arrays
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.01-Installing-NumPy/" title="Installing NumPy" class="md-nav__link">
+      Installing NumPy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.02-NumPy/" title="NumPy" class="md-nav__link">
+      NumPy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.03-Array-Creation/" title="Array Creation" class="md-nav__link">
+      Array Creation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.04-Array-Indexing/" title="Array Indexing" class="md-nav__link">
+      Array Indexing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.05-Array-Slicing/" title="Array Slicing" class="md-nav__link">
+      Array Slicing
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.06-Array-Opperations/" title="Array Operations" class="md-nav__link">
+      Array Operations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.07-Systems-of-Linear-Equations/" title="Systems of Linear Equations" class="md-nav__link">
+      Systems of Linear Equations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.08-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../09-Matricies-and-Arrays/09.10-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Chapter 10 Symbolic Math
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Chapter 10 Symbolic Math
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.01-SymPy/" title="SymPy" class="md-nav__link">
+      SymPy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.02-Defining-Varaibles/" title="Defining Varaibles" class="md-nav__link">
+      Defining Varaibles
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.03-Expressions-and-Substitutions/" title="Expressions and Substitutions" class="md-nav__link">
+      Expressions and Substitutions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.04-Equations/" title="Equations" class="md-nav__link">
+      Equations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.05-Solving-Equations/" title="Solving Equations" class="md-nav__link">
+      Solving Equations
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.06-Solving-Two-Equations-for-Two-Unknowns/" title="Solving Two Equations for Two Unknows" class="md-nav__link">
+      Solving Two Equations for Two Unknows
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.07-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../10-Symbolic-Math/10.08-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Chapter 11 Python and External Hardware
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Chapter 11 Python and External Hardware
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../11-Python-and-External-Hardware/11.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../11-Python-and-External-Hardware/11.01-PySerial/" title="PySerial" class="md-nav__link">
+      PySerial
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../11-Python-and-External-Hardware/11.02-Bytes-and-Unicode-Strings/" title="Bytes and Unicode Strings" class="md-nav__link">
+      Bytes and Unicode Strings
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../11-Python-and-External-Hardware/11.03-Controlling-an-LED/" title="Controlling an LED with Python" class="md-nav__link">
+      Controlling an LED with Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/" title="Reading a Sensor with Python" class="md-nav__link">
+      Reading a Sensor with Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../11-Python-and-External-Hardware/11.08-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../11-Python-and-External-Hardware/11.09-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      Chapter 12 MicroPython
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        Chapter 12 MicroPython
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.00-Introduction/" title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.01-What-is-MicroPython/" title="What is MicroPython?" class="md-nav__link">
+      What is MicroPython?
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.02-Installing-MicroPython/" title="Installing MicroPython" class="md-nav__link">
+      Installing MicroPython
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.03-MicroPython-REPL/" title="The MicroPython REPL" class="md-nav__link">
+      The MicroPython REPL
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.04-Blinking-a-LED/" title="Blinking a LED" class="md-nav__link">
+      Blinking a LED
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.05-Reading-a-Sensor/" title="Reading a Sensor" class="md-nav__link">
+      Reading a Sensor
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.06-Uploading-Code/" title="Uploading Code" class="md-nav__link">
+      Uploading Code
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.08-Summary/" title="Summary" class="md-nav__link">
+      Summary
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../12-MicroPython/12.09-Review-Questions/" title="Review Questions" class="md-nav__link">
+      Review Questions
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-15" type="checkbox" id="nav-15">
+    
+    <label class="md-nav__link" for="nav-15">
+      Appendix
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-15">
+        Appendix
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.00-Appendix/" title="Contents" class="md-nav__link">
+      Contents
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.01-Reserved-and-Key-Words-in-Python/" title="Reserved and Keywords in Python" class="md-nav__link">
+      Reserved and Keywords in Python
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.02-ASCII-Character-Codes/" title="ASCII Character Codes" class="md-nav__link">
+      ASCII Character Codes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.03-Virtual-Environments/" title="Virtual Environments" class="md-nav__link">
+      Virtual Environments
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.04-NumPy-Math-Functions/" title="NumPy Math Functions" class="md-nav__link">
+      NumPy Math Functions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.05-Git-and-GitHub/" title="Git and GitHub" class="md-nav__link">
+      Git and GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.06-LaTeX-Math/" title="LaTeX Math" class="md-nav__link">
+      LaTeX Math
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.07-Problem-Solving-with-Python-Book-Construction/" title="Problem Solving with Python Book Construction" class="md-nav__link">
+      Problem Solving with Python Book Construction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.08-Contributions/" title="Contributions" class="md-nav__link">
+      Contributions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.09-Cover-Artwork/" title="Cover Artwork" class="md-nav__link">
+      Cover Artwork
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../99-Appendix/99.10-About-the-Author/" title="About the Author" class="md-nav__link">
+      About the Author
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#saving-plots" title="Saving plots" class="md-nav__link">
+    Saving plots
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/professorkazarinoff/Problem-Solving-with-Python/edit/master/docs/06-Plotting-with-Matplotlib/06.04-Saving-Plots.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Saving plots</h1>
+                
+                <h2 id="saving-plots">Saving plots</h2>
+<p>Matplotlib plots can be saved with the <code>plt.savefig()</code> function. The <code>plt.savefig()</code> function needs to be called right above the <code>plt.show()</code> line. All the features of the plot must be specified before the plot is saved as an image file. If the figure is saved after the <code>plt.show()</code> command, the figure will not be saved until the plot window is closed. Calling <code>plt.savefig()</code> after calling <code>plt.show()</code> can be problematic when building plots in a Jupyter notebook with <code>%matplotlib inline</code> enabled.</p>
+<p>A standard <code>savefig()</code> command is:</p>
+<pre><code class="python">plt.savefig('plot.png', dpi=300, bbox_inches='tight')
+</code></pre>
+
+<p>Where <code>'plot.png'</code> is the name of the saved image file. Matplotlib will infer the image file format (.png, .jpg, etc) based on the extension specified as part of the filename. </p>
+<p>The keyword argument <code>dpi=</code> specifies how many dots per inch (image resolution) are in the saved image. <code>dpi=72</code> is fine for web images. <code>dpi=300</code> is probably better for an image designed to go in a written report or <strong>_.pdf</strong> document. </p>
+<p>The keyword argument <code>bbox_inches='tight'</code> is optional. If the axis labels in the plot are cut off in the saved image, set <code>bbox_inches='tight'</code>.</p>
+<p>The following code section constructs a line plot and saves the plot to the image file <strong><em>plot.png</em></strong>.
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, include:</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline</p>
+<p><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;plotted x and y values&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;line 1&#39;</span><span class="p">])</span></p>
+<p><span class="c1">#save the figure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span></p>
+<p><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div></p>
+<p></div>
+</div>
+</div></p>
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../06.03-Line-Plots/" title="Line Plots" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Line Plots
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../06.05-Multi-Line-Plots/" title="Multi Line Plots" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Multi Line Plots
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2017 - 2018 Peter D. Kazarinoff
+          </div>
+        
+        powered by
+        <a href="http://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+  <div class="md-footer-social">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+      <a href="https://pcc.edu" class="md-footer-social__link fa fa-globe"></a>
+    
+      <a href="https://github.com/professorkazarinoff" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/pkazarinoff" class="md-footer-social__link fa fa-twitter"></a>
+    
+  </div>
+
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
+      
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+      
+    
+    
+      
+    
+  </body>
+</html>
