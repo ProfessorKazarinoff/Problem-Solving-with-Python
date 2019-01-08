@@ -78,13 +78,14 @@ pages:
         - Review Questions: 06-Plotting-with-Matplotlib/06.18-Review-Questions.md
     - Chapter 7 If Else Try Except:
         - Introduction: 07-If-Else-Try-Except/07.00-Introduction.md
-        - Selection Statements: 07-If-Else-Try-Except/07.01-Selection-Statements.md
+        - User Input: 07-If-Else-Try-Except/07.01-User-Input.md
         - If statements: 07-If-Else-Try-Except/07.02-If-Statements.md
-        - If Else Statements: 07-If-Else-Try-Except/07.03-If-Else-Statements.md
-        - Try-Except Statements: 07-If-Else-Try-Except/07.04-Try-Except-Statements.md
+        - Selection Statements: 07-If-Else-Try-Except/07.02-Selection-Statements.md
+        - If Else Statements: 07-If-Else-Try-Except/07.04-If-Else-Statements.md
         - Flowcharts: 07-If-Else-Try-Except/07.05-Flowcharts.md
-        - Summary: 07-If-Else-Try-Except/07.06-Summary.md
-        - Review Questions: 07-If-Else-Try-Except/07.07-Review-Questions.md
+        - Try-Except Statements: 07-If-Else-Try-Except/07.06-Try-Except-Statements.md
+        - Summary: 07-If-Else-Try-Except/07.07-Summary.md
+        - Review Questions: 07-If-Else-Try-Except/07.08-Review-Questions.md
     - Chapter 8 Loops:
         - Introduction: 08-Loops/08.00-Introduction.md
         - For Loops: 08-Loops/08.01-For-Loops.md
