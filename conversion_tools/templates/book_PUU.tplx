@@ -46,9 +46,12 @@ showstringspaces=false,
     % Ensure that by default, figures have no caption (until we provide a
     % proper Figure object with a Caption API and a way to capture that
     % in the conversion process - todo).
-    \usepackage{caption}
+    
+        \usepackage{caption}
     \DeclareCaptionLabelFormat{nolabel}{}
-    \captionsetup{labelformat=nolabel}
+    %\captionsetup{labelformat=nolabel}
+    % Adds label ``Figure 1.13 The Anaconda Prompt'' in front of each figure caption
+ \captionsetup[figure]{labelfont={bf},name={Figure},labelsep=period}
 
     \usepackage{adjustbox} % Used to constrain images to a maximum size
     \usepackage{xcolor} % Allow colors to be defined
