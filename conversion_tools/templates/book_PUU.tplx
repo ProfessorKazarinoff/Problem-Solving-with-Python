@@ -156,7 +156,15 @@ showstringspaces=false,
 ((* block title *))
 \title{Problem Solving with Python}
 \author{Peter D. Kazarinoff, PhD}
-\date{}
+\date{3.6 Edition}
+
+%  after the make title add in the copywrite page
+%    \maketitle
+%    
+%    \input{copywrite_page.tex}
+%    \newpage
+%    
+%    \tableofcontents
 ((* endblock title *))
 
 ((* block markdowncell scoped *))
