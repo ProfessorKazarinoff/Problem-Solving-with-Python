@@ -127,8 +127,8 @@ pages:
         - If statements: 07-If-Else-Try-Except/07.02-If-Statements.md
         - Selection Statements: 07-If-Else-Try-Except/07.02-Selection-Statements.md
         - If Else Statements: 07-If-Else-Try-Except/07.04-If-Else-Statements.md
-        - Flowcharts: 07-If-Else-Try-Except/07.05-Flowcharts.md
-        - Try-Except Statements: 07-If-Else-Try-Except/07.06-Try-Except-Statements.md
+        - Try-Except Statements: 07-If-Else-Try-Except/07.05-Try-Except-Statements.md
+        - Flowcharts: 07-If-Else-Try-Except/07.06-Flowcharts.md
         - Summary: 07-If-Else-Try-Except/07.07-Summary.md
         - Review Questions: 07-If-Else-Try-Except/07.08-Review-Questions.md
     - Chapter 8 Loops:
@@ -166,8 +166,8 @@ pages:
         - Bytes and Unicode Strings: 11-Python-and-External-Hardware/11.02-Bytes-and-Unicode-Strings.md
         - Controlling an LED with Python: 11-Python-and-External-Hardware/11.03-Controlling-an-LED.md
         - Reading a Sensor with Python: 11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python.md
-        - Summary: 11-Python-and-External-Hardware/11.08-Summary.md
-        - Review Questions: 11-Python-and-External-Hardware/11.09-Review-Questions.md
+        - Summary: 11-Python-and-External-Hardware/11.05-Summary.md
+        - Project Ideas: 11-Python-and-External-Hardware/11.06-Project-Ideas.md
     - Chapter 12 MicroPython:
         - Introduction: 12-MicroPython/12.00-Introduction.md
         - What is MicroPython?: 12-MicroPython/12.01-What-is-MicroPython.md
@@ -176,8 +176,8 @@ pages:
         - Blinking a LED: 12-MicroPython/12.04-Blinking-a-LED.md
         - Reading a Sensor: 12-MicroPython/12.05-Reading-a-Sensor.md
         - Uploading Code: 12-MicroPython/12.06-Uploading-Code.md
-        - Summary: 12-MicroPython/12.08-Summary.md
-        - Review Questions: 12-MicroPython/12.09-Review-Questions.md
+        - Summary: 12-MicroPython/12.07-Summary.md
+        - Project Ideas: 12-MicroPython/12.08-Project-Ideas.md
     - Appendix:
         - Contents: 99-Appendix/99.00-Appendix.md
         - Reserved and Keywords in Python: 99-Appendix/99.01-Reserved-and-Key-Words-in-Python.md
