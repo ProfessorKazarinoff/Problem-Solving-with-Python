@@ -1317,8 +1317,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-If-Else-Try-Except/07.05-Flowcharts/" title="Flowcharts" class="md-nav__link">
-      Flowcharts
+    <a href="../../07-If-Else-Try-Except/07.05-Try-Except-Statements/" title="Try-Except Statements" class="md-nav__link">
+      Try-Except Statements
     </a>
   </li>
 
@@ -1329,8 +1329,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-If-Else-Try-Except/07.06-Try-Except-Statements/" title="Try-Except Statements" class="md-nav__link">
-      Try-Except Statements
+    <a href="../../07-If-Else-Try-Except/07.06-Flowcharts/" title="Flowcharts" class="md-nav__link">
+      Flowcharts
     </a>
   </li>
 
@@ -1833,7 +1833,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../11-Python-and-External-Hardware/11.08-Summary/" title="Summary" class="md-nav__link">
+    <a href="../../11-Python-and-External-Hardware/11.05-Summary/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -1845,8 +1845,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../11-Python-and-External-Hardware/11.09-Review-Questions/" title="Review Questions" class="md-nav__link">
-      Review Questions
+    <a href="../../11-Python-and-External-Hardware/11.06-Project-Ideas/" title="Project Ideas" class="md-nav__link">
+      Project Ideas
     </a>
   </li>
 
@@ -2056,7 +2056,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../12.08-Summary/" title="Summary" class="md-nav__link">
+    <a href="../12.07-Summary/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -2068,8 +2068,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../12.09-Review-Questions/" title="Review Questions" class="md-nav__link">
-      Review Questions
+    <a href="../12.08-Project-Ideas/" title="Project Ideas" class="md-nav__link">
+      Project Ideas
     </a>
   </li>
 
@@ -2478,18 +2478,18 @@ Documents/micropython
 (micropython) &gt; esptool --help
 </code></pre>
 
-<p><img alt="esptool help" src="../images/esptool_help.PNG" /></p>
+<p><img alt="Anaconda Prompt: Result of esptool --help command" src="../images/esptool_help.PNG" /></p>
 <p>Before uploading the <strong><em>.bin</em></strong> firmware file to the ESP8266-based microcontoller, it is best practice to first erase the flash memory on the board using the command <code>esptool erase_flash</code>. Make sure to specify the <code>--port</code>. The argument after <code>--port</code> is the <code>COM</code> port assigned to the ESP8266 board shown in the Windows Device Manager.  This port often comes up as <code>COM4</code>.</p>
 <pre><code class="text">(micropython) &gt; esptool --port COM4 erase_flash
 </code></pre>
 
-<p><img alt="esptool erase flash" src="../images/esptool_erase_flash.PNG" /></p>
+<p><img alt="Anaconda Prompt: esptool erase_flash command" src="../images/esptool_erase_flash.PNG" /></p>
 <p>Now you can finally write the <strong><em>.bin</em></strong> firmware file to the flash memory on the microcontroller using the <code>esptool write_flash</code> command. Make sure to use the exact firmware file name you see sitting in the <code>micropython</code> directory. The port needs to be set corresponding to the port you found in the Windows Device Manager. <code>---baud</code> is the baud rate or upload speed. I found that <code>--baud 460800</code> worked, but you could also specify <code>--baud 115200</code> which is slower. The upload time was a matter of seconds with either baud rate. The <code>0</code> after <code>--flash_size=dectect</code> means the firmware is written at the start of the flash memory (the 0th position) on the board. Again, make sure the <strong><em>.bin</em></strong> firmware file name is correct. The long file name is easy to mistype.</p>
 <pre><code class="text">(micropython) &gt; esptool --port COM4 --baud 115200 write_flash \
 --flash_size=detect 0 esp8266-20171101-v1.9.3.bin
 </code></pre>
 
-<p><img alt="Use esptool to upload MicroPython firmware" src="../images/esptool_write_flash.PNG" /></p>
+<p><img alt="Anaconda Prompt: esptool upload command" src="../images/esptool_write_flash.PNG" /></p>
 <h3 id="download-and-install-putty-a-serial-monitor">Download and install PuTTY, a serial monitor</h3>
 <p>Now that MicroPython is installed on the ESP8266-based microcontroller, we can communicate with our board over a serial connection. However, Windows doesn't have a built-in serial monitor (like <strong>screen</strong> on MacOS and Linux). Therefore, if you are using the Windows operating system, you need to download and install a serial communication tool like <strong>PuTTY</strong>.</p>
 <p>PuTTY is a lightweight serial and SSH client for Windows. PuTTY provides an interface to communicate with the ESP8266-based microcontroller. <a href="https://www.putty.org/">PuTTY can be downloaded here</a>. PuTTY is pretty small, and the download and installation are quick.</p>
@@ -2510,7 +2510,7 @@ Problem Solving with MicroPython!
 'esp8266'
 </code></pre>
 
-<p><img alt=".result of commands typed in the MicroPython REPL" src="../images/sys_dot_platform.PNG" /></p>
+<p><img alt="Results of commands typed in the MicroPython REPL" src="../images/sys_dot_platform.PNG" /></p>
                 
                   
                 

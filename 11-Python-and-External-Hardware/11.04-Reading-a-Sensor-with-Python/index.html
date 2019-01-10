@@ -1317,8 +1317,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-If-Else-Try-Except/07.05-Flowcharts/" title="Flowcharts" class="md-nav__link">
-      Flowcharts
+    <a href="../../07-If-Else-Try-Except/07.05-Try-Except-Statements/" title="Try-Except Statements" class="md-nav__link">
+      Try-Except Statements
     </a>
   </li>
 
@@ -1329,8 +1329,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-If-Else-Try-Except/07.06-Try-Except-Statements/" title="Try-Except Statements" class="md-nav__link">
-      Try-Except Statements
+    <a href="../../07-If-Else-Try-Except/07.06-Flowcharts/" title="Flowcharts" class="md-nav__link">
+      Flowcharts
     </a>
   </li>
 
@@ -1944,7 +1944,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../11.08-Summary/" title="Summary" class="md-nav__link">
+    <a href="../11.05-Summary/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -1956,8 +1956,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../11.09-Review-Questions/" title="Review Questions" class="md-nav__link">
-      Review Questions
+    <a href="../11.06-Project-Ideas/" title="Project Ideas" class="md-nav__link">
+      Project Ideas
     </a>
   </li>
 
@@ -2076,7 +2076,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-MicroPython/12.08-Summary/" title="Summary" class="md-nav__link">
+    <a href="../../12-MicroPython/12.07-Summary/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -2088,8 +2088,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-MicroPython/12.09-Review-Questions/" title="Review Questions" class="md-nav__link">
-      Review Questions
+    <a href="../../12-MicroPython/12.08-Project-Ideas/" title="Project Ideas" class="md-nav__link">
+      Project Ideas
     </a>
   </li>
 
@@ -2393,17 +2393,17 @@
 <p>Connect the potentiometer sensor to the Arduino using a resistor, wires and a breadboard. The middle pin of the potentiometer is connected to pin A0 on the Arduino (green wire). Connect the LED to the Arduino. Note the long lead of the LED is connected to PIN13 on the Arduino (yellow wire) and the short lead of the LED is connected through a resistor to ground (black wire). If the LED is wired backward, the LED will not turn on.</p>
 <p>In the hardware schematic, the blue square with an arrow on it is a potentiometer. , and the user knows when the sensor signal changes because the user has turned the potentiometer dial.</p>
 <p>The hardware schematic describes how to the Arduino, LED, resistor, and potentiometer are connected with jumper wires and a breadboard.
-<img alt="Arduino with potentiometer" src="../images/redboard_pot_led_fritzing.png" /></p>
+<img alt="Arduino with potentiometer and LED on a breadboard" src="../images/redboard_pot_led_fritzing.png" /></p>
 <h3 id="upload-code-to-the-arduino">Upload code to the Arduino</h3>
 <p>Once the LED and potentiometer are hooked up the Arduino, upload the following code to the Arduino using the Arduino IDE. Note that Arduinos don't use the Python programming language. The programming language used by Arduinos is a variant of the C programming language.</p>
 <p>The Arduino sketch below (an Arduino program is called a sketch) accomplishes a couple things. First, the Arduino reads the potentiometer sensor value and stores the sensor value in the variable <code>sensorValue</code>. Next, the Arduino sends the sensor value over the serial line (as a byte string). Finally, <code>sensorValue</code> is compared to <code>500</code>. If <code>sensorValue</code> is less than <code>500</code>, the LED stays off. If <code>sensorValue</code> is greater than <code>500</code>, the LED turn on. The read-send-compare process repeats in a loop.</p>
 <pre><code class="text">// potentiometer_read.ino
 // reads a potentiometer and sends value over serial
-int sensorPin = A0;    // The potentiometer is connected to analog pin 0                  
-int ledPin = 13;      // The LED is connected to digital pin 13
-int sensorValue;     // an integer variable to store the potentiometer reading
+int sensorPin = A0;  // The potentiometer on pin 0                  
+int ledPin = 13;     // The LED is connected on pin 13
+int sensorValue;     // variable to stores data
 
-void setup() // this function runs once when the sketch starts
+void setup() // runs once when the sketch starts
 {
   // make the LED pin (pin 13) an output pin
   pinMode(ledPin, OUTPUT);
@@ -2412,12 +2412,12 @@ void setup() // this function runs once when the sketch starts
   Serial.begin(9600);
 }
 
-void loop() // this function runs repeatedly after setup() finishes
+void loop() // runs repeatedly after setup() finishes
 {
-  sensorValue = analogRead(sensorPin);  // read the voltage at pin A0   
-  Serial.println(sensorValue);         // Output sensor value to Serial Monitor
+  sensorValue = analogRead(sensorPin);  // read pin A0   
+  Serial.println(sensorValue);         // send data to serial
 
-  if (sensorValue &lt; 500) {            // if sensor reading is less than 500,
+  if (sensorValue &lt; 500) {            // less than 500?
     digitalWrite(ledPin, LOW); }     // Turn the LED off
 
   else {                               // if sensor reading is greater than 500
@@ -2569,7 +2569,7 @@ plt.show()
           </a>
         
         
-          <a href="../11.08-Summary/" title="Summary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../11.05-Summary/" title="Summary" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">

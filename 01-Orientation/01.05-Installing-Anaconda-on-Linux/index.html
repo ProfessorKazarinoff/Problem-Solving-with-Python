@@ -1421,8 +1421,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-If-Else-Try-Except/07.05-Flowcharts/" title="Flowcharts" class="md-nav__link">
-      Flowcharts
+    <a href="../../07-If-Else-Try-Except/07.05-Try-Except-Statements/" title="Try-Except Statements" class="md-nav__link">
+      Try-Except Statements
     </a>
   </li>
 
@@ -1433,8 +1433,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../07-If-Else-Try-Except/07.06-Try-Except-Statements/" title="Try-Except Statements" class="md-nav__link">
-      Try-Except Statements
+    <a href="../../07-If-Else-Try-Except/07.06-Flowcharts/" title="Flowcharts" class="md-nav__link">
+      Flowcharts
     </a>
   </li>
 
@@ -1937,7 +1937,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../11-Python-and-External-Hardware/11.08-Summary/" title="Summary" class="md-nav__link">
+    <a href="../../11-Python-and-External-Hardware/11.05-Summary/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -1949,8 +1949,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../11-Python-and-External-Hardware/11.09-Review-Questions/" title="Review Questions" class="md-nav__link">
-      Review Questions
+    <a href="../../11-Python-and-External-Hardware/11.06-Project-Ideas/" title="Project Ideas" class="md-nav__link">
+      Project Ideas
     </a>
   </li>
 
@@ -2069,7 +2069,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-MicroPython/12.08-Summary/" title="Summary" class="md-nav__link">
+    <a href="../../12-MicroPython/12.07-Summary/" title="Summary" class="md-nav__link">
       Summary
     </a>
   </li>
@@ -2081,8 +2081,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../12-MicroPython/12.09-Review-Questions/" title="Review Questions" class="md-nav__link">
-      Review Questions
+    <a href="../../12-MicroPython/12.08-Project-Ideas/" title="Project Ideas" class="md-nav__link">
+      Project Ideas
     </a>
   </li>
 
@@ -2401,20 +2401,18 @@
 </ol>
 <h3 id="1-visit-the-anaconda-downloads-page">1. Visit the Anaconda downloads page</h3>
 <p>Go to the following link: <a href="https://www.anaconda.com/download/">Anaconda.com/downloads</a></p>
-<p>The Anaconda Downloads Page will look something like this:</p>
-<p><img alt="Anaconda Downloads Page" src="../images/anaconda_download_page.png" /></p>
 <h3 id="2-select-linux">2. Select Linux</h3>
 <p>On the downloads page, select the Linux operating system</p>
-<p><img alt="anaconda_install_linux" src="../images/Anaconda_download_linux.png" /></p>
+<p><img alt="Anaconda downloads page operating systems option. Notice Linux is selected" src="../images/Anaconda_download_linux.png" /></p>
 <h3 id="3-copy-the-bash-sh-file-installer-link">3. Copy the bash (.sh file) installer link</h3>
 <p>In the <strong>Python 3.6 Version* </strong> box, right-click on the [64-Bit(x86) Installer] link. Select [copy link address].</p>
-<p><img alt="Anaconda installation on Linux copy link address" src="../images/anaconda_install_linux_copy_link_address.png" /></p>
+<p><img alt="Anaconda installation on Linux, Copy the download link address." src="../images/anaconda_install_linux_copy_link_address.png" /></p>
 <h3 id="4-use-wget-to-download-the-bash-installer">4. Use <code>wget</code> to download the bash installer</h3>
-<p>Now that the bash installer (.sh file) link is stored on the clipboard, use <code>wget</code> to download the installer script. In a terminal, <code>cd</code> into the home directory and make a new directory called <code>tmp</code>. <code>cd</code> into <code>tmp</code> and use <code>wget</code> to download the installer. Although the installer is a bash script, it is still quite large and the download will not be immediate.</p>
+<p>Now that the bash installer (.sh file) link is stored on the clipboard, use <code>wget</code> to download the installer script. In a terminal, <code>cd</code> into the home directory and make a new directory called <code>tmp</code>. <code>cd</code> into <code>tmp</code> and use <code>wget</code> to download the installer. Although the installer is a bash script, it is still quite large and the download will not be immediate (Note the link below includes <code>&lt;release&gt;</code>. the specific release depends on when you download the installer).</p>
 <pre><code class="text">$ cd ~
 $ mkdir tmp
 $ cd tmp
-$ wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh 
+$ https://repo.continuum.io/archive/Anaconda3&lt;release&gt;.sh
 </code></pre>
 
 <h3 id="5-run-the-bash-script-to-install-anaconda3">5. Run the bash script to install <strong>Anaconda3</strong></h3>
