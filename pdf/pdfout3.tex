@@ -378,12 +378,6 @@ showstringspaces=false,
     
     \maketitle
     
-
-    
-\input{copywrite_page.tex}
-\newpage
-
-    
     
     \tableofcontents
 
@@ -1528,13 +1522,14 @@ use \lstinline!wget! to download the installer script. In a terminal,
 \lstinline!tmp!. \lstinline!cd! into \lstinline!tmp! and use
 \lstinline!wget! to download the installer. Although the installer is a
 bash script, it is still quite large and the download will not be
-immediate.
+immediate (Note the link below includes \lstinline!<release>!. the
+specific release depends on when you download the installer).
 
 \begin{lstlisting}
 $ cd ~
 $ mkdir tmp
 $ cd tmp
-$ wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh 
+$ https://repo.continuum.io/archive/Anaconda3<release>.sh
 \end{lstlisting}
     
 
@@ -2227,25 +2222,25 @@ operation. (The underscore \lstinline!_! in Python is comparable to the
 
 A summary of the arithmetic operations in Python is below:
 
-\begin{longtable}[]{@{}lllll@{}}
+\begin{longtable}[]{@{}llll@{}}
 \toprule
-operator & name & description & example & result\tabularnewline
+operator & description & example & result\tabularnewline
 \midrule
 \endhead
-\lstinline!+! & addition & adds two numbers & \lstinline!2 + 3! &
+\lstinline!+! & addition & \lstinline!2 + 3! &
 \lstinline!5!\tabularnewline
-\lstinline!-! & subtraction & subtracts two numbers & \lstinline!8 - 6!
-& \lstinline!2!\tabularnewline
-\lstinline!-! & negation & negative number & \lstinline!-4! &
-\lstinline!-4!\tabularnewline
-\lstinline!*! & multiplication & multiplies two numbers &
-\lstinline!5 * 2! & \lstinline!10!\tabularnewline
-\lstinline!/! & division & divides two numbers & \lstinline!6 / 3! &
+\lstinline!-! & subtraction & \lstinline!8 - 6! &
 \lstinline!2!\tabularnewline
-\lstinline!**! & exponents & raises a number to a power &
-\lstinline!10**2! & \lstinline!100!\tabularnewline
-\lstinline!_! & underscore & returns last saved value &
-\lstinline!_ + 7! & \lstinline!107!\tabularnewline
+\lstinline!-! & negative number & \lstinline!-4! &
+\lstinline!-4!\tabularnewline
+\lstinline!*! & multiplication & \lstinline!5 * 2! &
+\lstinline!10!\tabularnewline
+\lstinline!/! & division & \lstinline!6 / 3! &
+\lstinline!2!\tabularnewline
+\lstinline!**! & raises a number to a power & \lstinline!10**2! &
+\lstinline!100!\tabularnewline
+\lstinline!_! & returns last saved value & \lstinline!_ + 7! &
+\lstinline!107!\tabularnewline
 \bottomrule
 \end{longtable}
     
@@ -4990,10 +4985,10 @@ use \textbf{homebrew} to install a separate non-system version of
 Python.
 
 To install a non-system version of Python with \textbf{homebrew}, key
-the following into the MacOS terminal:
+the following into the MacOS terminal. See the \textbf{homebrew}
+documentation at \href{https://brew.sh/}{https://brew.sh}.
 
 \begin{lstlisting}
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 $ brew install Python
 \end{lstlisting}
 
@@ -5178,13 +5173,13 @@ below:
 
 \begin{lstlisting}
 
-Copy/paste this URL into your browser when you connect for the first time,
+Copy/paste this URL into your browser when you connect ...
 
     to login with a token:
 
-        http://localhost:8888/?token=6bdef677d3503fbb23e1b4fa0c802e ...
+        http://localhost:8888/?token=6bdef677d3503fbb2 ...
 
-[I 16:14:12.661 NotebookApp] Accepting one-time-token-authenticated ...
+[I 16:14:12.661 NotebookApp] Accepting one-time-token ...
 \end{lstlisting}
 
 A web browser should open, and you should be able to see the
@@ -5549,13 +5544,12 @@ square brackets will be the link, the link address goes in the
 parenthesis.
 
 \begin{lstlisting}
-[Problem Solving with Python Book Link](https://problemsolvingwithpython.com/)
+[Python.org](https://python.org/)
 \end{lstlisting}
 
 produces
 
-\href{https://problemsolvingwithpython.com/}{Problem Solving with Python
-Book Link}
+\href{https://python.org}{Python.org}
 
 \subsubsection{Images}\label{images}
 
@@ -8434,7 +8428,7 @@ build the plot. NumPy is typically imported with the alias
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}1}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{c+c1}{\PYZsh{} include if using a Jupyter notebook}
         \PY{o}{\PYZpc{}}\PY{k}{matplotlib} inline
@@ -8451,7 +8445,7 @@ the parameters \lstinline!arange(start,stop,step)!. NumPy's
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{x} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{l+m+mf}{0.1}\PY{p}{)}
         \PY{n}{y} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sin}\PY{p}{(}\PY{n}{x}\PY{p}{)}
 \end{Verbatim}
 
@@ -8468,7 +8462,7 @@ to include the double parenthesis \lstinline!()! in
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{y}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 
@@ -8860,7 +8854,7 @@ below:
 
 
     \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{} Imports}
+{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{} Imports}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{c+c1}{\PYZsh{} Include if using a jupyter notebook. Remove if using a .py\PYZhy{}file.}
@@ -8886,7 +8880,7 @@ below:
         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sin(x)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}
             \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{pi} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}
-            \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}3}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi/2\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{7\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}3}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi/2\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{7\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} Show the plot}
@@ -17437,10 +17431,11 @@ The code for the Physical Pixel Sketch is shown below.
 
     
         \begin{lstlisting}
-//  Arduino IDE: File --> Examples --> 04.Communication --> PhysicalPixel
+// Arduino IDE: 
+// File -> Examples -> 04.Communication -> PhysicalPixel
 
-const int ledPin = 13; // the pin that the LED is attached to
-int incomingByte;      // a variable to read incoming serial data into
+const int ledPin = 13; // pin the LED is attached to
+int incomingByte;      // variable stores  serial data
 
 void setup() {
   // initialize serial communication:
@@ -17871,11 +17866,11 @@ process repeats in a loop.
         \begin{lstlisting}
 // potentiometer_read.ino
 // reads a potentiometer and sends value over serial
-int sensorPin = A0;    // The potentiometer is connected to analog pin 0                  
-int ledPin = 13;      // The LED is connected to digital pin 13
-int sensorValue;     // an integer variable to store the potentiometer reading
+int sensorPin = A0;  // The potentiometer on pin 0                  
+int ledPin = 13;     // The LED is connected on pin 13
+int sensorValue;     // variable to stores data
 
-void setup() // this function runs once when the sketch starts
+void setup() // runs once when the sketch starts
 {
   // make the LED pin (pin 13) an output pin
   pinMode(ledPin, OUTPUT);
@@ -17884,12 +17879,12 @@ void setup() // this function runs once when the sketch starts
   Serial.begin(9600);
 }
 
-void loop() // this function runs repeatedly after setup() finishes
+void loop() // runs repeatedly after setup() finishes
 {
-  sensorValue = analogRead(sensorPin);  // read the voltage at pin A0   
-  Serial.println(sensorValue);         // Output sensor value to Serial Monitor
+  sensorValue = analogRead(sensorPin);  // read pin A0   
+  Serial.println(sensorValue);         // send data to serial
   
-  if (sensorValue < 500) {            // if sensor reading is less than 500,
+  if (sensorValue < 500) {            // less than 500?
     digitalWrite(ledPin, LOW); }     // Turn the LED off
   
   else {                               // if sensor reading is greater than 500

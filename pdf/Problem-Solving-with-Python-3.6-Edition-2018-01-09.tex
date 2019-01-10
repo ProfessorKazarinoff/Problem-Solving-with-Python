@@ -374,32 +374,39 @@ showstringspaces=false,
 
     \begin{document}
     
+    %% Makes table of contents links black can pull out
+    %% for the kidlle version
+
     
     
     \maketitle
     
-
+    \input{copywrite_page.tex}
+    \newpage
     
-\input{copywrite_page.tex}
-\newpage
+    %% Makes table of contents links black can pull out
+    %% \table of contents outside of the {} for the kidlle version
+%    {
+%  \hypersetup{linkcolor=black}
+%  \tableofcontents
+%}
 
-    
-    
-    \tableofcontents
-
-
-    
-
-    
-        \chapter{Preface}\label{preface}
+\tableofcontents
     
 
+    
+        %\chapter{Preface}\label{preface}
+    
+\chapter*{Preface}\label{preface}
+	\addcontentsline{toc}{chapter}{Preface}
+
 
 
 
     
-        \section{Motivation}\label{motivation}
-    
+        %\section{Motivation}\label{motivation}
+     \section*{Motivation}\label{motivation}
+        \addcontentsline{toc}{section}{Motivation}
 
 
 
@@ -426,8 +433,8 @@ engineering education, students can continue to use Python for free.
 
 
     
-        \section{Acknowledgments}\label{acknowledgments}
-    
+        \section*{Acknowledgments}\label{acknowledgments}
+        \addcontentsline{toc}{section}{Acknowledgments}
 
 
 
@@ -450,9 +457,8 @@ website and into LaTeX for printing.
 
 
     
-        \section{Supporting Materials}\label{supporting-materials}
-    
-
+        \section*{Supporting Materials}\label{supporting-materials}
+        \addcontentsline{toc}{section}{Supporting Materials}
 
 
 
@@ -495,8 +501,8 @@ problems as well as quiz and exam question banks.
 
 
     
-        \section{Formatting Conventions}\label{formatting-conventions}
-    
+        \section*{Formatting Conventions}\label{formatting-conventions}
+        \addcontentsline{toc}{section}{Formatting Conventions}
 
 
 
@@ -697,7 +703,8 @@ the shell type \lstinline![shift]+[c]!
 
 
     
-        \section{Errata}\label{errata}
+        \section*{Errata}\label{errata}
+        \addcontentsline{toc}{section}{Errata}
     
 
 
@@ -1528,13 +1535,14 @@ use \lstinline!wget! to download the installer script. In a terminal,
 \lstinline!tmp!. \lstinline!cd! into \lstinline!tmp! and use
 \lstinline!wget! to download the installer. Although the installer is a
 bash script, it is still quite large and the download will not be
-immediate.
+immediate (Note the link below includes \lstinline!<release>!. the
+specific release depends on when you download the installer).
 
 \begin{lstlisting}
 $ cd ~
 $ mkdir tmp
 $ cd tmp
-$ wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh 
+$ https://repo.continuum.io/archive/Anaconda3<release>.sh
 \end{lstlisting}
     
 
@@ -2227,25 +2235,25 @@ operation. (The underscore \lstinline!_! in Python is comparable to the
 
 A summary of the arithmetic operations in Python is below:
 
-\begin{longtable}[]{@{}lllll@{}}
+\begin{longtable}[]{@{}llll@{}}
 \toprule
-operator & name & description & example & result\tabularnewline
+operator & description & example & result\tabularnewline
 \midrule
 \endhead
-\lstinline!+! & addition & adds two numbers & \lstinline!2 + 3! &
+\lstinline!+! & addition & \lstinline!2 + 3! &
 \lstinline!5!\tabularnewline
-\lstinline!-! & subtraction & subtracts two numbers & \lstinline!8 - 6!
-& \lstinline!2!\tabularnewline
-\lstinline!-! & negation & negative number & \lstinline!-4! &
-\lstinline!-4!\tabularnewline
-\lstinline!*! & multiplication & multiplies two numbers &
-\lstinline!5 * 2! & \lstinline!10!\tabularnewline
-\lstinline!/! & division & divides two numbers & \lstinline!6 / 3! &
+\lstinline!-! & subtraction & \lstinline!8 - 6! &
 \lstinline!2!\tabularnewline
-\lstinline!**! & exponents & raises a number to a power &
-\lstinline!10**2! & \lstinline!100!\tabularnewline
-\lstinline!_! & underscore & returns last saved value &
-\lstinline!_ + 7! & \lstinline!107!\tabularnewline
+\lstinline!-! & negative number & \lstinline!-4! &
+\lstinline!-4!\tabularnewline
+\lstinline!*! & multiplication & \lstinline!5 * 2! &
+\lstinline!10!\tabularnewline
+\lstinline!/! & division & \lstinline!6 / 3! &
+\lstinline!2!\tabularnewline
+\lstinline!**! & raises a number to a power & \lstinline!10**2! &
+\lstinline!100!\tabularnewline
+\lstinline!_! & returns last saved value & \lstinline!_ + 7! &
+\lstinline!107!\tabularnewline
 \bottomrule
 \end{longtable}
     
@@ -2347,28 +2355,28 @@ Try:
 
 The following trig functions are part of Python's \textbf{math} module:
 
-\begin{longtable}[]{@{}lllll@{}}
+\begin{longtable}[]{@{}llll@{}}
 \toprule
-trig function & name & description & example & result\tabularnewline
+trig function & description & example & result\tabularnewline
 \midrule
 \endhead
-\lstinline!math.pi! & pi & mathematical constant \(\pi\) &
+\lstinline!math.pi! &mathematical constant \(\pi\) &
 \lstinline!math.pi! & \lstinline!3.14!\tabularnewline
-\lstinline!math.sin()! & sine & sine of an angle in radians &
+\lstinline!math.sin()! & sine of an angle in radians &
 \lstinline!math.sin(4)! & \lstinline!9.025!\tabularnewline
-\lstinline!math.cos()! & cosine & cosine of an angle in radians &
+\lstinline!math.cos()! & cosine of an angle in radians &
 \lstinline!cos(3.1)! & \lstinline!400!\tabularnewline
-\lstinline!math.tan()! & tangent & tangent of an angle in radians &
+\lstinline!math.tan()! & tangent of an angle in radians &
 \lstinline!tan(100)! & \lstinline!2.0!\tabularnewline
-\lstinline!math.asin()! & arc sine & inverse sine, ouput in radians &
+\lstinline!math.asin()! & inverse sine, ouput in radians &
 \lstinline!math.sin(4)! & \lstinline!9.025!\tabularnewline
-\lstinline!math.acos()! & arc cosine & inverse cosine, ouput in radians
+\lstinline!math.acos()! & inverse cosine, ouput in radians
 & \lstinline!log(3.1)! & \lstinline!400!\tabularnewline
-\lstinline!math.atan()! & arc tangent & inverse tangent, ouput in
+\lstinline!math.atan()! & inverse tangent, ouput in
 radians & \lstinline!atan(100)! & \lstinline!2.0!\tabularnewline
-\lstinline!math.radians()! & radians conversion & degrees to radians &
+\lstinline!math.radians()! &  degrees to radians &
 \lstinline!math.radians(90)! & \lstinline!1.57!\tabularnewline
-\lstinline!math.degress()! & degree conversion & radians to degrees &
+\lstinline!math.degress()! &  radians to degrees &
 \lstinline!math.degrees(2)! & \lstinline!114.59!\tabularnewline
 \bottomrule
 \end{longtable}
@@ -4990,10 +4998,10 @@ use \textbf{homebrew} to install a separate non-system version of
 Python.
 
 To install a non-system version of Python with \textbf{homebrew}, key
-the following into the MacOS terminal:
+the following into the MacOS terminal. See the \textbf{homebrew}
+documentation at \href{https://brew.sh/}{https://brew.sh}.
 
 \begin{lstlisting}
-$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 $ brew install Python
 \end{lstlisting}
 
@@ -5178,13 +5186,13 @@ below:
 
 \begin{lstlisting}
 
-Copy/paste this URL into your browser when you connect for the first time,
+Copy/paste this URL into your browser when you connect ...
 
     to login with a token:
 
-        http://localhost:8888/?token=6bdef677d3503fbb23e1b4fa0c802e ...
+        http://localhost:8888/?token=6bdef677d3503fbb2 ...
 
-[I 16:14:12.661 NotebookApp] Accepting one-time-token-authenticated ...
+[I 16:14:12.661 NotebookApp] Accepting one-time-token ...
 \end{lstlisting}
 
 A web browser should open, and you should be able to see the
@@ -5549,13 +5557,12 @@ square brackets will be the link, the link address goes in the
 parenthesis.
 
 \begin{lstlisting}
-[Problem Solving with Python Book Link](https://problemsolvingwithpython.com/)
+[Python.org](https://python.org/)
 \end{lstlisting}
 
 produces
 
-\href{https://problemsolvingwithpython.com/}{Problem Solving with Python
-Book Link}
+\href{https://python.org}{Python.org}
 
 \subsubsection{Images}\label{images}
 
@@ -8835,9 +8842,9 @@ details to add include:
 \item
   \lstinline!ptl.grid(<True or False>)!
 \item
-  \lstinline!plt.xticks([list of tick locations, floats or ints],[list of tick labels, strings]!
+  \lstinline!plt.xticks([tick locations, floats or ints],[tick labels, strings]!
 \item
-  \lstinline!plt.yticks([list of tick locations, floats or ints],[list of tick labels, strings]!
+  \lstinline!plt.yticks([tick locations, floats or ints],[tick labels, strings]!
 \end{itemize}
 
 \subsubsection{5. Show the plot}\label{show-the-plot}
@@ -8859,8 +8866,8 @@ below:
 
 
 
-    \begin{Verbatim}[commandchars=\\\{\}]
-{\color{incolor}In [{\color{incolor}4}]:} \PY{c+c1}{\PYZsh{} Imports}
+       \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{c+c1}{\PYZsh{} Imports}
         \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k}{as} \PY{n+nn}{np}
         \PY{k+kn}{import} \PY{n+nn}{matplotlib}\PY{n+nn}{.}\PY{n+nn}{pyplot} \PY{k}{as} \PY{n+nn}{plt}
         \PY{c+c1}{\PYZsh{} Include if using a jupyter notebook. Remove if using a .py\PYZhy{}file.}
@@ -8886,7 +8893,7 @@ below:
         \PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{sin(x)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{xticks}\PY{p}{(}
             \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{pi}\PY{p}{,} \PY{n}{np}\PY{o}{.}\PY{n}{pi} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}
-            \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}3}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi/2\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{7\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
+            \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{0}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZdl{}3}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi/2\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{2\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{5\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{3\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{7\PYZdl{}}\PY{l+s+s1}{\PYZbs{}}\PY{l+s+s1}{pi\PYZdl{}/2}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
         \PY{n}{plt}\PY{o}{.}\PY{n}{grid}\PY{p}{(}\PY{k+kc}{True}\PY{p}{)}
         
         \PY{c+c1}{\PYZsh{} Show the plot}
@@ -17437,10 +17444,11 @@ The code for the Physical Pixel Sketch is shown below.
 
     
         \begin{lstlisting}
-//  Arduino IDE: File --> Examples --> 04.Communication --> PhysicalPixel
+// Arduino IDE: 
+// File -> Examples -> 04.Communication -> PhysicalPixel
 
-const int ledPin = 13; // the pin that the LED is attached to
-int incomingByte;      // a variable to read incoming serial data into
+const int ledPin = 13; // pin the LED is attached to
+int incomingByte;      // variable stores  serial data
 
 void setup() {
   // initialize serial communication:
@@ -17710,7 +17718,7 @@ user types \lstinline!q!, the program terminates.
 
     
         \begin{lstlisting}[language=Python]
-print('This is a program that allows a user to turn an LED on and off')
+print('This program allows a user to control an LED')
 print('type H to turn the LED on')
 print('type L to turn the LED off')
 print('type q to quit')
@@ -17871,11 +17879,11 @@ process repeats in a loop.
         \begin{lstlisting}
 // potentiometer_read.ino
 // reads a potentiometer and sends value over serial
-int sensorPin = A0;    // The potentiometer is connected to analog pin 0                  
-int ledPin = 13;      // The LED is connected to digital pin 13
-int sensorValue;     // an integer variable to store the potentiometer reading
+int sensorPin = A0;  // The potentiometer on pin 0                  
+int ledPin = 13;     // The LED is connected on pin 13
+int sensorValue;     // variable to stores data
 
-void setup() // this function runs once when the sketch starts
+void setup() // runs once when the sketch starts
 {
   // make the LED pin (pin 13) an output pin
   pinMode(ledPin, OUTPUT);
@@ -17884,18 +17892,18 @@ void setup() // this function runs once when the sketch starts
   Serial.begin(9600);
 }
 
-void loop() // this function runs repeatedly after setup() finishes
+void loop() // runs repeatedly after setup() finishes
 {
-  sensorValue = analogRead(sensorPin);  // read the voltage at pin A0   
-  Serial.println(sensorValue);         // Output sensor value to Serial Monitor
+  sensorValue = analogRead(sensorPin);  // read pin A0   
+  Serial.println(sensorValue);         // send data to serial
   
-  if (sensorValue < 500) {            // if sensor reading is less than 500,
+  if (sensorValue < 500) {            // less than 500?
     digitalWrite(ledPin, LOW); }     // Turn the LED off
   
-  else {                               // if sensor reading is greater than 500
+  else {                               // if greater than 500
     digitalWrite(ledPin, HIGH); }     // Keep the LED on
   
-  delay(100);             // Pause 100 milliseconds before next sensor reading
+  delay(100);             // Pause 100 milliseconds
 }
 \end{lstlisting}
     
@@ -18057,7 +18065,7 @@ expected output.
 \begin{lstlisting}[language=Python]
 # serial read using the Python REPL
 
-Type "help", "copyright", "credits" or "license" for more information.
+Type "help", "copyright", "credits" or "license"
 >>> import serial
 >>> import time
 >>> ser = serial.Serial('COM4',9600)
