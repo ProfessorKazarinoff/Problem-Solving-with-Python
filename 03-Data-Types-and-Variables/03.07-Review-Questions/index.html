@@ -2366,18 +2366,39 @@
 <p>Q03.11 Set <code>a=1</code> and <code>b=2</code>. What data type is <code>a*b</code>?</p>
 <p>Q03.12 What is <code>5.1</code> plus <code>0 + 3j</code>?</p>
 <p>Q03.13 What floating point number converts to the boolean <code>False?</code> Show this in code and the <code>bool()</code> function.</p>
-<p>Q03.14 Create the floating point number <span><span class="MathJax_Preview">0.001 \times 10^-0.2</span><script type="math/tex">0.001 \times 10^-0.2</script></span> and assign it to the variable <code>b</code>.</p>
+<p>Q03.14 Create the floating point number <span><span class="MathJax_Preview">0.001 \times 10^{-0.2}</span><script type="math/tex">0.001 \times 10^{-0.2}</script></span> and assign it to the variable <code>b</code>.</p>
 <p>Q03.15 Show that <code>3e2</code> is the same as <code>3E2</code> with the comparison operator <code>===</code></p>
 <h4 id="booleans">Booleans</h4>
 <p>Q03.20 Predict the output if the lines <code>n=5</code> and <code>(n&lt;3) and (n&lt;7)</code> are run. Then run the the two lines of code.</p>
-<p>Q03.21 Predict the output if the lines <code>ans='Yes'</code> and <code>ans=='Yes' or ans='No'</code>are run. Then run the the two lines of code.</p>
+<p>Q03.21 Predict the output if the lines of code below are run. Then run the code.</p>
+<pre><code class="python">&gt;&gt;&gt; ans='Yes'
+&gt;&gt;&gt; ans=='Yes' or ans='No'
+</code></pre>
+
 <p>Q03.22 Pick a number <code>n</code> to make the following statement <code>True</code>: <code>(2&lt;n) or (n==2+n)</code>Then run the code to show your number works.</p>
 <p>Q03.23 Pick a number <code>n</code> to make the following statement <code>False</code>: <code>not (n&lt;6) and (n&lt;4)</code> Then run the code to show your number works.</p>
 <p>Q03.24 Create the floating point number <span><span class="MathJax_Preview">0.001 \times 10^-0.2</span><script type="math/tex">0.001 \times 10^-0.2</script></span> and assign it to the variable <code>b</code>.</p>
 <p>Q03.25 Show that <code>(n&gt;5) and (n&lt;=10)</code> is equivalent to <code>5 &lt; n &lt;= 10</code> using the two different numbers for <code>n</code>.</p>
 <p>Q03.26 Show that <code>(n&lt;5) or (n&gt;=10)</code> is equivalent to <code>not(5 =&lt; n &lt; 10)</code> using the two different numbers for <code>n</code>.</p>
 <h4 id="strings">Strings</h4>
-<p>Q03.30 </p>
+<p>Q03.30 Define a string that contains the word <span><span class="MathJax_Preview">Problem</span><script type="math/tex">Problem</script></span>.</p>
+<p>Q03.31 Define one string as the word <span><span class="MathJax_Preview">Problem</span><script type="math/tex">Problem</script></span> and define another string as the word <span><span class="MathJax_Preview">Solving</span><script type="math/tex">Solving</script></span>. Combine these two strings to make the statement <span><span class="MathJax_Preview">Problem \ Solving</span><script type="math/tex">Problem \ Solving</script></span>.</p>
+<p>Q03.32 (a) Define a string that contains the number <span><span class="MathJax_Preview">8</span><script type="math/tex">8</script></span> and a string that contains the number <span><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span>. Combine these two strings with the plus operator <code>+</code>.</p>
+<p>(b) Define an integer as the number <span><span class="MathJax_Preview">8</span><script type="math/tex">8</script></span> and an integer as the number <span><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span> and combine these two integers with the plus operator <code>+</code></p>
+<p>(c) Explain why the output from (a) was different from the output of (b)</p>
+<p>(d) Multiply the strings <span><span class="MathJax_Preview">8</span><script type="math/tex">8</script></span> and <span><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span> with the multiplication operator <code>*</code>.  Compare the output to multiplying the integers <span><span class="MathJax_Preview">8</span><script type="math/tex">8</script></span> and <span><span class="MathJax_Preview">5</span><script type="math/tex">5</script></span>. Why is the out different?</p>
+<p>Q03.33 Complete the following index and slicing operations after the string <code>word = 'Problem'</code> is defined.</p>
+<p>(a) Pull out the letter <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span> from <code>word</code></p>
+<p>(b) Pull out the first three letters <span><span class="MathJax_Preview">Pro</span><script type="math/tex">Pro</script></span> from <code>word</code></p>
+<p>(c) Pull out the second through the fourth letters <span><span class="MathJax_Preview">rob</span><script type="math/tex">rob</script></span> from <code>word</code></p>
+<p>(d) Pull out every other letter from <code>word</code> starting with <span><span class="MathJax_Preview">P</span><script type="math/tex">P</script></span></p>
+<p>(e) Use indexing and slicing to ouput <code>word</code> backwards to produce <span><span class="MathJax_Preview">melborP</span><script type="math/tex">melborP</script></span>.</p>
+<p>Q03.34 Define the strings below:</p>
+<p>(a) Define a string <code>a</code> as <em>coffee</em>,  define a string <code>b</code> as <em>it's</em> and define a string <code>c</code> as <em>hot!</em> and string <code>d</code> as , (a comma).</p>
+<p>(b) Combine the strings <code>a</code>, <code>b</code> and <code>c</code> and <code>d</code> to produce the string <em>coffee, it's hot</em> (notice the comma)</p>
+<p>(c) Print out the statement <em>she said "coffee, it's hot"</em></p>
+<p>Q03.35 Create the string <code>path</code> with the value <em>C:\Users\Gabby\Documents</em></p>
+<p>Q04.36 Convert the string <code>Problem</code> to the list <code>['P','r','o','b','l','e','m']</code> without rewriting the list from scratch.</p>
 <h4 id="lists">Lists</h4>
 <p>Q03.40 Create a list that contains the numbers <span><span class="MathJax_Preview">1</span><script type="math/tex">1</script></span>, <span><span class="MathJax_Preview">2.9 \times 10^8</span><script type="math/tex">2.9 \times 10^8</script></span>, and the word <span><span class="MathJax_Preview">game</span><script type="math/tex">game</script></span>.</p>
 <p>Q03.41 Create a list that contains the words <span><span class="MathJax_Preview">problem</span><script type="math/tex">problem</script></span>, <span><span class="MathJax_Preview">solving</span><script type="math/tex">solving</script></span>, <span><span class="MathJax_Preview">with</span><script type="math/tex">with</script></span>, <span><span class="MathJax_Preview">python</span><script type="math/tex">python</script></span>.</p>
@@ -2441,17 +2462,17 @@ not f
 comp + 5
 </code></pre>
 
-<p>Q03.84 Run the following lines of code and explain the error in your own words, then write the lines of code to run without an error:</p>
+<p>Q03.85 Run the following lines of code and explain the error in your own words, then write the lines of code to run without an error:</p>
 <pre><code class="python">empty = ''
 bool(empty)
 </code></pre>
 
-<p>Q03.84 Run the following lines of code and explain the error in your own words, then write the lines of code to run without an error:</p>
+<p>Q03.86 Run the following lines of code and explain the error in your own words, then write the lines of code to run without an error:</p>
 <pre><code class="python">lst = [1,3,5]
 lst[1:3:2]
 </code></pre>
 
-<p>Q03.85 Run the following lines of code and explain the error in your own words, then write the lines of code to run without an error:</p>
+<p>Q03.87 Run the following lines of code and explain the error in your own words, then write the lines of code to run without an error:</p>
 <pre><code class="python">dict = ['key': 8, 'pair': 9]
 dict['key']
 </code></pre>

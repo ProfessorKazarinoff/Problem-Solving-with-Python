@@ -571,33 +571,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#string-indexing" title="String Indexing" class="md-nav__link">
-    String Indexing
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#negative-indexing" title="Negative Indexing" class="md-nav__link">
-    Negative Indexing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-slicing" title="String Slicing" class="md-nav__link">
-    String Slicing
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2267,33 +2240,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#string-indexing" title="String Indexing" class="md-nav__link">
-    String Indexing
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#negative-indexing" title="Negative Indexing" class="md-nav__link">
-    Negative Indexing
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#string-slicing" title="String Slicing" class="md-nav__link">
-    String Slicing
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2366,75 +2312,6 @@ False
 &gt;&gt;&gt; name2 = 'gabby'
 &gt;&gt;&gt; name1 == name2
 False
-</code></pre>
-
-<h3 id="string-indexing">String Indexing</h3>
-<p>String indexing is the process of pulling out specific characters from a string in a particular order. In Python, strings are indexed using square brackets <code>[ ]</code>. An important point to remember: <strong>Python counting starts at <code>0</code> and ends at <code>n-1</code></strong>. </p>
-<p>Consider the word below.</p>
-<pre><code class="text">Solution
-</code></pre>
-
-<p>The letter <code>S</code> is at the zero index, the letter <code>o</code> is at the first index. The last letter of the word <code>Solution</code> is <code>n</code>. <code>n</code> is in the seventh index. Even though the word <code>Solution</code> has eight letters, the last letter is in the seventh index. This is because Python indexing at <code>0</code> and ends at <code>n-1</code>.</p>
-<p><img alt="String index assignments" src="../images/string_indexing.png" /></p>
-<pre><code class="python">&gt;&gt;&gt; word = 'Solution'
-&gt;&gt;&gt; word[0]
-'S'
-</code></pre>
-
-<pre><code class="python">&gt;&gt;&gt; word[1]
-'o'
-</code></pre>
-
-<pre><code class="python">&gt;&gt;&gt; word[7]
-'n'
-</code></pre>
-
-<p>If the eighth index of the word <code>Solution</code> is called, an error is returned.</p>
-<pre><code class="python">&gt;&gt;&gt; word[8]
-
-IndexError: string index out of range
-</code></pre>
-
-<h4 id="negative-indexing">Negative Indexing</h4>
-<p>Placing a negative number inside of the square brackets pulls a character out of a string starting from the end of the string.</p>
-<pre><code class="python">&gt;&gt;&gt; word[-1]
-'n'
-</code></pre>
-
-<pre><code class="python">&gt;&gt;&gt; word[-2]
-'o'
-</code></pre>
-
-<p><img alt="Negative string index assignments" src="../images/reverse_string_indexing.png" /></p>
-<h3 id="string-slicing">String Slicing</h3>
-<p>A colon on the inside of the square brackets between two numbers indicates <em>through</em>. If the index <code>[0:3]</code> is called, the characters at positions <code>0</code> through <code>3</code> are returned. Remember Python counting starts at <code>0</code> and ends at <code>n-1</code>. So <code>[0:3]</code> indicates the first through third letters, which are indexes <code>0</code> to <code>2</code>.</p>
-<pre><code class="python">&gt;&gt;&gt; word[0:3]
-'Sol'
-</code></pre>
-
-<p>A colon by itself on the inside of square brackets indicates <em>all</em>.</p>
-<pre><code class="python">&gt;&gt;&gt; word[:]
-'Solution'
-</code></pre>
-
-<p>When three numbers are separated by two colons inside of square brackets, the numbers represent <em>start</em> : <em>stop</em> : <em>step</em>. But remember that Python counting starts at <code>0</code> and ends at <code>n-1</code>. </p>
-<pre><code class="python">&gt;&gt;&gt; word[0:7:2]  #start:stop:step
-'Slto'
-</code></pre>
-
-<p>When two colons are used inside of square brackets, and less than three numbers are specified, the missing numbers are set to their "defaults". The default start is <code>0</code>, the default stop is <code>n-1</code>, and the default step is <code>1</code>. </p>
-<p>The two code lines below produce the same output since <code>0</code> is the default start and <code>7</code> (n-1) is the default stop. Both lines of code use a step of <code>2</code>.</p>
-<pre><code class="python">&gt;&gt;&gt; word[0:7:2]
-'Slto'
-</code></pre>
-
-<pre><code class="python">&gt;&gt;&gt; word[::2]
-'Slto'
-</code></pre>
-
-<p>The characters that make up a string can be reversed by using the default start and stop values and specifying a step of <code>-1</code>.</p>
-<pre><code class="python">&gt;&gt;&gt; word[::-1]
-'noituloS'
 </code></pre>
                 
                   
