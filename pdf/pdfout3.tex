@@ -1844,7 +1844,7 @@ Q01.08 Which computer operating systems can Python be installed on?
 Q01.09 How much does Python cost to download and install?
 
 Q01.10 What are three subject areas that have seen a growth in the use
-of Python.
+of Python?
 
 Q01.11 Besides PyPI where else can problem solvers go to find Python
 packages, scripts, and utilities?
@@ -2786,187 +2786,6 @@ not equivalent.
 >>> name2 = 'gabby'
 >>> name1 == name2
 False
-\end{lstlisting}
-    
-
-
-
-
-    
-        \subsection{String Indexing}\label{string-indexing}
-
-String indexing is the process of pulling out specific characters from a
-string in a particular order. In Python, strings are indexed using
-square brackets \lstinline![ ]!. An important point to remember:
-\textbf{Python counting starts at \lstinline!0! and ends at
-\lstinline!n-1!}.
-
-Consider the word below.
-
-\begin{lstlisting}
-Solution
-\end{lstlisting}
-
-The letter \lstinline!S! is at the zero index, the letter \lstinline!o!
-is at the first index. The last letter of the word \lstinline!Solution!
-is \lstinline!n!. \lstinline!n! is in the seventh index. Even though the
-word \lstinline!Solution! has eight letters, the last letter is in the
-seventh index. This is because Python indexing at \lstinline!0! and ends
-at \lstinline!n-1!.
-
-\begin{figure}
-\centering
-\includegraphics{images/string_indexing.png}
-\caption{String index assignments}
-\end{figure}
-    
-
-
-
-
-    
-        \begin{lstlisting}[language=Python]
->>> word = 'Solution'
->>> word[0]
-'S'
-\end{lstlisting}
-    
-
-
-
-
-    
-        \begin{lstlisting}[language=Python]
->>> word[1]
-'o'
-\end{lstlisting}
-    
-
-
-
-
-    
-        \begin{lstlisting}[language=Python]
->>> word[7]
-'n'
-\end{lstlisting}
-    
-
-
-
-
-    
-        If the eighth index of the word \lstinline!Solution! is called, an error
-is returned.
-
-\begin{lstlisting}[language=Python]
->>> word[8]
-
-IndexError: string index out of range
-\end{lstlisting}
-    
-
-
-
-
-    
-        \subsubsection{Negative Indexing}\label{negative-indexing}
-
-Placing a negative number inside of the square brackets pulls a
-character out of a string starting from the end of the string.
-
-\begin{lstlisting}[language=Python]
->>> word[-1]
-'n'
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> word[-2]
-'o'
-\end{lstlisting}
-
-\begin{figure}
-\centering
-\includegraphics{images/reverse_string_indexing.png}
-\caption{Negative string index assignments}
-\end{figure}
-    
-
-
-
-
-    
-        \subsection{String Slicing}\label{string-slicing}
-
-A colon on the inside of the square brackets between two numbers
-indicates \emph{through}. If the index \lstinline![0:3]! is called, the
-characters at positions \lstinline!0! through \lstinline!3! are
-returned. Remember Python counting starts at \lstinline!0! and ends at
-\lstinline!n-1!. So \lstinline![0:3]! indicates the first through third
-letters, which are indexes \lstinline!0! to \lstinline!2!.
-
-\begin{lstlisting}[language=Python]
->>> word[0:3]
-'Sol'
-\end{lstlisting}
-    
-
-
-
-
-    
-        A colon by itself on the inside of square brackets indicates \emph{all}.
-
-\begin{lstlisting}[language=Python]
->>> word[:]
-'Solution'
-\end{lstlisting}
-    
-
-
-
-
-    
-        When three numbers are separated by two colons inside of square
-brackets, the numbers represent \emph{start} : \emph{stop} :
-\emph{step}. But remember that Python counting starts at \lstinline!0!
-and ends at \lstinline!n-1!.
-
-\begin{lstlisting}[language=Python]
->>> word[0:7:2]  #start:stop:step
-'Slto'
-\end{lstlisting}
-    
-
-
-
-
-    
-        When two colons are used inside of square brackets, and less than three
-numbers are specified, the missing numbers are set to their
-``defaults''. The default start is \lstinline!0!, the default stop is
-\lstinline!n-1!, and the default step is \lstinline!1!.
-
-The two code lines below produce the same output since \lstinline!0! is
-the default start and \lstinline!7! (n-1) is the default stop. Both
-lines of code use a step of \lstinline!2!.
-
-\begin{lstlisting}[language=Python]
->>> word[0:7:2]
-'Slto'
-\end{lstlisting}
-
-\begin{lstlisting}[language=Python]
->>> word[::2]
-'Slto'
-\end{lstlisting}
-
-The characters that make up a string can be reversed by using the
-default start and stop values and specifying a step of \lstinline!-1!.
-
-\begin{lstlisting}[language=Python]
->>> word[::-1]
-'noituloS'
 \end{lstlisting}
     
 
@@ -4030,6 +3849,187 @@ True
 
 
     
+        \subsection{String Indexing}\label{string-indexing}
+
+String indexing is the process of pulling out specific characters from a
+string in a particular order. In Python, strings are indexed using
+square brackets \lstinline![ ]!. An important point to remember:
+\textbf{Python counting starts at \lstinline!0! and ends at
+\lstinline!n-1!}.
+
+Consider the word below.
+
+\begin{lstlisting}
+Solution
+\end{lstlisting}
+
+The letter \lstinline!S! is at the zero index, the letter \lstinline!o!
+is at the first index. The last letter of the word \lstinline!Solution!
+is \lstinline!n!. \lstinline!n! is in the seventh index. Even though the
+word \lstinline!Solution! has eight letters, the last letter is in the
+seventh index. This is because Python indexing starts at \lstinline!0!
+and ends at \lstinline!n-1!.
+
+\begin{figure}
+\centering
+\includegraphics{images/string_indexing.png}
+\caption{String index assignments}
+\end{figure}
+    
+
+
+
+
+    
+        \begin{lstlisting}[language=Python]
+>>> word = 'Solution'
+>>> word[0]
+'S'
+\end{lstlisting}
+    
+
+
+
+
+    
+        \begin{lstlisting}[language=Python]
+>>> word[1]
+'o'
+\end{lstlisting}
+    
+
+
+
+
+    
+        \begin{lstlisting}[language=Python]
+>>> word[7]
+'n'
+\end{lstlisting}
+    
+
+
+
+
+    
+        If the eighth index of the word \lstinline!Solution! is called, an error
+is returned.
+
+\begin{lstlisting}[language=Python]
+>>> word[8]
+
+IndexError: string index out of range
+\end{lstlisting}
+    
+
+
+
+
+    
+        \subsubsection{Negative Indexing}\label{negative-indexing}
+
+Placing a negative number inside of the square brackets pulls a
+character out of a string starting from the end of the string.
+
+\begin{lstlisting}[language=Python]
+>>> word[-1]
+'n'
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> word[-2]
+'o'
+\end{lstlisting}
+
+\begin{figure}
+\centering
+\includegraphics{images/reverse_string_indexing.png}
+\caption{Negative string index assignments}
+\end{figure}
+    
+
+
+
+
+    
+        \subsection{String Slicing}\label{string-slicing}
+
+A colon on the inside of the square brackets between two numbers
+indicates \emph{through}. If the index \lstinline![0:3]! is called, the
+characters at positions \lstinline!0! through \lstinline!3! are
+returned. Remember Python counting starts at \lstinline!0! and ends at
+\lstinline!n-1!. So \lstinline![0:3]! indicates the first through third
+letters, which are indexes \lstinline!0! to \lstinline!2!.
+
+\begin{lstlisting}[language=Python]
+>>> word[0:3]
+'Sol'
+\end{lstlisting}
+    
+
+
+
+
+    
+        A colon by itself on the inside of square brackets indicates \emph{all}.
+
+\begin{lstlisting}[language=Python]
+>>> word[:]
+'Solution'
+\end{lstlisting}
+    
+
+
+
+
+    
+        When three numbers are separated by two colons inside of square
+brackets, the numbers represent \emph{start} : \emph{stop} :
+\emph{step}. But remember that Python counting starts at \lstinline!0!
+and ends at \lstinline!n-1!.
+
+\begin{lstlisting}[language=Python]
+>>> word[0:7:2]  #start:stop:step
+'Slto'
+\end{lstlisting}
+    
+
+
+
+
+    
+        When two colons are used inside of square brackets, and less than three
+numbers are specified, the missing numbers are set to their
+``defaults''. The default start is \lstinline!0!, the default stop is
+\lstinline!n-1!, and the default step is \lstinline!1!.
+
+The two code lines below produce the same output since \lstinline!0! is
+the default start and \lstinline!7! (n-1) is the default stop. Both
+lines of code use a step of \lstinline!2!.
+
+\begin{lstlisting}[language=Python]
+>>> word[0:7:2]
+'Slto'
+\end{lstlisting}
+
+\begin{lstlisting}[language=Python]
+>>> word[::2]
+'Slto'
+\end{lstlisting}
+
+The characters that make up a string can be reversed by using the
+default start and stop values and specifying a step of \lstinline!-1!.
+
+\begin{lstlisting}[language=Python]
+>>> word[::-1]
+'noituloS'
+\end{lstlisting}
+    
+
+
+
+
+    
         \section{Lists}\label{lists}
     
 
@@ -4485,7 +4485,7 @@ Q03.13 What floating point number converts to the boolean
 \lstinline!False?! Show this in code and the \lstinline!bool()!
 function.
 
-Q03.14 Create the floating point number \(0.001 \times 10^-0.2\) and
+Q03.14 Create the floating point number \(0.001 \times 10^{-0.2}\) and
 assign it to the variable \lstinline!b!.
 
 Q03.15 Show that \lstinline!3e2! is the same as \lstinline!3E2! with the
@@ -4501,9 +4501,13 @@ comparison operator \lstinline!===!
 Q03.20 Predict the output if the lines \lstinline!n=5! and
 \lstinline!(n<3) and (n<7)! are run. Then run the the two lines of code.
 
-Q03.21 Predict the output if the lines \lstinline!ans='Yes'! and
-\lstinline!ans=='Yes' or ans='No'!are run. Then run the the two lines of
-code.
+Q03.21 Predict the output if the lines of code below are run. Then run
+the code.
+
+\begin{lstlisting}[language=Python]
+>>> ans='Yes'
+>>> ans=='Yes' or ans='No'
+\end{lstlisting}
 
 Q03.22 Pick a number \lstinline!n! to make the following statement
 \lstinline!True!: \lstinline!(2<n) or (n==2+n)!Then run the code to show
@@ -4531,7 +4535,72 @@ Q03.26 Show that \lstinline!(n<5) or (n>=10)! is equivalent to
     
         \subsubsection{Strings}\label{strings}
 
-Q03.30
+Q03.30 Define a string that contains the word \(Problem\).
+
+Q03.31 Define one string as the word \(Problem\) and define another
+string as the word \(Solving\). Combine these two strings to make the
+statement \(Problem \ Solving\).
+
+Q03.32 (a) Define a string that contains the number \(8\) and a string
+that contains the number \(5\). Combine these two strings with the plus
+operator \lstinline!+!.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\item
+  Define an integer as the number \(8\) and an integer as the number
+  \(5\) and combine these two integers with the plus operator
+  \lstinline!+!
+\item
+  Explain why the output from (a) was different from the output of (b)
+\item
+  Multiply the strings \(8\) and \(5\) with the multiplication operator
+  \lstinline!*!. Compare the output to multiplying the integers \(8\)
+  and \(5\). Why is the out different?
+\end{enumerate}
+
+Q03.33 Complete the following index and slicing operations after the
+string \lstinline!word = 'Problem'! is defined.
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Pull out the letter \(P\) from \lstinline!word!
+\item
+  Pull out the first three letters \(Pro\) from \lstinline!word!
+\item
+  Pull out the second through the fourth letters \(rob\) from
+  \lstinline!word!
+\item
+  Pull out every other letter from \lstinline!word! starting with \(P\)
+\item
+  Use indexing and slicing to ouput \lstinline!word! backwards to
+  produce \(melborP\).
+\end{enumerate}
+
+Q03.34 Define the strings below:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Define a string \lstinline!a! as \emph{coffee}, define a string
+  \lstinline!b! as \emph{it's} and define a string \lstinline!c! as
+  \emph{hot!} and string \lstinline!d! as , (a comma).
+\item
+  Combine the strings \lstinline!a!, \lstinline!b! and \lstinline!c! and
+  \lstinline!d! to produce the string \emph{coffee, it's hot} (notice
+  the comma)
+\item
+  Print out the statement \emph{she said ``coffee, it's hot''}
+\end{enumerate}
+
+Q03.35 Create the string \lstinline!path! with the value
+\emph{C:\textbackslash{}Users\textbackslash{}Gabby\textbackslash{}Documents}
+
+Q04.36 Convert the string \lstinline!Problem! to the list
+\lstinline!['P','r','o','b','l','e','m']! without rewriting the list
+from scratch.
     
 
 
@@ -4712,7 +4781,7 @@ comp = 0.1 - 4.3i
 comp + 5
 \end{lstlisting}
 
-Q03.84 Run the following lines of code and explain the error in your own
+Q03.85 Run the following lines of code and explain the error in your own
 words, then write the lines of code to run without an error:
 
 \begin{lstlisting}[language=Python]
@@ -4720,7 +4789,7 @@ empty = ''
 bool(empty)
 \end{lstlisting}
 
-Q03.84 Run the following lines of code and explain the error in your own
+Q03.86 Run the following lines of code and explain the error in your own
 words, then write the lines of code to run without an error:
 
 \begin{lstlisting}[language=Python]
@@ -4728,7 +4797,7 @@ lst = [1,3,5]
 lst[1:3:2]
 \end{lstlisting}
 
-Q03.85 Run the following lines of code and explain the error in your own
+Q03.87 Run the following lines of code and explain the error in your own
 words, then write the lines of code to run without an error:
 
 \begin{lstlisting}[language=Python]
