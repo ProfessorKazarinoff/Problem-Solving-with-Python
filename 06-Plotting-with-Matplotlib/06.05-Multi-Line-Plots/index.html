@@ -1104,13 +1104,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#the-matplotlibs-object-oriented-interface_1" title="The Matplotlib's object-oriented interface" class="md-nav__link">
-    The Matplotlib's object-oriented interface
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2233,13 +2226,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#the-matplotlibs-object-oriented-interface_1" title="The Matplotlib's object-oriented interface" class="md-nav__link">
-    The Matplotlib's object-oriented interface
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -2271,20 +2257,12 @@
 <h3 id="the-matplotlibs-object-oriented-interface">The Matplotlib's object-oriented interface</h3>
 <p>An object-oriented plotting interface is an interface where components of the plot (like the axis, title, lines, markers, etc.) are treated as programmatic <em>objects</em> that have <em>attributes</em> and <em>methods</em> associated with them. To create a new <em>object</em> is called <em>instantiation</em>. Once an object is created, or <em>instantiated</em>, the properties of that object can be modified, and methods can be called on the object. The basic anatomy of a Matplotlib plot includes a couple of layers, each of these layers is a programming <em>object</em>:</p>
 <ul>
-<li>Figure Objects: The bottom layer. Think of the figure layer as the figure window which contains the minimize, maximize, close buttons. A figure can include one plot or multiple plots</li>
-<li>Plot Objects: A plot builds on the Figure layer. If there are multiple plots, each plot is called a subplot. </li>
-<li>Axis Objects: An axis is added to a Plot layer. Axis can be thought of as sets of x and y axis that lines and bars are drawn on. An Axis contains daughter attributes like axis labels, tick labels, and line thickness.</li>
-<li>Data Objects: data points, lines, shapes are plotted on an axis</li>
+<li>Figure objects: The bottom layer. Think of the figure layer as the figure window which contains the minimize, maximize, close buttons. A figure can include one plot or multiple plots.</li>
+<li>Plot objects: A plot builds on the Figure layer. If there are multiple plots, each plot is called a subplot. </li>
+<li>Axis objects: An axis is added to a Plot layer. Axis can be thought of as sets of x and y axis that lines and bars are drawn on. An Axis contains daughter attributes like axis labels, tick labels, and line thickness.</li>
+<li>Data objects: data points, lines, shapes are plotted on an axis.
+To build a figure object,  Matplotlib's <code>plt.subplot()</code> function is used. The <code>plt.subplot()</code> function creates both a figure <em>object</em> and an axis <em>object</em>. We say the <code>plt.subplot()</code> function <em>instantiates</em> a figure <em>object</em> and <em>instantiates</em> an axis object. For now, we'll leave the <code>subplot()</code> arguments blank. By default, the <code>subplot()</code> function creates a single figure object and a single axis object.  We'll call the figure object <code>fig</code> and the axis object <code>ax</code>. Note these two outputs of the <code>plt.subplots()</code> function are separated by a comma.</li>
 </ul>
-<h3 id="the-matplotlibs-object-oriented-interface_1">The Matplotlib's object-oriented interface</h3>
-<p>An object-oriented plotting interface is an interface where components of the plot (like the axis, title, lines, markers, etc.) are treated as programmatic <em>objects</em> that have <em>attributes</em> and <em>methods</em> associated with them. To create a new <em>object</em> is called <em>instantiation</em>. Once an object is created, or <em>instantiated</em>, the properties of that object can be modified, and methods can be called on the object. The basic anatomy of a Matplotlib plot includes a couple of layers, each of these layers is a programming <em>object</em>:</p>
-<ul>
-<li>Figure Objects: The bottom layer. Think of the figure layer as the figure window which contains the minimize, maximize, close buttons. A figure can include one plot or multiple plots</li>
-<li>Plot Objects: A plot builds on the Figure layer. If there are multiple plots, each plot is called a subplot. </li>
-<li>Axis Objects: An axis is added to a Plot layer. Axis can be thought of as sets of x and y axis that lines and bars are drawn on. An Axis contains daughter attributes like axis labels, tick labels, and line thickness.</li>
-<li>Data Objects: data points, lines, shapes are plotted on an axis</li>
-</ul>
-<p>To build a figure object,  Matplotlib's <code>plt.subplot()</code> function is used. The <code>plt.subplot()</code> function creates both a figure <em>object</em> and an axis <em>object</em>. We say the <code>plt.subplot()</code> function <em>instantiates</em> a figure <em>object</em> and <em>instantiates</em> an axis object. For now, we'll leave the <code>subplot()</code> arguments blank. By default, the <code>subplot()</code> function creates a single figure object and a single axis object.  We'll call the figure object <code>fig</code> and the axis object <code>ax</code>. Note these two outputs of the <code>plt.subplots()</code> function are separated by a comma.</p>
 <p>We have a figure object and axis object, but both of these objects are without attributes. We add elements to the axis object to build a plot. Let's create three NumPy arrays to add the three arrays to our axis object.</p>
 <p>The NumPy arrays <code>x</code>, <code>y</code>, and <code>z</code> can be added to axis object <code>ax</code>. We add a plot attribute (a line) to our axis object <code>ax</code> using the object-oriented structure <code>&lt;object&gt;.&lt;attribute&gt;</code>. In this case, <code>ax</code> is the object and <code>plot</code> is the attribute. The <code>plt.show()</code> line shows the plot on the screen.</p>
 <p>The next code section demonstrates how to build a multi-line plot with Matplotlib's object-oriented interface.
