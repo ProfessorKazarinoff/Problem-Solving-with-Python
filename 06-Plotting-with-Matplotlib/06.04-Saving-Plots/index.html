@@ -2227,13 +2227,13 @@
                   <h1>Saving plots</h1>
                 
                 <h2 id="saving-plots">Saving plots</h2>
-<p>Matplotlib plots can be saved with the <code>plt.savefig()</code> function. The <code>plt.savefig()</code> function needs to be called right above the <code>plt.show()</code> line. All the features of the plot must be specified before the plot is saved as an image file. If the figure is saved after the <code>plt.show()</code> command, the figure will not be saved until the plot window is closed. Calling <code>plt.savefig()</code> after calling <code>plt.show()</code> can be problematic when building plots in a Jupyter notebook with <code>%matplotlib inline</code> enabled.</p>
+<p>Matplotlib plots can be saved as image files using the <code>plt.savefig()</code> function. The <code>plt.savefig()</code> function needs to be called right above the <code>plt.show()</code> line. All the features of the plot must be specified before the plot is saved as an image file. If the figure is saved after the <code>plt.show()</code> command, the figure will not be saved until the plot window is closed. Calling <code>plt.savefig()</code> after calling <code>plt.show()</code> can be problematic when building plots in a Jupyter notebook with <code>%matplotlib inline</code> enabled.</p>
 <p>A standard <code>savefig()</code> command is:</p>
 <pre><code class="python">plt.savefig('plot.png', dpi=300, bbox_inches='tight')
 </code></pre>
 
 <p>Where <code>'plot.png'</code> is the name of the saved image file. Matplotlib will infer the image file format (.png, .jpg, etc) based on the extension specified as part of the filename. </p>
-<p>The keyword argument <code>dpi=</code> specifies how many dots per inch (image resolution) are in the saved image. <code>dpi=72</code> is fine for web images. <code>dpi=300</code> is probably better for an image designed to go in a written report or <strong>_.pdf</strong> document. </p>
+<p>The keyword argument <code>dpi=</code> specifies how many dots per inch (image resolution) are in the saved image. <code>dpi=72</code> is fine for web images. <code>dpi=300</code> is probably better for an image designed to go in a written report or <strong><em>.pdf</em></strong> document. </p>
 <p>The keyword argument <code>bbox_inches='tight'</code> is optional. If the axis labels in the plot are cut off in the saved image, set <code>bbox_inches='tight'</code>.</p>
 <p>The following code section constructs a line plot and saves the plot to the image file <strong><em>plot.png</em></strong>.
 <div class="cell border-box-sizing code_cell rendered">
