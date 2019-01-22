@@ -2227,12 +2227,12 @@
                   <h1>Saving plots</h1>
                 
                 <h2 id="saving-plots">Saving plots</h2>
-<p>Matplotlib plots can be saved as image files using the <code>plt.savefig()</code> function. The <code>plt.savefig()</code> function needs to be called right above the <code>plt.show()</code> line. All the features of the plot must be specified before the plot is saved as an image file. If the figure is saved after the <code>plt.show()</code> command, the figure will not be saved until the plot window is closed. Calling <code>plt.savefig()</code> after calling <code>plt.show()</code> can be problematic when building plots in a Jupyter notebook with <code>%matplotlib inline</code> enabled.</p>
+<p>Matplotlib plots can be saved as image files using the <code>plt.savefig()</code> function. The <code>plt.savefig()</code> function needs to be called right above the <code>plt.show()</code> line. All the features of the plot must be specified before the plot is saved as an image file. If the figure is saved after the <code>plt.show()</code> command; the figure will not be saved until the plot window is closed. Calling <code>plt.savefig()</code> after calling <code>plt.show()</code> can be problematic when building plots in a Jupyter notebook with <code>%matplotlib inline</code> enabled.</p>
 <p>A standard <code>savefig()</code> command is:</p>
 <pre><code class="python">plt.savefig('plot.png', dpi=300, bbox_inches='tight')
 </code></pre>
 
-<p>Where <code>'plot.png'</code> is the name of the saved image file. Matplotlib will infer the image file format (.png, .jpg, etc) based on the extension specified as part of the filename. </p>
+<p>Where <code>'plot.png'</code> is the name of the saved image file. Matplotlib infers the image file format (.png, .jpg, etc) based on the extension specified in the filename. </p>
 <p>The keyword argument <code>dpi=</code> specifies how many dots per inch (image resolution) are in the saved image. <code>dpi=72</code> is fine for web images. <code>dpi=300</code> is probably better for an image designed to go in a written report or <strong><em>.pdf</em></strong> document. </p>
 <p>The keyword argument <code>bbox_inches='tight'</code> is optional. If the axis labels in the plot are cut off in the saved image, set <code>bbox_inches='tight'</code>.</p>
 <p>The following code section constructs a line plot and saves the plot to the image file <strong><em>plot.png</em></strong>.
@@ -2245,13 +2245,13 @@
 <span class="c1"># if using a Jupyter notebook, include:</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline</p>
 <p><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x values&#39;</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span></p>
+<p><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span></p>
+<p><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x values&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y values&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;plotted x and y values&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;line 1&#39;</span><span class="p">])</span></p>
-<p><span class="c1">#save the figure</span>
+<p><span class="c1"># save the figure</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;plot.png&#39;</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span></p>
 <p><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div></p>

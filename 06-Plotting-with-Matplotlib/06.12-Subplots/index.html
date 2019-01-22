@@ -2227,8 +2227,8 @@
                   <h1>Subplots</h1>
                 
                 <h2 id="subplots">Subplots</h2>
-<p>Sometimes it is useful for problem solvers to include a couple plots side by side. This can be done in Matplotlib using <em>subplots</em>. Matplotlib's <code>plt.subplot()</code> function can include two positional arguments for the number of rows of plots in the figure and the number of columns of plots in the figure. The general format is:</p>
-<pre><code class="python">fig, &lt;ax objects&gt; = plt.subplots(rows,cols)
+<p>Sometimes it is useful for problem solvers to include a couple plots in the same figure window. This can be done in Matplotlib using <em>subplots</em>. Matplotlib's <code>plt.subplot()</code> function can include two positional arguments for the number of rows of subplots in the figure and the number of columns of subplots in the figure. The general format is:</p>
+<pre><code class="python">fig, &lt;ax objects&gt; = plt.subplots(rows, cols)
 </code></pre>
 
 <p>Where <code>rows</code> and <code>cols</code> denote how the subplots are laid out. The <code>&lt;ax objects&gt;</code> needs to have dimensions that correspond to <code>rows</code> and <code>cols</code>.</p>
@@ -2237,19 +2237,72 @@
 </code></pre>
 
 <p>If a 2 row by 3 column array of plots is created, the <code>&lt;ax objects&gt;</code> must be arrayed to correspond to these dimensions:</p>
-<pre><code class="python">fig, ( (ax1,ax2,a3), (ax4,ax5,ax6) ) = plt.subplots(2,3)   
+<pre><code class="python">fig, ( (ax1,ax2,a3), (ax4,ax5,ax6) ) = plt.subplots(2, 3)   
 </code></pre>
 
-<p>The code section below builds a 2 row by 2 column array of subplots in one figure. The axes of each subplt is scaled in a different way.
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="c1"># if using a Jupyter notebook, include:</span>
-<span class="o">%</span><span class="k">matplotlib</span> inline</p>
+<p>The code section below builds a 2 row by 2 column array of subplots in one figure. The axes of each subplot is scaled in a different way. A table of different ways to scale axis in Matplotlib plots is below.</p>
+<table>
+<thead>
+<tr>
+<th>Matplotlib method</th>
+<th>axis scaling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ax.plot()</code></td>
+<td>linear x, linear y</td>
+</tr>
+<tr>
+<td><code>ax.semilogy()</code></td>
+<td>linear x, logarithmic y</td>
+</tr>
+<tr>
+<td><code>ax.semilogx()</code></td>
+<td>logarithmic x, linear y</td>
+</tr>
+<tr>
+<td><code>ax.loglog()</code></td>
+<td>logarithmic x, logarithmic y</td>
+</tr>
+<tr>
+<td><div class="cell border-box-sizing code_cell rendered"></td>
+<td></td>
+</tr>
+<tr>
+<td><div class="input"></td>
+<td></td>
+</tr>
+<tr>
+<td><div class="prompt input_prompt">In&nbsp;[1]:</div></td>
+<td></td>
+</tr>
+<tr>
+<td><div class="inner_cell"></td>
+<td></td>
+</tr>
+<tr>
+<td><div class="input_area"></td>
+<td></td>
+</tr>
+<tr>
+<td><div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="c1"># if using a Jupyter notebook, include:</span></td>
+<td></td>
+</tr>
+<tr>
+<td><span class="o">%</span><span class="k">matplotlib</span> inline</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <p><span class="c1"># Data for plotting</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">20.0</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">)</span></p>
 <p><span class="c1"># Create a figure with 2 rows and 2 cols of subplots</span>

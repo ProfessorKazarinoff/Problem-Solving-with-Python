@@ -1116,6 +1116,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tick-labels" title="Tick Labels" class="md-nav__link">
+    Tick Labels
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2351,6 +2358,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#tick-labels" title="Tick Labels" class="md-nav__link">
+    Tick Labels
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -2434,7 +2448,7 @@
 <p>Line plots can be created in Python with Matplotlib's <code>pyplot</code> library.
 To build a line plot, first import Matplotlib.  It is a standard convention to import Matplotlib's <code>pyplot</code> library as <code>plt</code>. The <code>plt</code> alias will be familiar to other Python programmers.</p>
 <p>If using a Jupyter notebook include the line <code>%matplotlib inline</code> after the imports. <code>%matplotlib inline</code> is a Jupyter notebook magic command which causes Matplotlib plots to display directly inside Jupyter notebook output cells. </p>
-<p>We will also use NumPy, a numerical computing library for Python, to build the plot. NumPy is typically imported with the alias <code>np</code>.
+<p>To build our first plot, we will use NumPy, a numerical computing library for Python. NumPy is typically imported with the alias <code>np</code>.
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -2449,7 +2463,7 @@ To build a line plot, first import Matplotlib.  It is a standard convention to i
 </div>
 </div></p>
 <p></div>
-NumPy's <code>arange()</code> function creates an array of numbers with the parameters <code>arange(start,stop,step)</code>. NumPy's <code>sin()</code> and <code>pi</code> functions do what you expect.
+NumPy's <code>np.arange()</code> function creates an array of numbers with the parameters <code>np.arange(start,stop,step)</code>. NumPy's <code>np.sin()</code> and <code>np.pi</code> functions do what you expect.
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
@@ -2498,9 +2512,9 @@ To create a line plot, pass an array or list of numbers as an <em>argument</em> 
 </div>
 
 <h3 id="features-of-a-matplotlib-plot">Features of a Matplotlib plot</h3>
-<p>A variety of features on a Matplotlib plot can be specified. The following is a list of commonly specified features:</p>
+<p>A variety of features on a Matplotlib plot can be specified. The following is a list of commonly defined features:</p>
 <h4 id="line-color-line-width-line-style-line-opacity-and-marker-options">Line Color, Line Width, Line Style, Line Opacity and Marker Options</h4>
-<p>The color, width and style of line in a plot can be specificed. Line color, line width and line style are included as extra arguments in the <code>plt.plot()</code> function call.</p>
+<p>The color, width, and style of line in a plot can be specified. Line color, line width, and line style are included as extra arguments in the <code>plt.plot()</code> function call.on call.</p>
 <pre><code class="python">plt.plot(&lt;x-data&gt;,&lt;y-data&gt;,
             linewideth=&lt;float or int&gt;,
             linestyle='&lt;linestyle abbreviation&gt;',
@@ -2674,76 +2688,76 @@ To create a line plot, pass an array or list of numbers as an <em>argument</em> 
 </thead>
 <tbody>
 <tr>
-<td><code>"."</code></td>
+<td><code>'.'</code></td>
 <td>point</td>
 </tr>
 <tr>
-<td><code>","</code></td>
+<td><code>','</code></td>
 <td>one pixel</td>
 </tr>
 <tr>
-<td><code>"o"</code></td>
+<td><code>'o'</code></td>
 <td>circle</td>
 </tr>
 <tr>
-<td><code>"v"</code></td>
+<td><code>'v'</code></td>
 <td>triangle_down</td>
 </tr>
 <tr>
-<td><code>"^"</code></td>
+<td><code>'^'</code></td>
 <td>triangle_up</td>
 </tr>
 <tr>
-<td><code>"8"</code></td>
+<td><code>'8'</code></td>
 <td>octagon</td>
 </tr>
 <tr>
-<td><code>"s"</code></td>
+<td><code>'s'</code></td>
 <td>square</td>
 </tr>
 <tr>
-<td><code>"p"</code></td>
+<td><code>'p'</code></td>
 <td>pentagon</td>
 </tr>
 <tr>
-<td><code>"*"</code></td>
+<td><code>'*'</code></td>
 <td>star</td>
 </tr>
 <tr>
-<td><code>"h"</code></td>
+<td><code>'h'</code></td>
 <td>hexagon 1</td>
 </tr>
 <tr>
-<td><code>"H"</code></td>
+<td><code>'H'</code></td>
 <td>hexagon 2</td>
 </tr>
 <tr>
-<td><code>"+"</code></td>
+<td><code>'+'</code></td>
 <td>plus</td>
 </tr>
 <tr>
-<td><code>"P"</code></td>
+<td><code>'P'</code></td>
 <td>filled plus</td>
 </tr>
 <tr>
-<td><code>"x"</code></td>
+<td><code>'x'</code></td>
 <td>x</td>
 </tr>
 <tr>
-<td><code>"X"</code></td>
+<td><code>'X'</code></td>
 <td>filled x</td>
 </tr>
 <tr>
-<td><code>"D"</code></td>
+<td><code>'D'</code></td>
 <td>diamond</td>
 </tr>
 <tr>
-<td><code>"d"</code></td>
+<td><code>'d'</code></td>
 <td>thin diamond</td>
 </tr>
 </tbody>
 </table>
-<p>In addition to <code>marker='&lt;marker style&gt;'</code>, the color of the marker edge, the color of the marker face and the size of the marker can be specificed with:</p>
+<p>In addition to <code>marker='&lt;marker style&gt;'</code>, the color of the marker edge, the color of the marker face and the size of the marker can be specified with:</p>
 <pre><code class="python">plt.plot( .... 
          markeredgecolor='&lt;color abbreviation&gt;',
          markerfacecolor='&lt;color abbreviation&gt;',
@@ -2776,53 +2790,53 @@ To create a line plot, pass an array or list of numbers as an <em>argument</em> 
 <thead>
 <tr>
 <th>Legend Location</th>
-<th><code>loc = &lt;number&gt;</code> "</th>
+<th><code>loc = &lt;number&gt;</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>‘best’</td>
-<td>0</td>
+<td>'best'</td>
+<td><code>0</code></td>
 </tr>
 <tr>
-<td>‘upper right’</td>
-<td>1</td>
+<td>'upper right'</td>
+<td><code>1</code></td>
 </tr>
 <tr>
-<td>‘upper left’</td>
-<td>2</td>
+<td>'upper left'</td>
+<td><code>2</code></td>
 </tr>
 <tr>
-<td>‘lower left’</td>
-<td>3</td>
+<td>'lower left'</td>
+<td><code>3</code></td>
 </tr>
 <tr>
-<td>‘lower right’</td>
-<td>4</td>
+<td>'lower right'</td>
+<td><code>4</code></td>
 </tr>
 <tr>
-<td>‘right’</td>
-<td>5</td>
+<td>'right'</td>
+<td><code>5</code></td>
 </tr>
 <tr>
-<td>‘center left’</td>
-<td>6</td>
+<td>'center left'</td>
+<td><code>6</code></td>
 </tr>
 <tr>
-<td>‘center right’</td>
-<td>7</td>
+<td>'center right'</td>
+<td><code>7</code></td>
 </tr>
 <tr>
-<td>‘lower center’</td>
-<td>8</td>
+<td>'lower center'</td>
+<td><code>8</code></td>
 </tr>
 <tr>
-<td>‘upper center’</td>
-<td>9</td>
+<td>'upper center'</td>
+<td><code>9</code></td>
 </tr>
 <tr>
-<td>‘center’</td>
-<td>10</td>
+<td>'center'</td>
+<td><code>10</code></td>
 </tr>
 <tr>
 <td>#### Grid</td>
@@ -2835,6 +2849,13 @@ To create a line plot, pass an array or list of numbers as an <em>argument</em> 
 </code></pre>
 
 <p>The only valid options are <code>plt.grid(True)</code> and <code>plt.grid(False)</code>. Note that <code>True</code> and <code>False</code> are capitalized and are not enclosed in quotations.</p>
+<h4 id="tick-labels">Tick Labels</h4>
+<p>Tick labels can be specified on the plot using <code>plt.xticks()</code> and <code>plt.yticks()</code>. To add tick labels use:</p>
+<pre><code class="python">plt.xticks([locations list],[labels list])
+plt.yticks([locations list],[labels list])
+</code></pre>
+
+<p>The <code>[locations list]</code> can be a Python list or NumPy array of tick locations . The <code>[labels list]</code> is a Python list or NumPy array of strings.</p>
 <h3 id="build-a-plot-in-five-steps">Build a plot in five steps</h3>
 <p>Line plots with the specified features above are constructed  in Python according to this general outline:</p>
 <ol>
@@ -2850,7 +2871,7 @@ To create a line plot, pass an array or list of numbers as an <em>argument</em> 
 <h4 id="2-define-data">2. Define data</h4>
 <p>The plot needs to contain data. Data is defined after the imports. Typically, data for plots is contained in Python lists, NumPy arrays or Pandas dataframes.</p>
 <h4 id="3-plot-data-including-options">3. Plot data including options</h4>
-<p>Use <code>plt.plot()</code> to plot the data you defined. Note the <code>plt.plot()</code> line needs to be called before any other plot details are specified. Otherwise the details have no plot to apply to.</p>
+<p>Use <code>plt.plot()</code> to plot the data you defined. Note the <code>plt.plot()</code> line needs to be called before any other plot details are specified. Otherwise, the details have no plot to apply to.</p>
 <p>Besides data, the <code>plt.plot()</code> function can include keyword arguments such as:</p>
 <ul>
 <li><code>linewideth= &lt;float or int&gt;</code></li>
@@ -2870,8 +2891,8 @@ To create a line plot, pass an array or list of numbers as an <em>argument</em> 
 <li><code>plt.ylabel('&lt;y-axis label string&gt;')</code></li>
 <li><code>plt.legend(['list','of','strings'])</code></li>
 <li><code>ptl.grid(&lt;True or False&gt;)</code></li>
-<li><code>plt.xticks([list of tick locations, floats or ints],[list of tick labels, strings]</code></li>
-<li><code>plt.yticks([list of tick locations, floats or ints],[list of tick labels, strings]</code></li>
+<li><code>plt.xticks([locations list or array], [labels list])</code></li>
+<li><code>plt.yticks([locations list or array], [labels list])</code></li>
 </ul>
 <h4 id="5-show-the-plot">5. Show the plot</h4>
 <p>Use the <code>plt.show()</code> command to show the plot. <code>plt.show()</code> causes the plot to display in a Jupyter notebook or pop out as a new window if the plot is constructed in a separate <strong><em>.py</em></strong> file. Note that <code>plt.show()</code> needs to be called after all of the plot specifications.
@@ -2903,7 +2924,7 @@ The next code section follows this outline. The resulting plot is shown below.
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;sin(x)&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span>
-    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="o">/</span> <span class="mi">2</span><span class="p">),</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span>
     <span class="p">[</span><span class="s1">&#39;0&#39;</span><span class="p">,</span><span class="s1">&#39;<span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>/2&#39;</span><span class="p">,</span><span class="s1">&#39;<span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>&#39;</span><span class="p">,</span><span class="s1">&#39;<span><span class="MathJax_Preview">3\pi/2</span><script type="math/tex">3\pi/2</script></span>&#39;</span><span class="p">,</span><span class="s1">&#39;2<span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>&#39;</span><span class="p">,</span><span class="s1">&#39;5<span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>/2&#39;</span><span class="p">,</span><span class="s1">&#39;3<span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>&#39;</span><span class="p">,</span><span class="s1">&#39;7<span><span class="MathJax_Preview">\pi</span><script type="math/tex">\pi</script></span>/2&#39;</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span></p>
 <p><span class="c1"># Show the plot</span>

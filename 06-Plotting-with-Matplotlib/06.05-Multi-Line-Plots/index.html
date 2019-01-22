@@ -2253,17 +2253,17 @@
                   <h1>Multi Line Plots</h1>
                 
                 <h2 id="multi-line-plots">Multi Line Plots</h2>
-<p>Multi-line plots are created using Matplotlib's <code>pyplot</code> library. This section builds upon the work in the previous section where a plot with one line was created. This section also introduces Matplotlib's object-oriented approach to building plots. The object-oriented approach to building plots will be used in the rest of this chapter.</p>
+<p>Multi-line plots are created using Matplotlib's <code>pyplot</code> library. This section builds upon the work in the previous section where a plot with one line was created. This section also introduces Matplotlib's <em>object-oriented</em> approach to building plots. The object-oriented approach to building plots is used in the rest of this chapter.</p>
 <h3 id="the-matplotlibs-object-oriented-interface">The Matplotlib's object-oriented interface</h3>
-<p>An object-oriented plotting interface is an interface where components of the plot (like the axis, title, lines, markers, etc.) are treated as programmatic <em>objects</em> that have <em>attributes</em> and <em>methods</em> associated with them. To create a new <em>object</em> is called <em>instantiation</em>. Once an object is created, or <em>instantiated</em>, the properties of that object can be modified, and methods can be called on the object. The basic anatomy of a Matplotlib plot includes a couple of layers, each of these layers is a programming <em>object</em>:</p>
+<p>An object-oriented plotting interface is an interface where components of the plot (like the axis, title, lines, markers, tick labels, etc.) are treated as programmatic <em>objects</em> that have <em>attributes</em> and <em>methods</em> associated with them. To create a new <em>object</em> is called <em>instantiation</em>. Once an object is created, or <em>instantiated</em>, the properties of that object can be modified, and methods can be called on that object. The basic anatomy of a Matplotlib plot includes a couple of layers, each of these layers is a Python <em>object</em>:</p>
 <ul>
 <li>Figure objects: The bottom layer. Think of the figure layer as the figure window which contains the minimize, maximize, close buttons. A figure can include one plot or multiple plots.</li>
 <li>Plot objects: A plot builds on the Figure layer. If there are multiple plots, each plot is called a subplot. </li>
 <li>Axis objects: An axis is added to a Plot layer. Axis can be thought of as sets of x and y axis that lines and bars are drawn on. An Axis contains daughter attributes like axis labels, tick labels, and line thickness.</li>
 <li>Data objects: data points, lines, shapes are plotted on an axis.
-To build a figure object,  Matplotlib's <code>plt.subplot()</code> function is used. The <code>plt.subplot()</code> function creates both a figure <em>object</em> and an axis <em>object</em>. We say the <code>plt.subplot()</code> function <em>instantiates</em> a figure <em>object</em> and <em>instantiates</em> an axis object. For now, we'll leave the <code>subplot()</code> arguments blank. By default, the <code>subplot()</code> function creates a single figure object and a single axis object.  We'll call the figure object <code>fig</code> and the axis object <code>ax</code>. Note these two outputs of the <code>plt.subplots()</code> function are separated by a comma.</li>
+Matplotlib's <code>plt.subplot()</code> function is used to build figure objects. The <code>plt.subplot()</code> function creates both a figure <em>object</em> and an axis <em>object</em>. We say the <code>plt.subplot()</code> function <em>instantiates</em> a figure <em>object</em> and <em>instantiates</em> an axis object. For now, we'll leave the <code>subplot()</code> arguments blank. By default, the <code>subplot()</code> function creates a single figure object and a single axis object.  We'll call the figure object <code>fig</code> and the axis object <code>ax</code>. Note these two outputs of the <code>plt.subplots()</code> function are separated by a comma.</li>
 </ul>
-<p>We have a figure object and axis object, but both of these objects are without attributes. We add elements to the axis object to build a plot. Let's create three NumPy arrays to add the three arrays to our axis object.</p>
+<p>We instantiated a figure object and axis object, now both of these objects need attributes. We add attributes to the axis object to build a plot. Let's create three NumPy arrays and add the three arrays to our axis object.</p>
 <p>The NumPy arrays <code>x</code>, <code>y</code>, and <code>z</code> can be added to axis object <code>ax</code>. We add a plot attribute (a line) to our axis object <code>ax</code> using the object-oriented structure <code>&lt;object&gt;.&lt;attribute&gt;</code>. In this case, <code>ax</code> is the object and <code>plot</code> is the attribute. The <code>plt.show()</code> line shows the plot on the screen.</p>
 <p>The next code section demonstrates how to build a multi-line plot with Matplotlib's object-oriented interface.
 <div class="cell border-box-sizing code_cell rendered">
@@ -2271,8 +2271,9 @@ To build a figure object,  Matplotlib's <code>plt.subplot()</code> function is u
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, inlcude:</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline</p>
 <p><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -2314,8 +2315,9 @@ The <code>ax</code> object has many <em>methods</em> and <em>attributes</em>. In
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="c1"># if using a Jupyter notebook, include:</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline</p>
 <p><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="mf">0.1</span><span class="p">)</span>
 <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
