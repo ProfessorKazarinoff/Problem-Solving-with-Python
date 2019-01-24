@@ -3,7 +3,7 @@
 
 # Problem Solving with Python
 
-If you like this book, please consider purchasing a hard copy version on [amazon.com](http://amazon.com).
+If you like this book, please consider purchasing a hard copy version on [amazon.com](https://www.amazon.com/Problem-Solving-Python-3-6-open-source/dp/179381404X/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1548304582&sr=8-3).
 
 ## Overview
 
@@ -13,4 +13,4 @@ If you like this book, please consider purchasing a hard copy version on [amazon
 
 ## Copywrite
 
-Copyright &copy; 2017 - 2018 Peter D. Kazarinoff
+Copyright &copy; 2018 - 2019 Peter D. Kazarinoff
