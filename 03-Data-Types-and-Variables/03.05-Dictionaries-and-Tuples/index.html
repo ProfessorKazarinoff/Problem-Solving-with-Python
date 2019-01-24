@@ -2310,6 +2310,13 @@ dict
 [8, 5]
 </code></pre>
 
+<p>Items can be removed from dictionaries by calling the <code>.pop()</code> method. The dictionary key (and that key's associated value) supplied to the <code>.pop()</code> method is removed from the dictionary.</p>
+<pre><code class="python">&gt;&gt;&gt; age_dict = {&quot;Gabby&quot;: 8 , &quot;Maelle&quot;: 5}
+&gt;&gt;&gt; age_dict.pop(&quot;Gabby&quot;)
+&gt;&gt;&gt; age_dict
+{'Maelle': 5}
+</code></pre>
+
 <h3 id="tuples">Tuples</h3>
 <p>Tuples are immutable lists. Elements of a list can be modified, but elements in a tuple can only be accessed, not modified. The name <em>tuple</em> does not mean that only two values can be stored in this data structure.</p>
 <p>Tuples are defined in Python by enclosing elements in parenthesis <code>( )</code> and separating elements with commas. The command below creates a tuple containing the numbers <code>3</code>, <code>4</code>, and <code>5</code>.</p>
