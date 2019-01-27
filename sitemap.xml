@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,31 +13,31 @@
         
     <url>
      <loc>/00-Preface/00.00-Motivation/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/00-Preface/00.02-Acknowledgments/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/00-Preface/00.03-Supporting-Materials/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/00-Preface/00.04-Formatting-Conventions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/00-Preface/00.05-Errata/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -47,55 +47,55 @@
         
     <url>
      <loc>/01-Orientation/01.00-Welcome/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.01-Why-Python/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.02-The-Anaconda-Distribution-of-Python/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.03-Installing-Anaconda-on-Windows/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.04-Installing-Anaconda-on-MacOS/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.05-Installing-Anaconda-on-Linux/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.06-Installing-Python-from-Python-dot-org/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.07-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/01-Orientation/01.08-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -105,43 +105,43 @@
         
     <url>
      <loc>/02-The-Python-REPL/02.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/02-The-Python-REPL/02.01-Python-as-a-Calculator/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/02-The-Python-REPL/02.02-Variables/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/02-The-Python-REPL/02.03-String-Operations/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/02-The-Python-REPL/02.04-Print-Statements/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/02-The-Python-REPL/02.05-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/02-The-Python-REPL/02.06-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -151,49 +151,49 @@
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.01-Numeric-Data-Types/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.02-Boolean-Data-Type/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.03-Strings/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.04-Lists/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.05-Dictionaries-and-Tuples/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.06-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/03-Data-Types-and-Variables/03.07-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -203,61 +203,61 @@
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.01-What-is-a-Jupyter-Notebook/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.02-Why-Jupyter-Notebooks/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.03-Installing-Juypter/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.04-Opening-a-Jupyter-Notebook/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.05-The-Jupyter-Notebook-Interface/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.06-Magic-Cells/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.07-Getting-Help-in-a-Jupyter-Notebook/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.08-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/04-Jupyter-Notebooks/04.10-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -267,61 +267,61 @@
         
     <url>
      <loc>/05-Functions-and-Modules/05.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.01-Why-functions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.02-First-function/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.03-Functions-with-multiple-arguments/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.04-Functions-with-default-arguments/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.05-Calling-Functions-from-Other-Files/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.06-Docstrings-in-Functions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.07-Positional-and-Keyword-Arguments/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.08-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/05-Functions-and-Modules/05.09-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -331,115 +331,115 @@
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.01-What-is-Matplotlib/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.02-Installing Matplotlib/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.03-Line-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.04-Saving-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.05-Multi-Line-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.06-Bar-Charts-and-Pie-Charts/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.07-Error-Bars/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.08-Histograms/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.09-Box-Plots-and-Violin-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.10-Scatter-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.11-Plot-Annotations/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.12-Subplots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.13-Plot-Styles/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.14-Contour-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.15-Quiver-and-Stream-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.16-3D-Surface-Plots/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.17-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/06-Plotting-with-Matplotlib/06.18-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -449,55 +449,55 @@
         
     <url>
      <loc>/07-If-Else-Try-Except/07.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.01-User-Input/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.02-If-Statements/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.02-Selection-Statements/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.04-If-Else-Statements/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.05-Try-Except-Statements/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.06-Flowcharts/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.07-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/07-If-Else-Try-Except/07.08-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -507,43 +507,43 @@
         
     <url>
      <loc>/08-Loops/08.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/08-Loops/08.01-For-Loops/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/08-Loops/08.02-While-Loops/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/08-Loops/08.03-Break-and-Continue/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/08-Loops/08.04-Flowcharts-Describing-Loops/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/08-Loops/08.05-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/08-Loops/08.06-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -553,61 +553,61 @@
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.01-Installing-NumPy/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.02-NumPy/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.03-Array-Creation/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.04-Array-Indexing/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.05-Array-Slicing/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.06-Array-Opperations/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.07-Systems-of-Linear-Equations/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.08-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/09-Matricies-and-Arrays/09.10-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -617,55 +617,55 @@
         
     <url>
      <loc>/10-Symbolic-Math/10.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.01-SymPy/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.02-Defining-Varaibles/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.03-Expressions-and-Substitutions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.04-Equations/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.05-Solving-Equations/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.06-Solving-Two-Equations-for-Two-Unknowns/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.07-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/10-Symbolic-Math/10.08-Review-Questions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -675,43 +675,43 @@
         
     <url>
      <loc>/11-Python-and-External-Hardware/11.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/11-Python-and-External-Hardware/11.01-PySerial/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/11-Python-and-External-Hardware/11.02-Bytes-and-Unicode-Strings/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/11-Python-and-External-Hardware/11.03-Controlling-an-LED/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/11-Python-and-External-Hardware/11.04-Reading-a-Sensor-with-Python/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/11-Python-and-External-Hardware/11.05-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/11-Python-and-External-Hardware/11.06-Project-Ideas/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -721,55 +721,55 @@
         
     <url>
      <loc>/12-MicroPython/12.00-Introduction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.01-What-is-MicroPython/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.02-Installing-MicroPython/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.03-MicroPython-REPL/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.04-Blinking-a-LED/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.05-Reading-a-Sensor/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.06-Uploading-Code/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.07-Summary/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/12-MicroPython/12.08-Project-Ideas/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -779,67 +779,67 @@
         
     <url>
      <loc>/99-Appendix/99.00-Appendix/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.01-Reserved-and-Key-Words-in-Python/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.02-ASCII-Character-Codes/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.03-Virtual-Environments/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.04-NumPy-Math-Functions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.05-Git-and-GitHub/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.06-LaTeX-Math/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.07-Problem-Solving-with-Python-Book-Construction/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.08-Contributions/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.09-Cover-Artwork/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/99-Appendix/99.10-About-the-Author/</loc>
-     <lastmod>2019-01-23</lastmod>
+     <lastmod>2019-01-27</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
