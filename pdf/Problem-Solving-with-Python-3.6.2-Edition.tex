@@ -378,6 +378,10 @@ showstringspaces=false,
     
     \maketitle
     
+    \input{copywrite_page.tex}
+    \newpage
+    \input{dedication_page.tex}
+    \newpage
     
     \tableofcontents
 
@@ -385,15 +389,16 @@ showstringspaces=false,
     
 
     
-        \chapter{Preface}\label{preface}
+       \chapter*{Preface}\label{preface}
+	\addcontentsline{toc}{chapter}{Preface}
     
 
 
 
 
     
-        \section{Motivation}\label{motivation}
-    
+        \section*{Motivation}\label{motivation}
+    \addcontentsline{toc}{section}{Motivation}
 
 
 
@@ -420,8 +425,8 @@ engineering education, students can continue to use Python for free.
 
 
     
-        \section{Acknowledgments}\label{acknowledgments}
-    
+        \section*{Acknowledgments}\label{acknowledgments}
+    \addcontentsline{toc}{section}{Acknowledgments}
 
 
 
@@ -444,8 +449,8 @@ website and into LaTeX for printing.
 
 
     
-        \section{Supporting Materials}\label{supporting-materials}
-    
+        \section*{Supporting Materials}\label{supporting-materials}
+\addcontentsline{toc}{section}{Supporting Materials}
 
 
 
@@ -489,8 +494,8 @@ problems as well as quiz and exam question banks.
 
 
     
-        \section{Formatting Conventions}\label{formatting-conventions}
-    
+        \section*{Formatting Conventions}\label{formatting-conventions}
+    \addcontentsline{toc}{section}{Formatting Conventions}
 
 
 
@@ -691,8 +696,8 @@ the shell type \lstinline![shift]+[c]!
 
 
     
-        \section{Errata}\label{errata}
-    
+        \section*{Errata}\label{errata}
+    \addcontentsline{toc}{section}{Errata}
 
 
 
@@ -20261,21 +20266,14 @@ measurements up to an IoT cloud server, like io.adafruit.com.
 
 
 
+\chapter*{Appendix}\label{appendix}
+\addcontentsline{toc}{chapter}{Appendices}
 
+
+\renewcommand{\thesection}{\Alph{section}.}
+\setcounter{section}{0}
     
-        \chapter{Appendix}\label{appendix}
-    
-
-
-
-
-    
-        \section{Contents}\label{contents}
-    
-
-
-
-
+        
     
         The following is detailed in the appendix:
 
@@ -21167,13 +21165,13 @@ $ git push orign master
 
     
         \section{LaTeX Math}\label{latex-math}
+
+
+
+
+
     
-
-
-
-
-    
-        LLaTeX math can be included in Jupyter notebook markdown cells. LaTeX
+        LaTeX math can be included in Jupyter notebook markdown cells. LaTeX
 math can also be included in parts of Matplotlib plots like axis labels
 and text fields.
 
@@ -21386,9 +21384,7 @@ improving the text for others.
         \subsection{Contributor List}\label{contributor-list}
 
 \begin{itemize}
-\item
-\item
-\item
+\item Levi, Blessing, and Ngan helped improve some review questions
 \end{itemize}
     
 
@@ -21437,7 +21433,6 @@ He blogs at:
 
 Peter lives in beautiful Portland, Oregon with his wife and two kids.
     
-
 
 
 

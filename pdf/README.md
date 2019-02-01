@@ -33,3 +33,31 @@ Also do this with the sections of the preface. So the first section needs to be 
   }
 }
 ```
+
+Add in the Copywrite Page and Dedication Page between ```\maketitle``` and ```\tableofcontents```
+
+```
+    \maketitle
+    
+    \input{copywrite_page.tex}
+    \newpage
+    \input{dedication_page.tex}
+    \newpage
+    
+    \tableofcontents
+```
+
+Make the table of contents list Appendix sections in letters. Un-number the appendix section in table of contents
+
+```
+\chapter*{Appendix}\label{appendix}
+\addcontentsline{toc}{chapter}{Appendices}
+
+
+\renewcommand{\thesection}{\Alph{section}.}
+\setcounter{section}{0}
+```
+
+
+
+
